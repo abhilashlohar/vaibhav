@@ -11,26 +11,13 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
-Route::get('/', 'HomeController@welcome')->name('welcome');
-Route::get('/product-list/{id}', 'HomeController@products')->name('products.list');
-Route::get('/enquiry/{id}', 'HomeController@enquiry')->name('enquiry');
-
-
-Route::get('/enquiry-list', 'EnquiryController@index')->name('enquirylist');
-
-
-
-
+Route::get('/', 'HomeController@home')->name('home');
 
 Route::prefix('sarkar')->group(function () {
-    Route::resource('categories','admin\CategoryController');
-    Route::resource('subcategories','SubCategoryController');
-    Route::resource('products','ProductController');
-    Route::post('/subcategorieslist', 'SubCategoryController@list')->name('subcategories.list');
+    Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
+    Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
+    
+    Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 });

@@ -13,7 +13,8 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Webanix'),
+    'name' => env('APP_NAME', 'Vaibhav'),
+    'footer_text' => '&copy '.Date('Y').' Vaibhav',
 
     /*
     |--------------------------------------------------------------------------
