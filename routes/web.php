@@ -20,4 +20,6 @@ Route::prefix('sarkar')->group(function () {
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
     
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
+
+    Route::resource('categories','admin\CategoryController');
 });
