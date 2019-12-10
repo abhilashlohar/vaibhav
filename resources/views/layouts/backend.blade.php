@@ -260,7 +260,7 @@
     
 
 <!-- begin::Global Config(global config for global JS sciprts) -->
-<!-- <script>
+<script>
     var KTAppOptions = {
     "colors": {
         "state": {
@@ -289,7 +289,7 @@
         }
     }
 };
-</script> -->
+</script>
 <!-- end::Global Config -->
 
 <!--begin::Global Theme Bundle(used by all pages) -->
