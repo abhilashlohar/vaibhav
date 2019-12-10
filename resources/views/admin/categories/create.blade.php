@@ -32,7 +32,7 @@
                         <label class="col-xl-3 col-lg-3 col-form-label">Basic Example</label>
                         <div class="col-lg-9 col-xl-6">
                             <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/100_1.jpg)"></div>
+                                <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/category.png)"></div>
                                 <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                     <i class="fa fa-pen"></i>
                                     <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg">
@@ -59,6 +59,12 @@
 </div>
 
 <!--begin::Page Scripts(used by this page) -->
-                            <script src="../../../../themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
+                            
                         <!--end::Page Scripts -->
+@endsection
+
+@section ('footer-script')
+
+<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
+
 @endsection
