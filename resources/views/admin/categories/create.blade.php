@@ -1,45 +1,64 @@
-@extends ('layouts.dashboard')
+@extends ('layouts.backend')
 
 @section ('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Add New Category') }}</div>
 
-                <div class="card-body">
-               
-                    <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required  autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Save') }}
-                                </button>
-                                <a class="btn btn-light" href="{{ route('categories.index') }}">Cancel</a>
-                            </div>
-                        </div>
-                      
-                    </form>
-
+<div class="row">
+    <div class="col-md-6">
+        <div class="kt-portlet">
+            <div class="kt-portlet__head">
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Add New Category
+                    </h3>
                 </div>
             </div>
+            <!--begin::Form-->
+            <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            @csrf
+                <div class="kt-portlet__body">
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required  autofocus>
+
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="col-xl-3 col-lg-3 col-form-label">Basic Example</label>
+                        <div class="col-lg-9 col-xl-6">
+                            <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
+                                <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/100_1.jpg)"></div>
+                                <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                                    <i class="fa fa-pen"></i>
+                                    <input type="file" name="profile_avatar" accept=".png, .jpg, .jpeg">
+                                </label>
+                                <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                                    <i class="fa fa-times"></i>
+                                </span>
+                            </div>
+                            <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="kt-portlet__foot">
+                    <div class="kt-form__actions">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a class="btn btn-secondary" href="{{ route('categories.index') }}">Cancel</a>
+                    </div>
+                </div>
+            </form>
+            <!--end::Form-->            
         </div>
     </div>
 </div>
+
+<!--begin::Page Scripts(used by this page) -->
+                            <script src="../../../../themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
+                        <!--end::Page Scripts -->
 @endsection
