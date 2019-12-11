@@ -8,12 +8,12 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        Add New Category
+                        Add New Sub Category
                     </h3>
                 </div>
             </div>
             <!--begin::Form-->
-            <form action="{{ route('categories.store') }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            <form action="{{ route('subcategories.store') }}" method="POST" enctype="multipart/form-data" class="kt-form">
             @csrf
                 <div class="kt-portlet__body">
 
@@ -29,7 +29,7 @@
                     </div>
 
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Image</label>
                         <div class="col-lg-9 col-xl-6">
                             <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
                                 <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/category.png)"></div>
@@ -49,7 +49,7 @@
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a class="btn btn-secondary" href="{{ route('categories.index') }}">Cancel</a>
+                        <a class="btn btn-secondary" href="{{ route('subcategories.index') }}">Cancel</a>
                     </div>
                 </div>
             </form>

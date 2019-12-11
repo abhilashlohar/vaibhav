@@ -6,7 +6,7 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
-
+use File;
 class CategoryController extends Controller
 {
     /**
@@ -46,11 +46,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(Category::rules(), Category::messages());
-        
-
+        if ($request->hasFile('image_add')) {
+            $file = $request->image_add;
+            $extension = $request->image_add->extension();
+            $fileName = time().'.'.$extension;  
+            $path = $request->image_add->storeAs('category', $fileName);
+            $request->request->add(['image' => $fileName]);
+        }
         Category::create($request->all());
    
-        return redirect()->route('admin.categories.index')
+        return redirect()->route('categories.index')
                         ->with('success','Category created successfully.');
     }
 
@@ -84,24 +89,24 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
-    {
-        // dd($request->image_edit);
+    {   
         $request->validate(Category::rules($category->id), Category::messages());
 
-        if($request->has('image'))
+        if($request->hasFile('image_add'))
         {
-            $destinationPath = public_path('uploads');
+            $destinationPath = storage_path('app/public/category');
         
-            File::delete($destinationPath.'/'.$category->image_path);  /// Unlink File
-
-            $fileName = time().'.'.$request->image->extension();  
-            $request->image->move(public_path('uploads'), $fileName);
-            $request->request->add(['image_path' => $fileName]);
+            File::delete($destinationPath.'/'.$category->image);  /// Unlink File
+            $file = $request->image_add;
+            $extension = $request->image_add->extension();
+            $fileName = time().'.'.$extension;  
+            $path = $request->image_add->storeAs('category', $fileName);
+            $request->request->add(['image' => $fileName]);
         }
         
         $category->update($request->all());
   
-        return redirect()->route('admin.categories.index')
+        return redirect()->route('categories.index')
                         ->with('success','Category updated successfully');
     }
 

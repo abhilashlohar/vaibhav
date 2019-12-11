@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class SubCategory extends Model
 {
     protected $fillable = [
-        'name','image_path','category_id'
+        'name','image','category_id'
     ];
     public static function boot()
     {
@@ -22,7 +22,7 @@ class SubCategory extends Model
                 return $query->where('deleted', false);
             })->ignore($id)
           ],
-          'image_path' => 'required|mimes:jpeg,jpg,png|max:2048',
+          'image_add' => 'mimes:jpeg,jpg,png|max:2048',
           'category_id' => 'required'
       ];
     }
@@ -31,7 +31,6 @@ class SubCategory extends Model
       return [
           'name.required' => 'You must enter category name.',
           'name.unique' => 'The category name is already exists.',
-          'image_path.required' => 'You must select image.',
           'category_id.required' => 'You must select category.',
       ];
     }

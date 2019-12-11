@@ -25,6 +25,7 @@ class Category extends Model
                 return $query->where('deleted', false);
             })->ignore($id)
           ],
+          'image_add' => 'mimes:jpeg,jpg,png|max:2048'
       ];
     }
 
@@ -34,6 +35,10 @@ class Category extends Model
           'name.required' => 'You must enter category name.',
           'name.unique' => 'The category name is already exists.'
       ];
+    }
+
+    public function subCategories(){
+        $this->hasMany(SubCategory::class);
     }
     
 }

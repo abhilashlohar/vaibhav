@@ -496,13 +496,12 @@
                             <td>
                                 <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
                    
-                                    <a class="btn btn-sm btn-light" href="{{route('categories.edit', ['categories' => $category->id])}}">
+                                    <a class="btn btn-sm btn-light" href="{{route('categories.edit', $category->id)}}">
                                       <i class="fas fa-edit"></i>
                                     </a>
                    
                                     @csrf
                                     @method('DELETE')
-                      
                                     <button class="btn btn-sm btn-light" type="submit"><i class="fas fa-trash-alt"></i></button>
                                 </form>
                             </td>
