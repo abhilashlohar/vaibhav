@@ -100,7 +100,7 @@ class SubCategoryController extends Controller
         {
             $destinationPath = storage_path('app/public/subcategory');
         
-            File::delete($destinationPath.'/'.$category->image);  /// Unlink File
+            File::delete($destinationPath.'/'.$subcategory->image);  /// Unlink File
             $file = $request->image_add;
             $extension = $request->image_add->extension();
             $fileName = time().'.'.$extension;  

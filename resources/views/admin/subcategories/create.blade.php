@@ -27,6 +27,21 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
+                            <option value="">---Select---</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('category_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                     <div class="form-group row">
                         <label class="col-xl-3 col-lg-3 col-form-label">Image</label>

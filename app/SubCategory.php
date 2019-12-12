@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Validation\Rule;
 
 class SubCategory extends Model
 {
@@ -35,6 +36,6 @@ class SubCategory extends Model
       ];
     }
     public function category(){
-        $this->belongsTo(Category::class);
+        return $this->belongsTo('App\Category');
     }
 }

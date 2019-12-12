@@ -480,7 +480,7 @@
         <div class="card">
                 <div class="card-header">
                     <span class="float-left">{{ __('Category') }}</span>
-                    <a class="float-right" href="{{ route('categories.create') }}">New</a>
+                    <a class="float-right" href="{{ route('categories.create') }}">Add New</a>
                 </div>
 
                 <div class="card-body">
@@ -488,21 +488,22 @@
                    <table class="table table-sm tblborder">
                         <tr>
                             <th>Name</th>
+                            <th>Image</th>
                             <th width="280px">Action</th>
                         </tr>
                         @foreach ($categories as $category)
                         <tr>
                             <td>{{ $category->name }}</td>
                             <td>
+                                <img src="{{ asset('storage/category/'.$category->image) }}" width="60" height="60">
+                            </td>
+                            <td>
                                 <form action="{{ route('categories.destroy',$category->id) }}" method="POST">
                    
-                                    <a class="btn btn-sm btn-light" href="{{route('categories.edit', $category->id)}}">
-                                      <i class="fas fa-edit"></i>
-                                    </a>
-                   
+                                    <a href="{{route('categories.edit', $category->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-light" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-sm btn-clean btn-icon btn-icon-md" type="submit"><i class="la la-trash"></i></button>
                                 </form>
                             </td>
                         </tr>

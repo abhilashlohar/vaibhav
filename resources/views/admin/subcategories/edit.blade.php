@@ -13,14 +13,14 @@
                 </div>
             </div>
             <!--begin::Form-->
-            <form action="{{ route('categories.update',$category->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            <form action="{{ route('subcategories.update',$subcategory->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
             @csrf
             @method('PUT')
                 <div class="kt-portlet__body">
 
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $category->name }}" required  autofocus>
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $subcategory->name }}" required  autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -28,11 +28,26 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
+                            <option value="">---Select---</option>
+                            @foreach ($categories as $category)
+                                <option value="{{ $category->id }}" {{ ( $subcategory->category_id == $category->id ) ? 'selected' : '' }}>{{ $category->name }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('category_id')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
                     <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
+                        <label class="col-xl-3 col-lg-3 col-form-label">Image</label>
                         <div class="col-lg-9 col-xl-6">
                             <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->image) }}')"></div>
+                                <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/subcategory/'.$subcategory->image) }}')"></div>
                                 <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                     <i class="fa fa-pen"></i>
                                     <input type="file" name="image_add" accept=".png, .jpg, .jpeg">
@@ -49,7 +64,7 @@
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a class="btn btn-secondary" href="{{ route('categories.index') }}">Cancel</a>
+                        <a class="btn btn-secondary" href="{{ route('subcategories.index') }}">Cancel</a>
                     </div>
                 </div>
             </form>

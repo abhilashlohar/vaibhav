@@ -6,7 +6,7 @@
         <div class="card">
                 <div class="card-header">
                     <span class="float-left">{{ __('Sub Category') }}</span>
-                    <a class="float-right" href="{{ route('subcategories.create') }}">New</a>
+                    <a class="float-right" href="{{ route('subcategories.create') }}">Add New</a>
                 </div>
 
                 <div class="card-body">
@@ -14,21 +14,23 @@
                    <table class="table table-sm tblborder">
                         <tr>
                             <th>Name</th>
+                            <th>Category Name</th>
+                            <th>Image</th>
                             <th width="280px">Action</th>
                         </tr>
                         @foreach ($subcategories as $subcategory)
                         <tr>
                             <td>{{ $subcategory->name }}</td>
+                            <td>{{ $subcategory->category->name }}</td>
+                            <td>
+                                <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" width="60" height="60">
+                            </td>
                             <td>
                                 <form action="{{ route('subcategories.destroy',$subcategory->id) }}" method="POST">
-                   
-                                    <a class="btn btn-sm btn-light" href="{{route('subcategories.edit', $subcategory->id)}}">
-                                      <i class="fas fa-edit"></i>
-                                    </a>
-                   
+                                    <a href="{{route('subcategories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-light" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    <button class="btn btn-sm btn-clean btn-icon btn-icon-md" type="submit"><i class="la la-trash"></i></button>
                                 </form>
                             </td>
                         </tr>
