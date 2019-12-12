@@ -22,5 +22,5 @@ Route::prefix('sarkar')->group(function () {
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 
     Route::resource('categories','admin\CategoryController');
-    Route::resource('subcategories','admin\SubCategoryController');
+    Route::resource('sub-categories','admin\SubCategoryController');
 });

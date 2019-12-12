@@ -46,6 +46,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(Category::rules(), Category::messages());
+        
         if ($request->hasFile('image_add')) {
             $file = $request->image_add;
             $extension = $request->image_add->extension();
