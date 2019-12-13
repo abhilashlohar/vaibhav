@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Admin;
+use App\Permission;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -39,7 +40,19 @@ class AdminController extends Controller
 
         return view('admin.login.login');
     }
-
+    public function AdminIndex()
+    {
+        
+        $admins = Admin::all()->paginate(5);
+dd($admins);
+        return view('admin.login.index',compact('admins'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
+    }
+    public function AdminEdit(Admin $admin)
+    {
+        dd($admin);
+        //return view('admin.login.edit',compact('admin'));
+    }
     public function dashboard(Request $request)
     {
 

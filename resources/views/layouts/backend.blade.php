@@ -140,6 +140,7 @@
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('categories.index') }}" class="kt-menu__link ">
                                     <span class="kt-menu__link-icon">
+                                        <i class="fa fa-list"></i>
                                     </span>
                                     <span class="kt-menu__link-text">Category</span>
                                 </a>
@@ -147,6 +148,7 @@
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('sub-categories.index') }}" class="kt-menu__link ">
                                     <span class="kt-menu__link-icon">
+                                        <i class="fa fa-clipboard-list"></i>
                                     </span>
                                     <span class="kt-menu__link-text">Sub Category</span>
                                 </a>

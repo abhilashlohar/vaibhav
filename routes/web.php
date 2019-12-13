@@ -18,6 +18,8 @@ Route::get('/', 'HomeController@home')->name('home');
 Route::prefix('sarkar')->group(function () {
     Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
+    Route::get('/{id}/edit', 'admin\AdminController@AdminEdit')->name('AdminEdit');
+    Route::get('/index', 'admin\AdminController@AdminEdit')->name('AdminIndex');
     
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 

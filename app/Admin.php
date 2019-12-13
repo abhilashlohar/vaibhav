@@ -25,4 +25,9 @@ class Admin extends Model
           ]
       ];
     }
+
+    public function permissions()
+    {
+        return $this->belongsToMany('App/Permission');
+    }
 }

@@ -86,4 +86,23 @@
 
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+    var KTFormWidgets = function() {
+    var e;
+    return {
+        init: function() {
+            ! function() {
+                $("#category_id").select2({
+                    placeholder: "Select a category"
+                }), $("#category_id").on("select2:change", function() {
+                    e.element($(this))
+                });
+            }()
+        }
+    }
+}();
+jQuery(document).ready(function() {
+    KTFormWidgets.init()
+});
+</script>
 @endsection
