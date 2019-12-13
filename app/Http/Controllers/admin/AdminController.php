@@ -40,10 +40,10 @@ class AdminController extends Controller
 
         return view('admin.login.login');
     }
-    public function AdminIndex()
+    public function index()
     {
         
-        $admins = Admin::all()->paginate(5);
+        $admins = Admin::all();
 dd($admins);
         return view('admin.login.index',compact('admins'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
