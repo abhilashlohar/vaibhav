@@ -4,12 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
+use App\Category;
 
 class Category extends Model
 {
-	protected $fillable = [
+    protected $fillable = [
         'name', 'image'
     ];
+
+    public function notHavingImageInDb(){
+        return (empty($this->image))?true:false;
+    }
 
     public static function boot()
     {
@@ -18,7 +23,7 @@ class Category extends Model
 
     public static function rules($id = '') 
     {
-      return [
+      $rules =  [
           'name' => [
             'required', 
             Rule::unique('categories')->where(function ($query) {
@@ -27,18 +32,36 @@ class Category extends Model
           ],
           'image_add' => 'mimes:jpeg,jpg,png|max:2048'
       ];
+
+      if(!empty($id))
+      {
+        $category = Category::find($id);
+      
+        if ($category->notHavingImageInDb()){
+            $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+        }
+      }
+      else
+      {
+        $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+      }
+
+      return $rules;
     }
 
     public static function messages($id = '') 
     {
       return [
           'name.required' => 'You must enter category name.',
-          'name.unique' => 'The category name is already exists.'
+          'name.unique' => 'The category name is already exists.',
+          'image_add.required' => 'You must select image.',
+          'image_add.mimes' => 'Only allowed image type jpeg,jpg,png.',
+          'image_add.max' => 'Image size is big from 2MB.'
       ];
     }
 
     public function subCategories(){
-        $this->hasMany(SubCategory::class);
+        $this->hasMany('App\SubCategory');
     }
     
 }

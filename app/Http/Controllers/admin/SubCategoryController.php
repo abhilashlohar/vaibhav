@@ -59,7 +59,7 @@ class SubCategoryController extends Controller
 
         SubCategory::create($request->all());
    
-        return redirect()->route('subcategories.index')
+        return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category created successfully.');
     }
 
@@ -69,7 +69,7 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function show(SubCategory $subcategory)
+    public function show(SubCategory $subCategory)
     {
         //
     }
@@ -80,10 +80,11 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function edit(SubCategory $subcategory)
+    public function edit(SubCategory $subCategory)
     {
         $categories = Category::where('deleted',0)->latest()->get();
-        return view('admin.subcategories.edit',compact('subcategory','categories'));
+        
+        return view('admin.subcategories.edit',compact('subCategory','categories'));
     }
 
     /**
@@ -93,23 +94,23 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SubCategory $subcategory)
+    public function update(Request $request, SubCategory $subCategory)
     {
-        $request->validate(SubCategory::rules($subcategory->id), SubCategory::messages());
+        $request->validate(SubCategory::rules($subCategory->id), SubCategory::messages());
         if($request->hasFile('image_add'))
         {
             $destinationPath = storage_path('app/public/subcategory');
         
-            File::delete($destinationPath.'/'.$subcategory->image);  /// Unlink File
+            File::delete($destinationPath.'/'.$subCategory->image);  /// Unlink File
             $file = $request->image_add;
             $extension = $request->image_add->extension();
             $fileName = time().'.'.$extension;  
             $path = $request->image_add->storeAs('subcategory', $fileName);
             $request->request->add(['image' => $fileName]);
         }
-        $subcategory->update($request->all());
+        $subCategory->update($request->all());
   
-        return redirect()->route('subcategories.index')
+        return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category updated successfully');
     }
 
@@ -119,12 +120,12 @@ class SubCategoryController extends Controller
      * @param  \App\SubCategory  $subCategory
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SubCategory $subcategory)
+    public function destroy(SubCategory $subCategory)
     {
-        $subcategory->deleted = true;
-        $subcategory->save();
+        $subCategory->deleted = true;
+        $subCategory->save();
   
-        return redirect()->route('subcategories.index')
+        return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category deleted successfully');
     }
 

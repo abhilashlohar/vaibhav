@@ -6,7 +6,7 @@
         <div class="card">
                 <div class="card-header">
                     <span class="float-left">{{ __('Sub Category') }}</span>
-                    <a class="float-right" href="{{ route('subcategories.create') }}">Add New</a>
+                    <a class="float-right" href="{{ route('sub-categories.create') }}">Add New</a>
                 </div>
 
                 <div class="card-body">
@@ -26,8 +26,8 @@
                                 <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" width="60" height="60">
                             </td>
                             <td>
-                                <form action="{{ route('subcategories.destroy',$subcategory->id) }}" method="POST">
-                                    <a href="{{route('subcategories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
+                                <form action="{{ route('sub-categories.destroy',$subcategory->id) }}" method="POST">
+                                    <a href="{{route('sub-categories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-clean btn-icon btn-icon-md" type="submit"><i class="la la-trash"></i></button>

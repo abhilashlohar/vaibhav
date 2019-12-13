@@ -28,21 +28,28 @@
                         @enderror
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
-                        <div class="col-lg-9 col-xl-6">
-                            <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/category.png)"></div>
-                                <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                    <i class="fa fa-pen"></i>
-                                    <input type="file" name="image_add" accept=".png, .jpg, .jpeg">
-                                </label>
-                                <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                    <i class="fa fa-times"></i>
-                                </span>
+                    <div class="form-group">
+                        <div class="row @error('image_add') is-invalid @enderror">
+                            <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
+                            <div class="col-lg-9 col-xl-6">
+                                <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
+                                    <div class="kt-avatar__holder" style="background-image: url(../../../../themes/metronic/theme/default/demo1/dist/assets/media/users/category.png)"></div>
+                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                                        <i class="fa fa-pen"></i>
+                                        <input type="file" name="image_add" accept=".png, .jpg, .jpeg" required="required">
+                                    </label>
+                                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                                        <i class="fa fa-times"></i>
+                                    </span>
+                                </div>
+                                <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
                             </div>
-                            <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
                         </div>
+                        @error('image_add')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
 
                 </div>
