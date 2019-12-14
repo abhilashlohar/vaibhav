@@ -55,14 +55,15 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('admin.login.create');
+        $permissions = Permission::all();
+
+        return view('admin.login.create', compact('permissions'));
     }
 
     public function store(Request $request)
     {
         $admin = Admin::create($request->all());
-        // $user->roles()->sync($request->input('roles', []));
-
+        $admin->permissions()->sync($request->input('permissions', []));
         return redirect()->route('users.index');
     }
 

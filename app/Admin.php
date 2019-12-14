@@ -35,6 +35,6 @@ class Admin extends Model
 
     public function permissions()
     {
-        return $this->belongsToMany('App/Permission');
+        return $this->belongsToMany('App\Permission', 'permission_admins');
     }
 }

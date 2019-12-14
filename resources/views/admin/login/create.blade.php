@@ -47,7 +47,21 @@
                             </span>
                         @enderror
                     </div>
+                    <div class="form-group">
+                        <label for="name">Permission *</label>
+                        <select name="permissions[]" id="permission" class="form-control @error('permissions') is-invalid @enderror" multiple="multiple" required>
+                            <option value="">---Select---</option>
+                            @foreach ($permissions as $permission)
+                                <option value="{{ $permission->id }}">{{ $permission->title }}</option>
+                            @endforeach
+                        </select>
 
+                        @error('permissions')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
 
                 </div>
                 <div class="kt-portlet__foot">
@@ -66,6 +80,24 @@
 
 @section ('footer-script')
 
-<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var KTFormWidgets = function() {
+    var e;
+    return {
+        init: function() {
+            ! function() {
+                $("#permission").select2({
+                    placeholder: "Select a category"
+                }), $("#permission").on("select2:change", function() {
+                    e.element($(this))
+                });
+            }()
+        }
+    }
+}();
+jQuery(document).ready(function() {
+    KTFormWidgets.init()
+});
+</script>
 
 @endsection
