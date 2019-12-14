@@ -27,4 +27,5 @@ Route::prefix('sarkar')->group(function () {
     
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');
+    Route::resource('blog-categories','admin\BlogCategoryController');
 });
