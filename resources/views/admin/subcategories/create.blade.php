@@ -28,7 +28,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="name">Name *</label>
+                        <label for="name">Category *</label>
                         <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                             <option value="">---Select---</option>
                             @foreach ($categories as $category)

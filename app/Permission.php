@@ -35,4 +35,9 @@ class Permission extends Model
           'title.unique' => 'The title is already exists.'
       ];
     }
+
+    public function admins()
+    {
+        return $this->belongsToMany('App\Admin', 'permission_admins');
+    }
 }
