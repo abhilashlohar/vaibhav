@@ -18,7 +18,7 @@ class Permission extends Model
     public static function rules($id = '') 
     {
       $rules =  [
-          'name' => [
+          'title' => [
             'required', 
             Rule::unique('permissions')->where(function ($query) {
                 return $query->where('deleted', false);

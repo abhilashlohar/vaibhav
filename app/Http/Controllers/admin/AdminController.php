@@ -40,19 +40,37 @@ class AdminController extends Controller
 
         return view('admin.login.login');
     }
+
     public function index()
     {
-        
-        $admins = Admin::all();
-dd($admins);
+        $admins = Admin::paginate(5);
         return view('admin.login.index',compact('admins'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin.login.create');
+    }
+
+    public function store(Request $request)
+    {
+        $admin = Admin::create($request->all());
+        // $user->roles()->sync($request->input('roles', []));
+
+        return redirect()->route('users.index');
+    }
+
     public function AdminEdit(Admin $admin)
     {
-        dd($admin);
-        //return view('admin.login.edit',compact('admin'));
+        return view('admin.login.edit',compact('admin'));
     }
+
     public function dashboard(Request $request)
     {
 

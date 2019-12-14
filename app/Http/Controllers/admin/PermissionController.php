@@ -5,9 +5,14 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Permission;
 use Illuminate\Http\Request;
+use App\Http\Middleware\CheckAuth;
 
 class PermissionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(CheckAuth::class);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +20,11 @@ class PermissionController extends Controller
      */
     public function index()
     {
-        //
+        $pagesize = 5;
+        $permissions = Permission::latest()->where('deleted',0)->paginate($pagesize);
+
+        return view('admin.permissions.index',compact('permissions'))
+            ->with('i', (request()->input('page', 1) - 1) * $pagesize);
     }
 
     /**
@@ -25,7 +34,7 @@ class PermissionController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.permissions.create');
     }
 
     /**
@@ -36,7 +45,9 @@ class PermissionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $permission = Permission::create($request->all());
+
+        return redirect()->route('permissions.index');
     }
 
     /**
@@ -58,7 +69,7 @@ class PermissionController extends Controller
      */
     public function edit(Permission $permission)
     {
-        //
+        return view('admin.permissions.edit', compact('permission'));
     }
 
     /**
@@ -70,7 +81,9 @@ class PermissionController extends Controller
      */
     public function update(Request $request, Permission $permission)
     {
-        //
+        $permission->update($request->all());
+
+        return redirect()->route('permissions.index');
     }
 
     /**
@@ -81,6 +94,8 @@ class PermissionController extends Controller
      */
     public function destroy(Permission $permission)
     {
-        //
+        $permission->deleted = true;
+        $permission->save();
+        return back();
     }
 }

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
-
+use Hash;
 class Admin extends Model
 {
     protected $fillable = [
@@ -24,6 +24,13 @@ class Admin extends Model
             Rule::unique('admins')->ignore($id)
           ]
       ];
+    }
+
+    public function setPasswordAttribute($input)
+    {
+        if ($input) {
+            $this->attributes['password'] = app('hash')->needsRehash($input) ? Hash::make($input) : $input;
+        }
     }
 
     public function permissions()
