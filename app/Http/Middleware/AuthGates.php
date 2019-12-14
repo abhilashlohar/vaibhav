@@ -10,9 +10,9 @@ class AuthGates
 {
     public function handle($request, Closure $next)
     {
-        $admin = \CheckAuth::admin();
-
-        if (!app()->runningInConsole() && $admin) {
+        // $admin = \CheckAuth::admin();
+        // return 0;
+        if (!app()->runningInConsole()) {
             $admins = Admin::with('permissions')->get();
 
             foreach ($admins as $admin) {

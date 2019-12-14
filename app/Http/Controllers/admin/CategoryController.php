@@ -21,6 +21,8 @@ class CategoryController extends Controller
 
     public function index()
     {
+        //abort_unless(\Gate::allows('category_list'), 403);
+
         $categories = Category::latest()->where('deleted',0)->paginate(5);
 
         return view('admin.categories.index',compact('categories'))

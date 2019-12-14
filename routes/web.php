@@ -16,10 +16,11 @@ Auth::routes();
 Route::get('/', 'HomeController@home')->name('home');
 
 Route::prefix('sarkar')->group(function () {
+	
 	Route::resource('/users','admin\AdminController');
+
     Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
-    Route::get('/edit/{id}', 'admin\AdminController@AdminEdit')->name('AdminEdit');
     
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 

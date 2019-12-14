@@ -8,19 +8,19 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        Update Category
+                        Update User
                     </h3>
                 </div>
             </div>
             <!--begin::Form-->
-            <form action="{{ route('categories.update',$category->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            <form action="{{ route('users.update', $admin->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
             @csrf
             @method('PUT')
                 <div class="kt-portlet__body">
 
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $category->name }}" required  autofocus>
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $admin->name }}" required  autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -29,23 +29,35 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <div class="row @error('image_add') is-invalid @enderror">
-                            <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
-                            <div class="col-lg-9 col-xl-6">
-                                <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                    <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->image) }}')"></div>
-                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                        <i class="fa fa-pen"></i>
-                                        <input type="file" name="image_add" accept=".png, .jpg, .jpeg">
-                                    </label>
-                                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                        <i class="fa fa-times"></i>
-                                    </span>
-                                </div>
-                                <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                            </div>
-                        </div>
-                        @error('image_add')
+                        <label for="email">Email *</label>
+                        <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $admin->email }}" required  autofocus>
+
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Password *</label>
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ $admin->password }}" required  autofocus>
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Permission *</label>
+                        <select name="permissions[]" id="permission" class="form-control @error('permissions') is-invalid @enderror" multiple="multiple" required>
+                            <option value="">---Select---</option>
+                            @foreach ($permissions as $permission)
+                                <option value="{{ $permission->id }}"  {{ (in_array($permission->id, old('permissions', [])) || isset($admin) && $admin->permissions->contains($permission->id)) ? 'selected' : '' }}>{{ $permission->title }}</option>
+                            @endforeach
+                        </select>
+
+                        @error('permissions')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
@@ -56,7 +68,7 @@
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <button type="submit" class="btn btn-primary">Submit</button>
-                        <a class="btn btn-secondary" href="{{ route('categories.index') }}">Cancel</a>
+                        <a class="btn btn-secondary" href="{{ route('users.index') }}">Cancel</a>
                     </div>
                 </div>
             </form>
@@ -69,6 +81,24 @@
 
 @section ('footer-script')
 
-<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
+<script type="text/javascript">
+    var KTFormWidgets = function() {
+    var e;
+    return {
+        init: function() {
+            ! function() {
+                $("#permission").select2({
+                    placeholder: "Select a permission"
+                }), $("#permission").on("select2:change", function() {
+                    e.element($(this))
+                });
+            }()
+        }
+    }
+}();
+jQuery(document).ready(function() {
+    KTFormWidgets.init()
+});
+</script>
 
 @endsection

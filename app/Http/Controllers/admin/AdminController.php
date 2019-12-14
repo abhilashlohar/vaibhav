@@ -26,16 +26,16 @@ class AdminController extends Controller
         $email      = $request->all()['email'];
         $password   = $request->all()['password'];
         
-        $admin = Admin::where([
-            ['email', '=', $email],
-            ['password', '=', md5($password)],
-        ])->first();
+        $admin = Admin::where('email', '=', $email)->first();
+        
+        if(Hash::check($password, $admin->password))
+        {
+            if (isset($admin->id)) {
+                $request->session()->put('admin_id', $admin->id);
+                $request->session()->put('admin_name', $admin->name);
 
-        if (isset($admin->id)) {
-            $request->session()->put('admin_id', $admin->id);
-            $request->session()->put('admin_name', $admin->name);
-
-            return redirect()->route('Admin.dashboard');
+                return redirect()->route('Admin.dashboard');
+            }
         }
 
         return view('admin.login.login');
@@ -67,14 +67,25 @@ class AdminController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function AdminEdit(Admin $admin)
+    public function edit($id)
     {
-        return view('admin.login.edit',compact('admin'));
+        $admin = Admin::find($id);
+        $permissions = Permission::all();
+        $admin->load('permissions');
+
+        return view('admin.login.edit',compact('admin', 'permissions'));
+    }
+    public function update(Request $request, $id)
+    {
+        $admin = Admin::find($id);
+        $admin->update($request->all());
+        $admin->permissions()->sync($request->input('permissions', []));
+
+        return redirect()->route('users.index');
     }
 
     public function dashboard(Request $request)
     {
-
         return view('admin.login.dashboard');
     }
 }

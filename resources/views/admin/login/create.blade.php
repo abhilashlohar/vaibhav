@@ -87,7 +87,7 @@
         init: function() {
             ! function() {
                 $("#permission").select2({
-                    placeholder: "Select a category"
+                    placeholder: "Select a permission"
                 }), $("#permission").on("select2:change", function() {
                     e.element($(this))
                 });
