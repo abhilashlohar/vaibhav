@@ -185,6 +185,44 @@
                                     <span class="kt-menu__link-text">Sub Category</span>
                                 </a>
                             </li>
+
+                            <li class="kt-menu__item kt-menu__item--submenu" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                    <i class="kt-menu__link-icon fa fa-unlock-alt"></i>
+                                    <span class="kt-menu__link-text">Blogs</span>
+                                    <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                                </a>
+                                <div class="kt-menu__submenu " kt-hidden-height="80" style="display: none; overflow: hidden;">
+                                    <span class="kt-menu__arrow"></span>
+                                    <ul class="kt-menu__subnav">
+                                        <li class="kt-menu__item " aria-haspopup="true">
+                                            <a href="#" class="kt-menu__link ">
+                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="kt-menu__link-text">All Blogs</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item " aria-haspopup="true">
+                                            <a href="#" class="kt-menu__link ">
+                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="kt-menu__link-text">New Blog</span>
+                                            </a>
+                                        </li>
+                                        <li class="kt-menu__item " aria-haspopup="true">
+                                            <a href="{{ route('blog-categories.index') }}" class="kt-menu__link ">
+                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
+                                                    <span></span>
+                                                </i>
+                                                <span class="kt-menu__link-text">Blog Category</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+
                         </ul>
 
                         
