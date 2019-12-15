@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use File;
+use Gate;
 
 class CategoryController extends Controller
 {
@@ -22,7 +23,8 @@ class CategoryController extends Controller
 
     public function index()
     {
-        //abort_unless(\Gate::allows('category_list'), 403);
+        dd(Gate::denies('category_list'));
+        abort_unless(Gate::allows('category_list'), 403);
 
         $categories = Category::latest()->where('deleted',0)->paginate(5);
 
@@ -49,16 +51,16 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(Category::rules(), Category::messages());
-        
+
         if ($request->hasFile('image_add')) {
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;  
+            $fileName = time().'.'.$extension;
             $path = $request->image_add->storeAs('category', $fileName);
             $request->request->add(['image' => $fileName]);
         }
         Category::create($request->all());
-   
+
         return redirect()->route('categories.index')
                         ->with('success','Category created successfully.');
     }
@@ -93,28 +95,28 @@ class CategoryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Category $category)
-    {   
+    {
         $request->validate(Category::rules($category->id), Category::messages());
 
         if($request->hasFile('image_add'))
         {
             $destinationPath = storage_path('app/public/category');
-        
+
             File::delete($destinationPath.'/'.$category->image);  /// Unlink File
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;  
+            $fileName = time().'.'.$extension;
             $path = $request->image_add->storeAs('category', $fileName);
             $request->request->add(['image' => $fileName]);
         }
-        
+
         $category->update($request->all());
-  
+
         return redirect()->route('categories.index')
                         ->with('success','Category updated successfully');
     }
 
- 
+
 
     /**
      * Remove the specified resource from storage.
@@ -128,7 +130,7 @@ class CategoryController extends Controller
         {
             $category->deleted = true;
             $category->save();
-    
+
             return redirect()->route('categories.index')
                             ->with('success','Category deleted successfully');
         }
