@@ -7,6 +7,7 @@ use Illuminate\Validation\Rule;
 use Hash;
 class Admin extends Model
 {
+    // protected $guard = 'admin';
     protected $fillable = [
         'name', 'email', 'password',
     ];
@@ -15,12 +16,12 @@ class Admin extends Model
         'password',
     ];
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       return [
           'name' => 'required',
           'email' => [
-            'required', 
+            'required',
             Rule::unique('admins')->ignore($id)
           ]
       ];

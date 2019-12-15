@@ -25,9 +25,9 @@ class AdminController extends Controller
     {
         $email      = $request->all()['email'];
         $password   = $request->all()['password'];
-        
+
         $admin = Admin::where('email', '=', $email)->first();
-        
+
         if(Hash::check($password, $admin->password))
         {
             if (isset($admin->id)) {
