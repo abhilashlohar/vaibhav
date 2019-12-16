@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use File;
 use Gate;
+use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
@@ -23,8 +24,9 @@ class CategoryController extends Controller
 
     public function index()
     {
-        dd(Gate::denies('category_list'));
-        abort_unless(Gate::allows('category_list'), 403);
+        //dd(Gate::allows('category_list'), Response::HTTP_FORBIDDEN, '403 Forbidden');
+        //dd(Gate::allows('category_list'));
+        //abort_unless(Gate::allows('category_list'), 403);
 
         $categories = Category::latest()->where('deleted',0)->paginate(5);
 
