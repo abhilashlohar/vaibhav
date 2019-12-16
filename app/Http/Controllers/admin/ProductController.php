@@ -5,6 +5,8 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Product;
 use App\ProductImage;
+use App\Category;
+use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 
@@ -71,7 +73,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::where('deleted',0)->latest()->get();
+        $subCategories = SubCategory::where('deleted',0)->where('id',$product->category_id)->latest()->get();
+        return view('admin.products.edit',compact('product','categories','categories'));
     }
 
     /**
