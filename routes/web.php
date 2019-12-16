@@ -16,17 +16,18 @@ Auth::routes();
 Route::get('/', 'HomeController@home')->name('home');
 
 Route::prefix('sarkar')->group(function () {
-	
+
 	Route::resource('/users','admin\AdminController');
 
     Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
-    
+
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 
     Route::resource('/permissions','admin\PermissionController');
-    
+
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');
     Route::resource('blog-categories','admin\BlogCategoryController');
+    Route::resource('products','admin\ProductController');
 });
