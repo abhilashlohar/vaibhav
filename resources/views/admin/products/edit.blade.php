@@ -55,7 +55,7 @@
                                     <option value="">--Select--</option>
                                     @foreach ($subCategories as $subCategory)
                                     <option value="{{ $subCategory->id }}"
-                                        {{ ( ($product->sub_category_id)? $product->sub_category_id : old('sub_category_id') ==  $subCategory->id) ? 'selected' : '' }}> {{ $subCategory->name }} </option>
+                                        {{ (($product->sub_category_id)? $product->sub_category_id : old('sub_category_id') ==  $subCategory->id) ? 'selected' : '' }}> {{ $subCategory->name }} </option>
                                     @endforeach
                                 </select>
                                 @error('sub_category_id')
