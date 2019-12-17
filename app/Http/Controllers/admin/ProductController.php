@@ -74,8 +74,9 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $categories = Category::where('deleted',0)->latest()->get();
-        $subCategories = SubCategory::where('deleted',0)->where('id',$product->category_id)->latest()->get();
-        return view('admin.products.edit',compact('product','categories','categories'));
+        $subCategories = SubCategory::where('deleted',0)->where('category_id',$product->category_id)->latest()->get();
+        $relatedProducts = Product::where('deleted',0)->latest()->get();
+        return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts'));
     }
 
     /**
@@ -87,7 +88,12 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $request->validate(Product::rules($product->id), Product::messages());
+    
+        $product->update($request->all());
+  
+        return redirect()->route('products.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
@@ -98,6 +104,10 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        $product->deleted = true;
+        $product->save();
+  
+        return redirect()->route('products.index')
+                        ->with('success','Product deleted successfully');
     }
 }

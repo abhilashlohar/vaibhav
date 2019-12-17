@@ -48,17 +48,17 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(SubCategory::rules(), SubCategory::messages());
-        
+
         if ($request->hasFile('image_add')) {
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;  
+            $fileName = time().'.'.$extension;
             $path = $request->image_add->storeAs('subcategory', $fileName);
             $request->request->add(['image' => $fileName]);
         }
 
         SubCategory::create($request->all());
-   
+
         return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category created successfully.');
     }
@@ -83,7 +83,7 @@ class SubCategoryController extends Controller
     public function edit(SubCategory $subCategory)
     {
         $categories = Category::where('deleted',0)->latest()->get();
-        
+
         return view('admin.subcategories.edit',compact('subCategory','categories'));
     }
 
@@ -100,16 +100,16 @@ class SubCategoryController extends Controller
         if($request->hasFile('image_add'))
         {
             $destinationPath = storage_path('app/public/subcategory');
-        
+
             File::delete($destinationPath.'/'.$subCategory->image);  /// Unlink File
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;  
+            $fileName = time().'.'.$extension;
             $path = $request->image_add->storeAs('subcategory', $fileName);
             $request->request->add(['image' => $fileName]);
         }
         $subCategory->update($request->all());
-  
+
         return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category updated successfully');
     }
@@ -124,14 +124,15 @@ class SubCategoryController extends Controller
     {
         $subCategory->deleted = true;
         $subCategory->save();
-  
+
         return redirect()->route('sub-categories.index')
                         ->with('success','Sub Category deleted successfully');
     }
 
     public function list(Request $request)
     {
+
         $subCategories = SubCategory::latest()->where('category_id', $request->category_id)->where('deleted', 0)->get();
-        return view('subcategories.list', compact('subCategories'));
+        return view('admin.subcategories.list', compact('subCategories'));
     }
 }
