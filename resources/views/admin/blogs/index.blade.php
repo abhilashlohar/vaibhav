@@ -2,7 +2,7 @@
  
 @section('content')
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-portlet__head">
@@ -26,6 +26,8 @@
                     <table class="table">
                         <tr>
                             <th>Title</th>
+                            <th>Modified</th>
+                            <th>Status</th>
                         </tr>
                         @foreach ($blogs as $blog)
                         <tr>
@@ -33,6 +35,14 @@
                                 <a href="{{ route('blogs.edit', $blog->id) }}"> 
                                     {{ $blog->title }}
                                 </a>
+                            </td>
+                            <td><?php echo humanTiming($blog->updated_at); ?></td>
+                            <td>
+                                @if ($blog->status=='draft')
+                                    <span class="kt-badge  kt-badge--info kt-badge--inline kt-badge--pill">Draft</span>
+                                @else
+                                    <span class="kt-badge  kt-badge--success kt-badge--inline kt-badge--pill">Published</span>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

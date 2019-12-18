@@ -72,4 +72,20 @@ class BlogController extends Controller
         return redirect()->route('blogs.index')
                         ->with('success','Category updated successfully');
     }
+
+    public function uploadImg(Request $request) {
+
+        $file = $request->blogImg;
+        $extension = $request->blogImg->extension();
+        $fileName = time().'.'.$extension;
+        if ($request->blogImg->storeAs('blog/'.$request->blog_id, $fileName)) {
+            $url = '/storage/blog/'.$request->blog_id.'/'.$fileName;
+            $data = ['status' => 'success', 'url' => $url];
+        } else {
+            $data = ['status' => 'fail'];
+        }
+        
+
+        echo json_encode($data);
+    }
 }

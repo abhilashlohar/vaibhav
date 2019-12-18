@@ -118,8 +118,72 @@
 
 
 @section ('footer-script')
+<script type="text/javascript">
+    "use strict";
+    var KTSummernoteDemo={
+        init:function(){
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $(".summernote").summernote({
+                height:300,
+                callbacks: {
+                    onImageUpload: function(files) {
+                        if (files.length == 1) {
+
+                            if (files[0].size>2097152) {
+                              alert("Try to upload file less than 2MB!");
+                              return;
+                            }
+
+                            var fileName = files[0].name;
+                            var idxDot = fileName.lastIndexOf(".") + 1;
+                            var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                            if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){}else{
+                              alert("Only jpg/jpeg and png files are allowed!");
+                              return;
+                            }   
+
+                            var data = new FormData();
+                            data.append("blogImg", files[0]);
+                            data.append("blog_id", <?php echo $Blog->id; ?> );
+                            $.ajax({
+                                data: data,
+                                type: "POST",
+                                url: "{{ route('blogs.uploadImg') }}",
+                                cache: false,
+                                dataType: "json",
+                                enctype: "multipart/form-data",
+                                contentType: false,
+                                processData: false,
+                                success: function(data) {
+                                    if (data.status == 'success') {
+                                        var imgNode = $("<img>").attr("src",data.url);
+                                        $("#content").summernote("insertNode", imgNode[0]);
+                                    } else {
+                                        alert('Something went wrong.');
+                                        return;
+                                    }
+                                }
+                            });
+                        } else {
+                            alert('Please select single file.');
+                            return;
+                        }
+                        
+                      // upload image to server and create imgNode...
+                      // $summernote.summernote('insertNode', imgNode);
+                    }
+                  }
+            })
+        }
+    };
+    jQuery(document).ready(function(){KTSummernoteDemo.init()});
+</script>
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
-<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/editors/summernote.js" type="text/javascript"></script>
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
 @endsection
