@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 class Product extends Model
 {
     protected $guarded = [
-        'id', 'created_at', 'updated_at'
+        'id', 'product_image', 'product_image_delete'
     ];
 
     public static function rules($id = '')

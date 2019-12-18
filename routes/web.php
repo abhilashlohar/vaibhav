@@ -32,5 +32,6 @@ Route::prefix('sarkar')->group(function () {
     Route::post('/sub-categories.list','admin\SubCategoryController@list')->name('subcategorylist');
 
     Route::resource('blog-categories','admin\BlogCategoryController');
+    Route::resource('blogs','admin\BlogController');
     Route::resource('products','admin\ProductController');
 });
