@@ -4,16 +4,18 @@
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 <head>
     <meta charset="utf-8"/>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name') }}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--begin::Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
     <!--end::Fonts -->
 
-        
+
 
     <!--begin::Global Theme Styles(used by all pages) -->
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
@@ -24,7 +26,7 @@
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />        
+    <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Skins -->
 
     <link rel="shortcut icon" href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico" />
@@ -47,15 +49,15 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-37564768-1');
-    </script>   -->  
+    </script>   -->
 </head>
 <!-- end::Head -->
 
 <!-- begin::Body -->
 <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--transparent kt-aside--enabled kt-aside--fixed kt-page--loading"  >
-       
+
 <!-- begin:: Page -->
-            
+
     <!-- begin:: Header Mobile -->
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed " >
         <div class="kt-header-mobile__logo">
@@ -65,11 +67,11 @@
         </div>
         <div class="kt-header-mobile__toolbar">
             <button class="kt-header-mobile__toggler kt-header-mobile__toggler--left" id="kt_aside_mobile_toggler"><span></span></button>
-                    
+
             <button class="kt-header-mobile__topbar-toggler" id="kt_header_mobile_topbar_toggler"><i class="flaticon-more"></i></button>
         </div>
     </div>
-    <!-- end:: Header Mobile -->    
+    <!-- end:: Header Mobile -->
 
     <div class="kt-grid kt-grid--hor kt-grid--root">
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver kt-page">
@@ -114,12 +116,12 @@
                         -->
                     </div>
                 </div>
-                <!-- end:: Aside -->   
+                <!-- end:: Aside -->
 
                 <!-- begin:: Aside Menu -->
                 <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
-                    <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1"data-ktmenu-dropdown-timeout="500">       
-                        
+                    <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1"data-ktmenu-dropdown-timeout="500">
+
                         <ul class="kt-menu__nav ">
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('Admin.dashboard') }}" class="kt-menu__link ">
@@ -222,16 +224,24 @@
                                     </ul>
                                 </div>
                             </li>
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('products.index') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-clipboard-list"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Product</span>
+                                </a>
+                            </li>
 
                         </ul>
 
-                        
+
                     </div>
                 </div>
-                <!-- end:: Aside Menu -->            
+                <!-- end:: Aside Menu -->
             </div>
             <!-- end:: Aside -->
-            
+
             <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor kt-wrapper" id="kt_wrapper">
                 <!-- begin:: Header -->
                 <div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed " >
@@ -252,7 +262,7 @@
 
 
                         <!--begin: User Bar -->
-                        <div class="kt-header__topbar-item kt-header__topbar-item--user">    
+                        <div class="kt-header__topbar-item kt-header__topbar-item--user">
                             <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
                                 <div class="kt-header__topbar-user">
                                     <span class="kt-header__topbar-welcome kt-hidden-mobile">Hi,</span>
@@ -300,12 +310,12 @@
                                 <!--end: Navigation -->
                             </div>
                         </div>
-                        <!--end: User Bar -->   
+                        <!--end: User Bar -->
                     </div>
                     <!-- end:: Header Topbar -->
                 </div>
                 <!-- end:: Header -->
-                
+
                 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
                     <!-- begin:: Subheader -->
                     <div class="kt-subheader   kt-grid__item" id="kt_subheader"></div>
@@ -315,9 +325,9 @@
                     <div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
                     @yield ('content')
                     </div>
-                    <!-- end:: Content -->              
-                </div>              
-                
+                    <!-- end:: Content -->
+                </div>
+
                 <!-- begin:: Footer -->
                 <div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
                     <div class="kt-container  kt-container--fluid ">
@@ -326,7 +336,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- end:: Footer -->           
+                <!-- end:: Footer -->
             </div>
         </div>
     </div>
@@ -338,8 +348,8 @@
     <i class="fa fa-arrow-up"></i>
 </div>
 <!-- end::Scrolltop -->
-       
-    
+
+
 
 <!-- begin::Global Config(global config for global JS sciprts) -->
 <script>
@@ -379,7 +389,7 @@
    <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/scripts.bundle.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
 @yield ('footer-script')
-        
+
 </body>
 <!-- end::Body -->
 </html>
