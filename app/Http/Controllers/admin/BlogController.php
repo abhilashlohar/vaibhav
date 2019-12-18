@@ -6,12 +6,21 @@ use App\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use File;
 
 class BlogController extends Controller
 {
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+    }
+
+    public function index()
+    {
+        $blogs = Blog::latest()->paginate(5);
+
+        return view('admin.blogs.index',compact('blogs'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function create()
@@ -36,13 +45,31 @@ class BlogController extends Controller
 
     public function update(Request $request, Blog $Blog)
     {   
-        // $request->validate(Blog::rules($Blog->id), Blog::messages());
+        $request->validate(Blog::rules($Blog->id), Blog::messages());
 
-        dd($request->all());
+
+        $oldImg = storage_path('app/public/blog/'.$Blog->id.'/'.$Blog->getOriginal()['featured_image']);
+        if (file_exists($oldImg)) File::delete($oldImg); 
+
+
+        if($request->hasFile('f_image'))
+        {
+            $file = $request->f_image;
+            $extension = $request->f_image->extension();
+            $fileName = 'featured-image'.'.'.$extension;
+            $path = $request->f_image->storeAs('blog/'.$Blog->id, $fileName);
+            $request->request->add(['featured_image' => $fileName]);
+        }
+        else
+        {
+            $request->request->add(['featured_image' => null]);
+        }
+
+        
 
         $Blog->update($request->all());
   
-        return redirect()->route('blog-categories.index')
+        return redirect()->route('blogs.index')
                         ->with('success','Category updated successfully');
     }
 }

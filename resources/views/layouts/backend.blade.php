@@ -198,7 +198,7 @@
                                     <span class="kt-menu__arrow"></span>
                                     <ul class="kt-menu__subnav">
                                         <li class="kt-menu__item " aria-haspopup="true">
-                                            <a href="#" class="kt-menu__link ">
+                                            <a href="{{ route('blogs.index') }}" class="kt-menu__link ">
                                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
                                                     <span></span>
                                                 </i>
@@ -206,7 +206,7 @@
                                             </a>
                                         </li>
                                         <li class="kt-menu__item " aria-haspopup="true">
-                                            <a href="#" class="kt-menu__link ">
+                                            <a href="{{ route('blogs.create') }}" class="kt-menu__link ">
                                                 <i class="kt-menu__link-bullet kt-menu__link-bullet--dot">
                                                     <span></span>
                                                 </i>
