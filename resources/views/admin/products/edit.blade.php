@@ -214,74 +214,34 @@
                             </div>
                         </div>
                     </div>
-                    <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div>
+                    {{-- <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div> --}}
                     <div class="row">
                         <div class="col-md-12">
-                            <div id="product_image_repeater">
-                                <div class="form-group form-group-last row" id="product_image_repeater">
-                                    <label  class="col-lg-2 col-form-label">Product Image:</label>
-                                    <div data-repeater-list="" class="col-lg-10">
-                                        <div class="col-md-12 col-form-label row align-items-center">
-                                            <div class="col-md-6">
-                                                <label>Image</label>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <label>Primary</label>
-                                            </div>
-                                            <div class="col-md-4">
+                            <div class="table-responsive">
+                                <table class="table table-head-bg-brand">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Primary</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="product-image">
 
-                                            </div>
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="3">
+                                                <button type="button"  id="add-row" class="btn btn-bold btn-sm btn-label-brand"><i class="la la-plus"></i> Add</button>
 
-                                        </div>
-                                        <div data-repeater-item class="form-group row align-items-center">
-                                            <div class="col-md-6">
-                                                <div class="kt-form__group--inline">
-                                                    <div class="kt-form__control">
-                                                        <div class="kt-avatar kt-avatar--outline product_image" id="kt_user_avatar_1">
-                                                            <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->image) }}')"></div>
-                                                            <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                                                <i class="fa fa-pen"></i>
-                                                                <input type="file"  accept=".png, .jpg, .jpeg">
-                                                            </label>
-                                                            <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                                                <i class="fa fa-times"></i>
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="d-md-none kt-margin-b-10"></div>
-                                            </div>
-                                            <div class="col-md-2">
-                                                <div class="kt-form__group--inline">
-                                                    <div class="kt-radio-inline">
-                                                        <label class="kt-radio kt-radio--state-success">
-                                                            <input type="radio"> &nbsp
-                                                            <span></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4">
-                                                <a href="javascript:;" data-repeater-delete="" class="btn-sm btn btn-label-danger btn-bold">
-                                                    <i class="la la-trash-o"></i>
-                                                    Delete
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                 </div>
-                                 <div class="form-group form-group-last row">
-                                    <label class="col-lg-2 col-form-label"></label>
-                                    <div class="col-lg-4">
-                                        <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
-                                            <i class="la la-plus"></i> Add
-                                        </a>
-                                    </div>
-                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
@@ -294,6 +254,35 @@
         </div>
     </div>
 </div>
+<table style="display:none;">
+    <tbody id="table-clone">
+        <tr>
+            <td>
+                <div class="kt-avatar kt-avatar--outline product_image" id="product_image_dummy">
+                    <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$product->image) }}')"></div>
+                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                        <i class="fa fa-pen"></i>
+                        <input type="file" name="product_rows[0]['image']"  accept=".png, .jpg, .jpeg">
+                    </label>
+                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                        <i class="fa fa-times"></i>
+                    </span>
+                </div>
+            </td>
+            <td>
+                <div class="kt-radio-inline">
+                    <label class="kt-radio kt-checkbox--state-success">
+                        <input type="radio" class="primary"  name="product_rows[0]['primary']" > &nbsp
+                        <span></span>
+                    </label>
+                </div>
+            </td>
+            <td>
+                <button type="button" class="btn-sm btn btn-label-danger btn-bold deleteRow"><i class="la la-trash-o"></i> Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
 
 @endsection
 
@@ -304,14 +293,7 @@
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
 
 <script type="text/javascript">
-    var KTAvatarDemo = {
-        init: function() {
-            new KTAvatar("product_image")
-        }
-    };
-    KTUtil.ready(function() {
-        KTAvatarDemo.init()
-    });
+
 
     var KTFormWidgets = function() {
     var e;
@@ -354,29 +336,39 @@ var KTTagify = {
     }
 };
 
-var KTFormRepeater = {
-    init: function() {
-        $("#product_image_repeater").repeater({
-            initEmpty: !1,
-            defaultValues: {
-                "text-input": "foo"
-            },
-            show: function() {
-                $(this).slideDown();
-            },
-            hide: function(e) {
-                $(this).slideUp(e)
-            }
-        })
-    }
-};
+// var KTFormRepeater = {
+//     init: function() {
+//         $("#product_image_repeater").repeater({
+//             initEmpty: !1,
+//             defaultValues: {
+//                 "text-input": "foo"
+//             },
+//             show: function() {
+//                 $(this).slideDown();
+//                 console.log($(this));
+//                 var KTAvatarDemo = {
+//                     init: function() {
+//                         new KTAvatar("product_image")
+//                     }
+//                 };
+//                 KTUtil.ready(function() {
+//                     KTAvatarDemo.init()
+//                 });
+
+//             },
+//             hide: function(e) {
+//                 $(this).slideUp(e)
+//             }
+//         })
+//     }
+// };
 
 
 
 jQuery(document).ready(function() {
     KTFormWidgets.init();
     KTTagify.init();
-    KTFormRepeater.init();
+    // KTFormRepeater.init();
 
     $.ajaxSetup({
         headers: {
@@ -392,12 +384,38 @@ jQuery(document).ready(function() {
            url:"{{ route('subcategorylist') }}",
            data:{category_id:category_id},
            success:function(data){
-                console.log(data);
                 $( "#sub_category_id" ).html(data).select2({
                     placeholder: "Select a subcategory"
                 });
            }
         });
+    });
+
+    $("#add-row").on("click", function(e){
+        var $cloneTr = $('#table-clone tr').clone();
+        // console.log(cloneTr.find('.product_image'));
+        var rowLen = $('#product-image tr').length+1;
+        var rowLenInt = $('#product-image tr').length;
+        $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
+        $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
+        $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
+        $('#product-image').append($cloneTr);
+
+        var KTAvatarDemo = {
+            init: function() {
+                new KTAvatar("product_image_"+rowLen)
+            }
+        };
+        KTUtil.ready(function() {
+            KTAvatarDemo.init()
+        });
+    });
+    $(document).on('change', '.primary', function(){
+        $("input[type=radio].primary").prop("checked", false);
+        $(this).prop("checked", true);
+    });
+    $(document).on('change', '.deleteRow', function(){
+        $(this).remove();
     });
 });
 </script>
