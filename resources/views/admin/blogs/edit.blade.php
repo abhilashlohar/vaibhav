@@ -47,7 +47,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="excerpt">Excerpt</label>
-                                <textarea class="form-control" id="excerpt" name="excerpt" rows="4"></textarea>
+                                <textarea class="form-control" id="excerpt" name="excerpt" rows="4">{{ $Blog->excerpt }}</textarea>
                             </div>
                         </div>
 
@@ -55,14 +55,18 @@
 
                         <div class="col-md-5">
                             <div class="form-group">
-                                <div class="row @error('featured_image') is-invalid @enderror">
-                                    <label class="col-xl-3 col-lg-3 col-form-label" for="featured_image">Featured Image</label>
+                                <div class="row @error('f_image') is-invalid @enderror">
+                                    <label class="col-xl-3 col-lg-3 col-form-label" for="f_image">Featured Image</label>
                                     <div class="col-lg-9 col-xl-6">
                                         <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                            <div class="kt-avatar__holder" style="background-image: url(<?php echo url('/'); ?>/img/no-image.png)"></div>
+                                            <?php 
+                                            $showImg = url('/').'/img/no-image.png';
+                                            if ($Blog->featured_image) $showImg = asset('storage/blog/'.$Blog->id.'/'.$Blog->featured_image);
+                                            ?>
+                                            <div class="kt-avatar__holder" style="background-image: url(<?php echo $showImg; ?>)"></div>
                                             <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                                 <i class="fa fa-pen"></i>
-                                                <input type="file" name="featured_image" accept=".png, .jpg, .jpeg" required="required">
+                                                <input type="file" name="f_image" accept=".png, .jpg, .jpeg">
                                             </label>
                                             <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                                 <i class="fa fa-times"></i>
@@ -71,7 +75,7 @@
                                         <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
                                     </div>
                                 </div>
-                                @error('featured_image')
+                                @error('f_image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -86,14 +90,14 @@
                     <div class="row">
                         <div class="col-md-12">
                             <label for="content">Blog Content</label>
-                            <div class="summernote" name="content"></div>
+                            <textarea class="summernote" id="content" name="content">{{ $Blog->content }}</textarea>
                         </div>
                     </div>
 
                     <div class="form-group row mt-3">
-                        <label class="col-form-label col-lg-2 col-sm-12">Publish Status</label>
+                        <label class="col-form-label col-lg-2 col-sm-12" for="status">Publish Status</label>
                         <div class="col-lg-9 col-md-10 col-sm-12">
-                            <input name="status" data-switch="true" type="checkbox" checked="checked" data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
+                            <input name="status" id="status"  data-switch="true" type="checkbox" @if($Blog->status=="published") checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
                         </div>
                     </div>
 
