@@ -33,7 +33,9 @@ Route::prefix('sarkar')->group(function () {
 
     Route::resource('blog-categories','admin\BlogCategoryController');
     Route::resource('blogs','admin\BlogController');
+
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
+
 
 
     Route::resource('products','admin\ProductController');

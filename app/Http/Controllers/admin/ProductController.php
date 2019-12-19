@@ -10,6 +10,7 @@ use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use File;
+use Illuminate\Support\Facades\DB;
 
 
 class ProductController extends Controller
@@ -93,19 +94,46 @@ class ProductController extends Controller
 
         $request->validate(Product::rules($product->id), Product::messages());
 
-        if($request->product_image)
+        if(isset($request->product_image_delete))
         {
-            dd($request->product_image);
-            // $destinationPath = storage_path('app/public/category');
-
-            // File::delete($destinationPath.'/'.$category->image);  /// Unlink File
-            // $file = $request->image_add;
-            // $extension = $request->image_add->extension();
-            // $fileName = time().'.'.$extension;
-            // $path = $request->image_add->storeAs('category', $fileName);
-            // $request->request->add(['image' => $fileName]);
+            foreach($request->product_image_delete as $product_delete)
+            {
+                DB::table('product_images')->where('id', '=', $product_delete['id'])->delete();
+            }
         }
-        dd(1);
+        if(isset($request->product_image))
+        {
+
+            foreach($request->product_image as $product_image)
+            {
+
+                if(isset($product_image['image']))
+                {
+                    $destinationPath = storage_path('app/public/product');
+
+                    // File::delete($destinationPath.'/'.$category->image);  /// Unlink File
+                    $file = $product_image['image'];
+                    $extension = $product_image['image']->extension();
+                    $fileName = time().'.'.$extension;
+                    $path = $product_image['image']->storeAs('product', $fileName);
+                }
+                else if(isset($product_image['old_image']))
+                {
+                    $fileName = $product_image['old_image'];
+                }
+                if(isset($product_image['primary']))
+                {
+                    $primary = $product_image['primary'];
+                }
+                else
+                {
+                    $primary = 0;
+                }
+                DB::table('product_images')->updateOrInsert([
+                    ['product_id', $product->id, 'image' => $fileName, 'is_primary' => $primary]
+                ]);
+            }
+        }
 
         $product->update($request->all());
 

@@ -262,7 +262,7 @@
                     <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$product->image) }}')"></div>
                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                         <i class="fa fa-pen"></i>
-                        <input type="file" name="product_rows[0]['image']"  accept=".png, .jpg, .jpeg">
+                        <input type="file" name="product_rows[0]['image']"  accept=".png, .jpg, .jpeg" required>
                     </label>
                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                         <i class="fa fa-times"></i>
@@ -272,7 +272,7 @@
             <td>
                 <div class="kt-radio-inline">
                     <label class="kt-radio kt-checkbox--state-success">
-                        <input type="radio" class="primary"  name="product_rows[0]['primary']" > &nbsp
+                        <input type="radio" value="1" class="primary"  name="product_rows[0]['primary']" > &nbsp
                         <span></span>
                     </label>
                 </div>
