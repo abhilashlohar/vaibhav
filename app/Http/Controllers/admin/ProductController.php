@@ -9,6 +9,8 @@ use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use File;
+
 
 class ProductController extends Controller
 {
@@ -88,10 +90,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
+
         $request->validate(Product::rules($product->id), Product::messages());
-    
+
+        if($request->product_image)
+        {
+            dd($request->product_image);
+            // $destinationPath = storage_path('app/public/category');
+
+            // File::delete($destinationPath.'/'.$category->image);  /// Unlink File
+            // $file = $request->image_add;
+            // $extension = $request->image_add->extension();
+            // $fileName = time().'.'.$extension;
+            // $path = $request->image_add->storeAs('category', $fileName);
+            // $request->request->add(['image' => $fileName]);
+        }
+        dd(1);
+
         $product->update($request->all());
-  
+
         return redirect()->route('products.index')
                         ->with('success','Product updated successfully');
     }
@@ -106,7 +123,7 @@ class ProductController extends Controller
     {
         $product->deleted = true;
         $product->save();
-  
+
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
     }
