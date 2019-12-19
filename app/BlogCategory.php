@@ -33,4 +33,9 @@ class BlogCategory extends Model
           'name.unique' => 'The blog-category name is already exists.',
       ];
     }
+
+    public function Blogs()
+    {
+        return $this->belongsToMany('App\Blog', 'category_blog');
+    }
 }

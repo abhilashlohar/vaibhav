@@ -1,7 +1,6 @@
 @extends ('layouts.backend')
 
 @section ('content')
-
 <div class="row">
     <div class="col-md-12">
         <div class="kt-portlet">
@@ -94,7 +93,28 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mt-3">
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label >Bold Checkboxes</label>
+                                @foreach ($BlogCategories as $BlogCategory)
+                                <div class="kt-checkbox-list">
+                                    <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">
+                                        <input 
+                                            type="checkbox" id="blog_category_ids" name="blog_category_ids[]" 
+                                            value="{{ $BlogCategory->id }}" 
+                                            {{ $Blog->BlogCategories->contains($BlogCategory->id) ? 'checked' : '' }} 
+                                        >
+                                         {{ $BlogCategory->name }}
+                                        <span></span>
+                                    </label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label class="col-form-label col-lg-2 col-sm-12" for="status">Publish Status</label>
                         <div class="col-lg-9 col-md-10 col-sm-12">
                             <input name="status" id="status"  data-switch="true" type="checkbox" @if($Blog->status=="published") checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >

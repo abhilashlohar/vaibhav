@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Blog;
+use App\BlogCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -40,7 +41,11 @@ class BlogController extends Controller
 
     public function edit(Blog $Blog)
     {
-        return view('admin.blogs.edit',compact('Blog'));
+
+        $BlogCategories = BlogCategory::where('deleted',0)->orderBy('name','asc')->get();
+
+
+        return view('admin.blogs.edit',compact('Blog', 'BlogCategories'));
     }
 
     public function update(Request $request, Blog $Blog)
@@ -68,6 +73,7 @@ class BlogController extends Controller
         
 
         $Blog->update($request->all());
+        $Blog->BlogCategories()->sync($request->blog_category_ids);
   
         return redirect()->route('blogs.index')
                         ->with('success','Category updated successfully');
