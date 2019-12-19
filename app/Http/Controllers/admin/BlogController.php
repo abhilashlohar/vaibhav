@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Blog;
+use App\BlogCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -40,7 +41,11 @@ class BlogController extends Controller
 
     public function edit(Blog $Blog)
     {
-        return view('admin.blogs.edit',compact('Blog'));
+
+        $BlogCategories = BlogCategory::where('deleted',0)->orderBy('name','asc')->get();
+
+
+        return view('admin.blogs.edit',compact('Blog', 'BlogCategories'));
     }
 
     public function update(Request $request, Blog $Blog)
@@ -68,8 +73,25 @@ class BlogController extends Controller
         
 
         $Blog->update($request->all());
+        $Blog->BlogCategories()->sync($request->blog_category_ids);
   
         return redirect()->route('blogs.index')
                         ->with('success','Category updated successfully');
+    }
+
+    public function uploadImg(Request $request) {
+
+        $file = $request->blogImg;
+        $extension = $request->blogImg->extension();
+        $fileName = time().'.'.$extension;
+        if ($request->blogImg->storeAs('blog/'.$request->blog_id, $fileName)) {
+            $url = '/storage/blog/'.$request->blog_id.'/'.$fileName;
+            $data = ['status' => 'success', 'url' => $url];
+        } else {
+            $data = ['status' => 'fail'];
+        }
+        
+
+        echo json_encode($data);
     }
 }

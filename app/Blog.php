@@ -42,6 +42,11 @@ class Blog extends Model
           'featured_image.max' => 'Image size is big from 2MB.'
       ];
     }
+
+    public function BlogCategories()
+    {
+        return $this->belongsToMany('App\BlogCategory', 'category_blog');
+    }
 }
 
 

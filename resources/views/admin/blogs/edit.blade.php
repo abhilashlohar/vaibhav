@@ -1,7 +1,6 @@
 @extends ('layouts.backend')
 
 @section ('content')
-
 <div class="row">
     <div class="col-md-12">
         <div class="kt-portlet">
@@ -94,7 +93,28 @@
                         </div>
                     </div>
 
-                    <div class="form-group row mt-3">
+                    <div class="row mt-3">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label >Bold Checkboxes</label>
+                                @foreach ($BlogCategories as $BlogCategory)
+                                <div class="kt-checkbox-list">
+                                    <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">
+                                        <input 
+                                            type="checkbox" id="blog_category_ids" name="blog_category_ids[]" 
+                                            value="{{ $BlogCategory->id }}" 
+                                            {{ $Blog->BlogCategories->contains($BlogCategory->id) ? 'checked' : '' }} 
+                                        >
+                                         {{ $BlogCategory->name }}
+                                        <span></span>
+                                    </label>
+                                </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label class="col-form-label col-lg-2 col-sm-12" for="status">Publish Status</label>
                         <div class="col-lg-9 col-md-10 col-sm-12">
                             <input name="status" id="status"  data-switch="true" type="checkbox" @if($Blog->status=="published") checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
@@ -118,8 +138,72 @@
 
 
 @section ('footer-script')
+<script type="text/javascript">
+    "use strict";
+    var KTSummernoteDemo={
+        init:function(){
 
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $(".summernote").summernote({
+                height:300,
+                callbacks: {
+                    onImageUpload: function(files) {
+                        if (files.length == 1) {
+
+                            if (files[0].size>2097152) {
+                              alert("Try to upload file less than 2MB!");
+                              return;
+                            }
+
+                            var fileName = files[0].name;
+                            var idxDot = fileName.lastIndexOf(".") + 1;
+                            var extFile = fileName.substr(idxDot, fileName.length).toLowerCase();
+                            if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){}else{
+                              alert("Only jpg/jpeg and png files are allowed!");
+                              return;
+                            }   
+
+                            var data = new FormData();
+                            data.append("blogImg", files[0]);
+                            data.append("blog_id", <?php echo $Blog->id; ?> );
+                            $.ajax({
+                                data: data,
+                                type: "POST",
+                                url: "{{ route('blogs.uploadImg') }}",
+                                cache: false,
+                                dataType: "json",
+                                enctype: "multipart/form-data",
+                                contentType: false,
+                                processData: false,
+                                success: function(data) {
+                                    if (data.status == 'success') {
+                                        var imgNode = $("<img>").attr("src",data.url);
+                                        $("#content").summernote("insertNode", imgNode[0]);
+                                    } else {
+                                        alert('Something went wrong.');
+                                        return;
+                                    }
+                                }
+                            });
+                        } else {
+                            alert('Please select single file.');
+                            return;
+                        }
+                        
+                      // upload image to server and create imgNode...
+                      // $summernote.summernote('insertNode', imgNode);
+                    }
+                  }
+            })
+        }
+    };
+    jQuery(document).ready(function(){KTSummernoteDemo.init()});
+</script>
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
-<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/editors/summernote.js" type="text/javascript"></script>
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
 @endsection
