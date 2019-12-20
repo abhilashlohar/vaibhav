@@ -70,8 +70,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="short_description">Short Description</label>
-                                <textarea class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ ($product->short_description)?$product->short_description : old('short_description') }}</textarea>
+                                <label for="short_description">Short Description *</label>
+                                <textarea required class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ ($product->short_description)?$product->short_description : old('short_description') }}</textarea>
                                 @error('short_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,9 +83,9 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="content">Description</label>
+                            <label for="content">Description *</label>
                             <div class="form-group">
-                                <textarea class="summernote" id="description" name="description">{{ ($product->description)?$product->description : old('description') }}</textarea>
+                                <textarea required class="summernote" id="description" name="description">{{ ($product->description)?$product->description : old('description') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -105,17 +105,17 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="stock_quantity">Stock Quantity *</label>
-                                <input type="text" id="stock_quantity" name="stock_quantity" class="form-control @error('stock_quantity') is-invalid @enderror" value="{{ ($product->stock_quantity)? $product->stock_quantity : old('stock_quantity') }}" required>
+                                <label for="sequence">Sequence *</label>
+                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}" required>
 
-                                @error('stock_quantity')
+                                @error('sequence')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="form-group">
                                 <label for="attribute_type">Attribute Type *</label>
                                 <select id="attribute_type" name="attribute_type" class="custom-select form-control @error('attribute_type') is-invalid @enderror" required>
@@ -129,7 +129,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -143,8 +143,21 @@
                                 @enderror
                             </div>
                         </div>
+
                     </div>
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="stock_quantity">Stock Quantity *</label>
+                                <input type="text" id="stock_quantity" name="stock_quantity" class="form-control @error('stock_quantity') is-invalid @enderror" value="{{ ($product->stock_quantity)? $product->stock_quantity : old('stock_quantity') }}" required>
+
+                                @error('stock_quantity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="regular_price">Regular Price *</label>
@@ -169,28 +182,24 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="sequence">Sequence *</label>
-                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}" required>
 
-                                @error('sequence')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
+                            <?php
+                            $related_product_ids = explode(',', $product->related_products);
+
+                            ?>
+
                             <div class="form-group">
                                 <label for="related_products">Related Products</label>
-                                <select id="related_products" multiple name="related_products[]" class="form-control @error('related_products') is-invalid @enderror" required>
+                                <select id="related_products" multiple name="related_products[]" class="form-control @error('related_products') is-invalid @enderror">
                                     <option value="">--Select--</option>
                                     @foreach ($relatedProducts as $relatedProduct)
                                     <option value="{{ $relatedProduct->id }}"
-                                        {{ ((($product->related_products)? $product->related_products : old('related_products')) ==  $relatedProduct->id) ? 'selected' : '' }}> {{ $relatedProduct->name }} </option>
+                                        @foreach($related_product_ids as $related_product_id) @if($relatedProduct->id == $related_product_id)selected="selected"@endif @endforeach
+                                        > {{ $relatedProduct->name }} </option>
+                                        {{-- {{ ((($product->related_products)? $product->related_products : old('related_products[]')) ==  $relatedProduct->id) ? 'selected' : '' }} --}}
                                     @endforeach
                                 </select>
                                 @error('related_products')
@@ -204,7 +213,7 @@
                             <div class="form-group">
                                 <label for="is_published">Publish Status</label>
                                     <br>
-                                    {{-- <input name="is_published" id="is_published" data-on-value="1"  data-switch="true" type="checkbox" @if($product->is_published=="1") checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" > --}}
+                                    <input name="is_published" id="is_published"  data-switch="true" type="checkbox" @if($product->is_published==1) checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
 
                             </div>
                         </div>

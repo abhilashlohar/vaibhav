@@ -22,19 +22,19 @@ class Blog extends Model
         });
     }
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       $rules =  [
           'title' => 'required',
           'featured_image' => 'mimes:jpeg,jpg,png|max:2048'
       ];
 
-      
+
 
       return $rules;
     }
 
-    public static function messages($id = '') 
+    public static function messages($id = '')
     {
       return [
           'title.required' => 'You must enter blog tite.',

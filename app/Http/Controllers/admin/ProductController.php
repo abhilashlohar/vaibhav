@@ -93,7 +93,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        // dd($request->all());
+
         $request->validate(Product::rules($product->id), Product::messages());
         $destinationPath = storage_path('app/public/product');
         if(isset($request->product_image_delete))
@@ -153,6 +153,11 @@ class ProductController extends Controller
             }
         }
 
+        if(isset($request->related_products))
+        {
+            $related_products = implode(',', $request->related_products);
+            $request->request->add(['related_products' => $related_products]);
+        }
         $product->update($request->all());
 
         return redirect()->route('products.index')
