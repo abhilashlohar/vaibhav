@@ -33,8 +33,10 @@ Route::prefix('sarkar')->group(function () {
 
     Route::resource('blog-categories','admin\BlogCategoryController');
     Route::resource('blogs','admin\BlogController');
+    Route::resource('enquiries','admin\EnquiryController');
 
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
+    
 
 
 
