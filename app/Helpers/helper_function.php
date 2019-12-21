@@ -23,3 +23,12 @@ function humanTiming ($date)
     }
 
 }
+
+
+function modules_dom() 
+{
+    return $modules_dom = [
+        'blog_create_edit' => ['create', 'edit', 'store', 'update'],
+        'blog_list' => ['index']
+    ];
+}
