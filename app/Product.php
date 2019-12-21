@@ -8,8 +8,18 @@ use Illuminate\Validation\Rule;
 class Product extends Model
 {
     protected $guarded = [
-        'id', 'product_image', 'product_image_delete'
+        'id', 'product_image', 'product_image_delete', 'product_image_delete'
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saving(function ($model) {
+            if (isset($model->is_published) && $model->is_published=='on') $model->is_published = 1;
+            else $model->is_published = 0;
+        });
+    }
 
     public static function rules($id = '')
     {
@@ -24,7 +34,18 @@ class Product extends Model
 
       if(!empty($id))
       {
-
+        $rules =  [
+            'category_id' => 'required',
+            'sub_category_id' => 'required',
+            'short_description' => 'required',
+            'description' => 'required',
+            'sku' => 'required',
+            'sequence' => 'required',
+            'product_tags' => 'required',
+            'stock_quantity' => 'required',
+            'regular_price' => 'required',
+            'sale_price' => 'required'
+        ];
       }
 
       return $rules;
@@ -35,6 +56,17 @@ class Product extends Model
       return [
           'name.required' => 'You must enter blog-category name.',
           'name.unique' => 'The blog-category name is already exists.',
+          'category_id.required' => 'You must select category.',
+          'sub_category_id.required' => 'You must select sub-category.',
+          'short_description.required' => 'You must enter short description.',
+          'description.required' => 'You must enter description.',
+          'sku.required' => 'You must enter sku.',
+          'sequence.required' => 'You must enter sequence.',
+          'sku.required' => 'You must enter sku.',
+          'product_tags.required' => 'You must enter product tags.',
+          'stock_quantity.required' => 'You must enter stock quantity.',
+          'regular_price.required' => 'You must enter regular price.',
+          'sale_price.required' => 'You must enter sale price.',
       ];
     }
 

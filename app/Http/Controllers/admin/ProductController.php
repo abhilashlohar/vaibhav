@@ -51,9 +51,9 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $request->validate(Product::rules(), Product::messages());
-        Product::create($request->all());
+        $id = Product::create($request->all())->id;
 
-        return redirect()->route('products.index')
+        return redirect()->route('products.edit', $id)
                         ->with('success','Product created successfully.');
     }
 
@@ -76,10 +76,12 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
+        $productImages = ProductImage::where('product_id',$product->id)->get();
         $categories = Category::where('deleted',0)->latest()->get();
         $subCategories = SubCategory::where('deleted',0)->where('category_id',$product->category_id)->latest()->get();
         $relatedProducts = Product::where('deleted',0)->latest()->get();
-        return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts'));
+
+        return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts', 'productImages'));
     }
 
     /**
@@ -93,25 +95,29 @@ class ProductController extends Controller
     {
 
         $request->validate(Product::rules($product->id), Product::messages());
-
+        $destinationPath = storage_path('app/public/product');
         if(isset($request->product_image_delete))
         {
-            foreach($request->product_image_delete as $product_delete)
+            $product_image_delete_array = explode(',', $request->product_image_delete);
+            $deleteProductImages = ProductImage::whereIn('id', [$product_image_delete_array])->get();
+            foreach($deleteProductImages as $deleteProductImage)
             {
-                DB::table('product_images')->where('id', '=', $product_delete['id'])->delete();
+                File::delete($destinationPath.'/'.$deleteProductImage->image);  /// Unlink File
+                ProductImage::where('id', $deleteProductImage->id)->delete();
             }
         }
         if(isset($request->product_image))
         {
-
             foreach($request->product_image as $product_image)
             {
-
                 if(isset($product_image['image']))
                 {
-                    $destinationPath = storage_path('app/public/product');
 
-                    // File::delete($destinationPath.'/'.$category->image);  /// Unlink File
+                    if(isset($product_image['old_image']))
+                    {
+                        File::delete($destinationPath.'/'.$product_image['old_image']);  /// Unlink File
+                    }
+
                     $file = $product_image['image'];
                     $extension = $product_image['image']->extension();
                     $fileName = time().'.'.$extension;
@@ -129,12 +135,29 @@ class ProductController extends Controller
                 {
                     $primary = 0;
                 }
-                DB::table('product_images')->updateOrInsert([
-                    ['product_id', $product->id, 'image' => $fileName, 'is_primary' => $primary]
-                ]);
+                if(isset($product_image['product_image_id']))
+                {
+                    DB::table('product_images')
+                            ->where('id', $product_image['product_image_id'])
+                            ->update([
+                                'image' => $fileName, 'is_primary' => $primary
+                            ]);
+                }
+                else
+                {
+                    DB::table('product_images')->insert(
+                        ['product_id' => $product->id, 'image' => $fileName, 'is_primary' => $primary]
+                    );
+                }
+
             }
         }
 
+        if(isset($request->related_products))
+        {
+            $related_products = implode(',', $request->related_products);
+            $request->request->add(['related_products' => $related_products]);
+        }
         $product->update($request->all());
 
         return redirect()->route('products.index')

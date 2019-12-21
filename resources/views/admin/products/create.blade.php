@@ -31,7 +31,7 @@
                 </div>
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">Next</button>
                         <a class="btn btn-secondary" href="{{ route('products.index') }}">Cancel</a>
                     </div>
                 </div>

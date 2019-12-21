@@ -33,12 +33,12 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="category_id">Category</label>
+                                <label for="category_id">Category *</label>
                                 <select id="category_id" name="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                                     <option value="">--Select--</option>
                                     @foreach ($categories as $category)
                                     <option value="{{ $category->id }}"
-                                        {{ ( ($product->category_id)? $product->category_id : old('category_id') ==  $category->id) ? 'selected' : '' }}> {{ $category->name }} </option>
+                                        {{ ((($product->category_id)? $product->category_id : old('category_id')) ==  $category->id) ? 'selected' : '' }}> {{ $category->name }} </option>
                                     @endforeach
                                 </select>
                                 @error('category_id')
@@ -50,12 +50,12 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="sub_category_id">Sub Category</label>
+                                <label for="sub_category_id">Sub Category *</label>
                                 <select id="sub_category_id" name="sub_category_id" class="form-control @error('sub_category_id') is-invalid @enderror" required>
                                     <option value="">--Select--</option>
                                     @foreach ($subCategories as $subCategory)
                                     <option value="{{ $subCategory->id }}"
-                                        {{ (($product->sub_category_id)? $product->sub_category_id : old('sub_category_id') ==  $subCategory->id) ? 'selected' : '' }}> {{ $subCategory->name }} </option>
+                                        {{ ((($product->sub_category_id)? $product->sub_category_id : old('sub_category_id')) ==  $subCategory->id) ? 'selected' : '' }}> {{ $subCategory->name }} </option>
                                     @endforeach
                                 </select>
                                 @error('sub_category_id')
@@ -70,8 +70,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="short_description">Short Description</label>
-                                <textarea class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ ($product->short_description)?$product->short_description : old('short_description') }}</textarea>
+                                <label for="short_description">Short Description *</label>
+                                <textarea required class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ ($product->short_description)?$product->short_description : old('short_description') }}</textarea>
                                 @error('short_description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -83,9 +83,9 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="content">Description</label>
+                            <label for="content">Description *</label>
                             <div class="form-group">
-                                <div class="summernote" name="description"></div>
+                                <textarea required class="summernote" id="description" name="description">{{ ($product->description)?$product->description : old('description') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -105,17 +105,17 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="stock_quantity">Stock Quantity *</label>
-                                <input type="text" id="stock_quantity" name="stock_quantity" class="form-control @error('stock_quantity') is-invalid @enderror" value="{{ ($product->stock_quantity)? $product->stock_quantity : old('stock_quantity') }}" required>
+                                <label for="sequence">Sequence *</label>
+                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}" required>
 
-                                @error('stock_quantity')
+                                @error('sequence')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="form-group">
                                 <label for="attribute_type">Attribute Type *</label>
                                 <select id="attribute_type" name="attribute_type" class="custom-select form-control @error('attribute_type') is-invalid @enderror" required>
@@ -129,7 +129,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="row">
                         <div class="col-md-12">
@@ -143,8 +143,21 @@
                                 @enderror
                             </div>
                         </div>
+
                     </div>
                     <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="stock_quantity">Stock Quantity *</label>
+                                <input type="text" id="stock_quantity" name="stock_quantity" class="form-control @error('stock_quantity') is-invalid @enderror" value="{{ ($product->stock_quantity)? $product->stock_quantity : old('stock_quantity') }}" required>
+
+                                @error('stock_quantity')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="regular_price">Regular Price *</label>
@@ -169,28 +182,24 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="sequence">Sequence *</label>
-                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}" required>
 
-                                @error('sequence')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
+                            <?php
+                            $related_product_ids = explode(',', $product->related_products);
+
+                            ?>
+
                             <div class="form-group">
                                 <label for="related_products">Related Products</label>
-                                <select id="related_products" multiple name="related_products" class="form-control @error('related_products') is-invalid @enderror" required>
+                                <select id="related_products" multiple name="related_products[]" class="form-control @error('related_products') is-invalid @enderror">
                                     <option value="">--Select--</option>
                                     @foreach ($relatedProducts as $relatedProduct)
                                     <option value="{{ $relatedProduct->id }}"
-                                        {{ ( ($product->related_products)? $product->related_products : old('related_products') ==  $relatedProduct->id) ? 'selected' : '' }}> {{ $relatedProduct->name }} </option>
+                                        @foreach($related_product_ids as $related_product_id) @if($relatedProduct->id == $related_product_id)selected="selected"@endif @endforeach
+                                        > {{ $relatedProduct->name }} </option>
+                                        {{-- {{ ((($product->related_products)? $product->related_products : old('related_products[]')) ==  $relatedProduct->id) ? 'selected' : '' }} --}}
                                     @endforeach
                                 </select>
                                 @error('related_products')
@@ -204,13 +213,8 @@
                             <div class="form-group">
                                 <label for="is_published">Publish Status</label>
                                     <br>
-                                    <div class="kt-radio-inline">
-                                        <label class="kt-checkbox kt-checkbox--state-success">
-                                            <input type="checkbox"  name="is_published" value="1"> &nbsp
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                    {{-- <input name="is_published"  data-switch="true" type="checkbox" checked="checked" data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" value="1" > --}}
+                                    <input name="is_published" id="is_published"  data-switch="true" type="checkbox" @if($product->is_published==1) checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
+
                             </div>
                         </div>
                     </div>
@@ -227,7 +231,38 @@
                                         </tr>
                                     </thead>
                                     <tbody id="product-image">
+                                        <?php $i=0; ?>
+                                        @foreach ($productImages as $productImage)
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden" class="old_image" name="product_image[{{$i}}][old_image]" value="{{$productImage->image}}">
+                                                    <input type="hidden" class="product_image_id" name="product_image[{{$i}}][product_image_id]" value="{{$productImage->id}}">
 
+                                                    <div class="kt-avatar kt-avatar--outline product_image" id="product_image_{{$i+1}}">
+                                                        <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$productImage->image) }}')"></div>
+                                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
+                                                            <i class="fa fa-pen"></i>
+                                                            <input type="file" name="product_image[{{$i}}][image]"  accept=".png, .jpg, .jpeg">
+                                                        </label>
+                                                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
+                                                            <i class="fa fa-times"></i>
+                                                        </span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="kt-radio-inline">
+                                                        <label class="kt-radio kt-checkbox--state-success">
+                                                        <input type="radio" value="1" class="primary" {{($productImage->is_primary)?'checked':''}}  name="product_image[{{$i}}][primary]" > &nbsp
+                                                            <span></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <button type="button" class="btn-sm btn btn-label-danger btn-bold deleteRow"><i class="la la-trash-o"></i> Delete</button>
+                                                </td>
+                                            </tr>
+                                            <?php $i++; ?>
+                                        @endforeach
                                     </tbody>
                                     <tfoot>
                                         <tr>
@@ -249,6 +284,7 @@
                         <a class="btn btn-secondary" href="{{ route('products.index') }}">Cancel</a>
                     </div>
                 </div>
+                <input type="hidden" id="product_image_delete" name="product_image_delete" value="">
             </form>
             <!--end::Form-->
         </div>
@@ -294,7 +330,6 @@
 
 <script type="text/javascript">
 
-
     var KTFormWidgets = function() {
     var e;
     return {
@@ -336,39 +371,11 @@ var KTTagify = {
     }
 };
 
-// var KTFormRepeater = {
-//     init: function() {
-//         $("#product_image_repeater").repeater({
-//             initEmpty: !1,
-//             defaultValues: {
-//                 "text-input": "foo"
-//             },
-//             show: function() {
-//                 $(this).slideDown();
-//                 console.log($(this));
-//                 var KTAvatarDemo = {
-//                     init: function() {
-//                         new KTAvatar("product_image")
-//                     }
-//                 };
-//                 KTUtil.ready(function() {
-//                     KTAvatarDemo.init()
-//                 });
-
-//             },
-//             hide: function(e) {
-//                 $(this).slideUp(e)
-//             }
-//         })
-//     }
-// };
-
-
-
 jQuery(document).ready(function() {
     KTFormWidgets.init();
     KTTagify.init();
     // KTFormRepeater.init();
+    $('#product_image_delete').val("");
 
     $.ajaxSetup({
         headers: {
@@ -394,29 +401,76 @@ jQuery(document).ready(function() {
     $("#add-row").on("click", function(e){
         var $cloneTr = $('#table-clone tr').clone();
         // console.log(cloneTr.find('.product_image'));
-        var rowLen = $('#product-image tr').length+1;
-        var rowLenInt = $('#product-image tr').length;
-        $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
-        $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
-        $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
+        // var rowLen = $('#product-image tr').length+1;
+        // var rowLenInt = $('#product-image tr').length;
+        // $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
+        // $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
+        // $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
         $('#product-image').append($cloneTr);
+        renameImage();
 
+    });
+    function renameImage()
+    {
+        var i = 1;
+        $('#product-image tr').each(function(){
+            $(this).find('.product_image').attr('id','product_image_'+i);
+            $(this).find('input[type=file]').attr('name','product_image['+i+'][image]');
+            $(this).find('input[type=radio]').attr('name','product_image['+i+'][primary]');
+            $(this).find('input.old_image').attr('name','product_image['+i+'][old_image]');
+            $(this).find('input.product_image_id').attr('name','product_image['+i+'][product_image_id]');
+            var KTAvatarDemo = {
+                init: function() {
+                    new KTAvatar("product_image_"+i)
+                }
+            };
+            KTUtil.ready(function() {
+                KTAvatarDemo.init()
+            });
+            i++;
+        });
+
+    }
+    $(document).on('change', '.primary', function(){
+        $("input[type=radio].primary").prop("checked", false);
+        $(this).prop("checked", true);
+    });
+    $(document).on('click', '.deleteRow', function(){
+        var product_image_id = $(this).closest('tr').find('.product_image_id').val();
+        var product_image_delete = $('#product_image_delete').val();
+        if(product_image_id)
+        {
+            if(product_image_delete == "")
+            {
+                var product_image_delete_id = product_image_id;
+            }
+            else
+            {
+                var product_image_delete_id = product_image_delete+','+product_image_id;
+            }
+            $('#product_image_delete').val(product_image_delete_id);
+        }
+
+
+        $(this).closest('tr').remove();
+    });
+    <?php
+    $i=0;
+    foreach ($productImages as $productImage)
+    {
+        $i++;
+        ?>
         var KTAvatarDemo = {
             init: function() {
-                new KTAvatar("product_image_"+rowLen)
+                new KTAvatar("product_image_<?php echo $i; ?>")
             }
         };
         KTUtil.ready(function() {
             KTAvatarDemo.init()
         });
-    });
-    $(document).on('change', '.primary', function(){
-        $("input[type=radio].primary").prop("checked", false);
-        $(this).prop("checked", true);
-    });
-    $(document).on('change', '.deleteRow', function(){
-        $(this).remove();
-    });
+        <?php
+    }
+    ?>
 });
 </script>
 @endsection
