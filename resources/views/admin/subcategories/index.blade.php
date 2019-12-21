@@ -1,5 +1,5 @@
 @extends('layouts.backend')
- 
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -27,7 +27,7 @@
                             </td>
                             <td>
                                 <form action="{{ route('sub-categories.destroy',$subcategory->id) }}" method="POST">
-                                    <a href="{{route('sub-categories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
+                                    <a href="{{route('sub-categories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-clean btn-icon btn-icon-md" type="submit"><i class="la la-trash"></i></button>

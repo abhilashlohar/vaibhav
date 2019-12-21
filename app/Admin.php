@@ -38,4 +38,8 @@ class Admin extends Model
     {
         return $this->belongsToMany('App\Permission', 'permission_admins');
     }
+    public function userrights()
+    {
+        return $this->belongsToMany('App\Module', 'user_rights');
+    }
 }

@@ -39,4 +39,6 @@ Route::prefix('sarkar')->group(function () {
 
 
     Route::resource('products','admin\ProductController');
+    Route::resource('modules','admin\ModuleController');
+    Route::resource('user-rights','admin\UserRightController');
 });
