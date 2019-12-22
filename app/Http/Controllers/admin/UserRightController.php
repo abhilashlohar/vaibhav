@@ -6,86 +6,28 @@ use App\Http\Controllers\Controller;
 use App\UserRight;
 use App\Admin;
 use Illuminate\Http\Request;
+use App\Http\Middleware\CheckAuth;
 
 class UserRightController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        // $admins = Admin::all()->where('deleted',0);
-        return view('admin.user-rights.index');
+        $this->middleware(CheckAuth::class);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function edit($id)
     {
-        //
+        $admin = Admin::find($id)->load('userrights');
+        return view('admin.user-rights.edit',compact('admin'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function update(Request $request, $id)
     {
-        $admin = Admin::find(2);
-
+        UserRight::where('admin_id',$id)->delete();
+        $admin = Admin::find($id);
         $admin->userrights()->sync($request->input('modules', []));
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\UserRight  $userRight
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserRight $userRight)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\UserRight  $userRight
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserRight $userRight)
-    {
-        return view('admin.user-rights.edit',compact('userRight'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UserRight  $userRight
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserRight $userRight)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\UserRight  $userRight
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserRight $userRight)
-    {
-        //
+        return redirect()->route('users.index')
+                        ->with('success','User rights created successfully.');
     }
 
 }

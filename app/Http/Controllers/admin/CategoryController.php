@@ -6,8 +6,8 @@ use App\Category;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 use File;
-use Gate;
 use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
@@ -20,6 +20,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        // $this->middleware(UserRightsAuth::class);
     }
 
     public function index()

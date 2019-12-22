@@ -1,5 +1,5 @@
 @extends('layouts.backend')
- 
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -15,19 +15,18 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Permission</th>
                             <th width="280px">Action</th>
                         </tr>
                         @foreach ($admins as $admin)
                         <tr>
                             <td>{{ $admin->name }}</td>
                             <td>{{ $admin->email }}</td>
-                            <td>{{ $admin->permission }}</td>
-                            
+
                             <td>
                                 <form action="{{ route('users.destroy',$admin->id) }}" method="POST">
-                   
-                                    <a href="{{route('users.edit', $admin->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a> 
+
+                                    <a href="{{route('users.edit', $admin->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
+                                    <a href="{{route('user-rights.edit', $admin->id)}}" title="User rights" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-user"></i></a>
                                     @csrf
                                     @method('DELETE')
                                     <button class="btn btn-sm btn-clean btn-icon btn-icon-md" type="submit"><i class="la la-trash"></i></button>
