@@ -47,21 +47,6 @@
                             </span>
                         @enderror
                     </div>
-                    <div class="form-group">
-                        <label for="name">Permission *</label>
-                        <select name="permissions[]" id="permission" class="form-control @error('permissions') is-invalid @enderror" multiple="multiple" required>
-                            <option value="">---Select---</option>
-                            @foreach ($permissions as $permission)
-                                <option value="{{ $permission->id }}">{{ $permission->title }}</option>
-                            @endforeach
-                        </select>
-
-                        @error('permissions')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
 
                 </div>
                 <div class="kt-portlet__foot">
@@ -71,7 +56,7 @@
                     </div>
                 </div>
             </form>
-            <!--end::Form-->            
+            <!--end::Form-->
         </div>
     </div>
 </div>

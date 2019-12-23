@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Admin;
-use App\Permission;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -55,31 +54,26 @@ class AdminController extends Controller
      */
     public function create()
     {
-        $permissions = Permission::all();
 
-        return view('admin.login.create', compact('permissions'));
+        return view('admin.login.create');
     }
 
     public function store(Request $request)
     {
         $admin = Admin::create($request->all());
-        $admin->permissions()->sync($request->input('permissions', []));
         return redirect()->route('users.index');
     }
 
     public function edit($id)
     {
         $admin = Admin::find($id);
-        $permissions = Permission::all();
-        $admin->load('permissions');
 
-        return view('admin.login.edit',compact('admin', 'permissions'));
+        return view('admin.login.edit',compact('admin'));
     }
     public function update(Request $request, $id)
     {
         $admin = Admin::find($id);
         $admin->update($request->all());
-        $admin->permissions()->sync($request->input('permissions', []));
 
         return redirect()->route('users.index');
     }
