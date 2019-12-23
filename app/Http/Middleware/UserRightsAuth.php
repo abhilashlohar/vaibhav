@@ -12,31 +12,25 @@ class UserRightsAuth
     {
         $admin_id = $request->session()->get('admin_id');
 
-        if (!app()->runningInConsole() && $admin_id) {
+        if ($admin_id) {
+            $action = app('request')->route()->getAction();
+            $controller = class_basename($action['controller']);
+            //dd($controller);
             $admin = Admin::find($admin_id);
-            $admin->load('userrights');
-
+            $admin->load('userrights','userrights.module');
+            //dd($admin);
+            $allows = false;
             foreach ($admin->userrights as $userright) {
-                $userrightsArray[] = $userright->id;
+                //$userrightsArray[$userright->name][] = $userright->id;
+                if($userright->name === $controller)
+                {
+                    $allows = true;
+                }
             }
-            dd($userrightsArray);
-
-            // foreach ($admin->permissions as $permission) {
-            //     dd(Gate::define($permission->title, 'true'));
-            //     Gate::define($permission->title, 'true');
-            // }
-            // foreach ($permissionsArray as $title => $admins) {
-            //     // dd( Gate::define($title, function (\App\Admin $admin) use ($admins) {
-            //     //     return count(array_intersect($admin->pluck('id')->toArray(), $admins)) > 0;
-            //     // }));
-            //     // $aa = Admin::pluck('id')->toArray();
-            //     // dd(count(array_intersect($aa, $admins)) > 0);
-            //     // dd($aa);
-            //     Gate::define($title, function (\App\Admin $admin) use ($admins) {
-            //         //dd($admin->pluck('id'));
-            //         return count(array_intersect($admin->pluck('id')->toArray(), $admins)) > 0;
-            //     });
-            // }
+            if(!$allows)
+            {
+                abort(403);
+            }
         }
 
         return $next($request);

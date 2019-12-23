@@ -36,4 +36,13 @@ class Module extends Model
           'name.unique' => 'The name is already exists.'
       ];
     }
+
+    // public function userrights()
+    // {
+    //     return $this->belongsToMany('App\Admin', 'user_rights');
+    // }
+    public function module(){
+        return $this->belongsTo('App\Module');
+    }
+
 }

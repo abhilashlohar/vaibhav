@@ -36,4 +36,7 @@ class UserRight extends Model
     //       'title.unique' => 'The title is already exists.'
     //   ];
     // }
+    // public function module(){
+    //     return $this->belongsTo('App\Module');
+    // }
 }
