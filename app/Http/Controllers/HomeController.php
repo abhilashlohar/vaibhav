@@ -7,6 +7,8 @@ use App\Category;
 use App\SubCategory;
 use App\Product;
 use App\Enquiry;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\SendMailable;
 
 class HomeController extends Controller
 {
@@ -18,7 +20,7 @@ class HomeController extends Controller
     public function __construct()
     {
 
-        $this->middleware('auth')->except('home');
+        $this->middleware('auth')->except('home','mail');
     }
 
     /**
@@ -29,6 +31,14 @@ class HomeController extends Controller
     public function home()
     {
         return view('home');
+    }
+
+    public function mail()
+    {
+       $name = 'Krunal';
+       Mail::to('abhilashlohar01@gmail.com')->send(new SendMailable($name));
+       
+       return 'Email was sent';
     }
 
    

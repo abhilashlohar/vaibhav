@@ -232,7 +232,14 @@
                                     <span class="kt-menu__link-text">Product</span>
                                 </a>
                             </li>
-
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('enquiries.index') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-clipboard-list"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Enquiry</span>
+                                </a>
+                            </li>
                         </ul>
 
 

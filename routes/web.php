@@ -14,6 +14,7 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@home')->name('home');
+Route::get('/send/email', 'HomeController@mail');
 
 Route::prefix('sarkar')->group(function () {
 
@@ -34,6 +35,9 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('blog-categories','admin\BlogCategoryController');
     Route::resource('blogs','admin\BlogController');
     Route::resource('enquiries','admin\EnquiryController');
+    Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
+
+
 
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
     
