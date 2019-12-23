@@ -13,7 +13,7 @@
                 </div>
             </div>
             <!--begin::Form-->
-            <form action="{{ route('products.update',$product->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            <form action="{{ route('products.update',$product->id) }}" method="POST" enctype="multipart/form-data" class="kt-form" id="product-edit">
             @csrf
             @method('PUT')
                 <div class="kt-portlet__body">
@@ -83,9 +83,9 @@
 
                     <div class="row">
                         <div class="col-md-12">
-                            <label for="content">Description *</label>
+                            <label for="content">Description</label>
                             <div class="form-group">
-                                <textarea required class="summernote" id="description" name="description">{{ ($product->description)?$product->description : old('description') }}</textarea>
+                                <textarea class="summernote" id="description" name="description">{{ ($product->description)?$product->description : old('description') }}</textarea>
                             </div>
                         </div>
                     </div>
@@ -105,8 +105,8 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="sequence">Sequence *</label>
-                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}" required>
+                                <label for="sequence">Sequence</label>
+                                <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}">
 
                                 @error('sequence')
                                     <span class="invalid-feedback" role="alert">
@@ -329,148 +329,171 @@
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+    var KTFormControls= {
+        init:function() {
+            $("#product-edit").validate({
+                rules: {
+                    category_id: {
+                        required: !0
+                    }
+                }
+                , errorPlacement:function(e, r) {
+                    var i=r.closest(".input-group");
+                    i.length?i.after(e.addClass("invalid-feedback")): r.after(e.addClass("invalid-feedback"))
+                }
+                , invalidHandler:function(e, r) {
+                    $("#kt_form_1_msg").removeClass("kt--hide").show(), KTUtil.scrollTop()
+                }
+                , submitHandler:function(e) {}
+            })
+        }
+    };
+    jQuery(document).ready(function() {
+        KTFormControls.init()
+    });
 
     var KTFormWidgets = function() {
-    var e;
-    return {
+        var e;
+        return {
+            init: function() {
+                ! function() {
+                    /*$("#category_id").select2({
+                        placeholder: "Select a category"
+                    }), $("#category_id").on("select2:change", function() {
+                        e.element($(this))
+                    });
+
+                    $("#sub_category_id").select2({
+                        placeholder: "Select a subcategory"
+                    }), $("#sub_category_id").on("select2:change", function() {
+                        e.element($(this))
+                    });*/
+
+                    $("#related_products").select2({
+                        placeholder: "Select a related product"
+                    }), $("#related_products").on("select2:change", function() {
+                        e.element($(this))
+                    });
+                }()
+            }
+        }
+    }();
+
+    var KTTagify = {
         init: function() {
+            var e, a;
             ! function() {
-                $("#category_id").select2({
-                    placeholder: "Select a category"
-                }), $("#category_id").on("select2:change", function() {
-                    e.element($(this))
-                });
+                var e = document.getElementById("product_tags"),
+                    a = new Tagify(e, {
+                        whitelist: [],
+                        blacklist: []
+                    });
 
-                $("#sub_category_id").select2({
-                    placeholder: "Select a subcategory"
-                }), $("#sub_category_id").on("select2:change", function() {
-                    e.element($(this))
-                });
-
-                $("#related_products").select2({
-                    placeholder: "Select a related product"
-                }), $("#related_products").on("select2:change", function() {
-                    e.element($(this))
-                });
             }()
         }
-    }
-}();
+    };
 
-var KTTagify = {
-    init: function() {
-        var e, a;
-        ! function() {
-            var e = document.getElementById("product_tags"),
-                a = new Tagify(e, {
-                    whitelist: [],
-                    blacklist: []
-                });
+    jQuery(document).ready(function() {
+        KTFormWidgets.init();
+        KTTagify.init();
+        // KTFormRepeater.init();
+        $('#product_image_delete').val("");
 
-        }()
-    }
-};
-
-jQuery(document).ready(function() {
-    KTFormWidgets.init();
-    KTTagify.init();
-    // KTFormRepeater.init();
-    $('#product_image_delete').val("");
-
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
-    $( "#category_id" ).on( "change", function() {
-        var category_id = $(this).val();
-        console.log(category_id);
-        $.ajax({
-           type:'POST',
-           url:"{{ route('subcategorylist') }}",
-           data:{category_id:category_id},
-           success:function(data){
-                $( "#sub_category_id" ).html(data).select2({
-                    placeholder: "Select a subcategory"
-                });
-           }
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
         });
-    });
 
-    $("#add-row").on("click", function(e){
-        var $cloneTr = $('#table-clone tr').clone();
-        // console.log(cloneTr.find('.product_image'));
-        // var rowLen = $('#product-image tr').length+1;
-        // var rowLenInt = $('#product-image tr').length;
-        // $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
-        // $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
-        // $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
-        $('#product-image').append($cloneTr);
-        renameImage();
+        $( "#category_id" ).on( "change", function() {
+            var category_id = $(this).val();
+            console.log(category_id);
+            $.ajax({
+               type:'POST',
+               url:"{{ route('subcategorylist') }}",
+               data:{category_id:category_id},
+               success:function(data){
+                    $( "#sub_category_id" ).html(data);
+                    /*$( "#sub_category_id" ).html(data).select2({
+                        placeholder: "Select a subcategory"
+                    });*/
+               }
+            });
+        });
 
-    });
-    function renameImage()
-    {
-        var i = 1;
-        $('#product-image tr').each(function(){
-            $(this).find('.product_image').attr('id','product_image_'+i);
-            $(this).find('input[type=file]').attr('name','product_image['+i+'][image]');
-            $(this).find('input[type=radio]').attr('name','product_image['+i+'][primary]');
-            $(this).find('input.old_image').attr('name','product_image['+i+'][old_image]');
-            $(this).find('input.product_image_id').attr('name','product_image['+i+'][product_image_id]');
+        $("#add-row").on("click", function(e){
+            var $cloneTr = $('#table-clone tr').clone();
+            // console.log(cloneTr.find('.product_image'));
+            // var rowLen = $('#product-image tr').length+1;
+            // var rowLenInt = $('#product-image tr').length;
+            // $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
+            // $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
+            // $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
+            $('#product-image').append($cloneTr);
+            renameImage();
+
+        });
+        function renameImage()
+        {
+            var i = 1;
+            $('#product-image tr').each(function(){
+                $(this).find('.product_image').attr('id','product_image_'+i);
+                $(this).find('input[type=file]').attr('name','product_image['+i+'][image]');
+                $(this).find('input[type=radio]').attr('name','product_image['+i+'][primary]');
+                $(this).find('input.old_image').attr('name','product_image['+i+'][old_image]');
+                $(this).find('input.product_image_id').attr('name','product_image['+i+'][product_image_id]');
+                var KTAvatarDemo = {
+                    init: function() {
+                        new KTAvatar("product_image_"+i)
+                    }
+                };
+                KTUtil.ready(function() {
+                    KTAvatarDemo.init()
+                });
+                i++;
+            });
+
+        }
+        $(document).on('change', '.primary', function(){
+            $("input[type=radio].primary").prop("checked", false);
+            $(this).prop("checked", true);
+        });
+        $(document).on('click', '.deleteRow', function(){
+            var product_image_id = $(this).closest('tr').find('.product_image_id').val();
+            var product_image_delete = $('#product_image_delete').val();
+            if(product_image_id)
+            {
+                if(product_image_delete == "")
+                {
+                    var product_image_delete_id = product_image_id;
+                }
+                else
+                {
+                    var product_image_delete_id = product_image_delete+','+product_image_id;
+                }
+                $('#product_image_delete').val(product_image_delete_id);
+            }
+
+
+            $(this).closest('tr').remove();
+        });
+        <?php
+        $i=0;
+        foreach ($productImages as $productImage)
+        {
+            $i++;
+            ?>
             var KTAvatarDemo = {
                 init: function() {
-                    new KTAvatar("product_image_"+i)
+                    new KTAvatar("product_image_<?php echo $i; ?>")
                 }
             };
             KTUtil.ready(function() {
                 KTAvatarDemo.init()
             });
-            i++;
-        });
-
-    }
-    $(document).on('change', '.primary', function(){
-        $("input[type=radio].primary").prop("checked", false);
-        $(this).prop("checked", true);
-    });
-    $(document).on('click', '.deleteRow', function(){
-        var product_image_id = $(this).closest('tr').find('.product_image_id').val();
-        var product_image_delete = $('#product_image_delete').val();
-        if(product_image_id)
-        {
-            if(product_image_delete == "")
-            {
-                var product_image_delete_id = product_image_id;
-            }
-            else
-            {
-                var product_image_delete_id = product_image_delete+','+product_image_id;
-            }
-            $('#product_image_delete').val(product_image_delete_id);
+            <?php
         }
-
-
-        $(this).closest('tr').remove();
-    });
-    <?php
-    $i=0;
-    foreach ($productImages as $productImage)
-    {
-        $i++;
         ?>
-        var KTAvatarDemo = {
-            init: function() {
-                new KTAvatar("product_image_<?php echo $i; ?>")
-            }
-        };
-        KTUtil.ready(function() {
-            KTAvatarDemo.init()
-        });
-        <?php
-    }
-    ?>
-});
+    });
 </script>
 @endsection

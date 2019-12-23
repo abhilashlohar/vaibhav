@@ -12,7 +12,7 @@ class Enquiry extends Model
         'user_id','product_id','ticket_no','type','status'
     ];
 
-    public function BlogCategories()
+    public function EnquiryDetails()
     {
         return $this->hasMany('App\EnquiryDetail');
     }

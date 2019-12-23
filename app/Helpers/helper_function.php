@@ -24,6 +24,14 @@ function humanTiming ($date)
 
 }
 
+function formatDate($date, $timeAslo=null)
+{
+    if ($timeAslo == 'timeAslo') $date = date('d-M-Y h:i A', strtotime($date));
+    else $date =  date('d-M-Y', strtotime($date));
+
+    return $date;
+}
+
 
 function modules_dom() 
 {
