@@ -8,6 +8,7 @@ use Closure;
 use Illuminate\Support\Facades\Route;
 class UserRightsAuth
 {
+    public $attributes;
     public function handle($request, Closure $next)
     {
         $admin_id = $request->session()->get('admin_id');
@@ -21,16 +22,18 @@ class UserRightsAuth
             //dd($admin);
             $allows = false;
             foreach ($admin->userrights as $userright) {
-                //$userrightsArray[$userright->name][] = $userright->id;
+                $userrightsArray[$userright->name][] = $userright->id;
                 if($userright->name === $controller)
                 {
                     $allows = true;
                 }
             }
+            $request->attributes->add(['myAttribute' => $userrightsArray]);
             if(!$allows)
             {
-                abort(403);
+                //abort(403);
             }
+            // return $userrightsArray;
         }
 
         return $next($request);
