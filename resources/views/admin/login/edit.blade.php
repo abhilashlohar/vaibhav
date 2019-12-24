@@ -30,7 +30,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $admin->email }}" required  autofocus>
+                        <input type="text" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ $admin->email }}" required >
 
                         @error('email')
                             <span class="invalid-feedback" role="alert">
@@ -39,8 +39,9 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="name">Password *</label>
-                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" value="{{ $admin->password }}" required  autofocus>
+                        <label for="name">Password </label>
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror">
+                        <small id="passwordHelp" class="form-text text-muted">keep this blank, if you don't want to change the password.</small>
 
                         @error('password')
                             <span class="invalid-feedback" role="alert">

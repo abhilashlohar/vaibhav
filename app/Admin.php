@@ -27,6 +27,15 @@ class Admin extends Model
       ];
     }
 
+    public static function messages($id = '')
+    {
+      return [
+          'name.required' => 'You must enter name.',
+          'email.required' => 'You must enter email.',
+          'email.unique' => 'Email is already exists.',
+      ];
+    }
+
     public function setPasswordAttribute($input)
     {
         if ($input) {
