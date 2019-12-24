@@ -20,11 +20,11 @@ class SubCategory extends Model
         return (empty($this->image))?true:false;
     }
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       $rules =  [
           'name' => [
-            'required', 
+            'required',
             Rule::unique('sub_categories')->where(function ($query) {
                 return $query->where('deleted', false);
             })->ignore($id)
@@ -36,7 +36,7 @@ class SubCategory extends Model
       if(!empty($id))
       {
         $subCategory = SubCategory::find($id);
-      
+
         if ($subCategory->notHavingImageInDb()){
             $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
         }
@@ -48,7 +48,7 @@ class SubCategory extends Model
 
       return $rules;
     }
-    public static function messages($id = '') 
+    public static function messages($id = '')
     {
       return [
           'name.required' => 'You must enter category name.',

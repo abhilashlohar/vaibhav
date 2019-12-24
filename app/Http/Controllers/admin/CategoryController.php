@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Category;
+use App\SubCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -129,7 +130,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        if(SubCategory::where('deleted', 1)->where('category_id',$category->id)->doesntExist())
+        if(SubCategory::where('deleted', 0)->where('category_id',$category->id)->doesntExist())
         {
             $category->deleted = true;
             $category->save();

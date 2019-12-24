@@ -26,11 +26,17 @@
                     <table class="table">
                         <tr>
                             <th>Name</th>
+                            <th>Category</th>
+                            <th>Sub Category</th>
+                            <th>Status</th>
                             <th>Actions</th>
                         </tr>
                         @foreach ($products as $product)
                         <tr>
-                            <td class="align-middle">{{ $product->name }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>{{ $product->category['name'] }}</td>
+                            <td>{{ $product->subCategory['name'] }}</td>
+                            <td>{{($product->is_published)?'Published':'Draft'}}</td>
                             <td class="align-middle">
                                 <a href="{{ route('products.edit', $product->id) }}" title="Edit product" class="btn btn-sm btn-clean btn-icon btn-icon-md">
                                     <i class="la la-edit"></i>

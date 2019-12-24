@@ -64,6 +64,7 @@
                                     </span>
                                 @enderror
                             </div>
+
                         </div>
                     </div>
 
@@ -295,10 +296,10 @@
         <tr>
             <td>
                 <div class="kt-avatar kt-avatar--outline product_image" id="product_image_dummy">
-                    <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$product->image) }}')"></div>
+                    <div class="kt-avatar__holder" style="background-image: url('{{url('/')}}/img/no-image.png')"></div>
                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                         <i class="fa fa-pen"></i>
-                        <input type="file" name="product_rows[0]['image']"  accept=".png, .jpg, .jpeg" required>
+                        <input type="file" name="product_rows[0]['image']">
                     </label>
                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                         <i class="fa fa-times"></i>
@@ -333,9 +334,34 @@
         init:function() {
             $("#product-edit").validate({
                 rules: {
+                    name: {
+                        required: !0
+                    },
                     category_id: {
                         required: !0
+                    },
+                    sub_category_id: {
+                        required: !0
+                    },
+                    short_description: {
+                        required: !0
+                    },
+                    product_tags: {
+                        required: !0
+                    },
+                    sku: {
+                        required: !0
+                    },
+                    stock_quantity: {
+                        required: !0
+                    },
+                    regular_price: {
+                        required: !0
+                    },
+                    sale_price: {
+                        required: !0
                     }
+
                 }
                 , errorPlacement:function(e, r) {
                     var i=r.closest(".input-group");
@@ -344,7 +370,7 @@
                 , invalidHandler:function(e, r) {
                     $("#kt_form_1_msg").removeClass("kt--hide").show(), KTUtil.scrollTop()
                 }
-                , submitHandler:function(e) {}
+
             })
         }
     };
@@ -357,17 +383,17 @@
         return {
             init: function() {
                 ! function() {
-                    /*$("#category_id").select2({
-                        placeholder: "Select a category"
-                    }), $("#category_id").on("select2:change", function() {
-                        e.element($(this))
-                    });
+                    // $("#category_id").select2({
+                    //     placeholder: "Select a category"
+                    // }), $("#category_id").on("select2:change", function() {
+                    //     e.element($(this))
+                    // });
 
-                    $("#sub_category_id").select2({
-                        placeholder: "Select a subcategory"
-                    }), $("#sub_category_id").on("select2:change", function() {
-                        e.element($(this))
-                    });*/
+                    // $("#sub_category_id").select2({
+                    //     placeholder: "Select a subcategory"
+                    // }), $("#sub_category_id").on("select2:change", function() {
+                    //     e.element($(this))
+                    // });
 
                     $("#related_products").select2({
                         placeholder: "Select a related product"
@@ -423,12 +449,6 @@
 
         $("#add-row").on("click", function(e){
             var $cloneTr = $('#table-clone tr').clone();
-            // console.log(cloneTr.find('.product_image'));
-            // var rowLen = $('#product-image tr').length+1;
-            // var rowLenInt = $('#product-image tr').length;
-            // $cloneTr.find('.product_image').attr('id','product_image_'+rowLen);
-            // $cloneTr.find('input[type=file]').attr('name','product_image['+rowLenInt+'][image]');
-            // $cloneTr.find('input[type=radio]').attr('name','product_image['+rowLenInt+'][primary]');
             $('#product-image').append($cloneTr);
             renameImage();
 

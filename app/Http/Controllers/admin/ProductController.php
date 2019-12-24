@@ -26,8 +26,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('deleted',0)->orderBy('name', 'asc')->paginate(5);
-
+        $products = Product::where('deleted',0)->orderBy('name', 'asc')->with('category','subCategory')->paginate(5);
+        // dd($products);
         return view('admin.products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -79,7 +79,7 @@ class ProductController extends Controller
         $productImages = ProductImage::where('product_id',$product->id)->get();
         $categories = Category::where('deleted',0)->latest()->get();
         $subCategories = SubCategory::where('deleted',0)->where('category_id',$product->category_id)->latest()->get();
-        $relatedProducts = Product::where('deleted',0)->latest()->get();
+        $relatedProducts = Product::where('deleted',0)->where('id', '!=', $product->id)->latest()->get();
 
         return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts', 'productImages'));
     }

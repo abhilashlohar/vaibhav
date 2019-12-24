@@ -58,7 +58,6 @@ class Product extends Model
           'sub_category_id.required' => 'You must select sub-category.',
           'short_description.required' => 'You must enter short description.',
           'sku.required' => 'You must enter sku.',
-          'sku.required' => 'You must enter sku.',
           'product_tags.required' => 'You must enter product tags.',
           'stock_quantity.required' => 'You must enter stock quantity.',
           'regular_price.required' => 'You must enter regular price.',
@@ -68,5 +67,11 @@ class Product extends Model
 
     public function productImages(){
         $this->hasMany('App\ProductImage');
+    }
+    public function category(){
+        return $this->belongsTo('App\Category');
+    }
+    public function subCategory(){
+        return $this->belongsTo('App\SubCategory');
     }
 }

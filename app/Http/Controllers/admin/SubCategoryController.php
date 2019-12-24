@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\SubCategory;
 use App\Category;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use File;
@@ -122,16 +123,20 @@ class SubCategoryController extends Controller
      */
     public function destroy(SubCategory $subCategory)
     {
-        $subCategory->deleted = true;
-        $subCategory->save();
+        if(Product::where('deleted', 0)->where('sub_category_id',$subCategory->id)->doesntExist())
+        {
+            $subCategory->deleted = true;
+            $subCategory->save();
 
+            return redirect()->route('sub-categories.index')
+                            ->with('success','Sub Category deleted successfully');
+        }
         return redirect()->route('sub-categories.index')
-                        ->with('success','Sub Category deleted successfully');
+                            ->with('success','Sub Category not deleted exist in porduct');
     }
 
     public function list(Request $request)
     {
-
         $subCategories = SubCategory::latest()->where('category_id', $request->category_id)->where('deleted', 0)->get();
         return view('admin.subcategories.list', compact('subCategories'));
     }
