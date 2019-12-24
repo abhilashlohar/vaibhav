@@ -20,8 +20,13 @@ Route::prefix('sarkar')->group(function () {
 
 	Route::resource('/users','admin\AdminController');
 
+    Route::get('/', function () {
+        return redirect()->route('showAdminLoginForm');
+    });
+
     Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
+    Route::get('/logout', 'admin\AdminController@AdminLogout')->name('AdminLogout');
 
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 

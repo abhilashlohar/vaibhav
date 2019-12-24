@@ -15,8 +15,11 @@ class AdminController extends Controller
         $this->middleware(CheckAuth::class);
     }
 
-    public function showAdminLoginForm()
+    public function showAdminLoginForm(Request $request)
     {
+        $admin_id = $request->session()->get('admin_id');
+        if ($admin_id) return redirect()->route('Admin.dashboard');
+
         return view('admin.login.login');
     }
 
@@ -38,6 +41,15 @@ class AdminController extends Controller
         }
 
         return view('admin.login.login');
+    }
+
+    public function AdminLogout(Request $request)
+    {
+        $request->session()->forget(['admin_id', 'admin_name']);
+
+        $request->session()->flush();
+
+        return redirect()->route('showAdminLoginForm');
     }
 
     public function index()
