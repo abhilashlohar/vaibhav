@@ -20,7 +20,7 @@
                     <div class="kt-widget3__item">
                         <div class="kt-widget3__header">
                             <span class="kt-media kt-media--sm kt-media--success kt-media--circle kt-margin-r-5 kt-margin-t-5">
-                                <span>{{ ($EnquiryRow->User) ? strtoupper($EnquiryRow->User->name[0]) : strtoupper($EnquiryRow->Admin->name[0]) }} </span>
+                                <span>{{ ($EnquiryRow->User) ? strtoupper($EnquiryRow->User->name[0]) : strtoupper($EnquiryRow->Admin->name[0]) }}</span>
                             </span>
                             <div class="kt-widget3__info">
                                 <a href="#" class="kt-widget3__username">

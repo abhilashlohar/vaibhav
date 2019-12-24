@@ -15,8 +15,11 @@ class AdminController extends Controller
         $this->middleware(CheckAuth::class);
     }
 
-    public function showAdminLoginForm()
+    public function showAdminLoginForm(Request $request)
     {
+        $admin_id = $request->session()->get('admin_id');
+        if ($admin_id) return redirect()->route('Admin.dashboard');
+
         return view('admin.login.login');
     }
 
@@ -25,19 +28,36 @@ class AdminController extends Controller
         $email      = $request->all()['email'];
         $password   = $request->all()['password'];
 
-        $admin = Admin::where('email', '=', $email)->first();
-
-        if(Hash::check($password, $admin->password))
+        if ($email && $password) 
         {
-            if (isset($admin->id)) {
-                $request->session()->put('admin_id', $admin->id);
-                $request->session()->put('admin_name', $admin->name);
+            $admin = Admin::where('email', '=', $email)->first();
 
-                return redirect()->route('Admin.dashboard');
+            if ($admin) 
+            {
+                if(Hash::check($password, $admin->password))
+                {
+                    if (isset($admin->id)) {
+                        $request->session()->put('admin_id', $admin->id);
+                        $request->session()->put('admin_name', $admin->name);
+
+                        return redirect()->route('Admin.dashboard');
+                    }
+                }
             }
         }
 
-        return view('admin.login.login');
+        
+        return redirect()->route('showAdminLoginForm')->withFail('Invalid credentials.');
+        // return view('admin.login.login');
+    }
+
+    public function AdminLogout(Request $request)
+    {
+        $request->session()->forget(['admin_id', 'admin_name']);
+
+        $request->session()->flush();
+
+        return redirect()->route('showAdminLoginForm');
     }
 
     public function index()
@@ -72,6 +92,8 @@ class AdminController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $request->validate(Admin::rules($id), Admin::messages());
+
         $admin = Admin::find($id);
         $admin->update($request->all());
 

@@ -41,6 +41,8 @@
                 <!--begin::Body-->
                 <div class="kt-login__body">
 
+                    
+
                     <!--begin::Signin-->
                     <div class="kt-login__form">
                         <div class="kt-login__title">
@@ -62,6 +64,12 @@
                             </div>
                             <!--end::Action-->
                         </form>
+                        
+                        @if(Session::has('fail'))
+                            <div class="alert alert-danger">
+                               {{Session::get('fail')}}
+                            </div>
+                        @endif
                         <!--end::Form-->
 
                     </div>
