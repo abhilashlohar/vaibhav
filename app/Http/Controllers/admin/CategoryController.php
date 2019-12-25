@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
 use File;
-use Symfony\Component\HttpFoundation\Response;
 
 class CategoryController extends Controller
 {
@@ -21,15 +20,11 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        $this->middleware(UserRightsAuth::class);
+        // $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
     {
-        //dd(Gate::allows('category_list'), Response::HTTP_FORBIDDEN, '403 Forbidden');
-        //dd(Gate::allows('category_list'));
-        //abort_unless(Gate::allows('category_list'), 403);
-
         $categories = Category::latest()->where('deleted',0)->paginate(5);
 
         return view('admin.categories.index',compact('categories'))
@@ -67,17 +62,6 @@ class CategoryController extends Controller
 
         return redirect()->route('categories.index')
                         ->with('success','Category created successfully.');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Category  $category
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Category $category)
-    {
-        //
     }
 
     /**
@@ -141,7 +125,6 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')
                             ->with('success','Category not deleted, exist in sub categories');
     }
-
 
     public static function list()
     {

@@ -26,19 +26,22 @@
                                             </td>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="2" {{ $admin->userrights->contains(2) ? 'checked' : '' }}> Create
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="2" {{ $admin->userrights->contains(2) ? 'checked' : '' }}> Create
                                                     <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="3" {{ $admin->userrights->contains(3) ? 'checked' : '' }}>
+                                                </label>
+
+                                            </td>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="4" {{ $admin->userrights->contains(4) ? 'checked' : '' }}> Edit
+                                                    <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="5" {{ $admin->userrights->contains(5) ? 'checked' : '' }}>
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="3" {{ $admin->userrights->contains(3) ? 'checked' : '' }}> Edit
-                                                    <span></span>
-                                                </label>
-                                            </td>
-                                            <td>
-                                                <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="4" {{ $admin->userrights->contains(4) ? 'checked' : '' }}> Delete
+                                                    <input type="checkbox" name="modules[]" value="6" {{ $admin->userrights->contains(6) ? 'checked' : '' }}> Delete
                                                     <span></span>
                                                 </label>
                                             </td>
@@ -63,25 +66,79 @@
                                         <tr>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="5"> List
+                                                    <input type="checkbox" name="modules[]" value="7" {{ $admin->userrights->contains(7) ? 'checked' : '' }}> List
                                                     <span></span>
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="6"> Create
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="8" {{ $admin->userrights->contains(8) ? 'checked' : '' }}> Create
+                                                    <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="9" {{ $admin->userrights->contains(9) ? 'checked' : '' }}>
+                                                </label>
+
+                                            </td>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="10" {{ $admin->userrights->contains(10) ? 'checked' : '' }}> Edit
+                                                    <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="11" {{ $admin->userrights->contains(11) ? 'checked' : '' }}>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" name="modules[]" value="12" {{ $admin->userrights->contains(12) ? 'checked' : '' }}> Delete
+                                                    <span></span>
+                                                </label>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <div class="card-title collapsed" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            Product
+                        </div>
+                    </div>
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample8">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" name="modules[]" value="13" {{ $admin->userrights->contains(13) ? 'checked' : '' }}> List
                                                     <span></span>
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="7"> Edit
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="14" {{ $admin->userrights->contains(14) ? 'checked' : '' }}> Create
+                                                    <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="15" {{ $admin->userrights->contains(15) ? 'checked' : '' }}>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="16" {{ $admin->userrights->contains(16) ? 'checked' : '' }}> Edit
+                                                    <span></span>
+                                                    <input type="checkbox" class="dependent" name="modules[]" value="17" {{ $admin->userrights->contains(17) ? 'checked' : '' }}>
+                                                </label>
+                                            </td>
+                                            <td>
+                                                <label class="kt-checkbox">
+                                                    <input type="checkbox" name="modules[]" value="18" {{ $admin->userrights->contains(18) ? 'checked' : '' }}> View
                                                     <span></span>
                                                 </label>
                                             </td>
                                             <td>
                                                 <label class="kt-checkbox">
-                                                    <input type="checkbox" name="modules[]" value="8"> Delete
+                                                    <input type="checkbox" name="modules[]" value="19" {{ $admin->userrights->contains(19) ? 'checked' : '' }}> Delete
                                                     <span></span>
                                                 </label>
                                             </td>
@@ -100,5 +157,20 @@
         </form>
     </div>
 </div>
+@endsection
+
+@section('footer-script')
+    <script>
+        jQuery(document).ready(function() {
+            $(document).on('click', '.dependent', function(){
+                if($(this).prop("checked") == true){
+                    $(this).closest('td').find('.dependent').prop("checked", true);
+                }
+                else if($(this).prop("checked") == false){
+                    $(this).closest('td').find('.dependent').prop("checked", false);
+                }
+            });
+        });
+    </script>
 @endsection
 
