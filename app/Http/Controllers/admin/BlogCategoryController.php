@@ -6,12 +6,14 @@ use App\BlogCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 
 class BlogCategoryController extends Controller
 {
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
@@ -36,9 +38,9 @@ class BlogCategoryController extends Controller
     public function store(Request $request)
     {
         $request->validate(BlogCategory::rules(), BlogCategory::messages());
-        
+
         BlogCategory::create($request->all());
-   
+
         return redirect()->route('blog-categories.index')
                         ->with('success','Category created successfully.');
     }
@@ -49,15 +51,15 @@ class BlogCategoryController extends Controller
     }
 
     public function update(Request $request, BlogCategory $BlogCategory)
-    {   
+    {
         $request->validate(BlogCategory::rules($BlogCategory->id), BlogCategory::messages());
 
         $BlogCategory->update($request->all());
-  
+
         return redirect()->route('blog-categories.index')
                         ->with('success','Category updated successfully');
     }
 
 
-    
+
 }

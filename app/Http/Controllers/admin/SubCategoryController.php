@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 use File;
 
 class SubCategoryController extends Controller
@@ -15,6 +16,7 @@ class SubCategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
     /**
      * Display a listing of the resource.

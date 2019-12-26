@@ -7,6 +7,7 @@ use App\BlogCategory;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 use File;
 
 class BlogController extends Controller
@@ -14,6 +15,7 @@ class BlogController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
@@ -32,7 +34,7 @@ class BlogController extends Controller
     public function store(Request $request)
     {
         // $request->validate(Blog::rules(), Blog::messages());
-        
+
         $blog = Blog::create($request->all());
 
         return redirect()->route('blogs.edit', $blog->id)
@@ -49,12 +51,12 @@ class BlogController extends Controller
     }
 
     public function update(Request $request, Blog $Blog)
-    {   
+    {
         $request->validate(Blog::rules($Blog->id), Blog::messages());
 
 
         $oldImg = storage_path('app/public/blog/'.$Blog->id.'/'.$Blog->getOriginal()['featured_image']);
-        if (file_exists($oldImg)) File::delete($oldImg); 
+        if (file_exists($oldImg)) File::delete($oldImg);
 
 
         if($request->hasFile('f_image'))
@@ -70,11 +72,11 @@ class BlogController extends Controller
             $request->request->add(['featured_image' => null]);
         }
 
-        
+
 
         $Blog->update($request->all());
         $Blog->BlogCategories()->sync($request->blog_category_ids);
-  
+
         return redirect()->route('blogs.index')
                         ->with('success','Category updated successfully');
     }
@@ -90,7 +92,7 @@ class BlogController extends Controller
         } else {
             $data = ['status' => 'fail'];
         }
-        
+
 
         echo json_encode($data);
     }

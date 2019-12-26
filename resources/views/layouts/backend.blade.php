@@ -137,65 +137,76 @@
                                     <span class="kt-menu__link-text">Dashboard</span>
                                 </a>
                             </li>
-
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('categories.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-list"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Category</span>
-                                </a>
-                            </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('sub-categories.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-clipboard-list"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Sub Category</span>
-                                </a>
-                            </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('products.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-clipboard-list"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Product</span>
-                                </a>
-                            </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('enquiries.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-clipboard-list"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Enquiry</span>
-                                </a>
-                            </li>
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('users.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-user"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Users</span>
-                                </a>
-                            </li>
-
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('blogs.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Blogs</span>
-                                </a>
-                            </li>
-
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('blog-categories.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Blog Category</span>
-                                </a>
-                            </li>
+                            @if (in_array('CategoryController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('categories.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-list"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Category</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('SubCategoryController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('sub-categories.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-clipboard-list"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Sub Category</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('ProductController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('products.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-clipboard-list"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Product</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('EnquiryController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('enquiries.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-clipboard-list"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Enquiry</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('AdminController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('users.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-user"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Users</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('BlogController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('blogs.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-book"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Blogs</span>
+                                    </a>
+                                </li>
+                            @endif
+                            @if (in_array('BlogCategoryController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('blog-categories.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-book"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Blog Category</span>
+                                    </a>
+                                </li>
+                            @endif
                         </ul>
 
 

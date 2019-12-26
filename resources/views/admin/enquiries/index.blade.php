@@ -1,5 +1,5 @@
 @extends('layouts.backend')
- 
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -12,7 +12,7 @@
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
-                    <div class="kt-portlet__head-wrapper"></div>      
+                    <div class="kt-portlet__head-wrapper"></div>
                 </div>
             </div>
             <div class="kt-portlet__body" style="padding: 0;">
