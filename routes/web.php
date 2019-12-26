@@ -45,11 +45,15 @@ Route::prefix('sarkar')->group(function () {
 
 
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
-    
+
 
 
 
     Route::resource('products','admin\ProductController');
     Route::resource('modules','admin\ModuleController');
     Route::resource('user-rights','admin\UserRightController');
+    Route::resource('events','admin\EventController');
+    Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
+
 });
+

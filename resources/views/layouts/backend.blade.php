@@ -207,6 +207,17 @@
                                     </a>
                                 </li>
                             @endif
+                            @if (in_array('EventController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('events.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-book"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Event</span>
+                                    </a>
+                                </li>
+                            @endif
+
                         </ul>
 
 
