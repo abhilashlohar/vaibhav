@@ -7,12 +7,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 
 class AdminController extends Controller
 {
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function showAdminLoginForm(Request $request)
@@ -28,17 +30,23 @@ class AdminController extends Controller
         $email      = $request->all()['email'];
         $password   = $request->all()['password'];
 
-        if ($email && $password) 
+        if ($email && $password)
         {
             $admin = Admin::where('email', '=', $email)->first();
 
-            if ($admin) 
+            if ($admin)
             {
                 if(Hash::check($password, $admin->password))
                 {
                     if (isset($admin->id)) {
                         $request->session()->put('admin_id', $admin->id);
                         $request->session()->put('admin_name', $admin->name);
+                        $admin->load('userrights','userrights.module');
+                        $userrightPages = [];
+                        foreach ($admin->userrights as $userright) {
+                            $userrightPages[] = $userright->name;
+                        }
+                        $request->session()->put('userrightPages', $userrightPages);
 
                         return redirect()->route('Admin.dashboard');
                     }
@@ -46,7 +54,7 @@ class AdminController extends Controller
             }
         }
 
-        
+
         return redirect()->route('showAdminLoginForm')->withFail('Invalid credentials.');
         // return view('admin.login.login');
     }

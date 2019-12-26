@@ -7,12 +7,14 @@ use App\UserRight;
 use App\Admin;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 
 class UserRightController extends Controller
 {
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function edit($id)

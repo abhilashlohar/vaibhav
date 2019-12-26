@@ -1,5 +1,5 @@
 @extends('layouts.backend')
- 
+
 @section('content')
 <div class="row">
     <div class="col-md-12">
@@ -14,11 +14,13 @@
                 <div class="kt-portlet__head-toolbar">
                     <div class="kt-portlet__head-wrapper">
                         <div class="kt-portlet__head-actions">
-                            <a href="{{ route('blogs.create') }}" class="btn btn-brand btn-sm btn-elevate btn-icon-sm">
-                                <i class="la la-plus"></i> New
-                            </a>
-                        </div>  
-                    </div>      
+                            @if (in_array('BlogController@create',Session::get('userrightPages')))
+                                <a href="{{ route('blogs.create') }}" class="btn btn-brand btn-sm btn-elevate btn-icon-sm">
+                                    <i class="la la-plus"></i> New
+                                </a>
+                            @endif
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="kt-portlet__body" style="padding: 0;">
@@ -32,7 +34,7 @@
                         @foreach ($blogs as $blog)
                         <tr>
                             <td class="align-middle">
-                                <a href="{{ route('blogs.edit', $blog->id) }}"> 
+                                <a href="{{ route('blogs.edit', $blog->id) }}">
                                     {{ $blog->title }}
                                 </a>
                             </td>

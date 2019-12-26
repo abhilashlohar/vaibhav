@@ -9,6 +9,7 @@ use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
+use App\Http\Middleware\UserRightsAuth;
 use File;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
     /**
      * Display a listing of the resource.

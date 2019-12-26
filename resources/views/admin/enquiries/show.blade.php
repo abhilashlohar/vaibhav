@@ -24,16 +24,16 @@
                             </span>
                             <div class="kt-widget3__info">
                                 <a href="#" class="kt-widget3__username">
-                                {{ ($EnquiryRow->User) ? $EnquiryRow->User->name : $EnquiryRow->Admin->name }}   
-                                </a><br> 
+                                {{ ($EnquiryRow->User) ? $EnquiryRow->User->name : $EnquiryRow->Admin->name }}
+                                </a><br>
                                 <span class="kt-widget3__time" title="{{ formatDate($EnquiryRow->created_at, 'timeAslo') }}">
-                                {{ humanTiming($EnquiryRow->created_at) }} 
-                                </span>      
+                                {{ humanTiming($EnquiryRow->created_at) }}
+                                </span>
                             </div>
-                            <span class="kt-widget3__status kt-font-brand"></span> 
+                            <span class="kt-widget3__status kt-font-brand"></span>
                         </div>
                         <div class="kt-widget3__body">
-                            {{ $EnquiryRow->message }}  
+                            {{ $EnquiryRow->message }}
                         </div>
                     </div>
                     @endforeach
@@ -44,31 +44,32 @@
 
     </div>
 </div>
-
+@if (in_array('EnquiryController@reply',Session::get('userrightPages')))
 <div class="row">
     <div class="col-md-12">
         <div class="kt-portlet">
             <form action="{{ route('enquiries.reply') }}" method="POST" class="kt-form">
             @csrf
                 <div class="kt-portlet__body">
-                    
+
                     <input type="hidden" name="enquiry_id" value="{{ $Enquiry->id }}">
 
                     <div class="form-group form-group-last">
                         <label for="exampleTextarea">Reply</label>
                         <textarea class="form-control" id="message" name="message" rows="3"></textarea>
                     </div>
-                    
+
                 </div>
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <button type="submit" class="btn btn-primary">Send</button>
                     </div>
                 </div>
-            </form>    
+            </form>
         </div>
     </div>
 </div>
+@endif
 
 @endsection
 
