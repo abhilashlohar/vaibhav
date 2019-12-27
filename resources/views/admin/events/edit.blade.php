@@ -81,15 +81,15 @@
                                             <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                                 <i class="fa fa-pen"></i>
                                                 <input type="file" name="add_image" {{($event->image == null)?'required':''}}>
-                                                <div id="add_image-error" class="error invalid-feedback">This field is required.</div>
                                             </label>
-                                            
+
                                             <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                                 <i class="fa fa-times"></i>
                                             </span>
                                         </div>
                                         <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                                        
+                                        <div id="add_image-error" class="error invalid-feedback">This field is required.</div>
+
                                     </div>
                                 </div>
                                 @error('add_image')

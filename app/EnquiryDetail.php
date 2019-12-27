@@ -12,11 +12,11 @@ class EnquiryDetail extends Model
         'enquiry_id','message','user_id','admin_id'
     ];
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       $rules =  [
           'enquiry_id' => [
-            'required', 
+            'required',
             'exists:enquiries,id'
           ],
           'message' => 'required'
@@ -26,7 +26,7 @@ class EnquiryDetail extends Model
       return $rules;
     }
 
-    public static function messages($id = '') 
+    public static function messages($id = '')
     {
       return [
           'enquiry_id.required' => 'enquiry_id is required.',

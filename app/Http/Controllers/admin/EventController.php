@@ -52,7 +52,7 @@ class EventController extends Controller
         $event = Event::create($request->all());
 
         return redirect()->route('events.edit', $event->id)
-                        ->with('success','event created successfully.');
+                        ->with('success','Event created successfully.');
     }
 
     /**
@@ -103,7 +103,7 @@ class EventController extends Controller
         $event->update($request->all());
 
         return redirect()->route('events.index')
-                        ->with('success','event updated successfully');
+                        ->with('success','Event updated successfully');
     }
 
     /**

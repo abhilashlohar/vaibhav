@@ -14,23 +14,57 @@ class EnquiryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        $this->middleware(UserRightsAuth::class);
+        // $this->middleware(UserRightsAuth::class);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $enquiries = Enquiry::orderBy('ticket_no', 'desc')->paginate(5);
+        //  dd($request);
 
+        $where_ar = [];
+
+        if(isset($request->ticket_no)) {
+            $where_ar[] = ['enquiries.ticket_no','like','%'.$request->ticket_no.'%'];
+        }
+
+        if(isset($request->name)) {
+           //$where_ar[] = ['enquiries.users.name','like','%'.$request->name.'%'];
+        //    ->join('users', 'users.id', '=', 'contacts.user_id')
+        }
+
+        if(isset($request->status)) {
+            $where_ar[] = ['enquiries.status','=',$request->status];
+        }
+
+        //dd($where_ar);
+
+        $enquiries = Enquiry::where($where_ar)->orderBy('ticket_no', 'desc')
+        ->with(['User' => function($query) use($request) {
+            $query->where('name','like','%'.$request->name.'%');
+        }])
+        ->paginate(5);
+
+        //dd($enquiries);
         return view('admin.enquiries.index',compact('enquiries'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function show(Enquiry $Enquiry)
     {
-        // dd($Enquiry->EnquiryDetails);
-        // $EnquiryRows = $Enquiry->EnquiryDetails->with('User')->get();
-
+        $Enquiry->load('Admin');
         return view('admin.enquiries.show',compact('Enquiry'));
+    }
+
+
+    public function update(Request $request, Enquiry $Enquiry)
+    {
+        $request->request->add(['closed_at' => date('Y-m-d')]);
+        $request->request->add(['closed_by' => $request->session()->get('admin_id')]);
+        $request->request->add(['status' => 'closed']);
+        $Enquiry->update($request->all());
+
+        return redirect()->route('enquiries.index')
+                        ->with('success','Enquiry closed successfully');
     }
 
     public function reply(Request $request)
