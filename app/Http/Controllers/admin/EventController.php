@@ -86,25 +86,18 @@ class EventController extends Controller
      */
     public function update(Request $request, Event $event)
     {
-        
+
         $request->validate(Event::rules($event->id), Event::messages());
-        
-
-        $oldImg = storage_path('app/public/event/'.$event->id.'/'.$event->getOriginal()['image']);
-        if (file_exists($oldImg)) File::delete($oldImg);
-
 
         if($request->hasFile('add_image'))
         {
+            $oldImg = storage_path('app/public/event/'.$event->id.'/'.$event->getOriginal()['image']);
+            if (file_exists($oldImg)) File::delete($oldImg);
             $file = $request->add_image;
             $extension = $request->add_image->extension();
             $fileName = time().'.'.$extension;
             $path = $request->add_image->storeAs('event/'.$event->id, $fileName);
             $request->request->add(['image' => $fileName]);
-        }
-        else
-        {
-            $request->request->add(['image' => null]);
         }
 
         $event->update($request->all());

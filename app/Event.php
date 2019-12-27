@@ -9,7 +9,7 @@ use App\Event;
 class Event extends Model
 {
     protected $guarded = [
-        'id', 'add_image'
+        'id', 'add_image','files'
     ];
 
     public function notHavingImageInDb(){

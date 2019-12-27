@@ -19,7 +19,7 @@
 
                     <div class="form-group">
                         <label for="name">Event Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $event->name }}" required  autofocus style="font-size: 16px;">
+                        <input type="text" id="name" name="name" placeholder="Event Name" class="form-control @error('name') is-invalid @enderror" value="{{ $event->name }}" required  autofocus style="font-size: 16px;">
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                             <div class="form-group">
                                 <label for="price">Event Date</label>
                                 <div class="input-group date">
-                                    <input type="text"  name="event_date" class="form-control  @error('event_date') is-invalid @enderror" value="{{ date('d-m-Y',strtotime($event->event_date)) }}" readonly  placeholder="Select date" id="event_date"/>
+                                    <input type="text"  name="event_date" class="form-control  @error('event_date') is-invalid @enderror" value="{{ ($event->event_date==null)?'':date('d-m-Y',strtotime($event->event_date)) }}" readonly  placeholder="Select date" id="event_date"/>
                                     <div class="input-group-append">
                                         <span class="input-group-text">
                                         <i class="la la-calendar-check-o"></i>
@@ -52,7 +52,7 @@
                         <div class="col-md-5">
                             <div class="form-group">
                                 <label for="price">Price</label>
-                                <input type="text" id="price" name="price" class="form-control @error('price') is-invalid @enderror" value="{{ $event->price }}">
+                                <input type="text" id="price" name="price" placeholder="Price" class="form-control @error('price') is-invalid @enderror" value="{{ $event->price }}">
 
                                 @error('price')
                                     <span class="invalid-feedback" role="alert">
@@ -73,20 +73,23 @@
                                     <label class="col-xl-3 col-lg-3 col-form-label" for="add_image">Event Image</label>
                                     <div class="col-lg-9 col-xl-6">
                                         <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                            <?php 
+                                            <?php
                                             $showImg = url('/').'/img/no-image.png';
                                             if ($event->image) $showImg = asset('storage/event/'.$event->id.'/'.$event->image);
                                             ?>
                                             <div class="kt-avatar__holder" style="background-image: url(<?php echo $showImg; ?>)"></div>
                                             <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                                 <i class="fa fa-pen"></i>
-                                                <input type="file" name="add_image">
+                                                <input type="file" name="add_image" {{($event->image == null)?'required':''}}>
+                                                <div id="add_image-error" class="error invalid-feedback">This field is required.</div>
                                             </label>
+                                            
                                             <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                                 <i class="fa fa-times"></i>
                                             </span>
                                         </div>
                                         <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+                                        
                                     </div>
                                 </div>
                                 @error('add_image')
@@ -117,7 +120,7 @@
                     </div>
                 </div>
             </form>
-            <!--end::Form-->            
+            <!--end::Form-->
         </div>
     </div>
 </div>
@@ -154,7 +157,7 @@
                             if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){}else{
                               alert("Only jpg/jpeg and png files are allowed!");
                               return;
-                            }   
+                            }
 
                             var data = new FormData();
                             data.append("eventImg", files[0]);
@@ -182,7 +185,7 @@
                             alert('Please select single file.');
                             return;
                         }
-                        
+
                       // upload image to server and create imgNode...
                       // $summernote.summernote('insertNode', imgNode);
                     }
@@ -216,9 +219,6 @@
                         required: !0
                     },
                     event_date: {
-                        required: !0
-                    },
-                    add_image: {
                         required: !0
                     },
                     price: {

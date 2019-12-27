@@ -13,13 +13,13 @@
                 </div>
             </div>
             <!--begin::Form-->
-            <form action="{{ route('events.store') }}" method="POST" enctype="multipart/form-data" class="kt-form">
+            <form action="{{ route('events.store') }}" id="event-form" method="POST" enctype="multipart/form-data" class="kt-form">
             @csrf
                 <div class="kt-portlet__body">
 
                     <div class="form-group">
                         <label for="name">Event Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required  autofocus>
+                        <input type="text" id="name" name="name" placeholder="Event Name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" required  autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -43,3 +43,30 @@
 
 @endsection
 
+@section ('footer-script')
+<script type="text/javascript">
+var KTFormControls= {
+    init:function() {
+        $("#event-form").validate({
+            rules: {
+                name: {
+                    required: !0
+                }
+
+            }
+            , errorPlacement:function(e, r) {
+                var i=r.closest(".input-group");
+                i.length?i.after(e.addClass("invalid-feedback")): r.after(e.addClass("invalid-feedback"))
+            }
+            , invalidHandler:function(e, r) {
+                $("#kt_form_1_msg").removeClass("kt--hide").show(), KTUtil.scrollTop()
+            }
+
+        })
+    }
+};
+    jQuery(document).ready(function(){
+        KTFormControls.init()
+    });
+</script>
+@endsection
