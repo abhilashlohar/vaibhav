@@ -211,7 +211,7 @@
                                 <li class="kt-menu__item " aria-haspopup="true">
                                     <a href="{{ route('events.index') }}" class="kt-menu__link ">
                                         <span class="kt-menu__link-icon">
-                                            <i class="fa fa-book"></i>
+                                            <i class="fa fa-guitar"></i>
                                         </span>
                                         <span class="kt-menu__link-text">Event</span>
                                     </a>
