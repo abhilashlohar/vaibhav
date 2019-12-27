@@ -88,6 +88,7 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate(Admin::rules(), Admin::messages());
         $admin = Admin::create($request->all());
         return redirect()->route('users.index');
     }
