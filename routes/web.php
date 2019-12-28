@@ -30,6 +30,9 @@ Route::prefix('sarkar')->group(function () {
 
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 
+    Route::get('/change-password', 'admin\AdminController@changePassword')->name('admin.changepassword');
+    Route::put('/change-password', 'admin\AdminController@updatePassword')->name('admin.updatepassword');
+
 
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');

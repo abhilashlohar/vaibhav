@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        $this->middleware(UserRightsAuth::class);
+        //$this->middleware(UserRightsAuth::class);
     }
 
     public function showAdminLoginForm(Request $request)
@@ -90,7 +90,7 @@ class AdminController extends Controller
     {
         $request->validate(Admin::rules(), Admin::messages());
         $admin = Admin::create($request->all());
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->route('users.index')->with('success','User has created successfully.');;
     }
 
     public function edit($id)
@@ -106,11 +106,27 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->update($request->all());
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','User record updated successfully.');
     }
 
     public function dashboard(Request $request)
     {
         return view('admin.login.dashboard');
+    }
+
+    public function changePassword()
+    {
+        return view('admin.login.change_password');
+    }
+    public function updatePassword(Request $request)
+    {
+        $admin_id = $request->session()->get('admin_id');
+        $validatedData = $request->validate([
+            'password' => 'required',
+        ]);
+        $admin = Admin::find($admin_id);
+        $admin->update($request->all());
+
+        return redirect()->route('Admin.dashboard')->with('success','Password has updated successfully.');
     }
 }
