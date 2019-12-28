@@ -8,6 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EnquiryReplyFromAdmin;
 
 class EnquiryController extends Controller
 {
@@ -68,7 +70,20 @@ class EnquiryController extends Controller
 
         $request->validate(EnquiryDetail::rules(), EnquiryDetail::messages());
 
-        EnquiryDetail::create($request->all());
+        $EnquiryDetail = EnquiryDetail::create($request->all());
+        $Enquiry = $EnquiryDetail->Enquiry;
+
+        if ($EnquiryDetail->id)
+        {
+            Mail::to($Enquiry->User->email)->send(
+                new EnquiryReplyFromAdmin(
+                    $Enquiry->User->name,
+                    $Enquiry->ticket_no,
+                    $EnquiryDetail->message
+                )
+            );
+        }
+        
 
         return redirect()->route('enquiries.show', $request->enquiry_id)
                         ->with('success','Category created successfully.');

@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Middleware\CheckRedirect;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +13,20 @@
 
 Auth::routes();
 
-Route::get('/', 'HomeController@home')->name('home');
-Route::get('/send/email', 'HomeController@mail');
+Route::group(['middleware' => [CheckRedirect::class]], function () {
+
+    Route::get('/', 'HomeController@home')->name('home');
+
+
+    Route::get('/abc/xyz', function(){
+        return "abc | xyz";
+    });
+    
+    Route::get('/send/email', 'HomeController@mail');
+
+});
+
+
 
 Route::prefix('sarkar')->group(function () {
 
@@ -44,6 +56,7 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
 
+    Route::resource('redirections','admin\RedirectionController');
 
 
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
