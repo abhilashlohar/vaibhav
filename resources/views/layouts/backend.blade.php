@@ -208,6 +208,17 @@
                                 </li>
                             @endif
 
+                            @if (in_array('EventController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item " aria-haspopup="true">
+                                    <a href="{{ route('events.index') }}" class="kt-menu__link ">
+                                        <span class="kt-menu__link-icon">
+                                            <i class="fa fa-guitar"></i>
+                                        </span>
+                                        <span class="kt-menu__link-text">Event</span>
+                                    </a>
+                                </li>
+                            @endif
+
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('redirections.index') }}" class="kt-menu__link ">
                                     <span class="kt-menu__link-icon">
@@ -216,6 +227,7 @@
                                     <span class="kt-menu__link-text">Redirection Rules</span>
                                 </a>
                             </li>
+
                         </ul>
 
 

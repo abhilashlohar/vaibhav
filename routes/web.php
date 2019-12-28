@@ -42,7 +42,6 @@ Route::prefix('sarkar')->group(function () {
 
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 
-    Route::resource('/permissions','admin\PermissionController');
 
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');
@@ -58,11 +57,15 @@ Route::prefix('sarkar')->group(function () {
 
 
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
-    
+
 
 
 
     Route::resource('products','admin\ProductController');
-    Route::resource('modules','admin\ModuleController');
+    // Route::resource('modules','admin\ModuleController');
     Route::resource('user-rights','admin\UserRightController');
+    Route::resource('events','admin\EventController');
+    Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
+
 });
+

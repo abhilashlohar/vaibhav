@@ -9,7 +9,8 @@ use App\Blog;
 class Enquiry extends Model
 {
     protected $fillable = [
-        'subject','user_id','product_id','ticket_no','type','status'
+        'subject','user_id','product_id','ticket_no','type','status','closed_reason','closed_at','closed_by'
+
     ];
 
     public function EnquiryDetails()
@@ -20,5 +21,10 @@ class Enquiry extends Model
     public function User()
     {
         return $this->belongsTo('App\User');
+    }
+
+    public function Admin()
+    {
+        return $this->belongsTo('App\Admin','closed_by','id');
     }
 }

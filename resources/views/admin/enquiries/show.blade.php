@@ -13,6 +13,9 @@
                         {{ $Enquiry->subject }}
                     </h3>
                 </div>
+                <div class="kt-portlet__head-label">
+                    <a class="btn btn-secondary" style="float:right" href="{{ route('enquiries.index') }}">Back</a>
+                </div>
             </div>
             <div class="kt-portlet__body">
                 <div class="kt-widget3">
@@ -44,7 +47,26 @@
 
     </div>
 </div>
-@if (in_array('EnquiryController@reply',Session::get('userrightPages')))
+@if($Enquiry->status == 'closed')
+<div class="row">
+    <div class="col-md-12">
+        <div class="kt-portlet">
+            <div class="kt-portlet__body">
+                <div class="kt-widget3__body">
+                    <label style="font-weight:500; color:#595d6e">Closed By:- </label>{{ $Enquiry->admin->name }}
+                </div>
+                <div class="kt-widget3__body">
+                    <label style="font-weight:500; color:#595d6e">Closed Date:- </label>{{ date('d-m-Y', strtotime($Enquiry->closed_at)) }}
+                </div>
+                <div class="kt-widget3__body">
+                    <label style="font-weight:500; color:#595d6e">Closed Reason:- </label>{{ $Enquiry->closed_reason }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endif
+@if (in_array('EnquiryController@reply',Session::get('userrightPages')) && ($Enquiry->status == 'open'))
 <div class="row">
     <div class="col-md-12">
         <div class="kt-portlet">
@@ -63,9 +85,36 @@
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
                         <button type="submit" class="btn btn-primary">Send</button>
+                        <button class="btn btn-success" data-toggle="modal" data-target="#kt_modal" type="button">Close Ticket</button>
+                        <a class="btn btn-secondary" href="{{ route('enquiries.index') }}">Cancel</a>
                     </div>
                 </div>
             </form>
+            <div class="modal fade" id="kt_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form action="{{ route('enquiries.update',$Enquiry->id) }}" method="POST" enctype="multipart/form-data" class="kt-form">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Close Ticket</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group form-group-last">
+                                    <label for="exampleTextarea">Closed Reason</label>
+                                    <textarea class="form-control" id="closed_reason" name="closed_reason" rows="3"></textarea>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Close Ticket</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

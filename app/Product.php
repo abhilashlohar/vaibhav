@@ -35,6 +35,12 @@ class Product extends Model
       if(!empty($id))
       {
         $rules =  [
+            'name' => [
+                'required',
+                Rule::unique('products')->where(function ($query) {
+                    return $query->where('deleted', false);
+                })->ignore($id)
+            ],
             'category_id' => 'required',
             'sub_category_id' => 'required',
             'short_description' => 'required',
