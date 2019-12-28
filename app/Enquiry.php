@@ -9,11 +9,16 @@ use App\Blog;
 class Enquiry extends Model
 {
     protected $fillable = [
-        'user_id','product_id','ticket_no','type','status'
+        'subject','user_id','product_id','ticket_no','type','status'
     ];
 
     public function EnquiryDetails()
     {
         return $this->hasMany('App\EnquiryDetail');
+    }
+
+    public function User()
+    {
+        return $this->belongsTo('App\User');
     }
 }

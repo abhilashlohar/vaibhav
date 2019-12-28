@@ -207,6 +207,15 @@
                                     </a>
                                 </li>
                             @endif
+
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('redirections.index') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-book"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Redirection Rules</span>
+                                </a>
+                            </li>
                         </ul>
 
 
