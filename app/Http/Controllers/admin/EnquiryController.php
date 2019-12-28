@@ -27,25 +27,20 @@ class EnquiryController extends Controller
             $where_ar[] = ['enquiries.ticket_no','like','%'.$request->ticket_no.'%'];
         }
 
-        if(isset($request->name)) {
-           //$where_ar[] = ['enquiries.users.name','like','%'.$request->name.'%'];
-        //    ->join('users', 'users.id', '=', 'contacts.user_id')
-        }
-
         if(isset($request->status)) {
             $where_ar[] = ['enquiries.status','=',$request->status];
         }
 
-        //dd($where_ar);
-
         $enquiries = Enquiry::where($where_ar)->orderBy('ticket_no', 'desc')
-        ->with(['User' => function($query) use($request) {
-            $query->where('name','like','%'.$request->name.'%');
-        }])
+        ->with('User')
+        ->whereHas('User', function($query) use($request)  {
+            if(isset($request->name)) {
+                $query->where('name','like','%'.$request->name.'%');
+            }
+        })
         ->paginate(5);
 
-        //dd($enquiries);
-        return view('admin.enquiries.index',compact('enquiries'))
+        return view('admin.enquiries.index',compact('enquiries','request'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

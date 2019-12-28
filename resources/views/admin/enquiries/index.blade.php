@@ -21,28 +21,28 @@
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="ticket_no">Ticket No.</label>
-                                <input type="text" placeholder="Ticket No." id="ticket_no" name="ticket_no" class="form-control" autofocus>
+                            <input type="text" placeholder="Ticket No." id="ticket_no" name="ticket_no" value="{{$request->ticket_no}}" class="form-control" autofocus>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="ticket_no">Customer Name</label>
-                                <input type="text" placeholder="Customer Name" id="name" name="name" class="form-control">
+                                <input type="text" placeholder="Customer Name" id="name" name="name" value="{{$request->name}}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
                                 <label for="ticket_no">Status</label>
-                                <select class="form-control" name="status">
+                                <select class="form-control" name="status"  value="{{$request->status}}">
                                     <option value="">---Select Status---</option>
-                                    <option value="open">Open</option>
-                                    <option value="closed">Closed</option>
+                                    <option value="open" {{($request->status=='open')?'selected':''}}>Open</option>
+                                    <option value="closed" {{($request->status=='closed')?'selected':''}}>Closed</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="ticket_no">Action</label>
+                                <label for="ticket_no" class="text-center" style="display:block;">Action</label>
                                 <button  type="submit" class="btn btn-primary form-control">Search</button>
                             </div>
                         </div>
