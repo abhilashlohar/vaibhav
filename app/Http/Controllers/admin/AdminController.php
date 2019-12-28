@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
+use App\Mail\ForgottenPasswordAdmin;
 
 class AdminController extends Controller
 {
@@ -125,6 +126,38 @@ class AdminController extends Controller
             'password' => 'required',
         ]);
         $admin = Admin::find($admin_id);
+        $admin->update($request->all());
+
+        return redirect()->route('Admin.dashboard')->with('success','Password has updated successfully.');
+    }
+    public function forgottenPassword(Request $request)
+    {
+        $validatedData = $request->validate([
+            'email' => 'required',
+        ]);
+        $admin = Admin::where('email', '=', $request->email)->first();
+        if ($admin->id)
+        {
+            Mail::to($admin->email)->send(
+                new EnquiryReplyFromAdmin(
+                    $admin->name,
+                    1234,
+                    $admin->email
+                )
+            );
+        }
+        dd($admin);
+
+
+        // return (new MailMessage)
+        //     ->subject(Lang::get('Reset Password Notification'))
+        //     ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
+        //     ->action(Lang::get('Reset Password'), url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
+        //     ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
+        //     ->line(Lang::get('If you did not request a password reset, no further action is required.'));
+        // }
+
+        $request->request->add(['image' => $fileName]);
         $admin->update($request->all());
 
         return redirect()->route('Admin.dashboard')->with('success','Password has updated successfully.');

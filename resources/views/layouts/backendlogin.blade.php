@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!--begin::Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">        
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Roboto:300,400,500,600,700">
     <!--end::Fonts -->
 
 
@@ -26,7 +26,7 @@
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/header/base/light.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/header/menu/light.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
-    <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />        
+    <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Skins -->
 
     <link rel="shortcut icon" href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico" />
@@ -48,14 +48,14 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-37564768-1');
-    </script>    --> 
+    </script>    -->
 </head>
 
     <!-- begin::Body -->
     <body  class="kt-quick-panel--right kt-demo-panel--right kt-offcanvas-panel--right kt-header--fixed kt-header-mobile--fixed kt-subheader--enabled kt-subheader--fixed kt-subheader--solid kt-aside--enabled kt-aside--fixed kt-page--loading"  >
-    
+
     @yield ('content')
-    
+
 
     <!-- begin::Global Config(global config for global JS sciprts) -->
     <script>
@@ -95,11 +95,22 @@
    <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/scripts.bundle.js" type="text/javascript"></script>
     <!--end::Global Theme Bundle -->
 
-        
+
     <!--begin::Page Scripts(used by this page) -->
     <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/custom/login/login-1.js" type="text/javascript"></script>
     <!--end::Page Scripts -->
 </body>
 <!-- end::Body -->
-
+<script>
+    $(document).ready(function(){
+        $(document).on('click','#kt_login_forgot',function(){
+            $('.kt-signin').css('display','none');
+            $('.kt-forgot').css('display','block');
+        });
+        $(document).on('click','#kt_login_forgot_cancel',function(){
+            $('.kt-forgot').css('display','none');
+            $('.kt-signin').css('display','block');
+        });
+    });
+</script>
 </html>
