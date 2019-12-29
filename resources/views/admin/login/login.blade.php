@@ -41,10 +41,10 @@
                 <!--begin::Body-->
                 <div class="kt-login__body">
 
-                    
+
 
                     <!--begin::Signin-->
-                    <div class="kt-login__form">
+                    <div class="kt-login__form kt-signin">
                         <div class="kt-login__title">
                             <h3>Sign In</h3>
                         </div>
@@ -58,13 +58,16 @@
                             <div class="form-group">
                                 <input class="form-control" type="password" placeholder="Password" name="password"  autocomplete="off">
                             </div>
+                            <div class="kt-login__extra text-right">
+                                <a href="javascript:;" id="kt_login_forgot">Forget Password ?</a>
+                            </div>
                             <!--begin::Action-->
                             <div class="kt-login__actions">
                                 <button type="submit"  class="btn btn-primary btn-elevate kt-login__btn-primary">Sign In</button>
                             </div>
                             <!--end::Action-->
                         </form>
-                        
+
                         @if(Session::has('fail'))
                             <div class="alert alert-danger">
                                {{Session::get('fail')}}
@@ -72,6 +75,22 @@
                         @endif
                         <!--end::Form-->
 
+                    </div>
+                    <div class="kt-login__form kt-forgot" style="display:none;">
+                        <div class="kt-login__title">
+                            <h3>Forgotten Password ?</h3>
+                            <h4>Enter your email to reset your password:</h4>
+                        </div>
+                        <form action="{{ route('admin.forgottenpassword') }}" class="kt-form" method="POST" novalidate="novalidate" id="kt_login_form">
+                            @csrf
+                            <div class="form-group">
+                                <input class="form-control" type="text" placeholder="Email" name="email" id="kt_email" autocomplete="off" required>
+                            </div>
+                            <div class="kt-login__actions">
+                                <button type="submit"  class="btn btn-primary btn-elevate kt-login__btn-primary">Request</button>
+                                <button id="kt_login_forgot_cancel" type="button" class="btn btn-outline-brand  btn-elevate">Cancel</button>
+                            </div>
+                        </form>
                     </div>
                     <!--end::Signin-->
                 </div>

@@ -20,7 +20,6 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/products/{category}', 'ProductController@list')->name('products.list');
 
-    
     Route::get('/send/email', 'HomeController@mail');
 
 });
@@ -37,10 +36,16 @@ Route::prefix('sarkar')->group(function () {
 
     Route::get('/login', 'admin\AdminController@showAdminLoginForm')->name('showAdminLoginForm');
     Route::post('/login', 'admin\AdminController@AdminLogin')->name('AdminLogin');
+
     Route::get('/logout', 'admin\AdminController@AdminLogout')->name('AdminLogout');
 
     Route::get('/dashboard', 'admin\AdminController@dashboard')->name('Admin.dashboard');
 
+    Route::get('/change-password', 'admin\AdminController@changePassword')->name('admin.changepassword');
+    Route::put('/change-password', 'admin\AdminController@updatePassword')->name('admin.updatepassword');
+
+    Route::post('/forgotten-password', 'admin\AdminController@forgottenPassword')->name('admin.forgottenpassword');
+    Route::get('/reset-password', 'admin\AdminController@resetPassword')->name('admin.passwordreset');
 
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');

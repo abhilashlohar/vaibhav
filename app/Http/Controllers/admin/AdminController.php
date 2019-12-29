@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ForgottenPasswordAdmin;
 
 class AdminController extends Controller
 {
@@ -90,7 +92,7 @@ class AdminController extends Controller
     {
         $request->validate(Admin::rules(), Admin::messages());
         $admin = Admin::create($request->all());
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->route('users.index')->with('success','User has created successfully.');;
     }
 
     public function edit($id)
@@ -106,11 +108,73 @@ class AdminController extends Controller
         $admin = Admin::find($id);
         $admin->update($request->all());
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','User record updated successfully.');
     }
 
     public function dashboard(Request $request)
     {
         return view('admin.login.dashboard');
+    }
+
+    public function changePassword()
+    {
+        return view('admin.login.change_password');
+    }
+    public function updatePassword(Request $request)
+    {
+        $admin_id = $request->session()->get('admin_id');
+        $validatedData = $request->validate([
+            'password' => 'required',
+        ]);
+        $admin = Admin::find($admin_id);
+        $admin->update($request->all());
+
+        return redirect()->route('Admin.dashboard')->with('success','Password has updated successfully.');
+    }
+    public function forgottenPassword(Request $request)
+    {
+        $validatedData = $request->validate([
+            'email' => 'required',
+        ]);
+        $six_digit_otp_number = mt_rand(100000, 999999);
+        $admin = Admin::where('email', '=', $request->email)->first();
+        if ($admin->id)
+        {
+            Mail::to($admin->email)->send(
+                new ForgottenPasswordAdmin(
+                    $admin->name,
+                    $six_digit_otp_number,
+                    $admin->email
+                )
+            );
+        }
+
+        $request->request->add(['otp' => $six_digit_otp_number]);
+        $admin->update($request->all());
+
+        return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');
+    }
+    public function resetPassword(Request $request)
+    {
+        $validatedData = $request->validate([
+            'otp' => 'required',
+            'email' => 'required',
+        ]);
+        $admin = Admin::where('email', '=', $request->email)->where('otp', '=', $request->otp)->first();
+        $request->request->add(['otp' => '']);
+        $admin->update($request->all());
+        if (isset($admin->id)) {
+            $request->session()->put('admin_id', $admin->id);
+            $request->session()->put('admin_name', $admin->name);
+            $admin->load('userrights','userrights.module');
+            $userrightPages = [];
+            foreach ($admin->userrights as $userright) {
+                $userrightPages[] = $userright->name;
+            }
+            $request->session()->put('userrightPages', $userrightPages);
+            return redirect()->route('admin.changepassword')->with('success','One time password link send to your mail, please check and reset password.');
+        }
+
+       return redirect()->route('showAdminLoginForm')->with('error','Password is not reset, please try again later.');
     }
 }

@@ -267,7 +267,7 @@
                                 </div>
                             </div>
 
-                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-sm">
+                            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-md">
                                 <!--begin: Head -->
                                 <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/misc/bg-1.jpg)">
                                     <div class="kt-user-card__avatar">
@@ -285,6 +285,7 @@
                                 <div class="kt-notification">
 
                                     <div class="kt-notification__custom kt-space-between">
+                                        <a href="{{ route('admin.changepassword') }}" class="btn btn-label btn-label-brand btn-sm btn-bold">Change Password</a>
                                         <a href="{{ route('AdminLogout') }}" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
                                     </div>
                                 </div>

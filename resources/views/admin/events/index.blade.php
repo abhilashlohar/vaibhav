@@ -31,7 +31,7 @@
                             <th>Date</th>
                             <th>Price</th>
                             <th>Image</th>
-                            <th>Action</th>
+                            <th class="text-center">Action</th>
                         </tr>
                         @foreach ($events as $event)
                         <tr>
