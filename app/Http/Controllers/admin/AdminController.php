@@ -136,19 +136,20 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'email' => 'required',
         ]);
+        $six_digit_otp_number = mt_rand(100000, 999999);
         $admin = Admin::where('email', '=', $request->email)->first();
         if ($admin->id)
         {
             Mail::to($admin->email)->send(
                 new ForgottenPasswordAdmin(
                     $admin->name,
-                    1234,
+                    $six_digit_otp_number,
                     $admin->email
                 )
             );
         }
 
-        $request->request->add(['otp' => 1234]);
+        $request->request->add(['otp' => $six_digit_otp_number]);
         $admin->update($request->all());
 
         return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');
