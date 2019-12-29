@@ -28,6 +28,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Category Name</th>
+                            <th>Slug</th>
+                            <th class="text-center">Sequence</th>
                             <th>Image</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -36,6 +38,8 @@
                         <tr>
                             <td>{{ $subcategory->name }}</td>
                             <td>{{ $subcategory->category->name }}</td>
+                            <td>{{ $subcategory->slug }}</td>
+                            <td class="text-center">{{ $subcategory->sequence }}</td>
                             <td>
                                 <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" width="60" height="60">
                             </td>

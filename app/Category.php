@@ -9,7 +9,7 @@ use App\Category;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'image'
+        'name', 'image','slug','sequence'
     ];
 
     public function notHavingImageInDb(){
@@ -21,22 +21,29 @@ class Category extends Model
         parent::boot();
     }
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       $rules =  [
           'name' => [
-            'required', 
+            'required',
             Rule::unique('categories')->where(function ($query) {
                 return $query->where('deleted', false);
             })->ignore($id)
           ],
+          'slug' => [
+            'required','regex:/^\S*$/u',
+            Rule::unique('categories')->where(function ($query) {
+                return $query->where('deleted', false);
+            })->ignore($id)
+          ],
+          'sequence' => 'required|numeric',
           'image_add' => 'mimes:jpeg,jpg,png|max:2048'
       ];
 
       if(!empty($id))
       {
         $category = Category::find($id);
-      
+
         if ($category->notHavingImageInDb()){
             $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
         }
@@ -49,11 +56,15 @@ class Category extends Model
       return $rules;
     }
 
-    public static function messages($id = '') 
+    public static function messages($id = '')
     {
       return [
           'name.required' => 'You must enter category name.',
           'name.unique' => 'The category name is already exists.',
+          'slug.required' => 'You must enter slug.',
+          'slug.unique' => 'The slug is already exists.',
+          'sequence.required' => 'You must enter sequence.',
+          'sequence.numeric' => 'You must enter numeric value.',
           'image_add.required' => 'You must select image.',
           'image_add.mimes' => 'Only allowed image type jpeg,jpg,png.',
           'image_add.max' => 'Image size is big from 2MB.'
@@ -63,5 +74,5 @@ class Category extends Model
     public function subCategories(){
         $this->hasMany('App\SubCategory');
     }
-    
+
 }

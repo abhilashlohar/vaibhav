@@ -10,6 +10,7 @@ use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ForgottenPasswordAdmin;
+use Illuminate\Support\Str;
 
 class AdminController extends Controller
 {
@@ -136,20 +137,21 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'email' => 'required',
         ]);
-        $six_digit_otp_number = mt_rand(100000, 999999);
+        // $six_digit_otp_number = mt_rand(100000, 999999);
+        $token = (string) Str::uuid();
         $admin = Admin::where('email', '=', $request->email)->first();
         if ($admin->id)
         {
             Mail::to($admin->email)->send(
                 new ForgottenPasswordAdmin(
                     $admin->name,
-                    $six_digit_otp_number,
+                    $token,
                     $admin->email
                 )
             );
         }
 
-        $request->request->add(['otp' => $six_digit_otp_number]);
+        $request->request->add(['otp' => $token]);
         $admin->update($request->all());
 
         return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');

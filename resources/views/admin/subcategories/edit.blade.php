@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $subCategory->name }}" required  autofocus>
+                        <input type="text" id="name" name="name" placeholder="Sub Category Name" class="form-control @error('name') is-invalid @enderror" value="{{ $subCategory->name }}" required  autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <label for="name">Name *</label>
+                        <label for="name">Category *</label>
                         <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                             <option value="">---Select---</option>
                             @foreach ($categories as $category)
@@ -43,6 +43,39 @@
                             </span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="slug">Slug *</label>
+                        <input type="text" id="slug" name="slug" placeholder="Sub Category Slug" class="form-control @error('slug') is-invalid @enderror" value="{{ $subCategory->slug }}" required >
+                        <span class="form-text text-muted">Not enter space inside slug.</span>
+                        @error('slug')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sequence">Sequence *</label>
+                        <input type="text" id="sequence" name="sequence" placeholder="Sub Category Sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ $subCategory->sequence }}" required >
+
+                        @error('sequence')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="short_description">Short Description *</label>
+                        <textarea placeholder="Short Description" required class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ $subCategory->short_description }}</textarea>
+                        @error('short_description')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <div class="row @error('image_add') is-invalid @enderror">
                             <label class="col-xl-3 col-lg-3 col-form-label">Image</label>

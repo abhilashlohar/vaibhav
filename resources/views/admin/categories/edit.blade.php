@@ -20,7 +20,7 @@
 
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $category->name }}" required  autofocus>
+                        <input type="text" id="name" name="name" placeholder="Category Name" class="form-control @error('name') is-invalid @enderror" value="{{ $category->name }}" required  autofocus>
 
                         @error('name')
                             <span class="invalid-feedback" role="alert">
@@ -28,6 +28,29 @@
                             </span>
                         @enderror
                     </div>
+
+                    <div class="form-group">
+                        <label for="slug">Slug *</label>
+                        <input type="text" id="slug" name="slug" placeholder="Category Slug" class="form-control @error('slug') is-invalid @enderror" value="{{ $category->slug }}" required >
+                        <span class="form-text text-muted">Not enter space inside slug.</span>
+                        @error('slug')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="sequence">Sequence *</label>
+                        <input type="text" id="sequence" name="sequence" placeholder="Category Sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ $category->sequence }}" required >
+
+                        @error('sequence')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
                     <div class="form-group">
                         <div class="row @error('image_add') is-invalid @enderror">
                             <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>

@@ -41,6 +41,12 @@ class Product extends Model
                     return $query->where('deleted', false);
                 })->ignore($id)
             ],
+            'product_code' => [
+                'required',
+                Rule::unique('products')->where(function ($query) {
+                    return $query->where('deleted', false);
+                })->ignore($id)
+            ],
             'category_id' => 'required',
             'sub_category_id' => 'required',
             'short_description' => 'required',
@@ -58,8 +64,8 @@ class Product extends Model
     public static function messages($id = '')
     {
       return [
-          'name.required' => 'You must enter blog-category name.',
-          'name.unique' => 'The blog-category name is already exists.',
+          'name.required' => 'You must enter product name.',
+          'name.unique' => 'The product name is already exists.',
           'category_id.required' => 'You must select category.',
           'sub_category_id.required' => 'You must select sub-category.',
           'short_description.required' => 'You must enter short description.',
@@ -68,6 +74,8 @@ class Product extends Model
           'stock_quantity.required' => 'You must enter stock quantity.',
           'regular_price.required' => 'You must enter regular price.',
           'sale_price.required' => 'You must enter sale price.',
+          'product_code.required' => 'You must enter product code.',
+          'product_code.unique' => 'The product code is already exists.',
       ];
     }
 
