@@ -72,7 +72,7 @@ class Category extends Model
     }
 
     public function subCategories(){
-        $this->hasMany('App\SubCategory');
+        return $this->hasMany('App\SubCategory');
     }
 
 }

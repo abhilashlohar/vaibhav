@@ -18,7 +18,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/', 'HomeController@home')->name('home');
     
 
-    Route::get('/products/{category}', 'ProductController@list')->name('products.list');
+    Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
 
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list');
