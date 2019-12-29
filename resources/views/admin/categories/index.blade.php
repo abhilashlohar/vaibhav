@@ -43,7 +43,7 @@
                                     @if (in_array('CategoryController@edit',Session::get('userrightPages')))
                                         <a href="{{route('categories.edit', $category->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
                                     @endif
-                                    @if (in_array('CategoryController@delete',Session::get('userrightPages')))
+                                    @if (in_array('CategoryController@destroy',Session::get('userrightPages')))
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="modal" data-target="#kt_modal_{{$sr_no}}" type="button"><i class="la la-trash"></i></button>

@@ -15,7 +15,7 @@ class UserRightsAuth
         if ($admin_id) {
             $action = app('request')->route()->getAction();
             $controller = class_basename($action['controller']);
-            $allowed_pages = ['AdminController@showAdminLoginForm', 'AdminController@AdminLogin', 'AdminController@AdminLogout', 'AdminController@dashboard', 'CategoryController@list', 'SubCategoryController@list', 'BlogController@uploadImg','AdminController@forgottenPassword','AdminController@resetPassword'];
+            $allowed_pages = ['AdminController@showAdminLoginForm', 'AdminController@AdminLogin', 'AdminController@AdminLogout', 'AdminController@dashboard', 'CategoryController@list', 'SubCategoryController@list', 'BlogController@uploadImg','AdminController@forgottenPassword','AdminController@resetPassword','AdminController@changePassword','AdminController@updatePassword', 'EventController@uploadImg'];
             $allows = false;
             if (!in_array($controller,$request->session()->get('userrightPages')) && !in_array($controller,$allowed_pages)) {
                 abort(403);
