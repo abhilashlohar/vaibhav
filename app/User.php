@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'username', 'password',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -33,7 +33,7 @@ class User extends Authenticatable
     {
       return [
           'name' => 'required',
-          'username' => [
+          'email' => [
             'required', 
             Rule::unique('users')->ignore($id)
           ]
@@ -44,6 +44,8 @@ class User extends Authenticatable
     {
       return [
           'name.required' => 'You must enter the name.',
+          'email.required' => 'You must enter the email.',
+          'email.unique' => 'This email is already registered.',
       ];
     }
   
