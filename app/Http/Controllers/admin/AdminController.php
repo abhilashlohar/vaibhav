@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
+use Illuminate\Support\Facades\Mail;
 use App\Mail\ForgottenPasswordAdmin;
 
 class AdminController extends Controller
@@ -139,27 +140,40 @@ class AdminController extends Controller
         if ($admin->id)
         {
             Mail::to($admin->email)->send(
-                new EnquiryReplyFromAdmin(
+                new ForgottenPasswordAdmin(
                     $admin->name,
                     1234,
                     $admin->email
                 )
             );
         }
-        dd($admin);
 
-
-        // return (new MailMessage)
-        //     ->subject(Lang::get('Reset Password Notification'))
-        //     ->line(Lang::get('You are receiving this email because we received a password reset request for your account.'))
-        //     ->action(Lang::get('Reset Password'), url(config('app.url').route('password.reset', ['token' => $this->token, 'email' => $notifiable->getEmailForPasswordReset()], false)))
-        //     ->line(Lang::get('This password reset link will expire in :count minutes.', ['count' => config('auth.passwords.'.config('auth.defaults.passwords').'.expire')]))
-        //     ->line(Lang::get('If you did not request a password reset, no further action is required.'));
-        // }
-
-        $request->request->add(['image' => $fileName]);
+        $request->request->add(['otp' => 1234]);
         $admin->update($request->all());
 
-        return redirect()->route('Admin.dashboard')->with('success','Password has updated successfully.');
+        return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');
+    }
+    public function resetPassword(Request $request)
+    {
+        $validatedData = $request->validate([
+            'otp' => 'required',
+            'email' => 'required',
+        ]);
+        $admin = Admin::where('email', '=', $request->email)->where('otp', '=', $request->otp)->first();
+        $request->request->add(['otp' => '']);
+        $admin->update($request->all());
+        if (isset($admin->id)) {
+            $request->session()->put('admin_id', $admin->id);
+            $request->session()->put('admin_name', $admin->name);
+            $admin->load('userrights','userrights.module');
+            $userrightPages = [];
+            foreach ($admin->userrights as $userright) {
+                $userrightPages[] = $userright->name;
+            }
+            $request->session()->put('userrightPages', $userrightPages);
+            return redirect()->route('admin.changepassword')->with('success','One time password link send to your mail, please check and reset password.');
+        }
+
+       return redirect()->route('showAdminLoginForm')->with('error','Password is not reset, please try again later.');
     }
 }

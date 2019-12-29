@@ -20,7 +20,7 @@ class CheckAuth
 
         $page = class_basename(Route::currentRouteAction());
 
-        $allowed_pages = ['AdminController@showAdminLoginForm', 'AdminController@AdminLogin','AdminController@forgottenPassword'];
+        $allowed_pages = ['AdminController@showAdminLoginForm', 'AdminController@AdminLogin','AdminController@forgottenPassword','AdminController@resetPassword'];
 
         if (!$admin_id) {
             if (!in_array($page, $allowed_pages)) {

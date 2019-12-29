@@ -47,6 +47,7 @@ Route::prefix('sarkar')->group(function () {
     Route::put('/change-password', 'admin\AdminController@updatePassword')->name('admin.updatepassword');
 
     Route::post('/forgotten-password', 'admin\AdminController@forgottenPassword')->name('admin.forgottenpassword');
+    Route::get('/reset-password', 'admin\AdminController@resetPassword')->name('admin.passwordreset');
 
     Route::resource('categories','admin\CategoryController');
     Route::resource('sub-categories','admin\SubCategoryController');

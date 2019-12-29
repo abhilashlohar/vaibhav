@@ -9,7 +9,7 @@ class Admin extends Model
 {
     // protected $guard = 'admin';
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'otp'
     ];
 
     protected $hidden = [
