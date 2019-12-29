@@ -41,7 +41,7 @@
                             <td class="align-middle">{{ $redirection->from_url }}</td>
                             <td class="align-middle">{{ $redirection->to_url }}</td>
                             <td class="align-middle">
-                                <button type="button" class="btn btn-sm btn-clean btn-icon btn-icon-md kt_sweetalert_demo_1" data-id="{{ $redirection->id }}"> <i class="la la-trash"></i></button>
+                                <button type="button" class="btn btn-sm btn-clean btn-icon btn-icon-md kt_sweetalert_demo_1" data-id="{{ $redirection->id }}" title="Delete"> <i class="la la-trash"></i></button>
 
                                 <form action="{{ route('redirections.destroy',$redirection->id) }}" method="POST" id="delete-form-{{$redirection->id}}">
                                     @csrf

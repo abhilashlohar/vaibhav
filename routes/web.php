@@ -16,11 +16,10 @@ Auth::routes();
 Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/', 'HomeController@home')->name('home');
+    
 
+    Route::get('/products/{category}', 'ProductController@list')->name('products.list');
 
-    Route::get('/abc/xyz', function(){
-        return "abc | xyz";
-    });
     
     Route::get('/send/email', 'HomeController@mail');
 
