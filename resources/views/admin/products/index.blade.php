@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-12">
 
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-portlet__head">
@@ -30,8 +30,11 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Sub Category</th>
+                            <th>Product Code</th>
+                            <th>Discount</th>
+                            <th>Sale Price</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <th class="text-center">Actions</th>
                         </tr>
                         <?php $sr_no=1; ?>
                         @foreach ($products as $product)
@@ -39,8 +42,11 @@
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->category['name'] }}</td>
                             <td>{{ $product->subCategory['name'] }}</td>
+                            <td>{{ $product->product_code }}</td>
+                            <td>{{ $product->discount }}{{ ($product->discount)?'%':'' }}</td>
+                            <td>{{ $product->sale_price }}</td>
                             <td>{{($product->is_published)?'Published':'Draft'}}</td>
-                            <td class="align-middle">
+                            <td  class="text-center">
                                 <form action="{{ route('products.destroy',$product->id) }}" method="POST">
                                     @if (in_array('ProductController@edit',Session::get('userrightPages')))
                                     <a href="{{ route('products.edit', $product->id) }}" title="Edit product" class="btn btn-sm btn-clean btn-icon btn-icon-md">

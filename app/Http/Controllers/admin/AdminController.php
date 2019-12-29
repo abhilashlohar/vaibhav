@@ -137,7 +137,6 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'email' => 'required',
         ]);
-        // $six_digit_otp_number = mt_rand(100000, 999999);
         $token = (string) Str::uuid();
         $admin = Admin::where('email', '=', $request->email)->first();
         if ($admin->id)

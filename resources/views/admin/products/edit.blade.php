@@ -106,6 +106,18 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
+                                <label for="slug">Slug *</label>
+                                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
+                                <span class="form-text text-muted">Not enter space inside slug.</span>
+                                @error('slug')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
                                 <label for="sequence">Sequence</label>
                                 <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}">
 
@@ -161,10 +173,36 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
+                                <label for="product_code">Product Code *</label>
+                                <input type="text" id="product_code" name="product_code" class="form-control @error('product_code') is-invalid @enderror" value="{{ ($product->product_code)? $product->product_code : old('product_code') }}" required>
+
+                                @error('product_code')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
                                 <label for="regular_price">Regular Price *</label>
                                 <input type="text" id="regular_price" name="regular_price" class="form-control @error('regular_price') is-invalid @enderror" value="{{ ($product->regular_price)? $product->regular_price : old('regular_price') }}" required>
 
                                 @error('regular_price')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="discount">Discount</label>
+                                <input type="text" id="discount" name="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ ($product->discount)? $product->discount : old('discount') }}">
+
+                                @error('discount')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -350,6 +388,12 @@
                         required: !0
                     },
                     sku: {
+                        required: !0
+                    },
+                    slug: {
+                        required: !0
+                    },
+                    product_code: {
                         required: !0
                     },
                     stock_quantity: {
