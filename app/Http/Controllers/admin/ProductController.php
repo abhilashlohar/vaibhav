@@ -81,7 +81,7 @@ class ProductController extends Controller
         $productImages = ProductImage::where('product_id',$product->id)->get();
         $categories = Category::where('deleted',0)->latest()->get();
         $subCategories = SubCategory::where('deleted',0)->where('category_id',$product->category_id)->latest()->get();
-        $relatedProducts = Product::where('deleted',0)->where('id', '!=', $product->id)->latest()->get();
+        $relatedProducts = Product::where('deleted',0)->where('is_published',1)->where('id', '!=', $product->id)->latest()->get();
 
         return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts', 'productImages'));
     }
