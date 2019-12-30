@@ -93,38 +93,41 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="item-archive--title">
-               <h3>Beds - <span>Lorem Ipsum</span></h3>
+               <h3>{{$subCategoryData->name}} - <span>{{$subCategoryData->short_description}}</span></h3>
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="item-archive--list">
-               <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
-                  <div class="item-excerpt--wrap bg-pattern">
-                     <div class="item-excerpt--image">
-                        <img src="<?php echo url('/'); ?>/static/images/product-thumbnail-01.png" alt=""/>
-                        <div class="item-excerpt--action">
-                           <a href="#">Add To Cart</a>
-                           <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
-                        </div>
-                     </div>
-                     <div class="item-excerpt--details">
-                        <div class="item-excerpt--meta">
-                           <div class="title"><h4><a href="#" target="_blank">XYZ product by Abc</a></h4></div>
-                           <div class="code">Code: ###</div>
-                        </div>
-                        <div class="ecommerce-item--price">
-                           <ul>
-                              <li class="new-price">Rs. 2637</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="discount">(46% Off)</li>
-                           </ul>
-                        </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                @foreach ($products as $product)
+                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                    <div class="item-excerpt--wrap">
+                       <div class="item-excerpt--image">
+                          <img src="<?php echo url('/'); ?>/static/images/product-thumbnail-01.png" alt=""/>
+                          <div class="item-excerpt--action">
+                             <a href="#">Add To Cart</a>
+                             <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                          </div>
+                       </div>
+                       <div class="item-excerpt--details">
+                          <div class="item-excerpt--meta">
+                             <div class="title"><h4><a href="#" target="_blank">XYZ product by Abc</a></h4></div>
+                             <div class="code">Code: ###</div>
+                          </div>
+                          <div class="ecommerce-item--price">
+                             <ul>
+                                <li class="new-price">Rs. 2637</li>
+                                <li class="old-price">Rs. 4885</li>
+                                <li class="discount">(46% Off)</li>
+                             </ul>
+                          </div>
+                          <div class="ecommerce-item--rating">
+                             <div class="rate" data-rate-value=5></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                @endforeach
+
                <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                   <div class="item-excerpt--wrap">
                      <div class="item-excerpt--image">
@@ -321,4 +324,3 @@
 
 @endsection
 
-   
