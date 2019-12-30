@@ -7,7 +7,7 @@
     </tr>
 
     <?php $totalAmount = 0; ?>
-    
+
     @foreach ($cartItems as $cartItem)
     <tr>
         <td>{{ $cartItem->product->name }}</td>
@@ -19,6 +19,7 @@
 
     </tr>
     @endforeach
+    
     <tr>
         <th colspan="4" align="right">{{ $totalAmount }}</th>
     </tr>
