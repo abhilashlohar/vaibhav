@@ -4,7 +4,8 @@
       <!-- Required meta tags -->
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
       <!-- Bootstrap CSS -->
       <link href="<?php echo url('/'); ?>/static/css/bootstrap.min.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/owl-carousel.css" rel="stylesheet">
@@ -36,7 +37,7 @@
                <div class="col-3 col-sm-3 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
                      <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/>
-                  </div>  
+                  </div>
                </div>
                <div class="col-3 col-sm-3 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
@@ -167,13 +168,13 @@
            </div>
         </div>
      </footer>
-  
+
      <!-- Javascript -->
      <script src="<?php echo url('/'); ?>/static/js/jquery-3.4.1.min.js"></script>
      <script src="<?php echo url('/'); ?>/static/js/bootstrap.min.js"></script>
      <script src="<?php echo url('/'); ?>/static/js/owl.carousel.js"></script>
      <script src="<?php echo url('/'); ?>/static/js/rater.js"></script>
      <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
+     @yield ('footer-script')
     </body>
   </html>
-           
