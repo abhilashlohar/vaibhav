@@ -18,23 +18,91 @@ class CartController extends Controller
 
     public function addTocart(Request $request)
     {
+        $cart = [];
+        $minutes = 60;
+        $user = auth()->user();
+        $existCookie = false;
 
-        // \Cookie::queue(\Cookie::forget('cart'));  // Delete Cookie
+        if($user)
+        {
+            $cartItems = Cart::where('user_id',$user->id)->get();
 
-        // $request->hasCookie('key');
+            if($request->hasCookie('vaibhav_cart'))
+            {
+                $cookieValues = json_decode($request->cookie('vaibhav_cart'));
 
-        /// Save Cookie
+                foreach($cookieValues  as $key => $cookieValue)
+                {
+                    if($cookieValue->product_id == $request->product_id)
+                    {
+                        $cookieValue->quantity += 1;
+                        $existCookie = true;
+                    }
+                    $cart[]=['product_id'=>$cookieValue->product_id,'quantity'=>$cookieValue->quantity];
+                }
+                if(!$existCookie)
+                {
+                    $cart[]=['product_id'=>$request->product_id,'quantity'=>1];
+                }
+                \Cookie::queue(\Cookie::forget('vaibhav_cart'));
 
-        // $cart=['name'=>'Imran','email'=>'xyz*emphasized text@gmail.com'];
-        // $array_json=json_encode($cart);
-        // $minutes = 60;
-        // $cookie = cookie('cart', $array_json, $minutes);
-        // return response('Set Cookie')->cookie($cookie);
+                // insert Query;
+                // DB::table('carts')->insertOrIgnore($cart);
+            }
+            else
+            {
+                foreach($cartItems  as $cartItem)
+                {
+                    if($cartItem->product_id == $request->product_id)
+                    {
+                        $cartItem->quantity += 1;
+                        $existCookie = true;
+                        /// Update data
+                        Cart::where('id', $cartItem->id)
+                            ->update(['quantity' =>  $cartItem->quantity]);
+                    }
+
+                }
+                if(!$existCookie)
+                {
+                    /// Insert data
+                    $CartTable = new Cart;
+                    $CartTable->product_id = $request->product_id;
+                    $CartTable->user_id = $user->id;
+                    $CartTable->quantity = 1;
+                    $CartTable->save();
+                }
+            }
 
 
-         $value = $request->cookie('cart');
-        $data =  json_decode($value);
-        echo $data->name;
-        echo $data->email;
+
+        }
+        else
+        {
+            if($request->hasCookie('vaibhav_cart'))
+            {
+                $cookieValues = json_decode($request->cookie('vaibhav_cart'));
+
+                foreach($cookieValues  as $key => $cookieValue)
+                {
+                    if($cookieValue->product_id == $request->product_id)
+                    {
+                        $cookieValue->quantity += 1;
+                        $existCookie = true;
+                    }
+                    $cart[]=['product_id'=>$cookieValue->product_id,'quantity'=>$cookieValue->quantity];
+                }
+                if(!$existCookie)
+                {
+                    $cart[]=['product_id'=>$request->product_id,'quantity'=>1];
+                }
+            }
+            else
+            {
+                $cart[]=['product_id'=>$request->product_id,'quantity'=>1];
+            }
+            $array_json=json_encode($cart);
+            return response('Set Cookie')->cookie(cookie('vaibhav_cart', $array_json, $minutes));
+        }
     }
 }

@@ -104,7 +104,7 @@
                         <div class="item-excerpt--image">
                             <img src="{{ asset('storage/product/'.$product->image) }}" alt="{{$product->name}}"/>
                             <div class="item-excerpt--action">
-                                <a href="{{$product->slug}}" class="addToCart">Add To Cart</a>
+                                <a href="{{$product->id}}" class="addToCart">Add To Cart</a>
                                 <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
                             </div>
                         </div>
@@ -153,11 +153,11 @@
             });
             $(document).on('click','.addToCart',function(e){
                 e.preventDefault();
-                var product_slag = $(this).attr('href');
+                var product_id = $(this).attr('href');
                 $.ajax({
                 type:'POST',
                 url:"{{ route('addTocart') }}",
-                data:{slug:product_slag},
+                data:{product_id:product_id},
                 success:function(data){
 
                        console.log(data);
