@@ -68,7 +68,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                <div class="category-carousel--wrap">
                   <div class="owl-carousel category-inner owl-theme">
-                     @foreach ($subCategories as $subcategory)
+                     @foreach ($category->subcategory_available_orderBy as $subcategory)
                      <a href="{{route('products.list', [$category->slug,$subcategory->slug])}}" style="text-decoration:none;">
                         <div class="item">
                            <div class="slideshow-details--wrap">
@@ -102,7 +102,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3">
                     <div class="item-excerpt--wrap">
                         <div class="item-excerpt--image">
-                            <img src="{{ asset('storage/product/'.$product->image) }}" alt="{{$product->name}}"/>
+                            <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                             <div class="item-excerpt--action">
                                 <a href="{{$product->id}}" class="addToCart">Add To Cart</a>
                                 <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>

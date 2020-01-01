@@ -74,5 +74,8 @@ class Category extends Model
     public function subCategories(){
         return $this->hasMany('App\SubCategory');
     }
+    public function subcategory_available_orderBy(){
+        return $this->hasMany('App\SubCategory')->where('deleted', '=', 0)->orderBy('sequence', 'asc');
+    }
 
 }
