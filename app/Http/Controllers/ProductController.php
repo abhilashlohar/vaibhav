@@ -47,7 +47,7 @@ class ProductController extends Controller
 
     public function productDetail($product_slug)
     {
-        $products = Product::where([
+        $products = Product::with(['product_image_primary','productImages'])->where([
             ['is_published', '=', 1],
             ['products.deleted', '=', 0],
             ['products.slug', '=', $product_slug]
