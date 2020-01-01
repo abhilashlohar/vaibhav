@@ -16,12 +16,14 @@ Auth::routes();
 Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/', 'HomeController@home')->name('home');
-    
+
 
     Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
 
+
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list');
+    Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
     Route::get('/checkout', 'OrderController@checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
