@@ -22,6 +22,18 @@ class CreateOrdersTable extends Migration
             $table->decimal('order_amount',10,2);
             $table->string('payment_mode',30);
             $table->string('payment_status',30);
+            $table->string('bill_name');
+            $table->string('bill_mobile');
+            $table->string('bill_address');
+            $table->string('bill_pincode');
+            $table->string('bill_landmark');
+            $table->string('bill_state');
+            $table->string('ship_name');
+            $table->string('ship_mobile');
+            $table->string('ship_address');
+            $table->string('ship_pincode');
+            $table->string('ship_landmark');
+            $table->string('ship_state');
             $table->timestamps();
         });
     }

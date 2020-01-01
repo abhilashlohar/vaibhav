@@ -96,7 +96,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label >Bold Checkboxes</label>
+                                <label >Blog Category</label>
                                 @foreach ($BlogCategories as $BlogCategory)
                                 <div class="kt-checkbox-list">
                                     <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">

@@ -26,6 +26,8 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
     Route::get('/getCookie', 'CartController@getCookie')->name('getCookie');
     Route::get('/checkout', 'OrderController@checkout');
+    Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
+    Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
 
 });
 
@@ -58,6 +60,8 @@ Route::prefix('sarkar')->group(function () {
     Route::post('/sub-categories.list','admin\SubCategoryController@list')->name('subcategorylist');
 
     Route::resource('blog-categories','admin\BlogCategoryController');
+
+
     Route::resource('blogs','admin\BlogController');
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
