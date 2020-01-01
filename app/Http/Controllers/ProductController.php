@@ -10,7 +10,6 @@ class ProductController extends Controller
 {
     public function list($category_slug,$sub_category_slug)
     {
-
         $category = Category::where([
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
@@ -41,18 +40,22 @@ class ProductController extends Controller
         // ->orderBy('sequence', 'asc')
         // ->get();
 
-        return view('products.list',compact('category','subCategoryData','products'));
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-list';
+        return view('products.list',compact('category','subCategoryData','products','page_title','body_class'));
     }
 
     public function productDetail($product_slug)
     {
         $products = Product::where([
             ['is_published', '=', 1],
-            ['products.deleted', '=', 0]
+            ['products.deleted', '=', 0],
+            ['products.slug', '=', $product_slug]
         ])
-        ->orderBy('sequence', 'asc')
-        ->get();
-        return view('products.product-detail',compact('products'));
+        ->first();
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-detail';
+        return view('products.product-detail',compact('products','page_title','body_class'));
     }
 
 
