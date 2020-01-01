@@ -30,21 +30,25 @@
                             <th>Title</th>
                             <th>Modified</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         @foreach ($blogs as $blog)
                         <tr>
                             <td class="align-middle">
-                                <a href="{{ route('blogs.edit', $blog->id) }}">
-                                    {{ $blog->title }}
-                                </a>
+                                {{ $blog->title }}
                             </td>
-                            <td><?php echo humanTiming($blog->updated_at); ?></td>
-                            <td>
+                            <td class="align-middle"><?php echo humanTiming($blog->updated_at); ?></td>
+                            <td class="align-middle">
                                 @if ($blog->status=='draft')
                                     <span class="kt-badge  kt-badge--info kt-badge--inline kt-badge--pill">Draft</span>
                                 @else
                                     <span class="kt-badge  kt-badge--success kt-badge--inline kt-badge--pill">Published</span>
                                 @endif
+                            </td>
+                            <td class="align-middle">
+                                <a href="{{ route('blogs.edit', $blog->id) }}" title="Edit blog" class="btn btn-sm btn-clean btn-icon btn-icon-md">
+                                    <i class="la la-edit"></i>
+                                </a>
                             </td>
                         </tr>
                         @endforeach

@@ -1,6 +1,20 @@
 @extends('layouts.backend')
 
 @section('content')
+
+@if(Session::has('success'))
+    <div class="alert alert-success" role="alert" data-dismiss="alert">
+        <strong>SUCCESS! &nbsp;</strong> {{ Session::get('success') }}
+    </div>
+@endif
+
+
+@if(Session::has('fail'))
+    <div class="alert alert-danger" role="alert" data-dismiss="alert">
+        <strong>Fail! &nbsp;</strong> {{ Session::get('fail') }}
+    </div>
+@endif
+
 <div class="row">
     <div class="col-md-8">
 
@@ -39,6 +53,14 @@
                                         <i class="la la-edit"></i>
                                     </a>
                                 @endif
+
+                                <button type="button" class="btn btn-sm btn-clean btn-icon btn-icon-md kt_sweetalert_demo_1" data-id="{{ $blogCategory->id }}" title="Delete"> <i class="la la-trash"></i></button>
+
+                                <form action="{{ route('blog-categories.destroy',$blogCategory->id) }}" method="POST" id="delete-form-{{$blogCategory->id}}">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+
                             </td>
                         </tr>
                         @endforeach
@@ -51,4 +73,22 @@
         </div>
     </div>
 </div>
+@endsection
+
+
+@section('footer-script')
+<script type="text/javascript">
+    var KTSweetAlert2Demo={
+        init:function(){
+            $(".kt_sweetalert_demo_1").click(function(e){
+                var id = $(this).attr('data-id');
+
+                swal.fire({title:"Are you sure?",text:"You won't be able to revert this!",type:"warning",showCancelButton:!0,confirmButtonText:"Yes, delete it!"}).then((e) => {
+                    e.value&&$('#delete-form-'+id).submit();
+                });
+            })
+        }};
+
+    jQuery(document).ready(function(){KTSweetAlert2Demo.init()});
+</script>
 @endsection

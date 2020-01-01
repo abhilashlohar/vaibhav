@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\BlogCategory;
+use App\Blog;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -13,7 +14,7 @@ class BlogCategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        $this->middleware(UserRightsAuth::class);
+        // $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
@@ -58,6 +59,29 @@ class BlogCategoryController extends Controller
 
         return redirect()->route('blog-categories.index')
                         ->with('success','Category updated successfully');
+    }
+
+
+    public function destroy($id)
+    {
+        $BlogCategory = BlogCategory::find($id);
+
+        if ($BlogCategory) {
+            $Blogs = $BlogCategory->Blogs;
+
+            if (isset($Blogs) && count($Blogs)>0) {
+                return redirect()->route('blog-categories.index')
+                            ->with('fail','The blog-category is associated with blogs.');
+            }
+        }
+
+
+        $BlogCategory->deleted = 0;
+        $BlogCategory->save();
+
+        return redirect()->route('blog-categories.index')
+                            ->with('success','Blog-Category deleted successfully.');
+
     }
 
 
