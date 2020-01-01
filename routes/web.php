@@ -24,6 +24,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list');
     Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
+    Route::get('/getCookie', 'CartController@getCookie')->name('getCookie');
     Route::get('/checkout', 'OrderController@checkout');
 
 });

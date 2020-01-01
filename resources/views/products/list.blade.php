@@ -76,7 +76,7 @@
                                  <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
                               </div>
                               <div class="slideshow-details--title">
-                                 <h4>{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
+                                 <h4 class="{{($subcategory->slug == $subCategoryData->slug) ? 'active' : ''}}">{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
                               </div>
                            </div>
                         </div>
@@ -159,8 +159,16 @@
                 url:"{{ route('addTocart') }}",
                 data:{product_id:product_id},
                 success:function(data){
-
-                       console.log(data);
+                    console.log(data);
+                },
+                complete: function (data) {
+                    $.ajax({
+                        type:'get',
+                        url:"{{ route('getCookie') }}",
+                        success:function(data){
+                            console.log(data);
+                        }
+                    });
                 }
                 });
             });
