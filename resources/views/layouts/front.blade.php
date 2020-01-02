@@ -12,6 +12,7 @@
       <link href="<?php echo url('/'); ?>/static/css/font-awesome.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/owl.theme.default.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/primary-style.css" rel="stylesheet">
+      @yield ('header-style')
       <title>{{$page_title}}</title>
     </head>
 <body class="{{$body_class}}">

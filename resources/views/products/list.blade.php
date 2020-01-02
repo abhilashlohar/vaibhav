@@ -1,11 +1,13 @@
 @extends ('layouts.front')
-
-@section ('content')
+@section ('header-style')
 <style>
     body.product-list{
         position: relative;
     }
 </style>
+@endsection
+@section ('content')
+
    <section class="category-banner--wrapper">
       <div class="container-fluid">
          <div class="row">
@@ -108,7 +110,7 @@
                         <div class="item-excerpt--image">
                             <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                             <div class="item-excerpt--action">
-                                <a href="{{$product->id}}" class="addToCart">Add To Cart</a>
+                                <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">Add To Cart</a>
                                 <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
                             </div>
                         </div>
@@ -146,7 +148,7 @@
 
 @endsection
 
-@section ('footer-script')
+{{-- @section ('footer-script')
     <script type="text/javascript">
         jQuery(document).ready(function() {
 
@@ -178,5 +180,5 @@
             });
         });
     </script>
-@endsection
+@endsection --}}
 

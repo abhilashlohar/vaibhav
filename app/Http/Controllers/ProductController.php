@@ -47,15 +47,24 @@ class ProductController extends Controller
 
     public function productDetail($product_slug)
     {
-        $products = Product::with(['product_image_primary','productImages'])->where([
+        $product = Product::with(['productImages'])->where([
             ['is_published', '=', 1],
             ['products.deleted', '=', 0],
             ['products.slug', '=', $product_slug]
         ])
         ->first();
+
+        $related_product_ids=explode(',',$product->related_products);
+        $related_products = Product::with(['product_image_primary'])->where([
+            ['products.is_published', '=', 1],
+            ['products.deleted', '=', 0],
+        ])
+        ->whereIn('id', $related_product_ids)
+        ->get();
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-detail';
-        return view('products.product-detail',compact('products','page_title','body_class'));
+        return view('products.product-detail',compact('product','page_title','body_class','related_products'));
     }
 
 
