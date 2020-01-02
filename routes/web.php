@@ -19,11 +19,13 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
 
     Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
+    Route::get('/products/{product}', 'ProductController@productDetail')->name('products.product-detail');
 
 
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list');
     Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
+    Route::get('/getCookie', 'CartController@getCookie')->name('getCookie');
     Route::get('/checkout', 'OrderController@checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');

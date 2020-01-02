@@ -12,8 +12,9 @@ class CartController extends Controller
         $user = auth()->user();
 
         $cartItems = Cart::where('user_id',$user->id)->get();
-
-        return view('cart.list',compact('cartItems'));
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'cart';
+        return view('cart.list',compact('cartItems','page_title','body_class'));
     }
 
     public function addTocart(Request $request)
@@ -45,9 +46,30 @@ class CartController extends Controller
                     $cart[]=['product_id'=>$request->product_id,'quantity'=>1];
                 }
                 \Cookie::queue(\Cookie::forget('vaibhav_cart'));
+                $match_array = [];
+                foreach($cartItems  as $cartItem)
+                {
+                    foreach($cart  as $key => $cartValue)
+                    {
+                        if($cartValue->product_id == $cartItem->product_id)
+                        {
+                            /// Update data
+                            Cart::where('id', $cartItem->id)
+                            ->update(['quantity' =>  $cartItem->quantity+$cartValue->quantity]);
+                            unset($cart[$key]);
+                        }
 
-                // insert Query;
-                // DB::table('carts')->insertOrIgnore($cart);
+                    }
+                }
+                foreach($cart  as $key => $cartValue)
+                {
+
+                    $CartTable = new Cart;
+                    $CartTable->product_id = $cartValue->product_id;
+                    $CartTable->user_id = $user->id;
+                    $CartTable->quantity = $cartValue->quantity;
+                    $CartTable->save();
+                }
             }
             else
             {
@@ -61,7 +83,6 @@ class CartController extends Controller
                         Cart::where('id', $cartItem->id)
                             ->update(['quantity' =>  $cartItem->quantity]);
                     }
-
                 }
                 if(!$existCookie)
                 {
@@ -73,9 +94,6 @@ class CartController extends Controller
                     $CartTable->save();
                 }
             }
-
-
-
         }
         else
         {
@@ -104,5 +122,10 @@ class CartController extends Controller
             $array_json=json_encode($cart);
             return response('Set Cookie')->cookie(cookie('vaibhav_cart', $array_json, $minutes));
         }
+    }
+
+    public function getCookie(Request $request)
+    {
+        return $cookieValues = json_decode($request->cookie('vaibhav_cart'));
     }
 }

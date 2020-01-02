@@ -50,7 +50,11 @@ class ModulesTableSeeder extends Seeder {
             ['id' => 41, 'name' => 'EventController@create'],
             ['id' => 42, 'name' => 'EventController@store'],
             ['id' => 43, 'name' => 'EventController@edit'],
-            ['id' => 44, 'name' => 'EventController@update']
+            ['id' => 44, 'name' => 'EventController@update'],
+            ['id' => 45, 'name' => 'RedirectionController@index'],
+            ['id' => 46, 'name' => 'RedirectionController@create'],
+            ['id' => 47, 'name' => 'RedirectionController@store'],
+            ['id' => 48, 'name' => 'RedirectionController@destroy']
         ];
 
         DB::table('modules')->insertOrIgnore($users);

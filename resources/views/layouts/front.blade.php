@@ -12,9 +12,9 @@
       <link href="<?php echo url('/'); ?>/static/css/font-awesome.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/owl.theme.default.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/primary-style.css" rel="stylesheet">
-      <title>Vaibhav - A Unit of 28 South Ventures</title>
+      <title>{{$page_title}}</title>
     </head>
-  <body>
+<body class="{{$body_class}}">
 
    <header class="header-wrapper">
       <div class="container">

@@ -83,7 +83,7 @@ class EnquiryController extends Controller
                 )
             );
         }
-        
+
 
         return redirect()->route('enquiries.show', $request->enquiry_id)
                         ->with('success','Category created successfully.');
