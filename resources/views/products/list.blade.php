@@ -1,7 +1,11 @@
 @extends ('layouts.front')
 
 @section ('content')
-
+<style>
+    body.product-list{
+        position: relative;
+    }
+</style>
    <section class="category-banner--wrapper">
       <div class="container-fluid">
          <div class="row">

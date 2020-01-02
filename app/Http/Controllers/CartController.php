@@ -12,8 +12,9 @@ class CartController extends Controller
         $user = auth()->user();
 
         $cartItems = Cart::where('user_id',$user->id)->get();
-
-        return view('cart.list',compact('cartItems'));
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'cart';
+        return view('cart.list',compact('cartItems','page_title','body_class'));
     }
 
     public function addTocart(Request $request)
