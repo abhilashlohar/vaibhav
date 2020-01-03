@@ -59,20 +59,10 @@
                         </div>
                      </div>
                      <div class="ecommerce-menu--item">
-                     <div class="item-dropdown">
-                        <ul class="dropDownMenu">
-                           <li><a href="#">
-                                 <span class="desktop-text">Account</span>
-                                 <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                              </a>
-                              <ul>
-                                 <li><a href="http://html-tuts.com/?p=9961">Your Orders</a></li>
-                                 <li><a href="http://html-tuts.com/?p=9961">Wishlist</a></li>
-                                 <li><a href="http://html-tuts.com/?p=9961">Logout</a></li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
+                        <a href="#">
+                           <span class="desktop-text">Account</span>
+                           <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </a>
                   </div>
                   <div class="ecommerce-menu--item">
                      <a href="#" class="cart-notify">
@@ -90,8 +80,16 @@
                      <li class="nav-item active">
                        <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
                      </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="#">Stores</a>
+                     <li class="nav-item item-dropdown">
+                        <ul class="dropDownMenu">
+                           <li>
+                              <a class="nav-link" href="#">Stores</a>
+                              <ul>
+                                 <li><a href="#">Furniture</a></li>
+                                 <li><a href="#">Hair Care</a></li>
+                              </ul>
+                           </li>
+                        </ul>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="#">Care</a>

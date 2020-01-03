@@ -46,6 +46,15 @@ p {
 .product-detail .header-wrapper {
    position: relative;
 }
+.login .header-wrapper {
+   position: relative;
+}
+.register .header-wrapper {
+   position: relative;
+}
+.cart .header-wrapper {
+   position: relative;
+}
 .header-wrapper {
    position: absolute;
    top: 0;
@@ -147,6 +156,12 @@ p {
    padding: 11px 12px;
    display: inline-block;
    font-weight: 500;
+}
+.ecommerce-menu--item a {
+   text-decoration: none;
+   font-size: 13px;
+   line-height: 23px;
+   color: #2e2e2e;
 }
 .ecommerce-menu--item .btn {
    padding: 11px 12px;
@@ -2387,6 +2402,9 @@ Login Wrapper
    .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--one,
    .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two {
       margin-bottom: 0px;
+   }
+   .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
+      padding: 129px 35px;
    }
 }
 
