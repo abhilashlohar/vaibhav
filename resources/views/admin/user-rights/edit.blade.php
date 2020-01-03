@@ -342,12 +342,12 @@
                 <div class="row" style="margin-bottom:20px;">
                     <div class="col-md-6">
                         <div class="card">
-                            <div class="card-header" id="headingThree">
-                                <div class="card-title collapsed" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                            <div class="card-header" id="headingTen">
+                                <div class="card-title collapsed" data-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
                                     Event
                                 </div>
                             </div>
-                            <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordionExample8">
+                            <div id="collapseTen" class="collapse show" aria-labelledby="headingTen" data-parent="#accordionExample8">
                                 <div class="card-body">
                                     <div class="table-responsive">
                                         <table class="table">
@@ -366,6 +366,46 @@
                                                             <input type="checkbox" class="dependent" name="modules[]" value="42" {{ $admin->userrights->contains(42) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="43" {{ $admin->userrights->contains(43) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="44" {{ $admin->userrights->contains(44) ? 'checked' : '' }}>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" id="headingEleven">
+                                <div class="card-title collapsed" data-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
+                                    Redirection
+                                </div>
+                            </div>
+                            <div id="collapseEleven" class="collapse show" aria-labelledby="headingEleven" data-parent="#accordionExample8">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="45" {{ $admin->userrights->contains(45) ? 'checked' : '' }}> List
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="46" {{ $admin->userrights->contains(46) ? 'checked' : '' }}> Create
+                                                            <span></span>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="47" {{ $admin->userrights->contains(47) ? 'checked' : '' }}>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="48" {{ $admin->userrights->contains(48) ? 'checked' : '' }}> Delete
+                                                            <span></span>
                                                         </label>
                                                     </td>
                                                 </tr>

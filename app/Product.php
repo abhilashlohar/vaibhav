@@ -101,4 +101,8 @@ class Product extends Model
     public function subCategory(){
         return $this->belongsTo('App\SubCategory');
     }
+    public function product_image_primary(){
+        return $this->hasOne('App\ProductImage')->where('product_images.is_primary', '=', 1);
+    }
+
 }

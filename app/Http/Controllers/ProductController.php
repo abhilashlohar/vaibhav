@@ -13,39 +13,61 @@ class ProductController extends Controller
         $category = Category::where([
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
-        ])->first();
-
-        $subCategories = SubCategory::where([
-            ['category_id','=',$category->id],
-            ['deleted', '=', 0]
-        ])
-        ->orderBy('sequence', 'asc')->get();
-
+        ])->with('subcategory_available_orderBy')->first();
 
         $subCategoryData = SubCategory::where([
             ['slug','=',$sub_category_slug],
             ['deleted', '=', 0]
         ])->first();
 
-
-        $products = Product::join('product_images', function ($join) {
-            $join->on('products.id', '=', 'product_images.product_id')
-                 ->where([
-                     ['product_images.is_primary', '=', 1]
-                     ]);
-        })
+        $products = Product::with('product_image_primary')
         ->where([
             ['sub_category_id','=',$subCategoryData->id],
             ['is_published', '=', 1],
             ['products.deleted', '=', 0]
         ])
         ->orderBy('sequence', 'asc')
-        ->getQuery()
         ->get();
 
-        return view('products.list',compact('category','subCategories','subCategoryData','products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $products = Product::with(['product_image_primary','subCategory' => function ($query) use ($sub_category_slug) {
+        //         $query->where('sub_categories.slug', $sub_category_slug);
+        //     }
+        // ])
+        // ->where([
+        //     ['is_published', '=', 1],
+        //     ['products.deleted', '=', 0]
+        // ])
+        // ->orderBy('sequence', 'asc')
+        // ->get();
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-list';
+        return view('products.list',compact('category','subCategoryData','products','page_title','body_class'));
     }
+
+    public function productDetail($product_slug)
+    {
+        $product = Product::with(['productImages'])->where([
+            ['is_published', '=', 1],
+            ['products.deleted', '=', 0],
+            ['products.slug', '=', $product_slug]
+        ])
+        ->first();
+
+        $related_product_ids=explode(',',$product->related_products);
+        $related_products = Product::with(['product_image_primary'])->where([
+            ['products.is_published', '=', 1],
+            ['products.deleted', '=', 0],
+        ])
+        ->whereIn('id', $related_product_ids)
+        ->get();
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-detail';
+        return view('products.product-detail',compact('product','page_title','body_class','related_products'));
+    }
+
+
 
 
 }

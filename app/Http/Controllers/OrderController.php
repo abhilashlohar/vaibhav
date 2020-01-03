@@ -22,9 +22,10 @@ class OrderController extends Controller
         }
 
         $totalItems = count($cartItems);
-    
-        
-        return view('orders.checkout',compact('totalAmount', 'totalItems'));
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'checkout';
+        return view('orders.checkout',compact('totalAmount', 'totalItems','page_title','body_class'));
     }
 
     public function saveCheckout(Request $request)
@@ -71,7 +72,7 @@ class OrderController extends Controller
         $Order->order_amount = $totalAmount;
         $Order->payment_mode = 'cod';
         $Order->payment_status = 'cod';
-        
+
         $Order->bill_name = $request->bill_name;
         $Order->bill_mobile = $request->bill_mobile;
         $Order->bill_address = $request->bill_address;
@@ -112,7 +113,7 @@ class OrderController extends Controller
         return redirect()->route('orders.thanks', $Order->id)
                         ->with('success','Order placed successfully');
 
-        
+
     }
 
     public function newOrderNumber()
