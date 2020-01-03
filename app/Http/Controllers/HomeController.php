@@ -19,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-
+        // parent::__construct();
         $this->middleware('auth')->except('home','mail');
     }
 
@@ -32,16 +32,24 @@ class HomeController extends Controller
     {
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
-        return view('home', compact('page_title','body_class'));
+
+        $headerCategories = Category::with('subCategoryFirst')
+        ->where([
+            ['deleted', '=', 0]
+        ])
+        ->orderBy('sequence', 'asc')
+        ->get();
+
+        return view('home', compact('page_title','body_class','headerCategories'));
     }
 
     public function mail()
     {
        $name = 'Krunal';
        Mail::to('abhilashlohar01@gmail.com')->send(new SendMailable($name));
-       
+
        return 'Email was sent';
     }
 
-   
+
 }
