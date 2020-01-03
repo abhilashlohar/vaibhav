@@ -26,7 +26,7 @@
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                    <div id="big" class="owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
-                        <div class="item">
+                        <div class="item zoom zoomin">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
                         </div>
                         @endforeach
@@ -152,4 +152,10 @@
        </div>
     </div>
 </section>
+@endsection
+
+
+
+@section ('footer-script')
+<script src="<?php echo url('/'); ?>/static/js/jquery.zoom.min.js"></script>
 @endsection

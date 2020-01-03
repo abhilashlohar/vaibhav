@@ -8,6 +8,7 @@ use App\SubCategory;
 use Illuminate\Http\Request;
 class ProductController extends Controller
 {
+    
     public function list($category_slug,$sub_category_slug)
     {
         $category = Category::where([
@@ -15,10 +16,12 @@ class ProductController extends Controller
             ['deleted', '=', 0]
         ])->with('subcategory_available_orderBy')->first();
 
+
         $subCategoryData = SubCategory::where([
             ['slug','=',$sub_category_slug],
             ['deleted', '=', 0]
         ])->first();
+
 
         $products = Product::with('product_image_primary')
         ->where([

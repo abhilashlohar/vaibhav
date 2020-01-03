@@ -1,15 +1,16 @@
-@extends('layouts.app')
+@extends ('layouts.front')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div align="center" style="font-size: 34px; font-weight: bold;color: #6d6d6d;margin-bottom: 5px; ">{{ config('app.name') }}</div>
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<section class="login--wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+               <div class="card card-signin my-5">
+                  <div class="card-body">
+                     <h5 class="card-title text-center">Sign In</h5>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+
+                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">
@@ -66,9 +67,11 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+</section>            
 @endsection

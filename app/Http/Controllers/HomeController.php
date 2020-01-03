@@ -30,7 +30,9 @@ class HomeController extends Controller
      */
     public function home()
     {
-        return view('home');
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'home';
+        return view('home', compact('page_title','body_class'));
     }
 
     public function mail()
