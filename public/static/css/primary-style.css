@@ -55,6 +55,12 @@ p {
 .cart .header-wrapper {
    position: relative;
 }
+.checkout .header-wrapper {
+   position: relative;
+}
+.thankyou .header-wrapper {
+   position: relative;
+}
 .header-wrapper {
    position: absolute;
    top: 0;
