@@ -43,5 +43,10 @@ class HomeController extends Controller
        return 'Email was sent';
     }
 
+    public static function testxyz()
+    {
+        return 'hello';
+    }
+
    
 }

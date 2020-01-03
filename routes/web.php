@@ -23,10 +23,10 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
 
     Route::get('/send/email', 'HomeController@mail');
-    Route::get('/cart', 'CartController@list');
+    Route::get('/cart', 'CartController@list')->name('cart');
     Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
     Route::get('/getCookie', 'CartController@getCookie')->name('getCookie');
-    Route::get('/checkout', 'OrderController@checkout');
+    Route::get('/checkout', 'OrderController@checkout')->name('checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
 

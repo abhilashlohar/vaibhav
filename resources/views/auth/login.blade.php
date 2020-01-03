@@ -10,7 +10,7 @@
                      <h5 class="card-title text-center">Sign In</h5>
 
 
-                     <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="form-group row">

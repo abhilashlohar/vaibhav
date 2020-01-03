@@ -1,4 +1,7 @@
 <?php
+use \App\Http\Controllers\HomeController;
+
+
 function humanTiming ($date)
 {
 
@@ -39,4 +42,9 @@ function modules_dom()
         'blog_create_edit' => ['create', 'edit', 'store', 'update'],
         'blog_list' => ['index']
     ];
+}
+
+function testfnc()
+{
+    return App\Http\Controllers\HomeController::testxyz();
 }
