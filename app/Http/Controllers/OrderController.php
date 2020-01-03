@@ -132,6 +132,8 @@ class OrderController extends Controller
 
     public function thanks(Request $request)
     {
-        return view('orders.thanks');
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'thankyou';
+        return view('orders.thanks',compact('page_title','body_class'));
     }
 }

@@ -43,8 +43,3 @@ function modules_dom()
         'blog_list' => ['index']
     ];
 }
-
-function testfnc()
-{
-    return App\Http\Controllers\HomeController::testxyz();
-}
