@@ -1,4 +1,5 @@
 @extends ('layouts.front')
+
 @section ('header-style')
 <style>
     body.product-list{
@@ -6,6 +7,7 @@
     }
 </style>
 @endsection
+
 @section ('content')
 
    <section class="category-banner--wrapper">
@@ -116,7 +118,7 @@
                         </div>
                         <div class="item-excerpt--details">
                             <div class="item-excerpt--meta">
-                                <div class="title"><h4><a href="#" target="_blank">{{$product->short_description}}</a></h4></div>
+                                <div class="title"><h4><a href="#" target="_blank">{{$product->name}}</a></h4></div>
                                 <div class="code">Code: {{$product->product_code}}</div>
                             </div>
                             <div class="ecommerce-item--price">
