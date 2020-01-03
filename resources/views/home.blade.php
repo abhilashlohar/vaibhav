@@ -465,7 +465,7 @@
                   </div>
                </div>
                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                  <div class="verticals-single--wrap">   
+                  <div class="verticals-single--wrap">
                      <div class="verticals-single--logo">
                         <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                      </div>

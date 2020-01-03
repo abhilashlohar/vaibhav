@@ -6,9 +6,12 @@ use App\Product;
 use App\Category;
 use App\SubCategory;
 use Illuminate\Http\Request;
-class ProductController extends Controller
+class ProductController extends BaseController
 {
-    
+    public function __construct()
+    {
+        parent::__construct();
+    }
     public function list($category_slug,$sub_category_slug)
     {
         $category = Category::where([

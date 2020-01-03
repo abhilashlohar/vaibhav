@@ -29,7 +29,7 @@
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
                      <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/>
-                  </div>  
+                  </div>
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
@@ -85,8 +85,9 @@
                            <li>
                               <a class="nav-link" href="#">Stores</a>
                               <ul>
-                                 <li><a href="#">Furniture</a></li>
-                                 <li><a href="#">Hair Care</a></li>
+                                  @foreach ($headerCategories as $headerCategory)
+                                    <li><a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">{{$headerCategory->name}}</a></li>
+                                  @endforeach
                               </ul>
                            </li>
                         </ul>
@@ -190,8 +191,8 @@
    <script src="<?php echo url('/'); ?>/static/js/rater.js"></script>
 
    @yield ('footer-script')
-   
+
    <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
-   
+
   </body>
 </html>
