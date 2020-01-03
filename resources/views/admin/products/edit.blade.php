@@ -200,7 +200,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="discount">Discount</label>
-                                <input type="text" id="discount" name="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ ($product->discount)? $product->discount : old('discount') }}">
+                                <input type="text" id="discount" name="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ ($product->discount >= 0)? $product->discount : old('discount') }}">
 
                                 @error('discount')
                                     <span class="invalid-feedback" role="alert">
@@ -271,6 +271,33 @@
                                     </thead>
                                     <tbody id="product-image">
                                         <?php $i=0; ?>
+                                        <?php
+                                        if(empty($productImages))
+                                        {
+                                            ?>
+                                            <tr>
+                                                <td>
+                                                    <div class="product_image">
+                                                        <input type="file" name="product_image[0][image]" accept="png, jpg, jpeg">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="kt-radio-inline">
+                                                        <label class="kt-radio kt-checkbox--state-success">
+                                                        <input type="radio" value="1" class="primary" checked  name="product_image[0][primary]" > &nbsp
+                                                            <span></span>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        }
+                                        ?>
+                                        @if (!empty($productImages))
+
+                                        @endif
                                         @foreach ($productImages as $productImage)
                                             <tr>
                                                 <td>
@@ -279,13 +306,9 @@
 
                                                     <div class="kt-avatar kt-avatar--outline product_image" id="product_image_{{$i+1}}">
                                                         <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$productImage->image) }}')"></div>
-                                                        <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                                            <i class="fa fa-pen"></i>
-                                                            <input type="file" name="product_image[{{$i}}][image]"  accept=".png, .jpg, .jpeg">
-                                                        </label>
-                                                        <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                                            <i class="fa fa-times"></i>
-                                                        </span>
+                                                    </div>
+                                                    <div class="product_image">
+                                                        <input type="file" name="product_image[{{$i}}][image]" accept="png, jpg, jpeg">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -297,7 +320,10 @@
                                                     </div>
                                                 </td>
                                                 <td>
+                                                    @if ($i!=0)
                                                     <button type="button" class="btn-sm btn btn-label-danger btn-bold deleteRow"><i class="la la-trash-o"></i> Delete</button>
+                                                    @endif
+
                                                 </td>
                                             </tr>
                                             <?php $i++; ?>
@@ -333,21 +359,14 @@
     <tbody id="table-clone">
         <tr>
             <td>
-                <div class="kt-avatar kt-avatar--outline product_image" id="product_image_dummy">
-                    <div class="kt-avatar__holder" style="background-image: url('{{url('/')}}/img/no-image.png')"></div>
-                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                        <i class="fa fa-pen"></i>
-                        <input type="file" name="product_rows[0]['image']">
-                    </label>
-                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                        <i class="fa fa-times"></i>
-                    </span>
+                <div class="product_image">
+                    <input type="file" name="product_rows[0]['image']" accept="png, jpg, jpeg" required>
                 </div>
             </td>
             <td>
                 <div class="kt-radio-inline">
                     <label class="kt-radio kt-checkbox--state-success">
-                        <input type="radio" value="1" class="primary"  name="product_rows[0]['primary']" > &nbsp
+                        <input type="radio" value="1" class="primary"   name="product_rows[0]['primary']" > &nbsp
                         <span></span>
                     </label>
                 </div>
@@ -404,6 +423,10 @@
                     },
                     sale_price: {
                         required: !0
+                    },
+                    primary:{
+                        required: !0,
+                        minlength:1
                     }
 
                 }
@@ -415,9 +438,14 @@
                     $("#kt_form_1_msg").removeClass("kt--hide").show(), KTUtil.scrollTop()
                 }
 
-            })
+            });
+            $(".primary").rules("add", {
+                required: !0,
+                minlength:1
+            });
         }
     };
+
     jQuery(document).ready(function() {
         KTFormControls.init()
     });
@@ -501,19 +529,12 @@
         {
             var i = 1;
             $('#product-image tr').each(function(){
-                $(this).find('.product_image').attr('id','product_image_'+i);
+                // $(this).find('.product_image').attr('id','product_image_'+i);
                 $(this).find('input[type=file]').attr('name','product_image['+i+'][image]');
                 $(this).find('input[type=radio]').attr('name','product_image['+i+'][primary]');
                 $(this).find('input.old_image').attr('name','product_image['+i+'][old_image]');
                 $(this).find('input.product_image_id').attr('name','product_image['+i+'][product_image_id]');
-                var KTAvatarDemo = {
-                    init: function() {
-                        new KTAvatar("product_image_"+i)
-                    }
-                };
-                KTUtil.ready(function() {
-                    KTAvatarDemo.init()
-                });
+
                 i++;
             });
 
@@ -541,23 +562,6 @@
 
             $(this).closest('tr').remove();
         });
-        <?php
-        $i=0;
-        foreach ($productImages as $productImage)
-        {
-            $i++;
-            ?>
-            var KTAvatarDemo = {
-                init: function() {
-                    new KTAvatar("product_image_<?php echo $i; ?>")
-                }
-            };
-            KTUtil.ready(function() {
-                KTAvatarDemo.init()
-            });
-            <?php
-        }
-        ?>
     });
 </script>
 @endsection
