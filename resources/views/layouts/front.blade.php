@@ -18,14 +18,6 @@
       <title>{{$page_title}}</title>
     </head>
 <body class="{{$body_class}}">
-
-    <?php 
-    use \App\Http\Controllers\HomeController;
-
-    echo $x = HomeController::testxyz();
-
-    ?>
-
    <header class="header-wrapper">
       <div class="container">
          <div class="row">

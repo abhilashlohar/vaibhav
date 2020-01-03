@@ -10,7 +10,7 @@ use App\Enquiry;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     /**
      * Create a new controller instance.
@@ -19,7 +19,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        // parent::__construct();
+        parent::__construct();
         $this->middleware('auth')->except('home','mail');
     }
 
@@ -33,14 +33,7 @@ class HomeController extends Controller
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
 
-        $headerCategories = Category::with('subCategoryFirst')
-        ->where([
-            ['deleted', '=', 0]
-        ])
-        ->orderBy('sequence', 'asc')
-        ->get();
-
-        return view('home', compact('page_title','body_class','headerCategories'));
+        return view('home', compact('page_title','body_class'));
     }
 
     public function mail()
