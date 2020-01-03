@@ -172,7 +172,7 @@
                      </div>
                      <div class="footer-subscribe--wrap">
                         <p>Subscribe to receive updates, access to exclusive deals and more.</p>
-                        <form method="post" action="">
+                        <form method="get" action="#">
                            <input type="email" name="email" placeholder="Enter your email address">
                            <input type="submit" name="submit" value="SUBSCRIBE">
                         </form>
