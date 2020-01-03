@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\Cart;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Cookie;
-class CartController extends Controller
+class CartController extends BaseController
 {
     public function __construct()
     {
         $this->middleware('auth');
+        parent::__construct();
     }
-    
+
     public function list()
     {
         $user = auth()->user();

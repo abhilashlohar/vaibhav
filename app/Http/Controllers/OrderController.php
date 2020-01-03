@@ -8,14 +8,15 @@ use App\UserAddress;
 use App\Order;
 use App\OrderRow;
 
-class OrderController extends Controller
+class OrderController extends BaseController
 {
     public function __construct()
     {
         $this->middleware('auth');
+        parent::__construct();
     }
-    
-    
+
+
     public function checkout()
     {
         $user = auth()->user();

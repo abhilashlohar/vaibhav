@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::latest()->paginate(5);
-  
+
         return view('users.index',compact('users'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -30,7 +30,7 @@ class UserController extends Controller
             'username' => $request['username'],
             'password' => Hash::make($request['password']),
         ]);
-   
+
         return redirect()->route('users.index')
                         ->with('success','user created successfully.');
     }
@@ -54,7 +54,7 @@ class UserController extends Controller
         if ($request['password']) $update_data['password'] =  Hash::make($request['password']);
 
         $user->update($update_data);
-  
+
         return redirect()->route('users.index')
                         ->with('success','user updated successfully');
     }
@@ -63,7 +63,7 @@ class UserController extends Controller
     {
         $user->deleted = true;
         $user->save();
-  
+
         return redirect()->route('users.index')
                         ->with('success','user deleted successfully');
     }
