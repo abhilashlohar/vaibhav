@@ -18,96 +18,67 @@
                    <h4 class="mb-3">Billing address</h4>
                    <form  action="{{ route('saveCheckout') }}" method="POST" class="needs-validation" novalidate>
                     @csrf
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="name">Name*</label>
+                                <input type="text" class="form-control" id="bill_name" name="bill_name" placeholder="" value="" required>
+                                <div class="invalid-feedback">
+                                    Valid name is required.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="mobileno">Mobile No.*</label>
+                                <input type="text" class="form-control" id="bill_mobile" name="bill_mobile" placeholder="" required>
+                                 <div class="invalid-feedback">
+                                    Please enter a valid email address for shipping updates.
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        
+
+
+                        
+
                         <div class="mb-3">
-                        <label for="name">Name*</label>
-                        <input type="text" class="form-control" id="bill_name" name="bill_name" placeholder="" value="" required>
-                        <div class="invalid-feedback">
-                            Valid name is required.
-                        </div>
-                        </div>
-
-                      {{-- <div class="mb-3">
-                         <label for="username">Username</label>
-                         <div class="input-group">
-                            <div class="input-group-prepend">
-                               <span class="input-group-text">@</span>
-                            </div>
-                            <input type="text" class="form-control" id="username" placeholder="Username" required>
-                            <div class="invalid-feedback" style="width: 100%;">
-                               Your username is required.
-                            </div>
-                         </div>
-                      </div> --}}
-
-                      <div class="mb-3">
-                         <label for="mobileno">Mobile No.*</label>
-                         <input type="text" class="form-control" id="bill_mobile" name="bill_mobile" placeholder="">
-                         <div class="invalid-feedback">
-                            Please enter a valid email address for shipping updates.
-                         </div>
-                        </div>
-
-                      <div class="mb-3">
-                         <label for="address">Address*</label>
-                         <input type="text" class="form-control" id="bill_address" name="bill_address" placeholder="" required>
-                         <div class="invalid-feedback">
-                            Please enter your billing address.
-                         </div>
-                      </div>
-
-                      <div class="mb-3">
-                        <label for="pincode">Pincode*</label>
-                        <input type="text" class="form-control" id="bill_pincode" name="bill_pincode" placeholder="" required>
-                        <div class="invalid-feedback">
-                           Please enter your pincode.
-                        </div>
-                     </div>
-
-                     <div class="mb-3">
-                        <label for="landmark">Landmark</label>
-                        <input type="text" class="form-control" id="bill_landmark" name="bill_landmark" placeholder="" required>
-                        <div class="invalid-feedback">
-                           Please enter your landmark.
-                        </div>
-                     </div>
-
-                     <div class="mb-3">
-                        <label for="state">State*</label>
-                        <input type="text" class="form-control" id="bill_state" name="bill_state" placeholder="" required>
-                        <div class="invalid-feedback">
-                           Please enter your state.
-                        </div>
-                     </div>
-
-                      {{-- <div class="row">
-                         <div class="col-md-5 mb-3">
-                            <label for="country">Country</label>
-                            <select class="custom-select d-block w-100" id="country" required>
-                               <option value="">Choose...</option>
-                               <option>United States</option>
-                            </select>
+                            <label for="address">Address*</label>
+                            <input type="text" class="form-control" id="bill_address" name="bill_address" placeholder="" required>
                             <div class="invalid-feedback">
-                               Please select a valid country.
+                                Please enter your billing address.
                             </div>
-                         </div>
-                         <div class="col-md-4 mb-3">
-                            <label for="state">State</label>
-                            <select class="custom-select d-block w-100" id="state" required>
-                               <option value="">Choose...</option>
-                               <option>California</option>
-                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="pincode">Pincode*</label>
+                            <input type="text" class="form-control" id="bill_pincode" name="bill_pincode" placeholder="" required>
                             <div class="invalid-feedback">
-                               Please provide a valid state.
+                                Please enter your pincode.
                             </div>
-                         </div>
-                         <div class="col-md-3 mb-3">
-                            <label for="zip">Zip</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="landmark">Landmark</label>
+                            <input type="text" class="form-control" id="bill_landmark" name="bill_landmark" placeholder="" required>
                             <div class="invalid-feedback">
-                               Zip code required.
+                                Please enter your landmark.
                             </div>
-                         </div>
-                      </div> --}}
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="state">State*</label>
+                            <input type="text" class="form-control" id="bill_state" name="bill_state" placeholder="" required>
+                            <div class="invalid-feedback">
+                                Please enter your state.
+                            </div>
+                        </div>
+
+
 
                       <hr class="mb-4">
                       <div class="custom-control custom-checkbox">

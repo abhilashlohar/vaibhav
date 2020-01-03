@@ -19,6 +19,13 @@
     </head>
 <body class="{{$body_class}}">
 
+    <?php 
+    use \App\Http\Controllers\HomeController;
+
+    echo $x = HomeController::testxyz();
+
+    ?>
+
    <header class="header-wrapper">
       <div class="container">
          <div class="row">
@@ -49,7 +56,7 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                 <form action="" method="post">
+                                 <form action="#" method="get">
                                     <input type="text" name="search" placeholder="Your search term...">
                                     <button type="submit" value="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                  </form>
@@ -65,7 +72,7 @@
                         </a>
                   </div>
                   <div class="ecommerce-menu--item">
-                     <a href="#" class="cart-notify">
+                     <a href="{{ route('cart') }}" class="cart-notify">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">(0)</span></a>
                   </div>
                   </div>

@@ -31,6 +31,9 @@
                                <div class="py-2 text-uppercase">Quantity</div>
                             </th>
                             <th scope="col" class="border-0 bg-light">
+                               <div class="py-2 text-uppercase">Amount</div>
+                            </th>
+                            <th scope="col" class="border-0 bg-light">
                                <div class="py-2 text-uppercase">Remove</div>
                             </th>
                          </tr>
@@ -48,13 +51,22 @@
                                             {{ $cartItem->product->name }}
                                         </a>
                                      </h5>
-                                     <span>Category: Salon</span>
+                                     <!-- <span>Category: Salon</span> -->
                                   </div>
                                </div>
                             </th>
-                            <td class="border-0 align-middle"><strong><span>&#8377;</span>{{ $cartItem->quantity*$cartItem->product->sale_price }}</strong></td>
-                            <td class="border-0 align-middle"><strong>{{ $cartItem->quantity }}</strong></td>
-                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem->product->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong>{{ $cartItem->quantity }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem->quantity*$cartItem->product->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                            </td>
                             <?php $totalAmount += $cartItem->quantity*$cartItem->product->sale_price; ?>
                          </tr>
                          @endforeach
@@ -89,16 +101,19 @@
              <div class="shopping-cart--values">
                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
                    <div class="p-4">
-                      <p class="font-italic mb-4">Shipping and additional costs are calculated based on values you have entered.</p>
+                      
                       <ul class="list-unstyled mb-4">
-                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong><span>&#8377;</span>{{$totalAmount}}</strong></li>
-                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Shipping and handling</strong><strong><span>&#8377;</span>0.00</strong></li>
-                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Tax</strong><strong><span>&#8377;</span>0.00</strong></li>
-                         <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
-                            <h5 class="font-weight-bold"><span>&#8377;</span>{{$totalAmount}}</h5>
-                         </li>
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Total Items </strong>
+                            <strong>{{ count($cartItems) }}</strong>
+                        </li>
+                        <li class="d-flex justify-content-between py-3 border-bottom">
+                            <strong class="text-muted">Order Total </strong>
+                            <strong><span>&#8377;</span>{{$totalAmount}}</strong>
+                        </li>
+                        
                       </ul>
-                      <a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                      <a href="{{ route('checkout') }}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                    </div>
                 </div>
              </div>
