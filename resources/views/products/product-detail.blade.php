@@ -66,7 +66,9 @@
                    </div>
                    <div class="ecommerce-item--buttons">
                       <ul>
-                         <li><button type="submit" value="">Buy Now</button></li>
+                         <li>
+                             <button type="button" value="{{$product->id}}"  class="addToCart">Add To Cart</button>
+                        </li>
                          <li><a href="#" target="_blank">Explore</a></li>
                       </ul>
                    </div>
@@ -158,4 +160,35 @@
 
 @section ('footer-script')
 <script src="<?php echo url('/'); ?>/static/js/jquery.zoom.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $(document).on('click','.addToCart',function(e){
+            var product_id = $(this).attr('value');
+            $.ajax({
+            type:'POST',
+            url:"{{ route('addTocart') }}",
+            data:{product_id:product_id},
+            success:function(data){
+                console.log(data);
+                location.reload();
+            },
+            // complete: function (data) {
+            //     $.ajax({
+            //         type:'get',
+            //         url:"{{ route('getCookie') }}",
+            //         success:function(data){
+            //             console.log(data);
+            //         }
+            //     });
+            // }
+            });
+        });
+    });
+</script>
 @endsection
