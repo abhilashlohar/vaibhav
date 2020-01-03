@@ -190,9 +190,10 @@
    <script src="<?php echo url('/'); ?>/static/js/bootstrap.min.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/owl.carousel.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/rater.js"></script>
-   <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
 
    @yield ('footer-script')
+   
+   <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
    
   </body>
 </html>

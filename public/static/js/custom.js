@@ -129,25 +129,6 @@ $('.recommended-items').owlCarousel({
     }
 });
 
-$('.recommended-items').owlCarousel({
-    loop:true,
-    margin: 30,
-    nav:true,
-    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-    dots: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:4
-        }
-    }
-});
-
 $('.item-dropdown ul li').hover(function() {
     $(this).children('ul').stop(true, false, true).fadeToggle(300);
 });
@@ -281,3 +262,8 @@ $(document).ready(function() {
       });
     }, false);
 })();
+
+/* Zoom Effect */
+$(document).ready(function(){
+  $('.zoomin').zoom();
+});

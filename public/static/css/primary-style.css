@@ -43,6 +43,9 @@ p {
    }
 }
 /* =========== Header =============== */
+.product-detail .header-wrapper {
+   position: relative;
+}
 .header-wrapper {
    position: absolute;
    top: 0;
