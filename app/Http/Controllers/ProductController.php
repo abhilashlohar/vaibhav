@@ -80,17 +80,15 @@ class ProductController extends BaseController
         $minutes = 60;
         $user = auth()->user();
         $existCookie = false;
-
         if($user)
         {
             $cartItems = Cart::where('user_id',$user->id)->get();
-
 
             if($request->hasCookie('vaibhav_cart'))
             {
                 $cookieValues = json_decode($request->cookie('vaibhav_cart'));
 
-                foreach($cookieValues  as $key => $cookieValue)
+                foreach($cookieValues  as $cookieValue)
                 {
                     if($cookieValue->product_id == $request->product_id)
                     {
@@ -109,11 +107,11 @@ class ProductController extends BaseController
                 {
                     foreach($cart  as $key => $cartValue)
                     {
-                        if($cartValue->product_id == $cartItem->product_id)
+                        if($cartValue['product_id'] == $cartItem->product_id)
                         {
                             /// Update data
                             Cart::where('id', $cartItem->id)
-                            ->update(['quantity' =>  $cartItem->quantity+$cartValue->quantity]);
+                            ->update(['quantity' =>  $cartItem->quantity+$cartValue['quantity']]);
                             unset($cart[$key]);
                         }
 
@@ -123,9 +121,9 @@ class ProductController extends BaseController
                 {
 
                     $CartTable = new Cart;
-                    $CartTable->product_id = $cartValue->product_id;
+                    $CartTable->product_id = $cartValue['product_id'];
                     $CartTable->user_id = $user->id;
-                    $CartTable->quantity = $cartValue->quantity;
+                    $CartTable->quantity = $cartValue['quantity'];
                     $CartTable->save();
                 }
             }
@@ -157,16 +155,16 @@ class ProductController extends BaseController
         {
             if($request->hasCookie('vaibhav_cart'))
             {
-                $cookieValues = json_decode($request->cookie('vaibhav_cart'));
+                $cartItems = json_decode(request()->cookie('vaibhav_cart'));
 
-                foreach($cookieValues  as $key => $cookieValue)
+                foreach($cartItems  as $cartItem)
                 {
-                    if($cookieValue->product_id == $request->product_id)
+                    if($cartItem->product_id == $request->product_id)
                     {
-                        $cookieValue->quantity += 1;
+                        $cartItem->quantity += 1;
                         $existCookie = true;
                     }
-                    $cart[]=['product_id'=>$cookieValue->product_id,'quantity'=>$cookieValue->quantity];
+                    $cart[]=['product_id'=>$cartItem->product_id,'quantity'=>$cartItem->quantity];
                 }
                 if(!$existCookie)
                 {
@@ -179,8 +177,11 @@ class ProductController extends BaseController
             }
             $array_json=json_encode($cart);
             \Cookie::queue('vaibhav_cart', $array_json, $minutes);
+
             // return response('Set Cookie')->cookie(cookie('vaibhav_cart', $array_json, $minutes));
         }
+        return redirect()->route('cart')
+                        ->with('success','Item added into cart successfully.');
     }
 
     // public function getCookie(Request $request)

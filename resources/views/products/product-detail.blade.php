@@ -37,42 +37,46 @@
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
-                   <div class="ecommerce-item--name">
-                      <h3>{{$product->name}}</h3>
-                   </div>
-                   <div class="ecommerce-item--excerpt">
-                      <p>{{$product->short_description}}</p>
-                   </div>
-                   <div class="ecommerce-item--sku">
-                      <p>Product Code: {{$product->product_code}}</p>
-                   </div>
-                   <div class="ecommerce-item--price">
-                      <ul>
-                        <?php
-                            $whole = floor($product->sale_price);
-                            $fraction = $product->sale_price - $whole;
-                        ?>
-                        <li class="new-price">Rs. {{ ($fraction > 0) ? $product->sale_price : $whole}}</li>
-                        <?php
-                            $whole = floor($product->regular_price);
-                            $fraction = $product->regular_price - $whole;
-                        ?>
-                        <li class="old-price">Rs. {{ ($fraction > 0) ? $product->regular_price : $whole}}</li>
-                        <li class="discount">({{$product->discount}}% Off)</li>
-                        </ul>
-                   </div>
-                   <div class="ecommerce-item--rating">
-                      <div class="rate" data-rate-value=5></div>
-                   </div>
-                   <div class="ecommerce-item--buttons">
-                      <ul>
-                         <li>
-                             <button type="button" value="{{$product->id}}"  class="addToCart">Add To Cart</button>
-                        </li>
-                         <li><a href="#" target="_blank">Explore</a></li>
-                      </ul>
-                   </div>
-                   <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                    <form action="{{ route('addTocart') }}" method="POST">
+                        @csrf
+                        <div class="ecommerce-item--name">
+                            <h3>{{$product->name}}</h3>
+                        </div>
+                        <div class="ecommerce-item--excerpt">
+                            <p>{{$product->short_description}}</p>
+                        </div>
+                        <div class="ecommerce-item--sku">
+                            <p>Product Code: {{$product->product_code}}</p>
+                        </div>
+                        <div class="ecommerce-item--price">
+                            <ul>
+                                <?php
+                                    $whole = floor($product->sale_price);
+                                    $fraction = $product->sale_price - $whole;
+                                ?>
+                                <li class="new-price">Rs. {{ ($fraction > 0) ? $product->sale_price : $whole}}</li>
+                                <?php
+                                    $whole = floor($product->regular_price);
+                                    $fraction = $product->regular_price - $whole;
+                                ?>
+                                <li class="old-price">Rs. {{ ($fraction > 0) ? $product->regular_price : $whole}}</li>
+                                <li class="discount">({{$product->discount}}% Off)</li>
+                                </ul>
+                        </div>
+                        <div class="ecommerce-item--rating">
+                            <div class="rate" data-rate-value=5></div>
+                        </div>
+                        <div class="ecommerce-item--buttons">
+                            <ul>
+                                <li>
+                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                    <button type="submit">Add To Cart</button>
+                                </li>
+                                <li><a href="#" target="_blank">Explore</a></li>
+                            </ul>
+                        </div>
+                        <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                    </form>
                 </div>
              </div>
           </div>
@@ -179,7 +183,7 @@
             success:function(data){
                 window.location.href = "{{ route('cart') }}";
             },
-            timeout: 4000
+            timeout: 10000
             // complete: function (data) {
             //     $.ajax({
             //         type:'get',

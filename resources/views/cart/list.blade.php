@@ -70,26 +70,37 @@
                             <?php $totalAmount += $cartItem->quantity*$cartItem->product->sale_price; ?>
                          </tr>
                          @endforeach
-
-                         <!-- Product 02 -->
-                         {{-- <tr>
+                         @foreach ($cookieCartItems as $key => $cartItem)
+                         <tr>
                             <th scope="row" class="border-0">
                                <div class="p-2">
-                                  <img src="images/product-single-02.jpg" alt="" width="70">
+                                  <img src="{{ asset('storage/product/'.$cartItem['product']->product_image_primary->image) }}" alt="" width="70">
                                   <div class="ml-3 d-inline-block align-middle">
                                      <h5>
                                         <a href="#" class="text-dark d-inline-block align-middle">
-                                           Timex Unisex Originals
+                                            {{ $cartItem['product']->name }}
                                         </a>
                                      </h5>
-                                     <span>Category: Salon</span>
+                                     <!-- <span>Category: Salon</span> -->
                                   </div>
                                </div>
                             </th>
-                            <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                            <td class="border-0 align-middle"><strong>3</strong></td>
-                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                         </tr> --}}
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem['product']->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong>{{ $cartItem['quantity'] }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem['quantity']*$cartItem['product']->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                            </td>
+                            <?php $totalAmount += $cartItem['quantity']*$cartItem['product']->sale_price; ?>
+                         </tr>
+                         @endforeach
+
                       </tbody>
                    </table>
                 </div>
