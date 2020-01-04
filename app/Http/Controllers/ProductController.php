@@ -178,14 +178,15 @@ class ProductController extends BaseController
                 $cart[]=['product_id'=>$request->product_id,'quantity'=>1];
             }
             $array_json=json_encode($cart);
-            return response('Set Cookie')->cookie(cookie('vaibhav_cart', $array_json, $minutes));
+            \Cookie::queue('vaibhav_cart', $array_json, $minutes);
+            // return response('Set Cookie')->cookie(cookie('vaibhav_cart', $array_json, $minutes));
         }
     }
 
-    public function getCookie(Request $request)
-    {
-        return $cookieValues = json_decode($request->cookie('vaibhav_cart'));
-    }
+    // public function getCookie(Request $request)
+    // {
+    //     return $cookieValues = json_decode($request->cookie('vaibhav_cart'));
+    // }
 
 
 

@@ -169,15 +169,17 @@
             }
         });
         $(document).on('click','.addToCart',function(e){
+            e.preventDefault();
+            $(this).attr('disable','disable');
             var product_id = $(this).attr('value');
             $.ajax({
             type:'POST',
             url:"{{ route('addTocart') }}",
             data:{product_id:product_id},
             success:function(data){
-                console.log(data);
-                location.reload();
+                window.location.href = "{{ route('cart') }}";
             },
+            timeout: 4000
             // complete: function (data) {
             //     $.ajax({
             //         type:'get',

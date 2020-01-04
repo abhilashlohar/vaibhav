@@ -18,6 +18,12 @@
       <title>{{$page_title}}</title>
     </head>
 <body class="{{$body_class}}">
+<?php
+    use \App\Http\Controllers\HomeController;
+
+    $cartItem = HomeController::cartItem();
+
+    ?>
 
    <header class="header-wrapper">
       <div class="container">
@@ -66,7 +72,7 @@
                   </div>
                   <div class="ecommerce-menu--item">
                      <a href="{{ route('cart') }}" class="cart-notify">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">(0)</span></a>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">({{$cartItem}})</span></a>
                   </div>
                   </div>
                </div>

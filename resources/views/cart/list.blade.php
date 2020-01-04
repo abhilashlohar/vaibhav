@@ -44,7 +44,7 @@
                          <tr>
                             <th scope="row" class="border-0">
                                <div class="p-2">
-                                  <img src="images/product-single-04.jpg" alt="" width="70">
+                                  <img src="{{ asset('storage/product/'.$cartItem->product->product_image_primary->image) }}" alt="" width="70">
                                   <div class="ml-3 d-inline-block align-middle">
                                      <h5>
                                         <a href="#" class="text-dark d-inline-block align-middle">
@@ -101,7 +101,7 @@
              <div class="shopping-cart--values">
                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
                    <div class="p-4">
-                      
+
                       <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom">
                             <strong class="text-muted">Total Items </strong>
@@ -111,7 +111,7 @@
                             <strong class="text-muted">Order Total </strong>
                             <strong><span>&#8377;</span>{{$totalAmount}}</strong>
                         </li>
-                        
+
                       </ul>
                       <a href="{{ route('checkout') }}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                    </div>
