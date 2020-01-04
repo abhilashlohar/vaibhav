@@ -61,10 +61,14 @@ class HomeController extends BaseController
         else
         {
             $cartItems = json_decode(request()->cookie('vaibhav_cart'));
-            foreach($cartItems as $cartItem)
+            if($cartItems)
             {
-                $totalItemCart += $cartItem->quantity;
+                foreach($cartItems as $cartItem)
+                {
+                    $totalItemCart += $cartItem->quantity;
+                }
             }
+
         }
         return $totalItemCart;
     }
