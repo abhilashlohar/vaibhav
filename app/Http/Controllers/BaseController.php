@@ -14,6 +14,7 @@ class BaseController extends Controller
         ->where([
             ['deleted', '=', 0]
         ])
+        ->whereHas('subCategoryFirst')
         ->orderBy('sequence', 'asc')
         ->get();
         View::share(['headerCategories' => $headerCategories]);
