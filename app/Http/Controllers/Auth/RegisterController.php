@@ -7,9 +7,8 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use App\Http\Controllers\BaseController;
 
-class RegisterController extends BaseController
+class RegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -38,7 +37,6 @@ class RegisterController extends BaseController
      */
     public function __construct()
     {
-        parent::__construct();
         $this->middleware('guest');
     }
 

@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\BaseController;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Cart;
+use Illuminate\Http\Request;
 
-class LoginController extends BaseController
+class LoginController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -36,6 +37,49 @@ class LoginController extends BaseController
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
-        parent::__construct();
+    }
+
+    public function authenticated(Request $request  )
+    {
+        $cart = [];
+        $minutes = 60;
+        $user = auth()->user();
+        if($user)
+        {
+            $cartItems = Cart::where('user_id',$user->id)->get();
+            if($request->hasCookie('vaibhav_cart'))
+            {
+                $cookieValues = json_decode($request->cookie('vaibhav_cart'));
+
+                foreach($cookieValues  as $cookieValue)
+                {
+                    $cart[]=['product_id'=>$cookieValue->product_id,'quantity'=>$cookieValue->quantity];
+                }
+
+                \Cookie::queue(\Cookie::forget('vaibhav_cart'));
+
+                foreach($cartItems  as $cartItem)
+                {
+                    foreach($cart  as $key => $cartValue)
+                    {
+                        if($cartValue['product_id'] == $cartItem->product_id)
+                        {
+                            /// Update data
+                            Cart::where('id', $cartItem->id)
+                            ->update(['quantity' =>  $cartItem->quantity+$cartValue['quantity']]);
+                            unset($cart[$key]);
+                        }
+                    }
+                }
+                foreach($cart  as $key => $cartValue)
+                {
+                    $CartTable = new Cart;
+                    $CartTable->product_id = $cartValue['product_id'];
+                    $CartTable->user_id = $user->id;
+                    $CartTable->quantity = $cartValue['quantity'];
+                    $CartTable->save();
+                }
+            }
+        }
     }
 }

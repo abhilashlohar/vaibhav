@@ -6,14 +6,8 @@ use App\Cart;
 use App\Product;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Cookie;
-class CartController extends BaseController
+class CartController extends Controller
 {
-    public function __construct()
-    {
-        // $this->middleware('auth');
-        parent::__construct();
-    }
-
     public function list()
     {
         $user = auth()->user();

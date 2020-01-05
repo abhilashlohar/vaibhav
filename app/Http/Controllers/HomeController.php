@@ -11,7 +11,7 @@ use App\Cart;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -20,8 +20,7 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('home','mail','cartItem');
-        parent::__construct();
+        $this->middleware('auth')->except('home','mail','cartItem','headerCategories');
     }
 
     /**
@@ -71,6 +70,18 @@ class HomeController extends BaseController
 
         }
         return $totalItemCart;
+    }
+
+    public static function headerCategories()
+    {
+        $headerCategories = Category::with('subCategoryFirst')
+        ->where([
+            ['deleted', '=', 0]
+        ])
+        ->whereHas('subCategoryFirst')
+        ->orderBy('sequence', 'asc')
+        ->get();
+        return $headerCategories;
     }
 
 }

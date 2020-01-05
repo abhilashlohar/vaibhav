@@ -8,12 +8,11 @@ use App\UserAddress;
 use App\Order;
 use App\OrderRow;
 
-class OrderController extends BaseController
+class OrderController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        parent::__construct();
     }
 
 
