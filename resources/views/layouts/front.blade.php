@@ -75,12 +75,12 @@
                         <a href="{{ route('cart') }}" class="cart-notify">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">({{$cartItem}})</span></a>
                     </div>
-                    <div class="ecommerce-menu--item">
+                    {{-- <div class="ecommerce-menu--item">
                         <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submmit" class="btn btn-sm btn-kelu">Log Out</button>
                         </form>
-                    </div>
+                    </div> --}}
                   </div>
                </div>
             </div>
