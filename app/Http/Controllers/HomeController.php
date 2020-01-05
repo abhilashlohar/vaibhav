@@ -68,6 +68,7 @@ class HomeController extends Controller
                 }
             }
 
+
         }
         return $totalItemCart;
     }

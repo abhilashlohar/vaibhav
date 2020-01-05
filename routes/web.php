@@ -23,6 +23,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list')->name('cart');
+    Route::delete('/cart-item-delete/{product_id}', 'CartController@cartItemDelete')->name('cartItemDelete');
 
     Route::post('/addTocart', 'ProductController@addTocart')->name('addTocart');
     Route::get('/getCookie', 'ProductController@getCookie')->name('getCookie');

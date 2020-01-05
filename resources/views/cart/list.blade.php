@@ -65,7 +65,12 @@
                                 <strong><span>&#8377;</span>{{ $cartItem->quantity*$cartItem->product->sale_price }}</strong>
                             </td>
                             <td class="border-0 align-middle">
-                                <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                <form action="{{ route('cartItemDelete',[$cartItem->product->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-dark"><i class="fa fa-trash"></i></button>
+                                </form>
+                                {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                             </td>
                             <?php $totalAmount += $cartItem->quantity*$cartItem->product->sale_price; ?>
                          </tr>
@@ -95,7 +100,12 @@
                                 <strong><span>&#8377;</span>{{ $cartItem['quantity']*$cartItem['product']->sale_price }}</strong>
                             </td>
                             <td class="border-0 align-middle">
-                                <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                <form action="{{ route('cartItemDelete',[$cartItem['product']->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="text-dark"><i class="fa fa-trash"></i></button>
+                                </form>
+                                {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                             </td>
                             <?php $totalAmount += $cartItem['quantity']*$cartItem['product']->sale_price; ?>
                          </tr>
@@ -116,7 +126,7 @@
                       <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom">
                             <strong class="text-muted">Total Items </strong>
-                            <strong>{{ count($cartItems) }}</strong>
+                            <strong>{{ $totalCartItems }}</strong>
                         </li>
                         <li class="d-flex justify-content-between py-3 border-bottom">
                             <strong class="text-muted">Order Total </strong>
