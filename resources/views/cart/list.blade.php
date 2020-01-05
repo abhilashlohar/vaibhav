@@ -68,7 +68,7 @@
                                 <form action="{{ route('cartItemDelete',[$cartItem->product->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-dark"><i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn text-dark"><i class="fa fa-trash"></i></button>
                                 </form>
                                 {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                             </td>
@@ -103,7 +103,7 @@
                                 <form action="{{ route('cartItemDelete',[$cartItem['product']->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="text-dark"><i class="fa fa-trash"></i></button>
+                                    <button type="submit" class="btn text-dark"><i class="fa fa-trash"></i></button>
                                 </form>
                                 {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                             </td>
