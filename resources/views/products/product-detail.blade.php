@@ -164,37 +164,4 @@
 
 @section ('footer-script')
 <script src="<?php echo url('/'); ?>/static/js/jquery.zoom.min.js"></script>
-<script type="text/javascript">
-    jQuery(document).ready(function() {
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        $(document).on('click','.addToCart',function(e){
-            e.preventDefault();
-            $(this).attr('disable','disable');
-            var product_id = $(this).attr('value');
-            $.ajax({
-            type:'POST',
-            url:"{{ route('addTocart') }}",
-            data:{product_id:product_id},
-            success:function(data){
-                window.location.href = "{{ route('cart') }}";
-            },
-            timeout: 10000
-            // complete: function (data) {
-            //     $.ajax({
-            //         type:'get',
-            //         url:"{{ route('getCookie') }}",
-            //         success:function(data){
-            //             console.log(data);
-            //         }
-            //     });
-            // }
-            });
-        });
-    });
-</script>
 @endsection

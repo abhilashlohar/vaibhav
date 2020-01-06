@@ -62,7 +62,6 @@ class OrderController extends Controller
             $UserAddress->save();
         }
 
-
         $cartItems = Cart::where('user_id',$user->id)->get();
 
         $totalAmount = 0;
@@ -76,8 +75,8 @@ class OrderController extends Controller
         $Order->user_id = $user->id;
         $Order->order_no = $this->newOrderNumber();
         $Order->order_amount = $totalAmount;
-        $Order->payment_mode = 'cod';
-        $Order->payment_status = 'cod';
+        $Order->payment_mode = $request->payment_mode;
+        $Order->payment_status = $request->payment_mode;
 
         $Order->bill_name = $request->bill_name;
         $Order->bill_mobile = $request->bill_mobile;
@@ -114,7 +113,7 @@ class OrderController extends Controller
             $OrderRow->amount = $cartItem->quantity*$cartItem->product->sale_price;
             $OrderRow->save();
         }
-
+        Cart::where('user_id',$user->id)->delete();
 
         return redirect()->route('orders.thanks', $Order->id)
                         ->with('success','Order placed successfully');
