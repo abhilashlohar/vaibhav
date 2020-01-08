@@ -24,6 +24,10 @@ class OrderController extends Controller
 
         $cartItems = Cart::where('user_id',$user->id)->get();
 
+        if (count($cartItems)==0) {
+            return redirect()->route('cart');
+        }
+
         $totalAmount = 0;
         foreach ($cartItems as $cartItem) {
             $totalAmount += $cartItem->quantity*$cartItem->product->sale_price;
