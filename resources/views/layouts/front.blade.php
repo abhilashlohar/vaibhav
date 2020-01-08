@@ -14,6 +14,19 @@
       <link href="<?php echo url('/'); ?>/static/css/font-awesome.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/owl.theme.default.css" rel="stylesheet">
       <link href="<?php echo url('/'); ?>/static/css/primary-style.css" rel="stylesheet">
+      <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <style>
+        .product {
+          font-weight: bold;
+          padding: .2em .4em;
+          margin: .8em 0 .2em;
+          line-height: 1.5;
+        }
+        #ui-id-1{
+            z-index: 1000;
+        }
+
+        </style>
       @yield ('header-style')
       <title>{{$page_title}}</title>
     </head>
@@ -57,7 +70,7 @@
                               </div>
                               <div class="modal-body">
                                  <form action="#" method="get">
-                                    <input type="text" name="search" placeholder="Your search term...">
+                                    <input type="text" name="search" class="typeahead" placeholder="Your search term...">
                                     <button type="submit" value="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                  </form>
                               </div>
@@ -206,6 +219,106 @@
    @yield ('footer-script')
 
    <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
+   {{-- <script src="<?php echo url('/'); ?>/static/js/typeahead.bundle.js"></script> --}}
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script>
+         $( function() {
+    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+      _create: function() {
+        this._super();
+        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+      },
+      _renderMenu: function( ul, items ) {
+        var that = this,
+          currentCategory = "";
+        $.each( items, function( index, item ) {
+          var li;
 
+          li = that._renderItemData( ul, item );
+          if ( item.product ) {
+
+                li.addClass("product");
+            //li.attr( "aria-label", item.category + " : " + item.label );
+          }
+        });
+      }
+    });
+    // var data = [
+    //   { label: "anders", category: "" },
+    //   { label: "andreas", category: "" },
+    //   { label: "antal", category: "" },
+    //   { label: "annhhx10", category: "Products" },
+    //   { label: "annk K12", category: "Products" },
+    //   { label: "annttop C13", category: "Products" },
+    //   { label: "anders andersson", category: "People" },
+    //   { label: "andreas andersson", category: "People" },
+    //   { label: "andreas johnson", category: "People" }
+    // ];
+
+    $( ".typeahead" ).catcomplete({
+            delay: 0,
+           source: function (query, process) {
+            jQuery.ajax({
+                url : "{{route('advanceSearch',['+%QUERY+'])}}",
+                type : 'GET',
+                dataType : 'json',
+                success : function(data) {
+                    return process(data);
+                }
+            });
+         }
+    });
+  } );
+    $(document).ready(function(){
+        // var bestPictures = new Bloodhound({
+        // datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+        // queryTokenizer: Bloodhound.tokenizers.whitespace,
+        // remote: {
+        //     url: '{{route('advanceSearch',['+%QUERY+'])}}',
+        //     wildcard: '%QUERY'
+        // }
+        // });
+
+        // $('.typeahead').typeahead(null, {
+        // name: 'name',
+        // display: 'name',
+        // limit: 10,
+        // source: bestPictures,
+        // templates: {
+        //     header: '<h5 class="league-name">NBA Teams</h5>'
+        // }
+        // });
+    });
+    $(document).ready(function()
+      {
+         ///weather/searchCity/?q=%QUERY
+    //      $('.typeahead').typeahead({
+    //      hint: true,
+    //      highlight: true,
+    //      minLength: 1
+    //   },
+    //      {
+    //      name: 'options',
+    //      displayKey: 'value',
+    //      source: function (query, process) {
+    //         jQuery.ajax({
+    //             url : "{{route('advanceSearch',['+%QUERY+'])}}",
+    //             type : 'GET',
+    //             dataType : 'json',
+    //             success : function(data) {
+    //                 // var matches = [];
+    //                 // $.each(data, function(i, str) {
+    //                 //     matches.push({ value: str });
+    //                 // });
+    //                 // console.log(matches);
+    //                 return process(data);
+
+    //                 //process(json);
+    //             }
+    //         });
+    //      }
+    //   });
+});
+    </script>
   </body>
 </html>
