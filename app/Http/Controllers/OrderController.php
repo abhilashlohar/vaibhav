@@ -10,12 +10,11 @@ include_once(app_path() . '/razorpay/razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 
-class OrderController extends BaseController
+class OrderController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
-        parent::__construct();
     }
 
 
@@ -240,6 +239,8 @@ class OrderController extends BaseController
                 $OrderRow->amount = $cartItem->quantity*$cartItem->product->sale_price;
                 $OrderRow->save();
             }
+       
+            // Cart::where('user_id',$user->id)->delete();
 
             return redirect()->route('orders.thanks', $Order->id)
                         ->with('success','Order placed successfully');

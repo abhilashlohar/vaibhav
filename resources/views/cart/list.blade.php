@@ -45,7 +45,7 @@
                          <tr>
                             <th scope="row" class="border-0">
                                <div class="p-2">
-                                  <img src="images/product-single-04.jpg" alt="" width="70">
+                                  <img src="{{ asset('storage/product/'.$cartItem->product->product_image_primary->image) }}" alt="" width="70">
                                   <div class="ml-3 d-inline-block align-middle">
                                      <h5>
                                         <a href="#" class="text-dark d-inline-block align-middle">
@@ -66,31 +66,52 @@
                                 <strong><span>&#8377;</span>{{ $cartItem->quantity*$cartItem->product->sale_price }}</strong>
                             </td>
                             <td class="border-0 align-middle">
-                                <a href="#" class="text-dark"><i class="fa fa-trash"></i></a>
+                                <form action="{{ route('cartItemDelete',[$cartItem->product->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn text-dark"><i class="fa fa-trash"></i></button>
+                                </form>
+                                {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                             </td>
                             <?php $totalAmount += $cartItem->quantity*$cartItem->product->sale_price; ?>
                          </tr>
                          @endforeach
-
-                         <!-- Product 02 -->
-                         {{-- <tr>
+                         @foreach ($cookieCartItems as $key => $cartItem)
+                         <tr>
                             <th scope="row" class="border-0">
                                <div class="p-2">
-                                  <img src="images/product-single-02.jpg" alt="" width="70">
+                                  <img src="{{ asset('storage/product/'.$cartItem['product']->product_image_primary->image) }}" alt="" width="70">
                                   <div class="ml-3 d-inline-block align-middle">
                                      <h5>
                                         <a href="#" class="text-dark d-inline-block align-middle">
-                                           Timex Unisex Originals
+                                            {{ $cartItem['product']->name }}
                                         </a>
                                      </h5>
-                                     <span>Category: Salon</span>
+                                     <!-- <span>Category: Salon</span> -->
                                   </div>
                                </div>
                             </th>
-                            <td class="border-0 align-middle"><strong>$79.00</strong></td>
-                            <td class="border-0 align-middle"><strong>3</strong></td>
-                            <td class="border-0 align-middle"><a href="#" class="text-dark"><i class="fa fa-trash"></i></a></td>
-                         </tr> --}}
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem['product']->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong>{{ $cartItem['quantity'] }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <strong><span>&#8377;</span>{{ $cartItem['quantity']*$cartItem['product']->sale_price }}</strong>
+                            </td>
+                            <td class="border-0 align-middle">
+                                <form action="{{ route('cartItemDelete',[$cartItem['product']->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn text-dark"><i class="fa fa-trash"></i></button>
+                                </form>
+                                {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
+                            </td>
+                            <?php $totalAmount += $cartItem['quantity']*$cartItem['product']->sale_price; ?>
+                         </tr>
+                         @endforeach
+
                       </tbody>
                    </table>
                 </div>
@@ -102,17 +123,17 @@
              <div class="shopping-cart--values">
                 <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
                    <div class="p-4">
-                      
+
                       <ul class="list-unstyled mb-4">
                         <li class="d-flex justify-content-between py-3 border-bottom">
                             <strong class="text-muted">Total Items </strong>
-                            <strong>{{ count($cartItems) }}</strong>
+                            <strong>{{ $totalCartItems }}</strong>
                         </li>
                         <li class="d-flex justify-content-between py-3 border-bottom">
                             <strong class="text-muted">Order Total </strong>
                             <strong><span>&#8377;</span>{{$totalAmount}}</strong>
                         </li>
-                        
+
                       </ul>
                       <a href="{{ route('checkout') }}" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
                    </div>

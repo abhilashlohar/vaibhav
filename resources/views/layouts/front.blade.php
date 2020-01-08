@@ -18,6 +18,13 @@
       <title>{{$page_title}}</title>
     </head>
 <body class="{{$body_class}}">
+<?php
+    use \App\Http\Controllers\HomeController;
+
+    $cartItem = HomeController::cartItem();
+    $headerCategories = HomeController::headerCategories();
+
+    ?>
 
    <header class="header-wrapper">
       <div class="container">
@@ -63,11 +70,17 @@
                            <span class="desktop-text">Account</span>
                            <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </a>
-                  </div>
-                  <div class="ecommerce-menu--item">
-                     <a href="{{ route('cart') }}" class="cart-notify">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">(0)</span></a>
-                  </div>
+                    </div>
+                    <div class="ecommerce-menu--item">
+                        <a href="{{ route('cart') }}" class="cart-notify">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">({{$cartItem}})</span></a>
+                    </div>
+                    {{-- <div class="ecommerce-menu--item">
+                        <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <button type="submmit" class="btn btn-sm btn-kelu">Log Out</button>
+                        </form>
+                    </div> --}}
                   </div>
                </div>
             </div>

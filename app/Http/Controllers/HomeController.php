@@ -7,10 +7,11 @@ use App\Category;
 use App\SubCategory;
 use App\Product;
 use App\Enquiry;
+use App\Cart;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
-class HomeController extends BaseController
+class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -19,8 +20,7 @@ class HomeController extends BaseController
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('home','mail');
-        parent::__construct();
+        $this->middleware('auth')->except('home','mail','cartItem','headerCategories');
     }
 
     /**
@@ -44,5 +44,45 @@ class HomeController extends BaseController
        return 'Email was sent';
     }
 
+    public static function cartItem()
+    {
+        $totalItemCart = 0 ;
+        $user = auth()->user();
+
+        if($user)
+        {
+            $cartItems = Cart::where('user_id',$user->id)->get();
+            foreach($cartItems as $cartItem)
+            {
+                $totalItemCart += $cartItem->quantity;
+            }
+        }
+        else
+        {
+            $cartItems = json_decode(request()->cookie('vaibhav_cart'));
+            if($cartItems)
+            {
+                foreach($cartItems as $cartItem)
+                {
+                    $totalItemCart += $cartItem->quantity;
+                }
+            }
+
+
+        }
+        return $totalItemCart;
+    }
+
+    public static function headerCategories()
+    {
+        $headerCategories = Category::with('subCategoryFirst')
+        ->where([
+            ['deleted', '=', 0]
+        ])
+        ->whereHas('subCategoryFirst')
+        ->orderBy('sequence', 'asc')
+        ->get();
+        return $headerCategories;
+    }
 
 }

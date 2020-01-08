@@ -38,7 +38,7 @@
                             </span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="sequence">Sequence *</label>
                         <input type="text" id="sequence" name="sequence" placeholder="Category Sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ old('sequence') }}" required >
@@ -51,22 +51,10 @@
                     </div>
 
                     <div class="form-group">
-                        <div class="row @error('image_add') is-invalid @enderror">
-                            <label class="col-xl-3 col-lg-3 col-form-label">Category Image</label>
-                            <div class="col-lg-9 col-xl-6">
-                                <div class="kt-avatar kt-avatar--outline" id="kt_user_avatar_1">
-                                    <div class="kt-avatar__holder" style="background-image: url('{{url('/')}}/img/no-image.png')"></div>
-                                    <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
-                                        <i class="fa fa-pen"></i>
-                                        <input type="file" name="image_add" accept=".png, .jpg, .jpeg" required="required">
-                                    </label>
-                                    <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
-                                        <i class="fa fa-times"></i>
-                                    </span>
-                                </div>
-                                <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                            </div>
-                        </div>
+                        <label for="sequence">Category Image *</label>
+                        <input type="file" name="image_add" accept="png, jpg, jpeg"  class="form-control @error('image_add') is-invalid @enderror" required="required">
+                        <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+
                         @error('image_add')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -89,8 +77,3 @@
 
 @endsection
 
-@section ('footer-script')
-
-<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
-
-@endsection

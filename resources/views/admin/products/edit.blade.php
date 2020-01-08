@@ -518,7 +518,7 @@
                }
             });
         });
-
+        renameImage();
         $("#add-row").on("click", function(e){
             var $cloneTr = $('#table-clone tr').clone();
             $('#product-image').append($cloneTr);

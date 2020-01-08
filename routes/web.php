@@ -17,15 +17,17 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/', 'HomeController@home')->name('home');
 
-
     Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
     Route::get('/products/{product}', 'ProductController@productDetail')->name('products.product-detail');
 
 
     Route::get('/send/email', 'HomeController@mail');
     Route::get('/cart', 'CartController@list')->name('cart');
-    Route::post('/addTocart', 'CartController@addTocart')->name('addTocart');
-    Route::get('/getCookie', 'CartController@getCookie')->name('getCookie');
+    Route::delete('/cart-item-delete/{product_id}', 'CartController@cartItemDelete')->name('cartItemDelete');
+
+    Route::post('/addTocart', 'ProductController@addTocart')->name('addTocart');
+    Route::get('/getCookie', 'ProductController@getCookie')->name('getCookie');
+
     Route::get('/checkout', 'OrderController@checkout')->name('checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');

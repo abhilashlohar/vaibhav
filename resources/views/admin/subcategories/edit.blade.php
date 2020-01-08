@@ -54,7 +54,7 @@
                             </span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="sequence">Sequence *</label>
                         <input type="text" id="sequence" name="sequence" placeholder="Sub Category Sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ $subCategory->sequence }}" required >
@@ -65,7 +65,7 @@
                             </span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="short_description">Short Description *</label>
                         <textarea placeholder="Short Description" required class="form-control resize-none  @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="3" >{{ $subCategory->short_description }}</textarea>
@@ -84,7 +84,7 @@
                                     <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/subcategory/'.$subCategory->image) }}')"></div>
                                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                         <i class="fa fa-pen"></i>
-                                        <input type="file" name="image_add" accept=".png, .jpg, .jpeg">
+                                        <input type="file" name="image_add" accept="png, jpg, jpeg">
                                     </label>
                                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                         <i class="fa fa-times"></i>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
             </form>
-            <!--end::Form-->            
+            <!--end::Form-->
         </div>
     </div>
 </div>
