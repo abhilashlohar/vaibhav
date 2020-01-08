@@ -34,6 +34,9 @@ class CreateOrdersTable extends Migration
             $table->string('ship_pincode');
             $table->string('ship_landmark');
             $table->string('ship_state');
+            $table->string('razorpay_order_id')->nullable();
+            $table->string('razorpay_payment_id')->nullable();
+            $table->string('razorpay_signature')->nullable();
             $table->timestamps();
         });
     }
