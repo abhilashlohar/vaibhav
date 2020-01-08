@@ -9,7 +9,7 @@ use App\Category;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'image','slug','sequence'
+        'name', 'image','slug','sequence','template_type'
     ];
 
     public function notHavingImageInDb(){
@@ -19,6 +19,10 @@ class Category extends Model
     public static function boot()
     {
         parent::boot();
+        static::saving(function ($model) {
+            if (isset($model->template_type) && $model->template_type=='on') $model->template_type = 'list';
+            else $model->template_type = 'grid';
+        });
     }
 
     public static function rules($id = '')
@@ -37,6 +41,7 @@ class Category extends Model
             })->ignore($id)
           ],
           'sequence' => 'required|numeric',
+          'template_type' => 'required',
           'image_add' => 'mimes:jpeg,jpg,png|max:2048'
       ];
 

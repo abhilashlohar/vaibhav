@@ -29,6 +29,7 @@
                             <th>Name</th>
                             <th>Slug</th>
                             <th class="text-center">Sequence</th>
+                            <th class="text-center">Template</th>
                             <th>Image</th>
                             <th class="text-center">Action</th>
                         </tr>
@@ -38,6 +39,7 @@
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
                             <td class="text-center">{{ $category->sequence }}</td>
+                            <td class="text-center">{{ ucfirst($category->template_type) }}</td>
                             <td>
                                 <img src="{{ asset('storage/category/'.$category->image) }}" width="60" height="60">
                             </td>

@@ -11,6 +11,7 @@ class ProductController extends Controller
 {
     public function list($category_slug,$sub_category_slug)
     {
+
         $category = Category::where([
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
@@ -30,7 +31,9 @@ class ProductController extends Controller
             ['products.deleted', '=', 0]
         ])
         ->orderBy('sequence', 'asc')
+        // ->with('i', (request()->input('page', 1) - 1) * 5)
         ->get();
+        // dd($products);
 
         // $products = Product::with(['product_image_primary','subCategory' => function ($query) use ($sub_category_slug) {
         //         $query->where('sub_categories.slug', $sub_category_slug);
@@ -45,7 +48,7 @@ class ProductController extends Controller
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list';
-        return view('products.list',compact('category','subCategoryData','products','page_title','body_class'));
+        return view('products.'.$category->template_type,compact('category','subCategoryData','products','page_title','body_class'));
     }
 
     public function productDetail($product_slug)

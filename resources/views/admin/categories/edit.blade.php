@@ -75,6 +75,11 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="sequence">Template Type *</label><br><br>
+                        <input name="template_type" id="template_type"  data-switch="true" type="checkbox" data-handle-width="70" data-on-text="List" data-off-text="Grid" data-on-color="brand" @if($category->template_type=='list') checked="checked" @endif >
+                    </div>
+
                 </div>
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
@@ -93,5 +98,5 @@
 @section ('footer-script')
 
 <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/file-upload/ktavatar.js" type="text/javascript"></script>
-
+<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
 @endsection

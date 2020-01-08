@@ -62,6 +62,11 @@
                         @enderror
                     </div>
 
+                    <div class="form-group">
+                        <label for="sequence">Template Type *</label><br><br>
+                        <input name="template_type" id="template_type"  data-switch="true" type="checkbox" value="{{ old('template_type') }}" data-handle-width="70" data-on-text="List" data-off-text="Grid" data-on-color="brand" checked="checked" >
+                    </div>
+
                 </div>
                 <div class="kt-portlet__foot">
                     <div class="kt-form__actions">
@@ -76,4 +81,8 @@
 </div>
 
 @endsection
+@section ('footer-script')
+<script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/pages/crud/forms/widgets/bootstrap-switch.js" type="text/javascript"></script>
+@endsection
+
 
