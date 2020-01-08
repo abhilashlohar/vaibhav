@@ -17,14 +17,42 @@
             @csrf
             @method('PUT')
                 <div class="kt-portlet__body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $product->name }}" required  autofocus >
+
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="slug">Slug *</label>
+                                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
+                                @error('slug')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="name">Name *</label>
-                                <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ $product->name }}" required  autofocus style="font-size: 16px;">
+                                <label for="product_code">Product Code *</label>
+                                <input type="text" id="product_code" name="product_code" class="form-control @error('product_code') is-invalid @enderror" value="{{ ($product->product_code)? $product->product_code : old('product_code') }}" required>
 
-                                @error('name')
+                                @error('product_code')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -64,7 +92,6 @@
                                     </span>
                                 @enderror
                             </div>
-
                         </div>
                     </div>
 
@@ -104,18 +131,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="slug">Slug *</label>
-                                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
-                                <span class="form-text text-muted">Not enter space inside slug.</span>
-                                @error('slug')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                        
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="sequence">Sequence</label>
@@ -171,18 +187,7 @@
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="product_code">Product Code *</label>
-                                <input type="text" id="product_code" name="product_code" class="form-control @error('product_code') is-invalid @enderror" value="{{ ($product->product_code)? $product->product_code : old('product_code') }}" required>
-
-                                @error('product_code')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
+                        
                     </div>
                     <div class="row">
                         <div class="col-md-4">
@@ -199,7 +204,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="discount">Discount</label>
+                                <label for="discount">Discount %</label>
                                 <input type="text" id="discount" name="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ ($product->discount >= 0)? $product->discount : old('discount') }}">
 
                                 @error('discount')
