@@ -1,14 +1,15 @@
 @extends ('layouts.front')
 
-@section ('header-style')
-<style>
-    body.cart{
-        position: relative;
-    }
-</style>
-@endsection
 
 @section ('content')
+
+@if(Session::has('fail'))
+    <div class="alert alert-success" role="alert" data-dismiss="alert">
+        <strong>FAIL! &nbsp;</strong> {{ Session::get('fail') }}
+    </div>
+@endif
+
+
 <section class="shopping-cart--wrapper">
     <div class="container-fluid">
        <div class="shopping-cart--grids">
