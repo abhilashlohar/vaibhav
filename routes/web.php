@@ -29,7 +29,6 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/checkout', 'OrderController@checkout')->name('checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
-    Route::post('/verify', 'OrderController@verify')->name('orders.verify');
 
 });
 
