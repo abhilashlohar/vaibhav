@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('home','mail','cartItem','headerCategories');
+        $this->middleware('auth')->except('home','mail','cartItem','headerCategories','advanceSearch');
     }
 
     /**
@@ -83,6 +83,15 @@ class HomeController extends Controller
         ->orderBy('sequence', 'asc')
         ->get();
         return $headerCategories;
+    }
+    public function advanceSearch(Request $request)
+    {
+        $data [] = ['label'=>'Product','product'=>'yes'];
+        $data [] = ['label'=>'annhhx10','product'=>''];
+        $data [] = ['label'=>'annk K12','product'=>''];
+        return json_encode($data);
+        // return json_encode(array('like','spike','dike','ikelalcdass'));
+        // return view('home', compact('page_title','body_class'));
     }
 
 }
