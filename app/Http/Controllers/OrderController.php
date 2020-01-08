@@ -240,7 +240,7 @@ class OrderController extends Controller
                 $OrderRow->save();
             }
        
-            // Cart::where('user_id',$user->id)->delete();
+            Cart::where('user_id',$user->id)->delete();
 
             return redirect()->route('orders.thanks', $Order->id)
                         ->with('success','Order placed successfully');
