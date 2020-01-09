@@ -54,12 +54,12 @@ class Product extends Model
                 })->ignore($id)
             ],
             'discount' => 'numeric',
-            'sequence' => 'required|numeric',
+            'sequence' => 'numeric',
             'category_id' => 'required',
             'sub_category_id' => 'required',
             'short_description' => 'required',
-            'sku' => 'required',
-            'product_tags' => 'required',
+            // 'sku' => 'required',
+            // 'product_tags' => 'required',
             'stock_quantity' => 'required|numeric',
             'regular_price' => 'required|numeric',
             'sale_price' => 'required|numeric'
