@@ -53,6 +53,12 @@
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
+                  	<div class="ecommerce-menu--item">
+                        <a href="#">
+                           <span class="desktop-text">Account</span>
+                           <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                        </a>
+                    	</div>
                      <div class="ecommerce-menu--item">
                         <button type="button" class="btn search" data-toggle="modal" data-target="#search">
                            <span class="desktop-text">Search</span>
@@ -77,12 +83,6 @@
                             </div>
                           </div>
                         </div>
-                     </div>
-                     <div class="ecommerce-menu--item">
-                        <a href="#">
-                           <span class="desktop-text">Account</span>
-                           <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        </a>
                     </div>
                     <div class="ecommerce-menu--item">
                         <a href="{{ route('cart') }}" class="cart-notify">
@@ -205,6 +205,9 @@
                      </div>
                   </div>
                </div>
+            </div>
+            <div class="footer-copyright--wrap">
+            	2019@Vaibhavstores - All rights reserved - <a href="#">Terms & Coonditions</a>
             </div>
          </div>
       </div>

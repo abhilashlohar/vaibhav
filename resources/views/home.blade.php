@@ -182,6 +182,16 @@
    <section class="highlighted-single--wrapper">
       <div class="container-fluid">
          <div class="single-excerpt--grid">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="title-ui--wrap">
+                  <div class="title-text--middle">
+                     <h2>Consumables</h2>
+                  </div>
+                  <div class="title-text--action">
+                     <a href="" target="_blank">View All</a>
+                  </div>
+               </div>
+            </div>
             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                <div class="single-product--carousel">
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
@@ -448,7 +458,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="verticals-block--wrap">
-               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                   <div class="verticals-details--wrap">
                      <div class="verticals-brand--wrap">
                         <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
@@ -464,18 +474,20 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                   <div class="verticals-single--wrap">
-                     <div class="verticals-single--logo">
-                        <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
-                     </div>
-                     <div class="verticals-single--features">
-                        <ul>
-                           <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
-                           <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
-                           <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
-                        </ul>
-                        <a href="#" target="_blank">Visit Now</a>
+                     <div class="verticals-single--details">
+                        <div class="verticals-single--logo">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                        </div>
+                        <div class="verticals-single--features">
+                           <ul>
+                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                           </ul>
+                           <a href="#" target="_blank">Visit Now</a>
+                        </div>
                      </div>
                   </div>
                </div>
