@@ -742,19 +742,19 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--buttons ul li:nth-child(1) {
     position: relative;
-    bottom: 7px;
+    bottom: 3px;
 }
 .ecommerce-item--buttons ul li:nth-child(2) {
    margin-right: 10px;
 }
 .ecommerce-item--buttons a {
    background: #ffffff;
-   padding: 12px 15px;
+   padding: 10px 19px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #99ab3f;
    border: 0;
-   font-size: 13px;
+   font-size: 12px;
    margin: 0;
    font-weight: 600;
    letter-spacing: 0.09em;
@@ -762,12 +762,12 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--buttons button {
    background: #ffffff;
-   padding: 10px 15px;
+   padding: 8px 19px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #99ab3f;
    border: 0;
-   font-size: 13px;
+   font-size: 12px;
    text-transform: uppercase;
    margin: 0;
    font-weight: 600;
