@@ -161,6 +161,10 @@ class ProductController extends Controller
             $related_products = implode(',', $request->related_products);
             $request->request->add(['related_products' => $related_products]);
         }
+        else
+        {
+            $request->request->add(['related_products' => '']);
+        }
         $product->update($request->all());
 
         return redirect()->route('products.index')

@@ -95,10 +95,10 @@
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="single-description--text">
-             <?php echo $product->description; ?>
+             <p><?php echo $product->short_description; ?></p>
              <div class="collapse" id="collapseExample">
                <div class="card card-body">
-                 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                <?php echo $product->description; ?>
                </div>
              </div>
              <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -108,7 +108,7 @@
        </div>
     </div>
  </section>
-
+@if (count($related_products)>0)
  <section class="recommended-product--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -158,6 +158,7 @@
        </div>
     </div>
 </section>
+@endif
 @endsection
 
 
