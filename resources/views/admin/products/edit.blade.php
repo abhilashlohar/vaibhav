@@ -119,7 +119,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-md-4">
+                        {{-- <div class="col-md-4">
                             <div class="form-group">
                                 <label for="sku">SKU *</label>
                                 <input type="text" id="sku" name="sku" class="form-control @error('sku') is-invalid @enderror" value="{{ ($product->sku)? $product->sku : old('sku') }}" required>
@@ -130,8 +130,8 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
-                        
+                        </div> --}}
+
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="sequence">Sequence</label>
@@ -160,7 +160,7 @@
                             </div>
                         </div> --}}
                     </div>
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="product_tags">Product Tags *</label>
@@ -173,7 +173,7 @@
                             </div>
                         </div>
 
-                    </div>
+                    </div> --}}
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
@@ -187,7 +187,7 @@
                                 @enderror
                             </div>
                         </div>
-                        
+
                     </div>
                     <div class="row">
                         <div class="col-md-4">
@@ -262,7 +262,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg"></div> --}}
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="table-responsive">
