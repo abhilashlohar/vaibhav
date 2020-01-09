@@ -29,6 +29,8 @@
         </style>
       @yield ('header-style')
       <title>{{$page_title}}</title>
+      <link rel="shortcut icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
     </head>
 <body class="{{$body_class}}">
 <?php
@@ -54,7 +56,7 @@
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
-                        <a href="{{ route('users.profile') }}">
+                        <a href="#">
                            <span class="desktop-text">Account</span>
                            <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </a>
@@ -176,7 +178,7 @@
                      <div class="footer-links--wrap">
                         <ul>
                            <li><a href="#" target="_blank">Journal</a></li>
-                           <li><a href="#" target="_blank">FAQ</a></li>
+                           <li><a href="#" target="_blank">Faq</a></li>
                            <li><a href="#" target="_blank">Contact</a></li>
                            <li><a href="#" target="_blank">Terms & Conditions</a></li>
                         </ul>
@@ -207,7 +209,7 @@
                </div>
             </div>
             <div class="footer-copyright--wrap">
-            	2020@Vaibhavstores - All rights reserved - <a href="#">Terms & Coonditions</a>
+            	2019@Vaibhavstores - All rights reserved - <a href="#">Terms & Coonditions</a>
             </div>
          </div>
       </div>
@@ -222,6 +224,7 @@
    @yield ('footer-script')
 
    <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
+   {{-- <script src="<?php echo url('/'); ?>/static/js/typeahead.bundle.js"></script> --}}
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
    <script>
          $( function() {
