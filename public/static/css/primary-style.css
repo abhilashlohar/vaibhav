@@ -55,6 +55,20 @@ p {
 .cart .header-wrapper {
    position: relative;
 }
+
+.my_profile .header-wrapper {
+   position: relative;
+}
+
+.my_orders .header-wrapper {
+   position: relative;
+}
+
+.order_view .header-wrapper {
+   position: relative;
+}
+
+
 .header-wrapper {
    position: absolute;
    top: 0;

@@ -267,4 +267,18 @@ class OrderController extends Controller
         $body_class = 'thankyou';
         return view('orders.thanks',compact('page_title','body_class'));
     }
+
+    public function list()
+    {
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'my_orders';
+        return view('orders.list', compact('page_title','body_class'));
+    }
+
+    public function show()
+    {
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'order_view';
+        return view('orders.show', compact('page_title','body_class'));
+    }
 }
