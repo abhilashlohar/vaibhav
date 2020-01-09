@@ -85,7 +85,6 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate(Category::rules($category->id), Category::messages());
-
         if($request->hasFile('image_add'))
         {
             $destinationPath = storage_path('app/public/category');

@@ -11,7 +11,6 @@ class ProductController extends Controller
 {
     public function list($category_slug,$sub_category_slug)
     {
-
         $category = Category::where([
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
@@ -31,20 +30,8 @@ class ProductController extends Controller
             ['products.deleted', '=', 0]
         ])
         ->orderBy('sequence', 'asc')
-        // ->with('i', (request()->input('page', 1) - 1) * 5)
         ->get();
-        // dd($products);
 
-        // $products = Product::with(['product_image_primary','subCategory' => function ($query) use ($sub_category_slug) {
-        //         $query->where('sub_categories.slug', $sub_category_slug);
-        //     }
-        // ])
-        // ->where([
-        //     ['is_published', '=', 1],
-        //     ['products.deleted', '=', 0]
-        // ])
-        // ->orderBy('sequence', 'asc')
-        // ->get();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list';
