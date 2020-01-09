@@ -675,7 +675,8 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--name h3 {
    font-weight: 500;
-   font-size: 24px;
+   font-size: 17px;
+   letter-spacing: 0.09em;
 }
 .ecommerce-item--brief p {
    font-weight: 400;
@@ -748,18 +749,20 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--buttons a {
    background: #ffffff;
-   padding: 9px 15px;
+   padding: 12px 15px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #99ab3f;
    border: 0;
    font-size: 13px;
    margin: 0;
+   font-weight: 600;
+   letter-spacing: 0.09em;
    text-decoration: none;
 }
 .ecommerce-item--buttons button {
    background: #ffffff;
-   padding: 9px 15px;
+   padding: 10px 15px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #99ab3f;
@@ -767,8 +770,8 @@ ul.dropDownMenu ul {
    font-size: 13px;
    text-transform: uppercase;
    margin: 0;
-   font-weight: 500;
-   letter-spacing: 0.03em;
+   font-weight: 600;
+   letter-spacing: 0.09em;
    outline: none;
 }
 .ecommerce-item--rating {
@@ -827,8 +830,8 @@ ul.dropDownMenu ul {
    font-weight: 500;
 }
 .title-ui--wrap .title-text--middle h2 {
-   font-size: 36px;
-   line-height: 49px;
+   font-size: 30px;
+   line-height: 41px;
    margin: 10px 0;
    position: relative;
    font-weight: 500;
