@@ -56,7 +56,7 @@
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
-                        <a href="#">
+                        <a href="{{ route('users.profile') }}">
                            <span class="desktop-text">Account</span>
                            <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
                         </a>
