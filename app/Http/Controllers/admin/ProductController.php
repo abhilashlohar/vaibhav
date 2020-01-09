@@ -97,6 +97,7 @@ class ProductController extends Controller
     {
 
         $request->validate(Product::rules($product->id), Product::messages());
+        // dd($request);
         $destinationPath = storage_path('app/public/product');
         if(isset($request->product_image_delete))
         {

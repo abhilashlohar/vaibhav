@@ -41,7 +41,6 @@ class Category extends Model
             })->ignore($id)
           ],
           'sequence' => 'required|numeric',
-          'template_type' => 'required',
           'image_add' => 'mimes:jpeg,jpg,png|max:2048'
       ];
 

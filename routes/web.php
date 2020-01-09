@@ -19,7 +19,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
 
     Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
-    Route::get('/products/{product}', 'ProductController@productDetail')->name('products.product-detail');
+    Route::get('/product/{product}', 'ProductController@productDetail')->name('products.product-detail');
 
 
     Route::get('/send/email', 'HomeController@mail');

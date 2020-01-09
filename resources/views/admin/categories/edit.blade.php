@@ -39,7 +39,7 @@
                             </span>
                         @enderror
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="sequence">Sequence *</label>
                         <input type="text" id="sequence" name="sequence" placeholder="Category Sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ $category->sequence }}" required >
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             </form>
-            <!--end::Form-->            
+            <!--end::Form-->
         </div>
     </div>
 </div>
