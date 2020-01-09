@@ -4,7 +4,7 @@
 body {
   margin: 0;
   font-family: 'Lato', sans-serif;
-  color: #666666;
+  color: #333333;
 }
 h1, h2, h3, h4, h5, h6 {
    font-family: 'Montserrat', sans-serif;
@@ -55,20 +55,6 @@ p {
 .cart .header-wrapper {
    position: relative;
 }
-
-.my_profile .header-wrapper {
-   position: relative;
-}
-
-.my_orders .header-wrapper {
-   position: relative;
-}
-
-.order_view .header-wrapper {
-   position: relative;
-}
-
-
 .header-wrapper {
    position: absolute;
    top: 0;
@@ -167,6 +153,7 @@ p {
 .ecommerce-menu--item a.cart-notify {
    text-decoration: none;
    color: #2e2e2e;
+   font-size: 15px;
    padding: 11px 12px;
    display: inline-block;
    font-weight: 600;
@@ -176,13 +163,14 @@ p {
    font-size: 13px;
    line-height: 23px;
    color: #2e2e2e;
+   font-weight: 600;
 }
 .ecommerce-menu--item .btn {
    padding: 11px 12px;
    text-transform: uppercase;
    font-size: 14px;
    line-height: 23px;
-   font-weight: 500;
+   font-weight: 600;
    display: inline-block;
    color: #2e2e2e;
 }
@@ -834,8 +822,9 @@ ul.dropDownMenu ul {
 }
 .title-ui--wrap .title-text--up h4 {
    margin: 0;
-   font-size: 18px;
+   font-size: 15px;
    line-height: 27px;
+   font-weight: 500;
 }
 .title-ui--wrap .title-text--middle h2 {
    font-size: 36px;
@@ -849,6 +838,10 @@ ul.dropDownMenu ul {
 }
 .title-ui--wrap .title-text--action a {
    color: #666666;
+   letter-spacing: 2px;
+   font-weight: 500;
+   font-size: 15px;
+   font-family: 'Montserrat', sans-serif;
 }
 .title-ui--wrap .title-text--middle h2:before {
     content: "";
@@ -2626,7 +2619,7 @@ Login Wrapper
       padding: .5rem 1rem;
    }
    .navbar .navbar-nav li a {
-      color: #2e2e2e;
+      color: #2e2e2e !important;
       padding: 14px 45px !important;
       text-align: center;
       text-transform: none;
