@@ -863,6 +863,8 @@ ul.dropDownMenu ul {
 .store-ui--wrapper .store-gallery--wrap .store-video--ui {
    position: relative;
    width: 100%;
+   border-bottom-left-radius: 45%;
+   overflow: hidden;
 }
 .store-ui--wrapper .store-gallery--wrap .store-video--ui img {
    width: 100%;
@@ -879,13 +881,45 @@ ul.dropDownMenu ul {
    -ms-flex-direction: column;
    flex-direction: column;
 }
+.store-ui--wrapper .store-gallery--wrap .store-video--ui .video-icon {
+   position: absolute;
+   z-index: 1;
+   top: 45%;
+   left: 45%;
+}
+.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--one .store-action {
+   position: absolute;
+   z-index: 1;
+   top: 45%;
+   left: 32%;
+}
+.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--two .store-action {
+   position: absolute;
+   z-index: 1;
+   top: 45%;
+   left: 32%;
+}
+.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .store-action
+{
+   background: #ffffff;
+   padding: 12px 30px;
+   border-radius: 3px;
+}
 .store-ui--wrapper .store-gallery--wrap .store-gallery--ui img {
    width: 100%;
+}
+.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--one {
+   border-top-right-radius: 60%;
+   overflow: hidden;
+   position: relative;
+}
+.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--two {
+   position: relative;
 }
 .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--one,
 .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--two {
    margin-bottom: 30px;
-   max-height: 389px;
+   max-height: 381px;
    overflow: hidden;
 }
 

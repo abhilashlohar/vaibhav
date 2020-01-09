@@ -429,16 +429,25 @@
             <div class="store-gallery--wrap">
                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="store-video--ui">
-                     <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
+                     <a href="#">
+                        <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
+                        <div class="video-icon"><img src="<?php echo url('/'); ?>/static/images/video-icon.png" alt="Video Icon"/></div>
+                     </a>
                   </div>
                </div>
                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="store-gallery--ui">
                      <div class="gallery-image--one">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-01.png" alt=""/>
+                        <div class="store-action">
+                           <a href="#" class="btn">Store Branding</a>
+                        </div>
                      </div>
                      <div class="gallery-image--two">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-02.png" alt=""/>
+                        <div class="store-action">
+                           <a href="#" class="btn">Store Opening</a>
+                        </div>
                      </div>
                   </div>
                </div>
