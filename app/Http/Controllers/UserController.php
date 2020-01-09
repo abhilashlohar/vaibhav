@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $users = User::latest()->paginate(5);
@@ -66,5 +71,14 @@ class UserController extends Controller
 
         return redirect()->route('users.index')
                         ->with('success','user deleted successfully');
+    }
+
+    public function profile()
+    {
+        $user = auth()->user();
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'my_profile';
+        return view('users.profile', compact('user','page_title','body_class'));
     }
 }

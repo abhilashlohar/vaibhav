@@ -14,6 +14,8 @@ $(document).ready(function(){
 $('.hero-slideshow').owlCarousel({
     loop:true,
     margin:10,
+    autoplay: true,
+    slideSpeed: 1500,
     nav:false,
     dots: true,
     responsive:{
