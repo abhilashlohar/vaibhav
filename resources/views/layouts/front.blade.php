@@ -222,7 +222,6 @@
    @yield ('footer-script')
 
    <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
-   {{-- <script src="<?php echo url('/'); ?>/static/js/typeahead.bundle.js"></script> --}}
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
    <script>
          $( function() {
