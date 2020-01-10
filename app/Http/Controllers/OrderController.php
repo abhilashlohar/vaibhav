@@ -281,10 +281,10 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        $orderRow = OrderRow::where('order_id',$id)->first();
+        $order = Order::where('id',$id)->with('OrderRows')->first();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'order_view';
-        return view('orders.show', compact('page_title','body_class','orderRow'));
+        return view('orders.show', compact('page_title','body_class','order'));
     }
 }

@@ -18,24 +18,47 @@
 
     <div class="row">
         <div class="col-md-6">
-            <img src="{{ asset('storage/product/'.$orderRow->product->product_image_primary->image) }}">
+            <h3>Shipping Address</h3>
+            <span>{{ $order->ship_name }}</span><br>
+            <span>{{ $order->ship_mobile }}</span><br>
+            <span>{{ $order->ship_address }}</span><br>
+            <span>{{ $order->ship_pincode }}</span><br>
+            <span>{{ $order->ship_landmark }}</span><br>
+            <span>{{ $order->ship_state }}</span><br>
+        </div>
+        <div class="col-md-6">
+            <h3>Billing Address</h3>
+            <span>{{ $order->bill_name }}</span><br>
+            <span>{{ $order->bill_mobile }}</span><br>
+            <span>{{ $order->bill_address }}</span><br>
+            <span>{{ $order->bill_pincode }}</span><br>
+            <span>{{ $order->bill_landmark }}</span><br>
+            <span>{{ $order->bill_state }}</span><br>
         </div>
         <div class="col-md-12">
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead>
                         <tr>
+                            <th></th>
+                            <th>Item</th>
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Amount</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($order->OrderRows as $OrderRow)
                         <tr>
-                            <th>{{$orderRow->quantity}}</th>
-                            <th>{{$orderRow->price}}</th>
-                            <th>{{$orderRow->amount}}</th>
+                            <td>
+                                <img src="{{ asset('storage/product/'.$OrderRow->product->product_image_primary->image) }}" width="50px">
+                            </td>
+                            <th>{{$OrderRow->product->name}}</th>
+                            <th>{{$OrderRow->quantity}}</th>
+                            <th>{{$OrderRow->price}}</th>
+                            <th>{{$OrderRow->amount}}</th>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

@@ -14,6 +14,6 @@ class Order extends Model
 
     public function OrderRows()
     {
-        return $this->belongsToMany('App\OrderRows');
+        return $this->hasMany('App\OrderRow');
     }
 }
