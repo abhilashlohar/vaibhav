@@ -258,7 +258,13 @@
                                 <label for="is_published">Publish Status</label>
                                     <br>
                                     <input name="is_published" id="is_published"  data-switch="true" type="checkbox" @if($product->is_published==1) checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
-
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="show_on_home_page">Show on Home-Page</label>
+                                    <br>
+                                    <input name="show_on_home_page" id="show_on_home_page"  data-switch="true" type="checkbox" @if($product->show_on_home_page==1) checked="checked" @endif data-on-text="Yes" data-handle-width="50" data-off-text="No" data-on-color="brand" >
                             </div>
                         </div>
                     </div>

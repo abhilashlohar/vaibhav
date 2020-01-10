@@ -31,17 +31,29 @@ class HomeController extends Controller
     public function home()
     {
 
-        $furnitureProducts = Product::with('subCategory.category')->whereHas('category', function($q){
-            $q->where('name','=','furniture');
-        })->get();
+        $furnitureProducts = Product::where([
+                                ['show_on_home_page','=',1],
+                                ['is_published', '=', 1],
+                                ['products.deleted', '=', 0]
+                            ])->with('subCategory.category')->whereHas('category', function($q){
+                                $q->where('name','=','furniture');
+                            })->get();
 
-        $consumablesProduct = Product::with('subCategory.category')->whereHas('category', function($q){
-            $q->where('name','=','consumables');
-        })->first();
+        $consumablesProduct = Product::where([
+                                    ['show_on_home_page','=',1],
+                                    ['is_published', '=', 1],
+                                    ['products.deleted', '=', 0]
+                                ])->with('subCategory.category')->whereHas('category', function($q){
+                                    $q->where('name','=','consumables');
+                                })->first();
 
-        $electricalsProducts = Product::with('subCategory.category')->whereHas('category', function($q){
-            $q->where('name','=','electricals');
-        })->get();
+        $electricalsProducts = Product::where([
+                                    ['show_on_home_page','=',1],
+                                    ['is_published', '=', 1],
+                                    ['products.deleted', '=', 0]
+                                ])->with('subCategory.category')->whereHas('category', function($q){
+                                    $q->where('name','=','electricals');
+                                })->get();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
