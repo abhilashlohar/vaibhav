@@ -12,7 +12,7 @@ class UserController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $users = User::latest()->paginate(5);
@@ -45,22 +45,19 @@ class UserController extends Controller
         //
     }
 
-    public function edit(user $user)
-    {
-        return view('users.edit',compact('user'));
-    }
+    // public function edit(user $user)
+    // {
+    //     return view('users.edit',compact('user'));
+    // }
 
-    public function update(Request $request, user $user)
+    public function changePassword(Request $request)
     {
-        $request->validate(user::rules($user->id), user::messages());
+        $user = auth()->user();
 
-        $update_data['name']      =  $request['name'];
-        $update_data['username']  =  $request['username'];
         if ($request['password']) $update_data['password'] =  Hash::make($request['password']);
-
+        $user = User::find($user->id);
         $user->update($update_data);
-
-        return redirect()->route('users.index')
+        return redirect()->route('users.profile')
                         ->with('success','user updated successfully');
     }
 

@@ -168,7 +168,7 @@ class OrderController extends Controller
             $UserAddress->landmark = $request->ship_landmark;
             $UserAddress->state = $request->ship_state;
             $UserAddress->save();
-            
+
 
             $same_as_shipping = $request->same_as_shipping;
 
@@ -214,7 +214,7 @@ class OrderController extends Controller
             $Order->razorpay_order_id = $razorpay_order_id;
             $Order->razorpay_payment_id = $razorpay_payment_id;
             $Order->razorpay_signature = $razorpay_signature;
-            
+
 
             if (!$same_as_shipping) {
                 $Order->bill_name = $request->bill_name;
@@ -243,7 +243,7 @@ class OrderController extends Controller
                 $OrderRow->amount = $cartItem->quantity*$cartItem->product->sale_price;
                 $OrderRow->save();
             }
-       
+
             Cart::where('user_id',$user->id)->delete();
 
             return redirect()->route('orders.thanks', $Order->id)
@@ -270,15 +270,21 @@ class OrderController extends Controller
 
     public function list()
     {
+        $user = auth()->user();
+        $orders = Order::where('user_id',$user->id)->orderBy('order_date', 'asc')->paginate(5);
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'my_orders';
-        return view('orders.list', compact('page_title','body_class'));
+        return view('orders.list', compact('page_title','body_class','orders'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function show()
+    public function show($id)
     {
+        $orderRow = OrderRow::where('order_id',$id)->first();
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'order_view';
-        return view('orders.show', compact('page_title','body_class'));
+        return view('orders.show', compact('page_title','body_class','orderRow'));
     }
 }

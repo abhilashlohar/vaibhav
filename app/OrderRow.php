@@ -16,4 +16,8 @@ class OrderRow extends Model
     {
         return $this->belongsToMany('App\Order');
     }
+    public function product()
+    {
+        return $this->belongsTo('App\Product');
+    }
 }
