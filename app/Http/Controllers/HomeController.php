@@ -30,10 +30,23 @@ class HomeController extends Controller
      */
     public function home()
     {
+
+        $furnitureProducts = Product::with('subCategory.category')->whereHas('category', function($q){
+            $q->where('name','=','furniture');
+        })->get();
+
+        $consumablesProduct = Product::with('subCategory.category')->whereHas('category', function($q){
+            $q->where('name','=','consumables');
+        })->first();
+
+        $electricalsProducts = Product::with('subCategory.category')->whereHas('category', function($q){
+            $q->where('name','=','electricals');
+        })->get();
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
 
-        return view('home', compact('page_title','body_class'));
+        return view('home', compact('furnitureProducts','consumablesProduct','electricalsProducts','page_title','body_class'));
     }
 
     public function mail()

@@ -33,7 +33,8 @@
       </div>
    </section>
 
-   <section class="category-ui--one">
+    @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
+    <section class="category-ui--one">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -54,16 +55,13 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $furnitureProducts[0]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount"> ({{ $furnitureProducts[0]->discount }}% Off)</li>
+                              <li class="old-price"> Rs. {{ $furnitureProducts[0]->regular_price }}</li>
+                              <li class="new-price"> Rs. {{ $furnitureProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -71,13 +69,13 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[0]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/furniture-chair.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$furnitureProducts[0]->product_image_primary->image) }}" alt="{{ $furnitureProducts[0]->name }}" title="{{ $furnitureProducts[0]->name }}"/>
                      </div>
                   </div>
                </div>
@@ -85,16 +83,13 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $furnitureProducts[1]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $furnitureProducts[1]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProducts[1]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProducts[1]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -102,13 +97,13 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[1]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/furniture-sofa.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$furnitureProducts[1]->product_image_primary->image) }}" alt="{{ $furnitureProducts[1]->name }}" title="{{ $furnitureProducts[1]->name }}"/>
                      </div>
                   </div>
                </div>
@@ -116,16 +111,13 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $furnitureProducts[2]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $furnitureProducts[2]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProducts[2]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -133,13 +125,13 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[2]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/furniture-modern-sofa.png" alt="" title=""/>
+                       <img src="{{ asset('storage/product/'.$furnitureProducts[2]->product_image_primary->image) }}" alt="{{ $furnitureProducts[2]->name }}" title="{{ $furnitureProducts[2]->name }}"/>
                      </div>
                   </div>
                </div>
@@ -147,16 +139,13 @@
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $furnitureProducts[3]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $furnitureProducts[3]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProducts[3]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProducts[3]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -164,22 +153,24 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[3]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/furniture-chair-red.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$furnitureProducts[3]->product_image_primary->image) }}" alt="{{ $furnitureProducts[3]->name }}" title="{{ $furnitureProducts[3]->name }}"/>
                      </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-   </section>
+    </section>
+    @endif
 
-   <section class="highlighted-single--wrapper">
+    @if ($consumablesProduct)
+    <section class="highlighted-single--wrapper">
       <div class="container-fluid">
          <div class="single-excerpt--grid">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -196,40 +187,20 @@
                <div class="single-product--carousel">
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                      <div id="thumbs" class="owl-carousel owl-theme">
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-01.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-02.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-03.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-04.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-05.jpg" alt=""/>
-                       </div>
+                        @foreach ($consumablesProduct->productImages as $item)
+                        <div class="item">
+                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+                        </div>
+                        @endforeach
                      </div>
                   </div>
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                      <div id="big" class="owl-carousel owl-theme">
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-01.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-02.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-03.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-04.jpg" alt=""/>
-                       </div>
-                       <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-single-05.jpg" alt=""/>
-                       </div>
+                       @foreach ($consumablesProduct->productImages as $item)
+                        <div class="item">
+                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+                        </div>
+                        @endforeach
                      </div>
                   </div>
                </div>
@@ -238,19 +209,16 @@
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
-                        <h3>OUAI X Aquis - <span>Hair Care</span></h3>
+                        <h3>{{ $consumablesProduct->name }}</h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing</p>
-                     </div>
-                     <div class="ecommerce-item--sku">
-                        <p>Product Code: ###</p>
+                        <p>{{ $consumablesProduct->short_description }}</p>
                      </div>
                      <div class="ecommerce-item--price">
                         <ul>
-                           <li class="new-price">Rs. 2637</li>
-                           <li class="old-price">Rs. 4885</li>
-                           <li class="discount">(46% Off)</li>
+                           <li class="new-price">Rs. {{ $consumablesProduct->sale_price }}</li>
+                           <li class="old-price">Rs. {{ $consumablesProduct->regular_price }}</li>
+                           <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
                         </ul>
                      </div>
                      <div class="ecommerce-item--rating">
@@ -258,7 +226,7 @@
                      </div>
                      <div class="ecommerce-item--buttons">
                         <ul>
-                           <li><button type="submit" value="">Buy Now</button></li>
+                           <li><a href="{{ route('products.product-detail',$consumablesProduct->id) }}">Buy Now</a></li>
                            <li><a href="#" target="_blank">Explore</a></li>
                         </ul>
                      </div>
@@ -268,8 +236,10 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
+    @endif
 
+   @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
    <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -291,16 +261,13 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Trimmers</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $electricalsProducts[0]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $electricalsProducts[0]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[0]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -308,13 +275,13 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/electricals-trimmers.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$electricalsProducts[0]->product_image_primary->image) }}" alt="{{ $electricalsProducts[0]->name }}" title="{{ $electricalsProducts[0]->name }}"/>
                      </div>
                   </div>
                </div>
@@ -322,16 +289,13 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
-                        </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
+                           <h3>{{ $electricalsProducts[1]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $electricalsProducts[1]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -339,33 +303,33 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[1]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/electricals-hair-dryer.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$electricalsProducts[1]->product_image_primary->image) }}" alt="{{ $electricalsProducts[1]->name }}" title="{{ $electricalsProducts[1]->name }}"/>
                      </div>
                   </div>
                </div>
                <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/electricals-facial-steamer.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$electricalsProducts[2]->product_image_primary->image) }}" alt="{{ $electricalsProducts[2]->name }}" title="{{ $electricalsProducts[2]->name }}"/>
                      </div>
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Facial Steamer</h3>
+                           <h3>{{ $electricalsProducts[2]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--sku">
                            <p>Product Code: ###</p>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                              <li class="discount">({{ $electricalsProducts[2]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[2]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $electricalsProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -373,7 +337,7 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
@@ -384,16 +348,16 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3>Styling Chair</h3>
+                           <h3>{{ $electricalsProducts[3]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--sku">
                            <p>Product Code: ###</p>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">(46% Off)</li>
-                              <li class="old-price">Rs. 4885</li>
-                              <li class="new-price">Rs. 2637</li>
+                             <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[3]->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $electricalsProducts[3]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
@@ -401,13 +365,13 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><button type="submit" value="">Buy Now</button></li>
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[3]->id) }}">Buy Now</a></li>
                               <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="<?php echo url('/'); ?>/static/images/electicals-steamer.png" alt="" title=""/>
+                        <img src="{{ asset('storage/product/'.$electricalsProducts[3]->product_image_primary->image) }}" alt="{{ $electricalsProducts[3]->name }}" title="{{ $electricalsProducts[3]->name }}"/>
                      </div>
                   </div>
                </div>
@@ -415,6 +379,7 @@
          </div>
       </div>
    </section>
+   @endif
 
    <section class="store-ui--wrapper">
       <div class="container-fluid">
