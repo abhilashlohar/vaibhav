@@ -32,7 +32,10 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/checkout', 'OrderController@checkout')->name('checkout');
     Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
     Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
+
     Route::get('/my-account', 'UserController@profile')->name('users.profile');
+    Route::post('/my-account', 'UserController@changePassword')->name('users.changePassword');
+
     Route::get('/my-orders', 'OrderController@list')->name('orders.list');
     Route::get('/my-order/{order}', 'OrderController@show')->name('orders.show');
 
