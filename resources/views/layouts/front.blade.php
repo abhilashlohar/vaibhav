@@ -40,7 +40,6 @@
     $headerCategories = HomeController::headerCategories();
 
     ?>
-
    <header class="header-wrapper">
       <div class="container">
          <div class="row">
@@ -50,7 +49,7 @@
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
-                     <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/>
+                     <a href="<?php echo url('/'); ?>"><img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/></a>
                   </div>
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
