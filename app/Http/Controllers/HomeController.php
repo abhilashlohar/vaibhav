@@ -30,7 +30,6 @@ class HomeController extends Controller
      */
     public function home()
     {
-
         $furnitureProducts = Product::where([
                                 ['show_on_home_page','=',1],
                                 ['is_published', '=', 1],
@@ -109,14 +108,27 @@ class HomeController extends Controller
         ->get();
         return $headerCategories;
     }
-    public function advanceSearch(Request $request)
+    public function advanceSearch(Request $request, $search)
     {
-        $data [] = ['label'=>'Product','product'=>'yes'];
-        $data [] = ['label'=>'annhhx10','product'=>''];
-        $data [] = ['label'=>'annk K12','product'=>''];
-        return json_encode($data);
-        // return json_encode(array('like','spike','dike','ikelalcdass'));
-        // return view('home', compact('page_title','body_class'));
+        $products = Product::where([
+            ['name','like','%'.$search.'%'],
+            ['is_published', '=', 1],
+            ['products.deleted', '=', 0]
+        ])
+        ->with(['category','category.subCategoryFirst'])
+        ->orderBy('category_id', 'asc')
+        ->get();
+        $category_exist = [];
+        foreach($products as $product)
+        {
+            if(!in_array($product->category,$category_exist))
+            {
+                $data [] = ['label'=>$product->category->name,'url'=>route('products.list',[$product->category->slug,$product->category->subCategoryFirst->slug]),'category'=>'yes'];
+                $category_exist[] = $product->category->id;
+            }
+            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>''];
+        }
+        return response()->json($data);
     }
 
 }
