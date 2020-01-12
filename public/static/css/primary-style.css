@@ -760,6 +760,7 @@ ul.dropDownMenu ul {
    position: relative;
    margin-bottom: 10px;
    margin-top: 20px;
+   z-index: 111;
 }
 .ecommerce-item--buttons ul {
    list-style: none;
@@ -775,7 +776,7 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--buttons ul li:nth-child(1) {
     position: relative;
-    bottom: 3px;
+    bottom: 0px;
 }
 .ecommerce-item--buttons ul li:nth-child(2) {
    margin-right: 10px;
@@ -792,6 +793,10 @@ ul.dropDownMenu ul {
    font-weight: 600;
    letter-spacing: 0.09em;
    text-decoration: none;
+   z-index: 111;
+}
+.ecommerce-item--buttons a:hover {
+   box-shadow: 1px 1px 14px #bfbfbf;
 }
 .ecommerce-item--buttons button {
    background: #ffffff;
@@ -811,6 +816,7 @@ ul.dropDownMenu ul {
    position: relative;
    margin-bottom: 10px;
    direction: rtl;
+   z-index: 111;
 }
 .ecommerce-item--rating .rate {
    position: relative;
@@ -2833,10 +2839,9 @@ Login Wrapper
       left: 0;
       max-width: 100%;
       width: 100%;
-      min-height: 270px;
       box-shadow: none;
       padding: 30px;
-      box-shadow: 1px 1px 7px #bbbbbb;
+      background: transparent;
    }
    .hero-slideshow--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
       font-size: 21px;
@@ -2939,15 +2944,11 @@ Login Wrapper
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column;
+      padding: 0 30px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details {
       padding: 10% 3% 10% 3%;
       background: transparent;
-   }
-   .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
-      position: relative;
-      bottom: 0;
-      right: -32%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--details {
       width: 80%;
@@ -3152,6 +3153,14 @@ Login Wrapper
    .profile-current--wrap {
       padding: 0px;
    }
+   .category-ui--one .category-blocks--ui .category-block--wrap.green-ui {
+      border-bottom-right-radius: 42%;
+   }
+   .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
+         position: relative;
+         bottom: 20px;
+         right: 0;
+   }
 }
 
 @media only screen and (min-width: 480px) {
@@ -3227,15 +3236,16 @@ Login Wrapper
       -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row;
+      padding: 0 60px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details {
       padding: 17% 38% 10% 3%;
       background: #ffffff;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
-      position: absolute;
-      bottom: 15px;
-      right: 16%;
+         position: relative;
+         bottom: 0;
+         right: -32%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image {
       text-align: right;
@@ -3301,6 +3311,9 @@ Login Wrapper
    }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
       padding: 129px 35px;
+   }
+   .category-ui--one .category-blocks--ui .category-block--wrap.green-ui {
+      border-bottom-right-radius: 0;
    }
 }
 
