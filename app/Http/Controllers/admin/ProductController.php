@@ -12,7 +12,7 @@ use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
 use File;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
@@ -97,7 +97,6 @@ class ProductController extends Controller
     {
 
         $request->validate(Product::rules($product->id), Product::messages());
-        // dd($request);
         $destinationPath = storage_path('app/public/product');
         if(isset($request->product_image_delete))
         {
@@ -111,11 +110,11 @@ class ProductController extends Controller
         }
         if(isset($request->product_image))
         {
+            //dd($request->product_image);
             foreach($request->product_image as $product_image)
             {
                 if(isset($product_image['image']))
                 {
-
                     if(isset($product_image['old_image']))
                     {
                         File::delete($destinationPath.'/'.$product_image['old_image']);  /// Unlink File
@@ -123,7 +122,8 @@ class ProductController extends Controller
 
                     $file = $product_image['image'];
                     $extension = $product_image['image']->extension();
-                    $fileName = time().'.'.$extension;
+                    $fileNameString = (string) Str::uuid();
+                    $fileName = $fileNameString.time().'.'.$extension;
                     $path = $product_image['image']->storeAs('product', $fileName);
                 }
                 else if(isset($product_image['old_image']))

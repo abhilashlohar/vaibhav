@@ -9,9 +9,18 @@ use App\Cart;
 use Illuminate\Http\Request;
 class ProductController extends Controller
 {
-    public function productSearch($search)
+    public function productSearch($searchQuery)
     {
-        dd($search);
+        $products = Product::where([
+            ['slug','LIKE','%'.$searchQuery.'%'],
+            ['is_published', '=', 1],
+            ['deleted', '=', 0]
+        ])->paginate(5);
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-search';
+        return view('products.search',compact('products','page_title','body_class'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function list($category_slug,$sub_category_slug)
     {
