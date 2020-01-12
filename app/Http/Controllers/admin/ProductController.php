@@ -101,7 +101,7 @@ class ProductController extends Controller
         if(isset($request->product_image_delete))
         {
             $product_image_delete_array = explode(',', $request->product_image_delete);
-            $deleteProductImages = ProductImage::whereIn('id', [$product_image_delete_array])->get();
+            $deleteProductImages = ProductImage::whereIn('id', $product_image_delete_array)->get();
             foreach($deleteProductImages as $deleteProductImage)
             {
                 File::delete($destinationPath.'/'.$deleteProductImage->image);  /// Unlink File

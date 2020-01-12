@@ -282,33 +282,6 @@
                                     </thead>
                                     <tbody id="product-image">
                                         <?php $i=0; ?>
-                                        <?php
-                                        if(empty($productImages))
-                                        {
-                                            ?>
-                                            <tr>
-                                                <td>
-                                                    <div class="product_image">
-                                                        <input type="file" name="product_image[0][image]" accept="png, jpg, jpeg">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="kt-radio-inline">
-                                                        <label class="kt-radio kt-checkbox--state-success">
-                                                        <input type="radio" value="1" class="primary" checked  name="product_image[0][primary]" > &nbsp
-                                                            <span></span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                </td>
-                                            </tr>
-                                            <?php
-                                        }
-                                        ?>
-                                        @if (!empty($productImages))
-
-                                        @endif
                                         @foreach ($productImages as $productImage)
                                             <tr>
                                                 <td>
@@ -331,10 +304,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    @if ($i!=0)
                                                     <button type="button" class="btn-sm btn btn-label-danger btn-bold deleteRow"><i class="la la-trash-o"></i> Delete</button>
-                                                    @endif
-
                                                 </td>
                                             </tr>
                                             <?php $i++; ?>
@@ -434,12 +404,7 @@
                     },
                     sale_price: {
                         required: !0
-                    },
-                    primary:{
-                        required: !0,
-                        minlength:1
                     }
-
                 }
                 , errorPlacement:function(e, r) {
                     var i=r.closest(".input-group");
@@ -450,15 +415,12 @@
                 }
 
             });
-            $(".primary").rules("add", {
-                required: !0,
-                minlength:1
-            });
         }
     };
 
     jQuery(document).ready(function() {
-        KTFormControls.init()
+        KTFormControls.init();
+
     });
 
     var KTFormWidgets = function() {
@@ -529,13 +491,36 @@
                }
             });
         });
+        showHideDeleteButton();
+        primaryChecked();
         renameImage();
+        let imageLength = $('#product-image tr').length;
+        if(imageLength == 0)
+        {
+            addRow();
+        }
         $("#add-row").on("click", function(e){
+            addRow();
+        });
+        function addRow()
+        {
             var $cloneTr = $('#table-clone tr').clone();
             $('#product-image').append($cloneTr);
+            showHideDeleteButton();
+            primaryChecked();
             renameImage();
-
-        });
+        }
+        function showHideDeleteButton()
+        {
+            if($('#product-image tr').length == 1)
+            {
+                $('#product-image tr').find('.deleteRow').hide();
+            }
+            else
+            {
+                $('.deleteRow').show();
+            }
+        }
         function renameImage()
         {
             var i = 1;
@@ -553,6 +538,7 @@
         $(document).on('change', '.primary', function(){
             $("input[type=radio].primary").prop("checked", false);
             $(this).prop("checked", true);
+            primaryChecked();
         });
         $(document).on('click', '.deleteRow', function(){
             var product_image_id = $(this).closest('tr').find('.product_image_id').val();
@@ -569,10 +555,38 @@
                 }
                 $('#product_image_delete').val(product_image_delete_id);
             }
-
-
             $(this).closest('tr').remove();
+            // $( ".primary" ).rules( "remove" );
+            primaryChecked();
+            showHideDeleteButton();
+            renameImage();
         });
+
+        function primaryChecked()
+        {
+            var isChecked = false;
+            $( ".primary" ).each(function(){
+                if($(this).is(':checked'))
+                {
+                    isChecked = true;
+                }
+            })
+            .promise()
+            .done( function(){
+                if(isChecked == true)
+                {
+                    $( ".primary" ).rules( "remove" );
+                }
+                else
+                {
+                    $(".primary").rules("add", {
+                        required: !0,
+                        minlength: 1
+                    });
+                }
+            });
+        }
+
     });
 </script>
 @endsection
