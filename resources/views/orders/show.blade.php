@@ -58,7 +58,11 @@
                             <td>{{$OrderRow->quantity}}</td>
                             <td>{{$OrderRow->price}}</td>
                             <td>{{$OrderRow->amount}}</td>
-                            <td><a href="{{ route('write-review',$OrderRow->product->id) }}">RATE & REVIEW PRODUCT</a></td>
+                            <td>
+                                @if(!$OrderRow->is_reviewed)
+                                <a href="{{ route('write-review',['product_id'=>$OrderRow->product->id,'order_row_id'=>$OrderRow->id]) }}">RATE & REVIEW PRODUCT</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

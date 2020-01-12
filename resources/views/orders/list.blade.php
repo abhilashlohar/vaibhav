@@ -10,6 +10,13 @@
 <br>
 <br>
 <br>
+
+@if(Session::has('success'))
+    <div class="alert alert-success" role="alert" data-dismiss="alert">
+        <strong>SUCCESS! &nbsp;</strong> {{ Session::get('success') }}
+    </div>
+@endif
+
 <div class="container">
     <table>
         <tr>

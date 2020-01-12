@@ -1,13 +1,5 @@
 @extends ('layouts.front')
 
-@section ('header-style')
-<style>
-    body.product-list{
-        position: relative;
-    }
-</style>
-@endsection
-
 @section ('content')
 
    <section class="category-banner--wrapper">

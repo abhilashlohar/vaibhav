@@ -1,12 +1,5 @@
 @extends ('layouts.front')
 
-@section ('header-style')
-<style>
-    body.product-detail{
-        position: relative;
-    }
-</style>
-@endsection
 
 @section ('content')
 <section class="single-excerpt--wrapper">

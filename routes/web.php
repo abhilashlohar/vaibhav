@@ -39,7 +39,8 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/my-orders', 'OrderController@list')->name('orders.list');
     Route::get('/my-order/{order}', 'OrderController@show')->name('orders.show');
-    Route::get('/write-review/{product_id}', 'ReviewController@feedback')->name('write-review');
+    Route::get('/write-review/{product_id}/{order_row_id}', 'ReviewController@feedback')->name('write-review');
+    Route::post('/saveReview', 'ReviewController@saveReview')->name('saveReview');
 
 });
 
