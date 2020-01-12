@@ -59,10 +59,23 @@
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
-                        <a href="{{ route('users.profile') }}">
-                           <span class="desktop-text">Account</span>
-                           <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
-                        </a>
+                        <ul class="navbar-nav">
+                           <li class="nav-item item-dropdown">
+                              <ul class="dropDownMenu">
+                                 <li>
+                                    <a href="{{ route('users.profile') }}">
+                                       <span class="desktop-text">Account</span>
+                                       <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
+                                    </a>
+                                    <ul>
+                                       <li><a href="#">My Profile</a></li>
+                                       <li><a href="#">Order History</a></li>
+                                       <li><a href="#">Logout</a></li>
+                                    </ul>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
                     	</div>
                      <div class="ecommerce-menu--item">
                         <button type="button" class="btn search" data-toggle="modal" data-target="#search">

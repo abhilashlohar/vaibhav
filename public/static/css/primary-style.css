@@ -62,7 +62,16 @@ p {
 .cart .header-wrapper {
    position: relative;
 }
+.my_profile .header-wrapper {
+   position: relative;
+}
 .password-reset .header-wrapper {
+   position: relative;
+}
+.my_orders .header-wrapper {
+   position: relative;
+}
+.thankyou .header-wrapper {
    position: relative;
 }
 .header-wrapper {
@@ -341,7 +350,7 @@ ul.dropDownMenu ul {
    padding: 30px;
 }
 .category-ui--one .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image img {
-   max-width: 59%;
+   max-width: 75%;
 }
 .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image img {
    max-width: 100%;
@@ -352,7 +361,9 @@ ul.dropDownMenu ul {
    display: -ms-flexbox;
    display: flex;
    padding: 0 60px;
-   min-height: 509px;
+   min-height: 489px;
+   max-height: 489px;
+   overflow: hidden;
 }
 .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
    position: absolute;
@@ -482,7 +493,7 @@ ul.dropDownMenu ul {
     text-align: right;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image img {
-   max-width: 59%;
+   max-width: 74%;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image img {
    max-width: 100%;
@@ -508,7 +519,6 @@ ul.dropDownMenu ul {
    position: absolute;
    bottom: 40px;
    right: 40%;
-
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--buttons a {
    background-color: #f0e0e6;
@@ -526,7 +536,7 @@ ul.dropDownMenu ul {
    display: -webkit-box;
    display: -ms-flexbox;
    display: flex;
-   border-bottom-left-radius: 50%;
+   border-bottom-right-radius: 50%;
    background: url(../images/ui-pattern-grey.png);
    background-size: cover;
    background-repeat: no-repeat;
@@ -535,19 +545,19 @@ ul.dropDownMenu ul {
    height: 100%;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
-   -ms-flex-preferred-size: 50%;
-   -webkit-flex-basis: 50%;
-   flex-basis: 50%;
+   -ms-flex-preferred-size: 54%;
+   -webkit-flex-basis: 54%;
+   flex-basis: 54%;
    padding-top: 30px;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
-   -ms-flex-preferred-size: 50%;
-   -webkit-flex-basis: 50%;
-   flex-basis: 50%;
+   -ms-flex-preferred-size: 46%;
+   -webkit-flex-basis: 46%;
+   flex-basis: 46%;
    text-align: center;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-   max-width: 75%;
+   max-width: 100%;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.pink-ui {
    display: -webkit-box;
@@ -654,6 +664,19 @@ ul.dropDownMenu ul {
    position: relative;
    width: 100%;
    margin-top: 60px;
+   height: 100%;
+   padding: 0 30px;
+}
+.highlighted-single--wrapper .single-product--properties:before {
+   background: url(../images/ui-pattern.png);
+   background-repeat: no-repeat;
+   background-size: 100%;
+   content: "";
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: -60px;
 }
 .highlighted-single--wrapper .single-product--properties .ecommerce-item--details {
    text-align: left;
@@ -2033,11 +2056,6 @@ Login Wrapper
    width: 100%;
    padding: 30px 0;
 }
-.login--wrapper .card-signin {
-  border: 0;
-  border-radius: 1rem;
-  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
-}
 .login--wrapper .card-signin .card-title {
   margin-bottom: 2rem;
   font-weight: 300;
@@ -2056,8 +2074,10 @@ Login Wrapper
    border-radius: 7px;
    color: #ffffff;
    border: 0;
-   font-size: 14px;
-   text-transform: uppercase;
+   width: 100%;
+   display: inline-block;
+   font-size: 18px;
+   letter-spacing: 0.03em;
    margin: 0;
    text-decoration: none;
    margin-top: 15px;
@@ -2066,17 +2086,26 @@ Login Wrapper
    position: relative;
    width: 100%;
    margin-top: 30px;
+   text-align: center;
 }
 .login--wrapper .forgot-password--wrap p {
    font-size: 16px;
    line-height: 25px;
 }
 .login--wrapper .forgot-password--wrap a {
-   color: #111111;
+   color: #ed1651;
+   font-size: 15px;
+   color: #ed1651;
+   text-transform: none;
 }
 .login--wrapper a.btn.btn-link {
-   color: #2e2e2e;
+   color: #ed1651;
    padding: 0;
+   font-size: 15px;
+   text-transform: none;
+   width: 100%;
+   display: inline-block;
+   text-align: center;
 }
 .login--wrapper .form-label-group {
   position: relative;
@@ -2137,10 +2166,6 @@ Login Wrapper
   color: white;
   background-color: #3b5998;
 }
-.login--wrapper .card {
-   border-top-left-radius: 26%;
-   border-bottom-right-radius: 26%;
-}
 .login--wrapper .card-signin .card-body {
     padding: 60px 75px;
 }
@@ -2148,14 +2173,33 @@ Login Wrapper
    position: relative;
    width: 100%;
    margin-top: 30px;
+   text-align: center;
 }
 .already-exist--wrap a {
-   font-size: 14px;
-   color: #111111;
+   font-size: 15px;
+   color: #ed1651;
+   text-transform: none;
 }
 .already-exist--wrap p {
    font-size: 16px;
    line-height: 25px;
+}
+.password-reset .card-header {
+   margin-bottom: 0;
+   background-color: transparent;
+   border-bottom: 1px solid rgba(0,0,0,.125);
+   text-align: center;
+   font-weight: 300;
+   text-transform: uppercase;
+   font-size: 1.5rem;
+   border: 0;
+   padding-top: 60px;
+}
+.password-reset .card-body {
+   -ms-flex: 1 1 auto;
+   flex: 1 1 auto;
+   min-height: 1px;
+   padding: 30px 75px 60px 75px;
 }
 
 /* Fallback for Edge
@@ -2629,6 +2673,110 @@ Login Wrapper
    margin: 0
 }
 
+/* ================ User Profile ================= */
+.user-profile--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 60px 0;
+}
+.profile-tab--menu {
+   position: relative;
+   width: 100%;
+}
+.profile-tab--menu a {
+   display: inline-block;
+   width: 100%;
+   padding: 16px 15px;
+   background: #fff6f6;
+   color: #2e2e2e;
+   text-transform: none;
+   border-radius: 7px;
+   margin-bottom: 15px;
+}
+.profile-current--wrap {
+   position: relative;
+   width: 100%;
+   padding: 0 60px;
+}
+.profile-current--wrap .profile-current--details {
+   position: relative;
+   width: 100%;
+   margin: 0 15px 30px 15px;
+}
+.profile-current--wrap .profile-current--details tr td {
+   padding: 10px 0;
+}
+.profile-current--wrap .profile-password--wrap {
+   position: relative;
+   width: 100%;
+   border-top: 1px solid #cacaca;
+   padding-top: 30px;
+}
+.profile-current--wrap .profile-password--wrap .btn.btn-primary {
+   background: #ed1651;
+   padding: 13px 60px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 14px;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;;
+   letter-spacing: 0.09em;
+   font-weight: 500;
+}
+.user-order--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 60px 0;
+}
+/* ======================= Thank you page ====================== */
+.thank-you--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 60px 0;
+}
+.thank-you--wrapper .thank-you--details {
+   position: relative;
+   width: 100%;
+   text-align: center;
+}
+.thank-you--wrapper .thank-you--details .thank-you--icon {
+   position: relative;
+   color: #ed1651;
+   font-size: 4.6rem;
+   margin-bottom: 30px;
+}
+.thank-you--wrapper .thank-you--details h1 {
+   font-size: 5.5rem;
+   line-height: 6.1rem;
+   text-transform: none;
+   margin-bottom: 30px;
+}
+.thank-you--wrapper .thank-you--details h3 {
+   font-size: 24px;
+   line-height: 35px;
+   text-transform: none;
+   font-weight: 400;
+   margin-bottom: 30px;
+}
+.thank-you--wrapper .thank-you--details a.btn.btn-primary {
+   background: #ed1651;
+   padding: 13px 60px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 14px;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;;
+   letter-spacing: 0.09em;
+   font-weight: 500;
+}
 
 
 /* ================ Responsive ================= */
@@ -2954,6 +3102,56 @@ Login Wrapper
    .title-text--description {
       padding: 0;
    }
+   .login--wrapper .card-signin .card-body {
+      padding: 0px 15px;
+   }
+   .login--wrapper .card {
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+   }
+   .login--wrapper .card-signin {
+      box-shadow: none;
+      border: none;
+   }
+   .password-reset--wrapper {
+      position: relative;
+      width: 100%;
+      padding: 0px 0 60px 0;
+   }
+   .password-reset .password-reset--wrapper .card {
+      border-top-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      box-shadow: none !important;
+      border: none;
+   }
+   .password-reset .password-reset--wrapper button.btn.btn-primary {
+      background: #ed1651;
+      padding: 13px 30px;
+      box-shadow: 1px 1px 3px #efefef;
+      border-radius: 7px;
+      color: #ffffff;
+      border: 0;
+      width: 100%;
+      display: inline-block;
+      font-size: 18px;
+      letter-spacing: 0.03em;
+      margin: 0;
+      text-decoration: none;
+      margin-top: 15px;
+   }
+   .password-reset .card-body {
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 0;
+   }
+   .ecommerce-menu--item .navbar-nav {
+      margin: 0px 15px;
+   }
+   .profile-current--wrap {
+      padding: 0px;
+   }
 }
 
 @media only screen and (min-width: 480px) {
@@ -2962,7 +3160,7 @@ Login Wrapper
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
       position: absolute;
-      bottom: 60px;
+      bottom: -92px;
       right: 30px;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui {
@@ -2982,15 +3180,15 @@ Login Wrapper
       -ms-flex-preferred-size: 75%;
       -webkit-flex-basis: 75%;
       flex-basis: 75%;
-      padding: 10% 19% 10% 3%;
+      padding: 4% 19% 10% 3%;
       background: #ffffff;
       border-top-left-radius: 50%;
       border-bottom-right-radius: 50%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
-      -ms-flex-preferred-size: 50%;
-      -webkit-flex-basis: 50%;
-      flex-basis: 50%;
+      -ms-flex-preferred-size: 59%;
+      -webkit-flex-basis: 59%;
+      flex-basis: 59%;
       padding-top: 30px;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui {
@@ -3001,17 +3199,17 @@ Login Wrapper
       flex-direction: row;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
-       -ms-flex-preferred-size: 50%;
-       -webkit-flex-basis: 50%;
-       flex-basis: 50%;
+       -ms-flex-preferred-size: 41%;
+       -webkit-flex-basis: 41%;
+       flex-basis: 41%;
        text-align: center;
-       padding-top: 15em;
+       padding-top: 16em;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
       padding-top: 30px;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-      max-width: 75%;
+      max-width: 100%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui {
       height: 100%;
@@ -3036,14 +3234,14 @@ Login Wrapper
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
       position: absolute;
-      bottom: 40px;
-      right: 40%;
+      bottom: 15px;
+      right: 16%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image {
       text-align: right;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--details {
-      width: 60%;
+      width: 72%;
       padding-top: 25px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.pink-ui {
@@ -3253,6 +3451,7 @@ Login Wrapper
    .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
       width: 205px !important;
       height: 177px;
+      margin-bottom: 16px;
    }
    .single-product--carousel .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6:nth-child(1) {
       order: 0;
@@ -3279,6 +3478,50 @@ Login Wrapper
       padding: 0 120px;
    }
    .title-text--description p {
+      padding: 0 60px;
+   }
+   .login--wrapper .card-signin .card-body {
+      padding: 60px 75px;
+   }
+   .login--wrapper .card {
+      border-top-left-radius: 26%;
+      border-bottom-right-radius: 26%;
+   }
+   .login--wrapper .card-signin {
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+   }
+   .password-reset--wrapper {
+      position: relative;
+      width: 100%;
+      padding: 60px 0;
+   }
+   .password-reset .password-reset--wrapper .card {
+      border-top-left-radius: 26% !important;
+      border-bottom-right-radius: 26% !important;
+      box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1) !important;
+   }
+   .password-reset .password-reset--wrapper button.btn.btn-primary {
+      background: #ed1651;
+      padding: 13px 30px;
+      box-shadow: 1px 1px 3px #efefef;
+      border-radius: 7px;
+      color: #ffffff;
+      border: 0;
+      width: 100%;
+      display: inline-block;
+      font-size: 18px;
+      letter-spacing: 0.03em;
+      margin: 0;
+      text-decoration: none;
+      margin-top: 15px;
+   }
+   .password-reset .card-body {
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      min-height: 1px;
+      padding: 30px 74px 60px 75px;
+   }
+   .profile-current--wrap {
       padding: 0 60px;
    }
 }
