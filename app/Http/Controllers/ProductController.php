@@ -9,6 +9,10 @@ use App\Cart;
 use Illuminate\Http\Request;
 class ProductController extends Controller
 {
+    public function productSearch($search)
+    {
+        dd($search);
+    }
     public function list($category_slug,$sub_category_slug)
     {
         $category = Category::where([

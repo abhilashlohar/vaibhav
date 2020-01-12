@@ -16,12 +16,16 @@
       <link href="<?php echo url('/'); ?>/static/css/primary-style.css" rel="stylesheet">
       <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
       <style>
-        .product {
+        .ui-category {
           font-weight: bold;
-          padding: .2em .4em;
+          padding: .2em .0em;
           margin: .8em 0 .2em;
           line-height: 1.5;
         }
+        /* .typeahead .tt-dropdown-menu {
+            max-height: 150px;
+            overflow-y: auto;
+        } */
         #ui-id-1{
             z-index: 1000;
         }
@@ -40,7 +44,6 @@
     $headerCategories = HomeController::headerCategories();
 
     ?>
-
    <header class="header-wrapper">
       <div class="container">
          <div class="row">
@@ -50,7 +53,7 @@
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
-                     <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/>
+                     <a href="<?php echo url('/'); ?>"><img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/></a>
                   </div>
                </div>
                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
@@ -77,9 +80,9 @@
                                 </button>
                               </div>
                               <div class="modal-body">
-                                 <form action="#" method="get">
+                              <form id="search-form">
                                     <input type="text" name="search" class="typeahead" placeholder="Your search term...">
-                                    <button type="submit" value="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                    <button type="submit" id="search-submit" value="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                                  </form>
                               </div>
                             </div>
@@ -225,8 +228,30 @@
 
    <script src="<?php echo url('/'); ?>/static/js/custom.js"></script>
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+    <script>
+        $( "#search-form" ).validate({
+            rules: {
+                search: {
+                    required: !0
+                }
+            }
+        });
+    </script>
    <script>
-         $( function() {
+    $( function() {
+        $( "#search-submit" ).on('click',function(e){
+            e.preventDefault();
+
+            var url = '{{ route("products.search", ":id") }}';
+            var search = $('.typeahead').val();
+            if(search != '')
+            {
+                url = url.replace(':id', search);
+                window.location.href = url;
+            }
+
+        });
     $.widget( "custom.catcomplete", $.ui.autocomplete, {
       _create: function() {
         this._super();
@@ -239,90 +264,31 @@
           var li;
 
           li = that._renderItemData( ul, item );
-          if ( item.product ) {
-
-                li.addClass("product");
-            //li.attr( "aria-label", item.category + " : " + item.label );
+          if ( item.category ) {
+                li.addClass("ui-category");
           }
         });
       }
     });
-    // var data = [
-    //   { label: "anders", category: "" },
-    //   { label: "andreas", category: "" },
-    //   { label: "antal", category: "" },
-    //   { label: "annhhx10", category: "Products" },
-    //   { label: "annk K12", category: "Products" },
-    //   { label: "annttop C13", category: "Products" },
-    //   { label: "anders andersson", category: "People" },
-    //   { label: "andreas andersson", category: "People" },
-    //   { label: "andreas johnson", category: "People" }
-    // ];
-
     $( ".typeahead" ).catcomplete({
             delay: 0,
            source: function (query, process) {
+            var url = '{{ route("advanceSearch", ":id") }}';
+            url = url.replace(':id', query.term);
             jQuery.ajax({
-                url : "{{route('advanceSearch',['+%QUERY+'])}}",
-                type : 'GET',
+                url : url,
+                type : 'get',
                 dataType : 'json',
                 success : function(data) {
                     return process(data);
                 }
             });
-         }
+         },
+         select: function(e, ui) {
+            window.location.href = ui.item.url;
+        }
     });
-  } );
-    $(document).ready(function(){
-        // var bestPictures = new Bloodhound({
-        // datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
-        // queryTokenizer: Bloodhound.tokenizers.whitespace,
-        // remote: {
-        //     url: '{{route('advanceSearch',['+%QUERY+'])}}',
-        //     wildcard: '%QUERY'
-        // }
-        // });
-
-        // $('.typeahead').typeahead(null, {
-        // name: 'name',
-        // display: 'name',
-        // limit: 10,
-        // source: bestPictures,
-        // templates: {
-        //     header: '<h5 class="league-name">NBA Teams</h5>'
-        // }
-        // });
-    });
-    $(document).ready(function()
-      {
-         ///weather/searchCity/?q=%QUERY
-    //      $('.typeahead').typeahead({
-    //      hint: true,
-    //      highlight: true,
-    //      minLength: 1
-    //   },
-    //      {
-    //      name: 'options',
-    //      displayKey: 'value',
-    //      source: function (query, process) {
-    //         jQuery.ajax({
-    //             url : "{{route('advanceSearch',['+%QUERY+'])}}",
-    //             type : 'GET',
-    //             dataType : 'json',
-    //             success : function(data) {
-    //                 // var matches = [];
-    //                 // $.each(data, function(i, str) {
-    //                 //     matches.push({ value: str });
-    //                 // });
-    //                 // console.log(matches);
-    //                 return process(data);
-
-    //                 //process(json);
-    //             }
-    //         });
-    //      }
-    //   });
-});
+  });
     </script>
   </body>
 </html>
