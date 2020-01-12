@@ -45,6 +45,7 @@
                             <th>Quantity</th>
                             <th>Price</th>
                             <th>Amount</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,10 +54,15 @@
                             <td>
                                 <img src="{{ asset('storage/product/'.$OrderRow->product->product_image_primary->image) }}" width="50px">
                             </td>
-                            <th>{{$OrderRow->product->name}}</th>
-                            <th>{{$OrderRow->quantity}}</th>
-                            <th>{{$OrderRow->price}}</th>
-                            <th>{{$OrderRow->amount}}</th>
+                            <td>{{$OrderRow->product->name}}</td>
+                            <td>{{$OrderRow->quantity}}</td>
+                            <td>{{$OrderRow->price}}</td>
+                            <td>{{$OrderRow->amount}}</td>
+                            <td>
+                                @if(!$OrderRow->is_reviewed)
+                                <a href="{{ route('write-review',['product_id'=>$OrderRow->product->id,'order_row_id'=>$OrderRow->id]) }}">RATE & REVIEW PRODUCT</a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>
