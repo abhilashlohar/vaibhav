@@ -101,6 +101,117 @@
        </div>
     </div>
  </section>
+
+<section class="review-rating--wrapper">
+   <div class="container-fluid">
+      <div class="rating-numbers--wrap">
+         <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <div class="rating-block">
+               <div class="ecommerce-item--rating">
+                  <div class="rate" data-rate-value=5></div>
+               </div>
+               <h2>4.3 <small>/ 5</small></h2>
+               <p>Based on 658 Ratings</p>
+            </div>
+         </div>
+         <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+            <div class="rating-breakdown--wrap">
+               <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                     <div style="height:9px; margin:5px 0;">5 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                     <div class="progress" style="height:9px; margin:8px 0;">
+                       <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="5" style="width: 1000%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="pull-right" style="margin-left:10px;">1</div>
+               </div>
+               <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                     <div style="height:9px; margin:5px 0;">4 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                     <div class="progress" style="height:9px; margin:8px 0;">
+                       <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="4" aria-valuemin="0" aria-valuemax="5" style="width: 80%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="pull-right" style="margin-left:10px;">1</div>
+               </div>
+               <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                     <div style="height:9px; margin:5px 0;">3 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                     <div class="progress" style="height:9px; margin:8px 0;">
+                       <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="3" aria-valuemin="0" aria-valuemax="5" style="width: 60%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="pull-right" style="margin-left:10px;">0</div>
+               </div>
+               <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                     <div style="height:9px; margin:5px 0;">2 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                     <div class="progress" style="height:9px; margin:8px 0;">
+                       <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="5" style="width: 40%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="pull-right" style="margin-left:10px;">0</div>
+               </div>
+               <div class="pull-left">
+                  <div class="pull-left" style="width:35px; line-height:1;">
+                     <div style="height:9px; margin:5px 0;">1 <span class="glyphicon glyphicon-star"></span></div>
+                  </div>
+                  <div class="pull-left" style="width:180px;">
+                     <div class="progress" style="height:9px; margin:8px 0;">
+                       <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="5" style="width: 20%">
+                        <span class="sr-only">80% Complete (danger)</span>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="pull-right" style="margin-left:10px;">0</div>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+            <div class="rate-item--wrap">
+               <div class="ecommerce-item--rating">
+                  <div class="rate" data-rate-value=0></div>
+               </div>
+               <h3>Rate it</h3>
+               <a href="#">Have you purchased this item?</a>
+            </div>
+         </div>
+      </div>
+      <div class="review-details--wrap">
+         <h3>Customer review <span>Showing 1 -5 out of 113</span></h3>
+         <div class="review-single--wrap">
+            <h4>Kay Beauty - Leading Lady</h4>
+            <div class="review-meta--wrap">
+               <div class="ecommerce-item--rating">
+                  <div class="rate" data-rate-value=5></div>
+               </div>
+               <div class="name">Shyamali Padhi</div>
+               <div class="date">2020-01-10</div>
+            </div>
+            <div class="review-text--wrap">
+               <p>Neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed.</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
 @if (count($related_products)>0)
  <section class="recommended-product--wrapper">
     <div class="container-fluid">
@@ -120,8 +231,7 @@
                       <div class="item-excerpt--image">
                         <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                         <div class="item-excerpt--action">
-                            <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">Add To Cart</a>
-                            <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                            <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">View Details</a>
                         </div>
                       </div>
                       <div class="item-excerpt--details">
