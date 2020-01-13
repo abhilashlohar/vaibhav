@@ -35,7 +35,6 @@ class ProductController extends Controller
             ['deleted', '=', 0]
         ])->first();
 
-
         $products = Product::with('product_image_primary')
         ->where([
             ['sub_category_id','=',$subCategoryData->id],
@@ -59,6 +58,11 @@ class ProductController extends Controller
             ['products.slug', '=', $product_slug]
         ])
         ->first();
+
+        if(!$product)
+        {
+            abort(404);
+        }
 
         $related_product_ids=explode(',',$product->related_products);
         $related_products = Product::with(['product_image_primary'])->where([
