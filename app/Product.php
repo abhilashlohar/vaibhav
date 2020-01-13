@@ -107,5 +107,8 @@ class Product extends Model
     public function product_image_primary(){
         return $this->hasOne('App\ProductImage')->where('product_images.is_primary', '=', 1);
     }
+    public function reviews(){
+        return $this->hasMany('App\Review');
+    }
 
 }

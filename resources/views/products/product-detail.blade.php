@@ -193,22 +193,31 @@
             </div>
          </div>
       </div>
-      <div class="review-details--wrap">
-         <h3>Customer review <span>Showing 1 -5 out of 113</span></h3>
-         <div class="review-single--wrap">
-            <h4>Kay Beauty - Leading Lady</h4>
-            <div class="review-meta--wrap">
-               <div class="ecommerce-item--rating">
-                  <div class="rate" data-rate-value=5></div>
-               </div>
-               <div class="name">Shyamali Padhi</div>
-               <div class="date">2020-01-10</div>
+      @if ($totalReviews > 0)
+        <div class="review-details--wrap">
+            <h3>Customer review <span>
+                @if ($totalReviews > 5)
+                    Showing 1 - 5 out of {{$totalReviews}}
+                @endif
+            </span></h3>
+            <div class="review-single--wrap">
+                <h4>{{$product->name}}</h4>
+                @foreach ($productReviews as $review)
+                    <div class="review-meta--wrap">
+                        <div class="ecommerce-item--rating">
+                            <div class="rate" data-rate-value="{{$review->rating}}"></div>
+                        </div>
+                        <div class="name">{{$review->user->name}}</div>
+                        <div class="date">{{date('Y-m-d',strtotime($review->created_at))}}</div>
+                    </div>
+                    <div class="review-text--wrap">
+                        <p>{{$review->review}}</p>
+                    </div>
+                @endforeach
             </div>
-            <div class="review-text--wrap">
-               <p>Neque convallis a cras semper auctor neque vitae tempus quam pellentesque nec nam aliquam sem et tortor consequat id porta nibh venenatis cras sed.</p>
-            </div>
-         </div>
-      </div>
+        </div>
+      @endif
+
    </div>
 </section>
 

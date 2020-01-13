@@ -6,6 +6,7 @@ use App\Product;
 use App\Category;
 use App\SubCategory;
 use App\Cart;
+use App\Review;
 use Illuminate\Http\Request;
 class ProductController extends Controller
 {
@@ -72,9 +73,16 @@ class ProductController extends Controller
         ->whereIn('id', $related_product_ids)
         ->get();
 
+        $productReviews = Review::with('user')
+        ->where('product_id',$product->id)
+        ->orderBy('rating', 'desc')
+        ->paginate(5);
+
+        $totalReviews = Review::where('product_id',$product->id)->count();
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-detail';
-        return view('products.product-detail',compact('product','page_title','body_class','related_products'));
+        return view('products.product-detail',compact('product','page_title','body_class','related_products', 'productReviews','totalReviews'))
+        ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     public function addTocart(Request $request)
