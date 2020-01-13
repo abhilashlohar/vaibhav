@@ -179,7 +179,7 @@
                      <h2>Consumables</h2>
                   </div>
                   <div class="title-text--action">
-                     <a href="{{route('products.list',['consumables',$consumablesProduct->subCategory->slug])}}">View All</a>
+                     <a href="{{route('products.list',['consumable',$consumablesProduct->subCategory->slug])}}">View All</a>
                   </div>
                </div>
             </div>
@@ -251,7 +251,7 @@
                   <h2>Electricals</h2>
                </div>
                <div class="title-text--action">
-                  <a href="{{route('products.list',['electricals',$electricalsProducts[0]->subCategory->slug])}}">View All</a>
+                  <a href="{{route('products.list',['electrical',$electricalsProducts[0]->subCategory->slug])}}">View All</a>
                </div>
             </div>
          </div>
