@@ -50,7 +50,7 @@
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="category-blocks--ui">
+            <div id="owl-category--one" class="category-blocks--ui owl-carousel">
                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
@@ -256,7 +256,7 @@
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="category-blocks--ui">
+            <div id="owl-category--two" class="category-blocks--ui owl-carousel">
                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
@@ -392,7 +392,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="store-gallery--wrap">
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                   <div class="store-video--ui">
                      <a href="#">
                         <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
@@ -400,7 +400,7 @@
                      </a>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                   <div class="store-gallery--ui">
                      <div class="gallery-image--one">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-01.png" alt=""/>

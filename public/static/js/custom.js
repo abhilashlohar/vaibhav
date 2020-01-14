@@ -1,3 +1,67 @@
+/* ================= Category One ================== */
+function owlInitialize() {
+if ($(window).width() < 768) {
+    $('#owl-category--one').addClass("owl-carousel");
+    $('#owl-category--one').owlCarousel({
+        loop:false,    
+        margin: 5,  
+        nav: true,
+        navText: [
+          '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+          '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+        ],
+        dots: false,        
+        responsive:{
+            0:{
+                items:1,           
+            },
+            480:{
+                items:1,           
+            },
+            640:{
+                items:1,           
+            }, 
+            768:{
+                items:1,                
+            }
+        }
+    })
+    $('#owl-category--two').owlCarousel({
+        loop:false,    
+        margin: 5,  
+        nav: true,
+        navText: [
+          '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+          '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+        ],
+        dots: false,        
+        responsive:{
+            0:{
+                items:1,           
+            },
+            480:{
+                items:1,           
+            },
+            640:{
+                items:1,           
+            }, 
+            768:{
+                items:1,                
+            }
+        }
+    })
+} else{
+    $('#owl-category--one').owlCarousel('destroy');
+    $('#owl-category--one').removeClass("owl-carousel");
+}
+}
+$(document).ready(function(e) {
+owlInitialize();
+});
+$(window).resize(function() {
+owlInitialize();
+});
+
 $(document).ready(function(){
     $(".dropdown").hover(            
         function() {
@@ -16,24 +80,6 @@ $('.hero-slideshow').owlCarousel({
     margin:10,
     autoplay: true,
     slideSpeed: 1500,
-    nav:false,
-    dots: true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-});
-
-$('.category-slideshow').owlCarousel({
-    loop:true,
-    margin:10,
     nav:false,
     dots: true,
     responsive:{
@@ -112,6 +158,25 @@ $('.category-inner').owlCarousel({
     }
 });
 
+$('.category-slideshow').owlCarousel({
+    loop:false,
+    margin: 30,
+    nav:true,
+    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+    dots: false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
 $('.recommended-items').owlCarousel({
     loop:false,
     margin: 30,
@@ -131,8 +196,10 @@ $('.recommended-items').owlCarousel({
     }
 });
 
-$('.item-dropdown ul li').hover(function() {
-    $(this).children('ul').stop(true, false, true).fadeToggle(300);
+$(document).ready(function(){
+  $('.item-dropdown ul li').hover(function() {
+      $(this).children('ul').stop(true, false, true).fadeToggle(300);
+  })
 });
 
 $(document).ready(function(){

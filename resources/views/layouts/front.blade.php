@@ -171,7 +171,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Our Products</h3>
@@ -186,7 +186,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About Us</h3>
