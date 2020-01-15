@@ -89,12 +89,12 @@
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="single-description--text">
              <p><?php echo $product->short_description; ?></p>
-             <div class="collapse" id="collapseExample">
+             <div class="collapse" id="more-description">
                <div class="card card-body">
                 <?php echo $product->description; ?>
                </div>
              </div>
-             <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+             <a class="btn btn-primary" data-toggle="collapse" href="#more-description" role="button" aria-expanded="false" aria-controls="more-description">
                 Read More
              </a>
           </div>
@@ -212,6 +212,7 @@
                     </div>
                     <div class="review-text--wrap">
                         <p>{{$review->review}}</p>
+                        <a href="#" id="loadMore">Load More</a>
                     </div>
                 @endforeach
             </div>
