@@ -9,7 +9,7 @@ use App\UserAddress;
 class UserAddress extends Model
 {
     protected $fillable = [
-        'user_id','name','mobile','address','pincode','landmark','state'
+        'user_id','name','mobile','address','pincode','landmark','state','city'
     ];
 
 
