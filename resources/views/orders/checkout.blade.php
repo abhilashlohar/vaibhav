@@ -11,7 +11,11 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
              <div class="organize-address--wrap">
                 <div class="billing-address--block">
-
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" checked class="custom-control-input" name="same_as_billing" value="1" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                    </div>
+                    <br/>
                     <h4 class="mb-3">Billing Address</h4>
                     <div class="row">
                         <div class="col-md-6">
@@ -86,11 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" name="same_as_billing" value="1" id="same-address">
-                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
-                    </div>
-                    <br/>
+
                     <h4 class="my-3">Shipping Address</h4>
                     <div class="row">
                         <div class="col-md-6">
@@ -236,7 +236,7 @@
         ondismiss: function() {
             console.log("This code runs when the popup is closed");
         },
-        // Boolean indicating whether pressing escape key 
+        // Boolean indicating whether pressing escape key
         // should close the checkout form. (default: true)
         escape: true,
         // Boolean indicating whether clicking translucent blank
@@ -258,33 +258,48 @@
         }
     });
 
-    
+
     jQuery(document).ready(function() {
 
-        $(document).on('change','#same-address',function(e){
-        if($(this).is(':checked'))
-        {
-                $('#ship_name').val($('#bill_name').val());
-                $('#ship_mobile').val($('#bill_mobile').val());
-                $('#ship_address').val($('#bill_address').val());
-                $('#ship_pincode').val($('#bill_pincode').val());
-                $('#ship_city').val($('#bill_city').val());
-                $('#ship_state').val($('#bill_state').val());
-                $('#ship_landmark').val($('#bill_landmark').val());
-        }
-        else
-        {
-                $('#ship_name').val('');
-                $('#ship_mobile').val('');
-                $('#ship_address').val('');
-                $('#ship_pincode').val('');
-                $('#ship_city').val('');
-                $('#ship_state').val('');
-                $('#ship_landmark').val('');
-        }
-            // $(this).attr('disable','disable');
-
+        $(document).on('blur','.form-control',function(e){
+            sameAddress();
         });
+        $(document).on('change','#same-address',function(e){
+            if($(this).is(':checked'))
+            {
+                    $('#ship_name').val($('#bill_name').val());
+                    $('#ship_mobile').val($('#bill_mobile').val());
+                    $('#ship_address').val($('#bill_address').val());
+                    $('#ship_pincode').val($('#bill_pincode').val());
+                    $('#ship_city').val($('#bill_city').val());
+                    $('#ship_state').val($('#bill_state').val());
+                    $('#ship_landmark').val($('#bill_landmark').val());
+            }
+            else
+            {
+                    $('#ship_name').val('');
+                    $('#ship_mobile').val('');
+                    $('#ship_address').val('');
+                    $('#ship_pincode').val('');
+                    $('#ship_city').val('');
+                    $('#ship_state').val('');
+                    $('#ship_landmark').val('');
+            }
+        });
+
+        function sameAddress()
+        {
+            if($('#same-address').is(':checked'))
+            {
+                    $('#ship_name').val($('#bill_name').val());
+                    $('#ship_mobile').val($('#bill_mobile').val());
+                    $('#ship_address').val($('#bill_address').val());
+                    $('#ship_pincode').val($('#bill_pincode').val());
+                    $('#ship_city').val($('#bill_city').val());
+                    $('#ship_state').val($('#bill_state').val());
+                    $('#ship_landmark').val($('#bill_landmark').val());
+            }
+        }
     });
 </script>
 @endsection

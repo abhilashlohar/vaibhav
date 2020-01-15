@@ -167,6 +167,7 @@ class OrderController extends Controller
             $UserAddress->pincode = $request->ship_pincode;
             $UserAddress->landmark = $request->ship_landmark;
             $UserAddress->state = $request->ship_state;
+            $UserAddress->city = $request->ship_city;
             $UserAddress->save();
 
 
@@ -182,6 +183,7 @@ class OrderController extends Controller
                 $UserAddress->pincode = $request->bill_pincode;
                 $UserAddress->landmark = $request->bill_landmark;
                 $UserAddress->state = $request->bill_state;
+                $UserAddress->city = $request->bill_city;
                 $UserAddress->save();
             }
 
@@ -210,10 +212,13 @@ class OrderController extends Controller
             $Order->ship_pincode = $request->ship_pincode;
             $Order->ship_landmark = $request->ship_landmark;
             $Order->ship_state = $request->ship_state;
+            $Order->ship_city = $request->ship_city;
+            if ($payment_mode == "online") {
+                $Order->razorpay_order_id = $razorpay_order_id;
+                $Order->razorpay_payment_id = $razorpay_payment_id;
+                $Order->razorpay_signature = $razorpay_signature;
+            }
 
-            $Order->razorpay_order_id = $razorpay_order_id;
-            $Order->razorpay_payment_id = $razorpay_payment_id;
-            $Order->razorpay_signature = $razorpay_signature;
 
 
             if (!$same_as_shipping) {
@@ -223,6 +228,7 @@ class OrderController extends Controller
                 $Order->bill_pincode = $request->bill_pincode;
                 $Order->bill_landmark = $request->bill_landmark;
                 $Order->bill_state = $request->bill_state;
+                $Order->bill_city = $request->bill_city;
             } else {
                 $Order->bill_name = $request->ship_name;
                 $Order->bill_mobile = $request->ship_mobile;
@@ -230,6 +236,7 @@ class OrderController extends Controller
                 $Order->bill_pincode = $request->ship_pincode;
                 $Order->bill_landmark = $request->ship_landmark;
                 $Order->bill_state = $request->ship_state;
+                $Order->bill_city = $request->ship_city;
             }
             $Order->save();
 
