@@ -53,6 +53,9 @@ p {
 .product-detail .header-wrapper {
    position: relative;
 }
+.checkout .header-wrapper {
+   position: relative;
+}
 .login .header-wrapper {
    position: relative;
 }
@@ -63,6 +66,9 @@ p {
    position: relative;
 }
 .cart .header-wrapper {
+   position: relative;
+}
+.product_review .header-wrapper {
    position: relative;
 }
 .order_view .header-wrapper {
@@ -2183,6 +2189,19 @@ Checkout Wrapper
    position: relative;
    width: 100%;
 }
+.shopping-cart--values .btn {
+   background: #ed1651;
+   padding: 11px 24px !important;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 18px;
+   margin: 0;
+   display: inline-block;
+   text-decoration: none;
+   border-radius: 7px !important;
+}
 
 /* ==================================================== 
 Login Wrapper
@@ -2807,6 +2826,47 @@ Login Wrapper
    font-size: 18px;
    line-height: 27px;
    margin: 0
+}
+
+/* ================ Orders ======================= */
+.order-summery--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 60px 0;
+}
+.order-summery--wrapper .address-list--wrap {
+   position: relative;
+   width: 100%;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: horizontal;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+}
+.order-summery--wrapper .order-items--summery {
+   position: relative;
+   width: 100%;
+   margin-top: 30px;
+}
+.address-list--details {
+   position: relative;
+   width: 100%;
+   background: #fcfcfc;
+   padding: 15px;
+   margin-bottom: 30px;
+}
+
+/* ============* Item Review Page =================*/
+.item-review--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 60px 0;
 }
 
 /* ================ User Profile ================= */
