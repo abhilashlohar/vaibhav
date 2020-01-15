@@ -212,7 +212,6 @@
                     </div>
                     <div class="review-text--wrap">
                         <p>{{$review->review}}</p>
-                        <a href="#" id="loadMore">Load More</a>
                     </div>
                 @endforeach
             </div>
