@@ -4,6 +4,13 @@
 <section class="user-order--wrapper">
     <div class="container">
         <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+             <div class="title-ui--wrap">
+                <div class="title-text--middle">
+                   <h2>Your Orders</h2>
+                </div>
+             </div>
+         </div>
             <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                 <table class="profile-tab--menu">
                     <tr>
@@ -15,7 +22,7 @@
                 </table>
             </div>
             <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-               <div class="table-responsive">
+               <div class="list-orders--table table-responsive">
                    <table class="table table-bordered">
                        <thead>
                            <tr>

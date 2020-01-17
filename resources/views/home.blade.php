@@ -64,9 +64,6 @@
                               <li class="new-price"> Rs. {{ $furnitureProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
-                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                               <li><a href="{{ route('products.product-detail',$furnitureProducts[0]->id) }}">Buy Now</a></li>
@@ -91,9 +88,6 @@
                               <li class="old-price">Rs. {{ $furnitureProducts[1]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $furnitureProducts[1]->sale_price }}</li>
                            </ul>
-                        </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -120,9 +114,6 @@
                               <li class="new-price">Rs. {{ $furnitureProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
-                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                               <li><a href="{{ route('products.product-detail',$furnitureProducts[2]->id) }}">Buy Now</a></li>
@@ -147,9 +138,6 @@
                               <li class="old-price">Rs. {{ $furnitureProducts[3]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $furnitureProducts[3]->sale_price }}</li>
                            </ul>
-                        </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -221,9 +209,9 @@
                            <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
                         </ul>
                      </div>
-                     <div class="ecommerce-item--rating">
+                     <!-- <div class="ecommerce-item--rating">
                         <div class="rate" data-rate-value=5></div>
-                     </div>
+                     </div> -->
                      <div class="ecommerce-item--buttons">
                         <ul>
                            <li><a href="{{ route('products.product-detail',$consumablesProduct->id) }}">Buy Now</a></li>
@@ -270,9 +258,6 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
-                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                               <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->id) }}">Buy Now</a></li>
@@ -298,9 +283,6 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[1]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
-                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                               <li><a href="{{ route('products.product-detail',$electricalsProducts[1]->id) }}">Buy Now</a></li>
@@ -322,18 +304,12 @@
                         <div class="ecommerce-item--name">
                            <h3>{{ $electricalsProducts[2]->name }}</h3>
                         </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
-                        </div>
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $electricalsProducts[2]->discount }}% Off)</li>
                               <li class="old-price">Rs. {{ $electricalsProducts[2]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $electricalsProducts[2]->sale_price }}</li>
                            </ul>
-                        </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -350,18 +326,12 @@
                         <div class="ecommerce-item--name">
                            <h3>{{ $electricalsProducts[3]->name }}</h3>
                         </div>
-                        <div class="ecommerce-item--sku">
-                           <p>Product Code: ###</p>
-                        </div>
                         <div class="ecommerce-item--price">
                            <ul>
                              <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
                               <li class="old-price">Rs. {{ $electricalsProducts[3]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $electricalsProducts[3]->sale_price }}</li>
                            </ul>
-                        </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>

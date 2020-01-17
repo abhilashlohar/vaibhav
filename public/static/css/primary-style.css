@@ -540,15 +540,15 @@ ul.dropDownMenu ul {
    height: 100%;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
-   -ms-flex-preferred-size: 54%;
-   -webkit-flex-basis: 54%;
-   flex-basis: 54%;
+   -ms-flex-preferred-size: 56%;
+   -webkit-flex-basis: 56%;
+   flex-basis: 56%;
    padding-top: 30px;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
-   -ms-flex-preferred-size: 46%;
-   -webkit-flex-basis: 46%;
-   flex-basis: 46%;
+   -ms-flex-preferred-size: 44%;
+   -webkit-flex-basis: 44%;
+   flex-basis: 44%;
    text-align: center;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
@@ -762,6 +762,11 @@ ul.dropDownMenu ul {
 .ecommerce-item--buttons ul li:nth-child(1) {
     position: relative;
     bottom: 0px;
+}
+.product-detail .ecommerce-item--buttons ul li:nth-child(1) {
+    position: relative;
+    bottom: 3px;
+    margin-right: 10px;
 }
 .ecommerce-item--buttons ul li:nth-child(2) {
    margin-right: 10px;
@@ -2858,8 +2863,9 @@ Login Wrapper
    position: relative;
    width: 100%;
    background: #fcfcfc;
-   padding: 15px;
+   padding: 30px;
    margin-bottom: 30px;
+   box-shadow: 0px 1px 1px #dfdfdf;
 }
 
 /* ============* Item Review Page =================*/
@@ -2882,6 +2888,16 @@ Login Wrapper
    text-decoration: none;
    margin-top: 15px;
 }
+.review-detail--image {
+   position: relative;
+   width: 100%;
+}
+.review-detail--image img {
+   width: 100%;
+}
+.item-review--wrapper .title-ui--wrap {
+   margin-bottom: 60px;
+}
 
 /* ================ User Profile ================= */
 .user-profile--wrapper {
@@ -2897,11 +2913,13 @@ Login Wrapper
    display: inline-block;
    width: 100%;
    padding: 16px 15px;
-   background: #fff6f6;
+   background: transparent;
    color: #2e2e2e;
    text-transform: none;
    border-radius: 7px;
    margin-bottom: 15px;
+   text-decoration: none;
+   border: 1px solid #c6c6c6;
 }
 .profile-current--wrap {
    position: relative;
@@ -2937,10 +2955,23 @@ Login Wrapper
    letter-spacing: 0.09em;
    font-weight: 500;
 }
+.order-items--summery .order-summery--table a {
+   color: #ed1651;
+   text-decoration: none;
+   text-transform: none !important;
+}
 .user-order--wrapper {
    position: relative;
    width: 100%;
    padding: 60px 0;
+}
+.user-order--wrapper .list-orders--table a {
+   color: #ed1651;
+   text-decoration: none;
+   text-transform: none !important;
+}
+.user-order--wrapper .title-ui--wrap h2 {
+   margin-bottom: 60px;
 }
 /* ======================= Thank you page ====================== */
 .thank-you--wrapper {
@@ -3622,7 +3653,7 @@ Login Wrapper
       text-align: right;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--details {
-      width: 72%;
+      width: 85%;
       padding-top: 25px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.pink-ui {

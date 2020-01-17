@@ -18,7 +18,7 @@
                <div class="address-list--wrap">
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                      <div class="address-list--details">
-                        <h3>Shipping Address</h3>
+                        <h4>Shipping Address</h4>
                         <span>{{ $order->ship_name }}</span><br>
                         <span>{{ $order->ship_mobile }}</span><br>
                         <span>{{ $order->ship_address }}</span><br>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                      <div class="address-list--details">
-                        <h3>Billing Address</h3>
+                        <h4>Billing Address</h4>
                         <span>{{ $order->bill_name }}</span><br>
                         <span>{{ $order->bill_mobile }}</span><br>
                         <span>{{ $order->bill_address }}</span><br>
@@ -41,7 +41,7 @@
                </div>
                <div class="order-items--summery">
                   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                      <div class="table-responsive">
+                      <div class="order-summery--table table-responsive">
                           <table class="table table-bordered">
                               <thead>
                                   <tr>
@@ -65,7 +65,7 @@
                                       <td>{{$OrderRow->amount}}</td>
                                       <td>
                                           @if(!$OrderRow->is_reviewed)
-                                          <a href="{{ route('write-review',['product_id'=>$OrderRow->product->id,'order_row_id'=>$OrderRow->id]) }}">RATE & REVIEW PRODUCT</a>
+                                          <a href="{{ route('write-review',['product_id'=>$OrderRow->product->id,'order_row_id'=>$OrderRow->id]) }}">Rate & Review Product</a>
                                           @endif
                                       </td>
                                   </tr>
