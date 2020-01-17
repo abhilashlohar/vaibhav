@@ -29,6 +29,23 @@
         #ui-id-1{
             z-index: 1000;
         }
+        .ecommerce-menu--item .dropDownMenu form button {
+            padding: 11px 12px;
+            display: inline-block;
+            font-size: 14px;
+            line-height: 23px;
+            font-weight: 500;
+            color: #2e2e2e;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            background-color: transparent;
+            width: 100%;
+            text-align: left;
+        }
+        .ecommerce-menu--item .dropDownMenu form
+        {
+            border: none;
+        }
 
         </style>
       @yield ('header-style')
@@ -63,14 +80,19 @@
                            <li class="nav-item item-dropdown">
                               <ul class="dropDownMenu">
                                  <li>
-                                    <a href="{{ route('users.profile') }}">
+                                    <a href="javascript:void(0)">
                                        <span class="desktop-text">Account</span>
                                        <span class="mobile-icon"><i class="fa fa-user" aria-hidden="true"></i></span>
                                     </a>
                                     <ul>
-                                       <li><a href="#">My Profile</a></li>
-                                       <li><a href="#">Order History</a></li>
-                                       <li><a href="#">Logout</a></li>
+                                       <li><a href="{{ route('users.profile') }}">My Profile</a></li>
+                                       <li><a href="{{ route('orders.list') }}">Order History</a></li>
+                                       <li>
+                                        <form method="POST" action="{{ route('logout') }}">
+                                            @csrf
+                                            <button type="submmit">Log Out</button>
+                                          </form>
+                                       </li>
                                     </ul>
                                  </li>
                               </ul>
@@ -106,12 +128,6 @@
                         <a href="{{ route('cart') }}" class="cart-notify">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">({{$cartItem}})</span></a>
                     </div>
-                    {{-- <div class="ecommerce-menu--item">
-                        <form method="POST" action="{{ route('logout') }}">
-                        @csrf
-                        <button type="submmit" class="btn btn-sm btn-kelu">Log Out</button>
-                        </form>
-                    </div> --}}
                   </div>
                </div>
             </div>
@@ -127,7 +143,7 @@
                      <li class="nav-item item-dropdown">
                         <ul class="dropDownMenu">
                            <li>
-                              <a class="nav-link" href="#">Stores</a>
+                              <a class="nav-link" href="javascript:void(0)">Stores</a>
                               <ul>
                                   @foreach ($headerCategories as $headerCategory)
                                     <li><a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">{{$headerCategory->name}}</a></li>
@@ -137,16 +153,16 @@
                         </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Care</a>
+                       <a class="nav-link" href="javascript:void(0)">Care</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Xpress</a>
+                       <a class="nav-link" href="javascript:void(0)">Xpress</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Academy</a>
+                       <a class="nav-link" href="javascript:void(0)">Academy</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="#">Plus</a>
+                       <a class="nav-link" href="javascript:void(0)">Plus</a>
                      </li>
                   </ul>
                </div>
