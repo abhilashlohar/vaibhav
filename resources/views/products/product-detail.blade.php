@@ -139,8 +139,8 @@
                <div class="ecommerce-item--rating">
                   <div class="rate" data-rate-value={{$ratings}}></div>
                </div>
-               <h2>{{number_format($ratings,1)}} <small>/ 5</small></h2>
-               <p>Based on 658 Ratings</p>
+               <h2>{{($ratings - floor($ratings)>0)?number_format($ratings,1):number_format($ratings,0)}} <small>/ 5</small></h2>
+               <p>Based on {{$totalReviews}} Ratings</p>
             </div>
          </div>
          <div class="col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
