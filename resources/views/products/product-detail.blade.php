@@ -137,7 +137,7 @@
          <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
             <div class="rating-block">
                <div class="ecommerce-item--rating">
-                  <div class="rate" data-rate-value=5></div>
+                  <div class="rate" data-rate-value={{$ratings}}></div>
                </div>
                <h2>4.3 <small>/ 5</small></h2>
                <p>Based on 658 Ratings</p>
@@ -156,7 +156,7 @@
                        </div>
                      </div>
                   </div>
-                  <div class="pull-right" style="margin-left:10px;">1</div>
+                  <div class="pull-right" style="margin-left:10px;">{{$rating5}}</div>
                </div>
                <div class="pull-left">
                   <div class="pull-left" style="width:35px; line-height:1;">
@@ -169,7 +169,7 @@
                        </div>
                      </div>
                   </div>
-                  <div class="pull-right" style="margin-left:10px;">1</div>
+                  <div class="pull-right" style="margin-left:10px;">{{$rating4}}</div>
                </div>
                <div class="pull-left">
                   <div class="pull-left" style="width:35px; line-height:1;">
@@ -182,7 +182,7 @@
                        </div>
                      </div>
                   </div>
-                  <div class="pull-right" style="margin-left:10px;">0</div>
+                  <div class="pull-right" style="margin-left:10px;">{{$rating3}}</div>
                </div>
                <div class="pull-left">
                   <div class="pull-left" style="width:35px; line-height:1;">
@@ -195,7 +195,7 @@
                        </div>
                      </div>
                   </div>
-                  <div class="pull-right" style="margin-left:10px;">0</div>
+                  <div class="pull-right" style="margin-left:10px;">{{$rating2}}</div>
                </div>
                <div class="pull-left">
                   <div class="pull-left" style="width:35px; line-height:1;">
@@ -208,7 +208,7 @@
                        </div>
                      </div>
                   </div>
-                  <div class="pull-right" style="margin-left:10px;">0</div>
+                  <div class="pull-right" style="margin-left:10px;">{{$rating1}}</div>
                </div>
             </div>
          </div>
