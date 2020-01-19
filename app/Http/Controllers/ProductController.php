@@ -12,11 +12,22 @@ class ProductController extends Controller
 {
     public function productSearch($searchQuery)
     {
-        $products = Product::where([
-            ['slug','LIKE','%'.$searchQuery.'%'],
-            ['is_published', '=', 1],
-            ['deleted', '=', 0]
-        ])->paginate(5);
+
+        if($searchQuery != 'viewAll')
+        {
+            $products = Product::where([
+                ['slug','LIKE','%'.$searchQuery.'%'],
+                ['is_published', '=', 1],
+                ['deleted', '=', 0]
+            ])->paginate(5);
+        }
+        else
+        {
+            $products = Product::where([
+                ['is_published', '=', 1],
+                ['deleted', '=', 0]
+            ])->paginate(5);
+        }
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-search';
