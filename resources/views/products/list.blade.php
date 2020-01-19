@@ -150,7 +150,7 @@
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                     <button type="submit">Add To Cart</button>
                                 </li>
-                                <li><a href="#" target="_blank">Explore</a></li>
+                                {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
                             </ul>
                         </div>
                         <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
