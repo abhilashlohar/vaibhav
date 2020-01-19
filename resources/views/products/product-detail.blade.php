@@ -65,7 +65,7 @@
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                     <button type="submit">Add To Cart</button>
                                 </li>
-                                <li><a href="#" target="_blank">Explore</a></li>
+                                <li><a href="#" type="button" data-toggle="modal" data-target="#add-query">Add To Query</a></li>
                             </ul>
                         </div>
                         <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
@@ -76,6 +76,38 @@
        </div>
     </div>
  </section>
+
+<!-- Modal for Add To Query -->
+<div class="modal fade" id="add-query" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product To Your Query</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form>
+            <div class="form-group">
+               <label for="query-email">Email address</label>
+               <input type="email" class="form-control" id="query-email" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+               <label for="message-for-query">Message</label>
+               <textarea class="form-control" id="message-for-query" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+               <input type="submit" class="btn btn-primary" value="Submit" />
+            </div>
+         </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 
  <section class="single-description--wrapper">
     <div class="container-fluid">

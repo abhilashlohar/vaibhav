@@ -1733,6 +1733,20 @@ Category Page
 /* ==================================================== 
 Product Single
 ======================================================= */
+.modal#add-query input[type="submit"] {
+   background: #ed1651;
+   padding: 13px 24px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 14px;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;
+   letter-spacing: 0.09em;
+}
 /* =================== Product Carousel ================ */
 .single-excerpt--wrapper {
    position: relative;
