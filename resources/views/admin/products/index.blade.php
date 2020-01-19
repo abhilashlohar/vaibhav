@@ -30,7 +30,6 @@
                             <th>Name</th>
                             <th>Category</th>
                             <th>Sub Category</th>
-                            <th>Product Code</th>
                             <th>Discount</th>
                             <th>Sale Price</th>
                             <th>Status</th>
@@ -42,7 +41,6 @@
                             <td>{{ $product->name }}</td>
                             <td>{{ $product->category['name'] }}</td>
                             <td>{{ $product->subCategory['name'] }}</td>
-                            <td>{{ $product->product_code }}</td>
                             <td>{{ $product->discount }}{{ ($product->discount)?'%':'' }}</td>
                             <td>{{ $product->sale_price }}</td>
                             <td>{{($product->is_published)?'Published':'Draft'}}</td>

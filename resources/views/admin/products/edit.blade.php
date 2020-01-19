@@ -49,18 +49,6 @@
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <label for="product_code">Product Code *</label>
-                                <input type="text" id="product_code" name="product_code" class="form-control @error('product_code') is-invalid @enderror" value="{{ ($product->product_code)? $product->product_code : old('product_code') }}" required>
-
-                                @error('product_code')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
                                 <label for="category_id">Category *</label>
                                 <select id="category_id" name="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                                     <option value="">--Select--</option>
@@ -119,18 +107,6 @@
                     </div>
 
                     <div class="row">
-                        {{-- <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="sku">SKU *</label>
-                                <input type="text" id="sku" name="sku" class="form-control @error('sku') is-invalid @enderror" value="{{ ($product->sku)? $product->sku : old('sku') }}" required>
-
-                                @error('sku')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
 
                         <div class="col-md-4">
                             <div class="form-group">
@@ -144,37 +120,6 @@
                                 @enderror
                             </div>
                         </div>
-                        {{-- <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="attribute_type">Attribute Type *</label>
-                                <select id="attribute_type" name="attribute_type" class="custom-select form-control @error('attribute_type') is-invalid @enderror" required>
-                                    <option value="">--Select Attribute--</option>
-                                    <option value="Consumable"
-                                        {{ ( ($product->attribute_type)? $product->attribute_type : old('attribute_type') ==  'Consumable') ? 'selected' : '' }}> Consumable </option>
-                                </select>
-                                @error('attribute_type')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div> --}}
-                    </div>
-                    {{-- <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="product_tags">Product Tags *</label>
-                                <input id="product_tags" placeholder='type...' id="product_tags" name="product_tags" class=" @error('product_tags') is-invalid @enderror" value="{{ ($product->product_tags)? $product->product_tags : old('product_tags') }}" required>
-                                @error('product_tags')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                    </div> --}}
-                    <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="stock_quantity">Stock Quantity *</label>
@@ -384,16 +329,7 @@
                     short_description: {
                         required: !0
                     },
-                    product_tags: {
-                        required: !0
-                    },
-                    sku: {
-                        required: !0
-                    },
                     slug: {
-                        required: !0
-                    },
-                    product_code: {
                         required: !0
                     },
                     stock_quantity: {
@@ -450,23 +386,23 @@
         }
     }();
 
-    var KTTagify = {
-        init: function() {
-            var e, a;
-            ! function() {
-                var e = document.getElementById("product_tags"),
-                    a = new Tagify(e, {
-                        whitelist: [],
-                        blacklist: []
-                    });
+    // var KTTagify = {
+    //     init: function() {
+    //         var e, a;
+    //         ! function() {
+    //             var e = document.getElementById("product_tags"),
+    //                 a = new Tagify(e, {
+    //                     whitelist: [],
+    //                     blacklist: []
+    //                 });
 
-            }()
-        }
-    };
+    //         }()
+    //     }
+    // };
 
     jQuery(document).ready(function() {
         KTFormWidgets.init();
-        KTTagify.init();
+       // KTTagify.init();
         // KTFormRepeater.init();
         $('#product_image_delete').val("");
 

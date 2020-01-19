@@ -524,7 +524,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
                <div class="follow-action--wrap">
-                  <a href="#" class="btn">View Products</a>
+               <a href="{{ route('products.search','viewAll') }}" class="btn">View Products</a>
                </div>
             </div>
          </div>

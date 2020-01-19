@@ -126,9 +126,6 @@
                         <div class="ecommerce-item--excerpt">
                             <p>{{$product->short_description}}</p>
                         </div>
-                        <div class="ecommerce-item--sku">
-                            <p>Product Code: {{$product->product_code}}</p>
-                        </div>
                         <div class="ecommerce-item--price">
                             <ul>
                                 <?php
