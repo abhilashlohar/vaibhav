@@ -212,15 +212,15 @@
                </div>
             </div>
          </div>
-         <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+         {{-- <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
             <div class="rate-item--wrap">
                <div class="ecommerce-item--rating">
-                  <div class="rate" data-rate-value=0></div>
+                  <div class="rate" data-rate-value="0"></div>
                </div>
                <h3>Rate it</h3>
                <a href="#">Have you purchased this item?</a>
             </div>
-         </div>
+         </div> --}}
       </div>
       @if ($totalReviews > 0)
         <div class="review-details--wrap">
