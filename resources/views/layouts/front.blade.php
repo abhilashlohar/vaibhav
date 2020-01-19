@@ -177,7 +177,7 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
             <div class="footer-grid--wrap">
-               <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About the brand</h3>
@@ -187,7 +187,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Our Products</h3>
@@ -202,7 +202,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About Us</h3>
@@ -210,7 +210,7 @@
                      <div class="footer-links--wrap">
                         <ul>
                            <li><a href="#" target="_blank">Journal</a></li>
-                           <li><a href="#" target="_blank">Faq</a></li>
+                           <li><a href="#" target="_blank">FAQs</a></li>
                            <li><a href="#" target="_blank">Contact</a></li>
                            <li><a href="#" target="_blank">Terms & Conditions</a></li>
                         </ul>
@@ -225,7 +225,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Newsletter</h3>

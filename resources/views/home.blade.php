@@ -51,7 +51,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div id="owl-category--one" class="category-blocks--ui owl-carousel">
-               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4">
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -76,7 +76,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+               <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -171,9 +171,9 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
                <div class="single-product--carousel">
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                      <div id="thumbs" class="owl-carousel owl-theme">
                         @foreach ($consumablesProduct->productImages as $item)
                         <div class="item">
@@ -182,7 +182,7 @@
                         @endforeach
                      </div>
                   </div>
-                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                      <div id="big" class="owl-carousel owl-theme">
                        @foreach ($consumablesProduct->productImages as $item)
                         <div class="item">
@@ -193,7 +193,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
@@ -227,7 +227,7 @@
     </section>
     @endif
 
-   @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
+ @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
    <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
