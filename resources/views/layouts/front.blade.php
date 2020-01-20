@@ -87,12 +87,18 @@
                                     <ul>
                                        <li><a href="{{ route('users.profile') }}">My Profile</a></li>
                                        <li><a href="{{ route('orders.list') }}">Order History</a></li>
-                                       <li>
-                                        <form method="POST" action="{{ route('logout') }}">
-                                            @csrf
-                                            <button type="submmit">Log Out</button>
-                                          </form>
-                                       </li>
+                                       @if (auth()->user())
+                                        <li>
+                                            <form method="POST" action="{{ route('logout') }}">
+                                                @csrf
+                                                <button type="submmit">Log Out</button>
+                                            </form>
+                                        </li>
+                                       @else
+                                        <li><a href="{{ route('login') }}">Login</a></li>
+                                       @endif
+
+
                                     </ul>
                                  </li>
                               </ul>

@@ -64,7 +64,7 @@
 
                     <div class="form-group">
                         <label for="sequence">Template Type *</label><br><br>
-                        <input name="template_type" id="template_type"  data-switch="true" type="checkbox" value="{{ old('template_type') }}" data-handle-width="70" data-on-text="List" data-off-text="Grid" data-on-color="brand" checked="checked" >
+                        <input name="template_type" id="template_type"  data-switch="true" type="checkbox" data-handle-width="70" data-on-text="List" data-off-text="Grid" data-on-color="brand" checked="checked">
                     </div>
 
                 </div>

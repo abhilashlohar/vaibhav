@@ -1,6 +1,13 @@
 @extends('layouts.backend')
 
 @section('content')
+
+@if(Session::has('success'))
+    <div class="alert alert-success" role="alert" data-dismiss="alert">
+        <strong>SUCCESS! &nbsp;</strong> {{ Session::get('success') }}
+    </div>
+@endif
+
 <div class="row">
     <div class="col-md-12">
         <div class="kt-portlet kt-portlet--height-fluid">
@@ -45,32 +52,14 @@
                             </td>
 
                             <td class="text-center">
-                                <form action="{{ route('sub-categories.destroy',$subcategory->id) }}" method="POST">
+                                <form action="{{ route('sub-categories.destroy',$subcategory->id) }}" method="POST"  id="delete-form-{{ $subcategory->id }}">
                                     @if (in_array('SubCategoryController@edit',Session::get('userrightPages')))
                                         <a href="{{route('sub-categories.edit', $subcategory->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
                                     @endif
                                     @if (in_array('SubCategoryController@destroy',Session::get('userrightPages')))
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="modal" data-target="#kt_modal_{{$sr_no}}" type="button"><i class="la la-trash"></i></button>
-                                        <div class="modal fade" id="kt_modal_{{$sr_no++}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Delete Sub Category</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        <p>Are you sure you want to delete record?</p>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Delete</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <button class="btn btn-sm btn-clean btn-icon btn-icon-md kt_sweetalert_demo_1" data-id="{{ $subcategory->id }}" type="button"><i class="la la-trash"></i></button>
                                     @endif
                                 </form>
                             </td>
@@ -86,4 +75,21 @@
     </div>
 </div>
 
+@endsection
+
+@section('footer-script')
+<script type="text/javascript">
+    var KTSweetAlert2Demo={
+        init:function(){
+            $(".kt_sweetalert_demo_1").click(function(e){
+                var id = $(this).attr('data-id');
+
+                swal.fire({title:"Are you sure?",text:"You won't be able to revert this!",type:"warning",showCancelButton:!0,confirmButtonText:"Yes, delete it!"}).then((e) => {
+                    e.value&&$('#delete-form-'+id).submit();
+                });
+            })
+        }};
+
+    jQuery(document).ready(function(){KTSweetAlert2Demo.init()});
+</script>
 @endsection
