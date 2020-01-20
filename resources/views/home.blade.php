@@ -55,7 +55,7 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[0]->slug) }}">{{ $furnitureProducts[0]->name }}</a></h3>
+                           <h3>{{ $furnitureProducts[0]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -66,8 +66,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$furnitureProducts[0]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[0]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -80,7 +80,7 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[1]->slug) }}">{{ $furnitureProducts[1]->name }}</a></h3>
+                           <h3>{{ $furnitureProducts[1]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -91,8 +91,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$furnitureProducts[1]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[1]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -105,7 +105,7 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[2]->slug) }}">{{ $furnitureProducts[2]->name }}</a></h3>
+                           <h3>{{ $furnitureProducts[2]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -116,8 +116,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$furnitureProducts[2]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[2]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -130,7 +130,7 @@
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[3]->slug) }}">{{ $furnitureProducts[3]->name }}</a></h3>
+                           <h3>{{ $furnitureProducts[3]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -141,8 +141,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                            <li><a href="{{ route('products.product-detail',$furnitureProducts[3]->slug) }}">ADD TO CART</a></li>
-                            {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$furnitureProducts[3]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -197,8 +197,7 @@
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
-                        <h3><a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">{{ $consumablesProduct->name }}</a></h3>
-
+                        <h3>{{ $consumablesProduct->name }}</h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
                         <p>{{ $consumablesProduct->short_description }}</p>
@@ -215,8 +214,8 @@
                      </div> -->
                      <div class="ecommerce-item--buttons">
                         <ul>
-                           <li><a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">ADD TO CART</a></li>
-                           {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                           <li><a href="{{ route('products.product-detail',$consumablesProduct->id) }}">Buy Now</a></li>
+                           <li><a href="#" target="_blank">Explore</a></li>
                         </ul>
                      </div>
                      <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
@@ -250,19 +249,19 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[0]->slug) }}">{{ $electricalsProducts[0]->name }}</a></h3>
+                           <h3>{{ $electricalsProducts[0]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $electricalsProducts[0]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[0]->regular_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[0]->regular_price }} </li>
                               <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -275,19 +274,19 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[1]->slug) }}">{{ $electricalsProducts[1]->name }}</a></h3>
+                           <h3>{{ $electricalsProducts[1]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }} </li>
                               <li class="new-price">Rs. {{ $electricalsProducts[1]->sale_price }}</li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$electricalsProducts[1]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[1]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -303,7 +302,7 @@
                      </div>
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[2]->slug) }}">{{ $electricalsProducts[2]->name }}</a></h3>
+                           <h3>{{ $electricalsProducts[2]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -314,8 +313,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$electricalsProducts[2]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[0]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -325,7 +324,7 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[3]->slug) }}">{{ $electricalsProducts[3]->name }}</a></h3>
+                           <h3>{{ $electricalsProducts[3]->name }}</h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -336,8 +335,8 @@
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
-                              <li><a href="{{ route('products.product-detail',$electricalsProducts[3]->slug) }}">ADD TO CART</a></li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{ route('products.product-detail',$electricalsProducts[3]->id) }}">Buy Now</a></li>
+                              <li><a href="#" target="_blank">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -363,7 +362,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="store-gallery--wrap">
-               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="store-video--ui">
                      <a href="#">
                         <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
@@ -371,7 +370,7 @@
                      </a>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="store-gallery--ui">
                      <div class="gallery-image--one">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-01.png" alt=""/>
@@ -403,7 +402,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="verticals-block--wrap">
-               <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="verticals-details--wrap">
                      <div class="verticals-brand--wrap">
                         <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
@@ -419,7 +418,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="verticals-single--wrap">
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
@@ -525,7 +524,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
                <div class="follow-action--wrap">
-               <a href="{{ route('products.search','viewAll') }}" class="btn">View Products</a>
+                  <a href="#" class="btn">View Products</a>
                </div>
             </div>
          </div>
