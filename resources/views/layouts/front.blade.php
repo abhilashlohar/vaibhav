@@ -159,13 +159,13 @@
                         </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="javascript:void(0)">Care</a>
+                       <a class="nav-link" href="{{route('event.care')}}">Care</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="javascript:void(0)">Xpress</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="javascript:void(0)">Academy</a>
+                       <a class="nav-link" href="{{route('event.academy')}}">Academy</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="javascript:void(0)">Plus</a>
