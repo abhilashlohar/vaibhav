@@ -53,18 +53,19 @@
           <div class="academy-carousel--wrap">
              <div class="owl-carousel category-inner owl-theme">
                  @foreach ($recentEvents as $recentEvent)
-                    <div class="item">
-                        <div class="slideshow-details--wrap">
-                        <div class="slideshow-details--image">
-                            <img src="{{ asset('storage/event/'.$recentEvent->id.'/'.$recentEvent->image) }}" alt="{{$recentEvent->name}}"/>
+                    <a href="{{route('event.academyDetails',$recentEvent->id)}}" style="text-decoration:none;">
+                        <div class="item">
+                            <div class="slideshow-details--wrap">
+                                <div class="slideshow-details--image">
+                                    <img src="{{ asset('storage/event/'.$recentEvent->id.'/'.$recentEvent->image) }}" alt="{{$recentEvent->name}}"/>
+                                </div>
+                                <div class="slideshow-details--title">
+                                    <h4>{{$recentEvent->name}} -<span>{{date('M Y',strtotime($recentEvent->event_date))}}</span></h4>
+                                </div>
+                            </div>
                         </div>
-                        <div class="slideshow-details--title">
-                            <h4>{{$recentEvent->name}} -<span>{{date('M Y',strtotime($recentEvent->event_date))}}</span></h4>
-                        </div>
-                        </div>
-                    </div>
+                    </a>
                  @endforeach
-
              </div>
           </div>
        </div>
@@ -110,4 +111,5 @@
     </div>
  </section>
  @endif
+
  @endsection

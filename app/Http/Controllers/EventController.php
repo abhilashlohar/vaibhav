@@ -17,6 +17,15 @@ class EventController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 8);
     }
 
+    public function academyDetails($id)
+    {
+        $event = Event::find($id);
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'academy-detail';
+        return view('events.academy-detail',compact('event','page_title','body_class'))
+            ->with('i', (request()->input('page', 1) - 1) * 8);
+    }
+
     public function care()
     {
         $events = Event::latest()->paginate(5);
