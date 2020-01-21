@@ -46,7 +46,11 @@
                                 </ul>
                             </div>
                             <div class="ecommerce-item--rating">
-                                <div class="rate" data-rate-value=5></div>
+                                @if ($product->avgRating != null)
+                                    <div class="rate" data-rate-value={{$product->avgRating->rating}}></div>
+                                @else
+                                    <div class="rate" data-rate-value=0></div>
+                                @endif
                             </div>
                         </div>
                     </div>

@@ -77,7 +77,8 @@ class ProductController extends Controller
         }
 
         $related_product_ids=explode(',',$product->related_products);
-        $related_products = Product::with(['product_image_primary'])->where([
+        $related_products = Product::with(['product_image_primary'])
+        ->where([
             ['products.is_published', '=', 1],
             ['products.deleted', '=', 0],
         ])

@@ -54,7 +54,7 @@
                                 </ul>
                         </div>
                         <div class="ecommerce-item--rating">
-                            <div class="rate" data-rate-value=5></div>
+                            <div class="rate" data-rate-value={{$ratings}}></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                             <ul>
@@ -133,6 +133,7 @@
 
 <section class="review-rating--wrapper">
    <div class="container-fluid">
+       @if ($ratings > 0)
       <div class="rating-numbers--wrap">
          <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
             <div class="rating-block">
@@ -222,6 +223,7 @@
             </div>
          </div> --}}
       </div>
+      @endif
       @if ($totalReviews > 0)
         <div class="review-details--wrap">
             <h3>Customer review <span>
@@ -292,7 +294,11 @@
                             </ul>
                          </div>
                          <div class="ecommerce-item--rating">
-                            <div class="rate" data-rate-value=5></div>
+                             @if ($product->avgRating != null)
+                                <div class="rate" data-rate-value={{$product->avgRating->rating}}></div>
+                             @else
+                                <div class="rate" data-rate-value=0></div>
+                             @endif
                          </div>
                       </div>
                    </div>

@@ -98,5 +98,10 @@ class Product extends Model
     public function reviews(){
         return $this->hasMany('App\Review');
     }
-
+    public function avgRating()
+    {
+        return $this->hasOne('App\Review')
+          ->selectRaw('avg(rating) as rating, product_id')
+          ->groupBy('product_id');
+    }
 }
