@@ -100,7 +100,8 @@
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-form--wrap">
-                <form>
+                <form action="{{ route('enquiries.store') }}" method="POST">
+                    @csrf
                    <div class="form-row">
                       <div class="form-group col-md-6">
                          <label for="name">Name</label>

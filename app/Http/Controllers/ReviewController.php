@@ -17,7 +17,7 @@ class ReviewController extends Controller
     public function feedback($product_id, $order_row_id)
     {
         $product = Product::where('id',$product_id)->first();
-        
+
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product_review';
@@ -32,6 +32,7 @@ class ReviewController extends Controller
             'product_id' => $request['product_id'],
             'user_id' => $user->id,
             'rating' => $request['stars'],
+            'review' => $request['review'],
         ]);
 
         OrderRow::where('id', $request['order_row_id'])->update(['is_reviewed' => true]);
