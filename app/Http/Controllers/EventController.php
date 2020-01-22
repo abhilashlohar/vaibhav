@@ -25,14 +25,4 @@ class EventController extends Controller
         return view('events.academy-detail',compact('event','page_title','body_class'))
             ->with('i', (request()->input('page', 1) - 1) * 8);
     }
-
-    public function care()
-    {
-        $events = Event::latest()->paginate(5);
-
-        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
-        $body_class = 'care';
-        return view('cares.care',compact('events','page_title','body_class'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
-    }
 }

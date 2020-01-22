@@ -159,7 +159,7 @@
                         </ul>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="{{route('event.care')}}">Care</a>
+                       <a class="nav-link" href="{{route('enquiry.care')}}">Care</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="javascript:void(0)">Xpress</a>
