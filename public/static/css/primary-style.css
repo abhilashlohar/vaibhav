@@ -14,7 +14,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 a {
    text-transform: uppercase;
-   text-decoration: none;
+   text-decoration: none !important;
    font-size: 15px;
    line-height: 23px;
    font-weight: 500;
@@ -376,8 +376,8 @@ ul.dropDownMenu ul {
    background-color: #f0e0e6;
    color: #cb1e54;
 }
-.category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--name h3 {
-   color: #cb1e54;
+.category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--name h3 a {
+   color: #cb1e54 !important;
 }
 .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui {
    background-color: #f0e0e6;
@@ -450,7 +450,7 @@ ul.dropDownMenu ul {
    background-color: #ffffff;
    color: #cb1e54;
 }
-.category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--name h3 {
+.category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--name h3 a {
    color: #cb1e54;
 }
 
@@ -524,7 +524,7 @@ ul.dropDownMenu ul {
    background-color: #f0e0e6;
    color: #cb1e54;
 }
-.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--name h3 {
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--name h3 a {
    color: #cb1e54;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui {
@@ -597,7 +597,7 @@ ul.dropDownMenu ul {
    background-color: #ffffff;
    color: #9a3f83;
 }
-.category-ui--two .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--name h3 {
+.category-ui--two .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--name h3 a {
    color: #9a3f83;
 }
 
@@ -684,6 +684,9 @@ ul.dropDownMenu ul {
 .ecommerce-item--name {
    color: #99ab3f;
    margin-bottom: 10px;
+}
+.ecommerce-item--name h3 a {
+   color: #99ab3f;
 }
 .ecommerce-item--name h3 {
    font-weight: 500;
@@ -1802,7 +1805,7 @@ Product Single
    margin-bottom: 10px;
    direction: ltr;
 }
-.single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name {
+.single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a {
    color: #2e2e2e;
 }
 .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 {
@@ -3021,6 +3024,78 @@ Login Wrapper
    font-weight: 500;
 }
 
+/* =================== Vaibhav Plus ================ */
+.plus-carousel--wrapper {
+   position: relative;
+   width: 100%;
+   padding: 0px 0px 45px 0;
+   border-bottom: 1px solid #dfdfdf;
+   overflow: hidden;
+}
+.plus-carousel--wrapper:before {
+   position: absolute;
+   content: "";
+   background: url(../images/ui-pattern-title.png);
+   background-repeat: no-repeat;
+   background-position: center;
+   left: 1%;
+   top: -201px;
+   height: 100%;
+   width: 100%;
+}
+.plus-carousel--wrapper .plus-information--grid {
+	position: relative;
+	width: 100%;
+	margin-top: 60px;
+	display: -webkit-box;
+   	display: -ms-flexbox;
+   	display: flex;
+	-webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.plus-carousel--wrapper .plus-information--grid .plus-information--carousel {
+	position: relative;
+	width: 100%;
+}
+.plus-carousel--wrapper .plus-information--grid .plus-information--carousel .slideshow-image--wrap img {
+	border-bottom-left-radius: 36%;
+   	border-top-right-radius: 36%;
+}
+.plus-carousel--wrapper .plus-information--text {
+	position: relative;
+	width: 100%;
+	padding: 30px;
+}
+.plus-carousel--wrapper .plus-information--text h3 {
+	text-transform: none;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+.plus-carousel--wrapper .plus-information--text p {
+	font-size: 17px;
+	line-height: 30px;
+}
+.plus-carousel--wrapper .plus-information--text a.btn-primary {
+   background: #ed1651;
+   padding: 13px 24px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 13px;
+   margin: 0;
+   text-decoration: none;
+   margin-top: 15px;
+}
+
+/* =================== Plus Category ================ */
+.plus-category--wrapper {
+	position: relative;
+	width: 100%;
+}
 
 /* ================ Responsive ================= */
 @media only screen and (min-width: 0px) { 
