@@ -162,13 +162,13 @@
                        <a class="nav-link" href="{{route('enquiry.care')}}">Care</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="javascript:void(0)">Xpress</a>
+                       <a class="nav-link" href="{{route('enquiry.xpress')}}">Xpress</a>
                      </li>
                      <li class="nav-item">
                        <a class="nav-link" href="{{route('event.academy')}}">Academy</a>
                      </li>
                      <li class="nav-item">
-                       <a class="nav-link" href="javascript:void(0)">Plus</a>
+                       <a class="nav-link" href="{{route('enquiry.plus')}}">Plus</a>
                      </li>
                   </ul>
                </div>
