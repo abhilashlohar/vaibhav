@@ -33,7 +33,7 @@
                          <div class="title">
                             <h3>Furniture</h3>
                          </div>
-                         <img src="{{ asset('') }}img/furniture-sofa.png" alt=""/>
+                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
                          <a href="#" class="btn btn-primary">File Complaint</a>
@@ -46,7 +46,7 @@
                          <div class="title">
                             <h3>Furniture</h3>
                          </div>
-                         <img src="{{ asset('') }}img/furniture-sofa.png" alt=""/>
+                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
                          <a href="#" class="btn btn-primary">File Complaint</a>
@@ -59,7 +59,7 @@
                          <div class="title">
                             <h3>Furniture</h3>
                          </div>
-                         <img src="{{ asset('') }}img/furniture-sofa.png" alt=""/>
+                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
                          <a href="#" class="btn btn-primary">File Complaint</a>
