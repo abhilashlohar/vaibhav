@@ -68,12 +68,12 @@
                <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-4">
                   &nbsp;
                </div>
-               <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-3 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
                      <a href="<?php echo url('/'); ?>"><img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/></a>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-7 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
                         <ul class="navbar-nav">
