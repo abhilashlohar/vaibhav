@@ -46,9 +46,9 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/academy-details/{id}', 'EventController@academyDetails')->name('event.academyDetails');
 
     Route::get('/care', 'EnquiryController@care')->name('enquiry.care');
-    Route::post('/care', 'UserController@changePassword')->name('enquiry.store');
     Route::get('/plus', 'EnquiryController@plus')->name('enquiry.plus');
     Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
+    Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
 
 
 });

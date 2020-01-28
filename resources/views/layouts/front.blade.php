@@ -238,9 +238,9 @@
                      </div>
                      <div class="footer-subscribe--wrap">
                         <p>Subscribe to receive updates, access to exclusive deals and more.</p>
-                        <form method="get" action="#">
-                           <input type="email" name="email" placeholder="Enter your email address">
-                           <input type="submit" name="submit" value="SUBSCRIBE">
+                        <form method="get" id="enquiry_subscribe" action="#">
+                           <input type="email" id="subscribe_email" name="email" placeholder="Enter your email address">
+                           <input type="submit" name="submit" class="addToEnquiry" value="SUBSCRIBE">
                         </form>
                      </div>
                   </div>
@@ -272,58 +272,91 @@
                 }
             }
         });
+        $( "#enquiry_subscribe" ).validate({
+            rules: {
+                email: {
+                    required: !0
+                }
+            }
+        });
+
     </script>
    <script>
-    $( function() {
-        $( "#search-submit" ).on('click',function(e){
-            e.preventDefault();
+        $( function() {
+            $( "#search-submit" ).on('click',function(e){
+                e.preventDefault();
 
-            var url = '{{ route("products.search", ":id") }}';
-            var search = $('.typeahead').val();
-            if(search != '')
-            {
-                url = url.replace(':id', search);
-                window.location.href = url;
-            }
+                var url = '{{ route("products.search", ":id") }}';
+                var search = $('.typeahead').val();
+                if(search != '')
+                {
+                    url = url.replace(':id', search);
+                    window.location.href = url;
+                }
 
-        });
-    $.widget( "custom.catcomplete", $.ui.autocomplete, {
-      _create: function() {
-        this._super();
-        this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
-      },
-      _renderMenu: function( ul, items ) {
-        var that = this,
-          currentCategory = "";
-        $.each( items, function( index, item ) {
-          var li;
+            });
+            $.widget( "custom.catcomplete", $.ui.autocomplete, {
+                _create: function() {
+                    this._super();
+                    this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+                },
+                _renderMenu: function( ul, items ) {
+                    var that = this,
+                    currentCategory = "";
+                    $.each( items, function( index, item ) {
+                    var li;
 
-          li = that._renderItemData( ul, item );
-          if ( item.category ) {
-                li.addClass("ui-category");
-          }
-        });
-      }
-    });
-    $( ".typeahead" ).catcomplete({
-            delay: 0,
-           source: function (query, process) {
-            var url = '{{ route("advanceSearch", ":id") }}';
-            url = url.replace(':id', query.term);
-            jQuery.ajax({
-                url : url,
-                type : 'get',
-                dataType : 'json',
-                success : function(data) {
-                    return process(data);
+                    li = that._renderItemData( ul, item );
+                    if ( item.category ) {
+                            li.addClass("ui-category");
+                    }
+                    });
                 }
             });
-         },
-         select: function(e, ui) {
-            window.location.href = ui.item.url;
-        }
-    });
-  });
+            $( ".typeahead" ).catcomplete({
+                    delay: 0,
+                source: function (query, process) {
+                    var url = '{{ route("advanceSearch", ":id") }}';
+                    url = url.replace(':id', query.term);
+                    jQuery.ajax({
+                        url : url,
+                        type : 'get',
+                        dataType : 'json',
+                        success : function(data) {
+                            return process(data);
+                        }
+                    });
+                },
+                select: function(e, ui) {
+                    window.location.href = ui.item.url;
+                }
+            });
+        });
+
+        jQuery(document).ready(function() {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $(document).on('click','.addToEnquiry',function(e){
+                e.preventDefault();
+                var email = $('#subscribe_email').val();
+                if(email != "")
+                {
+                    $.ajax({
+                        type:'POST',
+                        url:"{{ route('enquiry.store') }}",
+                        data:{email:email, enquiry_type:'Subscribe Email'},
+                        success:function(data){
+                            $('#subscribe_email').val('');
+                        }
+                    });
+                }
+
+            });
+        });
     </script>
   </body>
 </html>

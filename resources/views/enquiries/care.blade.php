@@ -100,20 +100,21 @@
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-form--wrap">
-                <form action="{{ route('enquiries.store') }}" method="POST">
+                <form action="{{ route('enquiry.store') }}" method="POST">
                     @csrf
+                    <input type="hidden" name="enquiry_type" value="Care">
                    <div class="form-row">
                       <div class="form-group col-md-6">
                          <label for="name">Name</label>
-                         <input type="text" class="form-control" placeholder="First name">
+                         <input type="text" name="name" class="form-control" placeholder="First name">
                       </div>
                       <div class="form-group col-md-6">
                          <label for="email">Email</label>
-                         <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
                       </div>
                       <div class="form-group col-md-12">
                          <label for="email">Message</label>
-                         <textarea class="form-control" id="message_care" rows="3"></textarea>
+                         <textarea name="enquiry_message" class="form-control" id="message_care" rows="3"></textarea>
                       </div>
                       <div class="form-group col-md-12">
                          <input type="submit" class="btn btn-primary"/>

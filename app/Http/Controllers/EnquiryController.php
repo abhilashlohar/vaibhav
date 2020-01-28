@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Enquiry;
 
 class EnquiryController extends Controller
 {
@@ -26,4 +27,21 @@ class EnquiryController extends Controller
         $body_class = 'xpress';
         return view('enquiries.xpress',compact('page_title','body_class'));
     }
+    public function store(Request $request)
+    {
+        Enquiry::create($request->all());
+        if($request->enquiry_type == 'Care') {
+            return redirect()->route('enquiry.care')
+                        ->with('success','Enquiry created successfully');
+        }
+        elseif($request->enquiry_type == 'Xpress') {
+            return redirect()->route('enquiry.xpress')
+                        ->with('success','Enquiry created successfully');
+        }
+        elseif ($request->enquiry_type == 'Subscribe Email') {
+            return 'Enquiry created successfully.';
+        }
+
+    }
+
 }

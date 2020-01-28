@@ -73,7 +73,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$furnitureProducts[0]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -104,7 +104,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$furnitureProducts[1]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -135,7 +135,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$furnitureProducts[2]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -166,7 +166,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$furnitureProducts[3]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -245,7 +245,7 @@
                                     <button type="submit">Buy Now</button>
                                 </form>
                             </li>
-                           {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                           <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
                         </ul>
                      </div>
                      <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
@@ -297,7 +297,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$electricalsProducts[0]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -328,7 +328,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$electricalsProducts[1]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -362,7 +362,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$electricalsProducts[2]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
@@ -390,7 +390,7 @@
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                              <li><a href="{{route('products.product-detail',$electricalsProducts[3]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                      </div>
