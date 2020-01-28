@@ -131,14 +131,14 @@
                 <div class="form-row">
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-name">Name <span>*</span></label>
-                      <input type="text" name="name" class="form-control" id="enquiry-name" placeholder="First name" required>
+                      <input type="text" name="name" class="form-control" id="enquiry-name" required>
                       <div class="valid-feedback">
                          Looks good!
                       </div>
                    </div>
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-email">Email <span>*</span></label>
-                      <input type="email" name="email" class="form-control" id="enquiry-email" placeholder="Last name" required>
+                      <input type="email" name="email" class="form-control" id="enquiry-email" required>
                       <div class="valid-feedback">
                          Looks good!
                       </div>
@@ -147,14 +147,14 @@
                 <div class="form-row">
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-contact">Contact Number <span>*</span></label>
-                      <input type="text" name="contact_no" class="form-control" id="enquiry-name" placeholder="First name" required>
+                      <input type="text" name="contact_no" class="form-control" id="enquiry-name" required>
                       <div class="valid-feedback">
                          Looks good!
                       </div>
                    </div>
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-mobile">Mobile <span>*</span></label>
-                      <input type="text" name="mobile_no" class="form-control" id="enquiry-email" placeholder="Last name" required>
+                      <input type="text" name="mobile_no" class="form-control" id="enquiry-email" required>
                       <div class="valid-feedback">
                          Looks good!
                       </div>
@@ -163,7 +163,7 @@
                 <div class="form-row">
                    <div class="col-md-12 mb-12">
                       <label for="enquiry-address">Address <span>*</span></label>
-                      <input type="text" name="address" class="form-control" id="enquiry-address" placeholder="First name" required>
+                      <input type="text" name="address" class="form-control" id="enquiry-address" required>
                       <div class="valid-feedback">
                          Looks good!
                       </div>
@@ -172,14 +172,14 @@
                 <div class="form-row">
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-state">State <span>*</span></label>
-                      <input type="text" name="state" class="form-control" id="enquiry-state" placeholder="State" required>
+                      <input type="text" name="state" class="form-control" id="enquiry-state" required>
                       <div class="invalid-feedback">
                          Please provide a valid state.
                       </div>
                    </div>
                    <div class="col-md-6 mb-6">
                       <label for="enquiry-country">Country <span>*</span></label>
-                      <input type="text" name="country" class="form-control" id="enquiry-country" placeholder="State" required>
+                      <input type="text" name="country" class="form-control" id="enquiry-country" required>
                       <div class="invalid-feedback">
                          Please provide a valid country.
                       </div>
@@ -188,7 +188,7 @@
                 <div class="form-row">
                    <div class="col-md-12 mb-12">
                       <label for="enquiry-message">Enquiry Message</label>
-                      <textarea class="form-control" name="enquiry_message" id="enquiry-message" placeholder="textarea" required></textarea>
+                      <textarea class="form-control" name="enquiry_message" id="enquiry-message" required></textarea>
                       <div class="invalid-feedback">
                          Enquiry
                       </div>
@@ -210,7 +210,7 @@
                       <input class="btn btn-primary" type="submit" value="Submit"/>
                    </div>
                 </div>
-             </form>
+            </form>
           </div>
        </div>
     </div>

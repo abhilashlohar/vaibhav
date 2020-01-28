@@ -38,6 +38,10 @@ class EnquiryController extends Controller
             return redirect()->route('enquiry.xpress')
                         ->with('success','Enquiry created successfully');
         }
+        elseif($request->enquiry_type == 'Plus') {
+            return redirect()->route('enquiry.plus')
+                        ->with('success','Enquiry created successfully');
+        }
         elseif ($request->enquiry_type == 'Subscribe Email') {
             return 'Enquiry created successfully.';
         }
