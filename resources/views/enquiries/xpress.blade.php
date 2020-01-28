@@ -19,17 +19,17 @@
                    <div class="owl-carousel plus-slideshow owl-theme">
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                         <img src="{{ asset('') }}img/plus-thumbnail-01.png" alt="" title="">
+                         <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                            <img src="{{ asset('') }}img/plus-thumbnail-01.png" alt="" title="">
+                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                            <img src="{{ asset('') }}img/plus-thumbnail-01.png" alt="" title="">
+                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                    </div>
@@ -69,7 +69,7 @@
              </div>
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="xpress-thumbnail--wrap">
-                   <img src="{{ asset('') }}img/plus-thumbnail-02.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/img/plus-thumbnail-02.png" alt="" title="">
                    <div class="xpress-thumbnail--meta">
                       <p>Nisl suscipit adipiscing bibendum est ultricies.</p>
                       <a href="#" target="_blank">View</a>
@@ -94,7 +94,7 @@
           <div class="xpress-information--grid">
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="xpress-thumbnail--wrap">
-                   <img src="{{ asset('') }}img/plus-thumbnail-03.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/img/plus-thumbnail-03.png" alt="" title="">
                    <div class="xpress-thumbnail--meta">
                       <p>Nisl suscipit adipiscing bibendum est ultricies.</p>
                       <a href="#" target="_blank">View</a>
