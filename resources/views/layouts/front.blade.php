@@ -142,7 +142,7 @@
                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mr-auto">
                            <li class="nav-item">
-                              <a class="nav-link" href="#">Home</a>
+                              <a class="nav-link" href="{{ route('home') }}">Home </a>
                            </li>
                            <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -187,7 +187,7 @@
                                              </div>
                                           </div>
                                        </div>
-                                       <div class="tab-pane well fade" id="category-02"> 
+                                       <div class="tab-pane well fade" id="category-02">
                                           <div class="menu-tab--grids">
                                              <!-- Tab Items -->
                                              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -250,17 +250,17 @@
                               </div>
                            </li>
                            <li class="nav-item">
-                              <a class="nav-link" href="#">Care</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="#">Xpress</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="#">Academy</a>
-                           </li>
-                           <li class="nav-item">
-                              <a class="nav-link" href="#">Plus</a>
-                           </li>
+                            <a class="nav-link" href="{{route('enquiry.care')}}">Care</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{route('enquiry.xpress')}}">Xpress</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{route('event.academy')}}">Academy</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="{{route('enquiry.plus')}}">Plus</a>
+                          </li>
                         </ul>
                      </div>
                   </nav>

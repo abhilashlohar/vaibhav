@@ -89,7 +89,7 @@
                    <div class="academy-excerpt--image">
                       <img src="{{ asset('storage/event/'.$upcomingEvent->id.'/'.$upcomingEvent->image) }}" alt="{{$upcomingEvent->name}}"/>
                       <div class="academy-excerpt--action">
-                         <a href="#">View</a>
+                      <a href="{{route('event.academyDetails',$upcomingEvent->id)}}">Buy</a>
                       </div>
                    </div>
                    <div class="academy-excerpt--details">
