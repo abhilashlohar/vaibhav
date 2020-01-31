@@ -18,7 +18,8 @@ a {
    font-size: 15px;
    line-height: 23px;
    font-weight: 500;
-   letter-spacing: 0.03em
+   letter-spacing: 0.03em;
+   color: #2e2e2e;
 }
 p {
    font-size: 13px;
@@ -40,6 +41,9 @@ p {
 .modal-backdrop {
    z-index: 1 !important;
 }
+.bg-dark {
+   background-color: #111111 !important;
+}
 @media (min-width: 576px) {
    .modal-dialog {
       max-width: 859px;
@@ -50,6 +54,7 @@ p {
       margin: 10.75rem auto;
    }
 }
+@media only screen and (min-width: 0px) { 
 /* =========== Header =============== */
 .product-detail .header-wrapper {
    position: relative;
@@ -106,6 +111,16 @@ p {
    z-index: 111;
    width: 100%;
 }
+.header-wrapper .col-4.col-sm-3.col-md-4.col-lg-4.col-xl-4 {
+   order: 1;
+}
+.header-wrapper .col-5.col-sm-5.col-md-4.col-lg-4.col-xl-4 {
+   order: 2;
+}
+.header-wrapper .col-3.col-sm-4.col-md-12.col-lg-12.col-xl-12 {
+   order: 0;
+   position: unset;
+}
 .header-bar--top {
    position: relative;
    width: 100%;
@@ -113,6 +128,88 @@ p {
    display: -ms-flexbox;
    display: flex;
    margin: 30px 0;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+}
+.navbar-nav .dropdown-menu { 
+   min-width: 100%;
+}
+.header-bar--top .navbar-nav .dropdown-menu .nav {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: horizontal;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+   flex-direction: row;
+   -webkit-box-pack: justify;
+   -font-box-pack: justify;
+   -ms-flex-pack: justify;
+   -webkit-justify-content: space-between;
+   justify-content: space-between;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   padding: 0 15px;
+}
+.navbar-nav .dropdown-menu .nav { 
+   display: block;
+}
+.navbar-nav .nav-item.dropdown {
+   position: inherit;
+}
+.dropdown-item--wrap {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: horizontal;
+   -webkit-flex-direction: row;
+   -ms-flex-direction: row;
+   flex-direction: row;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   padding: 20px 0;
+}
+.navbar-dark .navbar-toggler-icon {
+   background-image: url('../images/navicon.png');
+}
+.menu-tab--grids {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: vertical;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   -webkit-flex-wrap: wrap;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+}
+.dropdown-item--wrap  .menu-tab--item {
+   position: relative;
+   width: 100%;
+   margin: 25px 0;
+   text-align: center;
+}
+.navbar .navbar-nav .dropdown-item--wrap .menu-tab--item a {
+   padding: 0 !important;
+}
+.navbar .navbar-nav .dropdown-item--wrap .menu-tab--item img {
+   width: 100%;
+   border-bottom-left-radius: 39%;
+   border-top-right-radius: 39%;
+}
+.navbar .navbar-nav .dropdown-item--wrap .menu-tab--item h5 {
+   margin: 10px 0;
+   font-weight: 400;
+   font-size: 16px;
+   line-height: 23px;
+   text-transform: none;
 }
 .logo-wrap {
    position: relative;
@@ -198,7 +295,7 @@ p {
    text-decoration: none;
    color: #2e2e2e;
    font-size: 15px;
-   padding: 11px 12px;
+   padding: 11px 7px;
    display: inline-block;
    font-weight: 600;
 }
@@ -210,7 +307,7 @@ p {
    font-weight: 600;
 }
 .ecommerce-menu--item .btn {
-   padding: 11px 12px;
+   padding: 11px 7px;
    text-transform: uppercase;
    font-size: 14px;
    line-height: 23px;
@@ -1833,10 +1930,10 @@ Product Single
 }
 .single-description--wrapper .title-ui--wrap {
    -webkit-box-align: start;
-    -ms-flex-align: start;
-    -webkit-align-items: flex-start;
-    align-items: flex-start;
-    margin-bottom: 15px;
+   -ms-flex-align: start;
+   -webkit-align-items: flex-start;
+   align-items: flex-start;
+   margin-bottom: 15px;
 }
 .single-description--wrapper .title-ui--wrap .title-text--middle h2 {
    font-size: 21px;
@@ -3371,7 +3468,6 @@ Login Wrapper
 }
 
 /* ================ Responsive ================= */
-@media only screen and (min-width: 0px) { 
    .logo-wrap img {
       max-width: 100px;
    }
@@ -3396,8 +3492,9 @@ Login Wrapper
    }
    .navbar {
       position: absolute;
-      width: 80%;
-      top: 69px;
+      width: 100%;
+      left: 0;
+      top: 47px;
       padding: 0 1rem;
    }
    .navbar-nav {
@@ -3765,7 +3862,7 @@ Login Wrapper
       padding: 0;
    }
    .ecommerce-menu--item .navbar-nav {
-      margin: 0px 15px;
+      margin: 0px 7px;
    }
    .profile-current--wrap {
       padding: 0px;
@@ -3986,8 +4083,42 @@ Login Wrapper
    .header-bar--top {
       margin: 30px 0;
    }
+   .navbar-nav .dropdown-menu { 
+      min-width: 100%;
+   }
    .logo-wrap {
       top: 0px;
+   }
+   .header-wrapper .col-4.col-sm-3.col-md-4.col-lg-4.col-xl-4 {
+      order: 0;
+   }
+   .header-wrapper .col-5.col-sm-5.col-md-4.col-lg-4.col-xl-4 {
+      order: 1;
+   }
+   .header-wrapper .col-3.col-sm-4.col-md-12.col-lg-12.col-xl-12 {
+      order: 2;
+      position: unset;
+   }
+   .dropdown-item--wrap .menu-tab--item {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+   }
+   .header-bar--top .navbar-nav .dropdown-menu .nav {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding: 0 15px;
+   }
+   .header-wrapper .menu-tab--grids {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
    }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
       border-top-right-radius: 0;
@@ -4270,19 +4401,25 @@ Login Wrapper
 	    padding: 60px;
 	}
 	.plus-enquiry--wrapper .plus-enquiry--form {
-	    padding: 60px;
+	  padding: 60px;
 	}
 }
 
 @media only screen and (min-width: 992px) { 
 	.highlighted-single--wrapper .single-product--properties:after {
       display: none;
-   	}
+   }
    .highlighted-single--wrapper .single-product--properties:before {
       right: 0px;
       background-size: 100%;
       left: -30px;
       top: -60px;
+   }
+   .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+      max-width: 83%;
+      min-width: 82% !important;
+      left: 90px;
    }
    header {
       display: block;

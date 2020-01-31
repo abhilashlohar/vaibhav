@@ -283,6 +283,14 @@ $(document).ready(function() {
 })();
 
 /* Zoom Effect */
-$(document).ready(function(){
+$(document).ready(function() {
   $('.zoomin').zoom();
+});
+
+/* Zoom Effect */
+$(document).ready(function() {
+   $('.tab-menu a').hover(function (e) {
+     e.preventDefault()
+     $(this).tab('show')
+   })
 });

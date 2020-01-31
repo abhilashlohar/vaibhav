@@ -65,15 +65,13 @@
       <div class="container">
          <div class="row">
             <div class="header-bar--top">
-               <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-4">
-                  &nbsp;
-               </div>
-               <div class="col-3 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+               <div class="col-4 col-sm-3 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
                      <a href="<?php echo url('/'); ?>"><img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/></a>
                   </div>
                </div>
-               <div class="col-7 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-5 col-sm-5 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
                         <ul class="navbar-nav">
@@ -136,43 +134,138 @@
                     </div>
                   </div>
                </div>
-            </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-                  <ul class="navbar-nav">
-                     <li class="nav-item active">
-                       <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
-                     </li>
-                     <li class="nav-item item-dropdown">
-                        <ul class="dropDownMenu">
-                           <li>
-                              <a class="nav-link" href="javascript:void(0)">Stores</a>
-                              <ul>
-                                  @foreach ($headerCategories as $headerCategory)
-                                    <li><a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">{{$headerCategory->name}}</a></li>
-                                  @endforeach
-                              </ul>
+               <div class="col-3 col-sm-4 col-md-12 col-lg-12 col-xl-12">
+                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                     </button>
+                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Home</a>
+                           </li>
+                           <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 Stores
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                 <div class="dropdown-item--wrap">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav tab-menu nav-pills col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 nav-stacked pr15">
+                                       <li class="active"  data-toggle="tab"><a href="#category-01">Furniture</a></li>
+                                       <li><a href="#category-02"  data-toggle="tab">Electricals</a></li>
+                                       <li><a href="#category-03"  data-toggle="tab">Consumables</a></li>
+                                    </ul>
+                                    <!-- Tab panes -->
+                                    <div class="tab-content col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+                                       <div class="tab-pane well active in active" id="category-01">
+                                          <div class="menu-tab--grids">
+                                             <!-- Tab Items -->
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="tab-pane well fade" id="category-02"> 
+                                          <div class="menu-tab--grids">
+                                             <!-- Tab Items -->
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="tab-pane well fade" id="category-03">
+                                          <div class="menu-tab--grids">
+                                             <!-- Tab Items -->
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                                                <div class="menu-tab--item">
+                                                   <a href="#" target="_blank">
+                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
+                                                      <h5>Furniture</h5>
+                                                   </a>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Care</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Xpress</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Academy</a>
+                           </li>
+                           <li class="nav-item">
+                              <a class="nav-link" href="#">Plus</a>
                            </li>
                         </ul>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="{{route('enquiry.care')}}">Care</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="{{route('enquiry.xpress')}}">Xpress</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="{{route('event.academy')}}">Academy</a>
-                     </li>
-                     <li class="nav-item">
-                       <a class="nav-link" href="{{route('enquiry.plus')}}">Plus</a>
-                     </li>
-                  </ul>
+                     </div>
+                  </nav>
                </div>
-            </nav>
+            </div>
          </div>
       </div>
    </header>
