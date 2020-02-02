@@ -1091,17 +1091,19 @@ ul.dropDownMenu ul {
    flex-wrap: wrap;
    margin-top: 30px;
 }
-.store-ui--column {
+.store-ui--wrapper .store-gallery--wrap .store-ui--column {
    position: relative;
    -ms-flex-preferred-size: 50%;
    -webkit-flex-basis: 50%;
-   flex-basis: 50%%;
-   max-width: 50%%;
+   flex-basis: 50%;
+   max-width: 50%;
+   padding: 0 15px;
 }
 .store-ui--wrapper .store-gallery--wrap .store-video--ui {
    position: relative;
    width: 100%;
    border-bottom-left-radius: 45%;
+   max-height: 700px;
    overflow: hidden;
 }
 .store-ui--wrapper .store-gallery--wrap .store-video--ui img {
@@ -1147,6 +1149,25 @@ ul.dropDownMenu ul {
    margin-bottom: 30px;
    max-height: 381px;
    overflow: hidden;
+}
+.store-ui--wrapper .modal-dialog {
+   max-width: 96%;
+}
+.store-ui--wrapper .modal-header .close {
+   top: -30px;
+   right: 100px;
+}
+.store-ui--wrapper .modal {
+   background: #ffffff;
+}
+.store-ui--wrapper .modal-dialog {
+   margin: 5.75rem auto;
+}
+.store-ui--wrapper .modal-content {
+   text-align: center;
+}
+.store-ui--wrapper .modal-header {
+   border: none;
 }
 
 /* ================ Home: Business Verticals ================= */
@@ -2802,6 +2823,25 @@ Login Wrapper
    border-top-right-radius: 39%;
    border-bottom-left-radius: 39%;
    overflow: hidden;
+}
+.academy-information--book {
+   position: relative;
+   width: 100%;
+   text-align: center;
+   margin: 30px 0;
+}
+.academy-information--book a {
+   background: #ed1651;
+   padding: 13px 24px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 13px;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;
 }
 .academy-information--wrapper .academy-information--grid .academy-information--image img {
    width: 100%;
@@ -4761,7 +4801,7 @@ Login Wrapper
 	   margin-top: 60px;
 	}
 	.store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--one, .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--two {
-	    max-height: 247px;
+	    max-height: 335px;
 	}
 	.verticals-ui--wrapper .verticals-block--wrap {
       -webkit-box-direction: normal;

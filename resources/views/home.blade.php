@@ -442,10 +442,12 @@
             <div class="store-gallery--wrap">
                <div class="store-ui--column">
                   <div class="store-video--ui">
-                     <a href="#">
-                        <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
-                        <div class="video-icon"><img src="<?php echo url('/'); ?>/static/images/video-icon.png" alt="Video Icon"/></div>
-                     </a>
+                     <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
+                     <div class="video-icon">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#video-store">
+                           <img src="<?php echo url('/'); ?>/static/images/video-icon.png" alt="Video Icon"/>
+                        </button>
+                     </div>
                   </div>
                </div>
                <div class="store-ui--column">
@@ -465,6 +467,22 @@
                   </div>
                </div>
             </div>
+         </div>
+
+         <!-- Modal for Loading Iframe -->
+         <div class="modal fade" id="video-store" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                  <iframe width="90%" height="550" src="https://www.youtube.com/embed/0ZiplfiwCQo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+               </div>
+             </div>
+           </div>
          </div>
       </div>
    </section>
@@ -602,7 +620,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
                <div class="follow-action--wrap">
-                  <a href="{{ route('products.search','viewAll') }}" class="btn">View Products</a>
+                  <a href="{{ route('products.search','viewAll') }}" class="btn">View On Instagram</a>
                </div>
             </div>
          </div>
