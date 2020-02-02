@@ -29,21 +29,22 @@ class EventController extends Controller
         return view('events.academy',compact('recentEvents','upcomingEvents','page_title','body_class'))
             ->with('i', (request()->input('page', 1) - 1) * 8);
     }
-
     public function academyDetails(Request $request, $id)
     {
         $user = auth()->user();
+        $event = Event::find($id);
 
         $keyId = 'rzp_test_GE1ObDQkLEiuRm';
         $keySecret = 'EXduVTbD30P8JPrdpXAnKt98';
         $api = new Api($keyId, $keySecret);
+        $amount = number_format($event->price, 0);
         $orderData = [
             'receipt'         => 3456,
-            'amount'          => 100, // 2000 rupees in paise
+            'amount'          => $amount, // 2000 rupees in paise
             'currency'        => 'INR',
             'payment_capture' => 1 // auto capture
         ];
-        $amount = 500;
+
         $razorpayOrder = $api->order->create($orderData);
 
         $razorpayOrderId = $razorpayOrder['id'];
@@ -57,8 +58,8 @@ class EventController extends Controller
             "description"       => "A UNIT OF 28 SOUTH VENTURES",
             "image"             => url('/')."/static/images/logo.png",
             "prefill"           => [
-            "name"              => $user->name,
-            "email"             => $user->email,
+            "name"              => "",
+            "email"             => "",
             "contact"           => "",
             ],
             "notes"             => [
@@ -74,11 +75,13 @@ class EventController extends Controller
 
         $json = json_encode($data);
 
-
-        $event = Event::find($id);
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'academy-detail';
         return view('events.academy-detail',compact('event','page_title','body_class', 'json'))
             ->with('i', (request()->input('page', 1) - 1) * 8);
+    }
+    public function academyBuy(Request $request, $id)
+    {
+exit;
     }
 }

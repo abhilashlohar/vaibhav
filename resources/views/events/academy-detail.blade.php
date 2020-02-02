@@ -9,9 +9,12 @@
 <br>
 <br>
 <br>
-<button class="btn btn-dark rounded-pill py-2 btn-block" id="do-payment" type="button">Proceed to Checkout</button>
-<input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
-<input type="hidden" name="razorpay_signature"  id="razorpay_signature">
+<form  action="{{ route('event.academyBuy', $event->id) }}" method="POST"  class="kt-form" id="checkout-form" name="razorpayform">
+    @csrf
+    <button class="btn btn-dark rounded-pill py-2 btn-block" id="do-payment" type="button">Buy Now</button>
+    <input type="hidden" name="razorpay_payment_id" id="razorpay_payment_id">
+    <input type="hidden" name="razorpay_signature"  id="razorpay_signature">
+</form>
 
 @endsection
 
