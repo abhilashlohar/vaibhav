@@ -64,6 +64,9 @@
                               <li class="new-price"> Rs. {{ $furnitureProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
+                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                                 <li>
@@ -94,6 +97,9 @@
                               <li class="old-price">Rs. {{ $furnitureProducts[1]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $furnitureProducts[1]->sale_price }}</li>
                            </ul>
+                        </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -126,6 +132,9 @@
                               <li class="new-price">Rs. {{ $furnitureProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
+                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                                 <li>
@@ -156,6 +165,9 @@
                               <li class="old-price">Rs. {{ $furnitureProducts[3]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $furnitureProducts[3]->sale_price }}</li>
                            </ul>
+                        </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -201,7 +213,7 @@
                      <div id="thumbs" class="owl-carousel owl-theme">
                         @foreach ($consumablesProduct->productImages as $item)
                         <div class="item">
-                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+                           <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
                         </div>
                         @endforeach
                      </div>
@@ -233,9 +245,9 @@
                            <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
                         </ul>
                      </div>
-                     <!-- <div class="ecommerce-item--rating">
+                     <div class="ecommerce-item--rating">
                         <div class="rate" data-rate-value=5></div>
-                     </div> -->
+                     </div>
                      <div class="ecommerce-item--buttons">
                         <ul>
                             <li>
@@ -288,6 +300,9 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
+                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                                 <li>
@@ -314,10 +329,13 @@
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }} </li>
                               <li class="new-price">Rs. {{ $electricalsProducts[1]->sale_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }} </li>
+                              <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
                            </ul>
+                        </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -353,6 +371,9 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
+                        </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
                                 <li>
@@ -376,10 +397,13 @@
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                             <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[3]->regular_price }}</li>
                               <li class="new-price">Rs. {{ $electricalsProducts[3]->sale_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProducts[3]->regular_price }}</li>
+                              <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
                            </ul>
+                        </div>
+                        <div class="ecommerce-item--rating">
+                           <div class="rate" data-rate-value=5></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -416,7 +440,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="store-gallery--wrap">
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+               <div class="store-ui--column">
                   <div class="store-video--ui">
                      <a href="#">
                         <img src="<?php echo url('/'); ?>/static/images/store-video.png" alt=""/>
@@ -424,7 +448,7 @@
                      </a>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+               <div class="store-ui--column">
                   <div class="store-gallery--ui">
                      <div class="gallery-image--one">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-01.png" alt=""/>
