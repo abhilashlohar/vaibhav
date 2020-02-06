@@ -269,7 +269,7 @@
     </section>
     @endif
 
- @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
+    @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
    <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -498,35 +498,86 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="verticals-block--wrap">
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                  <div class="verticals-details--wrap">
-                     <div class="verticals-brand--wrap">
-                        <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
-                     </div>
-                     <div class="verticals-brand--wrap">
-                        <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
-                     </div>
-                     <div class="verticals-brand--wrap">
-                        <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
-                     </div>
-                     <div class="verticals-brand--wrap">
-                        <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
-                     </div>
+               <div class="verticals-ui--column">
+                  <div class="verticals-details--wrap nav nav-tabs nav-fill" id="nav-tab">
+                        <a class="verticals-brand--wrap nav-link active" id="nav-xpress-tab" data-toggle="tab" href="#nav-xpress" role="tab" aria-controls="nav-xpress" aria-selected="true">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap nav-link" id="nav-care-tab" data-toggle="tab" href="#nav-care" role="tab" aria-controls="nav-care" aria-selected="false">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap nav-link" id="nav-plus-tab" data-toggle="tab" href="#nav-plus" role="tab" aria-controls="nav-plus" aria-selected="false">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap nav-link" id="nav-academy-tab" data-toggle="tab" href="#nav-academy" role="tab" aria-controls="nav-academy" aria-selected="false">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                        </a>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                  <div class="verticals-single--wrap">
-                     <div class="verticals-single--details">
-                        <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+               <div class="verticals-ui--column">
+                  <div class="verticals-single--wrap tab-content" id="nav-tabContent">
+                     <!-- One -->
+                     <div class="tab-pane fade show active" id="nav-xpress" role="tabpanel" aria-labelledby="nav-xpress-tab">
+                        <div class="verticals-single--details">
+                           <div class="verticals-single--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                           </div>
+                           <div class="verticals-single--features">
+                              <ul>
+                                 <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                                 <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                                 <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                              </ul>
+                              <a href="#" target="_blank">Visit Now</a>
+                           </div>
                         </div>
-                        <div class="verticals-single--features">
-                           <ul>
-                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
-                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
-                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
-                           </ul>
-                           <a href="#" target="_blank">Visit Now</a>
+                     </div>
+                     <!-- Two -->
+                     <div class="tab-pane fade" id="nav-care" role="tabpanel" aria-labelledby="nav-care-tab">
+                        <div class="verticals-single--details">
+                           <div class="verticals-single--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           </div>
+                           <div class="verticals-single--features">
+                              <ul>
+                                 <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                                 <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                                 <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                              </ul>
+                              <a href="#" target="_blank">Visit Now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Three -->
+                     <div class="tab-pane fade" id="nav-plus" role="tabpanel" aria-labelledby="nav-plus-tab">
+                        <div class="verticals-single--details">
+                           <div class="verticals-single--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                           </div>
+                           <div class="verticals-single--features">
+                              <ul>
+                                 <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                                 <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                                 <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                              </ul>
+                              <a href="#" target="_blank">Visit Now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!-- Four -->
+                     <div class="tab-pane fade" id="nav-academy" role="tabpanel" aria-labelledby="nav-academy-tab">
+                        <div class="verticals-single--details">
+                           <div class="verticals-single--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                           </div>
+                           <div class="verticals-single--features">
+                              <ul>
+                                 <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                                 <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                                 <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                              </ul>
+                              <a href="#" target="_blank">Visit Now</a>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -551,21 +602,20 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="thumbnail-block--wrap">
                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="thumbnail-slider--one">
-                     <div class="owl-carousel partners-slider--one owl-theme">
-                        <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
-                        </div>
-                        <div class="item">
-                           <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
-                        </div>
+                  <div class="thumbnail-brand--ui">
+                     <div class="thumbnail-brand--logo">
+                        <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
                      </div>
                   </div>
                </div>
                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="thumbnail-brand--ui">
-                     <div class="thumbnail-brand--logo">
-                        <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
+                  <div class="thumbnail-properties--ui">
+                     <div class="thumbnail-properties--list">
+                        <ul>
+                           <li>Exclusive South Indian Distributors</li>
+                           <li>Best Prices</li>
+                           <li>Complete Warranty</li>
+                        </ul>
                      </div>
                   </div>
                </div>

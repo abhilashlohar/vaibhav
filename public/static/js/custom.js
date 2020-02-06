@@ -176,6 +176,7 @@ $(document).ready(function() {
     items: 1,
     slideSpeed: 1000,
     nav: false,
+    animateOut: 'fadeOut',
     autoplay: false,
     dots: false,
     loop: false,
@@ -195,18 +196,19 @@ $(document).ready(function() {
       .addClass("current");
   })
     .owlCarousel({
-    items: 3,
-    dots: false,
-    margin: 10,
-    nav: true,
-    navText: [
+   items: 3,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
       '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
       '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
-    ],
-    smartSpeed: 200,
-    slideSpeed: 500,
-    slideBy: 4,
-    responsiveRefreshRate: 100
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 4,
+   responsiveRefreshRate: 100
   })
   .on("changed.owl.carousel", syncPosition2);
 
@@ -239,13 +241,6 @@ $(document).ready(function() {
     .find(".owl-item.active")
     .last()
     .index();
-
-    if (current > end) {
-      thumbs.data("owl.carousel").to(current, 100, true);
-    }
-    if (current < start) {
-      thumbs.data("owl.carousel").to(current - onscreen, 100, true);
-    }
   }
 
   function syncPosition2(el) {
@@ -290,6 +285,14 @@ $(document).ready(function() {
 /* Zoom Effect */
 $(document).ready(function() {
    $('.tab-menu a').hover(function (e) {
+     e.preventDefault()
+     $(this).tab('show')
+   })
+});
+
+/* Tab Menu */
+$(document).ready(function() {
+$('.tab-menu a').hover(function (e) {
      e.preventDefault()
      $(this).tab('show')
    })

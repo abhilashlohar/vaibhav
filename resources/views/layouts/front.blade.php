@@ -150,12 +150,12 @@
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                  <div class="dropdown-item--wrap">
-                                    <!-- Nav tabs -->
+                                    <!-- 
                                     <ul class="nav tab-menu nav-pills col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 nav-stacked pr15">
                                        <li class="active"  data-toggle="tab"><a href="#category-01">Furniture</a></li>
                                        <li><a href="#category-02"  data-toggle="tab">Electricals</a></li>
                                        <li><a href="#category-03"  data-toggle="tab">Consumables</a></li>
-                                    </ul>
+                                    </ul> -->
                                     <!-- Tab panes -->
                                     <div class="tab-content col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
                                        <div class="tab-pane well active in active" id="category-01">
