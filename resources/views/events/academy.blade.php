@@ -78,7 +78,7 @@
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="academy-archive--title">
-             <h3>Events - <span>Lorem Ipsum</span></h3>
+             <h3>Events</h3>
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

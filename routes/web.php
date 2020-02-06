@@ -100,6 +100,7 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('user-rights','admin\UserRightController');
     Route::resource('events','admin\EventController');
     Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
+    Route::get('events/order/{id}', 'admin\EventController@orders')->name('events.order');
 
 });
 

@@ -22,9 +22,6 @@ class EventOrder extends Model
           ],
           'mobile' => [
             'required'
-          ],
-          'price' => [
-            'required'
           ]
       ];
     }
