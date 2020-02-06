@@ -368,6 +368,12 @@
                                                             <input type="checkbox" class="dependent" name="modules[]" value="44" {{ $admin->userrights->contains(44) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="49" {{ $admin->userrights->contains(49) ? 'checked' : '' }}> Order
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>

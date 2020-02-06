@@ -64,4 +64,8 @@ class Event extends Model
           'image_add.max' => 'Image size is big from 2MB.'
       ];
     }
+
+    public function EventOrders(){
+        return $this->hasMany('App\EventOrder');
+    }
 }

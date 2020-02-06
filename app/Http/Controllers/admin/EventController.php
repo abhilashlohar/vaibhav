@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Event;
+use App\EventOrder;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -126,9 +127,12 @@ class EventController extends Controller
         echo json_encode($data);
     }
 
-    public function order(Event $event)
+    public function order($id)
     {
-        dd($event);
-        exit;
+        $event = Event::find($id);
+        $eventOrders = EventOrder::where('event_id',$id)->orderBy('order_no','DESC')->paginate(10);
+        return view('admin.events.order',compact('event','eventOrders'))
+            ->with('i', (request()->input('page', 1) - 1) * 10);
+
     }
 }

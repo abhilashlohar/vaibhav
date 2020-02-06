@@ -263,7 +263,7 @@ class OrderController extends Controller
     public function newOrderNumber()
     {
         $order = Order::latest('order_no')->limit(1)->first();
-        if ($order) return $order->order_no;
+        if ($order) return $order->order_no+1;
         else return 1001;
     }
 

@@ -29,6 +29,9 @@ class EnquiryController extends Controller
     }
     public function store(Request $request)
     {
+        if($request->enquiry_type == 'Care') {
+            $request->request->add(['ticket_no' => $this->newTicketNumber()]);
+        }
         Enquiry::create($request->all());
         if($request->enquiry_type == 'Care') {
             return redirect()->route('enquiry.care')
@@ -45,7 +48,19 @@ class EnquiryController extends Controller
         elseif ($request->enquiry_type == 'Subscribe Email') {
             return 'Enquiry created successfully.';
         }
+    }
 
+    public function complaintSearch(Request $request)
+    {
+          $enquiry = Enquiry::where('ticket_no',$request->ticket_no)->first();
+          return view('enquiries.complaint_search',compact('enquiry'));
+    }
+
+    public function newTicketNumber()
+    {
+        $enquiry = Enquiry::latest('ticket_no')->limit(1)->first();
+        if ($enquiry) return $enquiry->ticket_no+1;
+        else return 1001;
     }
 
 }

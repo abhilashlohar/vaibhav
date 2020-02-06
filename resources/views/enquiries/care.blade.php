@@ -18,13 +18,20 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-search--form">
                 <div class="form-group col-md-10">
-                   <input type="search" class="form-control" id="search" placeholder="Search term...">
+                   <input type="text" class="form-control" id="ticket_no" placeholder="Search complaint number...">
                 </div>
                 <div class="form-group col-md-2">
-                   <input type="submit" class="btn btn-primary"/>
+                   <input type="button" id="search_complaint" class="btn btn-primary" value="Search"/>
                 </div>
              </div>
           </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="support-search--form">
+               <div class="form-group col-md-12" id="enquiry-complaint-view">
+
+               </div>
+            </div>
+         </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -36,7 +43,7 @@
                          <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
-                         <a href="#" class="btn btn-primary">File Complaint</a>
+                         <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
                       </div>
                    </div>
                 </div>
@@ -49,7 +56,7 @@
                          <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
-                         <a href="#" class="btn btn-primary">File Complaint</a>
+                         <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
                       </div>
                    </div>
                 </div>
@@ -62,7 +69,7 @@
                          <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
                       <div class="support-categry--action">
-                         <a href="#" class="btn btn-primary">File Complaint</a>
+                         <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
                       </div>
                    </div>
                 </div>
@@ -85,7 +92,7 @@
     </div>
  </section>
 
- <section class="support-form--care">
+ <section class="support-form--care" id="care-enquiry">
     <div class="container-fluid">
        <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -106,7 +113,7 @@
                    <div class="form-row">
                       <div class="form-group col-md-6">
                          <label for="name">Name</label>
-                         <input type="text" name="name" class="form-control" placeholder="First name">
+                         <input type="text" name="name" id="name" class="form-control" placeholder="First name">
                       </div>
                       <div class="form-group col-md-6">
                          <label for="email">Email</label>
@@ -128,3 +135,31 @@
  </section>
 
  @endsection
+
+ @section ('footer-script')
+ <script>
+ jQuery(document).ready(function() {
+    $("a.care-enquiry").click(function() {
+        $('html,body').animate({
+            scrollTop: $("#care-enquiry").offset().top},
+            'slow');
+            $('#name').focus();
+    });
+
+    $(document).on('click','#search_complaint',function(e){
+        e.preventDefault();
+        var ticket_no = $('#ticket_no').val();
+        $.ajax({
+        type:'POST',
+        url:"{{ route('enquiry.complaintSearch') }}",
+        data:{ticket_no:ticket_no},
+        success:function(data){
+            console.log(data);
+            $('#enquiry-complaint-view').html(data);
+        }
+        });
+    });
+ });
+</script>
+
+@endsection

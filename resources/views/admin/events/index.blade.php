@@ -49,7 +49,10 @@
                                 @if (in_array('EventController@edit',Session::get('userrightPages')))
                                     <a href="{{route('events.edit', $event->id)}}" title="Edit details" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-edit"></i></a>
                                 @endif
+                                @if (in_array('EventController@order',Session::get('userrightPages')))
                                 <a href="{{route('events.order', $event->id)}}" title="View Order" class="btn btn-sm btn-clean btn-icon btn-icon-md"><i class="la la-cart-arrow-down "></i></a>
+                                @endif
+
 
                             </td>
                         </tr>

@@ -50,6 +50,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/plus', 'EnquiryController@plus')->name('enquiry.plus');
     Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
     Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
+    Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
 });
 
 
@@ -87,6 +88,7 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
 
+
     Route::resource('redirections','admin\RedirectionController');
 
 
@@ -100,7 +102,7 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('user-rights','admin\UserRightController');
     Route::resource('events','admin\EventController');
     Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
-    Route::get('events/order/{id}', 'admin\EventController@orders')->name('events.order');
+    Route::get('events/orders/{id}', 'admin\EventController@order')->name('events.order');
 
 });
 
