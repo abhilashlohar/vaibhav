@@ -150,7 +150,7 @@
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                  <div class="dropdown-item--wrap">
-                                    <!-- 
+                                    <!--
                                     <ul class="nav tab-menu nav-pills col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 nav-stacked pr15">
                                        <li class="active"  data-toggle="tab"><a href="#category-01">Furniture</a></li>
                                        <li><a href="#category-02"  data-toggle="tab">Electricals</a></li>
@@ -161,30 +161,17 @@
                                        <div class="tab-pane well active in active" id="category-01">
                                           <div class="menu-tab--grids">
                                              <!-- Tab Items -->
+                                             @foreach ($headerCategories as $headerCategory)
+
                                              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
+                                                   <a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">
+                                                      <img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt=""/>
+                                                      <h5>{{$headerCategory->name}}</h5>
                                                    </a>
                                                 </div>
                                              </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
+                                             @endforeach
                                           </div>
                                        </div>
                                        <div class="tab-pane well fade" id="category-02">
