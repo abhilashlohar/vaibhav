@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,400i,500,500i,600,600i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Allura&display=swap');
 body {
@@ -344,7 +344,7 @@ button {
    text-transform: uppercase;
    font-size: 14px;
    line-height: 23px;
-   font-weight: 500;
+   font-weight: 600;
    display: inline-block;
    color: #2e2e2e;
 }
@@ -354,7 +354,7 @@ button {
    text-decoration: none;
    font-size: 14px;
    line-height: 23px;
-   font-weight: 500;
+   font-weight: 600;
 }
 
 /* Dropdown */
@@ -588,7 +588,7 @@ ul.dropDownMenu ul {
    -ms-flex-preferred-size: 100%;
    -webkit-flex-basis: 100%;
    flex-basis: 100%;
-   padding: 5% 60% 1% 1%;
+   padding: 5% 54% 1% 1%;
 }
 .category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--image {
    position: absolute;
@@ -670,6 +670,7 @@ ul.dropDownMenu ul {
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details .ecommerce-item--name h3 a {
    color: #3f757f;
+   font-weight: 600;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
    position: absolute;
@@ -716,7 +717,7 @@ ul.dropDownMenu ul {
    -ms-flex-preferred-size: 100%;
    -webkit-flex-basis: 100%;
    flex-basis: 100%;
-   padding: 12% 44% 1% 1%;
+   padding: 12% 34% 1% 1%;
    text-align: left;
    direction: ltr;
 }
@@ -863,6 +864,7 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--name h3 a {
    color: #99ab3f;
+   font-weight: 600;
 }
 .ecommerce-item--name h3 {
    font-weight: 500;
@@ -1042,14 +1044,14 @@ ul.dropDownMenu ul {
    margin: 0;
    font-size: 17px;
    line-height: 28px;
-   font-weight: 600;
+   font-weight: 700;
 }
 .title-ui--wrap .title-text--middle h2 {
    font-size: 30px;
    line-height: 41px;
    margin: 10px 0;
    position: relative;
-   font-weight: 500;
+   font-weight: 700;
 }
 .title-ui--wrap .title-text--middle {
    color: #2e2e2e;
@@ -1057,7 +1059,7 @@ ul.dropDownMenu ul {
 .title-ui--wrap .title-text--action a {
    color: #666666;
    letter-spacing: 2px;
-   font-weight: 600;
+   font-weight: 700;
    font-size: 17px;
    line-height: 28px;
    font-family: 'Montserrat', sans-serif;
@@ -1396,6 +1398,7 @@ ul.dropDownMenu ul {
    border: 0;
    font-size: 13px;
    margin: 0;
+   font-weight: 600;
    text-decoration: none;
 }
 
@@ -1404,6 +1407,22 @@ ul.dropDownMenu ul {
    position: relative;
    width: 100%;
    padding: 30px 0;
+}
+.thumbnails-ui--two .partner-slideshow .owl-prev {
+   position: absolute;
+   top: 39%;
+   left: 19px;
+   color: #e94150 !important;
+   background: transparent !important;
+   font-size: 3em;
+}
+.thumbnails-ui--two .partner-slideshow .owl-next {
+   position: absolute;
+   top: 39%;
+   right: 19px;
+   color: #e94150 !important;
+   background: transparent !important;
+   font-size: 3em;
 }
 .thumbnails-ui--two .thumbnail-block--wrap {
    position: relative;
@@ -1438,21 +1457,18 @@ ul.dropDownMenu ul {
    max-width: 189px;
    margin: 0 auto;
 }
-.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two {
-   position: relative;
-   width: 80%;
-   background: url(../images/ui-pattern-grey.png);
-   background-size: 100%;
-   background-position: center;
-   background-repeat: no-repeat;
-}
-.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two .partners-slider--two .item {
+.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-product--image {
    position: relative;
    width: 100%;
+   background: url(../images/ui-pattern-bg.png);
+   background-size: 62%;
+   background-position: center;
+   background-repeat: no-repeat;
    text-align: center;
 }
-.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two .partners-slider--two .item img {
-   max-width: 189px;
+.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-product--image img {
+   width: 100%;
+   max-width: 177px;
    margin: 0 auto;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui {
@@ -1488,18 +1504,10 @@ ul.dropDownMenu ul {
    justify-content: center;
    margin: 0 auto;
 }
-.thumbnail-slider--one .owl-theme .owl-nav [class*='owl-'],
-.thumbnail-slider--two .owl-theme .owl-nav [class*='owl-'] {
-    color: #FFF;
-    font-size: 14px;
-    margin: 5px;
-    padding: 4px 7px;
-    background: transparent;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 100%;
-    border: 2px solid #dddddd;
-    color: #666666;
+.thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui .thumbnail-brand--logo img {
+   width: 100%;
+   max-width: 175px;
+   margin: 0 auto;  
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui {
 	position: relative;
@@ -1508,27 +1516,28 @@ ul.dropDownMenu ul {
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list {
 	position: relative;
 	width: 100%;
+   padding: 75px 60px;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list ul {
 	list-style: none;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list ul li {
 	position: relative;
-    font-size: 21px;
-    line-height: 33px;
-    color: #666666;
-    margin-bottom: 15px;
+   font-size: 21px;
+   line-height: 33px;
+   color: #666666;
+   margin-bottom: 15px;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list ul li:before {
-    content: "";
-    height: 21px;
-    width: 21px;
-    background: #fae1d8;
-    position: absolute;
-    left: -30px;
-    top: 7px;
-    border-top-right-radius: 49%;
-    border-bottom-left-radius: 49%;
+   content: "";
+   height: 21px;
+   width: 21px;
+   background: #fae1d8;
+   position: absolute;
+   left: -30px;
+   top: 7px;
+   border-top-right-radius: 49%;
+   border-bottom-left-radius: 49%;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-linking--list {
 	position: relative;
@@ -1538,8 +1547,8 @@ ul.dropDownMenu ul {
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-linking--list ul {
 	list-style: none;
 	display: -webkit-box;
-   	display: -ms-flexbox;
-   	display: flex;
+   display: -ms-flexbox;
+   display: flex;
    -webkit-box-direction: normal;
    -webkit-box-orient: horizontal;
    -webkit-flex-direction: row;
@@ -1609,8 +1618,9 @@ ul.dropDownMenu ul {
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #ffffff;
+   font-weight: 600;
    border: 0;
-   font-size: 13px;
+   font-size: 14px;
    margin: 0;
    text-decoration: none;
    text-transform: uppercase;
@@ -1657,6 +1667,9 @@ ul.dropDownMenu ul {
 .footer-wrapper .footer-grid--wrap .footer-about--wrap {
    position: relative;
    width: 100%;
+}
+.footer-wrapper .footer-grid--wrap .footer-about--wrap  .footer-about--text {
+    padding-right: 30px;
 }
 .footer-wrapper .footer-grid--wrap .footer-about--wrap p {
    color: #efefef;
@@ -3971,9 +3984,7 @@ Login Wrapper
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
       padding: 75px 15px;
    }
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui,
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--one,
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two {
+   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui {
       margin-bottom: 30px;
    }
    .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
@@ -4191,6 +4202,20 @@ Login Wrapper
       right: -370px;
       top: -77px;
    }
+   .highlighted-single--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a {
+      color: #ed1651;
+      font-size: 21px;
+      line-height: 30px;
+      font-weight: 600;
+   }
+   .highlighted-single--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--excerpt p {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      color: #666666;
+   }
+   .highlighted-single--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a span {
+      color: #666666;
+   }
    section.verticals-ui--wrapper:before {
       display: none;
    }
@@ -4404,10 +4429,10 @@ Login Wrapper
       flex-direction: row;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
-      padding: 8% 45% 1% 1%;
+      padding: 8% 35% 1% 1%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-      max-width: 54%;
+      max-width: 52%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui {
       height: 100%;
@@ -4497,9 +4522,7 @@ Login Wrapper
    .verticals-ui--wrapper .verticals-block--wrap .verticals-single--wrap {
       display: block;
    }
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui,
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--one,
-   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-slider--two {
+   .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui {
       margin-bottom: 0px;
    }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
@@ -4672,8 +4695,8 @@ Login Wrapper
    }
    .navbar-expand-lg .navbar-nav .dropdown-menu {
       position: absolute;
-      max-width: 83%;
-      min-width: 82% !important;
+      max-width: 70%;
+      min-width: 70% !important;
       left: 90px;
       border-radius: 7px;
    }
@@ -4821,8 +4844,10 @@ Login Wrapper
       text-align: left;
    }
    .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
-      width: 205px !important;
-      height: 177px;
+      max-width: 205px !important;
+      width: 100% !important;
+      height: 100%;
+      max-height: 177px;
       margin-bottom: 16px;
    }
    .single-product--carousel .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6:nth-child(1) {

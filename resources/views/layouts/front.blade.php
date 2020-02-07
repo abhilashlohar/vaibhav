@@ -95,8 +95,6 @@
                                        @else
                                         <li><a href="{{ route('login') }}">Login</a></li>
                                        @endif
-
-
                                     </ul>
                                  </li>
                               </ul>
@@ -157,12 +155,11 @@
                                        <li><a href="#category-03"  data-toggle="tab">Consumables</a></li>
                                     </ul> -->
                                     <!-- Tab panes -->
-                                    <div class="tab-content col-12 col-sm-12 col-md-10 col-lg-10 col-xl-10">
+                                    <div class="tab-content">
                                        <div class="tab-pane well active in active" id="category-01">
                                           <div class="menu-tab--grids">
                                              <!-- Tab Items -->
                                              @foreach ($headerCategories as $headerCategory)
-
                                              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="menu-tab--item">
                                                    <a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">
@@ -263,7 +260,7 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
             <div class="footer-grid--wrap">
-               <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About the brand</h3>
@@ -273,22 +270,21 @@
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
-                        <h3>Our Products</h3>
+                        <h3>Our Stores</h3>
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="#" target="_blank">Face</a></li>
-                           <li><a href="#" target="_blank">Body</a></li>
-                           <li><a href="#" target="_blank">Makeup</a></li>
-                           <li><a href="#" target="_blank">Brands</a></li>
+                           <li><a href="#" target="_blank">Furniture</a></li>
+                           <li><a href="#" target="_blank">Electricals</a></li>
+                           <li><a href="#" target="_blank">Consumables</a></li>
                         </ul>
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+               <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About Us</h3>
@@ -311,7 +307,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Newsletter</h3>

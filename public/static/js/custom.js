@@ -47,35 +47,13 @@ $('.category-slideshow').owlCarousel({
     }
 });
 
-$('.partners-slider--one').owlCarousel({
+$('.partner-slideshow').owlCarousel({
     loop:true,
-    margin:10,
+    margin:0,
     nav:true,
     navText: [
-      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
-    ],
-    dots: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
-});
-
-$('.partners-slider--two').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:true,
-    navText: [
-      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
-      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+      '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+      '<i class="fa fa-angle-right" aria-hidden="true"></i>'
     ],
     dots: false,
     responsive:{
