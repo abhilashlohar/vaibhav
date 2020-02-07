@@ -233,7 +233,7 @@
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
-                        <h3><a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">{{ $consumablesProduct->name }}</a></h3>
+                        <h3><a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">{{ $consumablesProduct->name }} <span>- Hair Care</span></a></h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
                         <p>{{ $consumablesProduct->short_description }}</p>
@@ -600,32 +600,58 @@
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="thumbnail-block--wrap">
-               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="thumbnail-brand--ui">
-                     <div class="thumbnail-brand--logo">
-                        <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
+            <div class="owl-carousel partner-slideshow owl-theme">
+               <!-- Slide 01 -->
+               <div class="item">
+                  <div class="thumbnail-block--wrap">
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-brand--ui">
+                           <div class="thumbnail-brand--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
-               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="thumbnail-properties--ui">
-                     <div class="thumbnail-properties--list">
-                        <ul>
-                           <li>Exclusive South Indian Distributors</li>
-                           <li>Best Prices</li>
-                           <li>Complete Warranty</li>
-                        </ul>
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-properties--ui">
+                           <div class="thumbnail-properties--list">
+                              <ul>
+                                 <li>Exclusive South Indian Distributors</li>
+                                 <li>Best Prices</li>
+                                 <li>Complete Warranty</li>
+                              </ul>
+                           </div>
+                        </div>
                      </div>
-                  </div>
-               </div>
-               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                  <div class="thumbnail-slider--two">
-                     <div class="owl-carousel partners-slider--two owl-theme">
-                        <div class="item">
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-product--image">
                            <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
                         </div>
-                        <div class="item">
+                     </div>
+                  </div>
+               </div>
+               <!-- Slide 01 -->
+               <div class="item">
+                  <div class="thumbnail-block--wrap">
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-brand--ui">
+                           <div class="thumbnail-brand--logo">
+                              <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-properties--ui">
+                           <div class="thumbnail-properties--list">
+                              <ul>
+                                 <li>Exclusive South Indian Distributors</li>
+                                 <li>Best Prices</li>
+                                 <li>Complete Warranty</li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                        <div class="thumbnail-product--image">
                            <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
                         </div>
                      </div>
