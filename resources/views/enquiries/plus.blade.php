@@ -188,7 +188,7 @@
                 </div>
                 <div class="form-row">
                    <div class="col-md-12 mb-12">
-                      <label for="enquiry-message">Enquiry Message</label>
+                      <label for="enquiry-message">Enquiry Message <span>*</span></label>
                       <textarea class="form-control" name="enquiry_message" id="enquiry-message" required></textarea>
                       <div class="invalid-feedback">
                          Enquiry

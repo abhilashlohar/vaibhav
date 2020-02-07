@@ -16,14 +16,16 @@
              </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-             <div class="support-search--form">
-                <div class="form-group col-md-10">
-                   <input type="text" class="form-control" id="ticket_no" placeholder="Search complaint number...">
-                </div>
-                <div class="form-group col-md-2">
-                   <input type="button" id="search_complaint" class="btn btn-primary" value="Search"/>
-                </div>
-             </div>
+                <form>
+                    <div class="support-search--form">
+                        <div class="form-group col-md-10">
+                            <input type="text" class="form-control" id="ticket_no" placeholder="Search complaint number...">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <button type="submit" id="search_complaint" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="support-search--form">
@@ -112,16 +114,16 @@
                     <input type="hidden" name="enquiry_type" value="Care">
                    <div class="form-row">
                       <div class="form-group col-md-6">
-                         <label for="name">Name</label>
-                         <input type="text" name="name" id="name" class="form-control" placeholder="First name">
+                         <label for="name">Name <span>*</span></label>
+                         <input type="text" name="name" id="name" class="form-control" placeholder="First name" required>
                       </div>
                       <div class="form-group col-md-6">
-                         <label for="email">Email</label>
-                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
+                         <label for="email">Email <span>*</span></label>
+                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" required>
                       </div>
                       <div class="form-group col-md-12">
-                         <label for="email">Message</label>
-                         <textarea name="enquiry_message" class="form-control" id="message_care" rows="3"></textarea>
+                         <label for="email">Message <span>*</span></label>
+                         <textarea name="enquiry_message" class="form-control" id="message_care" rows="3" required></textarea>
                       </div>
                       <div class="form-group col-md-12">
                          <input type="submit" class="btn btn-primary"/>
