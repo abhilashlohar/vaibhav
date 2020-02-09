@@ -82,19 +82,13 @@ Route::prefix('sarkar')->group(function () {
     Route::post('/sub-categories.list','admin\SubCategoryController@list')->name('subcategorylist');
 
     Route::resource('blog-categories','admin\BlogCategoryController');
-
-
     Route::resource('blogs','admin\BlogController');
+    Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
+
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
 
-
     Route::resource('redirections','admin\RedirectionController');
-
-
-    Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
-
-
 
 
     Route::resource('products','admin\ProductController');
@@ -103,6 +97,9 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('events','admin\EventController');
     Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
     Route::get('events/orders/{id}', 'admin\EventController@order')->name('events.order');
+
+    Route::get('/customers', 'admin\CustomerController@index')->name('customer.index');
+    Route::get('/customer/order', 'admin\CustomerController@order')->name('customer.order');
 
 });
 

@@ -35,7 +35,7 @@
                                 <label for="ticket_no">Status</label>
                                 <select class="form-control" name="status"  value="{{$request->status}}">
                                     <option value="">---Select Status---</option>
-                                    <option value="open" {{($request->status=='open')?'selected':''}}>Open</option>
+                                    <option value="open" {{($request->status=='pending')?'selected':''}}>Open</option>
                                     <option value="closed" {{($request->status=='closed')?'selected':''}}>Closed</option>
                                 </select>
                             </div>
@@ -81,11 +81,11 @@
                             <td class="align-middle">
                                 <a href="{{ route('enquiries.show', $enquiry->id) }}"> #{{ $enquiry->ticket_no }}</a>
                             </td>
-                            <td class="align-middle">{{ $enquiry->user->name }}</td>
+                            <td class="align-middle">{{ $enquiry->name }}</td>
                             <td class="align-middle">{{ $enquiry->subject }}</td>
                             <td><?php echo humanTiming($enquiry->updated_at); ?></td>
                             <td>
-                                @if ($enquiry->status=='open')
+                                @if ($enquiry->status=='pending')
                                     <span class="kt-badge kt-badge--danger kt-badge--dot"></span>
                                     <span class="kt-font-bold kt-font-danger">Open</span>
                                 @else

@@ -34,12 +34,12 @@ class EnquiryController extends Controller
         }
 
         $enquiries = Enquiry::where($where_ar)->orderBy('ticket_no', 'desc')
-        ->with('User')
-        ->whereHas('User', function($query) use($request)  {
-            if(isset($request->name)) {
-                $query->where('name','like','%'.$request->name.'%');
-            }
-        })
+        // ->with('User')
+        // ->whereHas('User', function($query) use($request)  {
+        //     if(isset($request->name)) {
+        //         $query->where('name','like','%'.$request->name.'%');
+        //     }
+        // })
         ->paginate(5);
 
         return view('admin.enquiries.index',compact('enquiries','request'))

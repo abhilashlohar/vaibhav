@@ -228,6 +228,15 @@
                                 </a>
                             </li>
 
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('customer.index') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-book"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Customer</span>
+                                </a>
+                            </li>
+
                         </ul>
 
 
