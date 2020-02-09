@@ -51,7 +51,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div id="owl-category--one" class="category-blocks--ui owl-carousel">
-               <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-4">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -85,7 +85,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-8">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -119,7 +119,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -153,7 +153,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -207,9 +207,9 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-8">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
                <div class="single-product--carousel">
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
                      <div id="thumbs" class="owl-carousel owl-theme">
                         @foreach ($consumablesProduct->productImages as $item)
                         <div class="item">
@@ -218,7 +218,7 @@
                         @endforeach
                      </div>
                   </div>
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbnail">
                      <div id="big" class="owl-carousel owl-theme">
                        @foreach ($consumablesProduct->productImages as $item)
                         <div class="item">
@@ -229,7 +229,7 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-4">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
@@ -287,7 +287,7 @@
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div id="owl-category--two" class="category-blocks--ui owl-carousel">
-               <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-8">
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -321,7 +321,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-4">
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -355,7 +355,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$electricalsProducts[2]->product_image_primary->image) }}" alt="{{ $electricalsProducts[2]->name }}" title="{{ $electricalsProducts[2]->name }}"/>
@@ -389,7 +389,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+               <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
@@ -466,6 +466,14 @@
                      </div>
                   </div>
                </div>
+               <div class="store-ui--column hide-this--desktop">
+                  <div class="gallery-image--three">
+                     <img src="<?php echo url('/'); ?>/static/images/gallery-image-03.png" alt=""/>
+                     <div class="store-action">
+                        <a href="#" class="btn">Store Opening</a>
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
 
@@ -483,6 +491,146 @@
                </div>
              </div>
            </div>
+         </div>
+      </div>
+   </section>
+
+   <section class="verticals-ui--wrapper mobile-specific">
+      <div class="container-fluid">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="title-ui--wrap">
+               <div class="title-text--middle">
+                  <h2>Business Verticals</h2>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="verticals-block--wrap">
+               <div class="verticals-ui--column">
+                  <div class="verticals-details--wrap">
+                        <a class="verticals-brand--wrap" data-toggle="modal" data-target="#xpress-modal">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap" data-toggle="modal" data-target="#care-modal">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap" data-toggle="modal" data-target="#plus-modal">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                        </a>
+                        <a class="verticals-brand--wrap" data-toggle="modal" data-target="#academy-modal">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                        </a>
+                  </div>
+               </div>
+            </div>
+            <!-- Open Xpress -->
+            <div class="modal fade" id="xpress-modal" tabindex="-1" role="dialog" aria-labelledby="xpress-modallabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="verticals-single--details">
+                        <div class="verticals-single--logo">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                        </div>
+                        <div class="verticals-single--features">
+                           <ul>
+                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                           </ul>
+                           <a href="#" target="_blank">Visit Now</a>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Open Care -->
+            <div class="modal fade" id="care-modal" tabindex="-1" role="dialog" aria-labelledby="care-modallabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="verticals-single--details">
+                        <div class="verticals-single--logo">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                        </div>
+                        <div class="verticals-single--features">
+                           <ul>
+                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                           </ul>
+                           <a href="#" target="_blank">Visit Now</a>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Open Plus -->
+            <div class="modal fade" id="plus-modal" tabindex="-1" role="dialog" aria-labelledby="plus-modallabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="verticals-single--details">
+                        <div class="verticals-single--logo">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                        </div>
+                        <div class="verticals-single--features">
+                           <ul>
+                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                           </ul>
+                           <a href="#" target="_blank">Visit Now</a>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Open Academy -->
+            <div class="modal fade" id="academy-modal" tabindex="-1" role="dialog" aria-labelledby="academy-modallabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="verticals-single--details">
+                        <div class="verticals-single--logo">
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                        </div>
+                        <div class="verticals-single--features">
+                           <ul>
+                              <li>Aliquet enim tortor at auctor urna nunc id cursus metus aliquam.</li>
+                              <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
+                              <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
+                           </ul>
+                           <a href="#" target="_blank">Visit Now</a>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
          </div>
       </div>
    </section>
@@ -604,14 +752,14 @@
                <!-- Slide 01 -->
                <div class="item">
                   <div class="thumbnail-block--wrap">
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                         <div class="thumbnail-brand--ui">
                            <div class="thumbnail-brand--logo">
                               <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
                            </div>
                         </div>
                      </div>
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
                         <div class="thumbnail-properties--ui">
                            <div class="thumbnail-properties--list">
                               <ul>
@@ -622,7 +770,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide-thumbnail--this">
                         <div class="thumbnail-product--image">
                            <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
                         </div>
@@ -632,14 +780,14 @@
                <!-- Slide 01 -->
                <div class="item">
                   <div class="thumbnail-block--wrap">
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                         <div class="thumbnail-brand--ui">
                            <div class="thumbnail-brand--logo">
                               <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
                            </div>
                         </div>
                      </div>
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
                         <div class="thumbnail-properties--ui">
                            <div class="thumbnail-properties--list">
                               <ul>
@@ -650,7 +798,7 @@
                            </div>
                         </div>
                      </div>
-                     <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide-thumbnail--this">
                         <div class="thumbnail-product--image">
                            <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
                         </div>

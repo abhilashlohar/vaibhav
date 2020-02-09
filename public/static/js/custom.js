@@ -11,22 +11,25 @@ $(document).ready(function(){
     );
 });
 
-$('.hero-slideshow').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:false,
-    dots: true,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:1
-        },
-        1000:{
-            items:1
-        }
-    }
+
+$(document).ready(function() {
+  $('.hero-slideshow').owlCarousel({
+      loop:true,
+      margin:10,
+      nav:false,
+      dots: true,
+      responsive:{
+          0:{
+              items:1
+          },
+          600:{
+              items:1
+          },
+          1000:{
+              items:1
+          }
+      }
+  })
 });
 
 $('.category-slideshow').owlCarousel({
@@ -275,3 +278,60 @@ $('.tab-menu a').hover(function (e) {
      $(this).tab('show')
    })
 });
+
+$(document).ready(function() {
+   function owlCategoryOne() {
+       var checkWidth = $(window).width();
+       var owlPost = $("#owl-category--one");
+       if (checkWidth > 767) {
+           if (typeof owlPost.data('owl.carousel') != 'undefined') {
+               owlPost.data('owl.carousel').destroy();
+           }
+           owlPost.removeClass('owl-carousel');
+       } else if (checkWidth < 768) {
+           owlPost.addClass('owl-carousel');
+           owlPost.owlCarousel({
+               items: 1,
+               slideSpeed: 500,
+               dots: true,
+               loop: true,
+               nav:true,
+               navText: [
+                  '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                  '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+               ]
+           });
+       }
+   }
+   owlCategoryOne();
+   $(window).resize(owlCategoryOne);
+});
+
+$(document).ready(function() {
+   function owlCategoryTwo() {
+       var checkWidth = $(window).width();
+       var owlPost = $("#owl-category--two");
+       if (checkWidth > 767) {
+           if (typeof owlPost.data('owl.carousel') != 'undefined') {
+               owlPost.data('owl.carousel').destroy();
+           }
+           owlPost.removeClass('owl-carousel');
+       } else if (checkWidth < 768) {
+           owlPost.addClass('owl-carousel');
+           owlPost.owlCarousel({
+               items: 1,
+               slideSpeed: 500,
+               dots: false,
+               loop: true,
+               nav:true,
+               navText: [
+                  '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+                  '<i class="fa fa-angle-right" aria-hidden="true"></i>'
+               ]
+           });
+       }
+   }
+   owlCategoryTwo();
+   $(window).resize(owlCategoryTwo);
+});
+
