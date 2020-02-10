@@ -135,12 +135,13 @@ $('.item-dropdown ul li').hover(function() {
 
 $(document).ready(function(){
     var options = {
-        max_value: 5,
-        step_size: 0.5,
-        selected_symbol_type: 'hearts',
-        url: 'http://localhost/test.php',
-        initial_value: 3,
-        update_input_field_name: $("#input2"),
+      starSize:60,
+      max_value: 5,
+      step_size: 0.5,
+      selected_symbol_type: 'hearts',
+      url: 'http://localhost/test.php',
+      initial_value: 3,
+      update_input_field_name: $("#input2"),
     }
     $(".rate").rate();
 });

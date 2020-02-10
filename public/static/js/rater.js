@@ -511,6 +511,7 @@
     $.fn.rate.settings = {
         max_value: 5,
         step_size: 0.5,
+        starSize:32,
         initial_value: 0,
         symbols: {
             utf8_star: {

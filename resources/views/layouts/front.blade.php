@@ -171,64 +171,6 @@
                                              @endforeach
                                           </div>
                                        </div>
-                                       <div class="tab-pane well fade" id="category-02">
-                                          <div class="menu-tab--grids">
-                                             <!-- Tab Items -->
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <div class="tab-pane well fade" id="category-03">
-                                          <div class="menu-tab--grids">
-                                             <!-- Tab Items -->
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                                                <div class="menu-tab--item">
-                                                   <a href="#" target="_blank">
-                                                      <img src="<?php echo url('/'); ?>/static/images/furniture-category-01.png" alt=""/>
-                                                      <h5>Furniture</h5>
-                                                   </a>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
                                     </div>
                                  </div>
                               </div>
@@ -270,7 +212,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+               <div class="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Our Stores</h3>
@@ -284,7 +226,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-6 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+               <div class="col-7 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>About Us</h3>

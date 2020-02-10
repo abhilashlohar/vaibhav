@@ -65,7 +65,7 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                          <div id="rater"></div>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
