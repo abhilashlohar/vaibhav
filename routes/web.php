@@ -99,7 +99,8 @@ Route::prefix('sarkar')->group(function () {
     Route::get('events/orders/{id}', 'admin\EventController@order')->name('events.order');
 
     Route::get('/customers', 'admin\CustomerController@index')->name('customer.index');
-    Route::get('/customer/order', 'admin\CustomerController@order')->name('customer.order');
+    Route::get('/customer/orders', 'admin\CustomerController@order')->name('customer.order');
+    Route::get('/customer/order-details/{id}', 'admin\CustomerController@orderDetail')->name('customer.orderDetail');
 
 });
 

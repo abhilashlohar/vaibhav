@@ -7,7 +7,7 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        Search Enquiry
+                        Search Customer
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -42,7 +42,7 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        Enquiry
+                        Customer
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -64,7 +64,7 @@
                             <td class="align-middle">{{ $user->email }}</td>
                             <td class="align-middle">{{ date('d-m-Y',strtotime($user->created_at)) }}</td>
                             <td class="align-middle">
-                                <a href="{{ route('customer.order', $user->id) }}"> Order</a>
+                                <a href="{{ route('customer.order', 'id='.$user->id) }}"> Order</a>
                             </td>
                         </tr>
                         @endforeach

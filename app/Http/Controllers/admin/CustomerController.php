@@ -30,20 +30,20 @@ class CustomerController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function list($id)
+    public function order(Request $request)
     {
-        $orders = Order::where('user_id',$id)->orderBy('order_date', 'asc')->paginate(5);
+        $orders = Order::where('user_id',$request->id)->orderBy('order_date', 'asc')->paginate(5);
 
-        return view('admin.customers.order', compact('orders'))
+        return view('admin.customers.order', compact('orders','request'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    public function show($id)
+    public function orderDetail($id)
     {
         $order = Order::where('id',$id)->with('OrderRows')->first();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'order_view';
-        return view('admin.customers.show', compact('page_title','body_class','order'));
+        return view('admin.customers.order_detail', compact('page_title','body_class','order'));
     }
 }
