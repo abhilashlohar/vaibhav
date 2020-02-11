@@ -32,7 +32,15 @@ class CustomerController extends Controller
 
     public function order(Request $request)
     {
-        $orders = Order::where('user_id',$request->id)->orderBy('order_date', 'asc')->paginate(5);
+        $where_ar = [];
+
+        if(isset($request->id)) {
+            $where_ar[] = ['user_id',$request->id];
+        }
+        if(isset($request->order_no)) {
+            $where_ar[] = ['order_no',$request->order_no];
+        }
+        $orders = Order::where($where_ar)->orderBy('order_date', 'asc')->paginate(5);
 
         return view('admin.customers.order', compact('orders','request'))
         ->with('i', (request()->input('page', 1) - 1) * 5);

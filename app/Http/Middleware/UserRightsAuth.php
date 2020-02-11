@@ -11,7 +11,6 @@ class UserRightsAuth
     public function handle($request, Closure $next)
     {
         $admin_id = $request->session()->get('admin_id');
-
         if ($admin_id) {
             $action = app('request')->route()->getAction();
             $controller = class_basename($action['controller']);

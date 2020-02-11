@@ -422,6 +422,66 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" id="headingTwelve">
+                                <div class="card-title collapsed" data-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
+                                    Customer
+                                </div>
+                            </div>
+                            <div id="collapseTwelve" class="collapse show" aria-labelledby="headingTwelve" data-parent="#accordionExample8">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="50" {{ $admin->userrights->contains(50) ? 'checked' : '' }}> List
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" id="headingThirteen">
+                                <div class="card-title collapsed" data-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
+                                    Order
+                                </div>
+                            </div>
+                            <div id="collapseThirteen" class="collapse show" aria-labelledby="headingThirteen" data-parent="#accordionExample8">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="51" {{ $admin->userrights->contains(51) ? 'checked' : '' }}> List
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="52" {{ $admin->userrights->contains(52) ? 'checked' : '' }}> Detail
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="text-center"><br>
