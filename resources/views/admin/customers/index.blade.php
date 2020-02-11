@@ -56,16 +56,20 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Date</th>
+                            @if (in_array('CustomerController@order',Session::get('userrightPages')))
                             <th>Action</th>
+                            @endif
                         </tr>
                         @foreach ($users as $user)
                         <tr>
                             <td class="align-middle">{{ $user->name }}</td>
                             <td class="align-middle">{{ $user->email }}</td>
                             <td class="align-middle">{{ date('d-m-Y',strtotime($user->created_at)) }}</td>
+                            @if (in_array('CustomerController@order',Session::get('userrightPages')))
                             <td class="align-middle">
                                 <a href="{{ route('customer.order', 'id='.$user->id) }}"> Order</a>
                             </td>
+                            @endif
                         </tr>
                         @endforeach
                     </table>

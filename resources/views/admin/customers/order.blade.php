@@ -7,7 +7,7 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        Search Customer Order
+                        Search Order
                     </h3>
                 </div>
                 <div class="kt-portlet__head-toolbar">
@@ -19,8 +19,8 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label>Customer Name</label>
-                                <input type="text" placeholder="Customer Name" id="name" name="name" value="{{$request->name}}" class="form-control">
+                                <label>Order No.</label>
+                                <input type="text" placeholder="Order No." id="order_no" name="order_no" value="{{$request->order_no}}" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-3">
@@ -56,14 +56,18 @@
                             <th>Order No.</th>
                             <th>Order Date</th>
                             <th>Order Amount</th>
+                            @if (in_array('CustomerController@orderDetail',Session::get('userrightPages')))
                             <th>Order Details</th>
+                            @endif
                         </tr>
                         @foreach ($orders as $order)
                                <tr>
                                    <td>{{$order->order_no}}</td>
                                    <td>{{$order->order_date}}</td>
                                    <td>{{$order->order_amount}}</td>
-                                   <td><a href="{{ route('customer.orderDetail',$order->id) }}">Order Details</a></td>
+                                    @if (in_array('CustomerController@orderDetail',Session::get('userrightPages')))
+                                        <td><a href="{{ route('customer.orderDetail',$order->id) }}">Order Details</a></td>
+                                    @endif
                                </tr>
                            @endforeach
                     </table>
