@@ -280,6 +280,7 @@ $('.tab-menu a').hover(function (e) {
    })
 });
 
+/* Responsive Owl Carousel */
 $(document).ready(function() {
    function owlCategoryOne() {
        var checkWidth = $(window).width();
