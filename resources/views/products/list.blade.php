@@ -88,7 +88,7 @@
          </div>
       </div>
    </section>
-
+   <?php $index = 1; ?>
    <section class="single-excerpt--wrapper">
     <div class="container-fluid">
         @foreach($products as $product)
@@ -96,7 +96,7 @@
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <div id="thumbs" class="owl-carousel owl-theme">
+                <div id="thumbs-{{$index}}" class="owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
@@ -105,7 +105,7 @@
                    </div>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                   <div id="big" class="owl-carousel owl-theme">
+                <div id="big-{{$index++}}" class="owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item zoom zoomin">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
