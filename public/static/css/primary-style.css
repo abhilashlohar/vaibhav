@@ -853,10 +853,10 @@ ul.dropDownMenu ul {
    border: 2px solid #dddddd;
    color: #666666;
 }
-.highlighted-single--wrapper .single-product--carousel #thumbs.owl-carousel.owl-loaded {
+.highlighted-single--wrapper .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded {
    display: block;
 }
-.highlighted-single--wrapper .single-product--carousel #thumbs.owl-carousel.owl-loaded .item img {
+.highlighted-single--wrapper .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .item img {
    display: block;
 }
 .highlighted-single--wrapper .single-product--properties .ecommerce-item--details {
@@ -1132,6 +1132,7 @@ ul.dropDownMenu ul {
    line-height: 27px;
    margin-top: 10px;
    padding: 0 60px;
+   font-family: 'Montserrat', sans-serif;
 }
 .follow-ui--wrapper .title-ui--wrap .title-text--middle h2 {
    color: #ed1651;
@@ -2263,10 +2264,10 @@ Product Single
     border: 2px solid #dddddd;
     color: #666666;
 }
-.single-product--carousel #thumbs.owl-carousel.owl-loaded {
+.single-product--carousel .thumb-carousel.owl-carousel.owl-loaded {
    display: block;
 }
-.single-product--carousel #thumbs.owl-carousel.owl-loaded .item img {
+.single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .item img {
    display: block;
 }
 .single-excerpt--wrapper .single-product--properties {
@@ -2907,21 +2908,29 @@ Login Wrapper
 }
 .support-form--care .support-form--wrap form input[type="submit"] {
    background: #ed1651;
-   padding: 13px 24px;
+   padding: 16px 56px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #ffffff;
    border: 0;
-   font-size: 13px;
+   letter-spacing: 0.05em;
+   font-weight: 600;
+   font-size: 16px;
    margin: 0;
    text-decoration: none;
    text-transform: uppercase;
    box-shadow: none;
 }
+.support-form--care .title-ui--wrap {
+   text-align: center;
+}
 .support-search--wrapper {
    position: relative;
    width: 100%;
    padding: 60px 0;
+}
+.support-search--wrapper .title-ui--wrap {
+   text-align: center;
 }
 .support-search--wrapper .support-search--form {
    position: relative;
@@ -2944,18 +2953,39 @@ Login Wrapper
    -webkit-justify-content: center;
    justify-content: center;
 }
-.support-search--wrapper .support-search--form input[type="search"] {
-   min-height: 46px;
-   box-shadow: 2px 2px 9px #efefef;
+.support-form--wrap input[type="text"], .support-form--wrap input[type="email"], .support-form--wrap textarea {
+   background: #efefef;
+   border: none;
+   min-height: 56px;
 }
-.support-search--wrapper .support-search--form input[type="submit"] {
+.support-form--wrap textarea {
+   min-height: 120px;
+}
+.support-form--wrap .form-control:focus {
+   background-color: #efefef;
+}
+.support-form--care .support-form--wrap .form-group {
+   margin-bottom: 45px;
+}
+.support-form--wrap label span {
+   color: #e94150;
+}
+.support-search--wrapper .support-search--form input[type="text"] {
+   min-height: 54px;
+   box-shadow: 2px 2px 9px #efefef;
+   background: #efefef;
+   border: none;
+}
+.support-search--wrapper .support-search--form button[type="submit"] {
    background: #ed1651;
-   padding: 13px 24px;
+   padding: 15px 24px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
+   letter-spacing: 0.05em;
    color: #ffffff;
    border: 0;
-   font-size: 13px;
+   font-size: 16px;
+   font-weight: 600;
    margin: 0;
    text-decoration: none;
    text-transform: uppercase;
@@ -4419,6 +4449,9 @@ Login Wrapper
    .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .store-action {
       padding: 5px;
    }
+   .footer-wrapper .footer-subscribe--wrap input[type="email"]:focus {
+      outline: none;
+   }
    .footer-wrapper .footer-social--wrap ul li {
 	    margin-right: 3px;
 	    margin-bottom: 10px;
@@ -5042,6 +5075,12 @@ Login Wrapper
       width: 100%;
       padding: 75px 60px;
    }
+   .support-form--care .title-ui--wrap {
+      text-align: center;
+   }
+   .support-search--wrapper .title-ui--wrap {
+      text-align: center;
+   }
    .highlighted-single--wrapper .single-product--properties .ecommerce-item--excerpt {
       text-align: left;
    }
@@ -5281,6 +5320,8 @@ Login Wrapper
    }
    .support-search--wrapper .support-search--form {
       padding: 0 120px;
+      max-width: 85%;
+      margin: 30px auto;
    }
    .title-text--description p {
       padding: 0 60px;
@@ -5377,7 +5418,7 @@ Login Wrapper
    .verticals-ui--wrapper .verticals-single--logo img {
       max-width: 171px;
    }
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 135px !important;
       width: 100% !important;
       height: 100%;
@@ -5491,7 +5532,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1000px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 135px !important;
       width: 100% !important;
       height: 100%;
@@ -5504,7 +5545,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1020px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 139px !important;
       width: 100% !important;
       height: 100%;
@@ -5517,7 +5558,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1040px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 142px !important;
       width: 100% !important;
       height: 100%;
@@ -5530,7 +5571,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1060px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 145px !important;
       width: 100% !important;
       height: 100%;
@@ -5543,7 +5584,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1080px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 148px !important;
       width: 100% !important;
       height: 100%;
@@ -5556,7 +5597,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1100px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 152px !important;
       width: 100% !important;
       height: 100%;
@@ -5581,7 +5622,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1120px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 155px !important;
       width: 100% !important;
       height: 100%;
@@ -5594,7 +5635,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1140px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 158px !important;
       width: 100% !important;
       height: 100%;
@@ -5607,7 +5648,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1160px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 163px !important;
       width: 100% !important;
       height: 100%;
@@ -5629,7 +5670,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1180px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 165px !important;
       width: 100% !important;
       height: 100%;
@@ -5679,7 +5720,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1200px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 168px !important;
       width: 100% !important;
       height: 100%;
@@ -5709,7 +5750,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1220px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 174px !important;
       width: 100% !important;
       height: 100%;
@@ -5734,7 +5775,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1240px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 177px !important;
       width: 100% !important;
       height: 100%;
@@ -5751,7 +5792,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1260px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 180px !important;
       width: 100% !important;
       height: 100%;
@@ -5764,7 +5805,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1280px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 182px !important;
       width: 100% !important;
       height: 100%;
@@ -5786,7 +5827,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1300px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 186px !important;
       width: 100% !important;
       height: 100%;
@@ -5799,7 +5840,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1320px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 191px !important;
       width: 100% !important;
       height: 100%;
@@ -5809,7 +5850,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1340px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 196px !important;
       width: 100% !important;
       height: 100%;
@@ -5822,7 +5863,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1360px) {
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 198px !important;
       width: 100% !important;
       height: 100%;
@@ -5832,7 +5873,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1380px) { 
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 199px !important;
       width: 100% !important;
       height: 100%;
@@ -5845,7 +5886,7 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 1400px) { 
-   .single-product--carousel #thumbs.owl-carousel.owl-loaded .owl-item {
+   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-width: 205px !important;
       width: 100% !important;
       height: 100%;

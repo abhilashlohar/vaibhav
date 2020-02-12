@@ -96,7 +96,7 @@
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <div id="thumbs-{{$index}}" class="owl-carousel owl-theme">
+                <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>

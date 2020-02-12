@@ -18,10 +18,10 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <form>
                     <div class="support-search--form">
-                        <div class="form-group col-md-10">
+                        <div class="form-group col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
                             <input type="text" class="form-control" id="ticket_no" placeholder="Search complaint number...">
                         </div>
-                        <div class="form-group col-md-2">
+                        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
                             <button type="submit" id="search_complaint" class="btn btn-primary">Search</button>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                    <div class="support-category--thumbnail">
                       <div class="support-categry--image">
                          <div class="title">
-                            <h3>Furniture</h3>
+                            <h3>Electricals</h3>
                          </div>
                          <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
@@ -66,7 +66,7 @@
                    <div class="support-category--thumbnail">
                       <div class="support-categry--image">
                          <div class="title">
-                            <h3>Furniture</h3>
+                            <h3>Consumables</h3>
                          </div>
                          <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
                       </div>
@@ -123,7 +123,7 @@
                       </div>
                       <div class="form-group col-md-12">
                          <label for="email">Message <span>*</span></label>
-                         <textarea name="enquiry_message" class="form-control" id="message_care" rows="3" required></textarea>
+                         <textarea name="enquiry_message" class="form-control" id="message_care" rows="3" placeholder="Your Complaint" required></textarea>
                       </div>
                       <div class="form-group col-md-12">
                          <input type="submit" class="btn btn-primary"/>
