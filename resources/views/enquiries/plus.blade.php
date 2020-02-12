@@ -115,13 +115,18 @@
     </div>
  </section>
 
- <section class="plus-enquiry--wrapper">
+ <section class="plus-enquiry--wrapper"  id="enquiry-page">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
                 <h2>Product Enquiry</h2>
              </div>
+             @if(Session::has('success'))
+                <div class="alert alert-success" role="alert" data-dismiss="alert">
+                    {{ Session::get('success') }}
+                </div>
+             @endif
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -218,5 +223,16 @@
  </section>
 
 
+
+@endsection
+
+@section ('footer-script')
+ <script>
+ jQuery(document).ready(function() {
+    @if(Session::has('success'))
+        $('html,body').animate({ scrollTop: $("#enquiry-page").offset().top},'slow');
+    @endif
+ });
+</script>
 
 @endsection

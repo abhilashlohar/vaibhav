@@ -30,12 +30,13 @@ class EnquiryController extends Controller
     public function store(Request $request)
     {
         if($request->enquiry_type == 'Care') {
-            $request->request->add(['ticket_no' => $this->newTicketNumber()]);
+            $ticket_no = $this->newTicketNumber();
+            $request->request->add(['ticket_no' => $ticket_no]);
         }
         Enquiry::create($request->all());
         if($request->enquiry_type == 'Care') {
             return redirect()->route('enquiry.care')
-                        ->with('success','Enquiry created successfully');
+                        ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
         }
         elseif($request->enquiry_type == 'Xpress') {
             return redirect()->route('enquiry.xpress')

@@ -105,6 +105,11 @@
                 <div class="title-text--description">
                    <p>Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.</p>
                 </div>
+                @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert" data-dismiss="alert">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
              </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -141,11 +146,12 @@
  @section ('footer-script')
  <script>
  jQuery(document).ready(function() {
+    @if(Session::has('success'))
+        $('html,body').animate({ scrollTop: $("#care-enquiry").offset().top},'slow');
+    @endif
     $("a.care-enquiry").click(function() {
-        $('html,body').animate({
-            scrollTop: $("#care-enquiry").offset().top},
-            'slow');
-            $('#name').focus();
+        $('html,body').animate({ scrollTop: $("#care-enquiry").offset().top},'slow');
+        $('#name').focus();
     });
 
     $(document).on('click','#search_complaint',function(e){

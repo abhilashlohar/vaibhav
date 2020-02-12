@@ -256,8 +256,10 @@
                      </div>
                      <div class="footer-subscribe--wrap">
                         <p>Subscribe to receive updates, access to exclusive deals and more.</p>
+
+                        <p style="display:none; color:#000;" id="subscribe-message" class="alert alert-success" role="alert" data-dismiss="alert"></p>
                         <form method="get" id="enquiry_subscribe" action="#">
-                           <input type="email" id="subscribe_email" name="email" placeholder="Enter your email address">
+                           <input style="color:#fff" type="email" id="subscribe_email" name="email" placeholder="Enter your email address">
                            <input type="submit" name="submit" class="addToEnquiry" value="SUBSCRIBE">
                         </form>
                      </div>
@@ -369,6 +371,8 @@
                         data:{email:email, enquiry_type:'Subscribe Email'},
                         success:function(data){
                             $('#subscribe_email').val('');
+                            $('#subscribe-message').show();
+                            $('#subscribe-message').html(data);
                         }
                     });
                 }
