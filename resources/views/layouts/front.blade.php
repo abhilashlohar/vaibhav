@@ -219,9 +219,13 @@
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="#" target="_blank">Furniture</a></li>
-                           <li><a href="#" target="_blank">Electricals</a></li>
-                           <li><a href="#" target="_blank">Consumables</a></li>
+                            @foreach ($headerCategories as $headerCategory)
+                                <li>
+                                    <a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">
+                                        {{$headerCategory->name}}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                      </div>
                   </div>

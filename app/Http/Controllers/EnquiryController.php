@@ -47,7 +47,7 @@ class EnquiryController extends Controller
                         ->with('success','Enquiry created successfully');
         }
         elseif ($request->enquiry_type == 'Subscribe Email') {
-            return 'Enquiry created successfully.';
+            return 'Email subscribed successfully.';
         }
     }
 

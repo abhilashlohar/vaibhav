@@ -38,7 +38,7 @@ class EventController extends Controller
         $keyId = 'rzp_test_GE1ObDQkLEiuRm';
         $keySecret = 'EXduVTbD30P8JPrdpXAnKt98';
         $api = new Api($keyId, $keySecret);
-        $amount = (int)$event->price;
+        $amount = (float)$event->price*100;
 
         $orderData = [
             'receipt'         => 3456,
