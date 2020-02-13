@@ -4,12 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Validation\Rule;
-use App\Blog;
+use App\Page;
 
-class Blog extends Model
+class Page extends Model
 {
     protected $fillable = [
-        'title','slug','featured_image','excerpt','content','status'
+        'title','slug','content','status'
     ];
 
     protected static function boot()
@@ -38,5 +38,3 @@ class Blog extends Model
       ];
     }
 }
-
-

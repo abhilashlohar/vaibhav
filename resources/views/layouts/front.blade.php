@@ -233,10 +233,10 @@
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="#" target="_blank">Journal</a></li>
-                           <li><a href="#" target="_blank">FAQs</a></li>
-                           <li><a href="#" target="_blank">Contact</a></li>
-                           <li><a href="#" target="_blank">Terms & Conditions</a></li>
+                           <li><a href="{{url('/journal') }}">Journal</a></li>
+                           <li><a href="{{url('/faqs') }}">FAQs</a></li>
+                           <li><a href="{{url('/contact-us') }}">Contact</a></li>
+                           <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
                         </ul>
                      </div>
                      <div class="footer-social--wrap">
