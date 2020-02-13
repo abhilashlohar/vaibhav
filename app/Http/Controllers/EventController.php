@@ -38,7 +38,8 @@ class EventController extends Controller
         $keyId = 'rzp_test_GE1ObDQkLEiuRm';
         $keySecret = 'EXduVTbD30P8JPrdpXAnKt98';
         $api = new Api($keyId, $keySecret);
-        $amount = $event->price;
+        $amount = (int)$event->price;
+
         $orderData = [
             'receipt'         => 3456,
             'amount'          => $amount, // 2000 rupees in paise
@@ -47,7 +48,6 @@ class EventController extends Controller
         ];
 
         $razorpayOrder = $api->order->create($orderData);
-
         $razorpayOrderId = $razorpayOrder['id'];
 
         $request->session()->put('razorpay_order_id', $razorpayOrderId);
