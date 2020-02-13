@@ -8,6 +8,7 @@ use App\SubCategory;
 use App\Product;
 use App\Enquiry;
 use App\Cart;
+use App\Page;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
@@ -132,9 +133,21 @@ class HomeController extends Controller
         return response()->json($data);
     }
 
-    public function page($page)
+    public function page($slug)
     {
-        return $page; exit();
-    }
+        $page = Page::where([
+                    ['slug', '=', $slug],
+                    ['status', '=', 'published']
+                ])->first();
 
+        if (empty($page)) {
+            $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+            $body_class = 'page_not_found';
+            return view('404', compact('page_title','body_class'));
+        }
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = $slug;
+        return view('page', compact('page_title','body_class','page'));
+    }
 }

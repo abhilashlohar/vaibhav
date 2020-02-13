@@ -85,6 +85,9 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('blog-categories','admin\BlogCategoryController');
     Route::resource('blogs','admin\BlogController');
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
+    
+    Route::resource('pages','admin\PageController');
+    Route::post('pages/upload-img','admin\PageController@uploadImg')->name('pages.uploadImg');
 
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
@@ -105,5 +108,5 @@ Route::prefix('sarkar')->group(function () {
 
 });
 
-Route::get('/{page}', 'HomeController@page')->name('page');
+Route::get('/{page}', 'HomeController@page')->name('{page}');
 

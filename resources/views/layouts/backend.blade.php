@@ -252,6 +252,15 @@
                             </li>
                             @endif
 
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('pages.index') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-book"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Pages</span>
+                                </a>
+                            </li>
+
                         </ul>
 
 
