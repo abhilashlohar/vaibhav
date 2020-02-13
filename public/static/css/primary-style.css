@@ -103,16 +103,7 @@ button {
 .login .header-wrapper {
    position: relative;
 }
-.xpress .header-wrapper {
-   position: relative;
-}
-.plus .header-wrapper {
-   position: relative;
-}
 .academy .header-wrapper {
-   position: relative;
-}
-.care .header-wrapper {
    position: relative;
 }
 .product-search .header-wrapper {
@@ -2904,7 +2895,7 @@ Login Wrapper
 .support-form--care .support-form--wrap {
    position: relative;
    width: 100%;
-   padding: 30px 60px;
+   padding: 30px 0px;
 }
 .support-form--care .support-form--wrap form input[type="submit"] {
    background: #ed1651;
@@ -3058,7 +3049,7 @@ Login Wrapper
 .support-description--text {
    position: relative;
    width: 100%;
-   padding: 60px 60px 0px 60px;
+   padding: 60px 10px 0px 10px;
 }
 .support-description--text p {
    font-size: 18px;
@@ -3710,12 +3701,14 @@ Login Wrapper
 }
 .plus-enquiry--wrapper .plus-enquiry--form input[type="submit"] {
    background: #ed1651;
-   padding: 13px 24px;
+   padding: 16px 45px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
+   font-weight: 600;
    color: #ffffff;
    border: 0;
-   font-size: 13px;
+   font-size: 17px;
+   letter-spacing: 0.05em;
    margin: 0;
    text-decoration: none;
    text-transform: uppercase;
@@ -3741,13 +3734,18 @@ Login Wrapper
    height: 100%;
    width: 100%;
 }
-.xpress-carousel--wrapper .xpress-information--grid {
+.xpress .xpress-carousel--wrapper .xpress-information--grid {
 	position: relative;
 	width: 100%;
 	margin-top: 60px;
 	display: -webkit-box;
-   	display: -ms-flexbox;
-   	display: flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: vertical;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
 }
 .xpress-carousel--wrapper .xpress-information--grid .xpress-information--carousel {
 	position: relative;
@@ -3790,13 +3788,18 @@ Login Wrapper
 	width: 100%;
 	padding: 60px 0;
 }
-.xpress-category--wrapper .xpress-information--grid {
+.xpress .xpress-category--wrapper .xpress-information--grid {
 	position: relative;
 	width: 100%;
 	margin-top: 60px;
 	display: -webkit-box;
-   	display: -ms-flexbox;
-   	display: flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-direction: normal;
+   -webkit-box-orient: vertical;
+   -webkit-flex-direction: column;
+   -ms-flex-direction: column;
+   flex-direction: column;
 }
 .xpress-category--wrapper .xpress-information--grid .xpress-thumbnail--wrap {
 	position: relative;
@@ -3864,6 +3867,16 @@ Login Wrapper
 	width: 100%;
 	padding: 60px;
 }
+.xpress-enquiry--form .form-control {
+   background: #efefef;
+   min-height: 56px;
+   border: none;
+}
+.plus-enquiry--form .form-control {
+   background: #efefef;
+   min-height: 56px;
+   border: none;
+}
 .xpress-enquiry--wrapper .xpress-enquiry--form .form-row {
 	margin-bottom: 20px;
 }
@@ -3872,12 +3885,14 @@ Login Wrapper
 }
 .xpress-enquiry--wrapper .xpress-enquiry--form input[type="submit"] {
    background: #ed1651;
-   padding: 13px 24px;
+   padding: 16px 45px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
+   font-weight: 600;
    color: #ffffff;
    border: 0;
-   font-size: 13px;
+   font-size: 17px;
+   letter-spacing: 0.05em;
    margin: 0;
    text-decoration: none;
    text-transform: uppercase;
@@ -3960,6 +3975,40 @@ Login Wrapper
       max-width: 535px;
       width: 100%;
       text-align: center;
+   }
+   .xpress .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 18%;
+      left: 0%;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+   }
+   .xpress .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-weight: 300;
+      color: #454545;
+      font-size: 24px;
+      line-height: 35px;
+   }
+   .xpress .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      font-weight: 600;
+   }
+   .plus .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 18%;
+      left: 0%;
+      max-width: 100%;
+      width: 100%;
+      text-align: center;
+   }
+   .plus .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-weight: 300;
+      color: #454545;
+      font-size: 24px;
+      line-height: 35px;
+   }
+   .plus .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      font-weight: 600;
    }
    .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
       color: #6d0024;
@@ -4179,7 +4228,25 @@ Login Wrapper
       border-bottom-left-radius: 40%;
       min-height: 269px;
       padding: 26px 12px;
-      box-shadow: 2px 2px 10px #cacaca;
+      box-shadow: 2px 2px 10px #bebebe;
+   }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 20%;
+      background: transparent;
+      box-shadow: none;
+      max-width: 100%;
+      text-align: center;
+   }
+   .care .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      color: #6d0024;
+      font-weight: 400;
+      font-size: 27px;
+      line-height: 39px;
+      text-transform: none;
+   }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      display: block;
    }
    .category-banner--wrapper.assign-text--left .slideshow-details--wrap .slideshow-details--action {
       position: relative;
@@ -4680,6 +4747,22 @@ Login Wrapper
       padding-top: 60px;
       padding-right: 15px;
    }
+   .xpress .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 39px;
+      line-height: 50px;
+   }
+   .plus .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 39px;
+      line-height: 50px;
+   }
+   .support-description--text {
+      position: relative;
+      width: 100%;
+      padding: 60px 60px 0px 60px;
+   }
+   .support-form--care .support-form--wrap {
+      padding: 30px 60px;
+   }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--buttons a {
       color: #3f757f;
       background: #d2e8ec;
@@ -4990,34 +5073,6 @@ Login Wrapper
 	.hero-slideshow--wrapper .slideshow-details--wrap .message-rounded--wrap {
 	    top: 80px;
 	}
-	.xpress-carousel--wrapper .xpress-information--grid {
-		-webkit-box-direction: normal;
-    	-webkit-box-orient: horizontal;
-    	-webkit-flex-direction: row;
-    	-ms-flex-direction: row;
-    	flex-direction: row;
-	}
-	.xpress-category--wrapper .xpress-information--grid {
-		-webkit-box-direction: normal;
-    	-webkit-box-orient: horizontal;
-    	-webkit-flex-direction: row;
-    	-ms-flex-direction: row;
-    	flex-direction: row;
-	} 
-	.plus-carousel--wrapper .plus-information--grid {
-		-webkit-box-direction: normal;
-    	-webkit-box-orient: horizontal;
-    	-webkit-flex-direction: row;
-    	-ms-flex-direction: row;
-    	flex-direction: row;
-	}
-	.plus-category--wrapper .plus-information--grid {
-		-webkit-box-direction: normal;
-    	-webkit-box-orient: horizontal;
-    	-webkit-flex-direction: row;
-    	-ms-flex-direction: row;
-    	flex-direction: row;
-	}
 	.xpress-enquiry--wrapper .xpress-enquiry--form {
 	    padding: 60px;
 	}
@@ -5067,9 +5122,48 @@ Login Wrapper
    .hide--this {
       display: block;
    }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 20%;
+      background: transparent;
+      box-shadow: none;
+      max-width: 100%;
+      text-align: center;
+   }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      display: block;
+   }
 }
 
 @media only screen and (min-width: 992px) { 
+   .xpress .xpress-carousel--wrapper .xpress-information--grid {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+   }
+   .xpress .xpress-category--wrapper .xpress-information--grid {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+   } 
+   .plus .plus-carousel--wrapper .plus-information--grid {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+   }
+   .plus .plus-category--wrapper .plus-information--grid {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+   }
    .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list {
       position: relative;
       width: 100%;
@@ -5246,8 +5340,8 @@ Login Wrapper
    }
    .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
-      top: 42%;
-      left: 10%;
+      top: 32%;
+      left: 7%;
       max-width: 535px;
       width: 100%;
       z-index: 111;
@@ -5256,7 +5350,28 @@ Login Wrapper
       border-bottom-left-radius: 40%;
       min-height: 349px;
       padding: 60px 30px;
-      box-shadow: 2px 2px 10px #cacaca;
+      box-shadow: 2px 2px 10px #bebebe;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+   }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 32%;
+      left: 7%;
+      max-width: 535px;
+      width: 100%;
+      z-index: 111;
+      background: transparent;
+      border-top-right-radius: 40%;
+      border-bottom-left-radius: 40%;
+      min-height: 349px;
+      padding: 60px 30px;
+      box-shadow: 2px 2px 10px #bebebe;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -5286,13 +5401,36 @@ Login Wrapper
       -webkit-align-items: center;
       align-items: center;
    }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      max-width: 575px;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-weight: 300;
+      color: #454545;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      font-weight: 600;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      max-width: 575px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-weight: 300;
+      color: #454545;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      font-weight: 600;
+   }
    .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
       font-size: 36px;
       line-height: 49px;
-      font-weight: 400;
+      font-weight: 300;
       letter-spacing: 0;
       color: #2e2e2e;
       text-align: left;
+   }
+   .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
+      font-weight: 600;
    }
    .single-product--carousel .col-12.col-sm-12.col-md-6.col-lg-6.col-xl-6:nth-child(1) {
       order: 0;
@@ -5529,6 +5667,26 @@ Login Wrapper
       padding: 75px 0;
       overflow: hidden;
    }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 39%;
+      left: 46%;
+      max-width: 520px;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 32px;
+      line-height: 43px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 39%;
+      left: 46%;
+      max-width: 520px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 32px;
+      line-height: 43px;
+   }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -5593,6 +5751,26 @@ Login Wrapper
    }
    .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--one, .store-ui--wrapper .store-gallery--wrap .store-gallery--ui .gallery-image--two {
       max-height: 273px;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 39%;
+      left: 46%;
+      max-width: 575px;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 39px;
+      line-height: 50px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 39%;
+      left: 46%;
+      max-width: 575px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
+      font-size: 39px;
+      line-height: 50px;
    }
 }
 
@@ -5747,6 +5925,10 @@ Login Wrapper
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
       right: -260px;
    }
+   .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap {
+      top: 42%;
+      left: 10%;
+   }
 }
 
 @media only screen and (min-width: 1220px) {
@@ -5859,6 +6041,18 @@ Login Wrapper
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
       right: -210px;
+   }
+   .xpress .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 42%;
+      left: 56%;
+      max-width: 575px;
+   }
+   .plus .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 42%;
+      left: 56%;
+      max-width: 575px;
    }
 }
 
