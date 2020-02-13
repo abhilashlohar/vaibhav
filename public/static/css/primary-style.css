@@ -40,6 +40,9 @@ p {
 button {
    outline: none !important;
 }
+.bg-light {
+    background-color: #fcfcfc!important;
+}
 .btn.focus, .btn:focus {
     outline: 0;
     box-shadow: none;
@@ -2631,10 +2634,20 @@ Shopping Cart
 .shopping-cart--wrapper .shopping-cart--items {
    position: relative;
    width: 100%;
+   font-size: 15px;
+   line-height: 23px;
 }
 .shopping-cart--wrapper .shopping-cart--values {
    position: relative;
    width: 100%;
+   background: #fcfcfc;
+   border-radius: 4px;
+   border-top-right-radius: 32%;
+   border-bottom-left-radius: 32%;
+   padding: 0px 20px 27px 20px;
+}
+.shopping-cart--items th {
+   padding: 5px;
 }
 
 /* ==================================================== 
@@ -2675,7 +2688,8 @@ Checkout Wrapper
    border-radius: 7px;
    color: #ffffff;
    border: 0;
-   font-size: 18px;
+   font-size: 15px;
+   font-weight: 600;
    margin: 0;
    display: inline-block;
    text-decoration: none;
