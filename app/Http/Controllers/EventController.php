@@ -144,7 +144,7 @@ class EventController extends Controller
             $Order->razorpay_signature = $razorpay_signature;
             $Order->save();
             return redirect()->route('event.academy')
-                        ->with('success','Order placed successfully');
+                        ->with('success','Event ticket booked successfully.');
         }
         else
         {

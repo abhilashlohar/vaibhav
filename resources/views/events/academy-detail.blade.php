@@ -20,6 +20,11 @@
              <div class="title-text--middle">
                 <h2>Event Title</h2>
              </div>
+            @if(Session::has('error'))
+                <div class="alert alert-danger" role="alert" data-dismiss="alert">
+                    {{ Session::get('error') }}
+                </div>
+            @endif
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
