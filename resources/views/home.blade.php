@@ -2,7 +2,12 @@
 
 @section ('content')
 
-   <section class="hero-slideshow--wrapper">
+    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
+
+      
+
+    <section class="hero-slideshow--wrapper">
       <div class="container-fluid">
          <div class="row">
             <div class="owl-carousel hero-slideshow owl-theme">
@@ -31,7 +36,13 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
+
+
+    <h1>Social Icons</h1>
+    <div id="share"></div>
+
+
 
     @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
     <section class="category-ui--one">
@@ -270,7 +281,7 @@
     @endif
 
     @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
-   <section class="category-ui--two">
+    <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -426,10 +437,10 @@
             </div>
          </div>
       </div>
-   </section>
-   @endif
+    </section>
+    @endif
 
-   <section class="store-ui--wrapper">
+    <section class="store-ui--wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -493,9 +504,9 @@
            </div>
          </div>
       </div>
-   </section>
+    </section>
 
-   <section class="verticals-ui--wrapper mobile-specific">
+    <section class="verticals-ui--wrapper mobile-specific">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -633,9 +644,9 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
 
-   <section class="verticals-ui--wrapper">
+    <section class="verticals-ui--wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -733,9 +744,9 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
 
-   <section class="thumbnails-ui--two">
+    <section class="thumbnails-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -808,9 +819,9 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
 
-   <section class="follow-ui--wrapper">
+    <section class="follow-ui--wrapper">
       <div class="container-fluid">
          <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -849,6 +860,20 @@
             </div>
          </div>
       </div>
-   </section>
+    </section>
 
+@endsection
+
+
+@section ('footer-script')
+    <script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+    <script>
+        $("#share").jsSocials({
+            url: "http://www.google.com",
+            text: "Google Search Page",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "whatsapp"]
+        });
+    </script>
 @endsection

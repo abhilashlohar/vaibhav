@@ -20,7 +20,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except('home','mail','cartItem','headerCategories','advanceSearch');
+        $this->middleware('auth')->except('home','mail','cartItem','headerCategories','advanceSearch', 'page');
     }
 
     /**
@@ -108,6 +108,7 @@ class HomeController extends Controller
         ->get();
         return $headerCategories;
     }
+
     public function advanceSearch(Request $request, $search)
     {
         $products = Product::where([
@@ -129,6 +130,11 @@ class HomeController extends Controller
             $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>''];
         }
         return response()->json($data);
+    }
+
+    public function page($page)
+    {
+        return $page; exit();
     }
 
 }
