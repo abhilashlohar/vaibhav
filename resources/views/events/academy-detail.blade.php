@@ -28,6 +28,7 @@
                 <div class="academy-information--image">
                    <img src="{{ asset('storage/event/'.$event->id.'/'.$event->image) }}" alt=""/>
                 </div>
+                @if ($event->date >= date('Y-m-d'))
                 <div class="academy-information--book">
                     <a href="#" data-toggle="modal" data-target="#ticket_modal">Book Your Tickets</a>
                     <form  action="{{ route('event.academyBuy', $event->id) }}" method="POST"  class="kt-form" id="event-form" name="razorpayform">
@@ -77,6 +78,7 @@
                         <input type="hidden" name="razorpay_signature"  id="razorpay_signature">
                     </form>
                 </div>
+                @endif
              </div>
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="academy-information--text">
