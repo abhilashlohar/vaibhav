@@ -39,6 +39,7 @@ class EventController extends Controller
         $keySecret = 'EXduVTbD30P8JPrdpXAnKt98';
         $api = new Api($keyId, $keySecret);
         $amount = number_format($event->price, 0);
+        dd($amount);
         $orderData = [
             'receipt'         => 3456,
             'amount'          => $amount, // 2000 rupees in paise

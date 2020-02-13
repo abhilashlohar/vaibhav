@@ -122,7 +122,7 @@
                 <!-- Right Cart Values -->
                 <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                     <div class="shopping-cart--values">
-                        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                        <div class="rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
                         <div class="p-4">
 
                             <ul class="list-unstyled mb-4">

@@ -121,7 +121,7 @@
                     <form action="{{ route('addTocart') }}" method="POST">
                         @csrf
                         <div class="ecommerce-item--name">
-                            <h3>{{$product->name}}</h3>
+                            <h3>{{$product->name}} - {{$product->subCategory->name}}</h3>
                         </div>
                         <div class="ecommerce-item--excerpt">
                             <p>{{$product->short_description}}</p>
