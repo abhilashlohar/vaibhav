@@ -5,8 +5,6 @@
     <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
 
-      
-
     <section class="hero-slideshow--wrapper">
       <div class="container-fluid">
          <div class="row">
@@ -37,12 +35,6 @@
          </div>
       </div>
     </section>
-
-
-    <h1>Social Icons</h1>
-    <div id="share"></div>
-
-
 
     @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
     <section class="category-ui--one">
@@ -271,7 +263,16 @@
                            <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
                         </ul>
                      </div>
-                     <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                     <div class="ecommerce-item--share">
+                         <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                           <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                        </a>
+                        <div class="collapse" id="share-social">
+                          <div class="card card-body">
+                              <div id="share"></div>
+                          </div>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>

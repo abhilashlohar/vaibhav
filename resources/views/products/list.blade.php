@@ -2,43 +2,37 @@
 
 @section ('content')
 
-   <section class="category-banner--wrapper">
+   <section class="category-banner--wrapper assign-text--left">
       <div class="container-fluid">
          <div class="row">
             <div class="owl-carousel category-slideshow owl-theme">
                <div class="item">
                   <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/furniture-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/furniture-banner-01-mobile.png" alt="" title="">
-                     </div>
                      <div class="message-rounded--wrap">
-                        <h1>The <span>style statement</span> of<br/> your home</h1>
+                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
+                        <div class="slideshow-details--action">
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/furniture-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/furniture-banner-01-mobile.png" alt="" title="">
-                     </div>
                      <div class="message-rounded--wrap">
-                        <h1>The style statement of your home</h1>
+                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
+                        <div class="slideshow-details--action">
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
                      </div>
                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <section class="quick-message--ui">
-      <div class="container">
-         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
-               <div class="quick-message--wrap">
-                  <p>- Prices are inclusive of all taxes -</p>
                </div>
             </div>
          </div>
