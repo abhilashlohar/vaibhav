@@ -3,7 +3,7 @@
 @section ('content')
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="kt-portlet">
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
