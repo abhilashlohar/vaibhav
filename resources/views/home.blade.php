@@ -83,10 +83,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-furniture-0" role="button" aria-expanded="false" aria-controls="share-social-furniture-0">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-furniture-0">
                               <div class="card card-body">
                                   <div id="FurnitureShare0"></div>
                               </div>
@@ -127,10 +127,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-furniture-1" role="button" aria-expanded="false" aria-controls="share-social-furniture-1">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-furniture-1">
                               <div class="card card-body">
                                   <div id="FurnitureShare1"></div>
                               </div>
@@ -171,10 +171,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-furniture-2" role="button" aria-expanded="false" aria-controls="share-social-furniture-2">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-furniture-2">
                               <div class="card card-body">
                                   <div id="FurnitureShare2"></div>
                               </div>
@@ -215,10 +215,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-furniture-3" role="button" aria-expanded="false" aria-controls="share-social-furniture-3">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-furniture-3">
                               <div class="card card-body">
                                   <div id="FurnitureShare3"></div>
                               </div>
@@ -304,10 +304,10 @@
                         </ul>
                      </div>
                      <div class="ecommerce-item--share">
-                         <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                         <a class="share-this" data-toggle="collapse" href="#share-social-consumable" role="button" aria-expanded="false" aria-controls="share-social-consumable">
                            <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                         </a>
-                        <div class="collapse" id="share-social">
+                        <div class="collapse" id="share-social-consumable">
                           <div class="card card-body">
                               <div id="ConsumablesShare"></div>
                           </div>
@@ -368,10 +368,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-electrical-0" role="button" aria-expanded="false" aria-controls="share-social-electrical-0">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-electrical-0">
                               <div class="card card-body">
                                   <div id="ElectricalsShare0"></div>
                               </div>
@@ -412,10 +412,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-electrical-1" role="button" aria-expanded="false" aria-controls="share-social-electrical-1">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-electrical-1">
                               <div class="card card-body">
                                   <div id="ElectricalsShare1"></div>
                               </div>
@@ -459,10 +459,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-electrical-2" role="button" aria-expanded="false" aria-controls="share-social-electrical-2">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-electrical-2">
                               <div class="card card-body">
                                   <div id="ElectricalsShare2"></div>
                               </div>
@@ -500,10 +500,10 @@
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                             <a class="share-this" data-toggle="collapse" href="#share-social-electrical-3" role="button" aria-expanded="false" aria-controls="share-social-electrical-3">
                                <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                             </a>
-                            <div class="collapse" id="share-social">
+                            <div class="collapse" id="share-social-electrical-3">
                               <div class="card card-body">
                                   <div id="ElectricalsShare3"></div>
                               </div>
