@@ -87,10 +87,10 @@
     <div class="container-fluid">
         @foreach($products as $product)
        <div class="single-excerpt--grid">
-          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
+                  <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
@@ -98,7 +98,7 @@
                         @endforeach
                    </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div id="big-{{$index++}}" class="owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item zoom zoomin">
@@ -109,7 +109,7 @@
                 </div>
              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ordering-thumbs">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
                     <form action="{{ route('addTocart') }}" method="POST">
