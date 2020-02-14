@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
 use File;
+use Illuminate\Support\Str;
 
 class CategoryController extends Controller
 {
@@ -20,7 +21,7 @@ class CategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        // $this->middleware(UserRightsAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
@@ -54,9 +55,26 @@ class CategoryController extends Controller
         if ($request->hasFile('image_add')) {
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
             $path = $request->image_add->storeAs('category', $fileName);
             $request->request->add(['image' => $fileName]);
+        }
+        if ($request->hasFile('banner_image_mobile_add')) {
+            $file = $request->banner_image_mobile_add;
+            $extension = $request->banner_image_mobile_add->extension();
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
+            $path = $request->banner_image_mobile_add->storeAs('category', $fileName);
+            $request->request->add(['banner_image_mobile' => $fileName]);
+        }
+        if ($request->hasFile('banner_image_desktop_add')) {
+            $file = $request->banner_image_desktop_add;
+            $extension = $request->banner_image_desktop_add->extension();
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
+            $path = $request->banner_image_desktop_add->storeAs('category', $fileName);
+            $request->request->add(['banner_image_desktop' => $fileName]);
         }
         Category::create($request->all());
 
@@ -85,16 +103,34 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $request->validate(Category::rules($category->id), Category::messages());
+        $destinationPath = storage_path('app/public/category');
         if($request->hasFile('image_add'))
         {
-            $destinationPath = storage_path('app/public/category');
-
             File::delete($destinationPath.'/'.$category->image);  /// Unlink File
             $file = $request->image_add;
             $extension = $request->image_add->extension();
-            $fileName = time().'.'.$extension;
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
             $path = $request->image_add->storeAs('category', $fileName);
             $request->request->add(['image' => $fileName]);
+        }
+        if ($request->hasFile('banner_image_mobile_add')) {
+            File::delete($destinationPath.'/'.$category->banner_image_mobile);  /// Unlink File
+            $file = $request->banner_image_mobile_add;
+            $extension = $request->banner_image_mobile_add->extension();
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
+            $path = $request->banner_image_mobile_add->storeAs('category', $fileName);
+            $request->request->add(['banner_image_mobile' => $fileName]);
+        }
+        if ($request->hasFile('banner_image_desktop_add')) {
+            File::delete($destinationPath.'/'.$category->banner_image_desktop);  /// Unlink File
+            $file = $request->banner_image_desktop_add;
+            $extension = $request->banner_image_desktop_add->extension();
+            $fileNameString = (string) Str::uuid();
+            $fileName = $fileNameString.time().'.'.$extension;
+            $path = $request->banner_image_desktop_add->storeAs('category', $fileName);
+            $request->request->add(['banner_image_desktop' => $fileName]);
         }
 
         $category->update($request->all());

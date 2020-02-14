@@ -76,6 +76,47 @@
                     </div>
 
                     <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="banner-image-mobile">Banner Image Mobile *</label>
+                                <input type="file" name="banner_image_mobile_add" accept="png, jpg, jpeg"  class="form-control @error('banner_image_mobile_add') is-invalid @enderror">
+                                <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+                                @error('banner_image_mobile_add')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <div class="kt-avatar kt-avatar--outline" id="banner_image_mobile">
+                                    <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->banner_image_mobile) }}')"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <label for="banner-image-desktop">Banner Image Desktop *</label>
+                                <input type="file" name="banner_image_desktop_add" accept="png, jpg, jpeg"  class="form-control @error('banner_image_desktop_add') is-invalid @enderror">
+                                <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+
+                                @error('banner_image_desktop_add')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="col-md-4">
+                                <div class="kt-avatar kt-avatar--outline" id="banner_image_mobile">
+                                    <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->banner_image_desktop) }}')"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
                         <label for="sequence">Template Type *</label><br><br>
                         <input name="template_type" id="template_type"  data-switch="true" type="checkbox" data-handle-width="70" data-on-text="List" data-off-text="Grid" data-on-color="brand" @if($category->template_type=='list') checked="checked" @endif >
                     </div>

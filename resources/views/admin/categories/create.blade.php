@@ -51,11 +51,35 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="sequence">Category Image *</label>
+                        <label for="category-image">Category Image *</label>
                         <input type="file" name="image_add" accept="png, jpg, jpeg"  class="form-control @error('image_add') is-invalid @enderror" required="required">
                         <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
 
                         @error('image_add')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-image-mobile">Banner Image Mobile *</label>
+                        <input type="file" name="banner_image_mobile_add" accept="png, jpg, jpeg"  class="form-control @error('banner_image_mobile_add') is-invalid @enderror" required="required">
+                        <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+
+                        @error('banner_image_mobile_add')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner-image-desktop">Banner Image Desktop *</label>
+                        <input type="file" name="banner_image_desktop_add" accept="png, jpg, jpeg"  class="form-control @error('banner_image_desktop_add') is-invalid @enderror" required="required">
+                        <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+
+                        @error('banner_image_desktop_add')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>

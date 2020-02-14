@@ -51,7 +51,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
     Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
     Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
-    
+
 });
 
 
@@ -85,7 +85,7 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('blog-categories','admin\BlogCategoryController');
     Route::resource('blogs','admin\BlogController');
     Route::post('blogs/upload-img','admin\BlogController@uploadImg')->name('blogs.uploadImg');
-    
+
     Route::resource('pages','admin\PageController');
     Route::post('pages/upload-img','admin\PageController@uploadImg')->name('pages.uploadImg');
 
@@ -105,6 +105,8 @@ Route::prefix('sarkar')->group(function () {
     Route::get('/customers', 'admin\CustomerController@index')->name('customer.index');
     Route::get('/customer/orders', 'admin\CustomerController@order')->name('customer.order');
     Route::get('/customer/order-details/{id}', 'admin\CustomerController@orderDetail')->name('customer.orderDetail');
+
+    Route::resource('brands','admin\BrandController');
 
 });
 

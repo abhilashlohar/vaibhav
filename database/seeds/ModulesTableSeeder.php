@@ -58,7 +58,13 @@ class ModulesTableSeeder extends Seeder {
             ['id' => 49, 'name' => 'EventController@order'],
             ['id' => 50, 'name' => 'CustomerController@index'],
             ['id' => 51, 'name' => 'CustomerController@order'],
-            ['id' => 52, 'name' => 'CustomerController@orderDetail']
+            ['id' => 52, 'name' => 'CustomerController@orderDetail'],
+            ['id' => 53, 'name' => 'BrandController@index'],
+            ['id' => 54, 'name' => 'BrandController@create'],
+            ['id' => 55, 'name' => 'BrandController@store'],
+            ['id' => 56, 'name' => 'BrandController@edit'],
+            ['id' => 57, 'name' => 'BrandController@update'],
+            ['id' => 58, 'name' => 'BrandController@destroy']
         ];
 
         DB::table('modules')->insertOrIgnore($users);
