@@ -151,7 +151,16 @@
                                 {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
                             </ul>
                         </div>
-                        <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="share_{{$product->id}}"></div>
+                              </div>
+                            </div>
+                         </div>
                     </form>
                 </div>
              </div>
@@ -161,6 +170,21 @@
     </div>
 </section>
 
+@endsection
+
+@section ('footer-script')
+<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+<script>
+    @foreach($products as $product)
+        $("#share_{{$product->id}}").jsSocials({
+            url: "<?php echo url('/'); ?>/product/<?php echo $product->slug; ?>",
+            text: "<?php echo $product->name; ?>",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "whatsapp"]
+        });
+    @endforeach
+</script>
 @endsection
 
 
