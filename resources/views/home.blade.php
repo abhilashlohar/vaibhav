@@ -82,6 +82,16 @@
                               <li><a href="{{route('products.product-detail',$furnitureProducts[0]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="FurnitureShare0"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$furnitureProducts[0]->product_image_primary->image) }}" alt="{{ $furnitureProducts[0]->name }}" title="{{ $furnitureProducts[0]->name }}"/>
@@ -116,6 +126,16 @@
                               <li><a href="{{route('products.product-detail',$furnitureProducts[1]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="FurnitureShare1"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$furnitureProducts[1]->product_image_primary->image) }}" alt="{{ $furnitureProducts[1]->name }}" title="{{ $furnitureProducts[1]->name }}"/>
@@ -150,6 +170,16 @@
                               <li><a href="{{route('products.product-detail',$furnitureProducts[2]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="FurnitureShare2"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                        <img src="{{ asset('storage/product/'.$furnitureProducts[2]->product_image_primary->image) }}" alt="{{ $furnitureProducts[2]->name }}" title="{{ $furnitureProducts[2]->name }}"/>
@@ -184,6 +214,16 @@
                               <li><a href="{{route('products.product-detail',$furnitureProducts[3]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="FurnitureShare3"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$furnitureProducts[3]->product_image_primary->image) }}" alt="{{ $furnitureProducts[3]->name }}" title="{{ $furnitureProducts[3]->name }}"/>
@@ -269,7 +309,7 @@
                         </a>
                         <div class="collapse" id="share-social">
                           <div class="card card-body">
-                              <div id="share"></div>
+                              <div id="ConsumablesShare"></div>
                           </div>
                         </div>
                      </div>
@@ -327,6 +367,16 @@
                               <li><a href="{{route('products.product-detail',$electricalsProducts[0]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="ElectricalsShare0"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$electricalsProducts[0]->product_image_primary->image) }}" alt="{{ $electricalsProducts[0]->name }}" title="{{ $electricalsProducts[0]->name }}"/>
@@ -361,6 +411,16 @@
                               <li><a href="{{route('products.product-detail',$electricalsProducts[1]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="ElectricalsShare1"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$electricalsProducts[1]->product_image_primary->image) }}" alt="{{ $electricalsProducts[1]->name }}" title="{{ $electricalsProducts[1]->name }}"/>
@@ -398,6 +458,16 @@
                               <li><a href="{{route('products.product-detail',$electricalsProducts[2]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="ElectricalsShare2"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                   </div>
                </div>
@@ -429,6 +499,16 @@
                               <li><a href="{{route('products.product-detail',$electricalsProducts[3]->slug)}}">Explore</a></li>
                            </ul>
                         </div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="ElectricalsShare3"></div>
+                              </div>
+                            </div>
+                         </div>
                      </div>
                      <div class="ecommerce-item--image">
                         <img src="{{ asset('storage/product/'.$electricalsProducts[3]->product_image_primary->image) }}" alt="{{ $electricalsProducts[3]->name }}" title="{{ $electricalsProducts[3]->name }}"/>
@@ -869,12 +949,82 @@
 @section ('footer-script')
     <script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
     <script>
-        $("#share").jsSocials({
-            url: "http://www.google.com",
-            text: "Google Search Page",
-            showLabel: false,
-            showCount: "inside",
-            shares: ["twitter", "facebook", "whatsapp"]
-        });
+        @if ($consumablesProduct)
+            $("#ConsumablesShare").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $consumablesProduct->slug; ?>",
+                text: "<?php echo $consumablesProduct->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+        @endif
+
+        @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
+            $("#FurnitureShare0").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[0]->slug; ?>",
+                text: "<?php echo $furnitureProducts[0]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#FurnitureShare1").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[1]->slug; ?>",
+                text: "<?php echo $furnitureProducts[1]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#FurnitureShare2").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[2]->slug; ?>",
+                text: "<?php echo $furnitureProducts[2]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#FurnitureShare3").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[3]->slug; ?>",
+                text: "<?php echo $furnitureProducts[3]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+        @endif
+
+        @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
+            $("#ElectricalsShare0").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[0]->slug; ?>",
+                text: "<?php echo $electricalsProducts[0]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#ElectricalsShare1").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[1]->slug; ?>",
+                text: "<?php echo $electricalsProducts[1]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#ElectricalsShare2").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[2]->slug; ?>",
+                text: "<?php echo $electricalsProducts[2]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+
+            $("#ElectricalsShare3").jsSocials({
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[3]->slug; ?>",
+                text: "<?php echo $electricalsProducts[3]->name; ?>",
+                showLabel: false,
+                showCount: "inside",
+                shares: ["twitter", "facebook", "whatsapp"]
+            });
+        @endif
     </script>
 @endsection
