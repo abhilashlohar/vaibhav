@@ -2,43 +2,37 @@
 
 @section ('content')
 
-   <section class="category-banner--wrapper">
+   <section class="category-banner--wrapper assign-text--left">
       <div class="container-fluid">
          <div class="row">
             <div class="owl-carousel category-slideshow owl-theme">
                <div class="item">
                   <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/furniture-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/furniture-banner-01-mobile.png" alt="" title="">
-                     </div>
                      <div class="message-rounded--wrap">
-                        <h1>The <span>style statement</span> of<br/> your home</h1>
+                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
+                        <div class="slideshow-details--action">
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/furniture-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/furniture-banner-01-mobile.png" alt="" title="">
-                     </div>
                      <div class="message-rounded--wrap">
-                        <h1>The style statement of your home</h1>
+                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
+                        <div class="slideshow-details--action">
+                           <a href="#">Shop Now</a>
+                        </div>
+                     </div>
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
                      </div>
                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-
-   <section class="quick-message--ui">
-      <div class="container">
-         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
-               <div class="quick-message--wrap">
-                  <p>- Prices are inclusive of all taxes -</p>
                </div>
             </div>
          </div>
@@ -93,10 +87,10 @@
     <div class="container-fluid">
         @foreach($products as $product)
        <div class="single-excerpt--grid">
-          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
+                  <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
@@ -104,7 +98,7 @@
                         @endforeach
                    </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                 <div id="big-{{$index++}}" class="owl-carousel owl-theme">
                         @foreach ($product->productImages as $item)
                         <div class="item zoom zoomin">
@@ -115,7 +109,7 @@
                 </div>
              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ordering-thumbs">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
                     <form action="{{ route('addTocart') }}" method="POST">
@@ -157,7 +151,16 @@
                                 {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
                             </ul>
                         </div>
-                        <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social_{{$product->id}}" role="button" aria-expanded="false" aria-controls="share-social_{{$product->id}}">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social_{{$product->id}}">
+                              <div class="card card-body">
+                                  <div id="share_{{$product->id}}"></div>
+                              </div>
+                            </div>
+                         </div>
                     </form>
                 </div>
              </div>
@@ -167,6 +170,21 @@
     </div>
 </section>
 
+@endsection
+
+@section ('footer-script')
+<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+<script>
+    @foreach($products as $product)
+        $("#share_{{$product->id}}").jsSocials({
+            url: "<?php echo url('/'); ?>/product/<?php echo $product->slug; ?>",
+            text: "<?php echo $product->name; ?>",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "whatsapp"]
+        });
+    @endforeach
+</script>
 @endsection
 
 

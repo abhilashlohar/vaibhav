@@ -65,7 +65,16 @@
                                 {{-- <li><a href="#" type="button" data-toggle="modal" data-target="#add-query">Add To Query</a></li> --}}
                             </ul>
                         </div>
-                        <div class="share"><i class="fa fa-share-alt" aria-hidden="true"></i> Share</div>
+                        <div class="ecommerce-item--share">
+                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                            </a>
+                            <div class="collapse" id="share-social">
+                              <div class="card card-body">
+                                  <div id="share"></div>
+                              </div>
+                            </div>
+                         </div>
                     </form>
                 </div>
              </div>
@@ -316,4 +325,14 @@
 
 @section ('footer-script')
 <script src="<?php echo url('/'); ?>/static/js/jquery.zoom.min.js"></script>
+<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+<script>
+    $("#share").jsSocials({
+        url: "<?php echo url('/'); ?>/product/<?php echo $product->slug; ?>",
+        text: "<?php echo $product->name; ?>",
+        showLabel: false,
+        showCount: "inside",
+        shares: ["twitter", "facebook", "whatsapp"]
+    });
+</script>
 @endsection
