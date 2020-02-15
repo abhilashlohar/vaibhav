@@ -52,6 +52,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
     Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
     Route::get('/brand-list','BrandController@list')->name('brand.list');
+    Route::get('/brand-detail/{id}','BrandController@detail')->name('brand.detail');
 
 });
 

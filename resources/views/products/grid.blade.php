@@ -151,38 +151,3 @@
    </section>
 
 @endsection
-
-{{-- @section ('footer-script')
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            $(document).on('click','.addToCart',function(e){
-                e.preventDefault();
-                var product_id = $(this).attr('href');
-                $.ajax({
-                type:'POST',
-                url:"{{ route('addTocart') }}",
-                data:{product_id:product_id},
-                success:function(data){
-                    console.log(data);
-                },
-                complete: function (data) {
-                    $.ajax({
-                        type:'get',
-                        url:"{{ route('getCookie') }}",
-                        success:function(data){
-                            console.log(data);
-                        }
-                    });
-                }
-                });
-            });
-        });
-    </script>
-@endsection --}}
-

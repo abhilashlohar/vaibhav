@@ -14,8 +14,20 @@ class BrandController extends Controller
         ])->get();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
-        $body_class = 'brand';
+        $body_class = 'brand-list';
         return view('brands.list',compact('page_title','body_class', 'brands'));
+
+    }
+
+    public function detail($id)
+    {
+        $brand = Brand::where([
+            ['id', '=', $id],
+            ['deleted', '=', 0]
+        ])->first();
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'brand-detail';
+        return view('brands.detail',compact('page_title','body_class', 'brand'));
 
     }
 }
