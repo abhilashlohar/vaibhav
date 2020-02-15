@@ -2,6 +2,9 @@
 
 @section ('content')
 
+  <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
+  <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
+
    <section class="category-banner--wrapper assign-text--left">
       <div class="container-fluid">
          <div class="row">
@@ -148,7 +151,7 @@
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                     <button type="submit">Add To Cart</button>
                                 </li>
-                                {{-- <li><a href="#" target="_blank">Explore</a></li> --}}
+                                <li><a href="#" target="_blank">Explore</a></li>
                             </ul>
                         </div>
                         <div class="ecommerce-item--share">
