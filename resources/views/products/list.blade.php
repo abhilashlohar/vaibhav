@@ -176,7 +176,7 @@
 @endsection
 
 @section ('footer-script')
-<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>
 <script>
     @foreach($products as $product)
         $("#share_{{$product->id}}").jsSocials({

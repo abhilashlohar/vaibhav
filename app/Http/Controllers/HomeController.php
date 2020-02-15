@@ -9,6 +9,7 @@ use App\Product;
 use App\Enquiry;
 use App\Cart;
 use App\Page;
+use App\Brand;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
@@ -54,11 +55,15 @@ class HomeController extends Controller
                                 ])->with('subCategory.category')->whereHas('category', function($q){
                                     $q->where('name','=','electricals');
                                 })->get();
+        $brands = Brand::where([
+                                    ['show_on_home_page','=',1],
+                                    ['brands.deleted', '=', 0]
+                                ])->get();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
 
-        return view('home', compact('furnitureProducts','consumablesProduct','electricalsProducts','page_title','body_class'));
+        return view('home', compact('furnitureProducts','consumablesProduct','electricalsProducts','page_title','body_class', 'brands'));
     }
 
     public function mail()

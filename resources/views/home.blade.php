@@ -835,68 +835,45 @@
                   <h2>Our Channel Partners</h2>
                </div>
                <div class="title-text--action">
-                  <a href="" target="_blank">View All</a>
+               <a href="{{ route('brand.list')}}">View All</a>
                </div>
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="owl-carousel partner-slideshow owl-theme">
                <!-- Slide 01 -->
-               <div class="item">
-                  <div class="thumbnail-block--wrap">
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                        <div class="thumbnail-brand--ui">
-                           <div class="thumbnail-brand--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
-                           </div>
+               @foreach ($brands as $brand)
+                    <?php
+                        $brnad_short_descriptions = preg_split('/\r\n|[\r\n]/', $brand->short_description);
+                    ?>
+                    <div class="item">
+                        <div class="thumbnail-block--wrap">
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                <div class="thumbnail-brand--ui">
+                                <div class="thumbnail-brand--logo">
+                                    <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{ $brand->name }}" title="{{ $brand->name }}"/>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
+                                <div class="thumbnail-properties--ui">
+                                <div class="thumbnail-properties--list">
+                                    <ul>
+                                        @foreach ($brnad_short_descriptions as $brnad_short_description)
+                                        <li>{{ $brnad_short_description }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide-thumbnail--this">
+                                <div class="thumbnail-product--image">
+                                    <img src="{{ asset('storage/brand/'.$brand->image) }}" alt="{{ $brand->name }}" title="{{ $brand->name }}"/>
+                                </div>
+                            </div>
                         </div>
-                     </div>
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
-                        <div class="thumbnail-properties--ui">
-                           <div class="thumbnail-properties--list">
-                              <ul>
-                                 <li>Exclusive South Indian Distributors</li>
-                                 <li>Best Prices</li>
-                                 <li>Complete Warranty</li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide-thumbnail--this">
-                        <div class="thumbnail-product--image">
-                           <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <!-- Slide 01 -->
-               <div class="item">
-                  <div class="thumbnail-block--wrap">
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                        <div class="thumbnail-brand--ui">
-                           <div class="thumbnail-brand--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/dm-skincare-logo.png" alt=""/>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
-                        <div class="thumbnail-properties--ui">
-                           <div class="thumbnail-properties--list">
-                              <ul>
-                                 <li>Exclusive South Indian Distributors</li>
-                                 <li>Best Prices</li>
-                                 <li>Complete Warranty</li>
-                              </ul>
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide-thumbnail--this">
-                        <div class="thumbnail-product--image">
-                           <img src="<?php echo url('/'); ?>/static/images/product-image-01.png" alt=""/>
-                        </div>
-                     </div>
-                  </div>
-               </div>
+                    </div>
+               @endforeach
             </div>
          </div>
       </div>
@@ -947,7 +924,7 @@
 
 
 @section ('footer-script')
-    <script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+    <script src="<?php echo url('/'); ?>/share/jssocials.js"></script>
     <script>
         @if ($consumablesProduct)
             $("#ConsumablesShare").jsSocials({
