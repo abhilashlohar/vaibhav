@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::where('deleted',0)->orderBy('name', 'asc')->with('category','subCategory')->paginate(5);
+        $products = Product::where('deleted',0)->orderBy('name', 'asc')->with('category','subCategory')->paginate(50);
         // dd($products);
         return view('admin.products.index',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

@@ -882,6 +882,7 @@ ul.dropDownMenu ul {
    text-align: right;
    direction: rtl;
    padding-top: 30px;
+   z-index: 111;
 }
 .ecommerce-item--name {
    color: #99ab3f;
@@ -1060,6 +1061,82 @@ ul.dropDownMenu ul {
    font-size: 13px;
    border-radius: 4px;
 }
+.category-ui--one .category-block--wrap.green-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--one .category-block--wrap.green-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--one .category-block--wrap.peach-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--one .category-block--wrap.peach-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--one .category-block--wrap.blue-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--one .category-block--wrap.blue-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--one .category-block--wrap.pink-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--one .category-block--wrap.pink-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+
+.category-ui--two .category-block--wrap.green-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--two .category-block--wrap.green-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--two .category-block--wrap.peach-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--two .category-block--wrap.peach-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--two .category-block--wrap.blue-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--two .category-block--wrap.blue-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--two .category-block--wrap.pink-ui .ecommerce-item--share .card-body {
+   display: inline-block;
+}
+.category-ui--two .category-block--wrap.pink-ui .ecommerce-item--share .card-body .jssocials-share-whatsapp .jssocials-share-link {
+   background: #29a628;
+   margin-right: 10px;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details {
+   z-index: unset;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
+   z-index: 222;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--name {
+   z-index: 333;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--price {
+   z-index: 333;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--buttons {
+   z-index: 333;
+}
+.category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--share {
+   z-index: 333;
+}
+
 
 /* =========== Component: Title UI =============== */
 .title-ui--wrap {
