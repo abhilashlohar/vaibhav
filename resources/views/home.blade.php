@@ -36,6 +36,15 @@
       </div>
     </section>
 
+
+    <!-- Need to move into css file -->
+    <style>
+    span.checked {
+      color: #F9B536;
+    }
+    </style>
+    <!-- Need to move into css file -->
+
     @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
     <section class="category-ui--one">
       <div class="container-fluid">
@@ -67,8 +76,15 @@
                               <li class="new-price"> Rs. {{ $furnitureProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                          <div id="rater"></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -111,8 +127,15 @@
                               <li class="new-price">Rs. {{ $furnitureProducts[1]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -155,8 +178,15 @@
                               <li class="new-price">Rs. {{ $furnitureProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -199,8 +229,15 @@
                               <li class="new-price">Rs. {{ $furnitureProducts[3]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -288,9 +325,16 @@
                            <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
                         </ul>
                      </div>
-                     <div class="ecommerce-item--rating">
-                        <div class="rate" data-rate-value=5></div>
-                     </div>
+                     <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
+                        </div>
                      <div class="ecommerce-item--buttons">
                         <ul>
                             <li>
@@ -352,8 +396,15 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -396,8 +447,15 @@
                               <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -443,8 +501,15 @@
                               <li class="new-price">Rs. {{ $electricalsProducts[2]->sale_price }}</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
@@ -484,8 +549,15 @@
                               <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
                            </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                           <div class="rate" data-rate-value=5></div>
+                        <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                }
+                            ?>
                         </div>
                         <div class="ecommerce-item--buttons">
                            <ul>
