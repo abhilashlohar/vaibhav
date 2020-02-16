@@ -13,7 +13,7 @@
     <div class="kt-grid kt-grid--hor kt-grid--root  kt-login kt-login--v1" id="kt_login">
         <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--desktop kt-grid--ver-desktop kt-grid--hor-tablet-and-mobile">
             <!--begin::Aside-->
-            <div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside" style="background-image: url(../../../../../themes/metronic/theme/default/demo1/dist/assets/media/bg/bg-4.jpg);">
+            <div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside" style="background-image: url(<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/bg/bg-4.jpg);">
                 <div class="kt-grid__item">
                     <a href="#" class="kt-login__logo">
                         <img src="<?php echo url('/'); ?>/img/vaibhav-stores.png" width="150px">

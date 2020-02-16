@@ -9,6 +9,10 @@
     }
     </style>
     <!-- Need to move into css file -->
+
+<link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
+
 <section class="single-excerpt--wrapper">
     <div class="container-fluid">
        <div class="single-excerpt--grid">
