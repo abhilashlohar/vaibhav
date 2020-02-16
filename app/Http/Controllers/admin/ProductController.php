@@ -7,6 +7,7 @@ use App\Product;
 use App\ProductImage;
 use App\Category;
 use App\SubCategory;
+use App\MetaData;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
@@ -19,7 +20,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        $this->middleware(UserRightsAuth::class);
+        // $this->middleware(UserRightsAuth::class);
     }
     /**
      * Display a listing of the resource.
@@ -184,5 +185,79 @@ class ProductController extends Controller
 
         return redirect()->route('products.index')
                         ->with('success','Product deleted successfully');
+    }
+
+    public function homepage()
+    {
+        $products = Product::where('deleted',0)->orderBy('name', 'asc')->get();
+
+        $FurnitureProduct1 = MetaData::where('meta_key', 'FurnitureProduct1')->first();
+        if ($FurnitureProduct1) $FurnitureProduct1 = $FurnitureProduct1->meta_value;
+        else $FurnitureProduct1 = null;
+
+        $FurnitureProduct2 = MetaData::where('meta_key', 'FurnitureProduct2')->first();
+        if ($FurnitureProduct2) $FurnitureProduct2 = $FurnitureProduct2->meta_value;
+        else $FurnitureProduct2 = null;
+
+        $FurnitureProduct3 = MetaData::where('meta_key', 'FurnitureProduct3')->first();
+        if ($FurnitureProduct3) $FurnitureProduct3 = $FurnitureProduct3->meta_value;
+        else $FurnitureProduct3 = null;
+
+        $FurnitureProduct4 = MetaData::where('meta_key', 'FurnitureProduct4')->first();
+        if ($FurnitureProduct4) $FurnitureProduct4 = $FurnitureProduct4->meta_value;
+        else $FurnitureProduct4 = null;
+        
+        return view('admin.products.homepage', compact('products', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4'));
+    }
+
+    public function saveHomepage(Request $request)
+    {
+        $FurnitureProduct1 = $request->FurnitureProduct1;
+        $FurnitureProduct2 = $request->FurnitureProduct2;
+        $FurnitureProduct3 = $request->FurnitureProduct3;
+        $FurnitureProduct4 = $request->FurnitureProduct4;
+
+        if (!empty($FurnitureProduct1)) {
+            MetaData::where('meta_key', 'FurnitureProduct1')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'FurnitureProduct1';
+            $MetaData->meta_value = $FurnitureProduct1;
+            $MetaData->save();
+        }
+
+        if (!empty($FurnitureProduct2)) {
+            MetaData::where('meta_key', 'FurnitureProduct2')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'FurnitureProduct2';
+            $MetaData->meta_value = $FurnitureProduct2;
+            $MetaData->save();
+        }
+
+        if (!empty($FurnitureProduct3)) {
+            MetaData::where('meta_key', 'FurnitureProduct3')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'FurnitureProduct3';
+            $MetaData->meta_value = $FurnitureProduct3;
+            $MetaData->save();
+        }
+
+        if (!empty($FurnitureProduct4)) {
+            MetaData::where('meta_key', 'FurnitureProduct4')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'FurnitureProduct4';
+            $MetaData->meta_value = $FurnitureProduct4;
+            $MetaData->save();
+        }
+        
+
+
+
+
+        return redirect()->route('homepage')
+                        ->with('success','Home page content saved.');
     }
 }

@@ -73,7 +73,7 @@
                          <div class="title">
                             <h3>Furniture</h3>
                          </div>
-                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
+                         <img src="{{ asset('storage/category/'.$furnitureCategory->image) }}" alt="Furniture"/>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
@@ -86,7 +86,7 @@
                          <div class="title">
                             <h3>Electricals</h3>
                          </div>
-                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
+                         <img src="{{ asset('storage/category/'.$electricalsCategory->image) }}" alt="Electricals"/>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
@@ -99,7 +99,7 @@
                          <div class="title">
                             <h3>Consumables</h3>
                          </div>
-                         <img src="<?php echo url('/'); ?>/img/furniture-sofa.png" alt=""/>
+                         <img src="{{ asset('storage/category/'.$consumablesCategory->image) }}" alt="Consumables"/>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>

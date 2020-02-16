@@ -4,14 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Enquiry;
+use App\Category;
 
 class EnquiryController extends Controller
 {
     public function care()
     {
+        $consumablesCategory = Category::where('name', 'like', '%consumables%')->first();
+        $furnitureCategory = Category::where('name', 'like', '%furniture%')->first();
+        $electricalsCategory = Category::where('name', 'like', '%electricals%')->first();
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'care';
-        return view('enquiries.care',compact('page_title','body_class'));
+        return view('enquiries.care',compact('page_title','body_class', 'consumablesCategory','furnitureCategory','electricalsCategory'));
     }
 
     public function plus()

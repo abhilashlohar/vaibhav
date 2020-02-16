@@ -82,6 +82,7 @@
                               </div>
                               <div class="slideshow-details--title">
                                  <h4 class="{{($subcategory->slug == $subCategoryData->slug) ? 'active' : ''}}">{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
+                                 
                               </div>
                            </div>
                         </div>

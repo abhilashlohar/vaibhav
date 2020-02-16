@@ -313,7 +313,11 @@
                <div class="single-product--properties">
                   <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
-                        <h3><a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">{{ $consumablesProduct->name }} <span>- {{ $consumablesProduct->subCategory->name }}</span></a></h3>
+                        <h3>
+                            <a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">
+                                {{ $consumablesProduct->name }} <span>- {{ $consumablesProduct->subCategory->name }}</span>
+                            </a>
+                        </h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
                         <p>{{ $consumablesProduct->short_description }}</p>

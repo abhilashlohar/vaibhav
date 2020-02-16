@@ -107,6 +107,10 @@ Route::prefix('sarkar')->group(function () {
     Route::get('/customers', 'admin\CustomerController@index')->name('customer.index');
     Route::get('/customer/orders', 'admin\CustomerController@order')->name('customer.order');
     Route::get('/customer/order-details/{id}', 'admin\CustomerController@orderDetail')->name('customer.orderDetail');
+    
+
+    Route::get('/homepage', 'admin\ProductController@homepage')->name('homepage');
+    Route::post('/saveHomepage', 'admin\ProductController@saveHomepage')->name('saveHomepage');
 
     Route::resource('brands','admin\BrandController');
 
