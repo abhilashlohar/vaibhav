@@ -188,14 +188,14 @@
     $(document).on('click','#search_complaint',function(e){
         e.preventDefault();
         var ticket_no = $('#ticket_no').val();
+        $('#enquiry-complaint-view').html('<div align="center" style="font-size:20px;">Fetching your complaint status.</div>');
         $.ajax({
-        type:'POST',
-        url:"{{ route('enquiry.complaintSearch') }}",
-        data:{ticket_no:ticket_no},
-        success:function(data){
-            console.log(data);
-            $('#enquiry-complaint-view').html(data);
-        }
+            type:'POST',
+            url:"{{ route('enquiry.complaintSearch') }}",
+            data:{ticket_no:ticket_no},
+            success:function(data){
+                $('#enquiry-complaint-view').html(data);
+            }
         });
     });
  });

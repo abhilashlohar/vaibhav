@@ -10,8 +10,8 @@ class EnquiryController extends Controller
 {
     public function care()
     {
-        $consumablesCategory = Category::where('name', 'like', '%consumables%')->first();
         $furnitureCategory = Category::where('name', 'like', '%furniture%')->first();
+        $consumablesCategory = Category::where('name', 'like', '%consumables%')->first();
         $electricalsCategory = Category::where('name', 'like', '%electricals%')->first();
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
@@ -58,8 +58,9 @@ class EnquiryController extends Controller
 
     public function complaintSearch(Request $request)
     {
-          $enquiry = Enquiry::where('ticket_no',$request->ticket_no)->first();
-          return view('enquiries.complaint_search',compact('enquiry'));
+        $enquiry = Enquiry::where('ticket_no',$request->ticket_no)->first();
+
+        return view('enquiries.complaint_search',compact('enquiry'));
     }
 
     public function newTicketNumber()
@@ -67,6 +68,6 @@ class EnquiryController extends Controller
         $enquiry = Enquiry::latest('ticket_no')->limit(1)->first();
         if ($enquiry) return $enquiry->ticket_no+1;
         else return 1001;
-    }
+    } 
 
 }
