@@ -18,12 +18,12 @@
                         </div>
                      </div>
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop" src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--mobile" src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                      </div>
                   </div>
                </div>
-               <div class="item">
+               <!-- <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="message-rounded--wrap">
                         <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
@@ -36,7 +36,7 @@
                         <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
                      </div>
                   </div>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>
