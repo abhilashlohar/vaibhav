@@ -74,7 +74,7 @@
                             <ul>
                                 <li>
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
-                                    <button type="submit">Add To Cart</button>
+                                    <button type="submit">Buy Now</button>
                                 </li>
                                 {{-- <li><a href="#" type="button" data-toggle="modal" data-target="#add-query">Add To Query</a></li> --}}
                             </ul>
@@ -316,13 +316,16 @@
                                 <li class="discount">({{$product->discount}}% Off)</li>
                             </ul>
                          </div>
-                         <div class="ecommerce-item--rating">
-                             @if ($product->avgRating != null)
-                                <div class="rate" data-rate-value={{$product->avgRating->rating}}></div>
-                             @else
-                                <div class="rate" data-rate-value=0></div>
-                             @endif
-                         </div>
+                         <div style="direction:ltr;">
+                            <?php 
+                                $stars = rand(3,5);
+                                for ($i=1; $i <= 5 ; $i++) {
+                                    if ($i<=$stars) $checked = "checked";
+                                    else $checked = "";
+                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px;font-size: 14px;"></span>';
+                                }
+                            ?>
+                        </div>
                       </div>
                    </div>
                 </div>
