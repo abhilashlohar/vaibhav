@@ -711,7 +711,7 @@
                               <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                               <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                            </ul>
-                           <a href="<?php echo url('/'); ?>/public/xpress" target="_blank">Visit Now</a>
+                           <a href="<?php echo url('/'); ?>/xpress" target="_blank">Visit Now</a>
                         </div>
                      </div>
                   </div>
@@ -738,7 +738,7 @@
                               <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                               <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                            </ul>
-                           <a href="#" target="_blank">Visit Now</a>
+                           <a href="<?php echo url('/'); ?>/care" target="_blank">Visit Now</a>
                         </div>
                      </div>
                   </div>
@@ -757,7 +757,7 @@
                   <div class="modal-body">
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
                         </div>
                         <div class="verticals-single--features">
                            <ul>
@@ -765,7 +765,7 @@
                               <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                               <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                            </ul>
-                           <a href="#" target="_blank">Visit Now</a>
+                           <a href="<?php echo url('/'); ?>/plus" target="_blank">Visit Now</a>
                         </div>
                      </div>
                   </div>
@@ -792,7 +792,7 @@
                               <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                               <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                            </ul>
-                           <a href="#" target="_blank">Visit Now</a>
+                           <a href="<?php echo url('/'); ?>/academy" target="_blank">Visit Now</a>
                         </div>
                      </div>
                   </div>
@@ -844,7 +844,7 @@
                                  <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                                  <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                               </ul>
-                              <a href="#" target="_blank">Visit Now</a>
+                              <a href="<?php echo url('/'); ?>/xpress" target="_blank">Visit Now</a>
                            </div>
                         </div>
                      </div>
@@ -860,7 +860,7 @@
                                  <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                                  <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                               </ul>
-                              <a href="#" target="_blank">Visit Now</a>
+                              <a href="<?php echo url('/'); ?>/care" target="_blank">Visit Now</a>
                            </div>
                         </div>
                      </div>
@@ -876,7 +876,7 @@
                                  <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                                  <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                               </ul>
-                              <a href="#" target="_blank">Visit Now</a>
+                              <a href="<?php echo url('/'); ?>/plus" target="_blank">Visit Now</a>
                            </div>
                         </div>
                      </div>
@@ -892,7 +892,7 @@
                                  <li>Massa vitae tortor condimentum lacinia quis vel eros donec ac odio.</li>
                                  <li>Arcu non sodales neque sodales ut etiam sit amet nisl purus.</li>
                               </ul>
-                              <a href="#" target="_blank">Visit Now</a>
+                              <a href="<?php echo url('/'); ?>/academy" target="_blank">Visit Now</a>
                            </div>
                         </div>
                      </div>

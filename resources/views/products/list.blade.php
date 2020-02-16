@@ -98,6 +98,11 @@
    <section class="single-excerpt--wrapper">
     <div class="container-fluid">
         @foreach($products as $product)
+       <div class="leaf-title--wrap">
+          <a href="{{ route('products.product-detail',$product->slug) }}">
+               {{$product->name}} - <span>{{$product->subCategory->name}}</span>
+           </a>
+       </div>
        <div class="single-excerpt--grid">
           <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
              <div class="single-product--carousel">

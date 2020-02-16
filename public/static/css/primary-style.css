@@ -2386,6 +2386,32 @@ Product Single
 }
 .product-list-list .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a {
    color: #e94150;
+   font-size: 21px;
+   line-height: 30px;
+}
+.product-list-list .single-excerpt--wrapper .leaf-title--wrap {
+   position: relative;
+   width: 100%;
+   padding: 30px 75px;
+}
+.product-list-list .single-excerpt--wrapper .leaf-title--wrap a {
+   color: #2e2e2e;
+   font-size: 21px;
+   line-height: 30px;
+   position: relative;
+}
+.product-list-list .single-excerpt--wrapper .leaf-title--wrap a span {
+   color: #666666;
+   font-weight: 500;
+}
+.product-list-list .single-excerpt--wrapper .leaf-title--wrap a:before {
+   content: "";
+   background: #ed1651;
+   height: 2px;
+   width: 39px;
+   left: 0;
+   bottom: -5px;
+   position: absolute;
 }
 .product-list-list .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a span {
    color: #666666;
