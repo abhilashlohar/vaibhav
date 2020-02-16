@@ -206,11 +206,31 @@ class ProductController extends Controller
         $FurnitureProduct4 = MetaData::where('meta_key', 'FurnitureProduct4')->first();
         if ($FurnitureProduct4) $FurnitureProduct4 = $FurnitureProduct4->meta_value;
         else $FurnitureProduct4 = null;
+
+        $ConsumablesProduct = MetaData::where('meta_key', 'ConsumablesProduct')->first();
+        if ($ConsumablesProduct) $ConsumablesProduct = $ConsumablesProduct->meta_value;
+        else $ConsumablesProduct = null;
+
+        $ElectricalsProduct1 = MetaData::where('meta_key', 'ElectricalsProduct1')->first();
+        if ($ElectricalsProduct1) $ElectricalsProduct1 = $ElectricalsProduct1->meta_value;
+        else $ElectricalsProduct1 = null;
+
+        $ElectricalsProduct2 = MetaData::where('meta_key', 'ElectricalsProduct2')->first();
+        if ($ElectricalsProduct2) $ElectricalsProduct2 = $ElectricalsProduct2->meta_value;
+        else $ElectricalsProduct2 = null;
+
+        $ElectricalsProduct3 = MetaData::where('meta_key', 'ElectricalsProduct3')->first();
+        if ($ElectricalsProduct3) $ElectricalsProduct3 = $ElectricalsProduct3->meta_value;
+        else $ElectricalsProduct3 = null;
+
+        $ElectricalsProduct4 = MetaData::where('meta_key', 'ElectricalsProduct4')->first();
+        if ($ElectricalsProduct4) $ElectricalsProduct4 = $ElectricalsProduct4->meta_value;
+        else $ElectricalsProduct4 = null;
         
-        return view('admin.products.homepage', compact('products', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4'));
+        return view('admin.products.homepage', compact('products', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4','ConsumablesProduct','ElectricalsProduct1','ElectricalsProduct2','ElectricalsProduct3','ElectricalsProduct4'));
     }
 
-    public function saveHomepage(Request $request)
+    public function saveHomepageFurnitureSection(Request $request)
     {
         $FurnitureProduct1 = $request->FurnitureProduct1;
         $FurnitureProduct2 = $request->FurnitureProduct2;
@@ -255,6 +275,72 @@ class ProductController extends Controller
         
 
 
+        return redirect()->route('homepage')
+                        ->with('success','Home page content saved.');
+    }
+
+    public function saveHomepageConsumablesSection(Request $request)
+    {
+        $ConsumablesProduct = $request->ConsumablesProduct;
+
+
+        if (!empty($ConsumablesProduct)) {
+            MetaData::where('meta_key', 'ConsumablesProduct')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'ConsumablesProduct';
+            $MetaData->meta_value = $ConsumablesProduct;
+            $MetaData->save();
+        }
+
+       
+        return redirect()->route('homepage')
+                        ->with('success','Home page content saved.');
+    }
+
+    public function saveHomepageElectricalsSection(Request $request)
+    {
+        $ElectricalsProduct1 = $request->ElectricalsProduct1;
+        $ElectricalsProduct2 = $request->ElectricalsProduct2;
+        $ElectricalsProduct3 = $request->ElectricalsProduct3;
+        $ElectricalsProduct4 = $request->ElectricalsProduct4;
+
+        if (!empty($ElectricalsProduct1)) {
+            MetaData::where('meta_key', 'ElectricalsProduct1')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'ElectricalsProduct1';
+            $MetaData->meta_value = $ElectricalsProduct1;
+            $MetaData->save();
+        }
+
+        if (!empty($ElectricalsProduct2)) {
+            MetaData::where('meta_key', 'ElectricalsProduct2')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'ElectricalsProduct2';
+            $MetaData->meta_value = $ElectricalsProduct2;
+            $MetaData->save();
+        }
+
+        if (!empty($ElectricalsProduct3)) {
+            MetaData::where('meta_key', 'ElectricalsProduct3')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'ElectricalsProduct3';
+            $MetaData->meta_value = $ElectricalsProduct3;
+            $MetaData->save();
+        }
+
+        if (!empty($ElectricalsProduct4)) {
+            MetaData::where('meta_key', 'ElectricalsProduct4')->delete();
+
+            $MetaData = new MetaData();
+            $MetaData->meta_key = 'ElectricalsProduct4';
+            $MetaData->meta_value = $ElectricalsProduct4;
+            $MetaData->save();
+        }
+        
 
 
         return redirect()->route('homepage')

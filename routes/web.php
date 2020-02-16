@@ -110,7 +110,10 @@ Route::prefix('sarkar')->group(function () {
     
 
     Route::get('/homepage', 'admin\ProductController@homepage')->name('homepage');
-    Route::post('/saveHomepage', 'admin\ProductController@saveHomepage')->name('saveHomepage');
+    Route::post('/saveHomepageFurnitureSection', 'admin\ProductController@saveHomepageFurnitureSection')->name('saveHomepageFurnitureSection');
+    Route::post('/saveHomepageFurnitureSection', 'admin\ProductController@saveHomepageFurnitureSection')->name('saveHomepageFurnitureSection');
+    Route::post('/saveHomepageConsumablesSection', 'admin\ProductController@saveHomepageConsumablesSection')->name('saveHomepageConsumablesSection');
+    Route::post('/saveHomepageElectricalsSection', 'admin\ProductController@saveHomepageElectricalsSection')->name('saveHomepageElectricalsSection');
 
     Route::resource('brands','admin\BrandController');
 
