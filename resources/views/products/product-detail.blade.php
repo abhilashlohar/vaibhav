@@ -2,6 +2,13 @@
 
 
 @section ('content')
+<!-- Need to move into css file -->
+    <style>
+    span.checked {
+      color: #F9B536;
+    }
+    </style>
+    <!-- Need to move into css file -->
 <section class="single-excerpt--wrapper">
     <div class="container-fluid">
        <div class="single-excerpt--grid">
@@ -53,9 +60,16 @@
                                 <li class="discount">({{$product->discount}}% Off)</li>
                                 </ul>
                         </div>
-                        <div class="ecommerce-item--rating">
-                            <div class="rate" data-rate-value={{$ratings}}></div>
-                        </div>
+                        <div style="direction:ltr;">
+                                <?php 
+                                    $stars = rand(3,5);
+                                    for ($i=1; $i <= 5 ; $i++) {
+                                        if ($i<=$stars) $checked = "checked";
+                                        else $checked = "";
+                                        echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px;font-size: 14px;"></span>';
+                                    }
+                                ?>
+                            </div>
                         <div class="ecommerce-item--buttons">
                             <ul>
                                 <li>
