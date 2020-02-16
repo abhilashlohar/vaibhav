@@ -65,7 +65,7 @@ class EnquiryController extends Controller
 
     public function newTicketNumber()
     {
-        $enquiry = Enquiry::latest('ticket_no')->limit(1)->first();
+        $enquiry = Enquiry::where('enquiry_type','care')->latest('ticket_no')->first();
         if ($enquiry) return $enquiry->ticket_no+1;
         else return 1001;
     } 
