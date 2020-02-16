@@ -299,7 +299,7 @@
                       </div>
                       <div class="item-excerpt--details">
                          <div class="item-excerpt--meta">
-                            <div class="title"><h4><a href="#" target="_blank">{{$product->short_description}}</a></h4></div>
+                            <div class="title"><h4><a href="#" target="_blank">{{$product->name}}</a></h4></div>
                          </div>
                          <div class="ecommerce-item--price">
                             <ul>
