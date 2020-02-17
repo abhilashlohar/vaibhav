@@ -45,7 +45,6 @@
     </style>
     <!-- Need to move into css file -->
 
-    @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
     <section class="category-ui--one">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -57,7 +56,7 @@
                   <h2>Furniture</h2>
                </div>
                <div class="title-text--action">
-                  <a href="{{route('products.list',['furniture',$furnitureProducts[0]->subCategory->slug])}}" target="_blank">View All</a>
+                  <a href="{{route('products.list',['furniture',$furnitureProduct1->subCategory->slug])}}" target="_blank">View All</a>
                </div>
             </div>
          </div>
@@ -67,17 +66,17 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[0]->slug) }}">{{ $furnitureProducts[0]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$furnitureProduct1->slug) }}">{{ $furnitureProduct1->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount"> ({{ $furnitureProducts[0]->discount }}% Off)</li>
-                              <li class="old-price"> Rs. {{ $furnitureProducts[0]->regular_price }}</li>
-                              <li class="new-price"> Rs. {{ $furnitureProducts[0]->sale_price }}</li>
+                              <li class="discount"> ({{ $furnitureProduct1->discount }}% Off)</li>
+                              <li class="old-price"> Rs. {{ $furnitureProduct1->regular_price }}</li>
+                              <li class="new-price"> Rs. {{ $furnitureProduct1->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -91,11 +90,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$furnitureProducts[0]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$furnitureProduct1->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProducts[0]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$furnitureProduct1->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -110,7 +109,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$furnitureProducts[0]->product_image_primary->image) }}" alt="{{ $furnitureProducts[0]->name }}" title="{{ $furnitureProducts[0]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$furnitureProduct1->product_image_primary->image) }}" alt="{{ $furnitureProduct1->name }}" title="{{ $furnitureProduct1->name }}"/>
                      </div>
                   </div>
                </div>
@@ -118,17 +117,17 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[1]->slug) }}">{{ $furnitureProducts[1]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$furnitureProduct2->slug) }}">{{ $furnitureProduct2->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $furnitureProducts[1]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProducts[1]->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProducts[1]->sale_price }}</li>
+                              <li class="discount">({{ $furnitureProduct2->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProduct2->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProduct2->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -142,11 +141,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$furnitureProducts[1]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$furnitureProduct2->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProducts[1]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$furnitureProduct2->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -161,7 +160,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$furnitureProducts[1]->product_image_primary->image) }}" alt="{{ $furnitureProducts[1]->name }}" title="{{ $furnitureProducts[1]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$furnitureProduct2->product_image_primary->image) }}" alt="{{ $furnitureProduct2->name }}" title="{{ $furnitureProduct2->name }}"/>
                      </div>
                   </div>
                </div>
@@ -169,17 +168,17 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[2]->slug) }}">{{ $furnitureProducts[2]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$furnitureProduct3->slug) }}">{{ $furnitureProduct3->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $furnitureProducts[2]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProducts[2]->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProducts[2]->sale_price }}</li>
+                              <li class="discount">({{ $furnitureProduct3->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProduct3->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProduct3->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -193,11 +192,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$furnitureProducts[2]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$furnitureProduct3->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProducts[2]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$furnitureProduct3->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -212,7 +211,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                       <img src="{{ asset('storage/product/'.$furnitureProducts[2]->product_image_primary->image) }}" alt="{{ $furnitureProducts[2]->name }}" title="{{ $furnitureProducts[2]->name }}"/>
+                       <img src="{{ asset('storage/product/'.$furnitureProduct3->product_image_primary->image) }}" alt="{{ $furnitureProduct3->name }}" title="{{ $furnitureProduct3->name }}"/>
                      </div>
                   </div>
                </div>
@@ -220,17 +219,17 @@
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProducts[3]->slug) }}">{{ $furnitureProducts[3]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$furnitureProduct4->slug) }}">{{ $furnitureProduct4->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $furnitureProducts[3]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProducts[3]->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProducts[3]->sale_price }}</li>
+                              <li class="discount">({{ $furnitureProduct4->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $furnitureProduct4->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $furnitureProduct4->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -244,11 +243,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$furnitureProducts[3]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$furnitureProduct4->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProducts[3]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$furnitureProduct4->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -263,7 +262,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$furnitureProducts[3]->product_image_primary->image) }}" alt="{{ $furnitureProducts[3]->name }}" title="{{ $furnitureProducts[3]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$furnitureProduct4->product_image_primary->image) }}" alt="{{ $furnitureProduct4->name }}" title="{{ $furnitureProduct4->name }}"/>
                      </div>
                   </div>
                </div>
@@ -271,7 +270,6 @@
          </div>
       </div>
     </section>
-    @endif
 
     @if ($consumablesProduct)
     <section class="highlighted-single--wrapper">
@@ -330,7 +328,7 @@
                         </ul>
                      </div>
                      <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -369,7 +367,6 @@
     </section>
     @endif
 
-    @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
     <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -381,7 +378,7 @@
                   <h2>Electricals</h2>
                </div>
                <div class="title-text--action">
-                  <a href="{{route('products.list',['electrical',$electricalsProducts[0]->subCategory->slug])}}">View All</a>
+                  <a href="{{route('products.list',['electrical',$electricalsProduct1->subCategory->slug])}}">View All</a>
                </div>
             </div>
          </div>
@@ -391,17 +388,17 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[0]->slug) }}">{{ $electricalsProducts[0]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$electricalsProduct1->slug) }}">{{ $electricalsProduct1->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $electricalsProducts[0]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[0]->regular_price }} </li>
-                              <li class="new-price">Rs. {{ $electricalsProducts[0]->sale_price }}</li>
+                              <li class="discount">({{ $electricalsProduct1->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProduct1->regular_price }} </li>
+                              <li class="new-price">Rs. {{ $electricalsProduct1->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -415,11 +412,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$electricalsProducts[0]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$electricalsProduct1->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProducts[0]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$electricalsProduct1->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -434,7 +431,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$electricalsProducts[0]->product_image_primary->image) }}" alt="{{ $electricalsProducts[0]->name }}" title="{{ $electricalsProducts[0]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$electricalsProduct1->product_image_primary->image) }}" alt="{{ $electricalsProduct1->name }}" title="{{ $electricalsProduct1->name }}"/>
                      </div>
                   </div>
                </div>
@@ -442,17 +439,17 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[1]->slug) }}">{{ $electricalsProducts[1]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$electricalsProduct2->slug) }}">{{ $electricalsProduct2->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="new-price">Rs. {{ $electricalsProducts[1]->sale_price }}</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[1]->regular_price }} </li>
-                              <li class="discount">({{ $electricalsProducts[1]->discount }}% Off)</li>
+                              <li class="new-price">Rs. {{ $electricalsProduct2->sale_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProduct2->regular_price }} </li>
+                              <li class="discount">({{ $electricalsProduct2->discount }}% Off)</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -466,11 +463,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$electricalsProducts[1]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$electricalsProduct2->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProducts[1]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$electricalsProduct2->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -485,28 +482,28 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$electricalsProducts[1]->product_image_primary->image) }}" alt="{{ $electricalsProducts[1]->name }}" title="{{ $electricalsProducts[1]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$electricalsProduct2->product_image_primary->image) }}" alt="{{ $electricalsProduct2->name }}" title="{{ $electricalsProduct2->name }}"/>
                      </div>
                   </div>
                </div>
                <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$electricalsProducts[2]->product_image_primary->image) }}" alt="{{ $electricalsProducts[2]->name }}" title="{{ $electricalsProducts[2]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$electricalsProduct3->product_image_primary->image) }}" alt="{{ $electricalsProduct3->name }}" title="{{ $electricalsProduct3->name }}"/>
                      </div>
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[2]->slug) }}">{{ $electricalsProducts[2]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$electricalsProduct3->slug) }}">{{ $electricalsProduct3->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="discount">({{ $electricalsProducts[2]->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[2]->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $electricalsProducts[2]->sale_price }}</li>
+                              <li class="discount">({{ $electricalsProduct3->discount }}% Off)</li>
+                              <li class="old-price">Rs. {{ $electricalsProduct3->regular_price }}</li>
+                              <li class="new-price">Rs. {{ $electricalsProduct3->sale_price }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -520,11 +517,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$electricalsProducts[2]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$electricalsProduct3->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProducts[2]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$electricalsProduct3->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -544,17 +541,17 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProducts[3]->slug) }}">{{ $electricalsProducts[3]->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',$electricalsProduct4->slug) }}">{{ $electricalsProduct4->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="new-price">Rs. {{ $electricalsProducts[3]->sale_price }}</li>
-                              <li class="old-price">Rs. {{ $electricalsProducts[3]->regular_price }}</li>
-                              <li class="discount">({{ $electricalsProducts[3]->discount }}% Off)</li>
+                              <li class="new-price">Rs. {{ $electricalsProduct4->sale_price }}</li>
+                              <li class="old-price">Rs. {{ $electricalsProduct4->regular_price }}</li>
+                              <li class="discount">({{ $electricalsProduct4->discount }}% Off)</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -568,11 +565,11 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$electricalsProducts[3]->id}}">
+                                        <input type="hidden" name="product_id" value="{{$electricalsProduct4->id}}">
                                         <button type="submit">Buy Now</button>
                                     </form>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProducts[3]->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',$electricalsProduct4->slug)}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -587,7 +584,7 @@
                          </div>
                      </div>
                      <div class="ecommerce-item--image">
-                        <img src="{{ asset('storage/product/'.$electricalsProducts[3]->product_image_primary->image) }}" alt="{{ $electricalsProducts[3]->name }}" title="{{ $electricalsProducts[3]->name }}"/>
+                        <img src="{{ asset('storage/product/'.$electricalsProduct4->product_image_primary->image) }}" alt="{{ $electricalsProduct4->name }}" title="{{ $electricalsProduct4->name }}"/>
                      </div>
                   </div>
                </div>
@@ -595,7 +592,6 @@
          </div>
       </div>
     </section>
-    @endif
 
     <section class="store-ui--wrapper">
       <div class="container-fluid">
@@ -1012,72 +1008,68 @@
             });
         @endif
 
-        @if (isset($furnitureProducts) and count($furnitureProducts)>=4)
             $("#FurnitureShare0").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[0]->slug; ?>",
-                text: "<?php echo $furnitureProducts[0]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct1->slug; ?>",
+                text: "<?php echo $furnitureProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare1").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[1]->slug; ?>",
-                text: "<?php echo $furnitureProducts[1]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct2->slug; ?>",
+                text: "<?php echo $furnitureProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare2").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[2]->slug; ?>",
-                text: "<?php echo $furnitureProducts[2]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct3->slug; ?>",
+                text: "<?php echo $furnitureProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare3").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProducts[3]->slug; ?>",
-                text: "<?php echo $furnitureProducts[3]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct4->slug; ?>",
+                text: "<?php echo $furnitureProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
-        @endif
 
-        @if (isset($electricalsProducts) and count($electricalsProducts)>=4)
             $("#ElectricalsShare0").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[0]->slug; ?>",
-                text: "<?php echo $electricalsProducts[0]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct1->slug; ?>",
+                text: "<?php echo $electricalsProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare1").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[1]->slug; ?>",
-                text: "<?php echo $electricalsProducts[1]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct2->slug; ?>",
+                text: "<?php echo $electricalsProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare2").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[2]->slug; ?>",
-                text: "<?php echo $electricalsProducts[2]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct3->slug; ?>",
+                text: "<?php echo $electricalsProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare3").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProducts[3]->slug; ?>",
-                text: "<?php echo $electricalsProducts[3]->name; ?>",
+                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct4->slug; ?>",
+                text: "<?php echo $electricalsProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
-        @endif
     </script>
 @endsection
