@@ -40,7 +40,7 @@ class EnquiryController extends Controller
         //         $query->where('name','like','%'.$request->name.'%');
         //     }
         // })
-        ->paginate(5);
+        ->paginate(50);
 
         return view('admin.enquiries.index',compact('enquiries','request'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
