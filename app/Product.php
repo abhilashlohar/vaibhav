@@ -18,9 +18,6 @@ class Product extends Model
         static::saving(function ($model) {
             if (isset($model->is_published) && $model->is_published=='on') $model->is_published = 1;
             else $model->is_published = 0;
-
-            if (isset($model->show_on_home_page) && $model->show_on_home_page=='on') $model->show_on_home_page = 1;
-            else $model->show_on_home_page = 0;
         });
     }
 

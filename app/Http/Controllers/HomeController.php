@@ -10,6 +10,7 @@ use App\Enquiry;
 use App\Cart;
 use App\Page;
 use App\Brand;
+use App\MetaData;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
 
@@ -32,29 +33,109 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $furnitureProducts = Product::where([
-                                ['show_on_home_page','=',1],
+        $FurnitureProductMeta1 = MetaData::where('meta_key', 'FurnitureProduct1')->first();
+        if ($FurnitureProductMeta1) $FurnitureProductMeta1 = $FurnitureProductMeta1->meta_value;
+        else $FurnitureProductMeta1 = null;
+        $furnitureProduct1 = Product::where([
+            ['id','=',$FurnitureProductMeta1],
+            ['is_published', '=', 1],
+            ['products.deleted', '=', 0]
+        ])->with('subCategory.category')->whereHas('category', function($q){
+            $q->where('name','=','furniture');
+        })->first();
+
+
+        $FurnitureProductMeta2 = MetaData::where('meta_key', 'FurnitureProduct2')->first();
+        if ($FurnitureProductMeta2) $FurnitureProductMeta2 = $FurnitureProductMeta2->meta_value;
+        else $FurnitureProductMeta2 = null;
+        $furnitureProduct2 = Product::where([
+                                ['id','=',$FurnitureProductMeta2],
                                 ['is_published', '=', 1],
                                 ['products.deleted', '=', 0]
                             ])->with('subCategory.category')->whereHas('category', function($q){
                                 $q->where('name','=','furniture');
-                            })->get();
+                            })->first();
+
+
+        $FurnitureProductMeta3 = MetaData::where('meta_key', 'FurnitureProduct3')->first();
+        if ($FurnitureProductMeta3) $FurnitureProductMeta3 = $FurnitureProductMeta3->meta_value;
+        else $FurnitureProductMeta3 = null;
+        $furnitureProduct3 = Product::where([
+                                ['id','=',$FurnitureProductMeta3],
+                                ['is_published', '=', 1],
+                                ['products.deleted', '=', 0]
+                            ])->with('subCategory.category')->whereHas('category', function($q){
+                                $q->where('name','=','furniture');
+                            })->first();
+
+        $FurnitureProductMeta4 = MetaData::where('meta_key', 'FurnitureProduct4')->first();
+        if ($FurnitureProductMeta4) $FurnitureProductMeta4 = $FurnitureProductMeta4->meta_value;
+        else $FurnitureProductMeta4 = null;
+        $furnitureProduct4 = Product::where([
+                                ['id','=',$FurnitureProductMeta4],
+                                ['is_published', '=', 1],
+                                ['products.deleted', '=', 0]
+                            ])->with('subCategory.category')->whereHas('category', function($q){
+                                $q->where('name','=','furniture');
+                            })->first();
+
+        $ConsumablesProductMeta = MetaData::where('meta_key', 'ConsumablesProduct')->first();
+        if ($ConsumablesProductMeta) $ConsumablesProductMeta = $ConsumablesProductMeta->meta_value;
+        else $ConsumablesProductMeta = null;
 
         $consumablesProduct = Product::where([
-                                    ['show_on_home_page','=',1],
+                                    ['id','=',$ConsumablesProductMeta],
                                     ['is_published', '=', 1],
                                     ['products.deleted', '=', 0]
                                 ])->with('subCategory.category')->whereHas('category', function($q){
                                     $q->where('name','=','consumables');
                                 })->first();
 
-        $electricalsProducts = Product::where([
-                                    ['show_on_home_page','=',1],
+        $ElectricalsProductMeta1 = MetaData::where('meta_key', 'ElectricalsProduct1')->first();
+        if ($ElectricalsProductMeta1) $ElectricalsProductMeta1 = $ElectricalsProductMeta1->meta_value;
+        else $ElectricalsProductMeta1 = null;
+        $electricalsProduct1 = Product::where([
+                    ['id','=',$ElectricalsProductMeta1],
+                    ['is_published', '=', 1],
+                    ['products.deleted', '=', 0]
+                ])->with('subCategory.category')->whereHas('category', function($q){
+                    $q->where('name','=','electricals');
+                })->first();
+
+        $ElectricalsProductMeta2 = MetaData::where('meta_key', 'ElectricalsProduct2')->first();
+        if ($ElectricalsProductMeta2) $ElectricalsProductMeta2 = $ElectricalsProductMeta2->meta_value;
+        else $ElectricalsProductMeta2 = null;
+        $electricalsProduct2 = Product::where([
+                    ['id','=',$ElectricalsProductMeta2],
+                    ['is_published', '=', 1],
+                    ['products.deleted', '=', 0]
+                ])->with('subCategory.category')->whereHas('category', function($q){
+                    $q->where('name','=','electricals');
+                })->first();
+
+        $ElectricalsProduct3 = MetaData::where('meta_key', 'ElectricalsProduct3')->first();
+        if ($ElectricalsProductMeta3) $ElectricalsProductMeta3 = $ElectricalsProductMeta3->meta_value;
+        else $ElectricalsProductMeta3 = null;
+        $electricalsProduct3 = Product::where([
+                    ['id','=',$ElectricalsProductMeta3],
+                    ['is_published', '=', 1],
+                    ['products.deleted', '=', 0]
+                ])->with('subCategory.category')->whereHas('category', function($q){
+                    $q->where('name','=','electricals');
+                })->first();
+
+        $ElectricalsProductMeta4 = MetaData::where('meta_key', 'ElectricalsProduct4')->first();
+        if ($ElectricalsProductMeta4) $ElectricalsProductMeta4 = $ElectricalsProductMeta4->meta_value;
+        else $ElectricalsProductMeta4 = null;
+
+        $electricalsProduct4 = Product::where([
+                                    ['id','=',$ElectricalsProductMeta4],
                                     ['is_published', '=', 1],
                                     ['products.deleted', '=', 0]
                                 ])->with('subCategory.category')->whereHas('category', function($q){
                                     $q->where('name','=','electricals');
-                                })->get();
+                                })->first();
+
         $brands = Brand::where([
                                     ['show_on_home_page','=',1],
                                     ['brands.deleted', '=', 0]
@@ -63,7 +144,7 @@ class HomeController extends Controller
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'home';
 
-        return view('home', compact('furnitureProducts','consumablesProduct','electricalsProducts','page_title','body_class', 'brands'));
+        return view('home', compact('furnitureProduct1','furnitureProduct2','furnitureProduct3','furnitureProduct4','consumablesProduct','electricalsProduct1','electricalsProduct2','electricalsProduct3','electricalsProduct4','page_title','body_class', 'brands'));
     }
 
     public function mail()
