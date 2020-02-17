@@ -51,11 +51,9 @@ class Product extends Model
                 })->ignore($id)
             ],
             'discount' => 'numeric',
-            'sequence' => 'numeric',
             'category_id' => 'required',
             'sub_category_id' => 'required',
             'short_description' => 'required',
-            'stock_quantity' => 'required|numeric',
             'regular_price' => 'required|numeric',
             'sale_price' => 'required|numeric'
         ];
@@ -72,13 +70,10 @@ class Product extends Model
           'category_id.required' => 'You must select category.',
           'sub_category_id.required' => 'You must select sub-category.',
           'short_description.required' => 'You must enter short description.',
-          'stock_quantity.required' => 'You must enter stock quantity.',
           'regular_price.required' => 'You must enter regular price.',
           'sale_price.required' => 'You must enter sale price.',
           'slug.required' => 'You must enter slug.',
           'slug.unique' => 'The slug is already exists.',
-          'sequence.required' => 'You must enter sequence.',
-          'sequence.numeric' => 'You must enter numeric value.',
           'discount.numeric' => 'You must enter numeric value.',
       ];
     }

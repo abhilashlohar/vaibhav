@@ -105,6 +105,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="meta-title">Meta Title</label>
+                                <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($product->meta_title)? $product->meta_title : old('meta_title') }}">
+                                @error('meta_title')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="meta_description">Meta Description</label>
+                                <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($product->meta_description)?$product->meta_description : old('meta_description') }}</textarea>
+                                @error('meta_description')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="row">
 
@@ -114,18 +140,6 @@
                                 <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}">
 
                                 @error('sequence')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label for="stock_quantity">Stock Quantity *</label>
-                                <input type="text" id="stock_quantity" name="stock_quantity" class="form-control @error('stock_quantity') is-invalid @enderror" value="{{ ($product->stock_quantity)? $product->stock_quantity : old('stock_quantity') }}" required>
-
-                                @error('stock_quantity')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -332,8 +346,8 @@
                     slug: {
                         required: !0
                     },
-                    stock_quantity: {
-                        required: !0
+                    sequence: {
+                        digits: !0
                     },
                     regular_price: {
                         required: !0

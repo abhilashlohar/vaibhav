@@ -65,7 +65,7 @@
                                 </ul>
                         </div>
                         <div style="direction:ltr;">
-                                <?php 
+                                <?php
                                     $stars = rand(3,5);
                                     for ($i=1; $i <= 5 ; $i++) {
                                         if ($i<=$stars) $checked = "checked";
@@ -144,15 +144,7 @@
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="single-description--text">
-             <p><?php echo $product->short_description; ?></p>
-             <div class="collapse" id="more-description">
-               <div class="card card-body">
-                <?php echo $product->description; ?>
-               </div>
-             </div>
-             <a class="btn btn-primary" data-toggle="collapse" href="#more-description" role="button" aria-expanded="false" aria-controls="more-description">
-                Read More
-             </a>
+             <?php echo $product->description; ?>
           </div>
        </div>
     </div>
@@ -321,7 +313,7 @@
                             </ul>
                          </div>
                          <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -346,7 +338,7 @@
 
 @section ('footer-script')
 <script src="<?php echo url('/'); ?>/static/js/jquery.zoom.min.js"></script>
-<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>  
+<script src="<?php echo url('/'); ?>/share/jssocials.js"></script>
 <script>
     $("#share").jsSocials({
         url: "<?php echo url('/'); ?>/product/<?php echo $product->slug; ?>",

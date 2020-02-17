@@ -48,7 +48,26 @@
                                     </div>
                                     <div class="modal-body">
                                         @if ($user)
-
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="city">Name*</label>
+                                                <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="city">Mobile No.*</label>
+                                                    <input type="text" class="form-control" id="mobile" name="mobile" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mb-3">
+                                                    <label for="city">Email*</label>
+                                                    <input type="text" class="form-control" id="email" name="email"  value="{{ $user->email }}" required>
+                                                </div>
+                                            </div>
+                                        </div>
                                         @else
                                             <div class="row">
                                                 <div class="col-md-4">

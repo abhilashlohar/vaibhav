@@ -51,7 +51,13 @@ class EventController extends Controller
         $razorpayOrderId = $razorpayOrder['id'];
 
         $request->session()->put('razorpay_order_id', $razorpayOrderId);
-
+        $name = "";
+        $email = "";
+        if($user)
+        {
+            $name = $user->name;
+            $email = $user->email;
+        }
         $data = [
             "key"               => $keyId,
             "amount"            => $amount,
@@ -59,8 +65,8 @@ class EventController extends Controller
             "description"       => "A UNIT OF 28 SOUTH VENTURES",
             "image"             => url('/')."/static/images/logo.png",
             "prefill"           => [
-            "name"              => "",
-            "email"             => "",
+            "name"              => $name,
+            "email"             => $email,
             "contact"           => "",
             ],
             "notes"             => [
