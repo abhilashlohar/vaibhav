@@ -113,7 +113,7 @@ class HomeController extends Controller
                     $q->where('name','=','electricals');
                 })->first();
 
-        $ElectricalsProduct3 = MetaData::where('meta_key', 'ElectricalsProduct3')->first();
+        $ElectricalsProductMeta3 = MetaData::where('meta_key', 'ElectricalsProduct3')->first();
         if ($ElectricalsProductMeta3) $ElectricalsProductMeta3 = $ElectricalsProductMeta3->meta_value;
         else $ElectricalsProductMeta3 = null;
         $electricalsProduct3 = Product::where([
