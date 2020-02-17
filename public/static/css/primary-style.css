@@ -2094,6 +2094,9 @@ Category Page
    font-size: 3rem;
    font-weight: 400;
 }
+.category-slideshow--wrapper .owl-theme .owl-nav [class*='owl-']:hover {
+   background: transparent;
+}
 
 /* =================== Breadcrumb ================ */
 .breadcrumb {
