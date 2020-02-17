@@ -35,7 +35,7 @@
                 </div>
                 @if ($event->event_date > date('Y-m-d'))
                 <div class="academy-information--book">
-                    <a href="#" data-toggle="modal" data-target="#ticket_modal">Book Your Tickets</a>
+                    <a href="javascript:void(0)" data-toggle="modal" data-target="#ticket_modal">Book Your Tickets</a>
                     <form  action="{{ route('event.academyBuy', $event->id) }}" method="POST"  class="kt-form" id="event-form" name="razorpayform">
                         @csrf
                         <div class="modal fade" id="ticket_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
