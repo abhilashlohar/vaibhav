@@ -112,6 +112,9 @@ button {
 .plus .header-wrapper {
    position: absolute;
 }
+.academy .header-wrapper {
+   position: absolute;
+}
 .header-wrapper {
    position: relative;
    top: 0;
@@ -2045,6 +2048,8 @@ Category Page
    overflow: hidden;
    background: #ffffff;
    box-shadow: 1px 1px 3px #efefef;
+   max-height: 269px;
+   overflow: hidden;
 }
 .category-slideshow--wrapper .slideshow-details--wrap .slideshow-details--image img {
    width: 100%;
@@ -2075,7 +2080,7 @@ Category Page
    position: absolute;
    color: #ed1651;
    left: 0;
-   top: 35%;
+   top: 25%;
    background: transparent;
    font-size: 3rem;
    font-weight: 400;
@@ -2084,7 +2089,7 @@ Category Page
    position: absolute;
    color: #ed1651;
    right: 0;
-   top: 35%;
+   top: 25%;
    background: transparent;
    font-size: 3rem;
    font-weight: 400;
@@ -2444,6 +2449,10 @@ Product Single
 .product-detail .single-excerpt--wrapper .single-product--properties .ecommerce-item--details {
     padding-left: 45px;
     padding-top: 45px;
+    z-index: unset;
+}
+.product-detail .single-excerpt--wrapper .single-product--properties .ecommerce-item--buttons {
+   z-index: unset;
 }
 .product-detail .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--buttons button {
    background: #e94150;
@@ -4158,7 +4167,7 @@ Login Wrapper
       position: absolute;
       top: 30%;
       left: 0%;
-      max-width: 535px;
+      max-width: 100%;
       width: 100%;
       text-align: center;
    }
@@ -4496,9 +4505,10 @@ Login Wrapper
    .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
       color: #6d0024;
       font-weight: 400;
-      font-size: 39px;
-      line-height: 50px;
+      font-size: 27px;
+      line-height: 38px;
       text-transform: none;
+      text-align: center;
    }
    .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 span {
       font-weight: 500;
@@ -4911,6 +4921,14 @@ Login Wrapper
 @media only screen and (min-width: 576px) {
    .hide-thumbnail--this {
       display: block;
+   }
+   .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+      color: #6d0024;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 43px;
+      text-transform: none;
+      text-align: center;
    }
    .product-list-grid .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
       text-align: center !important;
@@ -6041,6 +6059,19 @@ Login Wrapper
       background-position: top left;
       height: 100%;
    }
+   .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+       color: #6d0024;
+       font-weight: 400;
+       font-size: 32px;
+       line-height: 43px;
+       text-transform: none;
+   }
+   .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 32%;
+      left: 53%;
+      max-width: 450px;
+   }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -6276,6 +6307,17 @@ Login Wrapper
       max-height: 114px;
       margin-bottom: 16px;
    }
+   .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 40%;
+      left: 53%;
+      max-width: 509px;
+      width: 100%;
+   }
+   .category-banner--wrapper .slideshow-details--wrap .message-rounded--wrap h1 {
+       font-size: 39px;
+       line-height: 50px;
+   }
 }
 
 @media only screen and (min-width: 1180px) {
@@ -6442,6 +6484,13 @@ Login Wrapper
       height: 100%;
       max-height: 126px;
       margin-bottom: 16px;
+   }
+   .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap {
+      position: absolute;
+      top: 42%;
+      left: 56%;
+      max-width: 535px;
+      width: 100%;
    }
 }
 
