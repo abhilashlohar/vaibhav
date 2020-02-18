@@ -55,7 +55,8 @@
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Date</th>
+                            <th>Total Order</th>
+                            <th>Last Order</th>
                             @if (in_array('CustomerController@order',Session::get('userrightPages')))
                             <th>Action</th>
                             @endif
@@ -64,10 +65,17 @@
                         <tr>
                             <td class="align-middle">{{ $user->name }}</td>
                             <td class="align-middle">{{ $user->email }}</td>
-                            <td class="align-middle">{{ date('d-m-Y',strtotime($user->created_at)) }}</td>
+                            <td class="align-middle">{{ @$user->orders_count }}</td>
+                            <td class="align-middle">
+                                @if ($user->orders_count > 0)
+                                    {{ humanTiming($user->order->order_date) }}
+                                @endif
+                            </td>
                             @if (in_array('CustomerController@order',Session::get('userrightPages')))
                             <td class="align-middle">
-                                <a href="{{ route('customer.order', 'id='.$user->id) }}"> Order</a>
+                                @if ($user->orders_count > 0)
+                                    <a href="{{ route('customer.order', 'id='.$user->id) }}"> Order</a>
+                                @endif
                             </td>
                             @endif
                         </tr>

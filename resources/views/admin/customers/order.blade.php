@@ -56,6 +56,7 @@
                             <th>Order No.</th>
                             <th>Order Date</th>
                             <th>Order Amount</th>
+                            <th>Total Item</th>
                             @if (in_array('CustomerController@orderDetail',Session::get('userrightPages')))
                             <th>Order Details</th>
                             @endif
@@ -65,6 +66,7 @@
                                    <td>{{$order->order_no}}</td>
                                    <td>{{$order->order_date}}</td>
                                    <td>{{$order->order_amount}}</td>
+                                   <td>{{$order->order_rows_count}}</td>
                                     @if (in_array('CustomerController@orderDetail',Session::get('userrightPages')))
                                         <td><a href="{{ route('customer.orderDetail',$order->id) }}">Order Details</a></td>
                                     @endif

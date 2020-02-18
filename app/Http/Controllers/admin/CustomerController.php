@@ -24,8 +24,9 @@ class CustomerController extends Controller
         if(isset($request->name)) {
             $where_ar[] = ['users.name','like','%'.$request->name.'%'];
         }
-        $users = User::where($where_ar)->latest()->paginate(50);
-
+        $users = User::withCount('orders')->with(['order' => function ($query) {
+            $query->orderBy('order_date', 'asc');
+        }])->where($where_ar)->latest()->paginate(50);
         return view('admin.customers.index',compact('users', 'request'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -40,7 +41,7 @@ class CustomerController extends Controller
         if(isset($request->order_no)) {
             $where_ar[] = ['order_no',$request->order_no];
         }
-        $orders = Order::where($where_ar)->orderBy('order_date', 'asc')->paginate(50);
+        $orders = Order::withCount('OrderRows')->where($where_ar)->orderBy('order_date', 'asc')->paginate(50);
 
         return view('admin.customers.order', compact('orders','request'))
         ->with('i', (request()->input('page', 1) - 1) * 5);

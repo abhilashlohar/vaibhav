@@ -29,18 +29,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public static function rules($id = '') 
+    public static function rules($id = '')
     {
       return [
           'name' => 'required',
           'email' => [
-            'required', 
+            'required',
             Rule::unique('users')->ignore($id)
           ]
       ];
     }
 
-    public static function messages($id = '') 
+    public static function messages($id = '')
     {
       return [
           'name.required' => 'You must enter the name.',
@@ -48,5 +48,14 @@ class User extends Authenticatable
           'email.unique' => 'This email is already registered.',
       ];
     }
-  
+    public function orders()
+    {
+        return $this->hasMany('App\Order');
+    }
+
+    public function order()
+    {
+        return $this->hasOne('App\Order');
+    }
+
 }
