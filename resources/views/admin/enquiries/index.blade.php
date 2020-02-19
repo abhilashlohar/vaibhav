@@ -20,12 +20,6 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="form-group">
-                                <label for="ticket_no">Ticket No.</label>
-                            <input type="text" placeholder="Ticket No." id="ticket_no" name="ticket_no" value="{{$request->ticket_no}}" class="form-control" autofocus>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="form-group">
                                 <label for="ticket_no">Customer Name</label>
                                 <input type="text" placeholder="Customer Name" id="name" name="name" value="{{$request->name}}" class="form-control">
                             </div>
@@ -70,28 +64,32 @@
                 <div class="table-responsive">
                     <table class="table">
                         <tr>
-                            <th>Ticket</th>
+                            <th>Enquiry Source</th>
                             <th>Customer</th>
-                            <th>Subject</th>
+                            <th>Email</th>
+                            <th>Mobile</th>
                             <th>Opened</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         @foreach ($enquiries as $enquiry)
                         <tr>
                             <td class="align-middle">
-                                <a href="{{ route('enquiries.show', $enquiry->id) }}"> #{{ $enquiry->ticket_no }}</a>
+                                {{ $enquiry->enquiry_type }}
                             </td>
                             <td class="align-middle">{{ $enquiry->name }}</td>
-                            <td class="align-middle">{{ $enquiry->subject }}</td>
+                            <td class="align-middle">{{ $enquiry->email }}</td>
+                            <td class="align-middle">{{ $enquiry->mobile_no }}</td>
                             <td><?php echo humanTiming($enquiry->updated_at); ?></td>
                             <td>
-                                @if ($enquiry->status=='pending')
-                                    <span class="kt-badge kt-badge--danger kt-badge--dot"></span>
-                                    <span class="kt-font-bold kt-font-danger">Open</span>
-                                @else
-                                    <span class="kt-badge kt-badge--success kt-badge--dot"></span>
-                                    <span class="kt-font-bold kt-font-success">Closed</span>
-                                @endif
+                                <select class="form-control" name="status">
+                                    <option value="">---Select Status---</option>
+                                    <option value="pending" {{($enquiry->status=='pending')?'selected':''}}>Open</option>
+                                    <option value="closed" {{($enquiry->status=='closed')?'selected':''}}>Closed</option>
+                                </select>
+                            </td>
+                            <td class="align-middle">
+                                <a href="{{ route('enquiries.show', $enquiry->id) }}"> View</a>
                             </td>
                         </tr>
                         @endforeach

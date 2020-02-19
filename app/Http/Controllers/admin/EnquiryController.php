@@ -25,15 +25,15 @@ class EnquiryController extends Controller
 
         $where_ar = [];
 
-        if(isset($request->ticket_no)) {
-            $where_ar[] = ['enquiries.ticket_no','like','%'.$request->ticket_no.'%'];
+        if(isset($request->name)) {
+            $where_ar[] = ['enquiries.name','like','%'.$request->name.'%'];
         }
 
         if(isset($request->status)) {
             $where_ar[] = ['enquiries.status','=',$request->status];
         }
 
-        $enquiries = Enquiry::where($where_ar)->orderBy('ticket_no', 'desc')
+        $enquiries = Enquiry::where($where_ar)->orderBy('created_at', 'desc')
         // ->with('User')
         // ->whereHas('User', function($query) use($request)  {
         //     if(isset($request->name)) {
@@ -48,7 +48,6 @@ class EnquiryController extends Controller
 
     public function show(Enquiry $Enquiry)
     {
-        $Enquiry->load('Admin');
         return view('admin.enquiries.show',compact('Enquiry'));
     }
 

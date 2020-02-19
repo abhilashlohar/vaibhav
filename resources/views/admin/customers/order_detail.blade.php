@@ -12,11 +12,19 @@
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
+
                     <h3 class="kt-portlet__head-title">
-                        Order Details
+                        Order No.<br>
+                        #{{ $order->order_no }}
                     </h3>
+
                 </div>
-                <div class="kt-portlet__head-toolbar">
+
+                <div class="kt-portlet__head-label">
+                    <h3 class="kt-portlet__head-title">
+                        Order Amount<br>
+                        {{ $order->order_amount }}
+                    </h3>
                     <div class="kt-portlet__head-wrapper"></div>
                 </div>
             </div>
