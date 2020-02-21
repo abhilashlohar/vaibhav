@@ -10,6 +10,7 @@ use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\EnquiryReplyFromAdmin;
+use Illuminate\Support\Facades\DB;
 
 class EnquiryController extends Controller
 {
@@ -52,15 +53,27 @@ class EnquiryController extends Controller
     }
 
 
-    public function update(Request $request, Enquiry $Enquiry)
+    public function update(Request $request)
     {
+
         $request->request->add(['closed_at' => date('Y-m-d')]);
         $request->request->add(['closed_by' => $request->session()->get('admin_id')]);
-        $request->request->add(['status' => 'closed']);
+        $request->request->add(['status' => $request->status]);
+        $request->request->add(['id' => $request->id]);
         $Enquiry->update($request->all());
 
-        return redirect()->route('enquiries.index')
-                        ->with('success','Enquiry closed successfully');
+        echo 'done';
+    }
+    public function updateStatus(Request $request)
+    {
+        DB::table('enquiries')
+        ->where('id', $request->id)
+            ->update([
+                'status' => $request->status,
+                'updated_at' => date('Y-m-d H:i:s')
+                ]);
+
+        return 'done';
     }
 
     public function reply(Request $request)

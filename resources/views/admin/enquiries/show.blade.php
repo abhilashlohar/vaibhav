@@ -1,5 +1,12 @@
 @extends ('layouts.backend')
-
+<style>
+    .kt-widget.kt-widget--user-profile-3 .kt-widget__top .kt-widget__content .kt-widget__subhead a:hover{
+        color:#74788d !important;
+    }
+    .kt-widget.kt-widget--user-profile-3 .kt-widget__top .kt-widget__content .kt-widget__head .kt-widget__username:hover{
+        color:#48465b !important;
+    }
+</style>
 @section ('content')
 
 <div class="row">
@@ -10,7 +17,7 @@
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
-                        {{ $Enquiry->subject }}
+                        {{ $Enquiry->enquiry_type }}
                     </h3>
                 </div>
                 <div class="kt-portlet__head-label">
@@ -18,24 +25,49 @@
                 </div>
             </div>
             <div class="kt-portlet__body">
-                <div class="kt-widget3">
-                    <div class="kt-widget3__item">
-                        <div class="kt-widget3__header">
-                            <span class="kt-media kt-media--sm kt-media--success kt-media--circle kt-margin-r-5 kt-margin-t-5">
-                                {{ $Enquiry->name }}
-                            </span>
-                            <div class="kt-widget3__info">
-                                <span class="kt-widget3__time" title="{{ formatDate($Enquiry->created_at, 'timeAslo') }}">
-                                {{ humanTiming($Enquiry->created_at) }}
+                <div class="kt-widget kt-widget--user-profile-3">
+                    <div class="kt-widget__top">
+                        <div class="kt-widget__content">
+                            <div class="kt-widget__head">
+                                <span class="kt-widget__username">
+                                    {{ $Enquiry->name }} &nbsp;&nbsp;&nbsp;{{ humanTiming($Enquiry->created_at) }}
                                 </span>
+
+                                <div class="kt-widget__action">
+                                    <button type="button" class="btn btn-label-success btn-sm btn-upper">{{ $Enquiry->status }}</button>
+                                </div>
                             </div>
-                            <span class="kt-widget3__status kt-font-brand"></span>
-                        </div>
-                        <div class="kt-widget3__body">
-                            {{ $Enquiry->message }}
+
+                            <div class="kt-widget__subhead">
+                                <a href="javascript:void(0)"><i class="flaticon2-new-email"></i>{{ $Enquiry->email }}</a>
+                                @if ($Enquiry->contact_no)
+                                <a  href="javascript:void(0)"><i class="flaticon2-phone"></i>{{ $Enquiry->contact_no }} </a>
+                                @endif
+                                @if ($Enquiry->mobile_no)
+                                <a  href="javascript:void(0)"><i class="flaticon2-phone"></i>{{ $Enquiry->mobile_no }}</a>
+                                @endif
+                            </div>
+                            @if ($Enquiry->address)
+                            <div class="kt-widget__subhead">
+                                Address: <a href="javascript:void(0)">{{ $Enquiry->address }}</a>
+                            </div>
+                            @endif
+                            @if ($Enquiry->state || $Enquiry->country)
+                            <div class="kt-widget__subhead">
+                                State: <a  href="javascript:void(0)">{{ $Enquiry->state }} </a>
+                                Country: <a  href="javascript:void(0)">{{ $Enquiry->country }}</a>
+                            </div>
+                            @endif
+
+                            <div class="kt-widget__info">
+                                <div class="kt-widget__desc">
+                                    {{ $Enquiry->enquiry_message }}<br><br>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

@@ -56,7 +56,7 @@
                             <th>Name</th>
                             <th>Email</th>
                             <th>Total Order</th>
-                            <th>Last Order</th>
+                            <th>Last Order Date</th>
                             @if (in_array('CustomerController@order',Session::get('userrightPages')))
                             <th>Action</th>
                             @endif

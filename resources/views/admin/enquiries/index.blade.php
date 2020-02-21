@@ -29,7 +29,7 @@
                                 <label for="ticket_no">Status</label>
                                 <select class="form-control" name="status"  value="{{$request->status}}">
                                     <option value="">---Select Status---</option>
-                                    <option value="open" {{($request->status=='pending')?'selected':''}}>Open</option>
+                                    <option value="pending" {{($request->status=='pending')?'selected':''}}>Open</option>
                                     <option value="closed" {{($request->status=='closed')?'selected':''}}>Closed</option>
                                 </select>
                             </div>
@@ -80,12 +80,11 @@
                             <td class="align-middle">{{ $enquiry->name }}</td>
                             <td class="align-middle">{{ $enquiry->email }}</td>
                             <td class="align-middle">{{ $enquiry->mobile_no }}</td>
-                            <td><?php echo humanTiming($enquiry->updated_at); ?></td>
+                            <td><?php echo humanTiming($enquiry->created_at); ?></td>
                             <td>
-                                <select class="form-control" name="status">
-                                    <option value="">---Select Status---</option>
-                                    <option value="pending" {{($enquiry->status=='pending')?'selected':''}}>Open</option>
-                                    <option value="closed" {{($enquiry->status=='closed')?'selected':''}}>Closed</option>
+                                <select class="form-control enquiry-status" name="status">
+                                <option attr-id="{{ $enquiry->id }}" value="pending" {{($enquiry->status=='pending')?'selected':''}}>Open</option>
+                                    <option attr-id="{{ $enquiry->id }}" value="closed" {{($enquiry->status=='closed')?'selected':''}}>Closed</option>
                                 </select>
                             </td>
                             <td class="align-middle">
@@ -102,4 +101,27 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section ('footer-script')
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $(document).on('change','.enquiry-status',function(e){
+        var status = $(this).val();
+        var id = $('option:selected',this).attr('attr-id');
+        $.ajax({
+            type:'POST',
+            url:"{{ route('enquiries.updateStatus') }}",
+            data:{status:status, id:id},
+            success:function(data){
+            }
+        });
+
+    });
+</script>
 @endsection

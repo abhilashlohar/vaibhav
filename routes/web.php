@@ -93,6 +93,7 @@ Route::prefix('sarkar')->group(function () {
 
     Route::resource('enquiries','admin\EnquiryController');
     Route::post('enquiries/reply','admin\EnquiryController@reply')->name('enquiries.reply');
+    Route::post('enquiries/update-status','admin\EnquiryController@updateStatus')->name('enquiries.updateStatus');
 
     Route::resource('redirections','admin\RedirectionController');
 
@@ -107,7 +108,7 @@ Route::prefix('sarkar')->group(function () {
     Route::get('/customers', 'admin\CustomerController@index')->name('customer.index');
     Route::get('/customer/orders', 'admin\CustomerController@order')->name('customer.order');
     Route::get('/customer/order-details/{id}', 'admin\CustomerController@orderDetail')->name('customer.orderDetail');
-    
+
 
     Route::get('/homepage', 'admin\ProductController@homepage')->name('homepage');
     Route::post('/saveHomepageFurnitureSection', 'admin\ProductController@saveHomepageFurnitureSection')->name('saveHomepageFurnitureSection');
