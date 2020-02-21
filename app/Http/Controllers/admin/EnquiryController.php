@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\admin;
 
 use App\Enquiry;
-use App\EnquiryDetail;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
@@ -53,17 +52,15 @@ class EnquiryController extends Controller
     }
 
 
-    public function update(Request $request)
-    {
+    // public function update(Request $request)
+    // {
 
-        $request->request->add(['closed_at' => date('Y-m-d')]);
-        $request->request->add(['closed_by' => $request->session()->get('admin_id')]);
-        $request->request->add(['status' => $request->status]);
-        $request->request->add(['id' => $request->id]);
-        $Enquiry->update($request->all());
-
-        echo 'done';
-    }
+    //     $request->request->add(['closed_at' => date('Y-m-d')]);
+    //     $request->request->add(['closed_by' => $request->session()->get('admin_id')]);
+    //     $request->request->add(['status' => $request->status]);
+    //     $request->request->add(['id' => $request->id]);
+    //     $Enquiry->update($request->all());
+    // }
     public function updateStatus(Request $request)
     {
         DB::table('enquiries')
@@ -76,30 +73,30 @@ class EnquiryController extends Controller
         return 'done';
     }
 
-    public function reply(Request $request)
-    {
-        $request->request->add([ 'admin_id'=>$request->session()->get('admin_id') ]);
+    // public function reply(Request $request)
+    // {
+    //     $request->request->add([ 'admin_id'=>$request->session()->get('admin_id') ]);
 
-        $request->validate(EnquiryDetail::rules(), EnquiryDetail::messages());
+    //     $request->validate(EnquiryDetail::rules(), EnquiryDetail::messages());
 
-        $EnquiryDetail = EnquiryDetail::create($request->all());
-        $Enquiry = $EnquiryDetail->Enquiry;
+    //     $EnquiryDetail = EnquiryDetail::create($request->all());
+    //     $Enquiry = $EnquiryDetail->Enquiry;
 
-        if ($EnquiryDetail->id)
-        {
-            Mail::to($Enquiry->User->email)->send(
-                new EnquiryReplyFromAdmin(
-                    $Enquiry->User->name,
-                    $Enquiry->ticket_no,
-                    $EnquiryDetail->message
-                )
-            );
-        }
+    //     if ($EnquiryDetail->id)
+    //     {
+    //         Mail::to($Enquiry->User->email)->send(
+    //             new EnquiryReplyFromAdmin(
+    //                 $Enquiry->User->name,
+    //                 $Enquiry->ticket_no,
+    //                 $EnquiryDetail->message
+    //             )
+    //         );
+    //     }
 
 
-        return redirect()->route('enquiries.show', $request->enquiry_id)
-                        ->with('success','Category created successfully.');
-    }
+    //     return redirect()->route('enquiries.show', $request->enquiry_id)
+    //                     ->with('success','Category created successfully.');
+    // }
 
 
 }

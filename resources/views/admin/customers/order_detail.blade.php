@@ -1,7 +1,32 @@
 @extends('layouts.backend')
 
 @section ('header-css')
-<link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/pages/invoices/invoice-2.css" rel="stylesheet" type="text/css" />
+<link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/pages/invoices/invoice-1.css" rel="stylesheet" type="text/css" />
+<style>
+    .kt-invoice__value{
+        text-transform: uppercase;
+    }
+    .kt-invoice-1 .kt-invoice__head .kt-invoice__items .kt-invoice__item{
+        color:#74788d;
+    }
+    .kt-invoice-1 .kt-invoice__head .kt-invoice__items .kt-invoice__item .kt-invoice__text
+    {
+        color:#595d6e;
+    }
+    .kt-invoice-1 .kt-invoice__body table tbody tr td
+    {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    .kt-invoice-1 .kt-invoice__footer .kt-invoice__total .kt-invoice__price {
+    color: #6c757d;
+    font-weight: 500;
+    font-size: 22px;
+}
+.kt-invoice-1 .kt-invoice__body table tbody tr td:last-child {
+    color: #6c757d !important;
+}
+</style>
 @endsection
 
 
@@ -12,26 +37,32 @@
         <div class="kt-portlet kt-portlet--height-fluid">
             <div class="kt-portlet__head">
                 <div class="kt-portlet__head-label">
-
                     <h3 class="kt-portlet__head-title">
-                        Order No.<br>
-                        #{{ $order->order_no }}
+                        Order
                     </h3>
-
                 </div>
-
                 <div class="kt-portlet__head-label">
-                    <h3 class="kt-portlet__head-title">
-                        Order Amount<br>
-                        {{ $order->order_amount }}
-                    </h3>
-                    <div class="kt-portlet__head-wrapper"></div>
+                    <a class="btn btn-secondary" style="float:right" href="{{ route('customer.order') }}">Back</a>
                 </div>
+
             </div>
             <div class="kt-portlet__body kt-portlet__body--fit">
-                <div class="kt-invoice-2">
+                <div class="kt-invoice-1">
                     <div class="kt-invoice__head" style="padding: 0px 0;">
                         <div class="kt-invoice__container">
+                            <div class="kt-invoice__items"  style="border-top:none; margin-top:0px">
+                                <div class="kt-invoice__item" >
+                                    <span class="kt-invoice__subtitle">DATE</span>
+                                    <span class="kt-invoice__text">{{ date('d M, Y', strtotime($order->order_date)) }}</span>
+                                </div>
+                                <div class="kt-invoice__item">
+
+                                </div>
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__subtitle">Order No.</span>
+                                    <span class="kt-invoice__text">#{{ $order->order_no }}</span>
+                                </div>
+                            </div>
                             <div class="kt-invoice__items" style="border-top:none; margin-top:0px">
                                 <div class="kt-invoice__item">
                                     <span class="kt-invoice__subtitle">Shipping Address</span>
@@ -89,23 +120,38 @@
                     </div>
                     <div class="kt-invoice__footer">
                         <div class="kt-invoice__container">
-                            <div class="table-responsive">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>ORDER NO.</th>
-                                            <th>PAYMENT MODE</th>
-                                            <th>TOTAL AMOUNT</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>{{ $order->order_no }}</td>
-                                            <td>{{ $order->payment_mode }}</td>
-                                            <td class="kt-font-danger kt-font-xl kt-font-boldest">{{ $order->order_amount }}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="kt-invoice__bank">
+                                <div class="kt-invoice__title">PAYMENT METHOD</div>
+
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__label">Order No.</span>
+                                    <span class="kt-invoice__value">{{ $order->order_no }}</span>
+                                </div>
+
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__label">Payment Mode:</span>
+                                    <span class="kt-invoice__value">{{ $order->payment_mode }}</span>
+                                </div>
+
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__label">Payment Status:</span>
+                                    <span class="kt-invoice__value">{{ $order->payment_status }}</span>
+                                </div>
+
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__label">Order ID:</span>
+                                    <span class="kt-invoice__value">{{ $order->razorpay_order_id }}</span>
+                                </div>
+
+                                <div class="kt-invoice__item">
+                                    <span class="kt-invoice__label">Payment ID:</span>
+                                    <span class="kt-invoice__value">{{ $order->razorpay_payment_id }}</span>
+                                </div>
+
+                            </div>
+                            <div class="kt-invoice__total">
+                                <span class="kt-invoice__title">TOTAL AMOUNT</span>
+                                <span class="kt-invoice__price">{{ $order->order_amount }}</span>
                             </div>
                         </div>
                     </div>
