@@ -16,7 +16,7 @@
             <div class="kt-grid__item kt-grid__item--order-tablet-and-mobile-2 kt-grid kt-grid--hor kt-login__aside" style="background-image: url(<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/bg/bg-4.jpg);">
                 <div class="kt-grid__item">
                     <a href="#" class="kt-login__logo">
-                        <img src="<?php echo url('/'); ?>/img/vaibhav-stores.png" width="150px">
+                        <img src="<?php echo url('/'); ?>/static/images/logo.png" width="150px">
                     </a>
                 </div>
                 <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--ver">

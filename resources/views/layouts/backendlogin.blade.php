@@ -29,8 +29,8 @@
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Skins -->
 
-    <link rel="shortcut icon" href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico" />
-
+    <link rel="shortcut icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
     <!-- Hotjar Tracking Code for keenthemes.com -->
     <!-- <script>
         (function(h,o,t,j,a,r){

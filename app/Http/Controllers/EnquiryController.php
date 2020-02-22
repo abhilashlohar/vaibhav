@@ -10,13 +10,9 @@ class EnquiryController extends Controller
 {
     public function care()
     {
-        $furnitureCategory = Category::where('name', 'like', '%furniture%')->first();
-        $consumablesCategory = Category::where('name', 'like', '%consumables%')->first();
-        $electricalsCategory = Category::where('name', 'like', '%electricals%')->first();
-
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'care';
-        return view('enquiries.care',compact('page_title','body_class', 'consumablesCategory','furnitureCategory','electricalsCategory'));
+        return view('enquiries.care',compact('page_title','body_class'));
     }
 
     public function plus()
@@ -68,6 +64,6 @@ class EnquiryController extends Controller
         $enquiry = Enquiry::where('enquiry_type','care')->latest('ticket_no')->first();
         if ($enquiry) return $enquiry->ticket_no+1;
         else return 1001;
-    } 
+    }
 
 }

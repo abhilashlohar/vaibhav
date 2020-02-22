@@ -1,7 +1,10 @@
 @extends ('layouts.front')
 
 @section ('content')
-
+<?php
+    use \App\Http\Controllers\HomeController;
+    $headerCategories = HomeController::headerCategories();
+?>
 <section class="category-banner--wrapper assign-left--transparent">
    <div class="container-fluid">
       <div class="row">
@@ -67,45 +70,21 @@
          </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
+                @foreach ($headerCategories as $headerCategory)
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                    <div class="support-category--thumbnail">
                       <div class="support-categry--image">
                          <div class="title">
-                            <h3>Furniture</h3>
+                            <h3>{{$headerCategory->name}}</h3>
                          </div>
-                         <img src="{{ asset('storage/category/'.$furnitureCategory->image) }}" alt="Furniture"/>
+                         <img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt="Furniture"/>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
                       </div>
                    </div>
                 </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                   <div class="support-category--thumbnail">
-                      <div class="support-categry--image">
-                         <div class="title">
-                            <h3>Electricals</h3>
-                         </div>
-                         <img src="{{ asset('storage/category/'.$electricalsCategory->image) }}" alt="Electricals"/>
-                      </div>
-                      <div class="support-categry--action">
-                         <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
-                      </div>
-                   </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                   <div class="support-category--thumbnail">
-                      <div class="support-categry--image">
-                         <div class="title">
-                            <h3>Consumables</h3>
-                         </div>
-                         <img src="{{ asset('storage/category/'.$consumablesCategory->image) }}" alt="Consumables"/>
-                      </div>
-                      <div class="support-categry--action">
-                         <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
-                      </div>
-                   </div>
-                </div>
+                @endforeach
              </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

@@ -28,28 +28,10 @@
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/brand/dark.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/css/skins/aside/dark.css" rel="stylesheet" type="text/css" />
     <!--end::Layout Skins -->
+    <link rel="shortcut icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="<?php echo url('/'); ?>/static/images/favicon.ico" type="image/x-icon">
 
-    <link rel="shortcut icon" href="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/favicon.ico" />
 
-    <!-- Hotjar Tracking Code for keenthemes.com -->
-    <!-- <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:1070954,hjsv:6};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-    </script> -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-37564768-1"></script> -->
-    <!-- <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-37564768-1');
-    </script>   -->
 </head>
 <!-- end::Head -->
 
@@ -121,7 +103,6 @@
                 <!-- begin:: Aside Menu -->
                 <div class="kt-aside-menu-wrapper kt-grid__item kt-grid__item--fluid" id="kt_aside_menu_wrapper">
                     <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1"data-ktmenu-dropdown-timeout="500">
-
                         <ul class="kt-menu__nav ">
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('Admin.dashboard') }}" class="kt-menu__link ">
@@ -133,38 +114,135 @@
                                             <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3"></path>
                                         </g>
                                     </svg>
-                                    </span>
-                                    <span class="kt-menu__link-text">Dashboard</span>
+                                </span>
+                                <span class="kt-menu__link-text">Dashboard</span>
                                 </a>
                             </li>
-                            @if (in_array('CategoryController@index',Session::get('userrightPages')))
-                                <li class="kt-menu__item " aria-haspopup="true">
-                                    <a href="{{ route('categories.index') }}" class="kt-menu__link ">
+                            @if (in_array('CustomerController@order',Session::get('userrightPages')))
+                            <li class="kt-menu__item " aria-haspopup="true">
+                                <a href="{{ route('customer.order') }}" class="kt-menu__link ">
+                                    <span class="kt-menu__link-icon">
+                                        <i class="fa fa-book"></i>
+                                    </span>
+                                    <span class="kt-menu__link-text">Order</span>
+                                </a>
+                            </li>
+                            @endif
+                            @if (in_array('CategoryController@index',Session::get('userrightPages')) || in_array('SubCategoryController@index',Session::get('userrightPages')) || in_array('ProductController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"  data-ktmenu-submenu-toggle="hover">
+                                    <a  href="javascript:;" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
-                                            <i class="fa fa-list"></i>
+                                            <i class="fa fa-box-open"></i>
                                         </span>
-                                        <span class="kt-menu__link-text">Category</span>
+                                        <span class="kt-menu__link-text">Product Catalogue</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
+                                    <div class="kt-menu__submenu ">
+                                        <span class="kt-menu__arrow"></span>
+                                        <ul class="kt-menu__subnav">
+                                            @if (in_array('CategoryController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('categories.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Category</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            @if (in_array('SubCategoryController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('sub-categories.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Sub Category</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            @if (in_array('ProductController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('products.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Product</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </div>
                                 </li>
                             @endif
-                            @if (in_array('SubCategoryController@index',Session::get('userrightPages')))
-                                <li class="kt-menu__item " aria-haspopup="true">
-                                    <a href="{{ route('sub-categories.index') }}" class="kt-menu__link ">
+                            @if (in_array('BlogCategoryController@index',Session::get('userrightPages')) || in_array('BlogController@index',Session::get('userrightPages')) || in_array('BrandController@index',Session::get('userrightPages')) || in_array('RedirectionController@index',Session::get('userrightPages')))
+                                <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"  data-ktmenu-submenu-toggle="hover">
+                                    <a  href="javascript:;" class="kt-menu__link kt-menu__toggle">
                                         <span class="kt-menu__link-icon">
-                                            <i class="fa fa-clipboard-list"></i>
+                                            <i class="fab fa-accessible-icon"></i>
                                         </span>
-                                        <span class="kt-menu__link-text">Sub Category</span>
+                                        <span class="kt-menu__link-text">CMS</span><i class="kt-menu__ver-arrow la la-angle-right"></i>
                                     </a>
-                                </li>
-                            @endif
-                            @if (in_array('ProductController@index',Session::get('userrightPages')))
-                                <li class="kt-menu__item " aria-haspopup="true">
-                                    <a href="{{ route('products.index') }}" class="kt-menu__link ">
-                                        <span class="kt-menu__link-icon">
-                                            <i class="fa fa-clipboard-list"></i>
-                                        </span>
-                                        <span class="kt-menu__link-text">Product</span>
-                                    </a>
+                                    <div class="kt-menu__submenu ">
+                                        <span class="kt-menu__arrow"></span>
+                                        <ul class="kt-menu__subnav">
+                                            @if (in_array('BlogCategoryController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('blog-categories.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Blog Category</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            @if (in_array('BlogController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('blogs.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Blogs</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            <li class="kt-menu__item " aria-haspopup="true">
+                                                <a href="{{ route('pages.index') }}" class="kt-menu__link ">
+                                                    <span class="kt-menu__link-icon">
+                                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                    </span>
+                                                    <span class="kt-menu__link-text">Pages</span>
+                                                </a>
+                                            </li>
+
+                                            <li class="kt-menu__item " aria-haspopup="true">
+                                                <a href="{{ route('homepage') }}" class="kt-menu__link ">
+                                                    <span class="kt-menu__link-icon">
+                                                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                    </span>
+                                                    <span class="kt-menu__link-text">Home Page</span>
+                                                </a>
+                                            </li>
+                                            @if (in_array('BrandController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('brands.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Brands</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                            @if (in_array('RedirectionController@index',Session::get('userrightPages')))
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="{{ route('redirections.index') }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-icon">
+                                                            <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                        </span>
+                                                        <span class="kt-menu__link-text">Redirection Rules</span>
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                    </div>
                                 </li>
                             @endif
                             @if (in_array('EnquiryController@index',Session::get('userrightPages')))
@@ -187,26 +265,8 @@
                                     </a>
                                 </li>
                             @endif
-                            @if (in_array('BlogController@index',Session::get('userrightPages')))
-                                <li class="kt-menu__item " aria-haspopup="true">
-                                    <a href="{{ route('blogs.index') }}" class="kt-menu__link ">
-                                        <span class="kt-menu__link-icon">
-                                            <i class="fa fa-book"></i>
-                                        </span>
-                                        <span class="kt-menu__link-text">Blogs</span>
-                                    </a>
-                                </li>
-                            @endif
-                            @if (in_array('BlogCategoryController@index',Session::get('userrightPages')))
-                                <li class="kt-menu__item " aria-haspopup="true">
-                                    <a href="{{ route('blog-categories.index') }}" class="kt-menu__link ">
-                                        <span class="kt-menu__link-icon">
-                                            <i class="fa fa-book"></i>
-                                        </span>
-                                        <span class="kt-menu__link-text">Blog Category</span>
-                                    </a>
-                                </li>
-                            @endif
+
+
 
                             @if (in_array('EventController@index',Session::get('userrightPages')))
                                 <li class="kt-menu__item " aria-haspopup="true">
@@ -219,67 +279,23 @@
                                 </li>
                             @endif
 
-                            @if (in_array('RedirectionController@index',Session::get('userrightPages')))
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('redirections.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Redirection Rules</span>
-                                </a>
-                            </li>
-                            @endif
+
 
                             @if (in_array('CustomerController@index',Session::get('userrightPages')))
                             <li class="kt-menu__item " aria-haspopup="true">
                                 <a href="{{ route('customer.index') }}" class="kt-menu__link ">
                                     <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
+                                        <i class="fa fa-child"></i>
                                     </span>
                                     <span class="kt-menu__link-text">Customer</span>
                                 </a>
                             </li>
                             @endif
 
-                            @if (in_array('CustomerController@order',Session::get('userrightPages')))
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('customer.order') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Order</span>
-                                </a>
-                            </li>
-                            @endif
 
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('pages.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Pages</span>
-                                </a>
-                            </li>
 
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('homepage') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Home Page</span>
-                                </a>
-                            </li>
 
-                            @if (in_array('BrandController@index',Session::get('userrightPages')))
-                            <li class="kt-menu__item " aria-haspopup="true">
-                                <a href="{{ route('brands.index') }}" class="kt-menu__link ">
-                                    <span class="kt-menu__link-icon">
-                                        <i class="fa fa-book"></i>
-                                    </span>
-                                    <span class="kt-menu__link-text">Brands</span>
-                                </a>
-                            </li>
-                            @endif
+
 
                         </ul>
 
