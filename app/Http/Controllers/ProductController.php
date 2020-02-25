@@ -85,42 +85,42 @@ class ProductController extends Controller
         ->whereIn('id', $related_product_ids)
         ->get();
 
-        $productReviews = Review::with('user')
-        ->where('product_id',$product->id)
-        ->orderBy('rating', 'desc')
-        ->paginate(5);
+        // $productReviews = Review::with('user')
+        // ->where('product_id',$product->id)
+        // ->orderBy('rating', 'desc')
+        // ->paginate(5);
 
-        $totalReviews = Review::where('product_id',$product->id)->count();
+        // $totalReviews = Review::where('product_id',$product->id)->count();
 
-        $rating5 = Review::where([
-            ['product_id', $product->id],
-            ['rating', 5]
-        ])->count();
+        // $rating5 = Review::where([
+        //     ['product_id', $product->id],
+        //     ['rating', 5]
+        // ])->count();
 
-        $rating4 = Review::where([
-            ['product_id', $product->id],
-            ['rating', 4]
-        ])->count();
+        // $rating4 = Review::where([
+        //     ['product_id', $product->id],
+        //     ['rating', 4]
+        // ])->count();
 
-        $rating3 = Review::where([
-            ['product_id', $product->id],
-            ['rating', 3]
-        ])->count();
+        // $rating3 = Review::where([
+        //     ['product_id', $product->id],
+        //     ['rating', 3]
+        // ])->count();
 
-        $rating2 = Review::where([
-            ['product_id', $product->id],
-            ['rating', 2]
-        ])->count();
+        // $rating2 = Review::where([
+        //     ['product_id', $product->id],
+        //     ['rating', 2]
+        // ])->count();
 
-        $rating1 = Review::where([
-            ['product_id', $product->id],
-            ['rating', 1]
-        ])->count();
+        // $rating1 = Review::where([
+        //     ['product_id', $product->id],
+        //     ['rating', 1]
+        // ])->count();
 
         $ratings = Review::where('product_id',$product->id)->avg('rating');
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-detail';
-        return view('products.product-detail',compact('product','page_title','body_class','related_products', 'productReviews','totalReviews','ratings','rating5','rating4','rating3','rating2','rating1'))
+        return view('products.product-detail',compact('product','page_title','body_class','related_products'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

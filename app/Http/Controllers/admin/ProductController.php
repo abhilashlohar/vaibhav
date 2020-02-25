@@ -8,6 +8,7 @@ use App\ProductImage;
 use App\Category;
 use App\SubCategory;
 use App\MetaData;
+use App\Review;
 use Illuminate\Http\Request;
 use App\Http\Middleware\CheckAuth;
 use App\Http\Middleware\UserRightsAuth;
@@ -55,7 +56,10 @@ class ProductController extends Controller
     {
         $request->validate(Product::rules(), Product::messages());
         $id = Product::create($request->all())->id;
-
+        Review::create([
+            'product_id' => $id,
+            'rating' => rand(4,5)
+        ]);
         return redirect()->route('products.edit', $id)
                         ->with('success','Product created successfully.');
     }
@@ -226,7 +230,7 @@ class ProductController extends Controller
         $ElectricalsProduct4 = MetaData::where('meta_key', 'ElectricalsProduct4')->first();
         if ($ElectricalsProduct4) $ElectricalsProduct4 = $ElectricalsProduct4->meta_value;
         else $ElectricalsProduct4 = null;
-        
+
         return view('admin.products.homepage', compact('products', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4','ConsumablesProduct','ElectricalsProduct1','ElectricalsProduct2','ElectricalsProduct3','ElectricalsProduct4'));
     }
 
@@ -272,7 +276,7 @@ class ProductController extends Controller
             $MetaData->meta_value = $FurnitureProduct4;
             $MetaData->save();
         }
-        
+
 
 
         return redirect()->route('homepage')
@@ -293,7 +297,7 @@ class ProductController extends Controller
             $MetaData->save();
         }
 
-       
+
         return redirect()->route('homepage')
                         ->with('success','Home page content saved.');
     }
@@ -340,7 +344,7 @@ class ProductController extends Controller
             $MetaData->meta_value = $ElectricalsProduct4;
             $MetaData->save();
         }
-        
+
 
 
         return redirect()->route('homepage')
