@@ -69,7 +69,7 @@ class Product extends Model
           'short_description.required' => 'You must enter short description.',
           'regular_price.required' => 'You must enter regular price.',
           'sale_price.required' => 'You must enter sale price.',
-          'slug.required' => 'You must enter slug.',
+          'slug.required' => 'You must enter url.',
           'slug.unique' => 'The slug is already exists.',
           'discount.numeric' => 'You must enter numeric value.',
       ];

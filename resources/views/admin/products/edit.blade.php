@@ -1,5 +1,15 @@
 @extends ('layouts.backend')
-
+<style>
+    fieldset {
+    min-width: 0;
+    padding: 10 !important;
+    margin: 0;
+    border: 1px solid aliceblue !important;
+}
+legend {
+    width: auto !important;
+}
+</style>
 @section ('content')
 
 <div class="row">
@@ -32,19 +42,6 @@
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="slug">Slug *</label>
-                                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
-                                @error('slug')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="row">
                         <div class="col-md-4">
@@ -105,32 +102,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="meta-title">Meta Title</label>
-                                <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($product->meta_title)? $product->meta_title : old('meta_title') }}">
-                                @error('meta_title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label for="meta_description">Meta Description</label>
-                                <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($product->meta_description)?$product->meta_description : old('meta_description') }}</textarea>
-                                @error('meta_description')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-                    </div>
+
+
 
                     <div class="row">
 
@@ -152,7 +125,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="regular_price">Regular Price *</label>
-                                <input type="text" id="regular_price" name="regular_price" class="form-control @error('regular_price') is-invalid @enderror" value="{{ ($product->regular_price)? $product->regular_price : old('regular_price') }}" required>
+                                <input type="text" id="regular_price" name="regular_price" class="form-control calculation @error('regular_price') is-invalid @enderror" value="{{ ($product->regular_price)? $product->regular_price : old('regular_price') }}" required>
 
                                 @error('regular_price')
                                     <span class="invalid-feedback" role="alert">
@@ -164,7 +137,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="discount">Discount %</label>
-                                <input type="text" id="discount" name="discount" class="form-control @error('discount') is-invalid @enderror" value="{{ ($product->discount >= 0)? $product->discount : old('discount') }}">
+                                <input type="text" id="discount" name="discount" class="form-control calculation @error('discount') is-invalid @enderror" value="{{ ($product->discount >= 0)? $product->discount : old('discount') }}">
 
                                 @error('discount')
                                     <span class="invalid-feedback" role="alert">
@@ -176,7 +149,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label for="sale_price">Sale Price *</label>
-                                <input type="text" id="sale_price" name="sale_price" class="form-control @error('sale_price') is-invalid @enderror" value="{{ ($product->sale_price)? $product->sale_price : old('sale_price') }}" required>
+                                <input type="text" id="sale_price" name="sale_price" class="form-control  @error('sale_price') is-invalid @enderror" value="{{ ($product->sale_price)? $product->sale_price : old('sale_price') }}" required readonly>
 
                                 @error('sale_price')
                                     <span class="invalid-feedback" role="alert">
@@ -220,6 +193,49 @@
                             </div>
                         </div>
                     </div>
+<fieldset>
+    <legend>SEO</legend>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="slug">URL *</label>
+                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
+                @error('slug')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="meta-title">Meta Title</label>
+                <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($product->meta_title)? $product->meta_title : old('meta_title') }}">
+                @error('meta_title')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <label for="meta_description">Meta Description</label>
+                <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($product->meta_description)?$product->meta_description : old('meta_description') }}</textarea>
+                @error('meta_description')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+        </div>
+    </div>
+</fieldset>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -523,6 +539,30 @@
                     });
                 }
             });
+        }
+
+        $(".calculation").on("keyup", function(e){
+            calculation();
+        });
+
+        function calculation()
+        {
+            let regular_price = $('#regular_price').val();
+            let discount = $('#discount').val();
+            if(discount == '')
+            {
+                discount = 0;
+            }
+            if(discount != 0)
+            {
+                let sale_price = (regular_price * discount)/100;
+                $('#sale_price').val(sale_price);
+            }
+            else
+            {
+                $('#sale_price').val(regular_price);
+            }
+
         }
 
     });
