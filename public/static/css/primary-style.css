@@ -92,7 +92,8 @@ button {
 }
 .verticals-ui--wrapper.mobile-specific .modal {
    position: fixed;
-   top: 70px;
+   top: 0px;
+   height: 100%;
 }
 .verticals-ui--wrapper.mobile-specific .modal-header {
    border: none;
@@ -123,7 +124,7 @@ button {
    width: 100%;
 }
 .header-wrapper .modal {
-   background: #ffffff;
+   background: #2e2e2ee8;
 }
 .modal-content {
    border: none;
@@ -939,6 +940,7 @@ ul.dropDownMenu ul {
    margin-right: 5px;
    font-size: 18px;
    line-height: 27px;
+   font-weight: 600;
 }
 .ecommerce-item--price li.discount { 
    color: #ed1651;
@@ -1199,7 +1201,7 @@ ul.dropDownMenu ul {
    content: "";
    background: #ed1651;
    height: 2px;
-   width: 49px;
+   width: 30%;
    left: 0;
    bottom: 0px;
    position: absolute;
@@ -1456,6 +1458,9 @@ ul.dropDownMenu ul {
    margin-bottom: 20px;
    margin-right: 10px;
    margin-left: 10px;
+}
+.verticals-brand--wrap.nav-link.active {
+   border: 7px solid #e94150 !important;
 }
 .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap:before {
     content: "";
@@ -4384,9 +4389,6 @@ Login Wrapper
       flex-basis: 50%;
       padding: 5px;
    }
-   .follow-ui--wrapper .follow-images--wrap .follow-image--block:nth-child(4) {
-      display: none;
-   }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-single--wrap {
       display: none;
    }
@@ -4807,6 +4809,75 @@ Login Wrapper
    .hide-thumbnail--this {
       display: none;
    }
+   /* ============== Blog Listing ===================== */
+   .blog-listing--wrapper {
+      position: relative;
+      width: 100%;
+      padding: 75px 0;
+      margin-bottom: 60px;
+   }
+   .blog-listing--wrapper .blog-listing--grid {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-top: 30px;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap {
+      position: relative;
+      width: 100%;
+      margin-bottom: 120px;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap img {
+      width: 100%;
+      border-top-right-radius: 32%;
+      border-bottom-left-radius: 32%;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap .blog-excerpt--wrap {
+      position: absolute;
+      z-index: 111;
+      background: #ffffff;
+      width: 80%;
+      left: 11%;
+      bottom: -80px;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 1px 1px 7px #dddddd;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap .blog-excerpt--wrap h2 a {
+      font-size: 16px;
+      line-height: 27px;
+      font-weight: 600;
+      text-transform: none;
+      color: #2e2e2e;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap .blog-excerpt--wrap p {
+      text-align: center;
+   }
+   .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap .blog-excerpt--wrap h2 a:hover {
+      color: #e94150;
+   }
 }
 
 @media only screen and (min-width: 400px) {
@@ -5207,13 +5278,10 @@ Login Wrapper
       flex-wrap: wrap;
    }
    .follow-ui--wrapper .follow-images--wrap .follow-image--block {
-      -ms-flex-preferred-size: 20%;
-      -webkit-flex-basis: 20%;
-      flex-basis: 20%;
+      -ms-flex-preferred-size: 25%;
+      -webkit-flex-basis: 25%;
+      flex-basis: 25%;
       padding: 5px;
-   }
-   .follow-ui--wrapper .follow-images--wrap .follow-image--block:nth-child(4) {
-      display: block;
    }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-single--wrap {
       display: block;
@@ -5814,8 +5882,8 @@ Login Wrapper
       padding: 0 60px;
    }
    .ecommerce-item--price li.new-price {
-      font-size: 18px;
-      line-height: 27px;
+      font-size: 19px;
+      line-height: 25px;
    }
    .ecommerce-item--price li.old-price {
       color: #666666;
