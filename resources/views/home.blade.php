@@ -978,9 +978,6 @@
                   <div class="follow-image--block">
                      <img src="<?php echo url('/'); ?>/static/images/social-image-03.png" alt=""/>
                   </div>
-                  <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/social-image-02.png" alt=""/>
-                  </div>
                </div>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
