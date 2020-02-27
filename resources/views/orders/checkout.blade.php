@@ -182,10 +182,10 @@
                             <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Total</strong>
                             <h5 class="font-weight-bold">{{ $totalAmount }}</h5>
                             </li>
-                            <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Payment Options</strong>
+                            {{-- <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Payment Options</strong>
                             <label><input type="radio" name="payment_mode" value="online" checked="checked"> Online</label>
                             <label><input type="radio" name="payment_mode" value="cod" > COD</label>
-                            </li>
+                            </li> --}}
                         </ul>
                         <button class="btn btn-dark rounded-pill py-2 btn-block" id="do-payment" type="button">Proceed to Checkout</button>
                     </div>
@@ -248,7 +248,8 @@
 
     $(document).on('click', '#do-payment', function(){
         if($("#checkout-form").valid()){
-            var payment_mode = $("input[name=payment_mode]:checked").val();
+            // var payment_mode = $("input[name=payment_mode]:checked").val();
+            var payment_mode = "online";
             if (payment_mode=="online") {
                 rzp.open();
                 e.preventDefault();

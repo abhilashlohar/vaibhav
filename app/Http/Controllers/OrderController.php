@@ -105,7 +105,8 @@ class OrderController extends Controller
         $razorpay_payment_id = null;
         $razorpay_signature = null;
 
-        $payment_mode = $request->payment_mode;
+        // $payment_mode = $request->payment_mode;
+        $payment_mode = "online";
 
         if ($payment_mode == "online")
         {

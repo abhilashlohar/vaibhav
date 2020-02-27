@@ -15,6 +15,16 @@
 
 <section class="single-excerpt--wrapper">
     <div class="container-fluid">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="breadcrumb-wrap">
+               <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                     <li class="breadcrumb-item"><a href="#">Home</a></li>
+                     <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
+                  </ol>
+               </nav>
+            </div>
+         </div>
        <div class="single-excerpt--grid">
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
