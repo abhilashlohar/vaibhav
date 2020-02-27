@@ -4,7 +4,7 @@
     min-width: 0;
     padding: 10 !important;
     margin: 0;
-    border: 1px solid aliceblue !important;
+    border: 1px solid #e2e5ec !important;
 }
 legend {
     width: auto !important;
@@ -193,49 +193,49 @@ legend {
                             </div>
                         </div>
                     </div>
-<fieldset>
-    <legend>SEO</legend>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="slug">URL *</label>
-                <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
-                @error('slug')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-    </div>
+                    <fieldset>
+                        <legend>SEO</legend>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="slug">URL *</label>
+                                    <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($product->slug)? $product->slug : old('slug') }}">
+                                    @error('slug')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="meta-title">Meta Title</label>
-                <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($product->meta_title)? $product->meta_title : old('meta_title') }}">
-                @error('meta_title')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="form-group">
-                <label for="meta_description">Meta Description</label>
-                <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($product->meta_description)?$product->meta_description : old('meta_description') }}</textarea>
-                @error('meta_description')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-        </div>
-    </div>
-</fieldset>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="meta-title">Meta Title</label>
+                                    <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($product->meta_title)? $product->meta_title : old('meta_title') }}">
+                                    @error('meta_title')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="meta_description">Meta Description</label>
+                                    <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($product->meta_description)?$product->meta_description : old('meta_description') }}</textarea>
+                                    @error('meta_description')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
 
                     <div class="row">
                         <div class="col-md-12">
@@ -564,6 +564,26 @@ legend {
             }
 
         }
+
+        $(document).on('blur','#name,#slug', function(e){
+            const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;';
+            const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------';
+            const p = new RegExp(a.split('').join('|'), 'g');
+            let url = $(this).val();
+            let urlReplace = url.toString().toLowerCase()
+                .replace(/\s+/g, '-') // Replace spaces with -
+                .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+                .replace(/&/g, '') // Replace & with 'and'
+                // .replace(/&/g, '-and-') // Replace & with 'and'
+                .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+                .replace(/\-\-+/g, '-') // Replace multiple - with single -
+                .replace(/^-+/, '') // Trim - from start of text
+                .replace(/-+$/, '') // Trim - from end of text
+                .replace(/^\d+/, ''); // Trim number from start of text
+            $('#slug').val(urlReplace);
+        });
+
+
 
     });
 </script>
