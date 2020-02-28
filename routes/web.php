@@ -54,6 +54,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/brand-list','BrandController@list')->name('brand.list');
     Route::get('/brand-detail/{id}','BrandController@detail')->name('brand.detail');
 
+    Route::get('/blogs', 'BlogController@list')->name('blogs.list');
 });
 
 
