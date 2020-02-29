@@ -4878,6 +4878,253 @@ Login Wrapper
    .blog-listing--wrapper .blog-listing--grid .blog-listing--wrap .blog-excerpt--wrap h2 a:hover {
       color: #e94150;
    }
+
+   /* =============== Blog Details =================== */
+   .blog-details--wrapper {
+      position: relative;
+      width: 100%;
+      padding: 75px 0;
+   }
+   .blog-details--wrapper .blog-details--grid {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-top: 30px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-heading--text {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-heading--text h2 {
+      text-transform: none;
+      font-weight: 400;
+      margin-bottom: 30px;
+      font-size: 39px;
+      line-height: 52px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-meta--wrap {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .date, 
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .reviews, 
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .share {
+      position: relative;
+      margin-right: 15px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-featured--wrap {
+      position: relative;
+      width: 100%;
+      margin-bottom: 30px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-featured--wrap img {
+      width: 100%;
+      border-top-right-radius: 32%;
+      border-bottom-left-radius: 32%;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap h3,
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap h4,
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap h5,
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap h6 {
+      text-transform: none;
+      font-weight: 400;
+      margin-top: 45px;
+      margin-bottom: 15px;
+   }
+   .blog-details--wrapper .blog-details--grid  .blog-content--wrap .blog-reader--wrap p {
+      font-size: 17px;
+      line-height: 28px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap {
+      position: relative;
+      width: 100%;
+      padding: 0 30px;
+   }
+   .sidebar-search {
+      position: relative;
+      width: 100%;
+      margin-bottom: 60px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .has-search .form-control {
+      padding-left: 3.375rem;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .has-search .form-control-feedback {
+      position: absolute;
+      z-index: 2;
+      display: block;
+      width: 3.565rem;
+      height: 3.565rem;
+      line-height: 3.75rem;
+      text-align: center;
+      pointer-events: none;
+      color: #aaa;
+      font-size: 24px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap input[class="form-control"] {
+      width: 100%;
+      border-radius: 26px;
+      background: #efefef;
+      border: 0;
+      min-height: 60px;
+      padding: 0 15px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-post--recommended {
+      position: relative;
+      width: 100%;
+      margin-bottom: 60px;
+   }
+   .sidebar-item--title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 45px;
+   }
+   .sidebar-item--title h3 {
+      text-transform: none;
+      font-weight: 400;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-post--recommended .sidebar-post--item {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap  .sidebar-post--recommended .recommended-post--image {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap  .sidebar-post--recommended .recommended-post--image img {
+      width: 100%;
+      border-top-right-radius: 32%;
+      border-bottom-left-radius: 32%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap  .sidebar-post--recommended .recommended-post--excerpt {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap  .sidebar-post--recommended .recommended-post--excerpt h5 {
+      text-transform: none;
+      font-weight: 400;
+   }
+
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories {
+      position: relative;
+      width: 100%;
+      margin-bottom: 60px;
+   }
+   .sidebar-item--title {
+      position: relative;
+      width: 100%;
+      margin-bottom: 45px;
+   }
+   .sidebar-item--title h3 {
+      text-transform: none;
+      font-weight: 400;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .sidebar-category--item {
+      position: relative;
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: horizontal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .recommended-category--image {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .recommended-category--image img {
+      width: 100%;
+      border-top-right-radius: 32%;
+      border-bottom-left-radius: 32%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .recommended-category--excerpt {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .recommended-category--excerpt h3 {
+      text-transform: none;
+      font-weight: 400;
+      width: fit-content;
+      position: relative;
+      margin-bottom: 15px;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-item--categories .recommended-category--excerpt h3:before {
+      content: "";
+      background: #ed1651;
+      height: 2px;
+      width: 100%;
+      left: 0;
+      bottom: -7px;
+      position: absolute;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-promotion--image {
+      position: relative;
+      width: 100%;
+   }
+   .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap .sidebar-promotion--image img {
+      width: 100%;
+   }
 }
 
 @media only screen and (min-width: 400px) {
