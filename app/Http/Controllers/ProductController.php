@@ -75,8 +75,63 @@ class ProductController extends Controller
         {
             abort(404);
         }
-
+        $add_related_product_ids = [];
         $related_product_ids=explode(',',$product->related_products);
+        if(empty($product->related_products))
+        {
+            $add_related_product_ids[] = $product->id;
+            $productSub1 = Product::where([
+                ['is_published', '=', 1],
+                ['products.deleted', '=', 0],
+                ['products.sub_category_id', '=', $product->sub_category_id],
+                ['products.id', '!=', $product->id]
+            ])
+            ->whereNotIn('products.id', $add_related_product_ids)
+            ->first();
+            if($productSub1->count() > 0)
+            {
+                $add_related_product_ids[] = $productSub1->id;
+                $related_product_ids[] = $productSub1->id;
+                $productSub2 = Product::where([
+                    ['is_published', '=', 1],
+                    ['products.deleted', '=', 0],
+                    ['products.sub_category_id', '=', $product->sub_category_id],
+                ])
+                ->whereNotIn('products.id', $add_related_product_ids)
+                ->first();
+                if($productSub2->count() > 0)
+                {
+                    $add_related_product_ids[] = $productSub2->id;
+                    $related_product_ids[] = $productSub2->id;
+                }
+            }
+
+            $productcat1 = Product::where([
+                ['is_published', '=', 1],
+                ['products.deleted', '=', 0],
+                ['products.category_id', '=', $product->category_id]
+            ])
+            ->whereNotIn('products.id', $add_related_product_ids)
+            ->first();
+            if($productcat1->count() > 0)
+            {
+                $add_related_product_ids[] = $productcat1->id;
+                $related_product_ids[] = $productcat1->id;
+                $productcat2 = Product::where([
+                    ['is_published', '=', 1],
+                    ['products.deleted', '=', 0],
+                    ['products.category_id', '=', $product->category_id],
+                ])
+                ->whereNotIn('products.id', $add_related_product_ids)
+                ->first();
+                if($productcat2->count() > 0)
+                {
+                    $related_product_ids[] = $productcat2->id;
+                }
+            }
+
+
+        }
         $related_products = Product::with(['product_image_primary'])
         ->where([
             ['products.is_published', '=', 1],
@@ -117,7 +172,7 @@ class ProductController extends Controller
         //     ['rating', 1]
         // ])->count();
 
-        $ratings = Review::where('product_id',$product->id)->avg('rating');
+        // $ratings = Review::where('product_id',$product->id)->avg('rating');
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-detail';
         return view('products.product-detail',compact('product','page_title','body_class','related_products'))

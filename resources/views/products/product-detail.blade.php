@@ -28,24 +28,35 @@
        <div class="single-excerpt--grid">
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                   <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
-                        @foreach ($product->productImages as $item)
+                @if ($product->productImages->count() > 1)
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
+                         @foreach ($product->productImages as $item)
+                         <div class="item">
+                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                         </div>
+                         @endforeach
+                    </div>
+                 </div>
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div id="big" class="owl-carousel owl-theme">
+                         @foreach ($product->productImages as $item)
+                         <div class="item zoom zoomin">
+                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                         </div>
+                         @endforeach
+                    </div>
+                 </div>
+                 @else
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+                    @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
                         </div>
-                        @endforeach
-                   </div>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                   <div id="big" class="owl-carousel owl-theme">
-                        @foreach ($product->productImages as $item)
-                        <div class="item zoom zoomin">
-                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
-                        </div>
-                        @endforeach
-                   </div>
-                </div>
+                    @endforeach
+                 </div>
+                 @endif
              </div>
           </div>
           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">

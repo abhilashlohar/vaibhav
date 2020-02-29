@@ -82,7 +82,7 @@
                               </div>
                               <div class="slideshow-details--title">
                                  <h4 class="{{($subcategory->slug == $subCategoryData->slug) ? 'active' : ''}}">{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
-                                 
+
                               </div>
                            </div>
                         </div>
@@ -99,7 +99,7 @@
     <div class="container-fluid">
         @foreach($products as $product)
        <div class="leaf-title--wrap">
-          <a href="{{ route('products.product-detail',$product->slug) }}">
+          <a href="{{ route('products.product-detail',$product->slug) }}" data-toggle="tooltip" data-placement="top" title="Product Detail">
                {{$product->name}} - <span>{{$product->subCategory->name}}</span>
            </a>
        </div>
@@ -157,7 +157,7 @@
                                 </ul>
                         </div>
                         <div style="direction:ltr;">
-                            <?php 
+                            <?php
                                 $stars = rand(3,5);
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
@@ -208,6 +208,9 @@
             shares: ["twitter", "facebook", "whatsapp"]
         });
     @endforeach
+    $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+    });
 </script>
 @endsection
 
