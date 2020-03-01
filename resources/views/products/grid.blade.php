@@ -142,8 +142,12 @@
                                 </ul>
                             </div>
                             <div style="direction:ltr;">
-                                <?php 
-                                    $stars = rand(3,5);
+                                <?php
+                                    $stars = 0;
+                                    if ($product->avgRating != null)
+                                    {
+                                        $stars = $product->avgRating->rating;
+                                    }
                                     for ($i=1; $i <= 5 ; $i++) {
                                         if ($i<=$stars) $checked = "checked";
                                         else $checked = "";

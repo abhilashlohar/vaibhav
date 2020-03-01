@@ -158,7 +158,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($product->avgRating != null)
+                                {
+                                    $stars = $product->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -172,7 +176,7 @@
                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                     <button type="submit">Add To Cart</button>
                                 </li>
-                                <li><a href="#" target="_blank">Explore</a></li>
+                                <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}">Enquire Now</button></li>
                             </ul>
                         </div>
                         <div class="ecommerce-item--share">

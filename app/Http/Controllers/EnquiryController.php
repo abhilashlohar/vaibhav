@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Enquiry;
 use App\Category;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EnquiryReplyFromAdmin;
 
 class EnquiryController extends Controller
 {
@@ -30,7 +32,7 @@ class EnquiryController extends Controller
     }
     public function store(Request $request)
     {
-        if($request->enquiry_type == 'Care') {
+        if($request->enquiry_type == 'Care' || $request->enquiry_type == 'Product Enquiry') {
             $ticket_no = $this->newTicketNumber();
             $request->request->add(['ticket_no' => $ticket_no]);
         }
@@ -50,6 +52,16 @@ class EnquiryController extends Controller
         elseif ($request->enquiry_type == 'Subscribe Email') {
             return 'Email subscribed successfully.';
         }
+        elseif ($request->enquiry_type == 'Product Enquiry') {
+            // Mail::to($request->email)->send(
+            //     new EnquiryReplyFromAdmin(
+            //         $request->name,
+            //         $ticket_no,
+            //         'Thank you for enquiry and we will get back to you.'
+            //     )
+            // );
+            return 'Thank you for enquiry and we will get back to you.';
+        }
     }
 
     public function complaintSearch(Request $request)
@@ -61,7 +73,7 @@ class EnquiryController extends Controller
 
     public function newTicketNumber()
     {
-        $enquiry = Enquiry::where('enquiry_type','care')->latest('ticket_no')->first();
+        $enquiry = Enquiry::where('ticket_no', '>', 0)->latest('ticket_no')->first();
         if ($enquiry) return $enquiry->ticket_no+1;
         else return 1001;
     }

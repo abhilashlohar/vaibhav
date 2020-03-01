@@ -77,7 +77,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($furnitureProduct1->avgRating != null)
+                                {
+                                    $stars = $furnitureProduct1->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -90,9 +94,10 @@
                                 <li>
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="product_id" value="{{$furnitureProduct1->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        <input type="hidden" class="query_product_id" name="product_id" value="{{$furnitureProduct1->id}}">
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct1->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct1->slug)}}">Explore</a></li>
                            </ul>
@@ -128,7 +133,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($furnitureProduct2->avgRating != null)
+                                {
+                                    $stars = $furnitureProduct2->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -142,8 +151,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct2->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct2->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct2->slug)}}">Explore</a></li>
                            </ul>
@@ -179,7 +189,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($furnitureProduct3->avgRating != null)
+                                {
+                                    $stars = $furnitureProduct3->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -193,8 +207,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct3->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct3->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct3->slug)}}">Explore</a></li>
                            </ul>
@@ -230,7 +245,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($furnitureProduct4->avgRating != null)
+                                {
+                                    $stars = $furnitureProduct4->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -244,8 +263,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct4->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct4->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct4->slug)}}">Explore</a></li>
                            </ul>
@@ -329,7 +349,11 @@
                      </div>
                      <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($consumablesProduct->avgRating != null)
+                                {
+                                    $stars = $consumablesProduct->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -343,8 +367,9 @@
                                 <form action="{{ route('addTocart') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{$consumablesProduct->id}}">
-                                    <button type="submit">Buy Now</button>
+                                    {{-- <button type="submit">Buy Now</button> --}}
                                 </form>
+                                <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}">Enquire Now</button>
                             </li>
                            <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
                         </ul>
@@ -399,7 +424,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($electricalsProduct1->avgRating != null)
+                                {
+                                    $stars = $electricalsProduct1->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -413,8 +442,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct1->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct1->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct1->slug)}}">Explore</a></li>
                            </ul>
@@ -450,7 +480,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($electricalsProduct2->avgRating != null)
+                                {
+                                    $stars = $electricalsProduct2->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -464,8 +498,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct2->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct2->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct2->slug)}}">Explore</a></li>
                            </ul>
@@ -504,7 +539,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($electricalsProduct2->avgRating != null)
+                                {
+                                    $stars = $electricalsProduct2->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -518,8 +557,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct3->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct3->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct3->slug)}}">Explore</a></li>
                            </ul>
@@ -552,7 +592,11 @@
                         </div>
                         <div style="direction:ltr;">
                             <?php
-                                $stars = rand(3,5);
+                                $stars = 0;
+                                if ($electricalsProduct4->avgRating != null)
+                                {
+                                    $stars = $electricalsProduct4->avgRating->rating;
+                                }
                                 for ($i=1; $i <= 5 ; $i++) {
                                     if ($i<=$stars) $checked = "checked";
                                     else $checked = "";
@@ -566,8 +610,9 @@
                                     <form action="{{ route('addTocart') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct4->id}}">
-                                        <button type="submit">Buy Now</button>
+                                        {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct4->id}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct4->slug)}}">Explore</a></li>
                            </ul>

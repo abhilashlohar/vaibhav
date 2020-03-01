@@ -197,7 +197,44 @@
    </header>
 
    @yield ('content')
-
+   <!-- Modal for Add To Query -->
+   <div class="modal fade" id="add-query" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Product To Your Query</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <form id="queryForm" name="queryForm">
+            <div class="modal-body">
+                <p style="display:none; color:#000;" id="enquiry-result" class="alert alert-success" role="alert" data-dismiss="alert"></p>
+                <div class="form-group">
+                    <label for="query-name">Name *</label>
+                    <input type="text" class="form-control" id="query-name" aria-describedby="name" placeholder="Enter Name" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="query-email">Email address *</label>
+                    <input type="email" class="form-control" id="query-email" name="query_email" aria-describedby="emailHelp" placeholder="Enter email" required="required">
+                </div>
+                <div class="form-group">
+                    <label for="query-mobile">Mobile No. *</label>
+                    <input type="text" class="form-control" id="query-mobile" aria-describedby="mobile" placeholder="Enter Mobile No." required="required">
+                </div>
+                <div class="form-group">
+                    <label for="message-for-query">Message *</label>
+                    <textarea class="form-control" id="query-message" rows="3" required="required"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-danger queryToEnquiry">Send Enquiry</button>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
    <footer class="footer-wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
@@ -275,6 +312,7 @@
             </div>
          </div>
       </div>
+
    </footer>
 
    <!-- Javascript -->
@@ -299,6 +337,13 @@
         $( "#enquiry_subscribe" ).validate({
             rules: {
                 email: {
+                    required: !0
+                }
+            }
+        });
+        $( "#queryForm" ).validate({
+            rules: {
+                query_email: {
                     required: !0
                 }
             }
@@ -377,6 +422,37 @@
                             $('#subscribe_email').val('');
                             $('#subscribe-message').show();
                             $('#subscribe-message').html(data);
+                        }
+                    });
+                }
+
+            });
+            var query_product_id = 0;
+            $(document).on('click', '.open-enquery-modal', function(e){
+                $('#add-query').modal({
+                    show: true
+                });
+                query_product_id = $(this).attr('product_id');
+            });
+            $(document).on('click','.queryToEnquiry',function(e){
+                e.preventDefault();
+                var product_id = query_product_id;
+                var name = $('#query-name').val();
+                var email = $('#query-email').val();
+                var mobile_no = $('#query-mobile').val();
+                var enquiry_message = $('#query-message').val();
+                if(email != "")
+                {
+                    $.ajax({
+                        type:'POST',
+                        url:"{{ route('enquiry.store') }}",
+                        data:{product_id:product_id, name:name, email:email, mobile_no:mobile_no, enquiry_message:enquiry_message, enquiry_type:'Product Enquiry'},
+                        success:function(data){
+                            $('#enquiry-result').show();
+                            $('#enquiry-result').html(data);
+                            $("#queryForm").trigger("reset");
+                            $('html,body').animate({ scrollTop: $('#add-query').offset().top},'slow');
+                            setTimeout(function(){  $('#enquiry-result').hide(); }, 6000);
                         }
                     });
                 }
