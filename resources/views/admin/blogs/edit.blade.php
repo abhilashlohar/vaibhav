@@ -100,6 +100,7 @@
                                 @foreach ($BlogCategories as $BlogCategory)
                                 <div class="kt-checkbox-list">
                                     <label class="kt-checkbox kt-checkbox--bold kt-checkbox--brand">
+                                        @if ($Blog->BlogCategories)
                                         <input 
                                             type="checkbox" id="blog_category_ids" name="blog_category_ids[]" 
                                             value="{{ $BlogCategory->id }}" 
@@ -107,6 +108,7 @@
                                         >
                                          {{ $BlogCategory->name }}
                                         <span></span>
+                                        @endif
                                     </label>
                                 </div>
                                 @endforeach

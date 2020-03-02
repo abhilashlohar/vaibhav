@@ -54,97 +54,27 @@
      </div>
      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="blog-listing--grid">
+           @if ($blogs)
+           @foreach ($blogs as $blog)
            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
               <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
+                 <a href="{{ route('blogs.view', $blog->slug) }}">
+                    @if ($blog->featured_image)
+                    <img src="{{ asset('storage/blog/'.$blog->id.'/'.$blog->featured_image) }}" alt="{{$blog->title}}"/>
+                    @endif
+                  </a>
                  <div class="blog-excerpt--wrap">
                     <div class="published-date">
                        <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
+                       {{ date('F d Y', strtotime($blog->created_at)) }}
                     </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <h2><a href="{{ route('blogs.view', $blog->slug) }}">{{$blog->title }}</a></h2>
+                    <p>{{$blog->excerpt }}</p>
                  </div>
               </div>
            </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
-           <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-              <div class="blog-listing--wrap">
-                 <a href="#"><img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt="Blog"/></a>
-                 <div class="blog-excerpt--wrap">
-                    <div class="published-date">
-                       <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                       February 12 2020
-                    </div>
-                    <h2><a href="#">Lorem ipsum dolor sit amet</a></h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                 </div>
-              </div>
-           </div>
+           @endforeach
+           @endif
         </div>
      </div>
   </div>

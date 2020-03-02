@@ -37,6 +37,11 @@ class Blog extends Model
           'title.required' => 'You must enter blog tite.',
       ];
     }
+
+    public function BlogCategories()
+    {
+        return $this->belongsToMany('App\BlogCategory', 'category_blog', 'blog_category_id', 'blog_id');
+    }
 }
 
 

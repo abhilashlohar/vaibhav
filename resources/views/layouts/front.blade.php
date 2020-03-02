@@ -276,6 +276,7 @@
                         <ul>
                            <li><a href="{{url('/journal') }}">Journal</a></li>
                            <li><a href="{{url('/faqs') }}">FAQs</a></li>
+                           <li><a href="{{route('blogs.list') }}">Blog</a></li>
                            <li><a href="{{url('/contact-us') }}">Contact</a></li>
                            <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
                         </ul>
