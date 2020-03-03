@@ -412,12 +412,12 @@
         });
 
         jQuery(document).ready(function() {
-
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
+
             $(document).on('click','.addToEnquiry',function(e){
                 e.preventDefault();
                 var email = $('#subscribe_email').val();
@@ -436,6 +436,7 @@
                 }
 
             });
+
             var query_product_id = 0;
             $(document).on('click', '.open-enquery-modal', function(e){
                 $('#add-query').modal({
@@ -443,14 +444,16 @@
                 });
                 query_product_id = $(this).attr('product_id');
             });
+
             $(document).on('click','.queryToEnquiry',function(e){
                 e.preventDefault();
+                $('#enquiry-result').slideUp();
                 var product_id = query_product_id;
                 var name = $('#query-name').val();
                 var email = $('#query-email').val();
                 var mobile_no = $('#query-mobile').val();
                 var enquiry_message = $('#query-message').val();
-                if(email != "")
+                if(name != "" && email != "" && mobile_no != "")
                 {
                     $.ajax({
                         type:'POST',
@@ -465,7 +468,10 @@
                         }
                     });
                 }
-
+                else
+                {
+                    $('#enquiry-result').slideDown();
+                }
             });
         });
     </script>
