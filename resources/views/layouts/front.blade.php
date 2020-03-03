@@ -210,6 +210,7 @@
         <form id="queryForm" name="queryForm">
             <div class="modal-body">
                 <p style="display:none; color:#000;" id="enquiry-result" class="alert alert-success" role="alert" data-dismiss="alert"></p>
+                <p style="display:none; color:#000;" id="enquiry-error" class="alert alert-danger" role="alert" data-dismiss="alert">Please Fill all input.</p>
                 <div class="form-group">
                     <label for="query-name">Name *</label>
                     <input type="text" class="form-control" id="query-name" aria-describedby="name" placeholder="Enter Name" required="required">
@@ -439,6 +440,8 @@
 
             var query_product_id = 0;
             $(document).on('click', '.open-enquery-modal', function(e){
+                $('#enquiry-result').hide();
+                $('#enquiry-error').hide();
                 $('#add-query').modal({
                     show: true
                 });
@@ -447,7 +450,6 @@
 
             $(document).on('click','.queryToEnquiry',function(e){
                 e.preventDefault();
-                $('#enquiry-result').slideUp();
                 var product_id = query_product_id;
                 var name = $('#query-name').val();
                 var email = $('#query-email').val();
@@ -463,14 +465,14 @@
                             $('#enquiry-result').show();
                             $('#enquiry-result').html(data);
                             $("#queryForm").trigger("reset");
-                            $('html,body').animate({ scrollTop: $('#add-query').offset().top},'slow');
-                            setTimeout(function(){  $('#enquiry-result').hide(); }, 6000);
+                            $('#add-query').animate({ scrollTop:180},'slow');
                         }
                     });
                 }
                 else
                 {
-                    $('#enquiry-result').slideDown();
+                    $('#enquiry-error').show();
+                    $('#add-query').animate({ scrollTop:180},'slow');
                 }
             });
         });
