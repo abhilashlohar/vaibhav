@@ -66,12 +66,12 @@
          <div class="row">
             <div class="header-bar--top">
                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
-               <div class="col-4 col-sm-3 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-5 col-sm-3 col-md-4 col-lg-4 col-xl-4">
                   <div class="logo-wrap">
                      <a href="<?php echo url('/'); ?>"><img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""/></a>
                   </div>
                </div>
-               <div class="col-5 col-sm-5 col-md-4 col-lg-4 col-xl-4">
+               <div class="col-4 col-sm-5 col-md-4 col-lg-4 col-xl-4">
                   <div class="ecommerce-menu--wrap">
                   	<div class="ecommerce-menu--item">
                         <ul class="navbar-nav">
@@ -128,7 +128,7 @@
                     </div>
                     <div class="ecommerce-menu--item">
                         <a href="{{ route('cart') }}" class="cart-notify">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">({{$cartItem}})</span></a>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">{{$cartItem}}</span></a>
                     </div>
                   </div>
                </div>
@@ -318,6 +318,14 @@
 
    <!-- Javascript -->
    <script src="<?php echo url('/'); ?>/static/js/jquery-3.4.1.min.js"></script>
+   <script src="<?php echo url('/'); ?>/static/js/popper.min.js"></script>
+   <script type="text/javascript">
+     $(document).ready(function() {
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+      });
+   </script>
    <script src="<?php echo url('/'); ?>/static/js/bootstrap.min.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/owl.carousel.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/rater.js"></script>

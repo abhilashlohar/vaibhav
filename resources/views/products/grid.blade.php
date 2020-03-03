@@ -24,25 +24,25 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile" src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>The <span>style statement</span> of<br/> your home</h1>
                      </div>
                   </div>
                </div>
-               <!-- <div class="item">
+               <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/furniture-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/furniture-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                      </div>
                      <div class="message-rounded--wrap">
-                        <h1>The style statement of your home</h1>
+                        <h1>The <span>style statement</span> of<br/> your home</h1>
                      </div>
                   </div>
-               </div> -->
+               </div>
             </div>
          </div>
       </div>
@@ -88,7 +88,7 @@
                         <div class="item">
                            <div class="slideshow-details--wrap">
                               <div class="slideshow-details--image">
-                                 <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
+                                 <img class="owl-lazy" data-src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
                               </div>
                               <div class="slideshow-details--title">
                                  <h4 class="{{($subcategory->slug == $subCategoryData->slug) ? 'active' : ''}}">{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>

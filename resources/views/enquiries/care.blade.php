@@ -15,8 +15,8 @@
                      <h1>Bridging Your Customer <strong>Solutions</strong></h1>
                   </div>
                   <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
+                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
+                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
                   </div>
                </div>
             </div>
@@ -26,8 +26,8 @@
                      <h1>Bridging Your Customer <strong>Solutions</strong></h1>
                   </div>
                   <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
+                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
+                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
                   </div>
                </div>
             </div>

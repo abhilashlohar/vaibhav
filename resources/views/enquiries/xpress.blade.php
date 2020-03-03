@@ -9,8 +9,8 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>A <span>few clicks</span> is all it takes.</h1>
@@ -20,8 +20,8 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>A <span>few clicks</span> is all it takes.</h1>
@@ -49,17 +49,17 @@
                    <div class="owl-carousel plus-slideshow owl-theme">
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                         <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
+                          <img class="owl-lazy" data-src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
+                            <img class="owl-lazy" data-src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                       <div class="item">
                          <div class="slideshow-image--wrap">
-                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
+                            <img class="owl-lazy" data-src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
                          </div>
                       </div>
                    </div>

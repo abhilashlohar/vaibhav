@@ -9,8 +9,8 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>An <span>Art Infused</span> School</h1>
@@ -20,8 +20,8 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>An <strong>Art Infused</strong> School</h1>

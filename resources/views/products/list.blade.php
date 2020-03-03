@@ -26,12 +26,12 @@
                         </div>
                      </div>
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile" src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                      </div>
                   </div>
                </div>
-               <!-- <div class="item">
+               <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="message-rounded--wrap">
                         <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
@@ -40,11 +40,11 @@
                         </div>
                      </div>
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/consumables-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/consumables-banner-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                      </div>
                   </div>
-               </div> -->
+               </div>
             </div>
          </div>
       </div>
@@ -78,11 +78,10 @@
                         <div class="item">
                            <div class="slideshow-details--wrap">
                               <div class="slideshow-details--image">
-                                 <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
+                                 <img class="owl-lazy" data-src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
                               </div>
                               <div class="slideshow-details--title">
                                  <h4 class="{{($subcategory->slug == $subCategoryData->slug) ? 'active' : ''}}">{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
-
                               </div>
                            </div>
                         </div>
@@ -99,7 +98,7 @@
     <div class="container-fluid">
         @foreach($products as $product)
        <div class="leaf-title--wrap">
-          <a href="{{ route('products.product-detail',$product->slug) }}" data-toggle="tooltip" data-placement="top" title="Product Detail">
+          <a href="{{ route('products.product-detail',$product->slug) }}" data-toggle="tooltip" title="Product Detail">
                {{$product->name}} - <span>{{$product->subCategory->name}}</span>
            </a>
        </div>
@@ -217,6 +216,4 @@
     });
 </script>
 @endsection
-
-
 

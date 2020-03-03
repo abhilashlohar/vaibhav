@@ -12,8 +12,8 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
@@ -23,8 +23,30 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
+                     </div>
+                     <div class="message-rounded--wrap">
+                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="slideshow-details--wrap">
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
+                     </div>
+                     <div class="message-rounded--wrap">
+                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                     </div>
+                  </div>
+               </div>
+               <div class="item">
+                  <div class="slideshow-details--wrap">
+                     <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
                      </div>
                      <div class="message-rounded--wrap">
                         <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
@@ -35,7 +57,6 @@
          </div>
       </div>
     </section>
-
 
     <!-- Need to move into css file -->
     <style>
@@ -643,7 +664,7 @@
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
                <div class="title-text--middle">
-                  <h2>Visit our store</h2>
+                  <h2>View our store</h2>
                </div>
             </div>
          </div>
@@ -663,14 +684,18 @@
                   <div class="store-gallery--ui">
                      <div class="gallery-image--one">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-01.png" alt=""/>
-                        <div class="store-action">
-                           <a href="#" class="btn">Store Branding</a>
+                        <div class="gallery-icon">
+                           <button type="button" class="btn" data-toggle="modal" data-target="#gallery-one">
+                              <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
+                           </button>
                         </div>
                      </div>
                      <div class="gallery-image--two">
                         <img src="<?php echo url('/'); ?>/static/images/gallery-image-02.png" alt=""/>
-                        <div class="store-action">
-                           <a href="#" class="btn">Store Opening</a>
+                        <div class="gallery-icon">
+                           <button type="button" class="btn" data-toggle="modal" data-target="#gallery-two">
+                              <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
+                           </button>
                         </div>
                      </div>
                   </div>
@@ -678,8 +703,10 @@
                <div class="store-ui--column hide-this--desktop">
                   <div class="gallery-image--three">
                      <img src="<?php echo url('/'); ?>/static/images/gallery-image-03.png" alt=""/>
-                     <div class="store-action">
-                        <a href="#" class="btn">Store Opening</a>
+                     <div class="gallery-icon">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#gallery-three">
+                           <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
+                        </button>
                      </div>
                   </div>
                </div>
@@ -701,6 +728,148 @@
              </div>
            </div>
          </div>
+
+         <!-- Modal for Gallery One -->
+         <div class="modal fade" id="gallery-one" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                  <div class="card-columns">
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Modal for Gallery Two -->
+         <div class="modal fade" id="gallery-two" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                  <div class="card-columns">
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
+         <!-- Modal for Gallery Two -->
+         <div class="modal fade" id="gallery-three" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
+           <div class="modal-dialog" role="document">
+             <div class="modal-content">
+               <div class="modal-header">
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                   <span aria-hidden="true">&times;</span>
+                 </button>
+               </div>
+               <div class="modal-body">
+                  <div class="card-columns">
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                     </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+
       </div>
     </section>
 
@@ -968,7 +1137,7 @@
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                                 <div class="thumbnail-brand--ui">
                                 <div class="thumbnail-brand--logo">
-                                    <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{ $brand->name }}" title="{{ $brand->name }}"/>
+                                    <img class="owl-lazy" data-src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{ $brand->name }}" title="{{ $brand->name }}"/>
                                 </div>
                                 </div>
                             </div>

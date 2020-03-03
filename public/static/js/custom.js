@@ -18,6 +18,7 @@ $(document).ready(function() {
       margin:10,
       nav:false,
       dots: true,
+      lazyLoad: true,
       responsive:{
           0:{
               items:1
@@ -36,6 +37,7 @@ $('.category-slideshow').owlCarousel({
     loop:true,
     margin:10,
     nav:false,
+    lazyLoad: true,
     dots: true,
     responsive:{
         0:{
@@ -54,6 +56,7 @@ $('.partner-slideshow').owlCarousel({
     loop:true,
     margin:0,
     nav:true,
+    lazyLoad: true,
     navText: [
       '<i class="fa fa-angle-left" aria-hidden="true"></i>',
       '<i class="fa fa-angle-right" aria-hidden="true"></i>'
@@ -75,6 +78,7 @@ $('.partner-slideshow').owlCarousel({
 $('.category-inner').owlCarousel({
     loop:false,
     margin: 30,
+    lazyLoad: true,
     nav:true,
     navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
     dots: false,
@@ -116,6 +120,7 @@ $('.plus-slideshow').owlCarousel({
     nav:false,
     navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
     dots: true,
+    lazyLoad: true,
     responsive:{
         0:{
             items:1
@@ -522,4 +527,3 @@ $(document).ready(function() {
    owlCategoryTwo();
    $(window).resize(owlCategoryTwo);
 });
-
