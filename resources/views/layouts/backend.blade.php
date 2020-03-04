@@ -43,8 +43,8 @@
     <!-- begin:: Header Mobile -->
     <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed " >
         <div class="kt-header-mobile__logo">
-            <a href="../../../index.html">
-                <img alt="Logo" src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/logo-light.png"/>
+            <a href="{{ route('Admin.dashboard') }}">
+                <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title="" style="width:120px;"/>
             </a>
         </div>
         <div class="kt-header-mobile__toolbar">
@@ -67,8 +67,8 @@
                 <!-- begin:: Aside -->
                 <div class="kt-aside__brand kt-grid__item " id="kt_aside_brand">
                     <div class="kt-aside__brand-logo">
-                        <a href="../../../index.html">
-                            <img alt="Logo" src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/media/logos/logo-light.png"/>
+                        <a href="{{ route('Admin.dashboard') }}">
+                            <img src="<?php echo url('/'); ?>/static/images/logo.png" alt="" title=""  style="width:120px;"/>
                         </a>
                     </div>
 

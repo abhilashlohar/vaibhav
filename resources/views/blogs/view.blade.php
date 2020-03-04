@@ -80,78 +80,39 @@
                         <input type="text" class="form-control" placeholder="Search for the blog">
                     </div>
                     </div>
+                    @if ($recentBlogs->count() > 0)
                     <div class="sidebar-post--recommended">
                         <div class="sidebar-item--title">
                             <h3>Recent Post</h3>
                         </div>
+                        @foreach ($recentBlogs as $recentBlog)
+
+
                         <div class="sidebar-post--item">
                             <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                                 <div class="recommended-post--image">
-                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                                    @if ($recentBlog->featured_image)
+                                    <img src="{{ asset('storage/blog/'.$recentBlog->id.'/'.$recentBlog->featured_image) }}" alt="{{$recentBlog->title}}"/>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
                                 <div class="recommended-post--excerpt">
-                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
+                                    <h5>{{$recentBlog->title }}</h5>
                                     <div class="date">
                                     <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                    February 12 2020
+                                    {{ date('F d Y', strtotime($recentBlog->created_at)) }}
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="sidebar-post--item">
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                                <div class="recommended-post--image">
-                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
-                                <div class="recommended-post--excerpt">
-                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                    <div class="date">
-                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                    February 12 2020
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar-post--item">
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                                <div class="recommended-post--image">
-                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
-                                <div class="recommended-post--excerpt">
-                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                    <div class="date">
-                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                    February 12 2020
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="sidebar-post--item">
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                                <div class="recommended-post--image">
-                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                                </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
-                                <div class="recommended-post--excerpt">
-                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                    <div class="date">
-                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                    February 12 2020
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+
                     </div>
+                    @endif
                     <div class="sidebar-item--categories">
                     <div class="sidebar-item--title">
-                        <h3>Recent Post</h3>
+                        <h3>Shop by Category</h3>
                     </div>
                     <div class="sidebar-category--item">
                         <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">

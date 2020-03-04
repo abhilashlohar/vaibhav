@@ -113,7 +113,7 @@
                         @csrf
                         <div class="ecommerce-item--name">
                             <h3>
-                                <a href="{{ route('products.product-detail',$product->slug) }}">
+                                <a href="{{ route('products.product-detail',$product->slug) }}"  data-tooltip="View Details">
                                     {{$product->name}} - <span>{{$product->subCategory->name}}</span>
                                 </a>
                             </h3>

@@ -54,13 +54,13 @@ class BlogController extends Controller
     {
         $request->validate(Blog::rules($Blog->id), Blog::messages());
 
-
         $oldImg = storage_path('app/public/blog/'.$Blog->id.'/'.$Blog->getOriginal()['featured_image']);
-        if (file_exists($oldImg)) File::delete($oldImg);
-
 
         if($request->hasFile('f_image'))
         {
+
+            if (file_exists($oldImg)) File::delete($oldImg);
+
             $file = $request->f_image;
             $extension = $request->f_image->extension();
             $fileName = 'featured-image'.'.'.$extension;
@@ -69,7 +69,10 @@ class BlogController extends Controller
         }
         else
         {
-            $request->request->add(['featured_image' => null]);
+            if (!file_exists($oldImg))
+            {
+                $request->request->add(['featured_image' => null]);
+            }
         }
 
 

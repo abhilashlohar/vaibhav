@@ -23,14 +23,18 @@ class BlogController extends Controller
         $blog = Blog::where([
             ['slug', '=', $slug]
         ])->first();
-        
+
         if (!$blog) {
             echo 'Not Found'; die;
         }
+        $recentBlogs = Blog::where([
+            ['id', '!=', $blog->id],
+            ['status', '=', 'published']
+        ])->orderBy('id', 'desc')->take(5)->get();
 
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'blog-view';
-        return view('blogs.view', compact('page_title','body_class', 'blog'));
+        return view('blogs.view', compact('page_title','body_class', 'blog', 'recentBlogs'));
     }
 }

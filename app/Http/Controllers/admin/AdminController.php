@@ -139,7 +139,8 @@ class AdminController extends Controller
         ]);
         $token = (string) Str::uuid();
         $admin = Admin::where('email', '=', $request->email)->first();
-        if ($admin->id)
+
+        if ($admin)
         {
             Mail::to($admin->email)->send(
                 new ForgottenPasswordAdmin(
@@ -148,12 +149,16 @@ class AdminController extends Controller
                     $admin->email
                 )
             );
+            $request->request->add(['otp' => $token]);
+            $admin->update($request->all());
+
+            return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');
+        }
+        else
+        {
+            return redirect()->route('AdminLogin')->withFail('Please enter your correct email.');
         }
 
-        $request->request->add(['otp' => $token]);
-        $admin->update($request->all());
-
-        return redirect()->route('showAdminLoginForm')->with('success','One time reset password link send to your mail, please check and reset password.');
     }
     public function resetPassword(Request $request)
     {
