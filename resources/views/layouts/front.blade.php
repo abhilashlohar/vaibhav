@@ -156,7 +156,7 @@
                                              @foreach ($headerCategories as $headerCategory)
                                              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                                                 <div class="menu-tab--item">
-                                                   <a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">
+                                                   <a href="{{route('products.category-list',[$headerCategory->slug])}}">
                                                       <img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt=""/>
                                                       <h5>{{$headerCategory->name}}</h5>
                                                    </a>
@@ -253,7 +253,7 @@
                         <ul>
                             @foreach ($headerCategories as $headerCategory)
                                 <li>
-                                    <a href="{{route('products.list',[$headerCategory->slug,$headerCategory->subCategoryFirst->slug])}}">
+                                    <a href="{{route('products.category-list',[$headerCategory->slug])}}">
                                         {{$headerCategory->name}}
                                     </a>
                                 </li>

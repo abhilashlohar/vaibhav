@@ -34,6 +34,19 @@ class ProductController extends Controller
         return view('products.search',compact('products','page_title','body_class'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
+
+    public function categoryList($category_slug)
+    {
+        $category = Category::where([
+            ['slug', '=', $category_slug],
+            ['deleted', '=', 0]
+        ])->with('subcategory_available_orderBy')->first();
+
+        $page_title = 'Vaibhav - A Unit of 28 South Ventures';
+        $body_class = 'product-list category-list';
+        return view('products.category-list',compact('category','page_title','body_class'));
+    }
+
     public function list($category_slug,$sub_category_slug)
     {
         $category = Category::where([

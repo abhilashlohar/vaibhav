@@ -18,6 +18,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
 
+    Route::get('/products/{category}', 'ProductController@categoryList')->name('products.category-list');
     Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
     Route::get('/product/{product}', 'ProductController@productDetail')->name('products.product-detail');
     Route::get('/product/search/{searchQuery}', 'ProductController@productSearch')->name('products.search');
