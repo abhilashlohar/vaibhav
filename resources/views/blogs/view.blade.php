@@ -1,6 +1,9 @@
 @extends ('layouts.front')
 
-
+<?php
+    use \App\Http\Controllers\HomeController;
+    $headerCategories = HomeController::headerCategories();
+    ?>
 @section ('content')
 <section class="category-banner--wrapper assign-right--transparent">
     <div class="container-fluid">
@@ -111,57 +114,28 @@
                     </div>
                     @endif
                     <div class="sidebar-item--categories">
-                    <div class="sidebar-item--title">
-                        <h3>Shop by Category</h3>
-                    </div>
-                    <div class="sidebar-category--item">
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                            </div>
+                        <div class="sidebar-item--title">
+                            <h3>Shop by Category</h3>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--excerpt">
-                                <h3>Electricals</h3>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
+                        @foreach ($headerCategories as $headerCategory)
+
+                        <div class="sidebar-category--item">
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <div class="recommended-category--image">
+                                    <a href="{{route('products.category-list',[$headerCategory->slug])}}">
+                                        <img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt=""/>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                                <div class="recommended-category--excerpt">
+                                    <a href="{{route('products.category-list',[$headerCategory->slug])}}">
+                                        <h3>{{$headerCategory->name}}</h3>
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="sidebar-category--item">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--excerpt">
-                                <h3>Electricals</h3>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sidebar-category--item">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                            <div class="recommended-category--excerpt">
-                                <h3>Electricals</h3>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        @endforeach
                     </div>
                     <div class="sidebar-promotion--image">
                     <img src="<?php echo url('/'); ?>/static/images/promotion-banner-01.png" alt="">
