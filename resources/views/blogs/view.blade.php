@@ -47,7 +47,7 @@
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="blog-details--grid">
-            <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7">
                 <div class="blog-content--wrap">
                     <div class="blog-heading--text">
                     <h2>{{ $blog->title }}</h2>
@@ -72,7 +72,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5">
                 <div class="blog-sidebar--wrap">
                     <div class="sidebar-search">
                     <div class="form-group has-search">
@@ -81,85 +81,85 @@
                     </div>
                     </div>
                     <div class="sidebar-post--recommended">
-                    <div class="sidebar-item--title">
-                        <h3>Recent Post</h3>
-                    </div>
-                    <div class="sidebar-post--item">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="recommended-post--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
-                            </div>
+                        <div class="sidebar-item--title">
+                            <h3>Recent Post</h3>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                            <div class="recommended-post--excerpt">
-                                <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
+                        <div class="sidebar-post--item">
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                <div class="recommended-post--image">
+                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                                </div>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                                <div class="recommended-post--excerpt">
+                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
+                                    <div class="date">
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                    February 12 2020
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="sidebar-post--item">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="recommended-post--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                        <div class="sidebar-post--item">
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                <div class="recommended-post--image">
+                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                            <div class="recommended-post--excerpt">
-                                <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
+                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                                <div class="recommended-post--excerpt">
+                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
+                                    <div class="date">
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                    February 12 2020
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="sidebar-post--item">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="recommended-post--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                        <div class="sidebar-post--item">
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                <div class="recommended-post--image">
+                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                            <div class="recommended-post--excerpt">
-                                <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
+                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                                <div class="recommended-post--excerpt">
+                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
+                                    <div class="date">
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                    February 12 2020
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="sidebar-post--item">
-                        <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
-                            <div class="recommended-post--image">
-                                <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                        <div class="sidebar-post--item">
+                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                <div class="recommended-post--image">
+                                    <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
-                            <div class="recommended-post--excerpt">
-                                <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
-                                <div class="date">
-                                <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                February 12 2020
+                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                                <div class="recommended-post--excerpt">
+                                    <h5>Lorem ipsum dolor sit amet ipsum amet ipsum dolor</h5>
+                                    <div class="date">
+                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                    February 12 2020
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     </div>
                     <div class="sidebar-item--categories">
                     <div class="sidebar-item--title">
                         <h3>Recent Post</h3>
                     </div>
                     <div class="sidebar-category--item">
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div class="recommended-category--image">
                                 <img src="<?php echo url('/'); ?>/static/images/blog-thumbnail-01.png" alt=""/>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
                             <div class="recommended-category--excerpt">
                                 <h3>Electricals</h3>
                                 <div class="date">

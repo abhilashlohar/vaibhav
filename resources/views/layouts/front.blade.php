@@ -148,12 +148,6 @@
                               </a>
                               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                  <div class="dropdown-item--wrap">
-                                    <!--
-                                    <ul class="nav tab-menu nav-pills col-12 col-sm-12 col-md-2 col-lg-2 col-xl-2 nav-stacked pr15">
-                                       <li class="active"  data-toggle="tab"><a href="#category-01">Furniture</a></li>
-                                       <li><a href="#category-02"  data-toggle="tab">Electricals</a></li>
-                                       <li><a href="#category-03"  data-toggle="tab">Consumables</a></li>
-                                    </ul> -->
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                        <div class="tab-pane well active in active" id="category-01">
@@ -319,14 +313,6 @@
 
    <!-- Javascript -->
    <script src="<?php echo url('/'); ?>/static/js/jquery-3.4.1.min.js"></script>
-   <script src="<?php echo url('/'); ?>/static/js/popper.min.js"></script>
-   <script type="text/javascript">
-     $(document).ready(function() {
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip()
-        })
-      });
-   </script>
    <script src="<?php echo url('/'); ?>/static/js/bootstrap.min.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/owl.carousel.js"></script>
    <script src="<?php echo url('/'); ?>/static/js/rater.js"></script>

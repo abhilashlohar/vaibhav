@@ -98,7 +98,7 @@
     <div class="container-fluid">
         @foreach($products as $product)
        <div class="leaf-title--wrap">
-          <a href="{{ route('products.product-detail',$product->slug) }}" data-toggle="tooltip" title="Product Detail">
+          <a href="{{ route('products.product-detail',$product->slug) }}" data-tooltip="View Details">
                {{$product->name}} - <span>{{$product->subCategory->name}}</span>
            </a>
        </div>
