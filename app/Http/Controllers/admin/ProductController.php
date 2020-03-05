@@ -91,6 +91,27 @@ class ProductController extends Controller
         return view('admin.products.edit',compact('product','categories','subCategories', 'relatedProducts', 'productImages'));
     }
 
+    public function productSequenceExist(Request $request, $sequence, $id)
+    {
+        $product = Product::where([
+            ['sequence','=', $sequence],
+            ['id','!=', $id],
+            ['is_published', '=', 1],
+            ['products.deleted', '=', 0]
+        ])
+        ->first();
+        if($product)
+        {
+            $data = ['label'=>'Sequence number is exist.','name'=>$product->name,'url'=>route('products.edit',[$product->id])];
+        }
+        else
+        {
+            $data = ['label'=>'Not Exist','url'=>''];
+        }
+
+        return response()->json($data);
+    }
+
     /**
      * Update the specified resource in storage.
      *

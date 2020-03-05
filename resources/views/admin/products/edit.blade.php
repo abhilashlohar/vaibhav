@@ -112,6 +112,12 @@ legend {
                                 <label for="sequence">Sequence</label>
                                 <input type="text" id="sequence" name="sequence" class="form-control @error('sequence') is-invalid @enderror" value="{{ ($product->sequence)? $product->sequence : old('sequence') }}">
 
+                                <div class="existLabel" role="alert" style="color:#fd397a; font-size:80%">
+
+                                </div>
+                                <div class="existUrl" role="alert">
+                                    <a href=""></a>
+                                </div>
                                 @error('sequence')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -435,9 +441,36 @@ legend {
             }
         });
 
+        $( document ).on('blur', '#sequence', function(){
+                let sequence = $(this).val();
+                let id = "<?php echo $product->id; ?>";
+                var url = '{{ route("productSequenceExist", [":sequence",":id"]) }}';
+                url = url.replace(':sequence', sequence);
+                url = url.replace(':id', id);
+                console.log(url);
+                jQuery.ajax({
+                    url : url,
+                    type : 'get',
+                    dataType : 'json',
+                    success : function(data) {
+                        if(data.label == 'Not Exist')
+                        {
+                            $('.existLabel').html('');
+                            $('.existUrl').find('a').attr('href','');
+                            $('.existUrl').find('a').text('');
+                        }
+                        else
+                        {
+                            $('.existLabel').html(data.label);
+                            $('.existUrl').find('a').attr('href',data.url);
+                            $('.existUrl').find('a').text(data.name);
+                        }
+                    }
+                });
+            });
+
         $( "#category_id" ).on( "change", function() {
             var category_id = $(this).val();
-            console.log(category_id);
             $.ajax({
                type:'POST',
                url:"{{ route('subcategorylist') }}",

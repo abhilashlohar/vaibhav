@@ -103,7 +103,7 @@ Route::prefix('sarkar')->group(function () {
 
 
     Route::resource('products','admin\ProductController');
-    // Route::resource('modules','admin\ModuleController');
+    Route::get('/productSequenceExist/{sequence}/{id}', 'admin\ProductController@productSequenceExist')->name('productSequenceExist');
     Route::resource('user-rights','admin\UserRightController');
     Route::resource('events','admin\EventController');
     Route::post('events/upload-img','admin\EventController@uploadImg')->name('events.uploadImg');
