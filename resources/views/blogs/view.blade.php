@@ -1,5 +1,6 @@
 @extends ('layouts.front')
-
+<link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
 <?php
     use \App\Http\Controllers\HomeController;
     $headerCategories = HomeController::headerCategories();
@@ -61,8 +62,14 @@
                         {{ date('F d Y', strtotime($blog->created_at)) }}
                     </div>
                     <div class="share">
-                        <i class="fa fa-share-alt" aria-hidden="true"></i>
-                        Share
+                        <a class="share-this" data-toggle="collapse" href="#share-social-blog" role="button" aria-expanded="false" aria-controls="share-social-blog">
+                            <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                         </a>
+                         <div class="collapse" id="share-social-blog">
+                           <div class="card card-body">
+                               <div id="blogShare"></div>
+                           </div>
+                         </div>
                     </div>
                     </div>
                     <div class="blog-featured--wrap">
@@ -80,7 +87,7 @@
                     <div class="sidebar-search">
                     <div class="form-group has-search">
                         <span class="fa fa-search form-control-feedback"></span>
-                        <input type="text" class="form-control" placeholder="Search for the blog">
+                        <input type="text" class="form-control typeaheadblog" placeholder="Search for the blog">
                     </div>
                     </div>
                     @if ($recentBlogs->count() > 0)
@@ -89,26 +96,29 @@
                             <h3>Recent Post</h3>
                         </div>
                         @foreach ($recentBlogs as $recentBlog)
-
-
-                        <div class="sidebar-post--item">
-                            <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
-                                <div class="recommended-post--image">
-                                    @if ($recentBlog->featured_image)
-                                    <img src="{{ asset('storage/blog/'.$recentBlog->id.'/'.$recentBlog->featured_image) }}" alt="{{$recentBlog->title}}"/>
-                                    @endif
+                            <div class="sidebar-post--item">
+                                <div class="col-6 col-sm-6 col-md-4 col-lg-4 col-xl-4">
+                                    <div class="recommended-post--image">
+                                        @if ($recentBlog->featured_image)
+                                            <a href="{{route('blogs.view',[$recentBlog->slug])}}">
+                                                <img src="{{ asset('storage/blog/'.$recentBlog->id.'/'.$recentBlog->featured_image) }}" alt="{{$recentBlog->title}}"/>
+                                            </a>
+                                        @endif
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
-                                <div class="recommended-post--excerpt">
-                                    <h5>{{$recentBlog->title }}</h5>
-                                    <div class="date">
-                                    <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
-                                    {{ date('F d Y', strtotime($recentBlog->created_at)) }}
+                                <div class="col-6 col-sm-6 col-md-8 col-lg-8 col-xl-8">
+                                    <div class="recommended-post--excerpt">
+                                        <a href="{{route('blogs.view',[$recentBlog->slug])}}">
+                                            <h5>{{$recentBlog->title }}</h5>
+                                        </a>
+                                        <div class="date">
+                                        <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+                                        {{ date('F d Y', strtotime($recentBlog->created_at)) }}
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                     </div>
@@ -146,4 +156,16 @@
         </div>
     </div>
 </section>
+@endsection
+@section ('footer-script')
+    <script src="<?php echo url('/'); ?>/share/jssocials.js"></script>
+    <script>
+        $("#blogShare").jsSocials({
+            url: "<?php echo url('/'); ?>/blog/<?php echo $blog->slug; ?>",
+            text: "<?php echo $blog->title; ?>",
+            showLabel: false,
+            showCount: "inside",
+            shares: ["twitter", "facebook", "whatsapp"]
+        });
+    </script>
 @endsection

@@ -396,6 +396,25 @@
                     window.location.href = ui.item.url;
                 }
             });
+
+            $( ".typeaheadblog" ).catcomplete({
+                    delay: 0,
+                source: function (query, process) {
+                    var url = '{{ route("advanceBlogSearch", ":id") }}';
+                    url = url.replace(':id', query.term);
+                    jQuery.ajax({
+                        url : url,
+                        type : 'get',
+                        dataType : 'json',
+                        success : function(data) {
+                            return process(data);
+                        }
+                    });
+                },
+                select: function(e, ui) {
+                    window.location.href = ui.item.url;
+                }
+            });
         });
 
         jQuery(document).ready(function() {

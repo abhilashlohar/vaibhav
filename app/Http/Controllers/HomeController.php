@@ -181,12 +181,13 @@ class HomeController extends Controller
         $category_exist = [];
         foreach($products as $product)
         {
-            if(!in_array($product->category,$category_exist))
+            if(!in_array($product->category->id,$category_exist))
             {
-                $data [] = ['label'=>$product->category->name,'url'=>route('products.list',[$product->category->slug,$product->category->subCategoryFirst->slug]),'category'=>'yes'];
+                $data [] = ['label'=>$product->category->name,'url'=>route('products.category-list',[$product->category->slug]),'category'=>'yes'];
                 $category_exist[] = $product->category->id;
             }
             $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>''];
+
         }
         return response()->json($data);
     }

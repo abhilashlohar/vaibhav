@@ -37,4 +37,20 @@ class BlogController extends Controller
         $body_class = 'blog-view';
         return view('blogs.view', compact('page_title','body_class', 'blog', 'recentBlogs'));
     }
+
+    public function advanceBlogSearch(Request $request, $search)
+    {
+        $blogs = Blog::where([
+            ['title','like','%'.$search.'%'],
+            ['status', '=', 'published']
+        ])
+        ->orderBy('id', 'desc')
+        ->get();
+        $category_exist = [];
+        foreach($blogs as $blog)
+        {
+            $data [] = ['label'=>$blog->title,'url'=>route('blogs.view',[$blog->slug]),'category'=>''];
+        }
+        return response()->json($data);
+    }
 }

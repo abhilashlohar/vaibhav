@@ -57,6 +57,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/blogs', 'BlogController@list')->name('blogs.list');
     Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');
+    Route::get('/advanceBlogSearch/{search}', 'BlogController@advanceBlogSearch')->name('advanceBlogSearch');
 });
 
 
