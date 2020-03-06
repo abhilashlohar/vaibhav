@@ -447,7 +447,6 @@ legend {
                 var url = '{{ route("productSequenceExist", [":sequence",":id"]) }}';
                 url = url.replace(':sequence', sequence);
                 url = url.replace(':id', id);
-                console.log(url);
                 jQuery.ajax({
                     url : url,
                     type : 'get',
