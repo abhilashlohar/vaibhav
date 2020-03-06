@@ -77,7 +77,7 @@ $('.partner-slideshow').owlCarousel({
     }
 });
 
-$('.category-inner').owlCarousel({
+/* $('.category-inner').owlCarousel({
     loop:false,
     margin: 30,
     lazyLoad: true,
@@ -95,7 +95,7 @@ $('.category-inner').owlCarousel({
             items:4
         }
     }
-});
+}); */
 
 $('.recommended-items').owlCarousel({
     loop:false,

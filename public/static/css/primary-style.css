@@ -169,6 +169,9 @@ button {
 .care .header-wrapper {
    position: absolute;
 }
+.product-list.category-list .header-wrapper {
+   position: relative;
+}
 .xpress .header-wrapper {
    position: absolute;
 }
@@ -2139,24 +2142,35 @@ Category Page
    overflow: hidden;
 }
 .category-slideshow--wrapper:before {
-   position: absolute;
-   content: "";
-   background: url(../images/ui-pattern-title.png);
-   background-repeat: no-repeat;
-   background-position: center;
-   left: 1%;
-   top: -201px;
-   height: 100%;
-   width: 100%;
+  position: absolute;
+  content: "";
+  background: url(../images/ui-pattern-title.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 1%;
+  top: -139px;
+  height: 100%;
+  width: 100%;
 }
 .category-slideshow--wrapper .breadcrumb-wrap {
    position: relative;
    width: 100%;
 }
 .category-slideshow--wrapper .category-carousel--wrap {
-   position: relative;
-   width: 100%;
-   padding: 30px;
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+   -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .category-slideshow--wrapper .slideshow-details--wrap {
    position: relative;
