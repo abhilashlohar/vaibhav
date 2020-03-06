@@ -85,6 +85,7 @@
       </div>
    </section>
 
+   @if ($products->count() > 0)
    <section class="items-archive--wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -144,5 +145,12 @@
          </div>
       </div>
    </section>
+   @else
+   <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 thank-you--wrapper">
+            <div class="thank-you--details">
+                <h2><i class="fa fa-ban" aria-hidden="true" style="color:red"></i> No product available.</h2>
+            </div>
+        </div>
+    @endif
 
 @endsection

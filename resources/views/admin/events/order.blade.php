@@ -28,6 +28,7 @@
                             <th>Email</th>
                             <th>Mobile No.</th>
                             <th>Date</th>
+                            <th>Payment Status</th>
                             <th>Amount</th>
                         </tr>
                         @foreach ($eventOrders as $order)
@@ -37,6 +38,7 @@
                             <td class="align-middle">{{ $order->email }}</td>
                             <td class="align-middle">{{ $order->mobile }}</td>
                             <td class="align-middle">{{ date('d-m-Y h:i A', strtotime($order->order_date)) }}</td>
+                            <td class="align-middle">{{ ucfirst($order->payment_status) }}</td>
                             <td class="align-middle">{{ $order->order_amount }}</td>
                         </tr>
                         @endforeach

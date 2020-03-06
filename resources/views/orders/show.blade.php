@@ -50,7 +50,7 @@
                                       <th>Quantity</th>
                                       <th>Price</th>
                                       <th>Amount</th>
-                                      <th></th>
+                                      <th>Rate & Review</th>
                                   </tr>
                               </thead>
                               <tbody>

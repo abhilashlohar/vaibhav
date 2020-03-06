@@ -21,30 +21,38 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
-               <div class="list-orders--table table-responsive">
-                   <table class="table table-bordered">
-                       <thead>
-                           <tr>
-                               <th>Order No.</th>
-                               <th>Order Date</th>
-                               <th>Order Amount</th>
-                               <th>Order Details</th>
-                           </tr>
-                       </thead>
-                       <tbody>
-                           @foreach ($orders as $order)
-                               <tr>
-                                   <td>{{$order->order_no}}</td>
-                                   <td>{{$order->order_date}}</td>
-                                   <td>{{$order->order_amount}}</td>
-                                   <td><a href="{{ route('orders.show',[$order->id]) }}">Order Details</a></td>
-                               </tr>
-                           @endforeach
-                       </tbody>
-                   </table>
-               </div>
-            </div>
+            @if ($orders->count() > 0)
+                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
+                    <div class="list-orders--table table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Order No.</th>
+                                    <th>Order Date</th>
+                                    <th>Order Amount</th>
+                                    <th>Order Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach ($orders as $order)
+                                    <tr>
+                                        <td>{{$order->order_no}}</td>
+                                        <td>{{$order->order_date}}</td>
+                                        <td>{{$order->order_amount}}</td>
+                                        <td><a href="{{ route('orders.show',[$order->id]) }}">Order Details</a></td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @else
+                <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 thank-you--wrapper">
+                    <div class="thank-you--details">
+                        <h2><i class="fa fa-ban" aria-hidden="true" style="color:red"></i> No order available.</<h2>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
 </section>

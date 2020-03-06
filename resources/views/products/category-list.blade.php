@@ -39,22 +39,22 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                <div class="category-carousel--wrap">
-                  <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
-                     @foreach ($category->subcategory_available_orderBy as $subcategory)
-                     <a href="{{route('products.list', [$category->slug,$subcategory->slug])}}" style="text-decoration:none;">
-                        <div class="item">
-                           <div class="slideshow-details--wrap">
-                              <div class="slideshow-details--image">
-                                 <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
-                              </div>
-                              <div class="slideshow-details--title">
-                                 <h4>{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
-                              </div>
-                           </div>
+                    @foreach ($category->subcategory_available_orderBy as $subcategory)
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
+                            <a href="{{route('products.list', [$category->slug,$subcategory->slug])}}" style="text-decoration:none;">
+                                <div class="item">
+                                <div class="slideshow-details--wrap">
+                                    <div class="slideshow-details--image">
+                                        <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
+                                    </div>
+                                    <div class="slideshow-details--title">
+                                        <h4>{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
+                                    </div>
+                                </div>
+                                </div>
+                            </a>
                         </div>
-                     </a>
-                     @endforeach
-                  </div>
+                    @endforeach
                </div>
             </div>
          </div>
