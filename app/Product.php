@@ -52,7 +52,8 @@ class Product extends Model
             'sub_category_id' => 'required',
             'short_description' => 'required',
             'regular_price' => 'required|numeric',
-            'sale_price' => 'required|numeric'
+            'sale_price' => 'required|numeric',
+            'gst_rate' => 'required|numeric',
         ];
       }
 
@@ -69,6 +70,7 @@ class Product extends Model
           'short_description.required' => 'You must enter short description.',
           'regular_price.required' => 'You must enter regular price.',
           'sale_price.required' => 'You must enter sale price.',
+          'gst_rate.required' => 'You must enter gst rate.',
           'slug.required' => 'You must enter url.',
           'slug.unique' => 'The slug is already exists.',
           'discount.numeric' => 'You must enter numeric value.',

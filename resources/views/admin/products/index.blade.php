@@ -39,6 +39,7 @@
                             <th>Sub Category</th>
                             <th>Discount</th>
                             <th>Sale Price</th>
+                            <th>GST Rate</th>
                             <th>Status</th>
                             <th class="text-center">Actions</th>
                         </tr>
@@ -50,6 +51,7 @@
                             <td>{{ $product->subCategory['name'] }}</td>
                             <td>{{ $product->discount }}{{ ($product->discount)?'%':'' }}</td>
                             <td>{{ $product->sale_price }}</td>
+                            <td>{{ $product->gst_rate }}</td>
                             <td>{{($product->is_published)?'Published':'Draft'}}</td>
                             <td  class="text-center">
                                 <form action="{{ route('products.destroy',$product->id) }}" method="POST" id="delete-form-{{ $product->id }}">
