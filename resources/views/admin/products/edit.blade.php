@@ -128,7 +128,7 @@ legend {
 
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="regular_price">Regular Price *</label>
                                 <input type="text" id="regular_price" name="regular_price" class="form-control calculation @error('regular_price') is-invalid @enderror" value="{{ ($product->regular_price)? $product->regular_price : old('regular_price') }}" required>
@@ -140,7 +140,7 @@ legend {
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="discount">Discount %</label>
                                 <input type="text" id="discount" name="discount" class="form-control calculation @error('discount') is-invalid @enderror" value="{{ ($product->discount >= 0)? $product->discount : old('discount') }}">
@@ -152,12 +152,25 @@ legend {
                                 @enderror
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3">
                             <div class="form-group">
                                 <label for="sale_price">Sale Price *</label>
                                 <input type="text" id="sale_price" name="sale_price" class="form-control  @error('sale_price') is-invalid @enderror" value="{{ ($product->sale_price)? $product->sale_price : old('sale_price') }}" required readonly>
 
                                 @error('sale_price')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label for="sale_price">GST Rate *</label>
+                                <input type="text" id="gst_rate" name="gst_rate" class="form-control  @error('gst_rate') is-invalid @enderror" value="{{ ($product->sale_price)? $product->gst_rate : old('gst_rate') }}" required>
+                                <span class="note">Inclusive of GST.</span>
+                                @error('gst_rate')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -588,7 +601,7 @@ legend {
             if(discount != 0)
             {
                 let sale_price = (regular_price * discount)/100;
-                $('#sale_price').val(sale_price);
+                $('#sale_price').val(regular_price - sale_price);
             }
             else
             {

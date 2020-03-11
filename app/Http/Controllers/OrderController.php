@@ -6,6 +6,8 @@ use App\Cart;
 use App\UserAddress;
 use App\Order;
 use App\OrderRow;
+use App\Product;
+use App\MetaData;
 include_once(app_path() . '/razorpay/razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
@@ -104,6 +106,7 @@ class OrderController extends Controller
         $razorpay_order_id = null;
         $razorpay_payment_id = null;
         $razorpay_signature = null;
+
 
         // $payment_mode = $request->payment_mode;
         $payment_mode = "online";
@@ -239,8 +242,12 @@ class OrderController extends Controller
                 $Order->bill_state = $request->ship_state;
                 $Order->bill_city = $request->ship_city;
             }
+            $bill_state = strtolower(trim($Order->bill_state, ' '));
+
             $Order->save();
 
+            $companyState = MetaData::where('meta_key', 'companyState')->first();
+            $companyStateName = strtolower(trim($companyState->meta_value));
             #Saving Order items
             foreach ($cartItems as $cartItem) {
                 $OrderRow = new OrderRow;
@@ -249,6 +256,30 @@ class OrderController extends Controller
                 $OrderRow->quantity = $cartItem->quantity;
                 $OrderRow->price = $cartItem->product->sale_price;
                 $OrderRow->amount = $cartItem->quantity*$cartItem->product->sale_price;
+                $totalGstAmount = 0;
+                $product = Product::where('id',$cartItem->product_id)->first();
+                $taxable_amount = round($product->sale_price/(100+$product->gst_rate)*100,2);
+                if($bill_state == $companyStateName)
+                {
+                    $cgst_sgst_rate = round($product->gst_rate/2,2);
+                    $cgst_sgst_amount  = ($taxable_amount * $cgst_sgst_rate)/100;
+                    $totalGstAmountWithoutRound = $taxable_amount + $cgst_sgst_amount + $cgst_sgst_amount;
+                    $totalGstAmountWithRound = round($totalGstAmountWithoutRound);
+                    $OrderRow->cgst = $cgst_sgst_amount;
+                    $OrderRow->sgst = $cgst_sgst_amount;
+                }
+                else
+                {
+                    $igst_amount = ($taxable_amount * $product->gst_rate)/100;
+                    $totalGstAmountWithoutRound = $taxable_amount + $igst_amount;
+                    $totalGstAmountWithRound = round($totalGstAmountWithoutRound);
+                    $OrderRow->igst = $igst_amount;
+                }
+                $OrderRow->gst_rate = $product->gst_rate;
+                $OrderRow->taxable_amount = $taxable_amount;
+
+                $OrderRow->round_of = $totalGstAmountWithRound - $totalGstAmountWithoutRound;
+                $OrderRow->total_Amount = $totalGstAmountWithRound;
                 $OrderRow->save();
             }
 
