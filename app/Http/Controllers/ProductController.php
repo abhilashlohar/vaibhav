@@ -42,9 +42,11 @@ class ProductController extends Controller
             ['deleted', '=', 0]
         ])->with('subcategory_available_orderBy')->first();
 
+        $template_type = $category->template_type;
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list category-list';
-        return view('products.category-list',compact('category','page_title','body_class'));
+        return view('products.category-list',compact('category','page_title','body_class','template_type'));
     }
 
     public function list($category_slug,$sub_category_slug)

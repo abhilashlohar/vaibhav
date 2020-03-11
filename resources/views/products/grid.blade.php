@@ -17,48 +17,7 @@
 
 @section ('content')
 
-   <section class="category-banner--wrapper">
-      <div class="container-fluid">
-         <div class="row">
-            <div class="owl-carousel category-slideshow owl-theme">
-               <div class="item">
-                  <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>The <span>style statement</span> of<br/> your home</h1>
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>The <span>style statement</span> of<br/> your home</h1>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
 
-   <section class="quick-message--ui">
-      <div class="container">
-         <div class="row">
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
-               <div class="quick-message--wrap">
-                  <p>- Prices are inclusive of all taxes -</p>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
 
    <section class="category-slideshow--wrapper">
       <div class="container-fluid">
