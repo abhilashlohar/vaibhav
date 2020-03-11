@@ -17,7 +17,7 @@
 
 @section ('content')
 @if ($template_type == 'grid')
-``    <section class="category-banner--wrapper">
+<section class="category-banner--wrapper">
     <div class="container-fluid">
        <div class="row">
           <div class="owl-carousel category-slideshow owl-theme">

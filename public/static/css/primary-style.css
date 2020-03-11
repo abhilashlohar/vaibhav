@@ -170,7 +170,7 @@ button {
    position: absolute;
 }
 .product-list.category-list .header-wrapper {
-   position: relative;
+   position: absolute;
 }
 .xpress .header-wrapper {
    position: absolute;
@@ -4556,7 +4556,7 @@ Login Wrapper
    .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui {
       margin-bottom: 30px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 15%;
       left: 2%;
@@ -4634,28 +4634,28 @@ Login Wrapper
       text-transform: uppercase;
       box-shadow: none;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
       color: #ffffff;
       letter-spacing: 0;
       font-size: 22px;
       line-height: 31px;
       text-align: left;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.uppercase-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.uppercase-span {
       text-transform: uppercase;
       font-size: 14px;
       line-height: 23px;
       line-height: 33px;
       margin-left: 39px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.categories-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.categories-span {
       font-size: 15px;
       line-height: 26px;
       font-weight: 400;
       letter-spacing: 0;
       text-align: center;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
       font-size: 2.3rem;
       margin-left: 30px;
       line-height: 35px;
@@ -5555,7 +5555,7 @@ Login Wrapper
       left: -52px;
       width: 130px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 20%;
       left: 2%;
@@ -5582,14 +5582,14 @@ Login Wrapper
       -ms-flex-direction: column;
       flex-direction: column;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
       color: #ffffff;
       letter-spacing: 0;
       font-size: 27px;
       line-height: 32px;
       text-align: left;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
       font-size: 3.3rem;
       margin-left: 30px;
       line-height: 75px;
@@ -6007,7 +6007,7 @@ Login Wrapper
    .care .category-banner--wrapper.assign-left--transparent .slideshow-details--wrap .message-rounded--wrap h1 strong {
       display: block;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 24%;
       left: 5%;
@@ -6022,20 +6022,20 @@ Login Wrapper
       box-shadow: 2px 2px 10px #cacaca;
       text-align: center;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap h1 {
       color: #ffffff;
       letter-spacing: 0;
       font-size: 27px;
       line-height: 40px;
       text-align: left;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.percentage-span {
       font-size: 3.3rem;
       margin-left: 30px;
       line-height: 75px;
       font-weight: 700;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.categories-span {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap span.categories-span {
       font-size: 18px;
       line-height: 28px;
       font-weight: 400;
@@ -6233,7 +6233,7 @@ Login Wrapper
       width: 100%;
       z-index: 111;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 42%;
       left: 10%;
@@ -6322,10 +6322,12 @@ Login Wrapper
       top: 25%;
       box-shadow: 2px 2px 10px #ed929c;
    }
-   .blog-view .blog-details--wrapper .share .card.card-body {
+   .blog-view .blog-details--wrapper div#share-social-blog {
       position: absolute;
       z-index: 111;
       width: 174px;
+   }
+   .blog-view .blog-details--wrapper .share .card.card-body {
       padding: 5px 15px;
    }
    .blog-view .category-banner--wrapper.assign-right--transparent .slideshow-details--wrap .message-rounded--wrap h1 {
@@ -6639,7 +6641,7 @@ Login Wrapper
       font-size: 39px;
       line-height: 50px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 28%;
       left: 2%;
@@ -6843,7 +6845,7 @@ Login Wrapper
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap {
       padding: 129px 35px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 33%;
       left: 3%;
@@ -7042,7 +7044,7 @@ Login Wrapper
       width: 100%;
       min-height: 359px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 38%;
       left: 6%;
@@ -7180,7 +7182,7 @@ Login Wrapper
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
       right: -230px;
    }
-   .product-list-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
+   .product-list .category-banner--wrapper.assign-text--left .slideshow-details--wrap .message-rounded--wrap {
       position: absolute;
       top: 42%;
       left: 10%;
