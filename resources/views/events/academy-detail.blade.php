@@ -43,25 +43,24 @@
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">User Information</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        </button>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="fa fa-times" aria-hidden="true"></i></button>
                                     </div>
                                     <div class="modal-body">
                                         @if ($user)
                                         <div class="row">
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                 <div class="mb-3">
                                                     <label for="city">Name*</label>
-                                                <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
+                                                    <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                 <div class="mb-3">
                                                     <label for="city">Mobile No.*</label>
                                                     <input type="text" class="form-control" id="mobile" name="mobile" required>
                                                 </div>
                                             </div>
-                                            <div class="col-md-4">
+                                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                 <div class="mb-3">
                                                     <label for="city">Email*</label>
                                                     <input type="text" class="form-control" id="email" name="email"  value="{{ $user->email }}" required>
@@ -70,19 +69,19 @@
                                         </div>
                                         @else
                                             <div class="row">
-                                                <div class="col-md-4">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                     <div class="mb-3">
                                                         <label for="city">Name*</label>
                                                         <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                     <div class="mb-3">
                                                         <label for="city">Mobile No.*</label>
                                                         <input type="text" class="form-control" id="mobile" name="mobile" placeholder="" required>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                                                     <div class="mb-3">
                                                         <label for="city">Email*</label>
                                                         <input type="text" class="form-control" id="email" name="email" placeholder="" required>
@@ -92,7 +91,6 @@
                                         @endif
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                         <button type="button" id="do-payment" class="btn btn-primary">Buy</button>
                                     </div>
                                 </div>

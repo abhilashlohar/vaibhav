@@ -3,29 +3,34 @@
 @section ('content')
 
 <?php $index = 1; ?>
-   <section class="single-excerpt--wrapper">
-    <div class="container-fluid">
-        @foreach($brands as $brand)
-       <div class="single-excerpt--grid">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
-             <div class="single-product--carousel">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
-                  <div id="thumbs-{{$index++}}" class="thumb-carousel owl-carousel owl-theme">
-
-                        <div class="item">
-                            <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{$brand->name}}"/>
-                        </div>
-
-                   </div>
-
+   <section class="brand-listing--wrapper">
+       <div class="container-fluid">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+             <div class="title-ui--wrap">
+                <div class="title-text--middle">
+                   <h2>Our Trusted Brands</h2>
                 </div>
-                <div class="">
-                    <a href="{{route('brand.detail',$brand->id)}}"> View</a>
-                    </div>
+                <div class="title-text--description">
+                   <p>Learn about consumer issues, file a complaint or check your complaint status.</p>
+                </div>
              </div>
           </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+             <div class="brand-listing--grid">
+               @foreach($brands as $brand)
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                  <div class="brand-thumbnail--wrap">
+                     <div class="brand-listing--image">
+                        <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{$brand->name}}"/>
+                     </div>
+                     <div class="brand-thumbnail--action">
+                        <a href="{{route('brand.detail',$brand->id)}}"> View</a>
+                     </div>
+                  </div>
+                </div>
+                @endforeach
+             </div>
+         </div>
        </div>
-       @endforeach
-    </div>
-</section>
+   </section>
 @endsection

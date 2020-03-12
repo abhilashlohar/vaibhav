@@ -9,30 +9,30 @@
 <section class="category-banner--wrapper assign-right--transparent">
     <div class="container-fluid">
         <div class="row">
-        <div class="owl-carousel category-slideshow owl-theme">
-            <div class="item">
-                <div class="slideshow-details--wrap">
-                    <div class="slideshow-image--wrap">
-                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
-                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+            <div class="owl-carousel category-slideshow owl-theme">
+                <div class="item">
+                    <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                        </div>
+                        <div class="message-rounded--wrap">
+                        <h1>Lorem ipsum doler sit lorem ipsum</h1>
+                        </div>
                     </div>
-                    <div class="message-rounded--wrap">
-                    <h1>Lorem ipsum doler sit lorem ipsum</h1>
+                </div>
+                <div class="item">
+                    <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                        <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
+                        <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                        </div>
+                        <div class="message-rounded--wrap">
+                        <h1>Lorem ipsum doler sit lorem ipsum</h1>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="item">
-                <div class="slideshow-details--wrap">
-                    <div class="slideshow-image--wrap">
-                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
-                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
-                    </div>
-                    <div class="message-rounded--wrap">
-                    <h1>Lorem ipsum doler sit lorem ipsum</h1>
-                    </div>
-                </div>
-            </div>
-        </div>
         </div>
     </div>
 </section>
@@ -51,7 +51,7 @@
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
         <div class="blog-details--grid">
-            <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-7">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
                 <div class="blog-content--wrap">
                     <div class="blog-heading--text">
                     <h2>{{ $blog->title }}</h2>
@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
                 <div class="blog-sidebar--wrap">
                     <div class="sidebar-search">
                     <div class="form-group has-search">

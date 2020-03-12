@@ -36,12 +36,12 @@ $(document).ready(function() {
 });
 
 $('.category-slideshow').owlCarousel({
-    loop:true,
-    margin:10,
-    nav:false,
-    lazyLoad: true,
-    dots: true,
-    responsive:{
+   loop:true,
+   margin:10,
+   nav:false,
+   lazyLoad: true,
+   dots: true,
+   responsive:{
         0:{
             items:1
         },
@@ -63,6 +63,30 @@ $('.partner-slideshow').owlCarousel({
       '<i class="fa fa-angle-left" aria-hidden="true"></i>',
       '<i class="fa fa-angle-right" aria-hidden="true"></i>'
     ],
+    dots: false,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:1
+        }
+    }
+});
+
+/* Brand Detail Page Slider */
+$('.brand-single--slideshow').owlCarousel({
+    loop:true,
+    margin:0,
+    nav:true,
+    lazyLoad: true,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
     dots: false,
     responsive:{
         0:{
