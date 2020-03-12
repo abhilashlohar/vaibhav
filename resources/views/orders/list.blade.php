@@ -31,6 +31,7 @@
                                     <th>Order Date</th>
                                     <th>Order Amount</th>
                                     <th>Order Details</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,6 +41,7 @@
                                         <td>{{$order->order_date}}</td>
                                         <td>{{$order->order_amount}}</td>
                                         <td><a href="{{ route('orders.show',[$order->id]) }}">Order Details</a></td>
+                                        <td><a href="{{ route('orders.downloadPDF',[$order->id]) }}">Download Invoice</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

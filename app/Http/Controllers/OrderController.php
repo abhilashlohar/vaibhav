@@ -11,6 +11,7 @@ use App\MetaData;
 include_once(app_path() . '/razorpay/razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
+use PDF;
 
 class OrderController extends Controller
 {
@@ -325,5 +326,13 @@ class OrderController extends Controller
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'order_view';
         return view('orders.show', compact('page_title','body_class','order'));
+    }
+
+    public function downloadPDF($id)
+    {
+        $order = Order::where('id',$id)->with('OrderRows')->first();
+        $pdf = PDF::loadView('orders.order_pdf', compact('order'));
+
+        return $pdf->download('invoice-'.$order->order_no.'.pdf');
     }
 }
