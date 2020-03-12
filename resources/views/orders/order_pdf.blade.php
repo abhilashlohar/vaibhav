@@ -1,10 +1,52 @@
 @extends('layouts.pdf')
 <style>
-    .col-md-6 {
-        width:200px;
-    }
+    .table-bordered thead td, .table-bordered thead th {
+    border-bottom-width: 2px;
+}
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid
+    #dee2e6;
+        border-bottom-width: 2px;
+}
+.table-bordered td, .table-bordered th {
+    border: 1px solid
+    #dee2e6;
+        border-bottom-color: rgb(222, 226, 230);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.table.center { margin-left:auto; margin-right:auto; }
     </style>
 @section('content')
+<table width="100%">
+    <tr>
+        <td>
+            <div style="float:right">
+                <table>
+                    <tr>
+                        <td>Invoice No.:</td><td>{{ $order->order_no }}</td>
+                    </tr>
+                    <tr>
+                        <td>Invoice Date:</td><td>{{ date('d-m-Y', strtotime($order->order_date)) }}</td>
+                    </tr>
+                    <tr>
+                        <td>Order No.:</td><td>{{ $order->order_no }}</td>
+                    </tr>
+                    <tr>
+                        <td>Order Date:</td><td>{{ date('d-m-Y', strtotime($order->order_date)) }}</td>
+                    </tr>
+                </table>
+            </div>
+        </td>
+    </tr>
+</table>
+<br><br><br><br><br>
     <table width="100%">
         <tr>
             <td>
@@ -17,41 +59,47 @@
                 <span>{{ $order->ship_state }}</span><br>
             </td>
             <td>
-                <h4>Billing Address</h4>
-                <span>{{ $order->bill_name }}</span><br>
-                <span>{{ $order->bill_mobile }}</span><br>
-                <span>{{ $order->bill_address }}</span><br>
-                <span>{{ $order->bill_pincode }}</span><br>
-                <span>{{ $order->bill_landmark }}</span><br>
-                <span>{{ $order->bill_state }}</span><br>
+                <div style="float:right">
+                    <h4>Billing Address</h4>
+                    <span>{{ $order->bill_name }}</span><br>
+                    <span>{{ $order->bill_mobile }}</span><br>
+                    <span>{{ $order->bill_address }}</span><br>
+                    <span>{{ $order->bill_pincode }}</span><br>
+                    <span>{{ $order->bill_landmark }}</span><br>
+                    <span>{{ $order->bill_state }}</span><br>
+                </div>
             </td>
         </tr>
     </table>
-<br>
-<br>
-<br>
-    <table width="80%" border="1">
+<br><br>
+    <table width="100%" class="table table-bordered center" style="border-collapse:collapse">
         <thead>
             <tr>
-                <th align="left">Item</th>
-                <th align="left">Quantity</th>
-                <th align="left">Price</th>
-                <th align="left">Amount</th>
+                <th style="text-align:left;">Item</th>
+                <th style="text-align:center;">Quantity</th>
+                <th style="text-align:right;">Price</th>
+                <th style="text-align:right;">Amount</th>
             </tr>
         </thead>
         <tbody>
             @foreach($order->OrderRows as $OrderRow)
             <tr>
-                <td>{{$OrderRow->product->name}}</td>
-                <td>{{$OrderRow->quantity}}</td>
-                <td>{{$OrderRow->price}}</td>
-                <td>{{$OrderRow->amount}}</td>
+                <td style="text-align:left;">{{$OrderRow->product->name}}</td>
+                <td style="text-align:center;">{{$OrderRow->quantity}}</td>
+                <td style="text-align:right;">{{$OrderRow->price}}</td>
+                <td style="text-align:right;">{{$OrderRow->amount}}</td>
             </tr>
             @endforeach
             <tr>
-                <td colspan="3" align="center"> Total Amount</td>
-                <td><b>{{$order->order_amount}}</b></td>
+                <th colspan="3"  style="text-align:center;"> Total Amount</th>
+                <th style="text-align:right;"><b>{{$order->order_amount}}</b></th>
             </tr>
         </tbody>
+    </table>
+    <br><br>
+    <table width="100%">
+        <tr>
+            <th style="text-align: left">Signature</th>
+        </tr>
     </table>
 @endsection
