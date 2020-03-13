@@ -330,8 +330,9 @@ class OrderController extends Controller
 
     public function downloadPDF($id)
     {
+        $companyDetail = MetaData::where('meta_key', 'companyDetail')->first();
         $order = Order::where('id',$id)->with('OrderRows')->first();
-        $pdf = PDF::loadView('orders.order_pdf', compact('order'));
+        $pdf = PDF::loadView('orders.order_pdf', compact('order','companyDetail'));
 
         return $pdf->download('invoice-'.$order->order_no.'.pdf');
     }

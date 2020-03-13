@@ -27,6 +27,9 @@
 <h4 style="text-align:center"><u>INVOICE</u></h4>
 <table width="100%">
     <tr>
+        <td style="width:50%">
+        <?php echo $companyDetail->meta_value ?>
+        </td>
         <td>
             <div style="float:right">
                 <table>
@@ -47,7 +50,7 @@
         </td>
     </tr>
 </table>
-<br><br><br><br><br>
+<br><br>
     <table width="100%">
         <tr>
             <td>
