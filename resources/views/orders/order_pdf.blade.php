@@ -24,6 +24,7 @@
 .table.center { margin-left:auto; margin-right:auto; }
     </style>
 @section('content')
+<h4 style="text-align:center"><u>INVOICE</u></h4>
 <table width="100%">
     <tr>
         <td>
@@ -94,6 +95,9 @@
                 <th colspan="3"  style="text-align:center;"> Total Amount</th>
                 <th style="text-align:right;"><b>{{$order->order_amount}}</b></th>
             </tr>
+            <tr>
+                <td colspan="4"  style="text-align:left;"> <b>Total Amount In Word:</b> <?php echo convertNumberToWord($order->order_amount); ?></td>
+            </tr>
         </tbody>
     </table>
     <br><br>
@@ -102,4 +106,5 @@
             <th style="text-align: left">Signature</th>
         </tr>
     </table>
+
 @endsection
