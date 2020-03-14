@@ -203,8 +203,8 @@
         </div>
         <form id="queryForm" name="queryForm">
             <div class="modal-body">
-                <p style="display:none; color:#000;" id="enquiry-result" class="alert alert-success" role="alert" data-dismiss="alert"></p>
-                <p style="display:none; color:#000;" id="enquiry-error" class="alert alert-danger" role="alert" data-dismiss="alert">Please Fill all input.</p>
+                <p style="display:none; color:#000;" id="enquiry-result" class="alert alert-success" role="alert"></p>
+                <p style="display:none; color:#000;" id="enquiry-error" class="alert alert-danger" role="alert">Please Fill all input.</p>
                 <div class="form-group">
                     <label for="query-name">Name *</label>
                     <input type="text" class="form-control" id="query-name" aria-describedby="name" placeholder="Enter Name" required="required">
@@ -293,7 +293,7 @@
                      <div class="footer-subscribe--wrap">
                         <p>Subscribe to receive updates, access to exclusive deals and more.</p>
 
-                        <p style="display:none; color:#000;" id="subscribe-message" class="alert alert-success" role="alert" data-dismiss="alert"></p>
+                        <p style="display:none; color:#000;" id="subscribe-message" class="alert alert-success" role="alert"></p>
                         <form method="get" id="enquiry_subscribe" action="#">
                            <input style="color:#fff" type="email" id="subscribe_email" name="email" placeholder="Enter your email address">
                            <input type="submit" name="submit" class="addToEnquiry" value="SUBSCRIBE">
@@ -435,6 +435,7 @@
                         success:function(data){
                             $('#subscribe_email').val('');
                             $('#subscribe-message').show();
+                            setTimeout(function(){ $('#subscribe-message').hide(); }, 5000);
                             $('#subscribe-message').html(data);
                         }
                     });
@@ -466,7 +467,9 @@
                         url:"{{ route('enquiry.store') }}",
                         data:{product_id:product_id, name:name, email:email, mobile_no:mobile_no, enquiry_message:enquiry_message, enquiry_type:'Product Enquiry'},
                         success:function(data){
+                            $('#enquiry-error').hide();
                             $('#enquiry-result').show();
+                            setTimeout(function(){ $('#enquiry-result').hide(); }, 5000);
                             $('#enquiry-result').html(data);
                             $("#queryForm").trigger("reset");
                             $('#add-query').animate({ scrollTop:180},'slow');
@@ -476,6 +479,7 @@
                 else
                 {
                     $('#enquiry-error').show();
+                    setTimeout(function(){ $('#enquiry-error').hide(); }, 5000);
                     $('#add-query').animate({ scrollTop:180},'slow');
                 }
             });

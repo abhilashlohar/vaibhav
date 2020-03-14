@@ -99,7 +99,7 @@
                 <th style="text-align:right;"><b>{{$order->order_amount}}</b></th>
             </tr>
             <tr>
-                <td colspan="4"  style="text-align:left;"> <b>Total Amount In Word:</b> <?php echo convertNumberToWord($order->order_amount); ?></td>
+                <td colspan="4"  style="text-align:left;"> <b>Total Amount In Word:</b> <?php echo convertNumberToWord($order->order_amount); ?>.</td>
             </tr>
         </tbody>
     </table>
