@@ -271,6 +271,7 @@
                                                             <input type="checkbox" class="dependent" name="modules[]" value="32" {{ $admin->userrights->contains(32) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="33" {{ $admin->userrights->contains(33) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="34" {{ $admin->userrights->contains(34) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="71" {{ $admin->userrights->contains(71) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
                                                 </tr>
