@@ -25,10 +25,10 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        $subcategories = SubCategory::where('deleted',0)->latest()->with('Category')->paginate(5);
+        $subcategories = SubCategory::where('deleted',0)->latest()->with('Category')->paginate(20);
 
         return view('admin.subcategories.index',compact('subcategories'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+            ->with('i', (request()->input('page', 1) - 1) * 20);
     }
 
     /**
