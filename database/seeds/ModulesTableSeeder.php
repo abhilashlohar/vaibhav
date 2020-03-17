@@ -64,7 +64,18 @@ class ModulesTableSeeder extends Seeder {
             ['id' => 55, 'name' => 'BrandController@store'],
             ['id' => 56, 'name' => 'BrandController@edit'],
             ['id' => 57, 'name' => 'BrandController@update'],
-            ['id' => 58, 'name' => 'BrandController@destroy']
+            ['id' => 58, 'name' => 'BrandController@destroy'],
+            ['id' => 59, 'name' => 'ProductController@productSequenceExist'],
+            ['id' => 60, 'name' => 'ProductController@homepage'],
+            ['id' => 61, 'name' => 'ProductController@saveHomepageFurnitureSection'],
+            ['id' => 62, 'name' => 'ProductController@saveHomepageConsumablesSection'],
+            ['id' => 63, 'name' => 'ProductController@saveHomepageElectricalsSection'],
+            ['id' => 64, 'name' => 'PageController@index'],
+            ['id' => 65, 'name' => 'PageController@create'],
+            ['id' => 66, 'name' => 'PageController@store'],
+            ['id' => 67, 'name' => 'PageController@edit'],
+            ['id' => 68, 'name' => 'PageController@update'],
+            ['id' => 69, 'name' => 'PageController@uploadImg'],
         ];
 
         DB::table('modules')->insertOrIgnore($users);

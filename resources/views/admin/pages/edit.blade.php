@@ -47,11 +47,9 @@
                         </div>
                     </div>
 
-                    <br>
-
                     <div class="form-group row">
-                        <label class="col-form-label col-lg-2 col-sm-12" for="status">Publish Status</label>
-                        <div class="col-lg-9 col-md-10 col-sm-12">
+                        <label class="col-form-label col-lg-2 col-sm-12" for="status"><br>Publish Status</label>
+                        <div class="col-lg-9 col-md-10 col-sm-12"><br>
                             <input name="status" id="status"  data-switch="true" type="checkbox" @if($Page->status=="published") checked="checked" @endif data-on-text="Publish" data-handle-width="70" data-off-text="Draft" data-on-color="brand" >
                         </div>
                     </div>
@@ -64,7 +62,7 @@
                     </div>
                 </div>
             </form>
-            <!--end::Form-->            
+            <!--end::Form-->
         </div>
     </div>
 </div>
@@ -101,7 +99,7 @@
                             if (extFile=="jpg" || extFile=="jpeg" || extFile=="png"){}else{
                               alert("Only jpg/jpeg and png files are allowed!");
                               return;
-                            }   
+                            }
 
                             var data = new FormData();
                             data.append("pageImg", files[0]);
@@ -129,7 +127,7 @@
                             alert('Please select single file.');
                             return;
                         }
-                        
+
                       // upload image to server and create imgNode...
                       // $summernote.summernote('insertNode', imgNode);
                     }

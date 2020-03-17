@@ -132,6 +132,7 @@
                                                             <input type="checkbox" class="dependent" name="modules[]" value="15" {{ $admin->userrights->contains(15) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="16" {{ $admin->userrights->contains(16) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="17" {{ $admin->userrights->contains(17) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="59" {{ $admin->userrights->contains(59) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
                                                     <td>
@@ -422,6 +423,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row" style="margin-bottom:20px;">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header" id="headingTwelve">
@@ -482,6 +485,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row" style="margin-bottom:20px;">
                     <div class="col-md-6">
                         <div class="card">
                             <div class="card-header" id="headingFourteen">
@@ -520,6 +525,80 @@
                                                         <label class="kt-checkbox">
                                                             <input type="checkbox" name="modules[]" value="58" {{ $admin->userrights->contains(58) ? 'checked' : '' }}> Delete
                                                             <span></span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" id="heading15">
+                                <div class="card-title" data-target="#collapse15" aria-expanded="true" aria-controls="collapse15">
+                                    Home Page
+                                </div>
+                            </div>
+                            <div id="collapse15" class="collapse show" aria-labelledby="heading15" data-parent="#accordionExample8">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="60" {{ $admin->userrights->contains(60) ? 'checked' : '' }}> Edit
+                                                            <span></span>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="61" {{ $admin->userrights->contains(62) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="63" {{ $admin->userrights->contains(63) ? 'checked' : '' }}>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom:20px;">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-header" id="heading16">
+                                <div class="card-title" data-target="#collapse16" aria-expanded="true" aria-controls="collapse16">
+                                    Pages
+                                </div>
+                            </div>
+                            <div id="collapse16" class="collapse show" aria-labelledby="heading16" data-parent="#accordionExample8">
+                                <div class="card-body">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="64" {{ $admin->userrights->contains(64) ? 'checked' : '' }}> List
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="65" {{ $admin->userrights->contains(65) ? 'checked' : '' }}> Create
+                                                            <span></span>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="66" {{ $admin->userrights->contains(66) ? 'checked' : '' }}>
+                                                        </label>
+
+                                                    </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="67" {{ $admin->userrights->contains(67) ? 'checked' : '' }}> Edit
+                                                            <span></span>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="68" {{ $admin->userrights->contains(68) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="69" {{ $admin->userrights->contains(69) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
                                                 </tr>

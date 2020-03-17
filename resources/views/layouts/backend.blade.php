@@ -204,6 +204,7 @@
                                                     </a>
                                                 </li>
                                             @endif
+                                            @if (in_array('PageController@index',Session::get('userrightPages')))
                                             <li class="kt-menu__item " aria-haspopup="true">
                                                 <a href="{{ route('pages.index') }}" class="kt-menu__link ">
                                                     <span class="kt-menu__link-icon">
@@ -212,7 +213,8 @@
                                                     <span class="kt-menu__link-text">Pages</span>
                                                 </a>
                                             </li>
-
+                                            @endif
+                                            @if (in_array('ProductController@homepage',Session::get('userrightPages')))
                                             <li class="kt-menu__item " aria-haspopup="true">
                                                 <a href="{{ route('homepage') }}" class="kt-menu__link ">
                                                     <span class="kt-menu__link-icon">
@@ -221,6 +223,7 @@
                                                     <span class="kt-menu__link-text">Home Page</span>
                                                 </a>
                                             </li>
+                                            @endif
                                             @if (in_array('BrandController@index',Session::get('userrightPages')))
                                                 <li class="kt-menu__item " aria-haspopup="true">
                                                     <a href="{{ route('brands.index') }}" class="kt-menu__link ">

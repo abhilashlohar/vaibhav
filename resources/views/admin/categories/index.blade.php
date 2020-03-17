@@ -17,7 +17,7 @@
                         Categories
                     </h3>
                 </div>
-                <div class="kt-portlet__head-toolbar">
+                {{-- <div class="kt-portlet__head-toolbar">
                     <div class="kt-portlet__head-wrapper">
                         <div class="kt-portlet__head-actions">
                             @if (in_array('CategoryController@create',Session::get('userrightPages')))
@@ -27,7 +27,7 @@
                             @endif
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <div class="kt-portlet__body" style="padding: 0;">
                 <div class="table-responsive">

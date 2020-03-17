@@ -21,7 +21,7 @@ class ProductController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        // $this->middleware(UserRightsAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
     /**
      * Display a listing of the resource.
