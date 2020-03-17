@@ -14,9 +14,11 @@
                 <div class="kt-portlet__head-toolbar">
                     <div class="kt-portlet__head-wrapper">
                         <div class="kt-portlet__head-actions">
+                            @if (in_array('PageController@create',Session::get('userrightPages')))
                             <a href="{{ route('pages.create') }}" class="btn btn-brand btn-sm btn-elevate btn-icon-sm">
                                 <i class="la la-plus"></i> New
                             </a>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -44,9 +46,11 @@
                                 @endif
                             </td>
                             <td class="align-middle">
+                                @if (in_array('PageController@edit',Session::get('userrightPages')))
                                 <a href="{{ route('pages.edit', $page->id) }}" title="Edit page" class="btn btn-sm btn-clean btn-icon btn-icon-md">
                                     <i class="la la-edit"></i>
                                 </a>
+                                @endif
                             </td>
                         </tr>
                         @endforeach

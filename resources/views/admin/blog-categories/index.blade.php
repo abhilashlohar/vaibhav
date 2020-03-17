@@ -53,13 +53,14 @@
                                         <i class="la la-edit"></i>
                                     </a>
                                 @endif
-
+                                @if (in_array('BlogCategoryController@destroy',Session::get('userrightPages')))
                                 <button type="button" class="btn btn-sm btn-clean btn-icon btn-icon-md kt_sweetalert_demo_1" data-id="{{ $blogCategory->id }}" title="Delete"> <i class="la la-trash"></i></button>
 
                                 <form action="{{ route('blog-categories.destroy',$blogCategory->id) }}" method="POST" id="delete-form-{{$blogCategory->id}}">
                                     @csrf
                                     @method('DELETE')
                                 </form>
+                                @endif
 
                             </td>
                         </tr>

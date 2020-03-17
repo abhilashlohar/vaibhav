@@ -231,6 +231,12 @@
                                                             <input type="checkbox" class="dependent" name="modules[]" value="29" {{ $admin->userrights->contains(29) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
+                                                    <td>
+                                                        <label class="kt-checkbox">
+                                                            <input type="checkbox" name="modules[]" value="70" {{ $admin->userrights->contains(70) ? 'checked' : '' }}> Delete
+                                                            <span></span>
+                                                        </label>
+                                                    </td>
                                                 </tr>
                                             </tbody>
                                         </table>

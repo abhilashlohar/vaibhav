@@ -14,7 +14,7 @@ class BlogCategoryController extends Controller
     public function __construct()
     {
         $this->middleware(CheckAuth::class);
-        // $this->middleware(UserRightsAuth::class);
+        $this->middleware(UserRightsAuth::class);
     }
 
     public function index()
@@ -76,7 +76,7 @@ class BlogCategoryController extends Controller
         }
 
 
-        $BlogCategory->deleted = 0;
+        $BlogCategory->deleted = 1;
         $BlogCategory->save();
 
         return redirect()->route('blog-categories.index')

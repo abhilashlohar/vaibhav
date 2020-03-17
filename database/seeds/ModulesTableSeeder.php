@@ -76,6 +76,7 @@ class ModulesTableSeeder extends Seeder {
             ['id' => 67, 'name' => 'PageController@edit'],
             ['id' => 68, 'name' => 'PageController@update'],
             ['id' => 69, 'name' => 'PageController@uploadImg'],
+            ['id' => 70, 'name' => 'BlogCategoryController@destroy'],
         ];
 
         DB::table('modules')->insertOrIgnore($users);
