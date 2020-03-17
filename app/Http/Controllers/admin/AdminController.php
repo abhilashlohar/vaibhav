@@ -93,7 +93,7 @@ class AdminController extends Controller
     {
         $request->validate(Admin::rules(), Admin::messages());
         $admin = Admin::create($request->all());
-        return redirect()->route('users.index')->route('users.index')->with('success','User has created successfully.');;
+        return redirect()->route('users.index')->with('success','User has created successfully.');
     }
 
     public function edit($id)
