@@ -214,7 +214,20 @@ class ProductController extends Controller
 
     public function homepage()
     {
-        $products = Product::where('deleted',0)->orderBy('name', 'asc')->get();
+        $productFurnitures = Product::where([
+            ['deleted', '=', 0],
+            ['category_id','=', 1]
+            ])->orderBy('name', 'asc')->get();
+
+        $productConsumable = Product::where([
+            ['deleted', '=', 0],
+            ['category_id','=', 2]
+            ])->orderBy('name', 'asc')->get();
+
+        $productElectricals = Product::where([
+            ['deleted', '=', 0],
+            ['category_id','=', 3]
+            ])->orderBy('name', 'asc')->get();
 
         $FurnitureProduct1 = MetaData::where('meta_key', 'FurnitureProduct1')->first();
         if ($FurnitureProduct1) $FurnitureProduct1 = $FurnitureProduct1->meta_value;
@@ -252,7 +265,7 @@ class ProductController extends Controller
         if ($ElectricalsProduct4) $ElectricalsProduct4 = $ElectricalsProduct4->meta_value;
         else $ElectricalsProduct4 = null;
 
-        return view('admin.products.homepage', compact('products', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4','ConsumablesProduct','ElectricalsProduct1','ElectricalsProduct2','ElectricalsProduct3','ElectricalsProduct4'));
+        return view('admin.products.homepage', compact('productFurnitures', 'productConsumable', 'productElectricals', 'FurnitureProduct1', 'FurnitureProduct2', 'FurnitureProduct3', 'FurnitureProduct4','ConsumablesProduct','ElectricalsProduct1','ElectricalsProduct2','ElectricalsProduct3','ElectricalsProduct4'));
     }
 
     public function saveHomepageFurnitureSection(Request $request)

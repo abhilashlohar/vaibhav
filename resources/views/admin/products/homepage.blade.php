@@ -31,7 +31,7 @@
                             <td>
                                 <div class="form-group">
                                     <select id="FurnitureProduct1" name="FurnitureProduct1" class="form-control @error('FurnitureProduct1') is-invalid @enderror">
-                                        @foreach ($products as $product)
+                                        @foreach ($productFurnitures as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $FurnitureProduct1 ? "selected":"") }}> {{ $product->name }}
@@ -48,7 +48,7 @@
                             <td>
                                 <div class="form-group">
                                     <select id="FurnitureProduct2" name="FurnitureProduct2" class="form-control @error('FurnitureProduct2') is-invalid @enderror">
-                                        @foreach ($products as $product)
+                                        @foreach ($productFurnitures as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $FurnitureProduct2 ? "selected":"") }}> {{ $product->name }}
@@ -67,7 +67,7 @@
                             <td>
                                 <div class="form-group">
                                     <select id="FurnitureProduct3" name="FurnitureProduct3" class="form-control @error('FurnitureProduct3') is-invalid @enderror">
-                                        @foreach ($products as $product)
+                                        @foreach ($productFurnitures as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $FurnitureProduct3 ? "selected":"") }}> {{ $product->name }}
@@ -84,7 +84,7 @@
                             <td>
                                 <div class="form-group">
                                     <select id="FurnitureProduct4" name="FurnitureProduct4" class="form-control @error('FurnitureProduct4') is-invalid @enderror">
-                                        @foreach ($products as $product)
+                                        @foreach ($productFurnitures as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $FurnitureProduct4 ? "selected":"") }}> {{ $product->name }}
@@ -134,7 +134,7 @@
                                 <div class="form-group">
                                     <select id="ConsumablesProduct" name="ConsumablesProduct" class="form-control @error('ConsumablesProduct') is-invalid @enderror">
 
-                                        @foreach ($products as $product)
+                                        @foreach ($productConsumable as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $ConsumablesProduct ? "selected":"") }}> {{ $product->name }}
@@ -184,7 +184,7 @@
                                 <div class="form-group">
                                     <select id="ElectricalsProduct1" name="ElectricalsProduct1" class="form-control @error('ElectricalsProduct1') is-invalid @enderror">
 
-                                        @foreach ($products as $product)
+                                        @foreach ($productElectricals as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $ElectricalsProduct1 ? "selected":"") }}> {{ $product->name }}
@@ -202,7 +202,7 @@
                                 <div class="form-group">
                                     <select id="ElectricalsProduct2" name="ElectricalsProduct2" class="form-control @error('ElectricalsProduct2') is-invalid @enderror">
 
-                                        @foreach ($products as $product)
+                                        @foreach ($productElectricals as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $ElectricalsProduct2 ? "selected":"") }}> {{ $product->name }}
@@ -222,7 +222,7 @@
                                 <div class="form-group">
                                     <select id="ElectricalsProduct3" name="ElectricalsProduct3" class="form-control @error('ElectricalsProduct3') is-invalid @enderror">
 
-                                        @foreach ($products as $product)
+                                        @foreach ($productElectricals as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $ElectricalsProduct3 ? "selected":"") }}> {{ $product->name }}
@@ -240,7 +240,7 @@
                                 <div class="form-group">
                                     <select id="ElectricalsProduct4" name="ElectricalsProduct4" class="form-control @error('ElectricalsProduct4') is-invalid @enderror">
 
-                                        @foreach ($products as $product)
+                                        @foreach ($productElectricals as $product)
                                             <option
                                                 value="{{ $product->id }}"
                                                 {{ ($product->id == $ElectricalsProduct4 ? "selected":"") }}> {{ $product->name }}

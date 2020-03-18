@@ -559,7 +559,8 @@
                                                         <label class="kt-checkbox">
                                                             <input type="checkbox" class="dependent" name="modules[]" value="60" {{ $admin->userrights->contains(60) ? 'checked' : '' }}> Edit
                                                             <span></span>
-                                                            <input type="checkbox" class="dependent" name="modules[]" value="61" {{ $admin->userrights->contains(62) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="61" {{ $admin->userrights->contains(61) ? 'checked' : '' }}>
+                                                            <input type="checkbox" class="dependent" name="modules[]" value="62" {{ $admin->userrights->contains(62) ? 'checked' : '' }}>
                                                             <input type="checkbox" class="dependent" name="modules[]" value="63" {{ $admin->userrights->contains(63) ? 'checked' : '' }}>
                                                         </label>
                                                     </td>
