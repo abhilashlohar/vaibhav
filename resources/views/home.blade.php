@@ -65,7 +65,7 @@
     }
     </style>
     <!-- Need to move into css file -->
-
+    @if ($furnitureProduct1 && $furnitureProduct2 && $furnitureProduct3 && $furnitureProduct4)
     <section class="category-ui--one">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -311,6 +311,7 @@
          </div>
       </div>
     </section>
+    @endif
 
     @if ($consumablesProduct)
     <section class="highlighted-single--wrapper">
@@ -413,6 +414,7 @@
     </section>
     @endif
 
+    @if ($electricalsProduct1 && $electricalsProduct2 && $electricalsProduct3 && $electricalsProduct4)
     <section class="category-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -658,6 +660,7 @@
          </div>
       </div>
     </section>
+    @endif
 
     <section class="store-ui--wrapper">
       <div class="container-fluid">
@@ -1113,6 +1116,7 @@
       </div>
     </section>
 
+    @if($brands)
     <section class="thumbnails-ui--two">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -1164,7 +1168,7 @@
          </div>
       </div>
     </section>
-
+    @endif
     <section class="follow-ui--wrapper">
       <div class="container-fluid">
          <div class="row">
@@ -1218,7 +1222,7 @@
                 shares: ["twitter", "facebook", "whatsapp"]
             });
         @endif
-
+        @if ($furnitureProduct1 && $furnitureProduct2 && $furnitureProduct3 && $furnitureProduct4)
             $("#FurnitureShare0").jsSocials({
                 url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct1->slug; ?>",
                 text: "<?php echo $furnitureProduct1->name; ?>",
@@ -1250,7 +1254,8 @@
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
-
+            @endif
+            @if ($electricalsProduct1 && $electricalsProduct2 && $electricalsProduct3 && $electricalsProduct4)
             $("#ElectricalsShare0").jsSocials({
                 url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct1->slug; ?>",
                 text: "<?php echo $electricalsProduct1->name; ?>",
@@ -1282,5 +1287,6 @@
                 showCount: "inside",
                 shares: ["twitter", "facebook", "whatsapp"]
             });
+            @endif
     </script>
 @endsection
