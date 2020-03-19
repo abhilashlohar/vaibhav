@@ -12,6 +12,8 @@ include_once(app_path() . '/razorpay/razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
 use PDF;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ProductOrder;
 
 class OrderController extends Controller
 {
@@ -285,7 +287,15 @@ class OrderController extends Controller
             }
 
             Cart::where('user_id',$user->id)->delete();
-
+            Mail::to($user->email)->send(
+                new ProductOrder(
+                    $user->name,
+                    $Order->order_no,
+                    'Your order has been placed successfully. Your order no. is '.$Order->order_no.' and you can check your order details and get invoice from the below link.
+                    <br>
+                    <a href="'.route('orders.show',[$Order->id]).'">Click here to download order invoice.</a>'
+                    )
+                );
             return redirect()->route('orders.thanks', $Order->id)
                         ->with('success','Order placed successfully');
         }

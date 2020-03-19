@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 include_once(app_path() . '/razorpay/razorpay-php/Razorpay.php');
 use Razorpay\Api\Api;
 use Razorpay\Api\Errors\SignatureVerificationError;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\EventBookingOrder;
 
 class EventController extends Controller
 {
@@ -149,6 +151,13 @@ class EventController extends Controller
             $Order->razorpay_payment_id = $razorpay_payment_id;
             $Order->razorpay_signature = $razorpay_signature;
             $Order->save();
+            Mail::to($request->email)->send(
+                new EventBookingOrder(
+                    $request->name,
+                    $Order->order_no,
+                    'Your event ticket booked successfully.'
+                    )
+                );
             return redirect()->route('event.academy')
                         ->with('success','Event ticket booked successfully.');
         }

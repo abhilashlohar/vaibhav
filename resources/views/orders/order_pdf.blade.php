@@ -24,7 +24,7 @@
 .table.center { margin-left:auto; margin-right:auto; }
     </style>
 @section('content')
-<h4 style="text-align:center"><u>INVOICE</u></h4>
+<h3 style="text-align:center"><img style="vertical-align:middle" src="<?php echo public_path('/static/images/logo.png'); ?>" width="150px">&nbsp;&nbsp;&nbsp;<u style="vertical-align:top">INVOICE</u></h3>
 <table width="100%">
     <tr>
         <td style="width:50%">
@@ -60,6 +60,7 @@
                 <span>{{ $order->ship_address }}</span><br>
                 <span>{{ $order->ship_pincode }}</span><br>
                 <span>{{ $order->ship_landmark }}</span><br>
+                <span>{{ $order->ship_city }}</span><br>
                 <span>{{ $order->ship_state }}</span><br>
             </td>
             <td>
@@ -70,6 +71,7 @@
                     <span>{{ $order->bill_address }}</span><br>
                     <span>{{ $order->bill_pincode }}</span><br>
                     <span>{{ $order->bill_landmark }}</span><br>
+                    <span>{{ $order->bill_city }}</span><br>
                     <span>{{ $order->bill_state }}</span><br>
                 </div>
             </td>

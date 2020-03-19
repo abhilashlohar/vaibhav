@@ -12,6 +12,9 @@
                    <tr>
                        <td><a href="{{ route('orders.list') }}">My Orders</a></td>
                    </tr>
+                   <tr>
+                       <td><a href="{{ route('orders.downloadPDF',[$order->id]) }}">Download Invoice</a></td>
+                   </tr>
                </table>
            </div>
            <div class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9">
@@ -24,8 +27,9 @@
                         <span>{{ $order->ship_address }}</span><br>
                         <span>{{ $order->ship_pincode }}</span><br>
                         <span>{{ $order->ship_landmark }}</span><br>
+                        <span>{{ $order->ship_city }}</span><br>
                         <span>{{ $order->ship_state }}</span><br>
-                     </div>
+                    </div>
                   </div>
                   <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                      <div class="address-list--details">
@@ -35,8 +39,9 @@
                         <span>{{ $order->bill_address }}</span><br>
                         <span>{{ $order->bill_pincode }}</span><br>
                         <span>{{ $order->bill_landmark }}</span><br>
+                        <span>{{ $order->bill_city }}</span><br>
                         <span>{{ $order->bill_state }}</span><br>
-                     </div>
+                    </div>
                   </div>
                </div>
                <div class="order-items--summery">
