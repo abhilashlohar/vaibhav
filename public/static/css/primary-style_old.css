@@ -1392,8 +1392,11 @@ ul.dropDownMenu ul {
 .academy-information--wrapper .title-ui--wrap .title-text--middle h2:before {
    width: 27%;
 }
-.plus-question--wrapper .title-ui--wrap .title-text--middle h2:before {
+.plus-carousel--wrapper .title-ui--wrap .title-text--middle h2:before {
    width: 49%;
+}
+.plus-category--wrapper .title-ui--wrap .title-text--middle h2:before {
+   width: 18%;
 }
 .plus-enquiry--wrapper .title-ui--wrap .title-text--middle h2:before {
    width: 14%;
@@ -4005,13 +4008,14 @@ Login Wrapper
 }
 
 /* =================== Vaibhav Plus ================ */
-.plus-question--wrapper {
+.plus-carousel--wrapper {
    position: relative;
    width: 100%;
    padding: 0px 0px 45px 0;
+   border-bottom: 1px solid #dfdfdf;
    overflow: hidden;
 }
-.plus-question--wrapper:before {
+.plus-carousel--wrapper:before {
    position: absolute;
    content: "";
    background: url(../images/ui-pattern-title.png);
@@ -4022,43 +4026,42 @@ Login Wrapper
    height: 100%;
    width: 100%;
 }
-.plus-question--wrapper .plus-information--grid {
+.plus-carousel--wrapper .plus-information--grid {
 	position: relative;
 	width: 100%;
 	margin-top: 60px;
 	display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+   	display: -ms-flexbox;
+   	display: flex;
 	-webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
 }
-.plus-question--wrapper .plus-information--grid .plus-information--picture {
+.plus-carousel--wrapper .plus-information--grid .plus-information--carousel {
 	position: relative;
 	width: 100%;
 }
-.plus-question--wrapper .plus-information--grid .plus-information--picture img {
-	 border-bottom-left-radius: 36%;
-   border-top-right-radius: 36%;
-   width: 100%;
+.plus-carousel--wrapper .plus-information--grid .plus-information--carousel .slideshow-image--wrap img {
+	border-bottom-left-radius: 36%;
+   	border-top-right-radius: 36%;
 }
-.plus-question--wrapper .plus-information--text {
+.plus-carousel--wrapper .plus-information--text {
 	position: relative;
 	width: 100%;
 	padding: 30px;
 }
-.plus-question--wrapper .plus-information--text h3 {
+.plus-carousel--wrapper .plus-information--text h3 {
 	text-transform: none;
 	font-weight: 400;
 	margin-bottom: 30px;
 }
-.plus-question--wrapper .plus-information--text p {
+.plus-carousel--wrapper .plus-information--text p {
 	font-size: 17px;
 	line-height: 30px;
 }
-.plus-question--wrapper .plus-information--text a.btn-primary {
+.plus-carousel--wrapper .plus-information--text a.btn-primary {
    background: #ed1651;
    padding: 13px 24px;
    box-shadow: 1px 1px 3px #efefef;
@@ -4071,6 +4074,80 @@ Login Wrapper
    margin-top: 15px;
 }
 
+/* =================== Plus Category ================ */
+.plus-category--wrapper {
+	position: relative;
+	width: 100%;
+	padding: 60px 0;
+}
+.plus-category--wrapper .plus-information--grid {
+	position: relative;
+	width: 100%;
+	margin-top: 60px;
+	display: -webkit-box;
+   	display: -ms-flexbox;
+   	display: flex;
+	-webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.plus-category--wrapper .plus-information--grid .plus-thumbnail--wrap {
+	position: relative;
+	width: 100%;
+}
+.plus-category--wrapper .plus-information--grid .plus-thumbnail--wrap img {
+	width: 100%;
+	border-bottom-left-radius: 36%;
+   	border-top-right-radius: 36%;
+}
+.plus-category--wrapper .plus-information--text {
+	position: relative;
+	width: 100%;
+	background: url(../images/ui-pattern-bg.png);
+	background-repeat: no-repeat;
+	padding: 30px;
+}
+.plus-category--wrapper .plus-information--text h3 {
+	text-transform: none;
+	font-weight: 400;
+	margin-bottom: 30px;
+}
+.plus-category--wrapper .plus-information--text p {
+	font-size: 17px;
+	line-height: 30px;
+}
+.plus-category--wrapper .plus-information--text a.btn-primary {
+   background: #ed1651;
+   padding: 13px 24px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 13px;
+   margin: 0;
+   text-decoration: none;
+   margin-top: 15px;
+}
+.plus-category--wrapper .plus-thumbnail--meta {
+	position: absolute;
+	top: 39%;
+	left: 24%;
+	text-align: center;
+}
+.plus-category--wrapper .plus-thumbnail--meta p {
+	font-size: 17px;
+	line-height: 26px;
+	margin-bottom: 10px;
+}
+.plus-category--wrapper .plus-thumbnail--meta a {
+	text-transform: uppercase;
+	font-weight: 500;
+	padding-bottom: 3px;
+	border-bottom: 2px solid #2e2e2e;
+	color: #2e2e2e;
+}
 /* =================== Plus Enquiry ================ */
 .plus-enquiry--wrapper {
 	position: relative;
@@ -4089,158 +4166,19 @@ Login Wrapper
 	color: #ed1651;
 }
 .plus-enquiry--wrapper .plus-enquiry--form input[type="submit"] {
-  background: #ed1651;
-  padding: 16px 45px;
-  box-shadow: 1px 1px 3px #efefef;
-  border-radius: 7px;
-  font-weight: 600;
-  color: #ffffff;
-  border: 0;
-  font-size: 17px;
-  letter-spacing: 0.05em;
-  margin: 0;
-  text-decoration: none;
-  text-transform: uppercase;
-  box-shadow: none;
-}
-
-/* =================== Plus Execute ================== */
-.plus-execute--wrapper {
-  position: relative;
-  width: 100%;
-}
-.plus-execute--wrapper .title-ui--wrap .title-text--middle {
-    text-align: left;
-    width: 100%;
-}
-.plus-execute--wrapper .title-ui--wrap .title-text--middle h2:before {
-  background: transparent;
-}
-.plus-execute--wrapper .title-ui--wrap .title-text--middle h2 {
-    font-weight: 500;
-    text-transform: none;
-}
-.plus-execute--wrapper .plus-execute--message {
-  position: relative;
-  width: 100%;
-}
-.plus-execute--wrapper .plus-execute--message p {
-  line-height: 33px;
-  font-size: 18px;
-}
-.plus-execute--wrapper .plus-execute--grids {
-  position: relative;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-}
-.plus-execute--wrapper .plus-execute--grids .plus-execute--wrap {
-  position: relative;
-  width: 100%;
-  text-align: center;
-}
-.plus-execute--wrapper .plus-execute--grids .plus-execute--wrap .plus-execute--block {
-  height: 300px;
-  width: 300px;
-  border: 12px solid #f4c2d0;
-  border-radius: 100%;
-  overflow: hidden;
-  text-align: center;
-  margin: 15px auto;
-}
-.plus-execute--wrapper .plus-execute--grids .plus-execute--wrap .plus-execute--block img {
-  width: 100%;
-  margin: 0 auto;
-}
-.plus-execute--wrapper .plus-execute--grids .plus-execute--wrap h4 {
-  text-align: center;
-}
-.plus-execute--wrapper .plus-execute--grids .plus-execute--wrap p {
-  font-size: 18px;
-  line-height: 27px;
-}
-
-/* =================== Plus Exception ================ */
-.plus-exception--wrapper {
-  position: relative;
-  width: 100%;
-  padding: 75px 0;
-}
-.plus-exception--wrapper .plus-exception--listing {
-  position: relative;
-  width: 100%;
-  margin-top: 30px;
-}
-.plus-exception--wrapper .plus-exception--listing ul li {
-  position: relative;
-  margin-bottom: 10px;
-  line-height: 33px;
-  font-size: 18px;
-  width: 100%;
-}
-.plus-exception--wrapper .title-ui--wrap .title-text--middle {
-    text-align: left;
-    width: 100%;
-}
-.plus-exception--wrapper .title-ui--wrap .title-text--middle h2 {
-    font-weight: 500;
-    text-transform: none;
-}
-.plus-exception--wrapper .title-ui--wrap .title-text--middle h2:before {
-  background: transparent;
-}
-.plus-exception--wrapper .plus-exception--listing ul li:before {
-    content: "";
-    height: 21px;
-    width: 21px;
-    background: #fae1d8;
-    position: absolute;
-    left: -30px;
-    top: 7px;
-    border-top-right-radius: 49%;
-    border-bottom-left-radius: 49%;
-}
-
-/* =========== Plus Connect Us =========== */
-.plus-connet--wrapper {
-    position: relative;
-    width: 100%;
-    padding: 75px 0;
-}
-.plus-connet--wrapper .plus-connet--grids {
-    position: relative;
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    margin-top: 30px;
-}
-.plus-connet--wrapper .plus-connet--grids .plus-connect-wrap {
-    position: relative;
-    width: 100%;
-    text-align: center;
-    background: #efefef;
-    padding: 75px 45px;
-    border-top-left-radius: 36%;
-    border-bottom-right-radius: 36%;
-}
-.plus-connet--wrapper .plus-connet--grids .plus-connect-wrap h5 {
-  color: #ed1651;
-}
-.plus-connet--wrapper .plus-connet--grids .plus-connect-wrap p {
-  line-height: 33px;
-  font-size: 18px;
+   background: #ed1651;
+   padding: 16px 45px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   font-weight: 600;
+   color: #ffffff;
+   border: 0;
+   font-size: 17px;
+   letter-spacing: 0.05em;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;
 }
 
 /* =================== Vaibhav Xpress ================ */
@@ -5088,7 +5026,7 @@ Login Wrapper
       	-ms-flex-direction: column;
       	flex-direction: column;
 	} 
-	.plus-question--wrapper .plus-information--grid {
+	.plus-carousel--wrapper .plus-information--grid {
 		-webkit-box-direction: normal;
       	-webkit-box-orient: vertical;
       	-webkit-flex-direction: column;
@@ -6410,7 +6348,7 @@ Login Wrapper
       -ms-flex-direction: row;
       flex-direction: row;
    } 
-   .plus .plus-question--wrapper .plus-information--grid {
+   .plus .plus-carousel--wrapper .plus-information--grid {
       -webkit-box-direction: normal;
       -webkit-box-orient: horizontal;
       -webkit-flex-direction: row;

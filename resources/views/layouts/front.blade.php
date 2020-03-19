@@ -428,11 +428,15 @@
                 var email = $('#subscribe_email').val();
                 if(email != "")
                 {
+                    $('.addToEnquiry').attr('disabled', true);
+                    $('.addToEnquiry').attr('value','Subscribing...');
                     $.ajax({
                         type:'POST',
                         url:"{{ route('enquiry.store') }}",
                         data:{email:email, enquiry_type:'Subscribe Email'},
                         success:function(data){
+                            $('.addToEnquiry').attr('disabled', false);
+                            $('.addToEnquiry').attr('value','SUBSCRIBE');
                             $('#subscribe_email').val('');
                             $('#subscribe-message').show();
                             setTimeout(function(){ $('#subscribe-message').hide(); }, 5000);
@@ -455,13 +459,16 @@
 
             $(document).on('click','.queryToEnquiry',function(e){
                 e.preventDefault();
+
                 var product_id = query_product_id;
                 var name = $('#query-name').val();
                 var email = $('#query-email').val();
                 var mobile_no = $('#query-mobile').val();
                 var enquiry_message = $('#query-message').val();
-                if(name != "" && email != "" && mobile_no != "")
+                if(name != "" && email != "" && mobile_no != "" && enquiry_message != "")
                 {
+                    $('.queryToEnquiry').attr('disabled', true);
+                    $('.queryToEnquiry').text('Sending...');
                     $.ajax({
                         type:'POST',
                         url:"{{ route('enquiry.store') }}",
@@ -469,6 +476,8 @@
                         success:function(data){
                             $('#enquiry-error').hide();
                             $('#enquiry-result').show();
+                            $('.queryToEnquiry').attr('disabled', false);
+                            $('.queryToEnquiry').text('Send Enquiry');
                             setTimeout(function(){ $('#enquiry-result').hide(); }, 5000);
                             $('#enquiry-result').html(data);
                             $("#queryForm").trigger("reset");

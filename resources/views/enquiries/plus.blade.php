@@ -1,39 +1,38 @@
 @extends ('layouts.front')
 
 @section ('content')
-
 <section class="category-banner--wrapper assign-right--transparent">
-   <div class="container-fluid">
-      <div class="row">
-         <div class="owl-carousel category-slideshow owl-theme">
-            <div class="item">
-               <div class="slideshow-details--wrap">
-                  <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
-                  </div>
-                  <div class="message-rounded--wrap">
-                     <h1>A <span>few clicks</span> is all it takes.</h1>
-                  </div>
-               </div>
-            </div>
-            <div class="item">
-               <div class="slideshow-details--wrap">
-                  <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
-                  </div>
-                  <div class="message-rounded--wrap">
-                     <h1>A <span>few clicks</span> is all it takes.</h1>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
+    <div class="container-fluid">
+       <div class="row">
+          <div class="owl-carousel category-slideshow owl-theme">
+             <div class="item">
+                <div class="slideshow-details--wrap">
+                   <div class="slideshow-image--wrap">
+                      <img class="slide-on--desktop" src="images/vaibhav-plus-banner-01.png" alt="" title="">
+                      <img class="slide-on--mobile" src="images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                   </div>
+                   <div class="message-rounded--wrap">
+                      <h1>A <span>few clicks</span> is all it takes.</h1>
+                   </div>
+                </div>
+             </div>
+             <div class="item">
+                <div class="slideshow-details--wrap">
+                   <div class="slideshow-image--wrap">
+                      <img class="slide-on--desktop" src="images/vaibhav-plus-banner-01.png" alt="" title="">
+                      <img class="slide-on--mobile" src="images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                   </div>
+                   <div class="message-rounded--wrap">
+                      <h1>A <span>few clicks</span> is all it takes.</h1>
+                   </div>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
 
-<section class="plus-carousel--wrapper">
+ <section class="plus-question--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
@@ -44,99 +43,64 @@
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="plus-information--grid">
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <div class="plus-information--carousel">
-                   <div class="owl-carousel plus-slideshow owl-theme">
-                      <div class="item">
-                         <div class="slideshow-image--wrap">
-                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
-                         </div>
-                      </div>
-                      <div class="item">
-                         <div class="slideshow-image--wrap">
-                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
-                         </div>
-                      </div>
-                      <div class="item">
-                         <div class="slideshow-image--wrap">
-                            <img src="<?php echo url('/'); ?>/img/plus-thumbnail-01.png" alt="" title="">
-                         </div>
-                      </div>
-                   </div>
-                </div>
-             </div>
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
-                   <h3>Donec ultrices tincidunt arcu</h3>
+                   <h3><span>Q.</span>What is plus?</h3>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
                    <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
-                   <a href="#" class="btn btn-primary">Read More</a>
                 </div>
              </div>
-          </div>
-       </div>
-    </div>
- </section>
-
- <section class="plus-category--wrapper">
-    <div class="container-fluid">
-       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="title-ui--wrap">
-             <div class="title-text--middle">
-                <h2>Furniture</h2>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                </div>
              </div>
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="plus-information--grid">
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
-                   <h3>Donec ultrices tincidunt arcu</h3>
+                   <h3><span>Q.</span>How it works?</h3>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
                    <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
-                   <a href="#" class="btn btn-primary">Read More</a>
                 </div>
              </div>
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <div class="plus-thumbnail--wrap">
-                   <img src="<?php echo url('/'); ?>/img/plus-thumbnail-02.png" alt="" title="">
-                   <div class="plus-thumbnail--meta">
-                      <p>Nisl suscipit adipiscing bibendum est ultricies.</p>
-                      <a href="#" target="_blank">View</a>
-                   </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="images/plus-thumbnail-01.png" alt="" title="">
                 </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </section>
-
- <section class="plus-category--wrapper">
-    <div class="container-fluid">
-       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="title-ui--wrap">
-             <div class="title-text--middle">
-                <h2>Electricals</h2>
              </div>
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="plus-information--grid">
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                <div class="plus-thumbnail--wrap">
-                   <img src="<?php echo url('/'); ?>/img/plus-thumbnail-03.png" alt="" title="">
-                   <div class="plus-thumbnail--meta">
-                      <p>Nisl suscipit adipiscing bibendum est ultricies.</p>
-                      <a href="#" target="_blank">View</a>
-                   </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="images/plus-thumbnail-01.png" alt="" title="">
                 </div>
              </div>
-             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
-                   <h3>Donec ultrices tincidunt arcu</h3>
+                   <h3><span>Q.</span>Who is it for?</h3>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
                    <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
-                   <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>Whom to get in touch with?</h3>
+                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
+                   <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
                 </div>
              </div>
           </div>
@@ -144,124 +108,106 @@
     </div>
  </section>
 
- <section class="plus-enquiry--wrapper"  id="enquiry-page">
+ <section class="plus-execute--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
-                <h2>Product Enquiry</h2>
+                <h2>Executing Style</h2>
              </div>
-             @if(Session::has('success'))
-                <div class="alert alert-success" role="alert" data-dismiss="alert">
-                    {{ Session::get('success') }}
-                </div>
-             @endif
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="plus-enquiry--form">
-            <form action="{{ route('enquiry.store') }}" method="POST">
-                @csrf
-                <input type="hidden" name="enquiry_type" value="Plus">
-                <div class="form-row">
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-name">Name <span>*</span></label>
-                      <input type="text" name="name" class="form-control" id="enquiry-name" required>
-                      <div class="valid-feedback">
-                         Looks good!
-                      </div>
+          <div class="plus-execute--message">
+             <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-execute--grids">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-execute--wrap">
+                   <div class="plus-execute--block">
+                      <img src="images/execute-plus.png" alt=""/>
                    </div>
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-email">Email <span>*</span></label>
-                      <input type="email" name="email" class="form-control" id="enquiry-email" required>
-                      <div class="valid-feedback">
-                         Looks good!
-                      </div>
-                   </div>
+                   <img src="images/vaibhav-plus-logo.png" alt="">
                 </div>
-                <div class="form-row">
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-contact">Contact Number <span>*</span></label>
-                      <input type="text" name="contact_no" class="form-control" id="enquiry-name" required>
-                      <div class="valid-feedback">
-                         Looks good!
-                      </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-execute--wrap">
+                   <div class="plus-execute--block">
+                      <img src="images/execute-plus.png" alt=""/>
                    </div>
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-mobile">Mobile <span>*</span></label>
-                      <input type="text" name="mobile_no" class="form-control" id="enquiry-email" required>
-                      <div class="valid-feedback">
-                         Looks good!
-                      </div>
-                   </div>
+                   <h4>Consignment</h4>
+                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
                 </div>
-                <div class="form-row">
-                   <div class="col-md-12 mb-12">
-                      <label for="enquiry-address">Address <span>*</span></label>
-                      <input type="text" name="address" class="form-control" id="enquiry-address" required>
-                      <div class="valid-feedback">
-                         Looks good!
-                      </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-execute--wrap">
+                   <div class="plus-execute--block">
+                      <img src="images/execute-plus.png" alt=""/>
                    </div>
+                   <h4>Traders & Destributors</h4>
+                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
                 </div>
-                <div class="form-row">
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-state">State <span>*</span></label>
-                      <input type="text" name="state" class="form-control" id="enquiry-state" required>
-                      <div class="invalid-feedback">
-                         Please provide a valid state.
-                      </div>
-                   </div>
-                   <div class="col-md-6 mb-6">
-                      <label for="enquiry-country">Country <span>*</span></label>
-                      <input type="text" name="country" class="form-control" id="enquiry-country" required>
-                      <div class="invalid-feedback">
-                         Please provide a valid country.
-                      </div>
-                   </div>
-                </div>
-                <div class="form-row">
-                   <div class="col-md-12 mb-12">
-                      <label for="enquiry-message">Enquiry Message <span>*</span></label>
-                      <textarea class="form-control" name="enquiry_message" id="enquiry-message" required></textarea>
-                      <div class="invalid-feedback">
-                         Enquiry
-                      </div>
-                   </div>
-                </div>
-                <div class="form-row">
-                   <div class="form-check">
-                      <input class="form-check-input" name="terms_condition" type="checkbox" value="1" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">
-                         Agree to terms and conditions
-                      </label>
-                      <div class="invalid-feedback">
-                         You must agree before submitting.
-                      </div>
-                   </div>
-                </div>
-                <div class="form-row">
-                   <div class="form-group">
-                      <input class="btn btn-primary" type="submit" value="Submit"/>
-                   </div>
-                </div>
-            </form>
+             </div>
           </div>
        </div>
     </div>
  </section>
 
+ <section class="plus-exception--wrapper">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>Exceptions, Terms & Conditions</h2>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-exception--listing">
+             <ul>
+                <li>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</li>
+                <li>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</li>
+                <li>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</li>
+                <li>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</li>
+             </ul>
+          </div>
+       </div>
+    </div>
+ </section>
 
-
-@endsection
-
-@section ('footer-script')
- <script>
- jQuery(document).ready(function() {
-    @if(Session::has('success'))
-        $('html,body').animate({ scrollTop: $("#enquiry-page").offset().top},'slow');
-    @endif
- });
-</script>
-
-@endsection
+ <section class="plus-connet--wrapper">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>For more details connenct with us</h2>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-connet--grids">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
+                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
+                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Telephone</h5>
+                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ @endsection

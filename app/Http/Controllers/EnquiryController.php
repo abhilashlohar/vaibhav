@@ -38,8 +38,28 @@ class EnquiryController extends Controller
         }
         Enquiry::create($request->all());
         if($request->enquiry_type == 'Care') {
+            Mail::to($request->email)->send(
+                new EnquiryReplyFromAdmin(
+                    $request->name,
+                    $ticket_no,
+                    'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
+                    )
+                );
             return redirect()->route('enquiry.care')
                         ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
+        }
+        elseif ($request->enquiry_type == 'Product Enquiry') {
+            Mail::to($request->email)->send(
+                new EnquiryReplyFromAdmin(
+                    $request->name,
+                    $ticket_no,
+                    'Thank you for enquiry and we will get back to you.'
+                    )
+                );
+                return 'Thank you for enquiry and we will get back to you.';
+        }
+        elseif ($request->enquiry_type == 'Subscribe Email') {
+            return 'Email subscribed successfully.';
         }
         elseif($request->enquiry_type == 'Xpress') {
             return redirect()->route('enquiry.xpress')
@@ -48,19 +68,6 @@ class EnquiryController extends Controller
         elseif($request->enquiry_type == 'Plus') {
             return redirect()->route('enquiry.plus')
                         ->with('success','Enquiry created successfully');
-        }
-        elseif ($request->enquiry_type == 'Subscribe Email') {
-            return 'Email subscribed successfully.';
-        }
-        elseif ($request->enquiry_type == 'Product Enquiry') {
-            // Mail::to($request->email)->send(
-            //     new EnquiryReplyFromAdmin(
-            //         $request->name,
-            //         $ticket_no,
-            //         'Thank you for enquiry and we will get back to you.'
-            //     )
-            // );
-            return 'Thank you for enquiry and we will get back to you.';
         }
     }
 

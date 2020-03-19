@@ -32,7 +32,7 @@ class EnquiryReplyFromAdmin extends Mailable
     public function build()
     {
         return $this->markdown('emails.enquiry_reply_from_admin')
-        ->from('noreply.webanix@gmail.com', 'Vaibhav')
+        ->from('noreply@28svllp.com', 'Vaibhav')
         ->subject('Enquiry Ticket ['.$this->ticket_no.']')
         ->with([
             'messages' => $this->messages

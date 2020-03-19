@@ -32,7 +32,7 @@ class ForgottenPasswordAdmin extends Mailable
     {
         // $resetUrl = url(config('app.url').route('admin.passwordreset', ['token' => $this->otp, 'email' => $this->email], false));
         return $this->markdown('emails.reset_password_admin')
-        ->from('noreply.webanix@gmail.com', 'Vaibhav')
+        ->from('noreply@28svllp.com', 'Vaibhav')
         ->subject('Reset Password Notification')
         ->with([
             'name' =>  $this->name,
