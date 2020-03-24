@@ -701,16 +701,14 @@
                            </button>
                         </div>
                      </div>
-                  </div>
-               </div>
-               <div class="store-ui--column hide-this--desktop">
-                  <div class="gallery-image--three">
-                     <img src="<?php echo url('/'); ?>/static/images/gallery-image-03.png" alt=""/>
-                     <div class="gallery-icon">
-                        <button type="button" class="btn" data-toggle="modal" data-target="#gallery-three">
-                           <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
-                        </button>
-                     </div>
+                     <div class="gallery-image--three hide-this--desktop">
+                       <img src="<?php echo url('/'); ?>/static/images/gallery-image-03.png" alt=""/>
+                       <div class="gallery-icon">
+                          <button type="button" class="btn" data-toggle="modal" data-target="#gallery-three">
+                             <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
+                          </button>
+                       </div>
+                    </div>
                   </div>
                </div>
             </div>
@@ -826,7 +824,7 @@
            </div>
          </div>
 
-         <!-- Modal for Gallery Two -->
+         <!-- Modal for Gallery Three -->
          <div class="modal fade" id="gallery-three" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
            <div class="modal-dialog" role="document">
              <div class="modal-content">

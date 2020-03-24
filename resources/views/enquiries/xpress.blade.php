@@ -8,8 +8,8 @@
              <div class="item">
                 <div class="slideshow-details--wrap">
                    <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop" src="images/vaibhav-plus-banner-01.png" alt="" title="">
-                      <img class="slide-on--mobile" src="images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/plus-xpress-banner-01.png" alt="" title="">
+                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
                    </div>
                    <div class="message-rounded--wrap">
                       <h1>A <span>few clicks</span> is all it takes.</h1>
@@ -19,8 +19,8 @@
              <div class="item">
                 <div class="slideshow-details--wrap">
                    <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop" src="images/vaibhav-plus-banner-01.png" alt="" title="">
-                      <img class="slide-on--mobile" src="images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/plus-xpress-banner-01.png" alt="" title="">
+                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
                    </div>
                    <div class="message-rounded--wrap">
                       <h1>A <span>few clicks</span> is all it takes.</h1>
@@ -37,7 +37,7 @@
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
-                <h2>Plus</h2>
+                <h2>Xpress</h2>
              </div>
           </div>
        </div>
@@ -45,14 +45,14 @@
           <div class="plus-information--grid">
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
-                   <h3><span>Q.</span>What is plus?</h3>
+                   <h3><span>Q.</span>What is xpress?</h3>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
                    <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-01.jpg" alt="" title="">
                 </div>
              </div>
           </div>
@@ -68,7 +68,7 @@
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-02.jpg" alt="" title="">
                 </div>
              </div>
           </div>
@@ -77,7 +77,7 @@
           <div class="plus-information--grid">
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-03.jpg" alt="" title="">
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -93,7 +93,7 @@
           <div class="plus-information--grid">
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="images/plus-thumbnail-01.png" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-04.jpg" alt="" title="">
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -127,15 +127,15 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-execute--wrap">
                    <div class="plus-execute--block">
-                      <img src="images/execute-plus.png" alt=""/>
+                      <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-06.jpg" alt=""/>
                    </div>
-                   <img src="images/vaibhav-plus-logo.png" alt="">
+                   <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt="">
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-execute--wrap">
                    <div class="plus-execute--block">
-                      <img src="images/execute-plus.png" alt=""/>
+                      <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-07.jpg" alt=""/>
                    </div>
                    <h4>Consignment</h4>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
@@ -144,9 +144,9 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-execute--wrap">
                    <div class="plus-execute--block">
-                      <img src="images/execute-plus.png" alt=""/>
+                      <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-08.jpg" alt=""/>
                    </div>
-                   <h4>Traders & Destributors</h4>
+                   <h4>Salon & Spa</h4>
                    <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
                 </div>
              </div>
