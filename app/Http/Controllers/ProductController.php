@@ -99,11 +99,10 @@ class ProductController extends Controller
                 ['is_published', '=', 1],
                 ['products.deleted', '=', 0],
                 ['products.sub_category_id', '=', $product->sub_category_id],
-                ['products.id', '!=', $product->id]
             ])
             ->whereNotIn('products.id', $add_related_product_ids)
             ->first();
-            if($productSub1->count() > 0)
+            if($productSub1)
             {
                 $add_related_product_ids[] = $productSub1->id;
                 $related_product_ids[] = $productSub1->id;
@@ -114,7 +113,7 @@ class ProductController extends Controller
                 ])
                 ->whereNotIn('products.id', $add_related_product_ids)
                 ->first();
-                if($productSub2->count() > 0)
+                if($productSub2)
                 {
                     $add_related_product_ids[] = $productSub2->id;
                     $related_product_ids[] = $productSub2->id;
@@ -128,7 +127,7 @@ class ProductController extends Controller
             ])
             ->whereNotIn('products.id', $add_related_product_ids)
             ->first();
-            if($productcat1->count() > 0)
+            if($productcat1)
             {
                 $add_related_product_ids[] = $productcat1->id;
                 $related_product_ids[] = $productcat1->id;
@@ -139,7 +138,7 @@ class ProductController extends Controller
                 ])
                 ->whereNotIn('products.id', $add_related_product_ids)
                 ->first();
-                if($productcat2->count() > 0)
+                if($productcat2)
                 {
                     $related_product_ids[] = $productcat2->id;
                 }
