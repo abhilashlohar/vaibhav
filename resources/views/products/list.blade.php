@@ -13,7 +13,6 @@
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials.css" />
   <link rel="stylesheet" type="text/css" href="<?php echo url('/'); ?>/share/jssocials-theme-flat.css" />
 
-
    <section class="category-slideshow--wrapper">
       <div class="container-fluid">
          <div class="row">
@@ -53,21 +52,21 @@
                             <div class="single-product--carousel">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
                                 <div id="thumbs-{{$index}}" class="thumb-carousel owl-carousel owl-theme">
-                                        @foreach ($product->productImages as $item)
-                                        <div class="item">
-                                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
-                                        </div>
-                                        @endforeach
+                                       @foreach ($product->productImages as $item)
+                                       <div class="item">
+                                          <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                                       </div>
+                                       @endforeach
                                 </div>
                                 </div>
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                                <div id="big-{{$index++}}" class="owl-carousel owl-theme">
-                                        @foreach ($product->productImages as $item)
-                                        <div class="item zoom zoomin">
-                                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
-                                        </div>
-                                        @endforeach
-                                </div>
+                                    <div id="big-{{$index++}}" class="owl-carousel owl-theme">
+                                       @foreach ($product->productImages as $item)
+                                       <div class="item zoom zoomin">
+                                          <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                                       </div>
+                                       @endforeach
+                                 </div>
                                 </div>
                             </div>
                         </div>

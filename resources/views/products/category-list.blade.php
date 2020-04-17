@@ -27,9 +27,6 @@
                       <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
                       <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
                    </div>
-                   <div class="message-rounded--wrap">
-                      <h1>The <span>style statement</span> of<br/> your home</h1>
-                   </div>
                 </div>
              </div>
              <div class="item">
@@ -37,9 +34,6 @@
                    <div class="slideshow-image--wrap">
                       <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
                       <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                   </div>
-                   <div class="message-rounded--wrap">
-                      <h1>The <span>style statement</span> of<br/> your home</h1>
                    </div>
                 </div>
              </div>
@@ -66,30 +60,18 @@
             <div class="owl-carousel category-slideshow owl-theme">
                 <div class="item">
                     <div class="slideshow-details--wrap">
-                    <div class="message-rounded--wrap">
-                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
-                        <div class="slideshow-details--action">
-                            <a href="#">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                    </div>
+                       <div class="slideshow-image--wrap">
+                           <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                           <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                       </div>
                     </div>
                 </div>
                 <div class="item">
                     <div class="slideshow-details--wrap">
-                    <div class="message-rounded--wrap">
-                        <h1>Top International Brands</span><br/> <span class="uppercase-span">UPTO</span> <br/><span class="percentage-span">20%</span> <span class="offer-span">OFF</span><br/> <span class="categories-span">Skin Ceuticals | Glossier | Drunk Elephan & more...</span></h1>
-                        <div class="slideshow-details--action">
-                            <a href="#">Shop Now</a>
-                        </div>
-                    </div>
-                    <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                        <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                    </div>
+                       <div class="slideshow-image--wrap">
+                           <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                           <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
+                       </div>
                     </div>
                 </div>
             </div>

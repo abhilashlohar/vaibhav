@@ -477,8 +477,10 @@ $(document).ready(function() {
 })();
 
 /* Zoom Effect */
-$(document).ready(function() {
-  $('.zoomin').zoom();
+$(document).ready(function(){
+  if (screen.width >= 768) {
+    $('.zoomin').zoom();
+  }
 });
 
 /* Zoom Effect */

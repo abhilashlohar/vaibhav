@@ -29,7 +29,7 @@
           <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
              <div class="single-product--carousel">
                 @if ($product->productImages->count() > 1)
-                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ordering-thumbs">
                     <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
                          @foreach ($product->productImages as $item)
                          <div class="item">
@@ -38,7 +38,7 @@
                          @endforeach
                     </div>
                  </div>
-                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ordering-thumbnail">
                     <div id="big" class="owl-carousel owl-theme">
                          @foreach ($product->productImages as $item)
                          <div class="item zoom zoomin">
@@ -85,7 +85,8 @@
                                 <li class="discount">({{$product->discount}}% Off)</li>
                                 </ul>
                         </div>
-                        <div style="direction:ltr;">
+                        <div class="ecommerce-item--feeds">
+                                <div style="direction:ltr;">
                                 <?php
                                     $stars = 0;
                                     if ($product->avgRating != null)
@@ -98,7 +99,18 @@
                                         echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px;font-size: 14px;"></span>';
                                     }
                                 ?>
-                            </div>
+                                </div>
+                                <div class="ecommerce-item--share">
+                                   <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                                     <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                                  </a>
+                                  <div class="collapse" id="share-social">
+                                    <div class="card card-body">
+                                        <div id="share"></div>
+                                    </div>
+                                  </div>
+                               </div>
+                        </div>
                         <div class="ecommerce-item--buttons">
                             <ul>
                                 <li>
@@ -109,16 +121,6 @@
                                 <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}">Enquire Now</button></li>
                             </ul>
                         </div>
-                        <div class="ecommerce-item--share">
-                             <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
-                               <i class="fa fa-share-alt" aria-hidden="true"></i> Share
-                            </a>
-                            <div class="collapse" id="share-social">
-                              <div class="card card-body">
-                                  <div id="share"></div>
-                              </div>
-                            </div>
-                         </div>
                     </form>
                 </div>
              </div>
@@ -126,7 +128,6 @@
        </div>
     </div>
  </section>
-
 
  <section class="single-description--wrapper">
     <div class="container-fluid">
@@ -139,7 +140,7 @@
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="single-description--text">
-             <?php echo $product->description; ?>
+            <?php echo $product->description; ?>
           </div>
        </div>
     </div>

@@ -62,12 +62,12 @@
                 </form>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="support-search--form">
+            <div class="support-search--results">
                <div class="form-group col-md-12" id="enquiry-complaint-view">
 
                </div>
             </div>
-         </div>
+          </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
                 @foreach ($headerCategories as $headerCategory)
