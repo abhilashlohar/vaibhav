@@ -49,7 +49,7 @@ class Category extends Model
             })->ignore($id)
           ],
           'sequence' => 'required|numeric',
-          'image_add' => 'mimes:jpeg,jpg,png|max:2048',
+          'image_add' => 'mimes:jpeg,jpg,png|max:5120',
           'banner_image_mobile_add' => 'mimes:jpeg,jpg,png|max:5120',
           'banner_image_desktop_add' => 'mimes:jpeg,jpg,png|max:5120',
       ];
@@ -59,7 +59,7 @@ class Category extends Model
         $category = Category::find($id);
 
         if ($category->notHavingImageInDb()){
-            $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+            $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
         }
         if ($category->notHavingBannerImageMobileInDb()){
             $rules['banner_image_mobile_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
@@ -70,7 +70,7 @@ class Category extends Model
       }
       else
       {
-        $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+        $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
         $rules['banner_image_mobile_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
         $rules['banner_image_desktop_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
       }
@@ -89,7 +89,7 @@ class Category extends Model
           'sequence.numeric' => 'You must enter numeric value.',
           'image_add.required' => 'You must select image.',
           'image_add.mimes' => 'Only allowed image type jpeg,jpg,png.',
-          'image_add.max' => 'Image size is big from 2MB.',
+          'image_add.max' => 'Image size is big from 5MB.',
           'banner_image_mobile_add.required' => 'You must select image.',
           'banner_image_mobile_add.mimes' => 'Only allowed image type jpeg,jpg,png.',
           'banner_image_mobile_add.max' => 'Image size is big from 5MB.',

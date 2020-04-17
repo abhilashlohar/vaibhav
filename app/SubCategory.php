@@ -37,7 +37,7 @@ class SubCategory extends Model
           ],
           'sequence' => 'required|numeric',
           'short_description' => 'required',
-          'image_add' => 'mimes:jpeg,jpg,png|max:2048',
+          'image_add' => 'mimes:jpeg,jpg,png|max:5120',
           'category_id' => 'required'
       ];
 
@@ -46,12 +46,12 @@ class SubCategory extends Model
         $subCategory = SubCategory::find($id);
 
         if ($subCategory->notHavingImageInDb()){
-            $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+            $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
         }
       }
       else
       {
-        $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:2048';
+        $rules['image_add'] = 'required|mimes:jpeg,jpg,png|max:5120';
       }
 
       return $rules;
@@ -69,7 +69,7 @@ class SubCategory extends Model
           'category_id.required' => 'You must select category.',
           'image_add.required' => 'You must select image.',
           'image_add.mimes' => 'Only allowed image type jpeg,jpg,png.',
-          'image_add.max' => 'Image size is big from 2MB.'
+          'image_add.max' => 'Image size is big from 5MB.'
       ];
     }
     public function category(){

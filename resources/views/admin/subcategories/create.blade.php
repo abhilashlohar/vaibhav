@@ -77,8 +77,11 @@
 
                     <div class="form-group">
                         <label for="sequence">Category Image *</label>
-                        <input type="file" name="image_add" accept="png, jpg, jpeg"  class="form-control @error('image_add') is-invalid @enderror" required="required">
+                        <input type="file" name="image_add" onchange="imageSizeValidation(this, 'image_add')" accept="png, jpg, jpeg"  class="form-control @error('image_add') is-invalid @enderror" required="required">
                         <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
+                        <span class="invalid-feedback" id="image_add" role="alert">
+                            <strong>Image size is big from 5MB.</strong>
+                        </span>
                         @error('image_add')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

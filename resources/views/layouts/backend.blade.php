@@ -435,6 +435,16 @@
         }
     }
 };
+function imageSizeValidation(currentThis, invalid){
+        const size = (currentThis.files[0].size / 1024 / 1024).toFixed(2);
+        if (size > 5) {
+            currentThis.value= null;
+            document.getElementById(invalid).style.display = 'block';
+        }
+        else {
+            document.getElementById(invalid).style.display = 'none';
+        }
+    }
 </script>
 <!-- end::Global Config -->
 
@@ -442,6 +452,20 @@
    <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/plugins/global/plugins.bundle.js" type="text/javascript"></script>
    <script src="<?php echo url('/'); ?>/themes/metronic/theme/default/demo1/dist/assets/js/scripts.bundle.js" type="text/javascript"></script>
 <!--end::Global Theme Bundle -->
+<script>
+jQuery(document).ready(function() {
+
+    $('.imageSizeValidation').on('change',function(){
+        alert();
+        const size = (this.files[0].size / 1024 / 1024).toFixed(2);
+        if (size > 1) {
+            this.val(null);
+            // document.
+        }
+    });
+
+    });
+    </script>
 @yield ('footer-script')
 
 </body>
