@@ -279,11 +279,8 @@ legend {
                                                         <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/product/'.$productImage->image) }}')"></div>
                                                     </div>
                                                     <div class="product_image">
-                                                        <input type="file" name="product_image[{{$i}}][image]" onchange="imageSizeValidation(this, 'product_image[{{$i}}][image]')" accept="png, jpg, jpeg">
+                                                        <input type="file" name="product_image[{{$i}}][image]" onchange="imageSizeValidation(this)" accept="png, jpg, jpeg">
                                                     </div>
-                                                    <span class="invalid-feedback" id="product_image[{{$i}}][image]" role="alert">
-                                                        <strong>Image size is big from 5MB.</strong>
-                                                    </span>
                                                 </td>
                                                 <td>
                                                     <div class="kt-radio-inline">
@@ -331,11 +328,8 @@ legend {
         <tr>
             <td>
                 <div class="product_image">
-                    <input type="file" name="product_rows[0]['image']" onchange="imageSizeValidation(this, 'demo')" accept="png, jpg, jpeg" required>
+                    <input type="file" name="product_rows[0]['image']" onchange="imageSizeValidation(this)" accept="png, jpg, jpeg" required>
                 </div>
-                <span class="invalid-feedback" id="demo" role="alert">
-                    {{-- <strong>Image size is big from 5MB.</strong> --}}
-                </span>
             </td>
             <td>
                 <div class="kt-radio-inline">

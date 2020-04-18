@@ -59,16 +59,14 @@
                                     <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/category/'.$category->image) }}')"></div>
                                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                         <i class="fa fa-pen"></i>
-                                        <input type="file" name="image_add" onchange="imageSizeValidation(this, 'image_add')" accept=".png, .jpg, .jpeg">
+                                        <input type="file" name="image_add" onchange="imageSizeValidation(this)" accept=".png, .jpg, .jpeg">
                                     </label>
                                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                         <i class="fa fa-times"></i>
                                     </span>
                                 </div>
                                 <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                                <span class="invalid-feedback" id="image_add" role="alert">
-                                    <strong>Image size is big from 5MB.</strong>
-                                </span>
+
                             </div>
                         </div>
                         @error('image_add')
@@ -82,11 +80,9 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <label for="banner-image-mobile">Banner Image Mobile *</label>
-                                <input type="file" name="banner_image_mobile_add" onchange="imageSizeValidation(this, 'banner_image_mobile_add')" accept="png, jpg, jpeg"  class="form-control @error('banner_image_mobile_add') is-invalid @enderror">
+                                <input type="file" name="banner_image_mobile_add" onchange="imageSizeValidation(this)" accept="png, jpg, jpeg"  class="form-control @error('banner_image_mobile_add') is-invalid @enderror">
                                 <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                                <span class="invalid-feedback" id="banner_image_mobile_add" role="alert">
-                                    <strong>Image size is big from 5MB.</strong>
-                                </span>
+
                                 @error('banner_image_mobile_add')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -105,11 +101,9 @@
                         <div class="row">
                             <div class="col-md-8">
                                 <label for="banner-image-desktop">Banner Image Desktop *</label>
-                                <input type="file" name="banner_image_desktop_add" onchange="imageSizeValidation(this, 'imageSizeValidation')" accept="png, jpg, jpeg"  class="form-control @error('banner_image_desktop_add') is-invalid @enderror">
+                                <input type="file" name="banner_image_desktop_add" onchange="imageSizeValidation(this)" accept="png, jpg, jpeg"  class="form-control @error('banner_image_desktop_add') is-invalid @enderror">
                                 <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                                <span class="invalid-feedback" id="imageSizeValidation" role="alert">
-                                    <strong>Image size is big from 5MB.</strong>
-                                </span>
+
                                 @error('banner_image_desktop_add')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

@@ -84,16 +84,14 @@
                                     <div class="kt-avatar__holder" style="background-image: url('{{ asset('storage/subcategory/'.$subCategory->image) }}')"></div>
                                     <label class="kt-avatar__upload" data-toggle="kt-tooltip" title="" data-original-title="Change avatar">
                                         <i class="fa fa-pen"></i>
-                                        <input type="file" name="image_add" onchange="imageSizeValidation(this, 'image_add')" accept="png, jpg, jpeg">
+                                        <input type="file" name="image_add" onchange="imageSizeValidation(this)" accept="png, jpg, jpeg">
                                     </label>
                                     <span class="kt-avatar__cancel" data-toggle="kt-tooltip" title="" data-original-title="Cancel avatar">
                                         <i class="fa fa-times"></i>
                                     </span>
                                 </div>
                                 <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-                                <span class="invalid-feedback" id="image_add" role="alert">
-                                    <strong>Image size is big from 5MB.</strong>
-                                </span>
+
                             </div>
                         </div>
                         @error('image_add')
