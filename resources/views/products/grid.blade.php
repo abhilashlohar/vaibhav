@@ -65,7 +65,17 @@
                             <div class="item-excerpt--meta">
                                 <div class="title">
                                   <h4>
-                                    <a href="{{route('products.product-detail',$product->slug)}}">{{$product->name}}</a>
+                                    <a href="{{route('products.product-detail',$product->slug)}}" title="{{$product->name}}">
+                                    <?php
+                                    if(strlen($product->name) > 18)
+                                    {
+                                      echo substr($product->name, 0, 18).'...';
+                                    }
+                                    else {
+                                      echo $product->name;
+                                    }
+                                    ?>
+                                    </a>
                                   </h4>
                                 </div>
                             </div>
