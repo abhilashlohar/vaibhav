@@ -215,7 +215,7 @@
                 </div>
                 <div class="form-group">
                     <label for="query-mobile">Mobile No. *</label>
-                    <input type="text" class="form-control" id="query-mobile" aria-describedby="mobile" placeholder="Enter Mobile No." required="required">
+                    <input type="text" class="form-control" id="query-mobile" name="query_mobile" aria-describedby="mobile" placeholder="Enter Mobile No.">
                 </div>
                 <div class="form-group">
                     <label for="message-for-query">Message *</label>
@@ -322,6 +322,7 @@
    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
     <script>
+      var submitEnquiry = 0;
         $( "#search-form" ).validate({
             rules: {
                 search: {
@@ -340,6 +341,12 @@
             rules: {
                 query_email: {
                     required: !0
+                },
+                query_mobile: {
+                  required: !0,
+                   minlength:10,
+                  maxlength:10,
+                  number: !0
                 }
             }
         });
@@ -467,6 +474,10 @@
                 var enquiry_message = $('#query-message').val();
                 if(name != "" && email != "" && mobile_no != "" && enquiry_message != "")
                 {
+                 
+                  if(mobile_no.length === 10){
+
+
                     $('.queryToEnquiry').attr('disabled', true);
                     $('.queryToEnquiry').text('Sending...');
                     $.ajax({
@@ -484,6 +495,7 @@
                             $('#add-query').animate({ scrollTop:180},'slow');
                         }
                     });
+                  }
                 }
                 else
                 {

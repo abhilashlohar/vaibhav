@@ -36,7 +36,7 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                <div class="title-ui--wrap">
                   <div class="title-text--middle">
-                     <h2>{{$category->name}}</h2>
+                     <h2>{{$subCategoryData->name}}</h2>
                   </div>
                </div>
             </div>
@@ -65,7 +65,11 @@
                         </div>
                         <div class="item-excerpt--details">
                             <div class="item-excerpt--meta">
-                                <div class="title"><h4><a href="#" target="_blank">{{$product->name}}</a></h4></div>
+                                <div class="title">
+                                  <h4>
+                                    <a href="{{route('products.product-detail',$product->slug)}}">{{$product->name}}</a>
+                                  </h4>
+                                </div>
                             </div>
                             <div class="ecommerce-item--price">
                                 <ul>

@@ -20,6 +20,8 @@
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="#">Home</a></li>
+                     <li class="breadcrumb-item"><a href="#">{{$product->category->name}}</a></li>
+                     <li class="breadcrumb-item"><a href="#">{{$product->subCategory->name}}</a></li>
                      <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
                   </ol>
                </nav>
@@ -282,7 +284,11 @@
                       </div>
                       <div class="item-excerpt--details">
                          <div class="item-excerpt--meta">
-                            <div class="title"><h4><a href="#" target="_blank">{{$product->name}}</a></h4></div>
+                            <div class="title">
+                              <h4>
+                                <a href="{{route('products.product-detail',$product->slug)}}">{{$product->name}}</a>
+                              </h4>
+                            </div>
                          </div>
                          <div class="ecommerce-item--price">
                             <ul>
