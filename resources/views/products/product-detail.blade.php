@@ -28,30 +28,25 @@
             </div>
          </div>
        <div class="single-excerpt--grid">
-          <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+          <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1">
              <div class="single-product--carousel">
-                @if ($product->productImages->count() > 1)
-                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ordering-thumbs">
-                    <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
-                         @foreach ($product->productImages as $item)
-                         <div class="item">
-                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
-                         </div>
-                         @endforeach
-                    </div>
-                 </div>
-                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 ordering-thumbnail">
-                    <div id="big" class="owl-carousel owl-theme">
-                         @foreach ($product->productImages as $item)
-                         <div class="item zoom zoomin">
-                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
-                         </div>
-                         @endforeach
-                    </div>
-                 </div>
+                  <div id="big" class="owl-carousel owl-theme">
+                       @foreach ($product->productImages as $item)
+                       <div class="item zoom zoomin">
+                           <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                       </div>
+                       @endforeach
+                  </div>
+                  @if ($product->productImages->count() > 1)
+                  <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
+                       @foreach ($product->productImages as $item)
+                       <div class="item">
+                           <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                       </div>
+                       @endforeach
+                  </div>
                  @else
                  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
-
                     @foreach ($product->productImages as $item)
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
@@ -61,7 +56,7 @@
                  @endif
              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+          <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
                     <form action="{{ route('addTocart') }}" method="POST">

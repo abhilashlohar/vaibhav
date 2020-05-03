@@ -111,7 +111,7 @@
                                         <img src="{{ asset('storage/subcategory/'.$subcategory->image) }}" alt="{{$subcategory->name}}"/>
                                     </div>
                                     <div class="slideshow-details--title">
-                                        <h4>{{$subcategory->name}} -<span>{{$subcategory->short_description}}</span></h4>
+                                        <h4>{{$subcategory->name}}</h4>
                                     </div>
                                 </div>
                                 </div>

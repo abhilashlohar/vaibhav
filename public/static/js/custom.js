@@ -1,3 +1,23 @@
+$(window).scroll(function(){
+    if ($(window).scrollTop() >= 300) {
+        $('.sticky-navbar').addClass('fixed-navbar');
+    }
+    else {
+        $('.sticky-navbar').removeClass('fixed-navbar');
+    }
+});
+
+$(document).ready(function(){
+  //Smooth Scrolling Using Navigation Menu
+  $('a[href*="#"]').on('click', function(e){
+    $('html,body').animate({
+      scrollTop: $($(this).attr('href')).offset().top - 100
+    },500);
+    e.preventDefault();
+  })
+});
+
+
 $(document).ready(function(){
   if (screen.width >= 992) {
     $(".dropdown").hover(            
@@ -101,26 +121,6 @@ $('.brand-single--slideshow').owlCarousel({
     }
 });
 
-/* $('.category-inner').owlCarousel({
-    loop:false,
-    margin: 30,
-    lazyLoad: true,
-    nav:true,
-    navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-    dots: false,
-    responsive:{
-        0:{
-            items:1
-        },
-        600:{
-            items:2
-        },
-        1000:{
-            items:4
-        }
-    }
-}); */
-
 $('.recommended-items').owlCarousel({
     loop:false,
     margin: 30,
@@ -208,8 +208,8 @@ $(document).ready(function() {
       .eq(0)
       .addClass("current");
   })
-    .owlCarousel({
-   items: 3,
+  .owlCarousel({
+   items: 5,
    dots: false,
    margin: 10,
    animateOut: 'fadeOut',
@@ -221,7 +221,18 @@ $(document).ready(function() {
    smartSpeed: 200,
    slideSpeed: 500,
    slideBy: 4,
-   responsiveRefreshRate: 100
+   responsiveRefreshRate: 100,
+   responsive:{
+        0:{
+            items:3
+        },
+        480:{
+            items:4
+        },
+        992:{
+            items:5
+        }
+    }
   })
   .on("changed.owl.carousel", syncPosition2);
 
