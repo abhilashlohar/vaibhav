@@ -211,6 +211,17 @@
       rules: {
         ship_name: {
           required: true
+        },
+        ship_mobile: {
+            required: true,
+            minlength:10,
+              maxlength:10,
+              number: true
+        },
+        bill_mobile: {
+            minlength:10,
+              maxlength:10,
+              number: true
         }
       }
     });
