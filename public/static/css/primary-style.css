@@ -2415,9 +2415,7 @@ Category Page
    z-index: -1;
 } 
 .items-archive--wrapper .item-archive--title {
-   position: relative;
-   width: 100%;
-   padding: 10px 0;
+   display: none;
 }
 .items-archive--wrapper .item-archive--title h3 {
    color: #2e2e2e;
@@ -7260,13 +7258,6 @@ Login Wrapper
       box-shadow: 1px 1px 9px #eeeeee;
       border-top-right-radius: 150px;
       border-bottom-left-radius: 150px;
-   }
-   .product-list-list .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
-      max-width: 110px !important;
-      width: 100% !important;
-      height: 100%;
-      max-height: 90px;
-      margin-bottom: 16px;
    }
    .product-list-list .single-excerpt--wrapper .single-product--properties {
       position: relative;

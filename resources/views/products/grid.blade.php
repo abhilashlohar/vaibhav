@@ -67,9 +67,9 @@
                                   <h4>
                                     <a href="{{route('products.product-detail',$product->slug)}}" title="{{$product->name}}">
                                     <?php
-                                    if(strlen($product->name) > 18)
+                                    if(strlen($product->name) > 20)
                                     {
-                                      echo substr($product->name, 0, 18).'...';
+                                      echo substr($product->name, 0, 20).'..';
                                     }
                                     else {
                                       echo $product->name;

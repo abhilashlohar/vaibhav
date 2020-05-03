@@ -324,7 +324,7 @@ $(document).ready(function() {
    ],
    smartSpeed: 200,
    slideSpeed: 500,
-   slideBy: 4,
+   slideBy: 1,
    responsiveRefreshRate: 100
   })
   .on("changed.owl.carousel", syncPosition2);
