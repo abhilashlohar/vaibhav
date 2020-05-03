@@ -133,7 +133,7 @@
                   </div>
                </div>
                <div class="col-3 col-sm-4 col-md-12 col-lg-12 col-xl-12">
-                  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <nav class="navbar sticky-navbar navbar-expand-lg navbar-dark bg-dark">
                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                      </button>

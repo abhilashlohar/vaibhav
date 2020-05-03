@@ -17,8 +17,6 @@
 
 @section ('content')
 
-
-
    <section class="category-slideshow--wrapper">
       <div class="container-fluid">
          <div class="row">
@@ -49,7 +47,7 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="item-archive--title">
-               <h3>{{$subCategoryData->name}} - <span>{{$subCategoryData->short_description}}</span></h3>
+               <h3>{{$subCategoryData->name}}</h3>
             </div>
          </div>
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

@@ -44,7 +44,7 @@
                 @foreach($products as $product)
                     <div class="leaf-title--wrap">
                         <a href="{{ route('products.product-detail',$product->slug) }}" data-tooltip="View Details">
-                            {{$product->name}} - <span>{{$product->subCategory->name}}</span>
+                            {{$product->name}}</span>
                         </a>
                     </div>
                     <div class="single-excerpt--grid">
@@ -78,7 +78,7 @@
                                         <div class="ecommerce-item--name">
                                             <h3>
                                                 <a href="{{ route('products.product-detail',$product->slug) }}"  data-tooltip="View Details">
-                                                    {{$product->name}} - <span>{{$product->subCategory->name}}</span>
+                                                    {{$product->name}}</span>
                                                 </a>
                                             </h3>
                                         </div>
@@ -100,20 +100,32 @@
                                                 <li class="discount">({{$product->discount}}% Off)</li>
                                                 </ul>
                                         </div>
-                                        <div style="direction:ltr;">
-                                            <?php
-                                                $stars = 0;
-                                                if ($product->avgRating != null)
-                                                {
-                                                    $stars = $product->avgRating->rating;
-                                                }
-                                                for ($i=1; $i <= 5 ; $i++) {
-                                                    if ($i<=$stars) $checked = "checked";
-                                                    else $checked = "";
-                                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px;font-size: 14px;"></span>';
-                                                }
-                                            ?>
-                                        </div>
+                                        <div class="ecommerce-item--feeds">
+                                             <div style="direction:ltr;">
+                                             <?php
+                                                  $stars = 0;
+                                                   if ($product->avgRating != null)
+                                                   {
+                                                       $stars = $product->avgRating->rating;
+                                                   }
+                                                   for ($i=1; $i <= 5 ; $i++) {
+                                                       if ($i<=$stars) $checked = "checked";
+                                                       else $checked = "";
+                                                       echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px;font-size: 14px;"></span>';
+                                                   }
+                                              ?>
+                                              </div>
+                                              <div class="ecommerce-item--share">
+                                                 <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                                                   <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                                                </a>
+                                                <div class="collapse" id="share-social">
+                                                  <div class="card card-body">
+                                                      <div id="share"></div>
+                                                  </div>
+                                                </div>
+                                             </div>
+                                       </div>
                                         <div class="ecommerce-item--buttons">
                                             <ul>
                                                 <li>
@@ -122,16 +134,6 @@
                                                 </li>
                                                 <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}">Enquire Now</button></li>
                                             </ul>
-                                        </div>
-                                        <div class="ecommerce-item--share">
-                                            <a class="share-this" data-toggle="collapse" href="#share-social_{{$product->id}}" role="button" aria-expanded="false" aria-controls="share-social_{{$product->id}}">
-                                            <i class="fa fa-share-alt" aria-hidden="true"></i> Share
-                                            </a>
-                                            <div class="collapse" id="share-social_{{$product->id}}">
-                                            <div class="card card-body">
-                                                <div id="share_{{$product->id}}"></div>
-                                            </div>
-                                            </div>
                                         </div>
                                     </form>
                                 </div>
