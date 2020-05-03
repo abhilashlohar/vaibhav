@@ -196,7 +196,7 @@ class ProductController extends Controller
     public function addTocart(Request $request)
     {
         $cart = [];
-        $minutes = 60;
+        $minutes = 60*24*30;
         $user = auth()->user();
         $existCookie = false;
         if($user)
