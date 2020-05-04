@@ -782,6 +782,9 @@ ul.dropDownMenu ul {
 .category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--name h3 a {
    color: #cb1e54;
 }
+.product-list.product-list-list .single-product--carousel .owl-carousel.owl-drag .owl-item {
+   max-height: 200px;
+}
 
 /* =========== Home: Category UI Two =============== */
 .category-ui--two {
@@ -1103,6 +1106,7 @@ ul.dropDownMenu ul {
    -webkit-flex-direction: row;
    -ms-flex-direction: row;
    flex-direction: row;
+   flex-wrap: nowrap;
    padding-inline-start: 0px;
 }
 .ecommerce-item--price li.new-price { 
@@ -1183,7 +1187,7 @@ ul.dropDownMenu ul {
 }
 .ecommerce-item--buttons button {
    background: #ffffff;
-   padding: 8px 19px;
+   padding: 8px 9px;
    box-shadow: 1px 1px 3px #efefef;
    border-radius: 7px;
    color: #99ab3f;
@@ -1210,7 +1214,7 @@ ul.dropDownMenu ul {
    position: relative;
 }
 .ecommerce-item--excerpt p {
-   font-size: 17px;
+   font-size: 16px;
    line-height: 26px;
    font-weight: 400;
 }
@@ -1414,6 +1418,9 @@ ul.dropDownMenu ul {
 }
 .follow-ui--wrapper .title-ui--wrap .title-text--middle h2:before {
    background: transparent;
+}
+.product-list.product-list-list .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded {
+  display: none;
 }
 
 /* ================ Store ================= */
@@ -2294,7 +2301,7 @@ Category Page
 .category-slideshow--wrapper .category-carousel--wrap {
   position: relative;
   width: 100%;
-  padding: 30px;
+  padding: 7px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2322,6 +2329,8 @@ Category Page
    overflow: hidden;
    max-height: 249px;
    min-height: 249px;
+   display: flex;
+   align-items: center;
 }
 .category-slideshow--wrapper .slideshow-details--wrap .slideshow-details--image img {
    width: 100%;
@@ -2385,7 +2394,7 @@ Category Page
    color: #2e2e2e;
    text-transform: none;
    text-decoration: none;
-   font-size: 13px;
+   font-size: 11px;
    font-weight: 400;
 }
 .breadcrumb .breadcrumb-item.active {
@@ -2648,14 +2657,14 @@ Product Single
 .ecommerce-item--feeds {
     position: relative;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
 }
 .ecommerce-item--feeds .ecommerce-item--share {
     position: relative;
     margin-left: 15px;
 }
 .product-list.product-list-list .single-product--carousel {
-    max-height: 260px;
+    max-height: 375px;
     overflow: hidden;
 }
 .single-product--carousel {
@@ -2715,8 +2724,8 @@ Product Single
 }
 .product-list-list .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 a {
    color: #e94150;
-   font-size: 21px;
-   line-height: 30px;
+   font-size: 15px;
+   line-height: 27px;
 }
 .product-list-list .single-excerpt--wrapper .leaf-title--wrap {
    padding: 15px 30px;
@@ -2772,6 +2781,15 @@ Product Single
 .product-detail .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--buttons button {
    background: #e94150;
    color: #ffffff;
+}
+.product-list-list .single-excerpt--wrapper .single-product--properties {
+    position: relative;
+    width: 100%;
+    background: url(../images/ui-pattern-grey.png);
+   background-color: transparent;
+    background-size: 82%;
+    background-repeat: no-repeat;
+    background-position: top left;
 }
 
 /* =================== CMS Page Wrapper ========================== */
@@ -3130,6 +3148,12 @@ Product Single
 .recommended-product--wrapper .recommended-carousel--wrap .recommended-items .item-excerpt--wrap .item-excerpt--image:hover .item-excerpt--action a {
    opacity: 1;
    transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 360px) {
+   .product-list-list .single-excerpt--wrapper .ecommerce-item--buttons button {
+      font-size: 11px;
+   }
 }
 
 /* ==================================================== 
@@ -5146,8 +5170,8 @@ Login Wrapper
       padding: 10px 13px;
    }
    .title-ui--wrap .title-text--middle h2 {
-      font-size: 24px;
-      line-height: 35px;
+      font-size: 17px;
+      line-height: 30px;
       font-weight: 600;
    }
    .title-ui--wrap .title-text--middle h2::first-letter {
@@ -5944,6 +5968,10 @@ Login Wrapper
 }
 
 @media only screen and (max-width: 768px) {
+   .ecommerce-item--buttons button {
+         padding: 8px 9px;
+         font-size: 12px;
+   }
   .table-responsive {
       font-size: 12px !important;
   }
@@ -6078,9 +6106,6 @@ Login Wrapper
   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-height: 100px;
       min-height: 100px;
-  }
-  .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded {
-     display: block;
   }
   .product-list.product-list-list .single-product--carousel {
     max-height: auto;
@@ -6603,20 +6628,28 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 992px) { 
-    .owl-carousel.category-slideshow.owl-theme.owl-loaded.owl-drag {
+   .category-slideshow--wrapper .category-carousel--wrap {
+     padding: 30px;
+   }
+   .product-list.product-list-list .single-product--carousel .owl-carousel.owl-drag .owl-item {
+      border: 1px solid #dddddd;
+      overflow: hidden;
+      max-height: 319px;
+   }
+   .owl-carousel.category-slideshow.owl-theme.owl-loaded.owl-drag {
       max-height: 100%;
-  }
-    .navbar .navbar-nav .dropdown-item--wrap .menu-tab--item h5 {
+   }
+   .navbar .navbar-nav .dropdown-item--wrap .menu-tab--item h5 {
        text-align: center;
-    }
-    .support-search--wrapper {
+   }
+   .support-search--wrapper {
       padding: 45px 0;
-    }
-    .support-form--care {
-     position: relative;
-     width: 100%;
-     padding: 15px 0;
-  }
+   }
+   .support-form--care {
+      position: relative;
+      width: 100%;
+      padding: 15px 0;
+   }
    .blog-details--wrapper .blog-details--grid .blog-sidebar--wrap {
       padding: 0 30px;
       margin-top: 0;
@@ -6766,6 +6799,14 @@ Login Wrapper
       background-color: #ffffff !important;
       box-shadow: 1px 1px 3px #cacaca;
   }
+  .fixed-navbar .navbar-nav .dropdown-menu {
+      position: absolute;
+      max-width: 57%;
+      min-width: 57% !important;
+      left: 213px;
+      border-radius: 7px;
+      top: 90%;
+   }
    .navbar .navbar-nav {
       margin: 0 auto;
    }
@@ -7250,11 +7291,11 @@ Login Wrapper
    }
    .product-list-list .single-excerpt--wrapper .single-excerpt--grid {
       position: relative;
-      width: 90%;
+      width: 80%;
       margin-bottom: 60px;
       margin-left: auto;
       margin-right: auto;
-      padding: 45px 20px;
+      padding: 39px 75px;
       box-shadow: 1px 1px 9px #eeeeee;
       border-top-right-radius: 150px;
       border-bottom-left-radius: 150px;
@@ -7264,7 +7305,7 @@ Login Wrapper
       width: 100%;
       background: url(../images/ui-pattern-grey.png);
       background-color: transparent;
-      background-size: 91%;
+      background-size: 82%;
       background-repeat: no-repeat;
       background-position: top left;
       height: 100%;
