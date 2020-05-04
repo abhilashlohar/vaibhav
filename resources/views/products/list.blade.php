@@ -130,7 +130,7 @@
                                                     <input type="hidden" name="product_id" value="{{$product->id}}">
                                                     <button type="submit">Add To Cart</button>
                                                 </li>
-                                                <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}">Enquire Now</button></li>
+                                                <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}" category_slug="{{$category->slug}}">Enquire Now</button></li>
                                             </ul>
                                         </div>
                                     </form>

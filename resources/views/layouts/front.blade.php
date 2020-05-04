@@ -455,6 +455,7 @@
             });
 
             var query_product_id = 0;
+            var query_category_slug = "";
             $(document).on('click', '.open-enquery-modal', function(e){
                 $('#enquiry-result').hide();
                 $('#enquiry-error').hide();
@@ -462,6 +463,7 @@
                     show: true
                 });
                 query_product_id = $(this).attr('product_id');
+                query_category_slug = $(this).attr('category_slug');
             });
 
             $(document).on('click','.queryToEnquiry',function(e){
@@ -474,10 +476,7 @@
                 var enquiry_message = $('#query-message').val();
                 if(name != "" && email != "" && mobile_no != "" && enquiry_message != "")
                 {
-                 
                   if(mobile_no.length === 10){
-
-
                     $('.queryToEnquiry').attr('disabled', true);
                     $('.queryToEnquiry').text('Sending...');
                     $.ajax({
@@ -489,7 +488,7 @@
                             $('#enquiry-result').show();
                             $('.queryToEnquiry').attr('disabled', false);
                             $('.queryToEnquiry').text('Send Enquiry');
-                            setTimeout(function(){ $('#enquiry-result').hide(); }, 5000);
+                            setTimeout(function(){ $('#enquiry-result').hide(); window.location = "/products/"+query_category_slug; }, 3000);
                             $('#enquiry-result').html(data);
                             $("#queryForm").trigger("reset");
                             $('#add-query').animate({ scrollTop:180},'slow');

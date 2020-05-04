@@ -118,7 +118,7 @@
                                         <input type="hidden" class="query_product_id" name="product_id" value="{{$furnitureProduct1->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct1->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct1->id}}" category_slug="{{$furnitureProduct1->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct1->slug)}}">Explore</a></li>
                            </ul>
@@ -174,7 +174,7 @@
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct2->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct2->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct2->id}}" category_slug="{{$furnitureProduct2->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct2->slug)}}">Explore</a></li>
                            </ul>
@@ -230,7 +230,7 @@
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct3->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct3->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct3->id}}" category_slug="{{$furnitureProduct3->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct3->slug)}}">Explore</a></li>
                            </ul>
@@ -286,7 +286,7 @@
                                         <input type="hidden" name="product_id" value="{{$furnitureProduct4->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct4->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct4->id}}" category_slug="{{$furnitureProduct4->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$furnitureProduct4->slug)}}">Explore</a></li>
                            </ul>
@@ -391,7 +391,7 @@
                                     <input type="hidden" name="product_id" value="{{$consumablesProduct->id}}">
                                     {{-- <button type="submit">Buy Now</button> --}}
                                 </form>
-                                <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}">Enquire Now</button>
+                                <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}"  category_slug="{{$consumablesProduct->subCategory->category->slug}}">Enquire Now</button>
                             </li>
                            <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
                         </ul>
@@ -467,7 +467,7 @@
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct1->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct1->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct1->id}}" category_slug="{{$electricalsProduct1->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct1->slug)}}">Explore</a></li>
                            </ul>
@@ -523,7 +523,7 @@
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct2->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct2->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct2->id}}" category_slug="{{$electricalsProduct2->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct2->slug)}}">Explore</a></li>
                            </ul>
@@ -582,7 +582,7 @@
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct3->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct3->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct3->id}}" category_slug="{{$electricalsProduct3->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct3->slug)}}">Explore</a></li>
                            </ul>
@@ -635,7 +635,7 @@
                                         <input type="hidden" name="product_id" value="{{$electricalsProduct4->id}}">
                                         {{-- <button type="submit">Buy Now</button> --}}
                                     </form>
-                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct4->id}}">Enquire Now</button>
+                                    <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct4->id}}" category_slug="{{$electricalsProduct4->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
                               <li><a href="{{route('products.product-detail',$electricalsProduct4->slug)}}">Explore</a></li>
                            </ul>
