@@ -406,7 +406,7 @@ $(document).ready(function() {
       .addClass("current");
   })
     .owlCarousel({
-   items: 3,
+   items: 4,
    dots: false,
    margin: 10,
    animateOut: 'fadeOut',
@@ -417,7 +417,7 @@ $(document).ready(function() {
    ],
    smartSpeed: 200,
    slideSpeed: 500,
-   slideBy: 4,
+   slideBy: 3,
    responsiveRefreshRate: 100
   })
   .on("changed.owl.carousel", syncPosition2);
