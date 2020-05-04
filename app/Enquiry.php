@@ -18,4 +18,9 @@ class Enquiry extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    public function Product()
+    {
+        return $this->belongsTo('App\Product');
+    }
 }

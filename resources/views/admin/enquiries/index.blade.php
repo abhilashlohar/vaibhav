@@ -65,6 +65,7 @@
                     <table class="table">
                         <tr>
                             <th>Enquiry Source</th>
+                            <th>Product Name</th>
                             <th>Customer</th>
                             <th>Email</th>
                             <th>Mobile</th>
@@ -77,6 +78,7 @@
                             <td class="align-middle">
                                 {{ $enquiry->enquiry_type }}
                             </td>
+                            <td class="align-middle">{{ @$enquiry->Product->name }}</td>
                             <td class="align-middle">{{ $enquiry->name }}</td>
                             <td class="align-middle">{{ $enquiry->email }}</td>
                             <td class="align-middle">{{ $enquiry->mobile_no }}</td>

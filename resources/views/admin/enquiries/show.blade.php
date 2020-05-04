@@ -18,6 +18,9 @@
                 <div class="kt-portlet__head-label">
                     <h3 class="kt-portlet__head-title">
                         {{ $Enquiry->enquiry_type }}
+                        @if ($Enquiry->product_id)
+                            ({{ $Enquiry->Product->name }})
+                        @endif
                     </h3>
                 </div>
                 <div class="kt-portlet__head-label">
