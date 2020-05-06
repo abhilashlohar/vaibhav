@@ -159,7 +159,7 @@
             text: "<?php echo $blog->title; ?>",
             showLabel: false,
             showCount: "inside",
-            shares: ["twitter", "facebook", "whatsapp"]
+            shares: ["email", "twitter", "facebook", "whatsapp"]
         });
     </script>
 @endsection

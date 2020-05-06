@@ -203,7 +203,6 @@
         </div>
         <form id="queryForm" name="queryForm">
             <div class="modal-body">
-                <p style="display:none; color:#000;" id="enquiry-result" class="alert alert-success" role="alert"></p>
                 <p style="display:none; color:#000;" id="enquiry-error" class="alert alert-danger" role="alert">Please Fill all input.</p>
                 <div class="form-group">
                     <label for="query-name">Name *</label>
@@ -226,6 +225,9 @@
                 <button type="submit" class="btn btn-danger queryToEnquiry">Send Enquiry</button>
             </div>
         </form>
+        <div class="modal-body" id="enquiry-result" style="display:none;">
+            <p style="color:#000;" class="alert alert-success" role="alert"></p>
+        </div>
     </div>
     </div>
 </div>
@@ -484,14 +486,17 @@
                         url:"{{ route('enquiry.store') }}",
                         data:{product_id:product_id, name:name, email:email, mobile_no:mobile_no, enquiry_message:enquiry_message, enquiry_type:'Product Enquiry'},
                         success:function(data){
-                            $('#enquiry-error').hide();
+                            $('#queryForm').hide();
                             $('#enquiry-result').show();
-                            $('.queryToEnquiry').attr('disabled', false);
-                            $('.queryToEnquiry').text('Send Enquiry');
-                            setTimeout(function(){ $('#enquiry-result').hide(); window.location = "/products/"+query_category_slug; }, 3000);
-                            $('#enquiry-result').html(data);
-                            $("#queryForm").trigger("reset");
-                            $('#add-query').animate({ scrollTop:180},'slow');
+                            // $('.queryToEnquiry').attr('disabled', false);
+                            // $('.queryToEnquiry').text('Send Enquiry');
+                            $('#enquiry-result').find('p').html(data);
+                            // $('#add-query').animate({ scrollTop:180},'slow');
+                            setTimeout(function(){
+                                //  $('#enquiry-result').hide();
+                                 window.location = "/products/"+query_category_slug;
+                            }, 3000);
+                            // $("#queryForm").trigger("reset");
                         }
                     });
                   }

@@ -40,6 +40,7 @@
     Socials.prototype = {
         url: "",
         text: "",
+        to: "",
         shareIn: "blank",
 
         showLabel: function(screenWidth) {
@@ -79,6 +80,7 @@
         _initDefaults: function() {
             this.url = window.location.href;
             this.text = $.trim($("meta[name=description]").attr("content") || $("title").text());
+            this.to = 'noreply@28svllp.com';
         },
 
         _initShares: function() {
@@ -93,7 +95,7 @@
                     throw Error("Share '" + shareConfig.share + "' is not found");
                 }
 
-                return $.extend({ url: this.url, text: this.text }, share, shareConfig);
+                return $.extend({ url: this.url, text: this.text, to: this.to }, share, shareConfig);
             }, this));
         },
 

@@ -160,7 +160,7 @@
             text: "<?php echo $product->name; ?>",
             showLabel: false,
             showCount: "inside",
-            shares: ["twitter", "facebook", "whatsapp"]
+            shares: ["email", "twitter", "facebook", "whatsapp"]
         });
     @endforeach
     $(document).ready(function(){

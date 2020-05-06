@@ -1217,7 +1217,7 @@
                 text: "<?php echo $consumablesProduct->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
         @endif
         @if ($furnitureProduct1 && $furnitureProduct2 && $furnitureProduct3 && $furnitureProduct4)
@@ -1226,7 +1226,7 @@
                 text: "<?php echo $furnitureProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare1").jsSocials({
@@ -1234,7 +1234,7 @@
                 text: "<?php echo $furnitureProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare2").jsSocials({
@@ -1242,7 +1242,7 @@
                 text: "<?php echo $furnitureProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#FurnitureShare3").jsSocials({
@@ -1250,7 +1250,7 @@
                 text: "<?php echo $furnitureProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
             @endif
             @if ($electricalsProduct1 && $electricalsProduct2 && $electricalsProduct3 && $electricalsProduct4)
@@ -1259,7 +1259,7 @@
                 text: "<?php echo $electricalsProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare1").jsSocials({
@@ -1267,7 +1267,7 @@
                 text: "<?php echo $electricalsProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare2").jsSocials({
@@ -1275,7 +1275,7 @@
                 text: "<?php echo $electricalsProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
 
             $("#ElectricalsShare3").jsSocials({
@@ -1283,7 +1283,7 @@
                 text: "<?php echo $electricalsProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",
-                shares: ["twitter", "facebook", "whatsapp"]
+                shares: ["email", "twitter", "facebook", "whatsapp"]
             });
             @endif
     </script>
