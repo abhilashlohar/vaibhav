@@ -128,7 +128,7 @@
                     </div>
                     <div class="ecommerce-menu--item">
                         <a href="{{ route('cart') }}" class="cart-notify">
-                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count">{{$cartItem}}</span></a>
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> <span class="count cartItem">{{$cartItem}}</span></a>
                     </div>
                   </div>
                </div>
@@ -507,6 +507,28 @@
                     setTimeout(function(){ $('#enquiry-error').hide(); }, 5000);
                     $('#add-query').animate({ scrollTop:180},'slow');
                 }
+            });
+            $(document).on('submit','.ItemAddToCart',function(e){
+                e.preventDefault();
+                var url = $(this).attr('action');
+                var product_id = $(this).attr('product_id');
+                $.ajax({
+                    type:'POST',
+                    url:url,
+                    data:{product_id:product_id},
+                    success:function(data){
+                        $('.cartItemMessage').html(data);
+                    },
+                    complete: function (data) {
+                        $.ajax({
+                            type:'get',
+                            url:"{{ route('getCookie') }}",
+                            success:function(data){
+                                $('.cartItem').text(data);
+                            }
+                        });
+                    }
+                });
             });
         });
     </script>

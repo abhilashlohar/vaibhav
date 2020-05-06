@@ -59,7 +59,7 @@
           <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
-                    <form action="{{ route('addTocart') }}" method="POST">
+                    <form action="{{ route('addTocart') }}" class="ItemAddToCart" product_id="{{$product->id}}" method="POST">
                         @csrf
                         <div class="ecommerce-item--name">
                             <h3>{{$product->name}}</h3>
@@ -111,7 +111,7 @@
                         <div class="ecommerce-item--buttons">
                             <ul>
                                 <li>
-                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                    {{-- <input type="hidden" name="product_id"  value="{{$product->id}}"> --}}
                                     <button type="submit">Add To Cart</button>
                                 </li>
                             <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}" category_slug="{{$product->category->slug}}">Enquire Now</button></li>

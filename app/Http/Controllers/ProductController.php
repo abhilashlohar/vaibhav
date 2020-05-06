@@ -245,8 +245,18 @@ class ProductController extends Controller
             $array_json=json_encode($cart);
             \Cookie::queue('vaibhav_cart', $array_json, $minutes);
         }
-        return redirect()->route('cart')
-                        ->with('success','Item added into cart successfully.');
+
+        // return response(['success'=>'Item added into cart successfully.', 'totalCartItem'=>$totalCartItem]);
+        return response('Item added into cart successfully.');
+        // return redirect()->route('cart')
+        //                 ->with('success','Item added into cart successfully.');
+    }
+
+    public function getCookie(Request $request)
+    {
+        $totalCartItem = app('App\Http\Controllers\HomeController')->cartItem();
+        return response($totalCartItem);
+        // return $cookieValues = json_decode($request->cookie('vaibhav_cart'));
     }
 
 }

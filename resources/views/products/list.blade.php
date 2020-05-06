@@ -71,7 +71,7 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5 ordering-thumbs">
                             <div class="single-product--properties">
                                 <div class="ecommerce-item--details">
-                                    <form action="{{ route('addTocart') }}" method="POST">
+                                    <form action="{{ route('addTocart') }}" class="ItemAddToCart"  product_id="{{$product->id}}" method="POST">
                                         @csrf
                                         <div class="ecommerce-item--name">
                                             <h3>
@@ -114,10 +114,10 @@
                                               ?>
                                               </div>
                                               <div class="ecommerce-item--share">
-                                                 <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
+                                              <a class="share-this" data-toggle="collapse" href="#share_{{$product_id}}" role="button" aria-expanded="false" aria-controls="share-social">
                                                    <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                                                 </a>
-                                                <div class="collapse" id="share-social">
+                                                <div class="collapse" id="share_{{$product_id}}">
                                                   <div class="card card-body">
                                                       <div id="share"></div>
                                                   </div>
@@ -127,7 +127,7 @@
                                         <div class="ecommerce-item--buttons">
                                             <ul>
                                                 <li>
-                                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                    {{-- <input type="hidden" name="product_id" value="{{$product->id}}"> --}}
                                                     <button type="submit">Add To Cart</button>
                                                 </li>
                                                 <li><button type="button" class="open-enquery-modal" product_id="{{$product->id}}" category_slug="{{$category->slug}}">Enquire Now</button></li>
@@ -166,6 +166,7 @@
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip();
     });
+
 </script>
 @endsection
 
