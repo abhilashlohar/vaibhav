@@ -29,17 +29,18 @@ class CartController extends Controller
             {
                 $cookieItems = json_decode(request()->cookie('vaibhav_cart'));
                 $totalCartItems = count($cookieItems);
-
+                // dd($cookieItems);
                 foreach ($cookieItems as $cookieItem)
                 {
-                    //echo $cookieItem->product_id;
-                    $cookie_products = Product::with(['product_image_primary'])->where([
-                        ['products.is_published', '=', 1],
-                        ['products.id', '=', $cookieItem->product_id],
-                        ['products.deleted', '=', 0]
-                    ])->first();
+                    if($cookieItem->product_id){
+                        $cookie_products = Product::with(['product_image_primary'])->where([
+                            ['products.is_published', '=', 1],
+                            ['products.id', '=', $cookieItem->product_id],
+                            ['products.deleted', '=', 0]
+                        ])->first();
 
-                    $cookieCartItems[] = ['quantity'=>$cookieItem->quantity,'product'=>$cookie_products];
+                        $cookieCartItems[] = ['quantity'=>$cookieItem->quantity,'product'=>$cookie_products];
+                    }
                 }
             }
 

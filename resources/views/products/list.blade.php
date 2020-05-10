@@ -114,10 +114,10 @@
                                               ?>
                                               </div>
                                               <div class="ecommerce-item--share">
-                                              <a class="share-this" data-toggle="collapse" href="#share_{{$product_id}}" role="button" aria-expanded="false" aria-controls="share-social">
+                                              <a class="share-this" data-toggle="collapse" href="#share_{{$product->id}}" role="button" aria-expanded="false" aria-controls="share-social">
                                                    <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                                                 </a>
-                                                <div class="collapse" id="share_{{$product_id}}">
+                                                <div class="collapse" id="share_{{$product->id}}">
                                                   <div class="card card-body">
                                                       <div id="share"></div>
                                                   </div>

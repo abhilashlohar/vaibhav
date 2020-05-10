@@ -189,7 +189,7 @@
          </div>
       </div>
    </header>
-
+   <div class="cartItemMessage"></div>
    @yield ('content')
    <!-- Modal for Add To Query -->
    <div class="modal fade" id="add-query" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -518,6 +518,7 @@
                     data:{product_id:product_id},
                     success:function(data){
                         $('.cartItemMessage').html(data);
+                        setTimeout(function(){ $('.cartItemMessage').hide(); }, 2000);
                     },
                     complete: function (data) {
                         $.ajax({
