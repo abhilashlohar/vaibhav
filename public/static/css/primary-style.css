@@ -40,67 +40,19 @@ p {
 button {
    outline: none !important;
 }
-/* Add this attribute to the element that needs a tooltip */
-[data-tooltip] {
-  position: relative;
-  z-index: 2;
-  cursor: pointer;
+/* Custom Cart Message */
+.cartItemMessage {
+    position: fixed;
+    max-width: 480px;
+    background: #2f2f2f;
+    color: #ffffff;
+    text-align: center;
+    top: 0;
+    left: 42%;
+    z-index: 999999 !important;
 }
-
-/* Hide the tooltip content by default */
-[data-tooltip]:before,
-[data-tooltip]:after {
-  visibility: hidden;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Position tooltip above the element */
-[data-tooltip]:before {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-bottom: 5px;
-  margin-left: -80px;
-  padding: 7px;
-  width: 160px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  background-color: #000;
-  background-color: hsla(0, 0%, 20%, 0.9);
-  color: #fff;
-  content: attr(data-tooltip);
-  text-align: center;
-  font-size: 14px;
-  line-height: 1.2;
-}
-
-/* Triangle hack to make tooltip look like a speech bubble */
-[data-tooltip]:after {
-  position: absolute;
-  bottom: 150%;
-  left: 50%;
-  margin-left: -5px;
-  width: 0;
-  border-top: 5px solid #000;
-  border-top: 5px solid hsla(0, 0%, 20%, 0.9);
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  content: " ";
-  font-size: 0;
-  line-height: 0;
-}
-
-/* Show tooltip content on hover */
-[data-tooltip]:hover:before,
-[data-tooltip]:hover:after {
-  visibility: visible;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-  filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
-  opacity: 1;
+.cartItemMessage p {
+  padding: 3px 12px;
 }
 .bg-light {
     background-color: #fcfcfc!important;
@@ -1357,7 +1309,7 @@ ul.dropDownMenu ul {
 .title-ui--wrap .title-text--middle h2 {
    font-size: 30px;
    line-height: 41px;
-   margin: 10px 0;
+   margin: 20px 0;
    position: relative;
    font-weight: 700;
 }
@@ -2182,7 +2134,7 @@ Category Page
 .category-banner--wrapper {
    position: relative;
    width: 100%;
-   max-height: 720px;
+   max-height: 259px;
    overflow: hidden;
 }
 .category-banner--wrapper .slideshow-details--wrap {
@@ -2246,6 +2198,11 @@ Category Page
 }
 .product-list.product-list-grid .category-slideshow--wrapper {
    display: block;
+}
+
+/* Breadcrubm */
+.breadcrumb-wrap {
+    display: none;
 }
 
 /* =================== Quick Message ================ */
@@ -5170,8 +5127,8 @@ Login Wrapper
       padding: 10px 13px;
    }
    .title-ui--wrap .title-text--middle h2 {
-      font-size: 17px;
-      line-height: 30px;
+      font-size: 24px;
+      line-height: 33px;
       font-weight: 600;
    }
    .title-ui--wrap .title-text--middle h2::first-letter {
@@ -6100,8 +6057,20 @@ Login Wrapper
 }
 
 @media only screen and (min-width: 768px) {
+  .breadcrumb-wrap {
+      display: inline-block;
+  }
+  .title-ui--wrap .title-text--middle h2 {
+     margin: 30px 0;
+  }
   .single-excerpt--wrapper .single-excerpt--grid #big.owl-carousel.owl-loaded {
       max-height: 489px;
+  }
+  .single-excerpt--wrapper .single-excerpt--grid #big.owl-carousel.owl-loaded .item {
+    height: 489px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .single-product--carousel .thumb-carousel.owl-carousel.owl-loaded .owl-item {
       max-height: 100px;

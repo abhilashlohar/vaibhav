@@ -519,7 +519,7 @@
                     success:function(data){
                         $('.cartItemMessage').html(data);
                         $('.cartItemMessage').show();
-                        setTimeout(function(){ $('.cartItemMessage').hide(); }, 2000);
+                        setTimeout(function(){ $('.cartItemMessage').hide(); }, 7000);
                     },
                     complete: function (data) {
                         $.ajax({

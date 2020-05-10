@@ -54,7 +54,7 @@
                                     <div id="big-{{$index++}}" class="owl-carousel owl-theme">
                                        @foreach ($product->productImages as $item)
                                        <div class="item zoom zoomin">
-                                          <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
+                                          <a href="{{ route('products.product-detail',$product->slug) }}"><img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/></a>
                                        </div>
                                        @endforeach
                                     </div>
@@ -75,7 +75,7 @@
                                         @csrf
                                         <div class="ecommerce-item--name">
                                             <h3>
-                                                <a href="{{ route('products.product-detail',$product->slug) }}"  data-tooltip="View Details">
+                                                <a href="{{ route('products.product-detail',$product->slug) }}">
                                                     {{$product->name}}</span>
                                                 </a>
                                             </h3>
