@@ -518,7 +518,7 @@
                     data:{product_id:product_id},
                     success:function(data){
                         $('.cartItemMessage').html(data);
-                        setTimeout(function(){ $('.cartItemMessage').hide(); }, 2000);
+                        setTimeout(function(){ $('.cartItemMessage').hide(); }, 7000);
                     },
                     complete: function (data) {
                         $.ajax({
