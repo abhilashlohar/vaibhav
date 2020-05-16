@@ -221,12 +221,12 @@ class ProductController extends Controller
 
         $productConsumable = Product::where([
             ['deleted', '=', 0],
-            ['category_id','=', 2]
+            ['category_id','=', 3]
             ])->orderBy('name', 'asc')->get();
 
         $productElectricals = Product::where([
             ['deleted', '=', 0],
-            ['category_id','=', 3]
+            ['category_id','=', 2]
             ])->orderBy('name', 'asc')->get();
 
         $FurnitureProduct1 = MetaData::where('meta_key', 'FurnitureProduct1')->first();
