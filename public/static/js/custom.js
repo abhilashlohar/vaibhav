@@ -7,16 +7,6 @@ $(window).scroll(function(){
     }
 });
 
-$(document).ready(function(){
-  //Smooth Scrolling Using Navigation Menu
-  $('a[href*="#"]').on('click', function(e){
-    $('html,body').animate({
-      scrollTop: $($(this).attr('href')).offset().top - 100
-    },500);
-    e.preventDefault();
-  })
-});
-
 
 $(document).ready(function(){
   if (screen.width >= 992) {
@@ -494,13 +484,6 @@ $(document).ready(function(){
   }
 });
 
-/* Zoom Effect */
-$(document).ready(function() {
-   $('.tab-menu a').hover(function (e) {
-     e.preventDefault()
-     $(this).tab('show')
-   })
-});
 
 /* Tab Menu */
 $(document).ready(function() {

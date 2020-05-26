@@ -46,17 +46,19 @@
                        @endforeach
                   </div>
                  @else
-                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                 <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 padding-0">
                     @foreach ($product->productImages as $item)
+                     <div class="no-thumb-carousel">
                         <div class="item">
                             <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/>
                         </div>
+                     </div>
                     @endforeach
                  </div>
                  @endif
              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 col-xl-5 offset-xl-1">
+          <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-5">
              <div class="single-product--properties">
                 <div class="ecommerce-item--details">
                     <form action="{{ route('addTocart') }}" class="ItemAddToCart" product_id="{{$product->id}}" method="POST">
@@ -101,7 +103,7 @@
                                    <a class="share-this" data-toggle="collapse" href="#share-social" role="button" aria-expanded="false" aria-controls="share-social">
                                      <i class="fa fa-share-alt" aria-hidden="true"></i> Share
                                   </a>
-                                  <div class="collapse" id="share-social">
+                                  <div class="collapse" id="share-social" style="float: right; margin-top: -15px;">
                                     <div class="card card-body">
                                         <div id="share"></div>
                                     </div>

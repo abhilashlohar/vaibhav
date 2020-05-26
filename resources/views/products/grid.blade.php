@@ -50,10 +50,10 @@
                <h3>{{$subCategoryData->name}}</h3>
             </div>
          </div>
-         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
             <div class="item-archive--list">
                 @foreach ($products as $product)
-                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 padding-0">
                     <div class="item-excerpt--wrap">
                         <div class="item-excerpt--image">
                             <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>

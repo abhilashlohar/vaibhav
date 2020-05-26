@@ -70,9 +70,9 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
-               <div class="title-text--up">
+               <!-- <div class="title-text--up">
                   <h4>Want to Shop?</h4>
-               </div>
+               </div> -->
                <div class="title-text--middle">
                   <h2>Furniture</h2>
                </div>
@@ -327,83 +327,85 @@
                   </div>
                </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
-               <div class="single-product--carousel">
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbs">
-                     <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
-                        @foreach ($consumablesProduct->productImages as $item)
-                        <div class="item">
-                           <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="highlighted-single--grids">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+                     <div class="single-product--carousel">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                           <div id="big" class="owl-carousel owl-theme">
+                             @foreach ($consumablesProduct->productImages as $item)
+                              <div class="item">
+                                  <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+                              </div>
+                              @endforeach
+                           </div>
+                           <div id="thumbs" class="thumb-carousel owl-carousel owl-theme">
+                              @foreach ($consumablesProduct->productImages as $item)
+                              <div class="item">
+                                 <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
+                              </div>
+                              @endforeach
+                           </div>
                         </div>
-                        @endforeach
                      </div>
                   </div>
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 ordering-thumbnail">
-                     <div id="big" class="owl-carousel owl-theme">
-                       @foreach ($consumablesProduct->productImages as $item)
-                        <div class="item">
-                            <img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$consumablesProduct->name}}"/>
-                        </div>
-                        @endforeach
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-               <div class="single-product--properties">
-                  <div class="ecommerce-item--details">
-                     <div class="ecommerce-item--name">
-                        <h3>
-                            <a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">
-                                {{ $consumablesProduct->name }} <span>- {{ $consumablesProduct->subCategory->name }}</span>
-                            </a>
-                        </h3>
-                     </div>
-                     <div class="ecommerce-item--excerpt">
-                        <p>{{ $consumablesProduct->short_description }}</p>
-                     </div>
-                     <div class="ecommerce-item--price">
-                        <ul>
-                           <li class="new-price">Rs. {{ $consumablesProduct->sale_price }}</li>
-                           <li class="old-price">Rs. {{ $consumablesProduct->regular_price }}</li>
-                           <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
-                        </ul>
-                     </div>
-                     <div style="direction:ltr;">
-                            <?php
-                                $stars = 0;
-                                if ($consumablesProduct->avgRating != null)
-                                {
-                                    $stars = $consumablesProduct->avgRating->rating;
-                                }
-                                for ($i=1; $i <= 5 ; $i++) {
-                                    if ($i<=$stars) $checked = "checked";
-                                    else $checked = "";
-                                    echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
-                                }
-                            ?>
-                        </div>
-                     <div class="ecommerce-item--buttons">
-                        <ul>
-                            <li>
-                                <form action="{{ route('addTocart') }}" method="POST">
-                                    @csrf
-                                    <input type="hidden" name="product_id" value="{{$consumablesProduct->id}}">
-                                    {{-- <button type="submit">Buy Now</button> --}}
-                                </form>
-                                <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}"  category_slug="{{$consumablesProduct->subCategory->category->slug}}">Enquire Now</button>
-                            </li>
-                           <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
-                        </ul>
-                     </div>
-                     <div class="ecommerce-item--share">
-                         <a class="share-this" data-toggle="collapse" href="#share-social-consumable" role="button" aria-expanded="false" aria-controls="share-social-consumable">
-                           <i class="fa fa-share-alt" aria-hidden="true"></i> Share
-                        </a>
-                        <div class="collapse" id="share-social-consumable">
-                          <div class="card card-body">
-                              <div id="ConsumablesShare"></div>
-                          </div>
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                     <div class="single-product--properties">
+                        <div class="ecommerce-item--details">
+                           <div class="ecommerce-item--name">
+                              <h3>
+                                  <a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">
+                                      {{ $consumablesProduct->name }} <span>- {{ $consumablesProduct->subCategory->name }}</span>
+                                  </a>
+                              </h3>
+                           </div>
+                           <div class="ecommerce-item--excerpt">
+                              <p>{{ $consumablesProduct->short_description }}</p>
+                           </div>
+                           <div class="ecommerce-item--price">
+                              <ul>
+                                 <li class="new-price">Rs. {{ $consumablesProduct->sale_price }}</li>
+                                 <li class="old-price">Rs. {{ $consumablesProduct->regular_price }}</li>
+                                 <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
+                              </ul>
+                           </div>
+                           <div style="direction:ltr;">
+                                  <?php
+                                      $stars = 0;
+                                      if ($consumablesProduct->avgRating != null)
+                                      {
+                                          $stars = $consumablesProduct->avgRating->rating;
+                                      }
+                                      for ($i=1; $i <= 5 ; $i++) {
+                                          if ($i<=$stars) $checked = "checked";
+                                          else $checked = "";
+                                          echo '<span class="fa fa-star '.$checked.'" style="margin-right: 8px"></span>';
+                                      }
+                                  ?>
+                              </div>
+                           <div class="ecommerce-item--buttons">
+                              <ul>
+                                  <li>
+                                      <form action="{{ route('addTocart') }}" method="POST">
+                                          @csrf
+                                          <input type="hidden" name="product_id" value="{{$consumablesProduct->id}}">
+                                          {{-- <button type="submit">Buy Now</button> --}}
+                                      </form>
+                                      <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}"  category_slug="{{$consumablesProduct->subCategory->category->slug}}">Enquire Now</button>
+                                  </li>
+                                 <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
+                              </ul>
+                           </div>
+                           <div class="ecommerce-item--share">
+                               <a class="share-this" data-toggle="collapse" href="#share-social-consumable" role="button" aria-expanded="false" aria-controls="share-social-consumable">
+                                 <i class="fa fa-share-alt" aria-hidden="true"></i> Share
+                              </a>
+                              <div class="collapse" id="share-social-consumable">
+                                <div class="card card-body">
+                                    <div id="ConsumablesShare"></div>
+                                </div>
+                              </div>
+                           </div>
                         </div>
                      </div>
                   </div>
@@ -419,9 +421,9 @@
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
-               <div class="title-text--up">
+               <!-- <div class="title-text--up">
                   <h4>Want to Shop?</h4>
-               </div>
+               </div> -->
                <div class="title-text--middle">
                   <h2>Electricals</h2>
                </div>
@@ -701,14 +703,6 @@
                            </button>
                         </div>
                      </div>
-                     <div class="gallery-image--three hide-this--desktop">
-                       <img src="<?php echo url('/'); ?>/static/images/gallery-image-03.png" alt=""/>
-                       <div class="gallery-icon">
-                          <button type="button" class="btn" data-toggle="modal" data-target="#gallery-three">
-                             <img src="<?php echo url('/'); ?>/static/images/gallery-icon.png" alt="Video Icon"/>
-                          </button>
-                       </div>
-                    </div>
                   </div>
                </div>
             </div>
@@ -887,7 +881,7 @@
             <div class="verticals-block--wrap">
                <div class="verticals-ui--column">
                   <div class="verticals-details--wrap">
-                        <a class="verticals-brand--wrap" data-toggle="modal" data-target="#xpress-modal">
+                        <a class="verticals-brand--wrap heighlight-box" data-toggle="modal" data-target="#xpress-modal">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap" data-toggle="modal" data-target="#care-modal">
@@ -1030,7 +1024,7 @@
                         <a class="verticals-brand--wrap nav-link active" id="nav-xpress-tab" data-toggle="tab" href="#nav-xpress" role="tab" aria-controls="nav-xpress" aria-selected="true">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                         </a>
-                        <a class="verticals-brand--wrap nav-link" id="nav-care-tab" data-toggle="tab" href="#nav-care" role="tab" aria-controls="nav-care" aria-selected="false">
+                        <a class="verticals-brand--wrap nav-link heighlight-box" id="nav-care-tab" data-toggle="tab" href="#nav-care" role="tab" aria-controls="nav-care" aria-selected="false">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap nav-link" id="nav-plus-tab" data-toggle="tab" href="#nav-plus" role="tab" aria-controls="nav-plus" aria-selected="false">
@@ -1150,6 +1144,7 @@
                                         @foreach ($brnad_short_descriptions as $brnad_short_description)
                                         <li>{{ $brnad_short_description }}</li>
                                         @endforeach
+                                        <a href="#" class="button">View Detail</a>
                                     </ul>
                                 </div>
                                 </div>
