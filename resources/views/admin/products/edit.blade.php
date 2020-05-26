@@ -628,7 +628,17 @@ legend {
             $('#slug').val(urlReplace);
         });
 
+        $('#short_description').summernote({
+            height: 150
+        });
+        $('#product-edit').on('submit', function(e) {
+            if($('#short_description').summernote('isEmpty')) {
+               alert('Short description is empty, fill it!');
 
+                // cancel submit
+                e.preventDefault();
+            }
+        });
 
     });
 </script>

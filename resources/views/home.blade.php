@@ -1140,12 +1140,13 @@
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4 hide--this">
                                 <div class="thumbnail-properties--ui">
                                 <div class="thumbnail-properties--list">
-                                    <ul>
+                                    <?php echo $brand->short_description; ?>
+                                    {{-- <ul>
                                         @foreach ($brnad_short_descriptions as $brnad_short_description)
                                         <li>{{ $brnad_short_description }}</li>
                                         @endforeach
-                                        <a href="#" class="button">View Detail</a>
-                                    </ul>
+                                    </ul> --}}
+                                    <a href="{{route('brand.detail',$brand->id)}}" class="button">View Detail</a>
                                 </div>
                                 </div>
                             </div>

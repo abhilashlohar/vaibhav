@@ -22,14 +22,14 @@
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" placeholder="Brand Name" class="form-control @error('name') is-invalid @enderror" value="{{ $brand->name }}" required  autofocus>
-    
+
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-    
+
                         <div class="form-group">
                             <label for="short-description">Short Description *</label>
                             <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="4" required>{{ $brand->short_description }}</textarea>
@@ -64,14 +64,14 @@
                                 </div>
                             </div>
                         </div>
-    
+
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-8">
                                     <label for="banner-image-desktop">Image *</label>
                                     <input type="file" name="image_add" accept="png, jpg, jpeg"  class="form-control @error('image_add') is-invalid @enderror">
                                     <span class="form-text text-muted">Allowed file types:  png, jpg, jpeg.</span>
-    
+
                                     @error('image_add')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -84,14 +84,14 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                         </div>
-    
+
                         <div class="form-group">
                             <label for="sequence">Show On Home Page *</label><br><br>
                             <input name="show_on_home_page" id="show_on_home_page"  data-switch="true" type="checkbox" data-handle-width="70" data-on-text="Yes" data-off-text="No" data-on-color="brand" @if($brand->show_on_home_page==1) checked="checked" @endif>
                         </div>
-    
+
                     </div>
 
                 </div>
@@ -152,6 +152,18 @@
     jQuery(document).ready(function(){
         KTSummernoteDemo.init()
         KTFormControls.init()
+
+        $('#short_description').summernote({
+            height: 150
+        });
+        $('#product-edit').on('submit', function(e) {
+            if($('#short_description').summernote('isEmpty')) {
+               alert('Short description is empty, fill it!');
+
+                // cancel submit
+                e.preventDefault();
+            }
+        });
         });
 </script>
 @endsection
