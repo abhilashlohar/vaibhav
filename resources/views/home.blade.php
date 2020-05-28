@@ -329,7 +329,7 @@
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                <div class="highlighted-single--grids">
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                      <div class="single-product--carousel">
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                            <div id="big" class="owl-carousel owl-theme">
@@ -349,7 +349,7 @@
                         </div>
                      </div>
                   </div>
-                  <div class="col-12 col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                      <div class="single-product--properties">
                         <div class="ecommerce-item--details">
                            <div class="ecommerce-item--name">
@@ -909,6 +909,7 @@
                     <div class="verticals-single--details">
                         <div class="verticals-single--logo">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                           <p>Home Delivery Platform</p>
                         </div>
                         <div class="verticals-single--features">
                            <ul>
@@ -936,6 +937,7 @@
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           <p>Repairs & Restoration Services</p>
                         </div>
                         <div class="verticals-single--features">
                            <ul>
@@ -963,6 +965,7 @@
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                           <p>B2B Destribution Platform</p>
                         </div>
                         <div class="verticals-single--features">
                            <ul>
@@ -990,6 +993,7 @@
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
                            <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                           <p>For Professional Skill Training</p>
                         </div>
                         <div class="verticals-single--features">
                            <ul>
@@ -1042,6 +1046,7 @@
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
                               <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                              <p>Home Delivery Platform</p>
                            </div>
                            <div class="verticals-single--features">
                               <ul>
@@ -1058,6 +1063,7 @@
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
                               <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                              <p>Repairs & Restoration Services</p>
                            </div>
                            <div class="verticals-single--features">
                               <ul>
@@ -1074,6 +1080,7 @@
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
                               <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                              <p>B2B Destribution Platform</p>
                            </div>
                            <div class="verticals-single--features">
                               <ul>
@@ -1090,6 +1097,7 @@
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
                               <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                              <p>For Professional Skill Training</p>
                            </div>
                            <div class="verticals-single--features">
                               <ul>
