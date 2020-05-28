@@ -49,7 +49,7 @@
                 </div>
              </div>
           </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                 <form>
                     <div class="support-search--form">
                         <div class="form-group col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
@@ -67,7 +67,7 @@
 
                </div>
             </div>
-          </div>
+          </div> -->
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
                 @foreach ($headerCategories as $headerCategory)
@@ -77,7 +77,7 @@
                          <div class="title">
                             <h3>{{$headerCategory->name}}</h3>
                          </div>
-                         <img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt="Furniture"/>
+                         <div class="image"><img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt="Furniture"/></div>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>

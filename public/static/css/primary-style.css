@@ -918,6 +918,11 @@ ul.dropDownMenu ul {
    padding: 15px 0;
    overflow: hidden;
 }
+.highlighted-single--wrapper #big.owl-carousel.owl-loaded {
+   max-height: 360px;
+   overflow: hidden;
+   margin-bottom: 10px;
+}
 .highlighted-single--wrapper .single-excerpt--grid {
    position: relative;
    width: 100%;
@@ -1869,7 +1874,18 @@ ul.dropDownMenu ul {
    padding: 15px 7px;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list a {
-   color: #e9414f;
+   background: #ed1651;
+    padding: 6px 24px;
+    box-shadow: 1px 1px 3px #efefef;
+    border-radius: 7px;
+    color: #ffffff;
+    border: 0;
+    font-size: 13px;
+    margin: 0;
+    font-weight: 600;
+    display: inline-block;
+    margin-left: 40px;
+    margin-top: 7px;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui .thumbnail-properties--list ul {
 	list-style: none;
@@ -3581,11 +3597,16 @@ Login Wrapper
    position: relative;
    width: 100%;
    padding: 30px;
-   border-top-left-radius: 49%;
-   border-bottom-right-radius: 49%;
+   border-top-left-radius: 39%;
+   border-bottom-right-radius: 39%;
    box-shadow: 2px 2px 10px #efefef;
-   min-height: 270px;
+   min-height: 290px;
+   max-height: 360px;
    text-align: center;
+   display: flex;
+   flex-flow: column wrap;
+   align-items: center;
+   overflow: hidden;
 }
 .support-category--wrap .support-category--thumbnail .support-categry--image .title h3 {
    font-size: 18px;
@@ -5772,6 +5793,12 @@ Login Wrapper
    width: 100%;
    padding: 75px 0;
 }
+.brand-detail .brand-details--wrapper .ecommerce-item--excerpt p:before {
+   display: none;
+}
+.brand-detail .brand-details--wrapper .brand-details--grid .brand-details--properties .ecommerce-item--excerpt {
+    padding: 15px 0px;
+}
 .brand-details--wrapper .brand-details--grid {
    position: relative;
    width: 100%;
@@ -6696,6 +6723,11 @@ Login Wrapper
        max-height: 700px;
        overflow: hidden;
    }
+   .highlighted-single--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 {
+       font-size: 21px;
+       line-height: 32px;
+       text-align: left;
+   }
    .category-slideshow--wrapper .category-carousel--wrap {
      padding: 30px;
    }
@@ -6794,11 +6826,12 @@ Login Wrapper
       margin-bottom: 15px;
       margin-left: auto;
       margin-right: auto;
-      padding: 30px 75px;
+      padding: 30px;
       box-shadow: 1px 1px 9px #eeeeee;
       border-top-right-radius: 150px;
       border-bottom-left-radius: 150px;
    }
+
    .highlighted-single--wrapper .single-product--properties .ecommerce-item--details {
       text-align: left;
       direction: ltr;
@@ -6851,8 +6884,9 @@ Login Wrapper
    }
    .highlighted-single--wrapper .single-product--properties:before {
       right: 0px;
-      background-size: 100%;
-      left: -30px;
+      background-size: 69%;
+      background-position: center;
+      left: auto;
       top: -60px;
    }
    .navbar-expand-lg .navbar-nav .dropdown-menu {
@@ -7205,6 +7239,10 @@ Login Wrapper
    }
    .verticals-ui--wrapper .verticals-single--logo img {
       max-width: 171px;
+   }
+   .verticals-ui--wrapper .verticals-single--logo p {
+      font-weight: 500;
+      padding: 10px 0;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details {
       padding: 11% 5% 10% 3%;
