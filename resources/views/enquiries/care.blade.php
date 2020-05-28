@@ -124,7 +124,7 @@
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-form--wrap">
-                <form action="{{ route('enquiry.store') }}" method="POST">
+                <form action="{{ route('enquiry.store') }}" id="care-form" method="POST">
                     @csrf
                     <input type="hidden" name="enquiry_type" value="Care">
                    <div class="form-row">
@@ -133,9 +133,9 @@
                          <input type="text" name="name" id="name" class="form-control" placeholder="First name" required>
                       </div>
                       <div class="form-group col-md-6">
-                         <label for="email">Email <span>*</span></label>
-                         <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email" required>
-                      </div>
+                        <label for="mobile_no">Mobile No. <span>*</span></label>
+                        <input type="text" name="mobile_no" class="form-control" id="mobile_no" placeholder="Mobile No." required>
+                     </div>
                       <div class="form-group col-md-12">
                          <label for="email">Message <span>*</span></label>
                          <textarea name="enquiry_message" class="form-control" id="message_care" rows="3" placeholder="Your Complaint" required></textarea>
@@ -154,6 +154,25 @@
  @endsection
 
  @section ('footer-script')
+ <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js"></script>
+<script>
+    $( "#care-form" ).validate({
+      rules: {
+        name: {
+          required: true
+        },
+        mobile_no: {
+            required: true,
+            minlength:10,
+              maxlength:10,
+              number: true
+        },
+        enquiry_message: {
+            required: true
+        }
+      }
+    });
+</script>
  <script>
  jQuery(document).ready(function() {
     @if(Session::has('success'))

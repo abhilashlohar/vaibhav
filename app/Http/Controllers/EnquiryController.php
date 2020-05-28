@@ -38,13 +38,13 @@ class EnquiryController extends Controller
         }
         Enquiry::create($request->all());
         if($request->enquiry_type == 'Care') {
-            Mail::to($request->email)->send(
-                new EnquiryReplyFromAdmin(
-                    $request->name,
-                    $ticket_no,
-                    'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
-                    )
-                );
+            // Mail::to($request->email)->send(
+            //     new EnquiryReplyFromAdmin(
+            //         $request->name,
+            //         $ticket_no,
+            //         'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
+            //         )
+            //     );
             return redirect()->route('enquiry.care')
                         ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
         }
