@@ -67,7 +67,7 @@
                             <h3>{{$product->name}}</h3>
                         </div>
                         <div class="ecommerce-item--excerpt">
-                            <p>{{$product->short_description}}</p>
+                            <?php echo $product->short_description; ?>
                         </div>
                         <div class="ecommerce-item--price">
                             <ul>
