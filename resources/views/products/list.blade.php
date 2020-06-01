@@ -81,7 +81,7 @@
                                             </h3>
                                         </div>
                                         <div class="ecommerce-item--excerpt">
-                                            <p>{{$product->short_description}}</p>
+                                            <?php echo substr($product->short_description, 0, 200); ?>
                                         </div>
                                         <div class="ecommerce-item--price">
                                             <ul>
