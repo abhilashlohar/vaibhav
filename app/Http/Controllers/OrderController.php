@@ -35,7 +35,7 @@ class OrderController extends Controller
 
         $totalAmount = 0;
         foreach ($cartItems as $cartItem) {
-            $totalAmount += $cartItem->quantity*$cartItem->product->sale_price;
+            $totalAmount += $cartItem->quantity*round($cartItem->product->sale_price, 0);
         }
 
         $totalItems = count($cartItems);
@@ -200,7 +200,7 @@ class OrderController extends Controller
 
             $totalAmount = 0;
             foreach ($cartItems as $cartItem) {
-                $totalAmount += $cartItem->quantity*$cartItem->product->sale_price;
+                $totalAmount += $cartItem->quantity*round($cartItem->product->sale_price, 0);
             }
 
 
@@ -257,11 +257,11 @@ class OrderController extends Controller
                 $OrderRow->order_id = $Order->id;
                 $OrderRow->product_id = $cartItem->product_id;
                 $OrderRow->quantity = $cartItem->quantity;
-                $OrderRow->price = $cartItem->product->sale_price;
-                $OrderRow->amount = $cartItem->quantity*$cartItem->product->sale_price;
+                $OrderRow->price = round($cartItem->product->sale_price, 0);
+                $OrderRow->amount = $cartItem->quantity*round($cartItem->product->sale_price, 0);
                 $totalGstAmount = 0;
                 $product = Product::where('id',$cartItem->product_id)->first();
-                $taxable_amount = round($product->sale_price/(100+$product->gst_rate)*100,2);
+                $taxable_amount = round(round($product->sale_price, 0)/(100+$product->gst_rate)*100,2);
                 if($bill_state == $companyStateName)
                 {
                     $cgst_sgst_rate = round($product->gst_rate/2,2);

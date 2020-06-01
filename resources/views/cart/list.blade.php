@@ -58,13 +58,13 @@
                                     </div>
                                     </th>
                                     <td class="border-0 align-middle">
-                                        <strong><span>&#8377;</span>{{ $cartItem->product->sale_price }}</strong>
+                                        <strong><span>&#8377;</span>{{ round($cartItem->product->sale_price, 0) }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
                                         <strong>{{ $cartItem->quantity }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
-                                        <strong><span>&#8377;</span>{{ $cartItem->quantity*$cartItem->product->sale_price }}</strong>
+                                        <strong><span>&#8377;</span>{{ round($cartItem->quantity*$cartItem->product->sale_price, 0) }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
                                         <form action="{{ route('cartItemDelete',[$cartItem->product->id]) }}" method="POST">
@@ -74,7 +74,7 @@
                                         </form>
                                         {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                                     </td>
-                                    <?php $totalAmount += $cartItem->quantity*$cartItem->product->sale_price; ?>
+                                    <?php $totalAmount += $cartItem->quantity*round($cartItem->product->sale_price, 0); ?>
                                 </tr>
                                 @endforeach
                                 @foreach ($cookieCartItems as $key => $cartItem)
@@ -93,13 +93,13 @@
                                     </div>
                                     </th>
                                     <td class="border-0 align-middle">
-                                        <strong><span>&#8377;</span>{{ $cartItem['product']->sale_price }}</strong>
+                                        <strong><span>&#8377;</span>{{ round($cartItem['product']->sale_price, 0) }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
                                         <strong>{{ $cartItem['quantity'] }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
-                                        <strong><span>&#8377;</span>{{ $cartItem['quantity']*$cartItem['product']->sale_price }}</strong>
+                                        <strong><span>&#8377;</span>{{ $cartItem['quantity']*round($cartItem['product']->sale_price, 0) }}</strong>
                                     </td>
                                     <td class="border-0 align-middle">
                                         <form action="{{ route('cartItemDelete',[$cartItem['product']->id]) }}" method="POST">
@@ -109,7 +109,7 @@
                                         </form>
                                         {{-- <a href="#" class="text-dark"><i class="fa fa-trash"></i></a> --}}
                                     </td>
-                                    <?php $totalAmount += $cartItem['quantity']*$cartItem['product']->sale_price; ?>
+                                    <?php $totalAmount += $cartItem['quantity']*round($cartItem['product']->sale_price, 0); ?>
                                 </tr>
                                 @endforeach
 

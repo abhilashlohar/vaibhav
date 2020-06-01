@@ -85,12 +85,12 @@
                                     $whole = floor($product->sale_price);
                                     $fraction = $product->sale_price - $whole;
                                 ?>
-                                <li class="new-price">Rs. {{ ($fraction > 0) ? $product->sale_price : $whole}}</li>
+                                <li class="new-price">Rs. {{ round($product->sale_price, 0) }}</li>
                                 <?php
                                     $whole = floor($product->regular_price);
                                     $fraction = $product->regular_price - $whole;
                                 ?>
-                                <li class="old-price">Rs. {{ ($fraction > 0) ? $product->regular_price : $whole}}</li>
+                                <li class="old-price">Rs. {{ round($product->regular_price, 0) }}</li>
                                 <li class="discount">({{$product->discount}}% Off)</li>
                                 </ul>
                             </div>

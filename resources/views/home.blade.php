@@ -92,8 +92,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount"> ({{ $furnitureProduct1->discount }}% Off)</li>
-                              <li class="old-price"> Rs. {{ $furnitureProduct1->regular_price }}</li>
-                              <li class="new-price"> Rs. {{ $furnitureProduct1->sale_price }}</li>
+                              <li class="old-price"> Rs. {{ round($furnitureProduct1->regular_price, 0) }}</li>
+                              <li class="new-price"> Rs. {{ round($furnitureProduct1->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -148,8 +148,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $furnitureProduct2->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProduct2->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProduct2->sale_price }}</li>
+                              <li class="old-price">Rs. {{ round($furnitureProduct2->regular_price, 0) }}</li>
+                              <li class="new-price">Rs. {{ round($furnitureProduct2->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -204,8 +204,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $furnitureProduct3->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProduct3->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProduct3->sale_price }}</li>
+                              <li class="old-price">Rs. {{ round($furnitureProduct3->regular_price, 0) }}</li>
+                              <li class="new-price">Rs. {{ round($furnitureProduct3->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -260,8 +260,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $furnitureProduct4->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $furnitureProduct4->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $furnitureProduct4->sale_price }}</li>
+                              <li class="old-price">Rs. {{ round($furnitureProduct4->regular_price, 0) }}</li>
+                              <li class="new-price">Rs. {{ round($furnitureProduct4->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -364,8 +364,8 @@
                            </div>
                            <div class="ecommerce-item--price">
                               <ul>
-                                 <li class="new-price">Rs. {{ $consumablesProduct->sale_price }}</li>
-                                 <li class="old-price">Rs. {{ $consumablesProduct->regular_price }}</li>
+                                 <li class="new-price">Rs. {{ round($consumablesProduct->sale_price, 0) }}</li>
+                                 <li class="old-price">Rs. {{ round($consumablesProduct->regular_price, 0) }}</li>
                                  <li class="discount">({{ $consumablesProduct->discount }}% Off)</li>
                               </ul>
                            </div>
@@ -443,8 +443,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $electricalsProduct1->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProduct1->regular_price }} </li>
-                              <li class="new-price">Rs. {{ $electricalsProduct1->sale_price }}</li>
+                              <li class="old-price">Rs. {{ round($electricalsProduct1->regular_price, 0) }} </li>
+                              <li class="new-price">Rs. {{ round($electricalsProduct1->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -498,8 +498,8 @@
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="new-price">Rs. {{ $electricalsProduct2->sale_price }}</li>
-                              <li class="old-price">Rs. {{ $electricalsProduct2->regular_price }} </li>
+                              <li class="new-price">Rs. {{ round($electricalsProduct2->sale_price, 0) }}</li>
+                              <li class="old-price">Rs. {{ round($electricalsProduct2->regular_price, 0) }} </li>
                               <li class="discount">({{ $electricalsProduct2->discount }}% Off)</li>
                            </ul>
                         </div>
@@ -558,8 +558,8 @@
                         <div class="ecommerce-item--price">
                            <ul>
                               <li class="discount">({{ $electricalsProduct3->discount }}% Off)</li>
-                              <li class="old-price">Rs. {{ $electricalsProduct3->regular_price }}</li>
-                              <li class="new-price">Rs. {{ $electricalsProduct3->sale_price }}</li>
+                              <li class="old-price">Rs. {{ round($electricalsProduct3->regular_price, 0) }}</li>
+                              <li class="new-price">Rs. {{ round($electricalsProduct3->sale_price, 0) }}</li>
                            </ul>
                         </div>
                         <div style="direction:ltr;">
@@ -610,8 +610,8 @@
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
-                              <li class="new-price">Rs. {{ $electricalsProduct4->sale_price }}</li>
-                              <li class="old-price">Rs. {{ $electricalsProduct4->regular_price }}</li>
+                              <li class="new-price">Rs. {{ round($electricalsProduct4->sale_price, 0) }}</li>
+                              <li class="old-price">Rs. {{ round($electricalsProduct4->regular_price, 0) }}</li>
                               <li class="discount">({{ $electricalsProduct4->discount }}% Off)</li>
                            </ul>
                         </div>

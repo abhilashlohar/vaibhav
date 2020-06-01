@@ -75,12 +75,12 @@
                                     $whole = floor($product->sale_price);
                                     $fraction = $product->sale_price - $whole;
                                 ?>
-                                <li class="new-price">Rs. {{ ($fraction > 0) ? $product->sale_price : $whole}}</li>
+                                <li class="new-price">Rs. {{ round($product->sale_price, 0) }}</li>
                                 <?php
                                     $whole = floor($product->regular_price);
                                     $fraction = $product->regular_price - $whole;
                                 ?>
-                                <li class="old-price">Rs. {{ ($fraction > 0) ? $product->regular_price : $whole}}</li>
+                                <li class="old-price">Rs. {{ round($product->regular_price, 0) }}</li>
                                 <li class="discount">({{$product->discount}}% Off)</li>
                                 </ul>
                         </div>
@@ -127,6 +127,7 @@
     </div>
  </section>
 
+ @if ($product->description != '')
  <section class="single-description--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -143,7 +144,7 @@
        </div>
     </div>
  </section>
-
+ @endif
 {{-- <section class="review-rating--wrapper">
    <div class="container-fluid">
        @if ($ratings > 0)
@@ -292,12 +293,12 @@
                                     $whole = floor($product->sale_price);
                                     $fraction = $product->sale_price - $whole;
                                 ?>
-                                <li class="new-price">Rs. {{ ($fraction > 0) ? $product->sale_price : $whole}}</li>
+                                <li class="new-price">Rs. {{ round($product->sale_price, 0) }}</li>
                                 <?php
                                     $whole = floor($product->regular_price);
                                     $fraction = $product->regular_price - $whole;
                                 ?>
-                                <li class="old-price">Rs. {{ ($fraction > 0) ? $product->regular_price : $whole}}</li>
+                                <li class="old-price">Rs. {{ round($product->regular_price, 0) }}</li>
                                 <li class="discount">({{$product->discount}}% Off)</li>
                             </ul>
                          </div>
