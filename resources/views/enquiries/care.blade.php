@@ -11,23 +11,17 @@
          <div class="owl-carousel category-slideshow owl-theme">
             <div class="item">
                <div class="slideshow-details--wrap">
-                  <div class="message-rounded--wrap">
-                     <h1>Bridging Your Customer <strong>Solutions</strong></h1>
-                  </div>
                   <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
+                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-slideshow-01.jpg" alt="" title="">
+                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-slideshow-01.jpg" alt="" title="">
                   </div>
                </div>
             </div>
             <div class="item">
                <div class="slideshow-details--wrap">
-                  <div class="message-rounded--wrap">
-                     <h1>Bridging Your Customer <strong>Solutions</strong></h1>
-                  </div>
                   <div class="slideshow-image--wrap">
-                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01.png" alt="" title="">
-                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/care-banner-01-mobile.png" alt="" title="">
+                     <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-slideshow-02.jpg" alt="" title="">
+                     <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-slideshow-03.jpg" alt="" title="">
                   </div>
                </div>
             </div>
@@ -42,10 +36,10 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="title-ui--wrap">
                 <div class="title-text--middle">
-                   <h2>Got a Complaint? Get Results</h2>
+                   <h2>Got a repair request? We are happy to help.</h2>
                 </div>
                 <div class="title-text--description">
-                   <p>Learn about consumer issues, file a complaint or check your complaint status.</p>
+                   <p>File a repair request or check your complaint status</p>
                 </div>
              </div>
           </div>
@@ -89,10 +83,10 @@
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-description--text">
-                <p>Massa sed elementum tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse in est ante in nibh mauris cursus mattis molestie a iaculis at erat. Pellentesque adipiscing commodo elit at imperdiet dui accumsan sit amet nulla facilisi morbi tempus iaculis urna id volutpat lacus laoreet non curabitur gravida arcu ac tortor.</p>
+                <p>Vaibhav Care is a specialist service vertical for repair and servicing of all types of salon and spa equipment and furniture.</p>
                 <div class="collapse" id="collapseExample">
                   <div class="card card-body">
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    Care also extends the services of buying and selling old salon and spa furniture and equipment, ensuring Vaibhav is with you all the way when setting up or refurbishing an existing salon or spa.
                   </div>
                 </div>
                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
@@ -113,7 +107,7 @@
                    <h2>For Any Other Query</h2>
                 </div>
                 <div class="title-text--description">
-                   <p>Urna porttitor rhoncus dolor purus non enim praesent elementum facilisis leo.</p>
+                   <p>Unable to find solution to your complaint? Any other queries? Please fill the form below & we shall reach out to you in one business day.</p>
                 </div>
                 @if(Session::has('success'))
                     <div class="alert alert-success" role="alert" data-dismiss="alert">

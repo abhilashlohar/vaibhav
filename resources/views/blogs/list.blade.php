@@ -9,16 +9,24 @@
            <div class="item">
               <div class="slideshow-details--wrap">
                  <div class="slideshow-image--wrap">
-                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
-                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-01.jpg" alt="" title="">
+                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-01.jpg" alt="" title="">
                  </div>
               </div>
            </div>
            <div class="item">
               <div class="slideshow-details--wrap">
                  <div class="slideshow-image--wrap">
-                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/blog-banner-image-01.png" alt="" title="">
-                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
+                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-02.jpg" alt="" title="">
+                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-02.jpg" alt="" title="">
+                 </div>
+              </div>
+           </div>
+           <div class="item">
+              <div class="slideshow-details--wrap">
+                 <div class="slideshow-image--wrap">
+                    <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-03.jpg" alt="" title="">
+                    <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-03.jpg" alt="" title="">
                  </div>
               </div>
            </div>

@@ -7,21 +7,29 @@
          <div class="row">
             <div class="owl-carousel category-slideshow owl-theme">
                <div class="item">
-                  <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
-                     </div>
-                  </div>
-               </div>
-               <div class="item">
-                  <div class="slideshow-details--wrap">
-                     <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/academy-banner-01-mobile.png" alt="" title="">
-                     </div>
-                  </div>
-               </div>
+                    <div class="slideshow-details--wrap">
+                       <div class="slideshow-image--wrap">
+                          <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-01.jpg" alt="" title="">
+                          <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-01.jpg" alt="" title="">
+                       </div>
+                    </div>
+                 </div>
+                 <div class="item">
+                    <div class="slideshow-details--wrap">
+                       <div class="slideshow-image--wrap">
+                          <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-02.jpg" alt="" title="">
+                          <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-02.jpg" alt="" title="">
+                       </div>
+                    </div>
+                 </div>
+                 <div class="item">
+                    <div class="slideshow-details--wrap">
+                       <div class="slideshow-image--wrap">
+                          <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-03.jpg" alt="" title="">
+                          <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-academy-slideshow-03.jpg" alt="" title="">
+                       </div>
+                    </div>
+                 </div>
             </div>
          </div>
       </div>
@@ -60,7 +68,7 @@
              </div>
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="academy-information--text">
-                   <p>viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris</p>
+                   <p>Vaibhav Stores is a skill development initiative by us to help beauty professionals hone their skills & stay up to date with latest developments of our industry. You can enrol for workshops, seminars & training sessions led by expert beauty professionals. Its also an effective platform to network with other beauty professionals & build contacts.</p>
                    <a href="#" class="btn btn-primary">Read More</a>
                 </div>
              </div>

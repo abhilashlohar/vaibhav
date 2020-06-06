@@ -8,16 +8,8 @@
              <div class="item">
                 <div class="slideshow-details--wrap">
                    <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/plus-xpress-banner-01.png" alt="" title="">
-                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
-                   </div>
-                </div>
-             </div>
-             <div class="item">
-                <div class="slideshow-details--wrap">
-                   <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/plus-xpress-banner-01.png" alt="" title="">
-                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-01-mobile.png" alt="" title="">
+                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-slideshow-01.jpg" alt="" title="">
+                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-slideshow-01.jpg" alt="" title="">
                    </div>
                 </div>
              </div>
@@ -40,8 +32,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>What is xpress?</h3>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
-                   <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
+                   <p>Vaibhav Xpress is a specialised delivery only service. Covering the length and breadth of Bengaluru city & its outskirts, Xpress is our dedicated unit only for shipping beauty solutions to salons, in time.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -56,8 +47,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>How it works?</h3>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
-                   <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
+                   <p>If you are a Salon or a beauty professional, place your order with us on Call, Email or Whatsapp. Our trained logistics & supply chain management team will compile your order & arrange for it to be shipped to you directly at your doorstep.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -77,8 +67,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>Who is it for?</h3>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
-                   <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
+                   <p>Salon, Salon Chains, Spas & Beauty Professionals.</p>
                 </div>
              </div>
           </div>
@@ -93,8 +82,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>Whom to get in touch with?</h3>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
-                   <p>Amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit.</p>
+                   <p>Please get in touch with the Xpress team on the contact details mentioned below.</p>
                 </div>
              </div>
           </div>
@@ -113,7 +101,7 @@
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="plus-execute--message">
-             <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id ornare arcu odio ut sem nulla pharetra diam sit amet nisl suscipit adipiscing bibendum est ultricies integer quis auctor elit sed vulputate mi sit. Velit laoreet id donec ultrices tincidunt arcu non sodales neque sodales ut etiam sit amet nisl purus in nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris.</p>
+             <p>Vaibhav Xpress is a one of a kind service, where your order is fulfilled from our master warehouse. The assigned manager fulfils your product requirements & prepares your shipment for delivery. The trained delivery professionals then ensure a speedy & safe delivery.</p>
           </div>
        </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -132,7 +120,7 @@
                       <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-07.jpg" alt=""/>
                    </div>
                    <h4>Consignment</h4>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
+                   <p>All Consignments are marked with a unique id & packed adequately to ensure no damage or leakage intransit.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -141,7 +129,7 @@
                       <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-08.jpg" alt=""/>
                    </div>
                    <h4>Salon & Spa</h4>
-                   <p>Viverra maecenas accumsan lacus vel facilisis volutpat est velit egestas dui id</p>
+                   <p>The goods are directly delivered to your salon & spas.</p>
                 </div>
              </div>
           </div>
@@ -149,7 +137,7 @@
     </div>
  </section>
 
- <section class="plus-exception--wrapper">
+ <!-- <section class="plus-exception--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
@@ -169,7 +157,7 @@
           </div>
        </div>
     </div>
- </section>
+ </section> -->
 
  <section class="plus-connet--wrapper">
     <div class="container-fluid">
@@ -185,19 +173,20 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
-                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                   <p>94, Sunkalpet Main Road, Bengaluru 560002</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
-                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                   <p>Mobile - 8073422019</p>
+                   <p>Landline - 22222082</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
-                   <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Telephone</h5>
-                   <p>F3, Above ICICI Bank, 1091 Dhrmaraya Swamy, Temple Road, Bengluru, 560002</p>
+                   <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Email</h5>
+                   <p>sales@vaibhavxpress.com</p>
                 </div>
              </div>
           </div>

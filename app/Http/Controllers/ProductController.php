@@ -70,8 +70,7 @@ class ProductController extends Controller
         ])
         ->orderBy('sequence', 'asc')
         ->get();
-
-
+    
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list product-list-'.$category->template_type;
         return view('products.'.$category->template_type,compact('category','subCategoryData','products','page_title','body_class'));

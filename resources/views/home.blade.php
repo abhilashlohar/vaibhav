@@ -12,44 +12,32 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01.png" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/slideshow-01-mobile.png" alt="" title="">
-                     </div>
-                     <div class="message-rounded--wrap">
-                        <h1>A one stop store for your <br/><span>Spa & Salon needs.</span></h1>
+                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
+                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
                      </div>
                   </div>
                </div>

@@ -241,24 +241,22 @@
                         <h3>About the brand</h3>
                      </div>
                      <div class="footer-about--text">
-                        <p>Et pharetra pharetra massa massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                        <p>Vaibhav Stores is the one stop shop for salons & beauty professionals for all their business set up needs. The most trusted entity in the beauty industry in South India, Vaibhav Stores is synonymous with authentic original products, expert guidance & impeccable after sales service.</p>
                      </div>
                   </div>
                </div>
-               <div class="col-5 col-sm-6 col-md-6 col-lg-2 col-xl-2">
+               <div class="col-5 col-sm-6 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
-                        <h3>Our Stores</h3>
+                        <h3>Business Verticals</h3>
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                            @foreach ($headerCategories as $headerCategory)
-                                <li>
-                                    <a href="{{route('products.category-list',[$headerCategory->slug])}}">
-                                        {{$headerCategory->name}}
-                                    </a>
-                                </li>
-                            @endforeach
+                           <li><a href="{{url('/') }}">Vaibhav Stores</a></li>
+                           <li><a href="{{url('/care') }}">Vaibhav Care</a></li>
+                           <li><a href="{{url('/academy') }}">Vaibhav Academy</a></li>
+                           <li><a href="{{url('/xpress') }}">Vaibhav Xpress</a></li>
+                           <li><a href="{{url('/plus') }}">Vaibhav Plus</a></li>
                         </ul>
                      </div>
                   </div>
@@ -266,15 +264,17 @@
                <div class="col-7 col-sm-6 col-md-6 col-lg-2 col-xl-2">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
-                        <h3>About Us</h3>
+                        <h3>Quick Links</h3>
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="{{url('/journal') }}">Journal</a></li>
-                           <li><a href="{{url('/faqs') }}">FAQs</a></li>
-                           <li><a href="{{route('blogs.list') }}">Blog</a></li>
-                           <li><a href="{{url('/contact-us') }}">Contact</a></li>
+                           <li><a href="{{url('/journal') }}">About</a></li>
+                           <li><a href="{{url('/contact-us') }}">Contact Us</a></li>
+                           <li><a href="{{url('/products/furnitures') }}">Furniture</a></li>
+                           <li><a href="{{url('/products/electrical') }}">Electrical</a></li>
+                           <li><a href="{{url('/products/consumable') }}">Consumable</a></li>
                            <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
+                           <li><a href="{{url('/privacy') }}">Privacy Policy</a></li>
                         </ul>
                      </div>
                      <div class="footer-social--wrap">
@@ -287,7 +287,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+               <div class="col-12 col-sm-12 col-md-6 col-lg-3 col-xl-3">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
                         <h3>Newsletter</h3>
@@ -305,7 +305,7 @@
                </div>
             </div>
             <div class="footer-copyright--wrap">
-            	2019@Vaibhavstores - All rights reserved - <a href="#">Terms & Coonditions</a>
+            	2019@Vaibhavstores - All rights reserved - <a href="#">Terms & Conditions</a>
             </div>
          </div>
       </div>
