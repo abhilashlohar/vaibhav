@@ -127,7 +127,7 @@
     </div>
  </section>
 
- @if ($product->description != '')
+ @if (strip_tags($product->description) != '')
  <section class="single-description--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
