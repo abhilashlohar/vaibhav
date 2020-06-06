@@ -41,7 +41,9 @@ class ProductController extends Controller
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
         ])->with('subcategory_available_orderBy')->first();
-
+        if(!$category){
+            abort(404);
+        }
         $template_type = $category->template_type;
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
@@ -55,13 +57,17 @@ class ProductController extends Controller
             ['slug', '=', $category_slug],
             ['deleted', '=', 0]
         ])->with('subcategory_available_orderBy')->first();
-
+        if(!$category){
+            abort(404);
+        }
 
         $subCategoryData = SubCategory::where([
             ['slug','=',$sub_category_slug],
             ['deleted', '=', 0]
         ])->first();
-
+        if(!$subCategoryData){
+            abort(404);
+        }
         $products = Product::with('product_image_primary')
         ->where([
             ['sub_category_id','=',$subCategoryData->id],
@@ -70,7 +76,7 @@ class ProductController extends Controller
         ])
         ->orderBy('sequence', 'asc')
         ->get();
-    
+
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list product-list-'.$category->template_type;
         return view('products.'.$category->template_type,compact('category','subCategoryData','products','page_title','body_class'));
