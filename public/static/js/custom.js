@@ -28,6 +28,8 @@ $(document).ready(function() {
   $('.hero-slideshow').owlCarousel({
       loop:true,
       margin:10,
+      autoplay:true,
+      autoplayTimeout:3000,
       nav:false,
       dots: true,
       lazyLoad: true,
@@ -46,7 +48,7 @@ $(document).ready(function() {
 });
 
 $('.category-slideshow').owlCarousel({
-   loop:true,
+   loop:false,
    margin:10,
    nav:false,
    lazyLoad: true,
@@ -69,6 +71,8 @@ $('.partner-slideshow').owlCarousel({
     margin:0,
     nav:true,
     lazyLoad: true,
+    autoplay:true,
+    autoplayTimeout:4000,
     navText: [
       '<i class="fa fa-angle-left" aria-hidden="true"></i>',
       '<i class="fa fa-angle-right" aria-hidden="true"></i>'

@@ -572,6 +572,11 @@ ul.dropDownMenu ul {
    border-top-left-radius: 36%;
    border-bottom-right-radius: 36%;
    margin-bottom: 30px;
+   min-height: 339px;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: flex-start;
+   align-items: center;
 }
 .contact-us--wrapper .contact-ui--grids .contact-ui-wrap a {
    color: #e9414f;
@@ -579,6 +584,7 @@ ul.dropDownMenu ul {
 }
 .contact-us--wrapper .contact-ui--grids .contact-ui-wrap h3 {
    font-size: 16px;
+   color: #e9414f;
 }
 .padding-0-mobile {
    padding: 0;
@@ -2142,6 +2148,7 @@ ul.dropDownMenu ul {
 .footer-wrapper .footer-subscribe--wrap {
    position: relative;
    width: 100%;
+   margin-bottom: 30px;
 }
 .footer-wrapper .footer-subscribe--wrap input[type="email"] {
    width: 100%;
@@ -2567,7 +2574,7 @@ Category Page
 }
 .items-archive--wrapper .item-archive--list .item-excerpt--wrap .item-excerpt--details .item-excerpt--meta .title h4 a {
    padding: 0;
-   color: #99ab3f;
+   color: #e9414f;
    line-height: 25px;
    text-decoration: none;
    text-transform: none;
@@ -2897,7 +2904,7 @@ Product Single
    width: 100%;
 }
 .single-description--text table {
-   max-width: 57%;
+   max-width: 100%;
 }
 .single-description--wrapper .single-description--text p {
    font-size: 18px;
@@ -6849,6 +6856,9 @@ Login Wrapper
    .category-banner--wrapper {
        max-height: 700px;
        overflow: hidden;
+   }
+   .single-description--text table {
+      max-width: 75%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image {
        text-align: center;

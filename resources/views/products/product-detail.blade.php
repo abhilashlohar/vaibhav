@@ -263,7 +263,7 @@
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
-                <h2>People Also Viewed</h2>
+                <h2>Related Products</h2>
              </div>
           </div>
        </div>

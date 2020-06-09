@@ -268,21 +268,12 @@
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="{{url('/journal') }}">About</a></li>
+                           <li><a href="{{url('/about-us') }}">About</a></li>
                            <li><a href="{{url('/contact-us') }}">Contact Us</a></li>
                            <li><a href="{{url('/products/furnitures') }}">Furniture</a></li>
                            <li><a href="{{url('/products/electrical') }}">Electrical</a></li>
                            <li><a href="{{url('/products/consumable') }}">Consumable</a></li>
                            <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
-                           <li><a href="{{url('/privacy') }}">Privacy Policy</a></li>
-                        </ul>
-                     </div>
-                     <div class="footer-social--wrap">
-                        <ul>
-                           <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -294,18 +285,25 @@
                      </div>
                      <div class="footer-subscribe--wrap">
                         <p>Subscribe to receive updates, access to exclusive deals and more.</p>
-
                         <p style="display:none; color:#000;" id="subscribe-message" class="alert alert-success" role="alert"></p>
                         <form method="get" id="enquiry_subscribe" action="#">
                            <input style="color:#fff" type="email" id="subscribe_email" name="email" placeholder="Enter your email address">
                            <input type="submit" name="submit" class="addToEnquiry" value="SUBSCRIBE">
                         </form>
                      </div>
+                     <div class="footer-social--wrap">
+                        <ul>
+                           <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                           <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                           <li><a href="#" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                           <li><a href="#" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                        </ul>
+                     </div>
                   </div>
                </div>
             </div>
             <div class="footer-copyright--wrap">
-            	2019@Vaibhavstores - All rights reserved - <a href="#">Terms & Conditions</a>
+            	2019@28 South Ventures LLP - All rights reserved - <a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a>
             </div>
          </div>
       </div>

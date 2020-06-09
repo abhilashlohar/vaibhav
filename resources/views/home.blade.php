@@ -12,32 +12,40 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
+                        <a href="http://13.127.186.154/products/Furnitures">
+                           <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
+                           <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
+                        </a> 
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
+                        <a href="http://13.127.186.154/products/Furnitures">
+                           <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
+                           <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
+                        </a>
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
+                        <a href="http://13.127.186.154/products/Furnitures">
+                           <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
+                           <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
+                        </a>
                      </div>
                   </div>
                </div>
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
-                        <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
+                        <a href="http://13.127.186.154/products/Furnitures">
+                           <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
+                           <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
+                        </a>
                      </div>
                   </div>
                </div>
@@ -65,7 +73,7 @@
                   <h2>Furniture</h2>
                </div>
                <div class="title-text--action">
-                  <a href="{{route('products.list',['furniture',$furnitureProduct1->subCategory->slug])}}" target="_blank">View All</a>
+                  <a href="http://13.127.186.154/products/Furnitures" target="_blank">View All</a>
                </div>
             </div>
          </div>

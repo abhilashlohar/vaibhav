@@ -164,7 +164,7 @@
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
-                <h2>For more details connenct with us</h2>
+                <h2>For more details connect with us</h2>
              </div>
           </div>
        </div>

@@ -83,8 +83,8 @@
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-description--text">
-                <p>Vaibhav Care is a specialist service vertical for repair and servicing of all types of salon and spa equipment and furniture.</p>
-                <div class="collapse" id="collapseExample">
+                <p>Vaibhav Care is a specialist service vertical for repair and servicing of all types of salon and spa equipment and furniture. Care also extends the services of buying and selling old salon and spa furniture and equipment, ensuring Vaibhav is with you all the way when setting up or refurbishing an existing salon or spa.</p>
+                <!-- <div class="collapse" id="collapseExample">
                   <div class="card card-body">
                     Care also extends the services of buying and selling old salon and spa furniture and equipment, ensuring Vaibhav is with you all the way when setting up or refurbishing an existing salon or spa.
                   </div>
@@ -92,7 +92,7 @@
                 <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                    Know More
                 </a>
-             </div>
+             </div> -->
           </div>
        </div>
     </div>
