@@ -37,7 +37,7 @@
          </div>
       </div>
    </section>
-   <?php $index = 1; ?>
+   <?php $index = 0; ?>
     @if ($products->count() > 0)
         <section class="single-excerpt--wrapper">
             <div class="container-fluid">
@@ -51,7 +51,7 @@
                         <div class="col-12 col-sm-12 col-md-12 col-lg-7 col-xl-7">
                             <div class="single-product--carousel">
                                 <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                                    <div id="big-{{$index++}}" class="owl-carousel owl-theme">
+                                    <div id="big-{{++$index}}" class="owl-carousel owl-theme">
                                        @foreach ($product->productImages as $item)
                                        <div class="item zoom zoomin">
                                           <a href="{{ route('products.product-detail',$product->slug) }}"><img src="{{ asset('storage/product/'.$item->image) }}" alt="{{$product->name}}"/></a>
