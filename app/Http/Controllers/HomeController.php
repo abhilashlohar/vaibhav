@@ -175,18 +175,26 @@ class HomeController extends Controller
             ['is_published', '=', 1],
             ['products.deleted', '=', 0]
         ])
-        ->with(['category','category.subCategoryFirst'])
+        ->with(['category','category.subCategoryFirst','subCategory'])
         ->orderBy('category_id', 'asc')
         ->get();
+            // dd($products);
         $category_exist = [];
+        $subcategory_exist = [];
         foreach($products as $product)
         {
             if(!in_array($product->category->id,$category_exist))
             {
-                $data [] = ['label'=>$product->category->name,'url'=>route('products.category-list',[$product->category->slug]),'category'=>'yes'];
+                $data [] = ['label'=>$product->category->name,'url'=>route('products.category-list',[$product->category->slug]),'category'=>'yes','subcategory'=>''];
                 $category_exist[] = $product->category->id;
             }
-            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>''];
+            if(!in_array($product->subCategory->id,$subcategory_exist))
+            {
+                $data [] = ['label'=>$product->subCategory->name,'url'=>route('products.list',[$product->category->slug,$product->subCategory->slug]),'category'=>'','subcategory'=>'yes'];
+                $subcategory_exist[] = $product->subCategory->id;
+            }
+
+            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>'','subcategory'=>''];
 
         }
         return response()->json($data);

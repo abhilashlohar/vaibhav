@@ -20,8 +20,21 @@
           font-weight: bold;
           padding: .2em .0em;
           margin: .8em 0 .2em;
-          line-height: 1.5;
+          line-height: 1;
+          color: #000;
         }
+        .ui-subcategory {
+          font-weight: bold;
+          padding: .2em .0em;
+          margin: .8em 0 .2em;
+          line-height: 1;
+          color: #2e2e2e;
+          padding-left: .4em;
+        }
+        .ui-menu-item:not(.ui-category):not(.ui-subcategory){
+            padding-left: .8em;
+        }
+
         /* .typeahead .tt-dropdown-menu {
             max-height: 150px;
             overflow-y: auto;
@@ -366,6 +379,53 @@
                 }
 
             });
+
+        //    $.widget( "custom.catcomplete", $.ui.autocomplete, {
+        //         _create: function() {
+        //             this._super();
+        //             this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
+        //         },
+
+        //         _renderMenu: function( ul, items ) {
+        //             var self = this,
+        //             that = this,
+        //             currentCategory = "";
+        //             $.each( items, function( index, item ) {
+        //                 if ( item.category != currentCategory ) {
+
+        //                     ul.append( "<div class='ui-autocomplete-category'>" + item.category + "</div>");
+        //                     currentCategory = item.category;
+
+        //                 }
+
+        //                 that._renderItemData( ul, item );
+        //             });
+        //             // ul.find('.ui-autocomplete-category').each(function() {
+        //             //     $(this).nextUntil('div')
+        //             //             .andSelf()
+        //             //             .wrapAll('<div class="ui-block">')
+        //             //             .nextUntil('div')
+        //             //             .wrapAll('<div class="ui-list">');
+        //             // });
+
+        //             // $.each( items, function( index, item ) {
+        //             // var li;
+
+        //             // li = that._renderItemData( ul, item );
+
+        //             // if ( item.category ) {
+        //             //         li.addClass("ui-category");
+        //             // }
+        //             // });
+        //         },
+        //         _renderItem: function( ul, item) {
+        //             return $( "<li></li>" )
+        //             .data( "item.autocomplete", item )
+        //             .append( "<a>" + item.label + "</a>" )
+        //             .appendTo( ul );
+        //         },
+        //     });
+
             $.widget( "custom.catcomplete", $.ui.autocomplete, {
                 _create: function() {
                     this._super();
@@ -378,8 +438,12 @@
                     var li;
 
                     li = that._renderItemData( ul, item );
+
                     if ( item.category ) {
                             li.addClass("ui-category");
+                    }
+                    if ( item.subcategory ) {
+                            li.addClass("ui-subcategory");
                     }
                     });
                 }

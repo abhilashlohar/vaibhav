@@ -80,7 +80,7 @@
         _initDefaults: function() {
             this.url = window.location.href;
             this.text = $.trim($("meta[name=description]").attr("content") || $("title").text());
-            this.to = 'noreply@28svllp.com';
+            this.to = '';
         },
 
         _initShares: function() {

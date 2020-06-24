@@ -15,7 +15,7 @@
                         <a href="http://13.127.186.154/products/Furnitures">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
-                        </a> 
+                        </a>
                      </div>
                   </div>
                </div>
@@ -356,7 +356,7 @@
                               </h3>
                            </div>
                            <div class="ecommerce-item--excerpt">
-                              <p>{{ $consumablesProduct->short_description }}</p>
+                               <?php echo $consumablesProduct->short_description; ?>
                            </div>
                            <div class="ecommerce-item--price">
                               <ul>
