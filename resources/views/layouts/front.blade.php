@@ -34,7 +34,11 @@
         .ui-menu-item:not(.ui-category):not(.ui-subcategory){
             padding-left: .8em;
         }
-
+		.ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
+			max-height: 150px;
+            overflow-y: auto;
+            overflow-x: hidden;
+		}
         /* .typeahead .tt-dropdown-menu {
             max-height: 150px;
             overflow-y: auto;
