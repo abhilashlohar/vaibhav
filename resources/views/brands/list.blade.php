@@ -24,7 +24,7 @@
                         <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{$brand->name}}"/>
                      </div>
                      <div class="brand-thumbnail--action">
-                        <a href="{{route('brand.detail',$brand->id)}}"> View</a>
+                        <a href="{{route('brand.detail',$brand->name)}}"> View</a>
                      </div>
                   </div>
                 </div>

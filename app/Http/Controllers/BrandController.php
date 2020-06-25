@@ -19,10 +19,10 @@ class BrandController extends Controller
 
     }
 
-    public function detail($id)
+    public function detail($name)
     {
         $brand = Brand::where([
-            ['id', '=', $id],
+            ['name', '=', $name],
             ['deleted', '=', 0]
         ])->first();
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';

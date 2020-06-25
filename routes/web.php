@@ -54,8 +54,8 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
     Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
     Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
-    Route::get('/brand-list','BrandController@list')->name('brand.list');
-    Route::get('/brand-detail/{id}','BrandController@detail')->name('brand.detail');
+    Route::get('/brands','BrandController@list')->name('brand.list');
+    Route::get('/{name}','BrandController@detail')->name('brand.detail');
 
     Route::get('/blogs', 'BlogController@list')->name('blogs.list');
     Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');

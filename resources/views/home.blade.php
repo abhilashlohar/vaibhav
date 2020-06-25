@@ -1150,7 +1150,7 @@
                                         <li>{{ $brnad_short_description }}</li>
                                         @endforeach
                                     </ul> --}}
-                                    <a href="{{route('brand.detail',$brand->id)}}" class="button">View Detail</a>
+                                    <a href="{{route('brand.detail',$brand->name)}}" class="button">View Detail</a>
                                 </div>
                                 </div>
                             </div>
