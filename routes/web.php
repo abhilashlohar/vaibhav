@@ -16,11 +16,7 @@ Auth::routes();
 Route::group(['middleware' => [CheckRedirect::class]], function () {
 
     Route::get('/', 'HomeController@home')->name('home');
-    Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
 
-    Route::get('/products/{category}', 'ProductController@categoryList')->name('products.category-list');
-    Route::get('/products/{category}/{subcategory}', 'ProductController@list')->name('products.list');
-    Route::get('/product/{product}', 'ProductController@productDetail')->name('products.product-detail');
     Route::get('/product/search/{searchQuery}', 'ProductController@productSearch')->name('products.search');
 
 
@@ -54,12 +50,17 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
     Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
     Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
-    Route::get('/brands','BrandController@list')->name('brand.list');
-    Route::get('/{name}','BrandController@detail')->name('brand.detail');
 
     Route::get('/blogs', 'BlogController@list')->name('blogs.list');
     Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');
     Route::get('/advanceBlogSearch/{search}', 'BlogController@advanceBlogSearch')->name('advanceBlogSearch');
+    Route::get('/brands','BrandController@list')->name('brand.list');
+    Route::get('/{name}/b','BrandController@detail')->name('brand.detail');
+    Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
+
+    Route::get('/{category}', 'ProductController@categoryList')->name('products.category-list');
+    Route::get('/{category}/{subcategory}', 'ProductController@list')->name('products.list');
+    Route::get('/{category}/{subcategory}/{product}', 'ProductController@productDetail')->name('products.product-detail');
 });
 
 

@@ -194,7 +194,7 @@ class HomeController extends Controller
                 $subcategory_exist[] = $product->subCategory->id;
             }
 
-            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->slug]),'category'=>'','subcategory'=>''];
+            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->category->slug,$product->subCategory->slug,$product->slug]),'category'=>'','subcategory'=>''];
 
         }
         return response()->json($data);

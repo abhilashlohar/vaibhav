@@ -83,7 +83,7 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProduct1->slug) }}">{{ $furnitureProduct1->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$furnitureProduct1->category->slug,$furnitureProduct1->subcategory->slug,$furnitureProduct1->slug]) }}">{{ $furnitureProduct1->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -116,7 +116,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct1->id}}" category_slug="{{$furnitureProduct1->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProduct1->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$furnitureProduct1->category->slug,$furnitureProduct1->subcategory->slug,$furnitureProduct1->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -139,7 +139,7 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProduct2->slug) }}">{{ $furnitureProduct2->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$furnitureProduct2->category->slug,$furnitureProduct2->subcategory->slug,$furnitureProduct2->slug]) }}">{{ $furnitureProduct2->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -172,7 +172,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct2->id}}" category_slug="{{$furnitureProduct2->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProduct2->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$furnitureProduct2->category->slug,$furnitureProduct2->subcategory->slug,$furnitureProduct2->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -195,7 +195,7 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProduct3->slug) }}">{{ $furnitureProduct3->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$furnitureProduct3->category->slug,$furnitureProduct3->subcategory->slug,$furnitureProduct3->slug]) }}">{{ $furnitureProduct3->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -228,7 +228,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct3->id}}" category_slug="{{$furnitureProduct3->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProduct3->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$furnitureProduct3->category->slug,$furnitureProduct3->subcategory->slug,$furnitureProduct3->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -251,7 +251,7 @@
                   <div class="category-block--wrap pink-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$furnitureProduct4->slug) }}">{{ $furnitureProduct4->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$furnitureProduct4->category->slug,$furnitureProduct4->subcategory->slug,$furnitureProduct4->slug]) }}">{{ $furnitureProduct4->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -284,7 +284,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$furnitureProduct4->id}}" category_slug="{{$furnitureProduct4->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$furnitureProduct4->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$furnitureProduct4->category->slug,$furnitureProduct4->subcategory->slug,$furnitureProduct4->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -350,7 +350,7 @@
                         <div class="ecommerce-item--details">
                            <div class="ecommerce-item--name">
                               <h3>
-                                  <a href="{{ route('products.product-detail',$consumablesProduct->slug) }}">
+                                  <a href="{{ route('products.product-detail',[$consumablesProduct->category->slug,$consumablesProduct->subcategory->slug,$consumablesProduct->slug]) }}">
                                       {{ $consumablesProduct->name }} <span>- {{ $consumablesProduct->subCategory->name }}</span>
                                   </a>
                               </h3>
@@ -389,7 +389,7 @@
                                       </form>
                                       <button type="button" class="open-enquery-modal" product_id="{{$consumablesProduct->id}}"  category_slug="{{$consumablesProduct->subCategory->category->slug}}">Enquire Now</button>
                                   </li>
-                                 <li><a href="{{route('products.product-detail',$consumablesProduct->slug)}}">Explore</a></li>
+                                 <li><a href="{{route('products.product-detail',[$consumablesProduct->category->slug,$consumablesProduct->subcategory->slug,$consumablesProduct->slug])}}">Explore</a></li>
                               </ul>
                            </div>
                            <div class="ecommerce-item--share">
@@ -434,7 +434,7 @@
                   <div class="category-block--wrap peach-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProduct1->slug) }}">{{ $electricalsProduct1->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$electricalsProduct1->category->slug,$electricalsProduct1->subcategory->slug,$electricalsProduct1->slug]) }}">{{ $electricalsProduct1->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -467,7 +467,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct1->id}}" category_slug="{{$electricalsProduct1->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProduct1->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$electricalsProduct1->category->slug,$electricalsProduct1->subcategory->slug,$electricalsProduct1->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -490,7 +490,7 @@
                   <div class="category-block--wrap green-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProduct2->slug) }}">{{ $electricalsProduct2->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$electricalsProduct2->category->slug,$electricalsProduct2->subcategory->slug,$electricalsProduct2->slug]) }}">{{ $electricalsProduct2->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -523,7 +523,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct2->id}}" category_slug="{{$electricalsProduct2->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProduct2->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$electricalsProduct2->category->slug,$electricalsProduct2->subcategory->slug,$electricalsProduct2->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -549,7 +549,7 @@
                      </div>
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProduct3->slug) }}">{{ $electricalsProduct3->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$electricalsProduct3->category->slug,$electricalsProduct3->subcategory->slug,$electricalsProduct3->slug]) }}">{{ $electricalsProduct3->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -582,7 +582,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct3->id}}" category_slug="{{$electricalsProduct3->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProduct3->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$electricalsProduct3->category->slug,$electricalsProduct3->subcategory->slug,$electricalsProduct3->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -602,7 +602,7 @@
                   <div class="category-block--wrap blue-ui">
                      <div class="ecommerce-item--details">
                         <div class="ecommerce-item--name">
-                           <h3><a href="{{ route('products.product-detail',$electricalsProduct4->slug) }}">{{ $electricalsProduct4->name }}</a></h3>
+                           <h3><a href="{{ route('products.product-detail',[$electricalsProduct4->category->slug,$electricalsProduct4->subcategory->slug,$electricalsProduct4->slug]) }}">{{ $electricalsProduct4->name }}</a></h3>
                         </div>
                         <div class="ecommerce-item--price">
                            <ul>
@@ -635,7 +635,7 @@
                                     </form>
                                     <button type="button" class="open-enquery-modal" product_id="{{$electricalsProduct4->id}}" category_slug="{{$electricalsProduct4->subCategory->category->slug}}">Enquire Now</button>
                                 </li>
-                              <li><a href="{{route('products.product-detail',$electricalsProduct4->slug)}}">Explore</a></li>
+                              <li><a href="{{route('products.product-detail',[$electricalsProduct4->category->slug,$electricalsProduct4->subcategory->slug,$electricalsProduct4->slug])}}">Explore</a></li>
                            </ul>
                         </div>
                         <div class="ecommerce-item--share">
@@ -1213,7 +1213,7 @@
     <script>
         @if ($consumablesProduct)
             $("#ConsumablesShare").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $consumablesProduct->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $consumablesProduct->category->slug.'/'.$consumablesProduct->subCategory->slug.'/'.$consumablesProduct->slug; ?>",
                 text: "<?php echo $consumablesProduct->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1222,7 +1222,7 @@
         @endif
         @if ($furnitureProduct1 && $furnitureProduct2 && $furnitureProduct3 && $furnitureProduct4)
             $("#FurnitureShare0").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct1->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $furnitureProduct1->category->slug.'/'.$furnitureProduct1->subCategory->slug.'/'.$furnitureProduct1->slug; ?>",
                 text: "<?php echo $furnitureProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1230,7 +1230,7 @@
             });
 
             $("#FurnitureShare1").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct2->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $furnitureProduct2->category->slug.'/'.$furnitureProduct2->subCategory->slug.'/'.$furnitureProduct2->slug; ?>",
                 text: "<?php echo $furnitureProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1238,7 +1238,7 @@
             });
 
             $("#FurnitureShare2").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct3->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $furnitureProduct3->category->slug.'/'.$furnitureProduct3->subCategory->slug.'/'.$furnitureProduct3->slug; ?>",
                 text: "<?php echo $furnitureProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1246,7 +1246,7 @@
             });
 
             $("#FurnitureShare3").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $furnitureProduct4->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $furnitureProduct4->category->slug.'/'.$furnitureProduct4->subCategory->slug.'/'.$furnitureProduct4->slug; ?>",
                 text: "<?php echo $furnitureProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1255,7 +1255,7 @@
             @endif
             @if ($electricalsProduct1 && $electricalsProduct2 && $electricalsProduct3 && $electricalsProduct4)
             $("#ElectricalsShare0").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct1->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $electricalsProduct1->category->slug.'/'.$electricalsProduct1->subCategory->slug.'/'.$electricalsProduct1->slug; ?>",
                 text: "<?php echo $electricalsProduct1->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1263,7 +1263,7 @@
             });
 
             $("#ElectricalsShare1").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct2->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $electricalsProduct2->category->slug.'/'.$electricalsProduct2->subCategory->slug.'/'.$electricalsProduct2->slug; ?>",
                 text: "<?php echo $electricalsProduct2->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1271,7 +1271,7 @@
             });
 
             $("#ElectricalsShare2").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct3->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $electricalsProduct3->category->slug.'/'.$electricalsProduct3->subCategory->slug.'/'.$electricalsProduct3->slug; ?>",
                 text: "<?php echo $electricalsProduct3->name; ?>",
                 showLabel: false,
                 showCount: "inside",
@@ -1279,7 +1279,7 @@
             });
 
             $("#ElectricalsShare3").jsSocials({
-                url: "<?php echo url('/'); ?>/product/<?php echo $electricalsProduct4->slug; ?>",
+                url: "<?php echo url('/'); ?>/<?php echo $electricalsProduct4->category->slug.'/'.$electricalsProduct4->subCategory->slug.'/'.$electricalsProduct4->slug; ?>",
                 text: "<?php echo $electricalsProduct4->name; ?>",
                 showLabel: false,
                 showCount: "inside",

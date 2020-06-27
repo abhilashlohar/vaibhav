@@ -16,7 +16,7 @@
                     <div class="item-excerpt--image">
                         <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                         <div class="item-excerpt--action">
-                            <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">View Details</a>
+                            <a href="{{route('products.product-detail',[$product->category->slug,$product->subcategory->slug,$product->slug])}}" class="addToCart">View Details</a>
                         </div>
                     </div>
                     <div class="item-excerpt--details">

@@ -58,14 +58,14 @@
                         <div class="item-excerpt--image">
                             <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                             <div class="item-excerpt--action">
-                                <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">View Details</a>
+                                <a href="{{route('products.product-detail',[$category->slug,$subCategoryData->slug,$product->slug])}}" class="addToCart">View Details</a>
                             </div>
                         </div>
                         <div class="item-excerpt--details">
                             <div class="item-excerpt--meta">
                                 <div class="title">
                                   <h4>
-                                    <a href="{{route('products.product-detail',$product->slug)}}" title="{{$product->name}}">
+                                    <a href="{{route('products.product-detail',[$category->slug,$subCategoryData->slug,$product->slug])}}" title="{{$product->name}}">
                                     <?php
                                     if(strlen($product->name) > 20)
                                     {

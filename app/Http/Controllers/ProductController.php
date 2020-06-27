@@ -82,7 +82,7 @@ class ProductController extends Controller
         return view('products.'.$category->template_type,compact('category','subCategoryData','products','page_title','body_class'));
     }
 
-    public function productDetail($product_slug)
+    public function productDetail($category_slug,$sub_category_slug,$product_slug)
     {
         $product = Product::with(['productImages'])->where([
             ['is_published', '=', 1],

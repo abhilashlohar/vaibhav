@@ -20,7 +20,7 @@
                <nav aria-label="breadcrumb">
                   <ol class="breadcrumb">
                      <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-                     <li class="breadcrumb-item"><a href="{{route('products.category-list',[$product->category->slug])}}">{{$product->category->name}}</a></li>
+                     <li class="breadcrumb-item"><a href="{{route('products.category-list',[$product->category->slug,'c'])}}">{{$product->category->name}}</a></li>
                      <li class="breadcrumb-item"><a href="{{route('products.list', [$product->category->slug,$product->subcategory->slug])}}">{{$product->subCategory->name}}</a></li>
                      <li class="breadcrumb-item active" aria-current="page">{{$product->name}}</li>
                   </ol>
@@ -276,14 +276,14 @@
                       <div class="item-excerpt--image">
                         <img src="{{ asset('storage/product/'.$product->product_image_primary->image) }}" alt="{{$product->name}}"/>
                         <div class="item-excerpt--action">
-                            <a href="{{route('products.product-detail',$product->slug)}}" class="addToCart">View Details</a>
+                            <a href="{{route('products.product-detail',[$product->category->slug,$product->subcategory->slug,$product->slug])}}" class="addToCart">View Details</a>
                         </div>
                       </div>
                       <div class="item-excerpt--details">
                          <div class="item-excerpt--meta">
                             <div class="title">
                               <h4>
-                                <a href="{{route('products.product-detail',$product->slug)}}">{{$product->name}}</a>
+                                <a href="{{route('products.product-detail',[$product->category->slug,$product->subcategory->slug,$product->slug])}}">{{$product->name}}</a>
                               </h4>
                             </div>
                          </div>

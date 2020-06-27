@@ -287,9 +287,13 @@
                         <ul>
                            <li><a href="{{url('/about-us') }}">About</a></li>
                            <li><a href="{{url('/contact-us') }}">Contact Us</a></li>
-                           <li><a href="{{url('/products/furnitures') }}">Furniture</a></li>
-                           <li><a href="{{url('/products/electrical') }}">Electrical</a></li>
-                           <li><a href="{{url('/products/consumable') }}">Consumable</a></li>
+                            @foreach ($headerCategories as $headerCategory)
+                                <li>
+                                  <a href="{{route('products.category-list',[$headerCategory->slug])}}">
+                                     {{$headerCategory->name}}
+                                  </a>
+                                </li>
+                            @endforeach
                            <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
                         </ul>
                      </div>
@@ -383,52 +387,6 @@
                 }
 
             });
-
-        //    $.widget( "custom.catcomplete", $.ui.autocomplete, {
-        //         _create: function() {
-        //             this._super();
-        //             this.widget().menu( "option", "items", "> :not(.ui-autocomplete-category)" );
-        //         },
-
-        //         _renderMenu: function( ul, items ) {
-        //             var self = this,
-        //             that = this,
-        //             currentCategory = "";
-        //             $.each( items, function( index, item ) {
-        //                 if ( item.category != currentCategory ) {
-
-        //                     ul.append( "<div class='ui-autocomplete-category'>" + item.category + "</div>");
-        //                     currentCategory = item.category;
-
-        //                 }
-
-        //                 that._renderItemData( ul, item );
-        //             });
-        //             // ul.find('.ui-autocomplete-category').each(function() {
-        //             //     $(this).nextUntil('div')
-        //             //             .andSelf()
-        //             //             .wrapAll('<div class="ui-block">')
-        //             //             .nextUntil('div')
-        //             //             .wrapAll('<div class="ui-list">');
-        //             // });
-
-        //             // $.each( items, function( index, item ) {
-        //             // var li;
-
-        //             // li = that._renderItemData( ul, item );
-
-        //             // if ( item.category ) {
-        //             //         li.addClass("ui-category");
-        //             // }
-        //             // });
-        //         },
-        //         _renderItem: function( ul, item) {
-        //             return $( "<li></li>" )
-        //             .data( "item.autocomplete", item )
-        //             .append( "<a>" + item.label + "</a>" )
-        //             .appendTo( ul );
-        //         },
-        //     });
 
             $.widget( "custom.catcomplete", $.ui.autocomplete, {
                 _create: function() {
@@ -560,7 +518,7 @@
                             // $('#add-query').animate({ scrollTop:180},'slow');
                             setTimeout(function(){
                                 //  $('#enquiry-result').hide();
-                                 window.location = "/products/"+query_category_slug;
+                                 window.location = "/"+query_category_slug;
                             }, 3000);
                             // $("#queryForm").trigger("reset");
                         }
