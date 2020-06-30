@@ -31,12 +31,21 @@
                          <h3>{{$brand->name}}</h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
-                         <?php echo $brand->description; ?>
+                         <?php echo $brand->short_description; ?>
                      </div>
                 </div>
              </div>
           </div>
        </div>
+       <div class="col-12 col-sm-12 col-md-12">
+        <div class="brand-details--properties">
+           <div class="">
+                <div class="ecommerce-item--excerpt">
+                    <?php echo $brand->description; ?>
+                </div>
+           </div>
+        </div>
+     </div>
     </div>
 </section>
 @endsection

@@ -13,58 +13,6 @@ use App\Http\Middleware\CheckRedirect;
 
 Auth::routes();
 
-Route::group(['middleware' => [CheckRedirect::class]], function () {
-
-    Route::get('/', 'HomeController@home')->name('home');
-
-    Route::get('/product/search/{searchQuery}', 'ProductController@productSearch')->name('products.search');
-
-
-    Route::get('/send/email', 'HomeController@mail');
-    Route::get('/cart', 'CartController@list')->name('cart');
-    Route::delete('/cart-item-delete/{product_id}', 'CartController@cartItemDelete')->name('cartItemDelete');
-
-    Route::post('/addTocart', 'ProductController@addTocart')->name('addTocart');
-    Route::get('/getCookie', 'ProductController@getCookie')->name('getCookie');
-
-    Route::get('/checkout', 'OrderController@checkout')->name('checkout');
-    Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
-    Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
-
-    Route::get('/my-account', 'UserController@profile')->name('users.profile');
-    Route::post('/my-account', 'UserController@changePassword')->name('users.changePassword');
-
-    Route::get('/my-orders', 'OrderController@list')->name('orders.list');
-    Route::get('/my-order/{order}', 'OrderController@show')->name('orders.show');
-    Route::get('/downloadPDF/{id}','OrderController@downloadPDF')->name('orders.downloadPDF');
-
-    Route::get('/write-review/{product_id}/{order_row_id}', 'ReviewController@feedback')->name('write-review');
-    Route::post('/saveReview', 'ReviewController@saveReview')->name('saveReview');
-
-    Route::get('/academy', 'EventController@academy')->name('event.academy');
-    Route::get('/academy-details/{id}', 'EventController@academyDetails')->name('event.academyDetails');
-    Route::post('/academy-buy/{id}', 'EventController@academyBuy')->name('event.academyBuy');
-
-    Route::get('/care', 'EnquiryController@care')->name('enquiry.care');
-    Route::get('/plus', 'EnquiryController@plus')->name('enquiry.plus');
-    Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
-    Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
-    Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
-
-    Route::get('/blogs', 'BlogController@list')->name('blogs.list');
-    Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');
-    Route::get('/advanceBlogSearch/{search}', 'BlogController@advanceBlogSearch')->name('advanceBlogSearch');
-    Route::get('/brands','BrandController@list')->name('brand.list');
-    Route::get('/{name}/b','BrandController@detail')->name('brand.detail');
-    Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
-
-    Route::get('/{category}', 'ProductController@categoryList')->name('products.category-list');
-    Route::get('/{category}/{subcategory}', 'ProductController@list')->name('products.list');
-    Route::get('/{category}/{subcategory}/{product}', 'ProductController@productDetail')->name('products.product-detail');
-});
-
-
-
 Route::prefix('sarkar')->group(function () {
 
 	Route::resource('/users','admin\AdminController');
@@ -126,6 +74,60 @@ Route::prefix('sarkar')->group(function () {
     Route::resource('brands','admin\BrandController');
 
 });
+
+Route::group(['middleware' => [CheckRedirect::class]], function () {
+
+    Route::get('/', 'HomeController@home')->name('home');
+
+    Route::get('/product/search/{searchQuery}', 'ProductController@productSearch')->name('products.search');
+
+
+    Route::get('/send/email', 'HomeController@mail');
+    Route::get('/cart', 'CartController@list')->name('cart');
+    Route::delete('/cart-item-delete/{product_id}', 'CartController@cartItemDelete')->name('cartItemDelete');
+
+    Route::post('/addTocart', 'ProductController@addTocart')->name('addTocart');
+    Route::get('/getCookie', 'ProductController@getCookie')->name('getCookie');
+
+    Route::get('/checkout', 'OrderController@checkout')->name('checkout');
+    Route::post('/saveCheckout', 'OrderController@saveCheckout')->name('saveCheckout');
+    Route::get('/thanks', 'OrderController@thanks')->name('orders.thanks');
+
+    Route::get('/my-account', 'UserController@profile')->name('users.profile');
+    Route::post('/my-account', 'UserController@changePassword')->name('users.changePassword');
+
+    Route::get('/my-orders', 'OrderController@list')->name('orders.list');
+    Route::get('/my-order/{order}', 'OrderController@show')->name('orders.show');
+    Route::get('/downloadPDF/{id}','OrderController@downloadPDF')->name('orders.downloadPDF');
+
+    Route::get('/write-review/{product_id}/{order_row_id}', 'ReviewController@feedback')->name('write-review');
+    Route::post('/saveReview', 'ReviewController@saveReview')->name('saveReview');
+
+    Route::get('/academy', 'EventController@academy')->name('event.academy');
+    Route::get('/academy-details/{id}', 'EventController@academyDetails')->name('event.academyDetails');
+    Route::post('/academy-buy/{id}', 'EventController@academyBuy')->name('event.academyBuy');
+
+    Route::get('/care', 'EnquiryController@care')->name('enquiry.care');
+    Route::get('/plus', 'EnquiryController@plus')->name('enquiry.plus');
+    Route::get('/xpress', 'EnquiryController@xpress')->name('enquiry.xpress');
+    Route::post('/storeEnquiry', 'EnquiryController@store')->name('enquiry.store');
+    Route::post('/complaint-search','EnquiryController@complaintSearch')->name('enquiry.complaintSearch');
+
+    Route::get('/blogs', 'BlogController@list')->name('blogs.list');
+    Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');
+    Route::get('/advanceBlogSearch/{search}', 'BlogController@advanceBlogSearch')->name('advanceBlogSearch');
+    Route::get('/brands','BrandController@list')->name('brand.list');
+    Route::get('/{name}/b','BrandController@detail')->name('brand.detail');
+    Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
+
+    Route::get('/{category}', 'ProductController@categoryList')->name('products.category-list');
+    Route::get('/{category}/{subcategory}', 'ProductController@list')->name('products.list');
+    Route::get('/{category}/{subcategory}/{product}', 'ProductController@productDetail')->name('products.product-detail');
+});
+
+
+
+
 
 Route::get('/{page}', 'HomeController@page')->name('{page}');
 
