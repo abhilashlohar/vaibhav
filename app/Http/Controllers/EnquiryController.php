@@ -49,6 +49,7 @@ class EnquiryController extends Controller
                         ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
         }
         elseif ($request->enquiry_type == 'Product Enquiry') {
+            sendSms($request->mobile_no,"Thank you for placing an inquiry with us. Our representative will contact you soon.");
             Mail::to($request->email)->send(
                 new EnquiryReplyFromAdmin(
                     $request->name,

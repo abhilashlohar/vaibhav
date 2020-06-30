@@ -287,6 +287,7 @@ class OrderController extends Controller
             }
 
             Cart::where('user_id',$user->id)->delete();
+            sendSms($request->ship_mobile,"Thank you for placing an order with us. We will be processing it soon.");
             Mail::to($user->email)->send(
                 new ProductOrder(
                     $user->name,

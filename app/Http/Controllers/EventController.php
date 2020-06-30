@@ -151,6 +151,7 @@ class EventController extends Controller
             $Order->razorpay_payment_id = $razorpay_payment_id;
             $Order->razorpay_signature = $razorpay_signature;
             $Order->save();
+            sendSms($request->mobile,"Thank you for registering. We will share the other details soon.");
             Mail::to($request->email)->send(
                 new EventBookingOrder(
                     $request->name,
