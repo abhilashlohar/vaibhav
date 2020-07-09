@@ -461,6 +461,378 @@ $(document).ready(function() {
   });
 });
 
+/* ========== Owl Consumables Slider 03 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-3");
+  var thumbs = $("#thumbs-3");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+
+/* ========== Owl Consumables Slider 02 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-4");
+  var thumbs = $("#thumbs-4");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+
+/* ========== Owl Consumables Slider 05 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-5");
+  var thumbs = $("#thumbs-5");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+
+/* ========== Owl Consumables Slider 06 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-6");
+  var thumbs = $("#thumbs-6");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+
 /* Checkout Page Form Validations */
 (function() {
     'use strict';
@@ -480,6 +852,192 @@ $(document).ready(function() {
       });
     }, false);
 })();
+
+/* ========== Owl Consumables Slider 07 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-7");
+  var thumbs = $("#thumbs-7");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
+
+/* ========== Owl Consumables Slider 08 ============== */
+$(document).ready(function() {
+  var bigimage = $("#big-8");
+  var thumbs = $("#thumbs-8");
+  //var totalslides = 10;
+  var syncedSecondary = true;
+
+  bigimage
+    .owlCarousel({
+    items: 1,
+    slideSpeed: 1000,
+    nav: false,
+    animateOut: 'fadeOut',
+    autoplay: false,
+    dots: false,
+    loop: false,
+    responsiveRefreshRate: 200,
+    navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+    ]
+  })
+    .on("changed.owl.carousel", syncPosition);
+
+  thumbs
+    .on("initialized.owl.carousel", function() {
+    thumbs
+      .find(".owl-item")
+      .eq(0)
+      .addClass("current");
+  })
+    .owlCarousel({
+   items: 4,
+   dots: false,
+   margin: 10,
+   animateOut: 'fadeOut',
+   nav: true,
+   navText: [
+      '<i class="fa fa-arrow-left" aria-hidden="true"></i>',
+      '<i class="fa fa-arrow-right" aria-hidden="true"></i>'
+   ],
+   smartSpeed: 200,
+   slideSpeed: 500,
+   slideBy: 3,
+   responsiveRefreshRate: 100
+  })
+  .on("changed.owl.carousel", syncPosition2);
+
+  function syncPosition(el) {
+    //if loop is set to false, then you have to uncomment the next line
+    //var current = el.item.index;
+
+    //to disable loop, comment this block
+    var count = el.item.count - 1;
+    var current = Math.round(el.item.index - el.item.count / 2 - 0.5);
+
+    if (current < 0) {
+      current = count;
+    }
+    if (current > count) {
+      current = 0;
+    }
+    //to this
+    thumbs
+      .find(".owl-item")
+      .removeClass("current")
+      .eq(current)
+      .addClass("current");
+    var onscreen = thumbs.find(".owl-item.active").length - 1;
+    var start = thumbs
+    .find(".owl-item.active")
+    .first()
+    .index();
+    var end = thumbs
+    .find(".owl-item.active")
+    .last()
+    .index();
+  }
+
+  function syncPosition2(el) {
+    if (syncedSecondary) {
+      var number = el.item.index;
+      bigimage.data("owl.carousel").to(number, 100, true);
+    }
+  }
+
+  thumbs.on("click", ".owl-item", function(e) {
+    e.preventDefault();
+    var number = $(this).index();
+    bigimage.data("owl.carousel").to(number, 300, true);
+  });
+});
 
 /* Zoom Effect */
 $(document).ready(function(){

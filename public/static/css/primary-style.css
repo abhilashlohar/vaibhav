@@ -1226,6 +1226,9 @@ ul.dropDownMenu ul {
 .ecommerce-item--excerpt {
    position: relative;
 }
+.ecommerce-item--excerpt ul li {
+   font-family: inherit !important;
+}
 .ecommerce-item--excerpt p {
    font-size: 16px;
    line-height: 26px;
@@ -2574,7 +2577,7 @@ Category Page
 }
 .items-archive--wrapper .item-archive--list .item-excerpt--wrap .item-excerpt--details .item-excerpt--meta .title h4 a {
    padding: 0;
-   color: #e9414f;
+   color: #111111;
    line-height: 25px;
    text-decoration: none;
    text-transform: none;
@@ -2830,7 +2833,7 @@ Product Single
 .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3 {
    font-size: 21px;
    line-height: 32px;
-   color: #2e2e2e;
+   color: #e94150;
    position: relative;
 }
 .product-detail .single-excerpt--wrapper .single-product--properties .ecommerce-item--details .ecommerce-item--name h3:before {
@@ -5296,9 +5299,19 @@ Login Wrapper
 	   color: #ffffff;
     	font-size: 12px;
     	line-height: 27px;
-    	margin: 30px 0 30px 0;
-    }
-    .highlighted-single--wrapper .single-product--properties {
+    	margin: 30px 0 20px 0;
+      padding-bottom: 15px;
+      border-bottom: 2px dotted #3b3d40;
+   }
+   .footer-title--wrap h3:before {
+      content: "";
+      width: 42%;
+      background: #e94150;
+      height: 2px;
+      position: absolute;
+      bottom: -2px;
+   }
+   .highlighted-single--wrapper .single-product--properties {
 	   position: relative;
 	   width: 100%;
 	   margin-top: 0px;

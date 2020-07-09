@@ -29,14 +29,6 @@
                    </div>
                 </div>
              </div>
-             <div class="item">
-                <div class="slideshow-details--wrap">
-                   <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                      <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                   </div>
-                </div>
-             </div>
           </div>
        </div>
     </div>
@@ -58,14 +50,6 @@
         <div class="container-fluid">
         <div class="row">
             <div class="owl-carousel category-slideshow owl-theme">
-                <div class="item">
-                    <div class="slideshow-details--wrap">
-                       <div class="slideshow-image--wrap">
-                           <img class="slide-on--desktop owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_desktop) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                           <img class="slide-on--mobile owl-lazy" data-src="{{ asset('storage/category/'.$category->banner_image_mobile) }}" alt="{{$category->name}}" title="{{$category->name}}">
-                       </div>
-                    </div>
-                </div>
                 <div class="item">
                     <div class="slideshow-details--wrap">
                        <div class="slideshow-image--wrap">

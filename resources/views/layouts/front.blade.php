@@ -314,17 +314,17 @@
                      </div>
                      <div class="footer-social--wrap">
                         <ul>
-                           <li><a href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                           <li><a href="#" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                           <li><a href="https://www.facebook.com/vaibhavstores.in" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                           <li><a href="https://www.instagram.com/vaibhavstores/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                           <li><a href="https://in.pinterest.com/vaibhavstores/" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                           <li><a href="https://www.youtube.com/channel/UCmmEZN3IKueozmKURAF-BxA?" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
                </div>
             </div>
             <div class="footer-copyright--wrap">
-            	2019@28 South Ventures LLP - All rights reserved - <a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a>
+            	28 SOUTH VENTURES LLP - ALL RIGHTS RESERVED
             </div>
          </div>
       </div>
