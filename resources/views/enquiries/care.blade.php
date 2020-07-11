@@ -64,21 +64,47 @@
           </div> -->
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
-                @foreach ($headerCategories as $headerCategory)
+                {{-- @foreach ($headerCategories as $headerCategory) --}}
                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                    <div class="support-category--thumbnail">
                       <div class="support-categry--image">
                          <div class="title">
-                            <h3>{{$headerCategory->name}}</h3>
+                            <h3>Furnitures</h3>
                          </div>
-                         <div class="image"><img src="{{ asset('storage/category/'.$headerCategory->image) }}" alt="Furniture"/></div>
+                         <div class="image"><img src="{{ asset('storage/category/') }}" alt="Furniture"/></div>
                       </div>
                       <div class="support-categry--action">
                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
                       </div>
                    </div>
                 </div>
-                @endforeach
+                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="support-category--thumbnail">
+                       <div class="support-categry--image">
+                          <div class="title">
+                             <h3>Consumables</h3>
+                          </div>
+                          <div class="image"><img src="{{ asset('storage/category/') }}" alt="Furniture"/></div>
+                       </div>
+                       <div class="support-categry--action">
+                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="support-category--thumbnail">
+                       <div class="support-categry--image">
+                          <div class="title">
+                             <h3>Electricals</h3>
+                          </div>
+                          <div class="image"><img src="{{ asset('storage/category/') }}" alt="Furniture"/></div>
+                       </div>
+                       <div class="support-categry--action">
+                          <a href="javascript:void(0)" class="btn btn-primary care-enquiry">File Complaint</a>
+                       </div>
+                    </div>
+                 </div>
+                {{-- @endforeach --}}
              </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
