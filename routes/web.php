@@ -117,6 +117,7 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
     Route::get('/blog/{slug}', 'BlogController@view')->name('blogs.view');
     Route::get('/advanceBlogSearch/{search}', 'BlogController@advanceBlogSearch')->name('advanceBlogSearch');
     Route::get('/brands','BrandController@list')->name('brand.list');
+    Route::get('/v/{page}', 'HomeController@page')->name('{page}');
     Route::get('/{name}/b','BrandController@detail')->name('brand.detail');
     Route::get('/advanceSearch/{search}', 'HomeController@advanceSearch')->name('advanceSearch');
 
@@ -129,5 +130,5 @@ Route::group(['middleware' => [CheckRedirect::class]], function () {
 
 
 
-Route::get('/{page}', 'HomeController@page')->name('{page}');
+
 

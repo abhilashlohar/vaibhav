@@ -285,8 +285,8 @@
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
-                           <li><a href="{{url('/about-us') }}">About</a></li>
-                           <li><a href="{{url('/contact-us') }}">Contact Us</a></li>
+                           <li><a href="{{url('/v/about-us') }}">About</a></li>
+                           <li><a href="{{url('/v/contact-us') }}">Contact Us</a></li>
                             @foreach ($headerCategories as $headerCategory)
                                 <li>
                                   <a href="{{route('products.category-list',[$headerCategory->slug])}}">
