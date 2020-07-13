@@ -3656,11 +3656,6 @@ Login Wrapper
    position: relative;
    width: 100%;
    padding: 30px;
-   border-top-left-radius: 39%;
-   border-bottom-right-radius: 39%;
-   box-shadow: 2px 2px 10px #efefef;
-   min-height: 290px;
-   max-height: 360px;
    text-align: center;
    display: flex;
    flex-flow: column wrap;
@@ -3676,7 +3671,6 @@ Login Wrapper
    margin-bottom: 30px;
 }
 .support-category--wrap .support-category--thumbnail .support-categry--image img {
-   max-width: 75%;
    width: 100%
 }
 .support-category--wrap .support-category--thumbnail .support-categry--action {
