@@ -1183,22 +1183,17 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
                <div class="follow-images--wrap">
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/social-image-03.png" alt=""/>
+                     <img src="<?php echo url('/'); ?>/static/images/facebook.jpg" alt=""/>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/social-image-01.png" alt=""/>
+                     <img src="<?php echo url('/'); ?>/static/images/instagram.jpg" alt=""/>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/social-image-02.png" alt=""/>
+                     <img src="<?php echo url('/'); ?>/static/images/pinterest.jpg" alt=""/>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/social-image-03.png" alt=""/>
+                     <img src="<?php echo url('/'); ?>/static/images/youtube.jpg" alt=""/>
                   </div>
-               </div>
-            </div>
-            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
-               <div class="follow-action--wrap">
-                  <a href="{{ route('products.search','viewAll') }}" class="btn">View On Instagram</a>
                </div>
             </div>
          </div>
