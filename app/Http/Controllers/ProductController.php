@@ -192,9 +192,16 @@ class ProductController extends Controller
         // ])->count();
 
         // $ratings = Review::where('product_id',$product->id)->avg('rating');
+
+        if (strpos($category_slug, 'electrical') === FALSE) {
+            $enquiry_type = 'electrical';
+         }
+         else{
+            $enquiry_type = 'furniture';
+         }
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-detail';
-        return view('products.product-detail',compact('product','page_title','body_class','related_products'))
+        return view('products.product-detail',compact('product','page_title','body_class','related_products','enquiry_type'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 

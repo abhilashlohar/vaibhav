@@ -482,6 +482,7 @@
 
             var query_product_id = 0;
             var query_category_slug = "";
+            var enquiry_type = "";
             $(document).on('click', '.open-enquery-modal', function(e){
                 $('#enquiry-result').hide();
                 $('#enquiry-error').hide();
@@ -490,6 +491,7 @@
                 });
                 query_product_id = $(this).attr('product_id');
                 query_category_slug = $(this).attr('category_slug');
+                enquiry_type = $(this).attr('enquiry_type');
             });
 
             $(document).on('click','.queryToEnquiry',function(e){
@@ -508,7 +510,7 @@
                     $.ajax({
                         type:'POST',
                         url:"{{ route('enquiry.store') }}",
-                        data:{product_id:product_id, name:name, email:email, mobile_no:mobile_no, enquiry_message:enquiry_message, enquiry_type:'Product Enquiry'},
+                        data:{product_id:product_id, name:name, email:email, mobile_no:mobile_no, enquiry_message:enquiry_message, enquiry_type:enquiry_type},
                         success:function(data){
                             $('#queryForm').hide();
                             $('#enquiry-result').show();

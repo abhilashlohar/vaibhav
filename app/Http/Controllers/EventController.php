@@ -159,6 +159,13 @@ class EventController extends Controller
                     'Your event ticket booked successfully.'
                     )
                 );
+            Mail::to('academy@vaibhavstores.in')->send(
+                    new EventBookingOrder(
+                        $request->name,
+                        $Order->order_no,
+                        'Event ticket booked.'
+                        )
+                    );
             return redirect()->route('event.academy')
                         ->with('success','Event ticket booked successfully.');
         }

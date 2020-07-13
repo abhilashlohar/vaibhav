@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Enquiry;
 use App\Category;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\EnquiryReplyFromAdmin;
+use App\Mail\CustomEmailId;
 
 class EnquiryController extends Controller
 {
@@ -32,29 +32,39 @@ class EnquiryController extends Controller
     }
     public function store(Request $request)
     {
-        if($request->enquiry_type == 'Care' || $request->enquiry_type == 'Product Enquiry') {
+        if($request->enquiry_type == 'Care' || $request->enquiry_type == 'furniture' || $request->enquiry_type == 'consumable' || $request->enquiry_type == 'electrical') {
             $ticket_no = $this->newTicketNumber();
             $request->request->add(['ticket_no' => $ticket_no]);
         }
         Enquiry::create($request->all());
         if($request->enquiry_type == 'Care') {
-            // Mail::to($request->email)->send(
-            //     new EnquiryReplyFromAdmin(
-            //         $request->name,
-            //         $ticket_no,
-            //         'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
-            //         )
-            //     );
+            $from_email = 'service@vaibhavcare.com';
+            Mail::to($from_email)->send(
+                new CustomEmailId(
+                    $from_email,
+                    $request->name,
+                    $ticket_no,
+                    'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
+                    )
+                );
             return redirect()->route('enquiry.care')
                         ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
         }
-        elseif ($request->enquiry_type == 'Product Enquiry') {
+        else if ($request->enquiry_type == 'furniture' || $request->enquiry_type == 'consumable' || $request->enquiry_type == 'electrical') {
+            if($request->enquiry_type == 'furniture') {
+                $from_email = 'info@vaibhavstores.in';
+            }
+            else if($request->enquiry_type == 'consumable') {
+                $from_email = 'enquiry@vaibhavstores.in';
+            }
+            else if($request->enquiry_type == 'electrical') {
+                $from_email = 'enquiry@vaibhavstores.in';
+            }
             sendSms($request->mobile_no,"Thank you for placing an inquiry with us. Our representative will contact you soon.");
-            Mail::to($request->email)->send(
-                new EnquiryReplyFromAdmin(
-                    $request->name,
+            Mail::to($from_email)->send(
+                new CustomEmailId(
                     $ticket_no,
-                    'Thank you for enquiry and we will get back to you.'
+                    $request->enquiry_message
                     )
                 );
                 return 'Thank you for enquiry and we will get back to you.';
@@ -63,11 +73,33 @@ class EnquiryController extends Controller
             return 'Email subscribed successfully.';
         }
         elseif($request->enquiry_type == 'Xpress') {
+            Mail::to('sales@vaibhavxpress.com')->send(
+                new CustomEmailId(
+                    '',
+                    $request->enquiry_message
+                    )
+                );
             return redirect()->route('enquiry.xpress')
                         ->with('success','Enquiry created successfully');
         }
         elseif($request->enquiry_type == 'Plus') {
+            Mail::to('sales@vaibhavplus.com')->send(
+                new CustomEmailId(
+                    '',
+                    $request->enquiry_message
+                    )
+                );
             return redirect()->route('enquiry.plus')
+                        ->with('success','Enquiry created successfully');
+        }
+        elseif($request->enquiry_type == 'brand') {
+            Mail::to('sales@vaibhavxpress.com')->send(
+                new CustomEmailId(
+                    '',
+                    $request->enquiry_message
+                    )
+                );
+            return redirect()->route('enquiry.brand')
                         ->with('success','Enquiry created successfully');
         }
     }
