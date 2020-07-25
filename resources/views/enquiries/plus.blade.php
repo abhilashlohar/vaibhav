@@ -8,8 +8,8 @@
              <div class="item">
                 <div class="slideshow-details--wrap">
                    <div class="slideshow-image--wrap">
-                      <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-slideshow-01.jpg" alt="" title="">
-                      <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/vaibhav-plus-slideshow-01.jpg" alt="" title="">
+                     <img class="slide-on--desktop" src="<?php echo url('/'); ?>/static/images/plus-slideshow-01.jpg" alt="" title="">
+                     <img class="slide-on--mobile" src="<?php echo url('/'); ?>/static/images/plus-slideshow-01.jpg" alt="" title="">
                    </div>
                 </div>
              </div>
@@ -179,8 +179,8 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
-                   <p>Mobile - 8884748849</p>
-                   <p>Landline - 41518183</p>
+                   <p>Mobile - +91-8884748849</p>
+                   <p>Landline - 080-41518183</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">

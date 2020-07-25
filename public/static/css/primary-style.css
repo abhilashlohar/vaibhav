@@ -37,6 +37,9 @@ p {
    font-family: 'Lato', sans-serif;
    letter-spacing: 0.01em;
 }
+.btn-link {
+   color: #111111 !important;
+}
 button {
    outline: none !important;
 }
@@ -96,10 +99,13 @@ button {
 }
 @media only screen and (min-width: 0px) {
 /* =========== Header =============== */
-.verticals-ui--wrapper.mobile-specific {
+.verticals-ui--wrapper {
    display: block;
 }
-.verticals-ui--wrapper {
+.verticals-ui--wrapper .vertical-ui-slideshow .slide-on--mobile {
+   display: block;
+}
+.verticals-ui--wrapper .vertical-ui-slideshow .slide-on--desktop {
    display: none;
 }
 .verticals-ui--wrapper.mobile-specific .modal-header .close {
@@ -902,7 +908,7 @@ ul.dropDownMenu ul {
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
    position: absolute;
    right: 0;
-   bottom: 40px;
+   bottom: 20px;
    text-align: right;
 }
 .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
@@ -1452,6 +1458,11 @@ ul.dropDownMenu ul {
 }
 
 /* ================ Store ================= */
+.verticals-ui--wrapper .verticals-block--wrap {
+   max-width: 100%;
+   width: 100%;
+   margin: 0 auto;
+}
 .store-ui--wrapper {
    position: relative;
    width: 100%;
@@ -1618,6 +1629,34 @@ ul.dropDownMenu ul {
    max-width: 100%;
    padding: 0 15px;
    overflow: hidden;
+}
+.verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-next {
+   position: absolute;
+   top: 39%;
+   left: 0px;
+   background: #ffffff;
+   color: #e94150 !important;
+   font-size: 1.9em;
+   height: 48px;
+   width: 48px;
+   line-height: 34px;
+   border: 1px solid #999999;
+   border-top-left-radius: 32%;
+   border-bottom-right-radius: 32%;
+}
+.verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-prev {
+   position: absolute;
+   top: 39%;
+   right: 0px;
+   background: #ffffff;
+   color: #e94150 !important;
+   font-size: 1.9em;
+   height: 48px;
+   width: 48px;
+   line-height: 34px;
+   border: 1px solid #999999;
+   border-top-right-radius: 32%;
+   border-bottom-left-radius: 32%;
 }
 .verticals-ui--wrapper .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: transparent;
@@ -3849,7 +3888,7 @@ Login Wrapper
 .academy-carousel--wrapper  {
    position: relative;
    width: 100%;
-   padding: 60px 0;
+   padding: 60px 0 0 0;
 }
 .academy-carousel--wrapper .academy-carousel--wrap {
    position: relative;
@@ -3915,7 +3954,7 @@ Login Wrapper
 .academy-item--wrapper {
    position: relative;
    width: 100%;
-   padding: 60px 0;
+   padding: 0 0 60px 0;
 }
 .academy-item--wrapper .academy-archive--title {
    position: relative;
@@ -3957,6 +3996,9 @@ Login Wrapper
    border-top-right-radius: 36%;
    overflow: hidden;
    box-shadow: 1px 1px 7px #efefef;
+   max-height: 300px;
+   overflow: hidden;
+   margin-bottom: 20px;
 }
 .academy-item--wrapper .academy-archive--list .academy-excerpt--wrap .academy-excerpt--image img {
    width: 100%;
@@ -4028,7 +4070,7 @@ Login Wrapper
    padding: 0 10px;
 }
 .academy-item--wrapper .academy-archive--list .academy-excerpt--wrap .meta h3 {
-   font-size: 24px;
+   font-size: 19px;
    line-height: 36px;
    text-transform: none;
    font-weight: 400;
@@ -4250,9 +4292,9 @@ Login Wrapper
 	width: 100%;
 }
 .plus-question--wrapper .plus-information--grid .plus-information--picture img {
-	 border-bottom-left-radius: 36%;
+	/* border-bottom-left-radius: 36%;
    border-top-right-radius: 36%;
-   width: 100%;
+   width: 100%; */
 }
 .plus-question--wrapper .plus-information--text {
 	position: relative;
@@ -4808,8 +4850,8 @@ Login Wrapper
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
       position: absolute;
-      bottom: 40px;
-      right: 0;
+      bottom: 24px;
+      right: -15px;
       text-align: right;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--details {
@@ -5137,7 +5179,7 @@ Login Wrapper
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
       position: absolute;
-      bottom: -30px;
+      bottom: 10px;
    }
    #owl-category--one .owl-prev {
       position: absolute;
@@ -5898,17 +5940,32 @@ Login Wrapper
    position: relative;
    width: 100%;
    text-align: center;
-   padding: 60px 30px;
-   box-shadow: 0px 5px 17px #efefef;
-   border-bottom-left-radius: 60%;
-   border-top-right-radius: 60%;
 }
 .brand-details--wrapper .brand-details--grid .brand-details--items .brand-logo--wrap img {
    width: 100%;
-   max-width: 75%;
+   max-width: 90%;
+}
+.prev-next-columns {
+   display: flex;
+   flex-flow: row wrap;
+}
+.prev-next-columns a {
+   display: inline-block;
+   background: #ed1651;
+   padding: 13px 24px;
+   box-shadow: 1px 1px 3px #efefef;
+   border-radius: 7px;
+   color: #ffffff;
+   border: 0;
+   font-size: 13px;
+   margin: 0;
+   text-decoration: none;
+   text-transform: uppercase;
+   box-shadow: none;
+   margin-right: 15px;
 }
 .brand-details--wrapper .brand-details--grid .brand-single--slideshow .item img {
-   max-width: 48%;
+   max-width: 42%;
    margin: 0 auto;
 }
 .brand-details--wrapper .brand-details--grid .brand-details--properties {
@@ -6109,7 +6166,7 @@ Login Wrapper
       transform: rotate(-90deg);
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-       max-width: 60%;
+       max-width: 40%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--buttons a {
       padding: 9px 7px;
@@ -6255,6 +6312,11 @@ Login Wrapper
 @media only screen and (min-width: 768px) {
    .plus-question--wrapper .plus-information--text {
       padding: 30px;
+   }
+   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-prev {
+      position: absolute;
+      top: 39%;
+      right: -90px;
    }
    .padding-0-mobile {
       padding: 0 15px;
@@ -6592,7 +6654,7 @@ Login Wrapper
       text-align: right;
       position: absolute;
       bottom: 0;
-      right: 0;
+      right: -80px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.pink-ui {
       -webkit-box-direction: normal;
@@ -6683,7 +6745,7 @@ Login Wrapper
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
       position: absolute;
-      bottom: 36px;
+      bottom:0px;
       right: 30px;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui {
@@ -6864,15 +6926,26 @@ Login Wrapper
        max-height: 700px;
        overflow: hidden;
    }
+   .verticals-ui--wrapper .vertical-ui-slideshow .slide-on--mobile {
+      display: none;
+   }
+   .verticals-ui--wrapper .vertical-ui-slideshow .slide-on--desktop {
+      display: block;
+   }
+   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-next {
+      position: absolute;
+      top: 39%;
+      left: -90px;
+   }
    .single-description--text table {
       max-width: 75%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image {
        text-align: center;
-       bottom: 0;
+       bottom: 20px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image img {
-      max-width: 100%;
+      max-width: 46%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--buttons button {
     color: #3f757f;
@@ -6986,7 +7059,6 @@ Login Wrapper
       border-top-right-radius: 150px;
       border-bottom-left-radius: 150px;
    }
-
    .highlighted-single--wrapper .single-product--properties .ecommerce-item--details {
       text-align: left;
       direction: ltr;
@@ -7382,6 +7454,9 @@ Login Wrapper
       -webkit-flex-direction: row;
       -ms-flex-direction: row;
       flex-direction: row;
+      max-width: 75%;
+      width: 100%;
+      margin: 0 auto;
    }
    .verticals-ui--wrapper .verticals-block--wrap .verticals-details--wrap .verticals-brand--wrap {
       position: relative;
@@ -7610,7 +7685,7 @@ Login Wrapper
       right: 50px;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-      max-width: 80%;
+      max-width: 51%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
       max-width: 70%;
@@ -7853,8 +7928,8 @@ Login Wrapper
 @media only screen and (min-width: 1280px) {
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image {
       position: absolute;
-      bottom: -30px;
-      right: 22%;
+      bottom: 0px;
+      right: 7%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--details {
       padding: 11% 33% 10% 3%;
@@ -7868,24 +7943,30 @@ Login Wrapper
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.peach-ui .ecommerce-item--image img {
       max-width: 79%;
+      margin-bottom:40px;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image img {
       max-width: 65%;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--image img {
-      max-width: 70%;
+    max-width: 80%;
+    margin: -40px;
+    padding-right: 10px;
+    margin-bottom:70px;
+}
+
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.pink-ui .ecommerce-item--image {
       position: absolute;
-      right: -120px;
-      bottom: 30px;
+      right: -85px;
+      bottom: -30px;
       text-align: center;
    }
    .category-ui--one .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image img {
-      max-width: 80%;
+      max-width: 54%;
    }
    .category-ui--two .category-blocks--ui .category-block--wrap.green-ui .ecommerce-item--image img {
-      max-width: 60%;
+      max-width: 44%;
    }
 }
 
@@ -7897,14 +7978,14 @@ Login Wrapper
 
 @media only screen and (min-width: 1340px) {
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
-      right: -210px;
+      right: -124px;
    }
 }
 
 
 @media only screen and (min-width: 1380px) {
    .category-ui--two .category-blocks--ui .category-block--wrap.blue-ui .ecommerce-item--image {
-      right: 80px;
+      right: -100px;
    }
 }
 

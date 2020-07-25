@@ -179,8 +179,8 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
-                   <p>Mobile - 8073422019</p>
-                   <p>Landline - 22222082</p>
+                   <p>Mobile - +91-8073422019</p>
+                   <p>Landline - +080-22222082</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">

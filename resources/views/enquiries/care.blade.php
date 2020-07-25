@@ -31,6 +31,87 @@
 </section>
 
 <section class="support-search--wrapper">
+   <div class="container-fluid">
+       <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+             <div class="title-ui--wrap">
+                <div class="title-text--middle">
+                   <h2>Frequently Asked Questions</h2>
+                </div>
+            </div>
+         </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+               <div class="container py-4 my-4">
+                  <div class="row">
+                     <div class="col-10 mx-auto">
+                        <div class="accordion" id="faqExample">
+                           <div class="card">
+                                <div class="card-header p-2" id="headingOne">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                          Q: How does this work?
+                                        </button>
+                                      </h5>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
+                                    <div class="card-body">
+                                        <b>Answer:</b> It works using the Bootstrap 4 collapse component with cards to make a vertical accordion that expands and collapses as questions are toggled.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header p-2" id="headingTwo">
+                                    <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                      Q: What is Bootstrap 4?
+                                    </button>
+                                  </h5>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
+                                    <div class="card-body">
+                                        Bootstrap is the most popular CSS framework in the world. The latest version released in 2018 is Bootstrap 4. Bootstrap can be used to quickly build responsive websites.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header p-2" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          Q. What is another question?
+                                        </button>
+                                      </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                                    <div class="card-body">
+                                        The answer to the question can go here.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header p-2" id="headingThree">
+                                    <h5 class="mb-0">
+                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                          Q. What is the next question?
+                                        </button>
+                                      </h5>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
+                                    <div class="card-body">
+                                        The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+             <!--/row-->
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section class="support-search--wrapper">
     <div class="container-fluid">
        <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -43,25 +124,7 @@
                 </div>
              </div>
           </div>
-          <!-- <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                <form>
-                    <div class="support-search--form">
-                        <div class="form-group col-12 col-sm-9 col-md-9 col-lg-9 col-xl-9">
-                            <input type="text" class="form-control" id="ticket_no" placeholder="Search complaint number...">
-                        </div>
-                        <div class="form-group col-12 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                            <button type="submit" id="search_complaint" class="btn btn-primary">Search</button>
-                        </div>
-                    </div>
-                </form>
-          </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-            <div class="support-search--results">
-               <div class="form-group col-md-12" id="enquiry-complaint-view">
-
-               </div>
-            </div>
-          </div> -->
+         <!--container-->
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="support-category--wrap">
                 {{-- @foreach ($headerCategories as $headerCategory) --}}

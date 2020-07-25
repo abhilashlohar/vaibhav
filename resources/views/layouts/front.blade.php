@@ -258,7 +258,8 @@
                         <h3>About the brand</h3>
                      </div>
                      <div class="footer-about--text">
-                        <p>Vaibhav Stores is the one stop shop for salons & beauty professionals for all their business set up needs. The most trusted entity in the beauty industry in South India, Vaibhav Stores is synonymous with authentic original products, expert guidance & impeccable after sales service.</p>
+                        <p>Spread over a sprawling 15,000 square feet facility spanning 3 floors & spread over 2 locations, Vaibhav Stores is the largest one stop shop for salon furniture, beauty products & equipments in Bengaluru. Synonymous with authentic products, courteous & well informed sales professionals, & uncompromisable quality, Vaibhav Stores is the true hallmark of our company’s ambitions.</p>
+                        <a href="http://28southventures.com/" target="_blank"><img src="<?php echo url('/'); ?>/static/images/logo-28-south-ventures.png" alt="28 South Ventures LLP" width="189"></a>
                      </div>
                   </div>
                </div>
@@ -294,7 +295,7 @@
                                   </a>
                                 </li>
                             @endforeach
-                           <li><a href="{{url('/terms-and-conditions') }}">Terms & Conditions</a></li>
+                           <li><a href="{{url('/v/terms-and-conditions') }}">Terms & Conditions</a></li>
                         </ul>
                      </div>
                   </div>

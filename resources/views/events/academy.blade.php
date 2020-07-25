@@ -35,7 +35,7 @@
       </div>
 </section>
 
- <section class="academy-information--wrapper">
+<!-- <section class="academy-information--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="breadcrumb-wrap">
@@ -63,13 +63,85 @@
           <div class="academy-information--grid">
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="academy-information--image">
-                   <img src="<?php echo url('/'); ?>/img/academy-information-image-01.png" alt=""/>
+                   <img src="<?php // echo url('/'); ?>/img/academy-information-image-01.png" alt=""/>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="academy-information--text">
                    <p>Vaibhav Stores is a skill development initiative by us to help beauty professionals hone their skills & stay up to date with latest developments of our industry. You can enrol for workshops, seminars & training sessions led by expert beauty professionals. Its also an effective platform to network with other beauty professionals & build contacts.</p>
                    <a href="#" class="btn btn-primary">Read More</a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section> -->
+
+  <section class="plus-question--wrapper">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>Academy</h2>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>What is Academy?</h3>
+                   <p>Vaibhav Xpress is a specialised delivery only service. Covering the length and breadth of Bengaluru city & its outskirts, Xpress is our dedicated unit only for shipping beauty solutions to our Dealers & Distributors.</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-01.jpg" alt="" title="">
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>How it works?</h3>
+                   <p>If you are a Dealer or Distributor of our products, place your order with us on Call, Email or Whatsapp. Our trained logistics & supply chain management team will compile your order & arrange for it to be shipped to you directly at your doorstep.</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-02.jpg" alt="" title="">
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-03.jpg" alt="" title="">
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>Who is it for?</h3>
+                   <p>Dealers & Distributors for equipments, consumables & furniture.</p>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-04.jpg" alt="" title="">
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>Whom to get in touch with?</h3>
+                   <p>Please get in touch with the Plus team on the contact details mentioned below</p>
                 </div>
              </div>
           </div>
@@ -114,11 +186,6 @@
 @if (count($upcomingEvents) > 0)
  <section class="academy-item--wrapper">
     <div class="container-fluid">
-       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <div class="academy-archive--title">
-             <h3>Events</h3>
-          </div>
-       </div>
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="academy-archive--list">
             @foreach ($upcomingEvents as $upcomingEvent)

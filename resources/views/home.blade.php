@@ -12,7 +12,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/products/Furnitures">
+                        <a href="http://13.127.186.154/consumable">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-01.jpg" alt="" title="">
                         </a>
@@ -22,7 +22,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/products/Furnitures">
+                        <a href="http://13.127.186.154/consumable">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
                         </a>
@@ -32,7 +32,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/products/Furnitures">
+                        <a href="http://13.127.186.154/salon-furnitures">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
                         </a>
@@ -42,7 +42,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/products/Furnitures">
+                        <a href="http://13.127.186.154/salon-furnitures">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
                         </a>
@@ -73,7 +73,7 @@
                   <h2>Furniture</h2>
                </div>
                <div class="title-text--action">
-                  <a href="http://13.127.186.154/products/Furnitures" target="_blank">View All</a>
+                  <a href="http://13.127.186.154/salon-furnitures" target="_blank">View All</a>
                </div>
             </div>
          </div>
@@ -732,34 +732,97 @@
                <div class="modal-body">
                   <div class="card-columns">
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-01.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-02.jpg "alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-03.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-04.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-05.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-06.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-07.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-08.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-09.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-10.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-11.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-12.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-13.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-14.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-15.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-16.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-17.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-18.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-19.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-20.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-21.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-22.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-23.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-24.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-25.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-26.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-27.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-28.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-29.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-30.JPG" alt="Card image top">
+                     </div>
+                     <div class="card">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/store-picture-31.JPG" alt="Card image top">
                      </div>
                  </div>
                </div>
@@ -779,81 +842,70 @@
                <div class="modal-body">
                   <div class="card-columns">
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-01.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-02.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-03.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-04.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-05.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-06.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-07.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-08.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-09.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
-                     </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-         </div>
-
-         <!-- Modal for Gallery Three -->
-         <div class="modal fade" id="gallery-three" tabindex="-1" role="dialog" aria-labelledby="video-storeLabel" aria-hidden="true">
-           <div class="modal-dialog" role="document">
-             <div class="modal-content">
-               <div class="modal-header">
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                   <span aria-hidden="true">&times;</span>
-                 </button>
-               </div>
-               <div class="modal-body">
-                  <div class="card-columns">
-                     <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-10.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-11.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x900" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-12.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-13.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-14.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x700" alt="Card image top">
+                         <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-15.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x500" alt="Card image top">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/launch-picture-16.JPG" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x1000" alt="Card image top">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-01.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x400" alt="Card image top">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-02.jpg" alt="Card image top">
                      </div>
                      <div class="card">
-                         <img class="card-img-top" src="https://source.unsplash.com/random/800x600" alt="Card image top">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-03.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-04.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-05.jpg" alt="Card image top">
+                     </div>
+                     <div class="card">
+                        <img class="card-img-top" src="<?php echo url('/');?>/static/images/28south-team-06.jpg" alt="Card image top">
                      </div>
                  </div>
                </div>
@@ -864,7 +916,65 @@
       </div>
     </section>
 
-    <section class="verticals-ui--wrapper mobile-specific">
+    <section class="verticals-ui--wrapper">
+      <div class="container-fluid">
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="title-ui--wrap">
+               <div class="title-text--middle">
+                  <h2>Business Verticals</h2>
+               </div>
+            </div>
+         </div>
+         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <div class="verticals-block--wrap">
+               <div class="owl-carousel vertical-ui-slideshow owl-theme">
+                  <div class="item">
+                     <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                           <a href="http://13.127.186.154/consumable">
+                              <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-banner.jpg" alt="" title="">
+                              <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-banner-mobile.jpg" alt="" title="">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                           <a href="http://13.127.186.154/consumable">
+                              <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner.jpg" alt="" title="">
+                              <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-plus-banner-mobile.jpg" alt="" title="">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                           <a href="http://13.127.186.154/consumable">
+                              <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-banner.jpg" alt="" title="">
+                              <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-care-banner-mobile.jpg" alt="" title="">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="item">
+                     <div class="slideshow-details--wrap">
+                        <div class="slideshow-image--wrap">
+                           <a href="http://13.127.186.154/consumable">
+                              <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-academy-banner.jpg" alt="" title="">
+                              <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-academy-banner-mobile.jpg" alt="" title="">
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+    <!-- <section class="verticals-ui--wrapper mobile-specific">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -878,22 +988,22 @@
                <div class="verticals-ui--column">
                   <div class="verticals-details--wrap">
                         <a class="verticals-brand--wrap heighlight-box" data-toggle="modal" data-target="#xpress-modal">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap" data-toggle="modal" data-target="#care-modal">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap" data-toggle="modal" data-target="#plus-modal">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap" data-toggle="modal" data-target="#academy-modal">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
                         </a>
                   </div>
                </div>
-            </div>
+            </div>  -->
             <!-- Open Xpress -->
-            <div class="modal fade" id="xpress-modal" tabindex="-1" role="dialog" aria-labelledby="xpress-modallabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="xpress-modal" tabindex="-1" role="dialog" aria-labelledby="xpress-modallabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -904,7 +1014,7 @@
                   <div class="modal-body">
                     <div class="verticals-single--details">
                         <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                            <p>Home Delivery Platform</p>
                         </div>
                         <div class="verticals-single--features">
@@ -919,9 +1029,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  -->
             <!-- Open Care -->
-            <div class="modal fade" id="care-modal" tabindex="-1" role="dialog" aria-labelledby="care-modallabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="care-modal" tabindex="-1" role="dialog" aria-labelledby="care-modallabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -932,7 +1042,7 @@
                   <div class="modal-body">
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
                            <p>Repairs & Restoration Services</p>
                         </div>
                         <div class="verticals-single--features">
@@ -947,9 +1057,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  -->
             <!-- Open Plus -->
-            <div class="modal fade" id="plus-modal" tabindex="-1" role="dialog" aria-labelledby="plus-modallabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="plus-modal" tabindex="-1" role="dialog" aria-labelledby="plus-modallabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -960,7 +1070,7 @@
                   <div class="modal-body">
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
                            <p>B2B Destribution Platform</p>
                         </div>
                         <div class="verticals-single--features">
@@ -975,9 +1085,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>  -->
             <!-- Open Academy -->
-            <div class="modal fade" id="academy-modal" tabindex="-1" role="dialog" aria-labelledby="academy-modallabel" aria-hidden="true">
+            <!-- <div class="modal fade" id="academy-modal" tabindex="-1" role="dialog" aria-labelledby="academy-modallabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -988,7 +1098,7 @@
                   <div class="modal-body">
                      <div class="verticals-single--details">
                         <div class="verticals-single--logo">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                           <img src="<?php // echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
                            <p>For Professional Skill Training</p>
                         </div>
                         <div class="verticals-single--features">
@@ -1006,9 +1116,9 @@
             </div>
          </div>
       </div>
-    </section>
+    </section>  -->
 
-    <section class="verticals-ui--wrapper">
+   <!--  <section class="verticals-ui--wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
             <div class="title-ui--wrap">
@@ -1022,26 +1132,26 @@
                <div class="verticals-ui--column">
                   <div class="verticals-details--wrap nav nav-tabs nav-fill" id="nav-tab">
                         <a class="verticals-brand--wrap nav-link active" id="nav-xpress-tab" data-toggle="tab" href="#nav-xpress" role="tab" aria-controls="nav-xpress" aria-selected="true">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                           <img src="<?php //echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap nav-link heighlight-box" id="nav-care-tab" data-toggle="tab" href="#nav-care" role="tab" aria-controls="nav-care" aria-selected="false">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                           <img src="<?php //echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap nav-link" id="nav-plus-tab" data-toggle="tab" href="#nav-plus" role="tab" aria-controls="nav-plus" aria-selected="false">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                           <img src="<?php //echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
                         </a>
                         <a class="verticals-brand--wrap nav-link" id="nav-academy-tab" data-toggle="tab" href="#nav-academy" role="tab" aria-controls="nav-academy" aria-selected="false">
-                           <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                           <img src="<?php //echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
                         </a>
                   </div>
                </div>
                <div class="verticals-ui--column">
-                  <div class="verticals-single--wrap tab-content" id="nav-tabContent">
+                  <div class="verticals-single--wrap tab-content" id="nav-tabContent">  -->
                      <!-- One -->
-                     <div class="tab-pane fade show active" id="nav-xpress" role="tabpanel" aria-labelledby="nav-xpress-tab">
+                     <!-- <div class="tab-pane fade show active" id="nav-xpress" role="tabpanel" aria-labelledby="nav-xpress-tab">
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
+                              <img src="<?php // echo url('/'); ?>/static/images/vaibhav-xpress-logo.png" alt=""/>
                               <p>Home Delivery Platform</p>
                            </div>
                            <div class="verticals-single--features">
@@ -1053,12 +1163,12 @@
                               <a href="{{ route('enquiry.xpress') }}" target="_blank">Visit Now</a>
                            </div>
                         </div>
-                     </div>
+                     </div>  -->
                      <!-- Two -->
-                     <div class="tab-pane fade" id="nav-care" role="tabpanel" aria-labelledby="nav-care-tab">
+                     <!-- <div class="tab-pane fade" id="nav-care" role="tabpanel" aria-labelledby="nav-care-tab">
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
+                              <img src="<?php // echo url('/'); ?>/static/images/vaibhav-care-logo.png" alt=""/>
                               <p>Repairs & Restoration Services</p>
                            </div>
                            <div class="verticals-single--features">
@@ -1070,12 +1180,12 @@
                               <a href="{{ route('enquiry.care') }}" target="_blank">Visit Now</a>
                            </div>
                         </div>
-                     </div>
+                     </div>  -->
                      <!-- Three -->
-                     <div class="tab-pane fade" id="nav-plus" role="tabpanel" aria-labelledby="nav-plus-tab">
+                     <!-- <div class="tab-pane fade" id="nav-plus" role="tabpanel" aria-labelledby="nav-plus-tab">
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
+                              <img src="<?php // echo url('/'); ?>/static/images/vaibhav-plus-logo.png" alt=""/>
                               <p>B2B Destribution Platform</p>
                            </div>
                            <div class="verticals-single--features">
@@ -1087,12 +1197,12 @@
                               <a href="{{ route('enquiry.plus') }}" target="_blank">Visit Now</a>
                            </div>
                         </div>
-                     </div>
-                     <!-- Four -->
-                     <div class="tab-pane fade" id="nav-academy" role="tabpanel" aria-labelledby="nav-academy-tab">
+                     </div> -->
+
+                     <!-- <div class="tab-pane fade" id="nav-academy" role="tabpanel" aria-labelledby="nav-academy-tab">
                         <div class="verticals-single--details">
                            <div class="verticals-single--logo">
-                              <img src="<?php echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
+                              <img src="<?php // echo url('/'); ?>/static/images/vaibhav-academy-logo.png" alt=""/>
                               <p>For Professional Skill Training</p>
                            </div>
                            <div class="verticals-single--features">
@@ -1110,7 +1220,7 @@
             </div>
          </div>
       </div>
-    </section>
+    </section> -->
 
     @if($brands)
     <section class="thumbnails-ui--two">
