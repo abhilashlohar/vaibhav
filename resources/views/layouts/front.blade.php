@@ -35,7 +35,7 @@
             padding-left: .8em;
         }
 		.ui-menu.ui-widget.ui-widget-content.ui-autocomplete.ui-front{
-			max-height: 150px;
+			max-height: 280px;
             overflow-y: auto;
             overflow-x: hidden;
 		}

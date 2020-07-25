@@ -13,6 +13,7 @@ use App\Brand;
 use App\MetaData;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMailable;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -170,31 +171,39 @@ class HomeController extends Controller
 
     public function advanceSearch(Request $request, $search)
     {
-        $products = Product::where([
-            ['name','like','%'.$search.'%'],
-            ['is_published', '=', 1],
-            ['products.deleted', '=', 0]
-        ])
-        ->with(['category','category.subCategoryFirst','subCategory'])
-        ->orderBy('category_id', 'asc')
-        ->get();
-            // dd($products);
+        // $products = Product::where([
+        //     ['name','like','%'.$search.'%'],
+        //     ['is_published', '=', 1],
+        //     ['products.deleted', '=', 0]
+        // ])
+        // ->with(['category','category.subCategoryFirst','subCategory'])
+        // ->orderBy('category_id', 'asc')
+        // ->get();
+        $products = DB::select("
+        	SELECT pd.name, pd.slug, pd.category_id, pd.sub_category_id, cat.slug as category_slug, subcat.slug as sub_category_slug, cat.name as category_name, subcat.name as subcategory_name, (SELECT COUNT(*) FROM products WHERE category_id = cat.id AND name LIKE '%".$search."%' AND is_published=1 AND deleted=0 group by category_id) AS category_count, (SELECT COUNT(*) FROM products WHERE sub_category_id = subcat.id AND name LIKE '%".$search."%' AND is_published=1 AND deleted=0 group by sub_category_id) AS sub_category_count  FROM products pd
+        	INNER JOIN categories cat ON cat.id=pd.category_id
+        	INNER JOIN sub_categories subcat ON subcat.id=pd.sub_category_id
+        	WHERE pd.name LIKE '%".$search."%' AND pd.is_published=1 AND pd.deleted=0 
+        	ORDER BY pd.category_id ASC,pd.sub_category_id ASC
+        	");
         $category_exist = [];
         $subcategory_exist = [];
+        // dd($products);
+        $data = [];
         foreach($products as $product)
         {
-            if(!in_array($product->category->id,$category_exist))
+            if(!in_array($product->category_id,$category_exist))
             {
-                $data [] = ['label'=>$product->category->name,'url'=>route('products.category-list',[$product->category->slug]),'category'=>'yes','subcategory'=>''];
-                $category_exist[] = $product->category->id;
+                $data [] = ['label'=>$product->category_name.' ('.$product->category_count.')','url'=>route('products.category-list',[$product->category_slug]),'category'=>'yes','subcategory'=>''];
+                $category_exist[] = $product->category_id;
             }
-            if(!in_array($product->subCategory->id,$subcategory_exist))
+            if(!in_array($product->sub_category_id,$subcategory_exist))
             {
-                $data [] = ['label'=>$product->subCategory->name,'url'=>route('products.list',[$product->category->slug,$product->subCategory->slug]),'category'=>'','subcategory'=>'yes'];
-                $subcategory_exist[] = $product->subCategory->id;
+                $data [] = ['label'=>$product->subcategory_name.' ('.$product->sub_category_count.')','url'=>route('products.list',[$product->category_slug,$product->sub_category_slug]),'category'=>'','subcategory'=>'yes'];
+                $subcategory_exist[] = $product->sub_category_id;
             }
 
-            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->category->slug,$product->subCategory->slug,$product->slug]),'category'=>'','subcategory'=>''];
+            $data [] = ['label'=>$product->name,'url'=>route('products.product-detail',[$product->category_slug,$product->sub_category_slug,$product->slug]),'category'=>'','subcategory'=>''];
 
         }
         return response()->json($data);
