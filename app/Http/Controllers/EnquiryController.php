@@ -99,8 +99,7 @@ class EnquiryController extends Controller
                     $request->enquiry_message
                     )
                 );
-            return redirect()->route('enquiry.brand')
-                        ->with('success','Enquiry created successfully');
+            return 'Enquiry created successfully.';
         }
     }
 
