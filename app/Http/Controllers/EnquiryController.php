@@ -32,6 +32,9 @@ class EnquiryController extends Controller
     }
     public function store(Request $request)
     {
+        // $query_category_slug = $request->query_category_slug;
+        // $request->except(['query_category_slug']);
+        // $request->request->remove('query_category_slug');
         if($request->enquiry_type == 'Care' || $request->enquiry_type == 'furniture' || $request->enquiry_type == 'consumable' || $request->enquiry_type == 'electrical') {
             $ticket_no = $this->newTicketNumber();
             $request->request->add(['ticket_no' => $ticket_no]);
@@ -99,7 +102,9 @@ class EnquiryController extends Controller
                     $request->enquiry_message
                     )
                 );
-            return 'Enquiry created successfully.';
+                return 'Enquiry created successfully.';
+            // return redirect()->route('brand.detail',$query_category_slug)
+                        // ->with('success','Enquiry created successfully');
         }
     }
 

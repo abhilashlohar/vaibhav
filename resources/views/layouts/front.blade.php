@@ -497,7 +497,6 @@
 
             $(document).on('click','.queryToEnquiry',function(e){
                 e.preventDefault();
-
                 var product_id = query_product_id;
                 var name = $('#query-name').val();
                 var email = $('#query-email').val();
@@ -521,7 +520,14 @@
                             // $('#add-query').animate({ scrollTop:180},'slow');
                             setTimeout(function(){
                                 //  $('#enquiry-result').hide();
-                                 window.location = "/"+query_category_slug;
+                                if(enquiry_type == 'brand'){
+                                    let red_url = '{{ route("brand.detail", ":brand") }}';
+                                    red_url = red_url.replace(':brand', query_category_slug);
+                                    window.location = red_url;
+                                }
+                                else{
+                                    window.location = "/"+query_category_slug;
+                                }
                             }, 3000);
                             // $("#queryForm").trigger("reset");
                         }
