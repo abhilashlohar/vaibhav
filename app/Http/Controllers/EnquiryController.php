@@ -93,7 +93,7 @@ class EnquiryController extends Controller
                         ->with('success','Enquiry created successfully');
         }
         elseif($request->enquiry_type == 'brand') {
-            Mail::to('sales@vaibhavxpress.com')->send(
+            Mail::to('info@vaibhavstores.in')->send(
                 new CustomEmailId(
                     '',
                     $request->enquiry_message

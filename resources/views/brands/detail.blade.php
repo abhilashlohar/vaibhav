@@ -46,6 +46,7 @@
            </div>
         </div>
      </div>
+     <button type="button" class="open-enquery-modal" enquiry_type="brand">Enquire Now</button>
     </div>
 </section>
 @endsection
