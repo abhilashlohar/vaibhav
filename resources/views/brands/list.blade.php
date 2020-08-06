@@ -18,7 +18,7 @@
           <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
              <div class="brand-listing--grid">
                @foreach($brands as $brand)
-                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
                   <div class="brand-thumbnail--wrap">
                      <div class="brand-listing--image">
                         <img src="{{ asset('storage/brand/'.$brand->logo) }}" alt="{{$brand->name}}"/>

@@ -18,12 +18,13 @@
     </div>
  </section>
 
- <section class="plus-question--wrapper">
+ <section class="plus-question--wrapper" style="margin-top: 30px;">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
                 <h2>Xpress</h2>
+                <h5>Home Delivery Platform</h5>
              </div>
           </div>
        </div>
@@ -37,7 +38,7 @@
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-01.jpg" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/xpress-faq-picture-01.jpg" alt="" title="">
                 </div>
              </div>
           </div>
@@ -52,7 +53,7 @@
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-02.jpg" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/xpress-faq-picture-02.jpg" alt="" title="">
                 </div>
              </div>
           </div>
@@ -61,7 +62,7 @@
           <div class="plus-information--grid">
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-03.jpg" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/xpress-faq-picture-03.jpg" alt="" title="">
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -76,7 +77,7 @@
           <div class="plus-information--grid">
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-information--picture">
-                   <img src="<?php echo url('/'); ?>/static/images/plus-xpress-item-04.jpg" alt="" title="">
+                   <img src="<?php echo url('/'); ?>/static/images/xpress-faq-picture-04.jpg" alt="" title="">
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
@@ -173,14 +174,14 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
-                   <p>94, Sunkalpet Main Road, Bengaluru 560002</p>
+                   <p>94, Sunkalpet Main Road, <br/>Bengaluru 560002</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
                    <p>Mobile - +91-8073422019</p>
-                   <p>Landline - +080-22222082</p>
+                   <p>Landline - 080-22222082</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">

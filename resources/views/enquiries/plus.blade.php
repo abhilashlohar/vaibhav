@@ -18,12 +18,13 @@
     </div>
  </section>
 
- <section class="plus-question--wrapper">
+ <section class="plus-question--wrapper" style="margin-top: 30px;">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
              <div class="title-text--middle">
                 <h2>Plus</h2>
+                <h5>B2B Distribution Platform</h5>
              </div>
           </div>
        </div>
@@ -32,7 +33,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>What is plus?</h3>
-                   <p>Vaibhav Xpress is a specialised delivery only service. Covering the length and breadth of Bengaluru city & its outskirts, Xpress is our dedicated unit only for shipping beauty solutions to our Dealers & Distributors.</p>
+                   <p>Vaibhav Plus is an exclusive same day delivery service for retailers. It is a value add on to the retailers where they can directly purchase from us at best prices without any middlemen involved.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -47,7 +48,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>How it works?</h3>
-                   <p>If you are a Dealer or Distributor of our products, place your order with us on Call, Email or Whatsapp. Our trained logistics & supply chain management team will compile your order & arrange for it to be shipped to you directly at your doorstep.</p>
+                   <p>If you are a retailer already registered with us, please get in touch with your dedicated relationship manager. Place your order with them on call, email or whatsapp & we will arrange for speedy same day delivery at your retail store. If you are not registered with us yet, get in touch with the Plus team by calling on the details given below.</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
@@ -67,7 +68,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>Who is it for?</h3>
-                   <p>Dealers & Distributors for equipments, consumables & furniture.</p>
+                   <p>This exclusive service is offered to retailers, wholesalers, dealers & distributors in Bengaluru. If you are a reseller of beauty products & cosmetics do register to avail benefits of Plus.</p>
                 </div>
              </div>
           </div>
@@ -82,7 +83,7 @@
              <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
                 <div class="plus-information--text">
                    <h3><span>Q.</span>Whom to get in touch with?</h3>
-                   <p>Please get in touch with the Plus team on the contact details mentioned below</p>
+                   <p>Our dedicated Plus team is just a call or email away to assist you with order placement & until you receive the delivery of your goods. Get in touch on the details given below.</p>
                 </div>
              </div>
           </div>
@@ -173,20 +174,20 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
-                   <p>94, Sunkalpet Main Road, Bengaluru 560002</p>
+                   <p>94, Sunkalpet Main Road, <br/>Bengaluru 560002</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
-                   <p>Mobile - +91-8884748849</p>
-                   <p>Landline - 080-41518183</p>
+                   <p>Mobile - +91-9620555422</p>
+                   <p>Landline - 080-41518183 / 22222082</p>
                 </div>
              </div>
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Email</h5>
-                   <p>info@vaibhavstores.in</p>
+                   <p>sales@vaibhavplus.com</p>
                 </div>
              </div>
           </div>

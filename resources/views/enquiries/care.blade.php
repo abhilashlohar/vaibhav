@@ -30,85 +30,77 @@
    </div>
 </section>
 
-<section class="support-search--wrapper">
-   <div class="container-fluid">
-       <div class="row">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-             <div class="title-ui--wrap">
-                <div class="title-text--middle">
-                   <h2>Frequently Asked Questions</h2>
+<section class="plus-question--wrapper" style="margin-top: 30px;">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>Care</h2>
+                <h5>Repairs and Restoration Services</h5>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>What is Care?</h3>
+                   <p>Care is a one stop shop for all repairs & restoration services of furniture, equipment & electricals. Moreover at Care, we also assist you to sell used products at the right price to the willing buyers. </p>
                 </div>
-            </div>
-         </div>
-          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-               <div class="container py-4 my-4">
-                  <div class="row">
-                     <div class="col-10 mx-auto">
-                        <div class="accordion" id="faqExample">
-                           <div class="card">
-                                <div class="card-header p-2" id="headingOne">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                          Q: How does this work?
-                                        </button>
-                                      </h5>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqExample">
-                                    <div class="card-body">
-                                        <b>Answer:</b> It works using the Bootstrap 4 collapse component with cards to make a vertical accordion that expands and collapses as questions are toggled.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header p-2" id="headingTwo">
-                                    <h5 class="mb-0">
-                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                      Q: What is Bootstrap 4?
-                                    </button>
-                                  </h5>
-                                </div>
-                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqExample">
-                                    <div class="card-body">
-                                        Bootstrap is the most popular CSS framework in the world. The latest version released in 2018 is Bootstrap 4. Bootstrap can be used to quickly build responsive websites.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header p-2" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                          Q. What is another question?
-                                        </button>
-                                      </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                                    <div class="card-body">
-                                        The answer to the question can go here.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-header p-2" id="headingThree">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                          Q. What is the next question?
-                                        </button>
-                                      </h5>
-                                </div>
-                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqExample">
-                                    <div class="card-body">
-                                        The answer to this question can go here. This FAQ example can contain all the Q/A that is needed.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-             <!--/row-->
-            </div>
-         </div>
-      </div>
-   </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/care-faq-picture-01.jpg" alt="" title="">
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>How it works?</h3>
+                   <p>All you have to do is register a complaint with us. Our expert repair team will then take over the process by collecting the product, analysing the issue, giving you a cost estimate and proceed with repair or refurbishment. You can also track</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/care-faq-picture-02.jpg" alt="" title="">
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/care-faq-picture-03.jpg" alt="" title="">
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>Who is it for?</h3>
+                   <p>Ideally this service is for anyone who is facing trouble with their furniture, beauty equipment or beauty electrical. This service is available for everyone whether you have purchased the product from us or elsewhere as long as we can repair it.</p>
+                </div>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-information--grid">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-information--picture">
+                   <img src="<?php echo url('/'); ?>/static/images/care-faq-picture-04.jpg" alt="" title="">
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8">
+                <div class="plus-information--text">
+                   <h3><span>Q.</span>Whom to get in touch with?</h3>
+                   <p>Our team is trained to service your products with utmost care & precision. Get in touch with our team on the details given below. </p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
 </section>
 
 <section class="support-search--wrapper">
@@ -234,6 +226,40 @@
     </div>
  </section>
 
+  <section class="plus-connet--wrapper">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>For more details connect with us</h2>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-connet--grids">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
+                   <p>35/1, 3rd Cross, Cubbonpet, Near St.Lourdes School, <br/>Bengaluru 560002</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
+                   <p>Mobile - +91-9916426360</p>
+                   <p>Landline - +91-9986638184</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Email</h5>
+                   <p>academy@vaibhavstores.in</p>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
  @endsection
 
  @section ('footer-script')

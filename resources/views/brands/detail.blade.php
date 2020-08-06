@@ -28,25 +28,30 @@
              <div class="brand-details--properties">
                 <div class="ecommerce-item--details">
                      <div class="ecommerce-item--name">
-                         <h3>{{$brand->name}}</h3>
+                         <h3>KEY PRODUCTS</h3>
                      </div>
                      <div class="ecommerce-item--excerpt">
-                         <?php echo $brand->short_description; ?>
+                        <?php echo $brand->short_description; ?>
+                        <button type="button" class="brand-enquiry open-enquery-modal" product_id="" category_slug="{{$brand->name}}" enquiry_type="brand">Book Demo</button>
                      </div>
                 </div>
              </div>
           </div>
        </div>
-       <div class="col-12 col-sm-12 col-md-12">
-        <div class="brand-details--properties">
-           <div class="">
-                <div class="ecommerce-item--excerpt">
-                    <?php echo $brand->description; ?>
-                </div>
+       <div class="col-12 col-sm-12 col-md-12" style="padding: 30px 45px;">
+            <div class="title-ui--wrap" style="justify-content: flex-start; align-items: flex-start;">
+               <div class="title-text--middle">
+                  <h2 style="text-align: left;">Brand Profile</h2>
+               </div>
+            </div>
+           <div class="brand-details--properties">
+              <div class="">
+                   <div class="ecommerce-item--excerpt">
+                       <?php echo $brand->description; ?>
+                   </div>
+              </div>
            </div>
-        </div>
      </div>
-     <button type="button" class="open-enquery-modal" product_id="" category_slug="{{$brand->name}}" enquiry_type="brand">Enquire Now</button>
     </div>
 </section>
 @endsection

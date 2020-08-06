@@ -22,7 +22,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/consumable">
+                        <a href="http://13.127.186.154/brands">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-02.jpg" alt="" title="">
                         </a>
@@ -32,7 +32,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/salon-furnitures">
+                        <a href="http://13.127.186.154/care">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-03.jpg" alt="" title="">
                         </a>
@@ -42,7 +42,7 @@
                <div class="item">
                   <div class="slideshow-details--wrap">
                      <div class="slideshow-image--wrap">
-                        <a href="http://13.127.186.154/salon-furnitures">
+                        <a href="http://13.127.186.154/xpress">
                            <img class="slide-on--desktop owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
                            <img class="slide-on--mobile owl-lazy" data-src="<?php echo url('/'); ?>/static/images/vaibhav-slideshow-04.jpg" alt="" title="">
                         </a>
@@ -714,7 +714,7 @@
                  </button>
                </div>
                <div class="modal-body">
-                  <iframe width="100%" src="https://www.youtube.com/embed/0ZiplfiwCQo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe width="100%" height="480" src="https://www.youtube.com/embed/0msE1u2EtzM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                </div>
              </div>
            </div>
