@@ -4,7 +4,7 @@ use \App\Http\Controllers\HomeController;
 function sendSms($mobile, $message){
     $username="vaibhav";
     $api_password="68237u49lwveehwew";
-    $sender="VAIBAV";
+    $sender="TSOUTH";
     $domain="bulk.mobiglitz.com";
     $priority="11";// 11-Enterprise, 12- Scrub
     $username=urlencode($username);
