@@ -1282,9 +1282,7 @@
          <div class="row">
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                <div class="title-ui--wrap">
-                  <div class="title-text--up">
-                     <h4>@Vaibhavindia</h4>
-                  </div>
+                  
                   <div class="title-text--middle">
                      <h2>Follow Us</h2>
                   </div>
@@ -1293,16 +1291,24 @@
             <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
                <div class="follow-images--wrap">
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/facebook.jpg" alt=""/>
+					<a href="https://www.facebook.com/vaibhavstores.in" target="_blank">
+						<img src="<?php echo url('/'); ?>/static/images/facebook.jpg" alt=""/>
+					</a>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/instagram.jpg" alt=""/>
+					<a href="https://www.instagram.com/vaibhavstores/" target="_blank">
+						<img src="<?php echo url('/'); ?>/static/images/instagram.jpg" alt=""/>
+					</a>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/pinterest.jpg" alt=""/>
+					<a href="https://in.pinterest.com/vaibhavstores/" target="_blank">
+						<img src="<?php echo url('/'); ?>/static/images/pinterest.jpg" alt=""/>
+					</a>
                   </div>
                   <div class="follow-image--block">
-                     <img src="<?php echo url('/'); ?>/static/images/youtube.jpg" alt=""/>
+					<a href="https://www.youtube.com/channel/UCmmEZN3IKueozmKURAF-BxA?" target="_blank">
+						<img src="<?php echo url('/'); ?>/static/images/youtube.jpg" alt=""/>
+					</a>
                   </div>
                </div>
             </div>

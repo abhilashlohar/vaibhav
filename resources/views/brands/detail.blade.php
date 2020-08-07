@@ -54,4 +54,41 @@
      </div>
     </div>
 </section>
+
+<section class="plus-connet--wrapper">
+    <div class="container-fluid">
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="title-ui--wrap">
+             <div class="title-text--middle">
+                <h2>For more details connect with us</h2>
+             </div>
+          </div>
+       </div>
+       <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+          <div class="plus-connet--grids">
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-home" aria-hidden="true"></i></span> Address</h5>
+                   <p>35/1, 3rd Cross, Cubbonpet, Near St.Lourdes School, <br/>Bengaluru 560002</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-phone" aria-hidden="true"></i></span> Telephone</h5>
+                   <p>Mobile - +91-9916426360</p>
+                   <p>Landline - +91-9986638184</p>
+                </div>
+             </div>
+             <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                <div class="plus-connect-wrap">
+                   <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Email</h5>
+                   <p>info@vaibhavcare.com</p>
+                </div>
+				
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ 
 @endsection

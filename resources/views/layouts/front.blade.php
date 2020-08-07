@@ -248,6 +248,7 @@
     </div>
     </div>
 </div>
+   
    <footer class="footer-wrapper">
       <div class="container-fluid">
          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 padding-0">
@@ -259,7 +260,7 @@
                      </div>
                      <div class="footer-about--text">
                         <p>Spread over a sprawling 15,000 square feet facility spanning 3 floors & spread over 2 locations, Vaibhav Stores is the largest one stop shop for salon furniture, beauty products & equipments in Bengaluru. Synonymous with authentic products, courteous & well informed sales professionals, & uncompromisable quality, Vaibhav Stores is the true hallmark of our company’s ambitions.</p>
-                        <a href="http://28southventures.com/" target="_blank"><img src="<?php echo url('/'); ?>/static/images/logo-28-south-ventures.png" alt="28 South Ventures LLP" width="189"></a>
+                        <a href="http://28southventures.com/" target="_blank"><img src="<?php echo url('/'); ?>/static/images/28sv-logo.png" alt="28 South Ventures LLP" width="190"></a>
                      </div>
                   </div>
                </div>

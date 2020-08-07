@@ -226,7 +226,7 @@
     </div>
  </section>
 
-  <section class="plus-connet--wrapper">
+ <section class="plus-connet--wrapper">
     <div class="container-fluid">
        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <div class="title-ui--wrap">
@@ -253,8 +253,9 @@
              <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
                 <div class="plus-connect-wrap">
                    <h5><span><i class="fa fa-envelope" aria-hidden="true"></i></span> Email</h5>
-                   <p>academy@vaibhavstores.in</p>
+                   <p>service@vaibhavcare.com</p>
                 </div>
+				
              </div>
           </div>
        </div>

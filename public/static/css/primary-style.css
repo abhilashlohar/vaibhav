@@ -5897,8 +5897,11 @@ Login Wrapper
   min-height: 270px;
   text-align: center;
 }
-.brand-listing--wrapper .brand-listing--grid .brand-thumbnail--wrap .brand-listing--image img {
+.brand-listing--wrapper .brand-listing--grid .brand-thumbnail--wrap .brand-listing--image img, .brand-logo--wrap img {
    width: 100%;
+    border: 7px solid #aeafb1;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
 }
 
 /* Brand Detail Page */
@@ -5972,7 +5975,8 @@ Login Wrapper
    margin-right: 15px;
 }
 .brand-details--wrapper .brand-details--grid .brand-single--slideshow .item img {
-   max-width: 42%;
+	width:auto;
+   max-width:100%;
    margin: 0 auto;
 }
 .brand-details--wrapper .brand-details--grid .brand-details--properties {
