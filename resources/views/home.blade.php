@@ -1243,7 +1243,7 @@
                         $brnad_short_descriptions = preg_split('/\r\n|[\r\n]/', $brand->short_description);
                     ?>
                     <div class="item">
-                        <div class="thumbnail-block--wrap">
+                        <div class="thumbnail-block--wrap align-items-center">
                             <div class="col-12 col-sm-6 col-md-4 col-lg-4 col-xl-4">
                                 <div class="thumbnail-brand--ui">
                                 <div class="thumbnail-brand--logo">

@@ -287,7 +287,7 @@ class OrderController extends Controller
             }
 
             Cart::where('user_id',$user->id)->delete();
-            sendSms($request->ship_mobile,"Thank you for placing an order with us. We will be processing it soon.");
+            sendSms($request->ship_mobile,"Thank you for placing an order with us. We will be processing it soon. For any assistance plz mail us at enquiry@vaibhavstores.in. Thank you, Vaibhav Stores. PH: +91 80 41518183");
             Mail::to($user->email)->send(
                 new ProductOrder(
                     $user->name,

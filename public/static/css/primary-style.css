@@ -1633,7 +1633,7 @@ ul.dropDownMenu ul {
 .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-next {
    position: absolute;
    top: 39%;
-   left: 0px;
+   right: 0px;
    background: #ffffff;
    color: #e94150 !important;
    font-size: 1.9em;
@@ -1647,7 +1647,7 @@ ul.dropDownMenu ul {
 .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-prev {
    position: absolute;
    top: 39%;
-   right: 0px;
+   left: 0px;
    background: #ffffff;
    color: #e94150 !important;
    font-size: 1.9em;
@@ -1918,8 +1918,8 @@ ul.dropDownMenu ul {
    text-align: center;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-product--image img {
-   width: 100%;
-   max-width: 177px;
+   width: auto;
+    max-width: 100%;
    margin: 0 auto;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui {
@@ -1953,8 +1953,8 @@ ul.dropDownMenu ul {
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui .thumbnail-brand--logo img {
    width: 100%;
-   max-width: 259px;
    margin: 0 auto;
+   max-width: 320px;
 }
 .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-properties--ui {
 	position: relative;
@@ -2180,6 +2180,7 @@ ul.dropDownMenu ul {
 .footer-wrapper .footer-grid--wrap .footer-about--wrap  .footer-about--text {
     padding-right: 30px;
 }
+.footer-about--text h6{color:#fff;}
 .footer-wrapper .footer-grid--wrap .footer-about--wrap p {
    color: #efefef;
 }
@@ -5894,10 +5895,9 @@ Login Wrapper
   position: relative;
   width: 100%;
   padding: 15px;
-  min-height: 270px;
   text-align: center;
 }
-.brand-listing--wrapper .brand-listing--grid .brand-thumbnail--wrap .brand-listing--image img, .brand-logo--wrap img {
+.brand-listing--wrapper .brand-listing--grid .brand-thumbnail--wrap .brand-listing--image img, .brand-logo--wrap img, .thumbnails-ui--two .thumbnail-block--wrap .thumbnail-brand--ui .thumbnail-brand--logo img {
    width: 100%;
     border: 7px solid #aeafb1;
     border-radius: 8px;
@@ -5976,7 +5976,7 @@ Login Wrapper
 }
 .brand-details--wrapper .brand-details--grid .brand-single--slideshow .item img {
 	width:auto;
-   max-width:100%;
+   max-height:300px;
    margin: 0 auto;
 }
 .brand-details--wrapper .brand-details--grid .brand-details--properties {
@@ -5995,7 +5995,7 @@ Login Wrapper
     line-height: 30px;
 }
 .brand-details--wrapper .brand-details--grid .brand-details--properties .ecommerce-item--details {
-   padding-top: 80px;
+   padding-top: 0;
    padding-left: 60px;
    z-index: 1;
 }
@@ -6355,11 +6355,7 @@ button.brand-enquiry {
    .plus-question--wrapper .plus-information--text {
       padding: 30px;
    }
-   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-prev {
-      position: absolute;
-      top: 39%;
-      right: -90px;
-   }
+
    .padding-0-mobile {
       padding: 0 15px;
    }
@@ -6978,10 +6974,16 @@ button.brand-enquiry {
    .verticals-ui--wrapper .vertical-ui-slideshow .slide-on--desktop {
       display: block;
    }
-   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-next {
+   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-prev {
       position: absolute;
       top: 39%;
       left: -90px;
+   }
+   .verticals-ui--wrapper .verticals-block--wrap .vertical-ui-slideshow .owl-next {
+      position: absolute;
+      top: 39%;
+      right:-90px;
+	  left: auto;
    }
    .single-description--text table {
       max-width: 75%;

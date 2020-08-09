@@ -56,8 +56,8 @@ $(document).ready(function() {
       autoplayHoverPause:false,
       autoplayTimeout:3000,
       navText: [
-        '<i class="fa fa-angle-right" aria-hidden="true"></i>',
-        '<i class="fa fa-angle-left" aria-hidden="true"></i>'
+        '<i class="fa fa-angle-left" aria-hidden="true"></i>',
+        '<i class="fa fa-angle-right" aria-hidden="true"></i>'
       ],
       nav:true,
       dots: true,
