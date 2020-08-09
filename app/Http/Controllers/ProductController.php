@@ -48,7 +48,11 @@ class ProductController extends Controller
 
         $page_title = 'Vaibhav - A Unit of 28 South Ventures';
         $body_class = 'product-list category-list';
-        return view('products.category-list',compact('category','page_title','body_class','template_type'));
+        $meta_title = $category->meta_title;
+        $meta_keyword = $category->meta_keyword;
+        $meta_description = $category->meta_description;
+
+        return view('products.category-list',compact('category','page_title','body_class','template_type','meta_title','meta_keyword','meta_description'));
     }
 
     public function list($category_slug,$sub_category_slug)
