@@ -9,7 +9,7 @@ use App\Category;
 class Category extends Model
 {
     protected $fillable = [
-        'name', 'image','slug','sequence','template_type','banner_image_mobile','banner_image_desktop'
+        'name', 'image','slug','sequence','template_type','banner_image_mobile','banner_image_desktop','meta_title','meta_description','meta_keyword'
     ];
 
     public function notHavingImageInDb(){

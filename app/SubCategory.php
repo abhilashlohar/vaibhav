@@ -8,7 +8,7 @@ use App\SubCategory;
 class SubCategory extends Model
 {
     protected $fillable = [
-        'name','image','category_id','slug','sequence','short_description'
+        'name','image','category_id','slug','sequence','short_description','meta_title','meta_description','meta_keyword'
     ];
 
     public static function boot()

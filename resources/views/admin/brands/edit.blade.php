@@ -1,5 +1,15 @@
 @extends ('layouts.backend')
-
+<style>
+    fieldset {
+    min-width: 0;
+    padding: 10 !important;
+    margin: 0;
+    border: 1px solid #e2e5ec !important;
+}
+legend {
+    width: auto !important;
+}
+</style>
 @section ('content')
 
 <div class="row">
@@ -45,6 +55,62 @@
                                 <textarea class="summernote" id="description" name="description" required>{{ $brand->description }}</textarea>
                             </div>
                         </div>
+                        <fieldset>
+                            <legend>SEO</legend>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="slug">Slug *</label>
+                                        <input type="text" id="slug" name="slug" class="form-control @error('slug') is-invalid @enderror" value="{{ ($brand->slug)? $brand->slug : old('slug') }}">
+                                        @error('slug')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="meta-title">Meta Title</label>
+                                        <input type="text" id="meta_title" name="meta_title" class="form-control @error('meta_title') is-invalid @enderror" value="{{ ($brand->meta_title)? $brand->meta_title : old('meta_title') }}">
+                                        @error('meta_title')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="meta_description">Meta Description</label>
+                                        <textarea class="form-control resize-none  @error('meta_description') is-invalid @enderror" id="meta_description" name="meta_description" rows="3" >{{ ($brand->meta_description)?$brand->meta_description : old('meta_description') }}</textarea>
+                                        @error('meta_description')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="meta-title">Meta Keyword</label>
+                                        <input type="text" id="meta_keyword" name="meta_keyword" class="form-control @error('meta_keyword') is-invalid @enderror" value="{{ ($brand->meta_keyword)? $brand->meta_keyword : old('meta_keyword') }}">
+                                        @error('meta_keyword')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-8">

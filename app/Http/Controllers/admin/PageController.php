@@ -47,9 +47,7 @@ class PageController extends Controller
     public function update(Request $request, Page $Page)
     {
         $request->validate(Page::rules($Page->id), Page::messages());
-
         $Page->update($request->all());
-
         return redirect()->route('pages.index')
                         ->with('success','Page updated successfully');
     }

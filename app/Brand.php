@@ -9,7 +9,7 @@ use App\Brand;
 class Brand extends Model
 {
     protected $fillable = [
-        'name', 'image','logo','short_description','description','show_on_home_page'
+        'name', 'image','logo','short_description','description','show_on_home_page','slug','meta_title','meta_description','meta_keyword'
     ];
 
     public function notHavingImageInDb(){

@@ -9,7 +9,7 @@ use App\Page;
 class Page extends Model
 {
     protected $fillable = [
-        'title','slug','content','status'
+        'title','slug','content','status','meta_title','meta_description','meta_keyword'
     ];
 
     protected static function boot()

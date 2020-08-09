@@ -9,7 +9,7 @@ use App\Blog;
 class Blog extends Model
 {
     protected $fillable = [
-        'title','slug','featured_image','excerpt','content','status'
+        'title','slug','featured_image','excerpt','content','status','meta_title','meta_description','meta_keyword'
     ];
 
     protected static function boot()

@@ -1,5 +1,15 @@
 @extends ('layouts.backend')
-
+<style>
+    fieldset {
+    min-width: 0;
+    padding: 10 !important;
+    margin: 0;
+    border: 1px solid #e2e5ec !important;
+}
+legend {
+    width: auto !important;
+}
+</style>
 @section ('content')
 <div class="row">
     <div class="col-md-12">
