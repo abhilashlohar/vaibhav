@@ -254,6 +254,19 @@ legend {
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="meta-title">Meta Keyword</label>
+                                    <input type="text" id="meta_keyword" name="meta_keyword" class="form-control @error('meta_keyword') is-invalid @enderror" value="{{ ($product->meta_keyword)? $product->meta_keyword : old('meta_keyword') }}">
+                                    @error('meta_keyword')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                            </div>
+                        </div>
                     </fieldset>
 
                     <div class="row">
