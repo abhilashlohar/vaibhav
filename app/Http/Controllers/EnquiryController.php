@@ -40,16 +40,22 @@ class EnquiryController extends Controller
             $request->request->add(['ticket_no' => $ticket_no]);
         }
         Enquiry::create($request->all());
+		
         if($request->enquiry_type == 'Care') {
-            $from_email = 'service@vaibhavcare.com';
+           // $from_email = 'service@vaibhavcare.com';
+          $from_email = 'rohitkumarjoshi43@gmail.com';
+         // 'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.',
             Mail::to($from_email)->send(
                 new CustomEmailId(
-                    $from_email,
-                    $request->name,
-                    $ticket_no,
-                    'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.'
+                     $ticket_no,
+					 'Your complaint has been submited. Your ticket no. is '.$ticket_no.'.',
+					  $request->name,
+					 $request->mobile_no,
+					 $request->email,
+		
                     )
                 );
+				
             return redirect()->route('enquiry.care')
                         ->with('success','Your complaint has been submited. Your ticket no. is '.$ticket_no.'.');
         }
@@ -63,11 +69,14 @@ class EnquiryController extends Controller
             else if($request->enquiry_type == 'electrical') {
                 $from_email = 'enquiry@vaibhavstores.in';
             }
-            sendSms($request->mobile_no,"Thank you for placing an inquiry with us. Our representative will contact you soon.");
+            sendSms($request->mobile_no,"Thank you for placing an inquiry with us. Our representative will contact you soon. Thanks, Vaibhav Stores. Ph: +91 8041518183");
             Mail::to($from_email)->send(
                 new CustomEmailId(
                     $ticket_no,
-                    $request->enquiry_message
+                    $request->enquiry_message,
+					$request->name,
+					$request->mobile_no,
+					$request->email,
                     )
                 );
                 return 'Thank you for enquiry and we will get back to you.';
@@ -79,7 +88,10 @@ class EnquiryController extends Controller
             Mail::to('sales@vaibhavxpress.com')->send(
                 new CustomEmailId(
                     '',
-                    $request->enquiry_message
+                    $request->enquiry_message,
+					$request->name,
+					$request->mobile_no,
+					$request->email,
                     )
                 );
             return redirect()->route('enquiry.xpress')
@@ -89,17 +101,25 @@ class EnquiryController extends Controller
             Mail::to('sales@vaibhavplus.com')->send(
                 new CustomEmailId(
                     '',
-                    $request->enquiry_message
+                    $request->enquiry_message,
+					$request->name,
+					$request->mobile_no,
+					$request->email,
                     )
                 );
             return redirect()->route('enquiry.plus')
                         ->with('success','Enquiry created successfully');
         }
         elseif($request->enquiry_type == 'brand') {
-            Mail::to('info@vaibhavstores.in')->send(
+			 sendSms($request->mobile_no,"Thank you for placing an inquiry with us. Our representative will contact you soon. Thanks, Vaibhav Stores. Ph: +91-8073422019");
+			 
+            Mail::to('sales@vaibhavxpress.com')->send(
                 new CustomEmailId(
                     '',
-                    $request->enquiry_message
+                    $request->enquiry_message,
+					$request->name,
+					$request->mobile_no,
+					$request->email,
                     )
                 );
                 return 'Enquiry created successfully.';

@@ -17,10 +17,14 @@ class CustomEmailId extends Mailable
      *
      * @return void
      */
-    public function __construct($ticket_no, $message)
+    public function __construct($ticket_no,$message,$name,$mobile,$email)
     {
-        $this->ticket_no = $ticket_no;
-        $this->messages = $message;
+		$this->ticket_no = $ticket_no;
+		$this->messages = $message;
+		$this->mobile = $mobile;
+		$this->email = $email;
+		$this->name = $name;
+		
     }
 
     /**
@@ -30,18 +34,22 @@ class CustomEmailId extends Mailable
      */
     public function build()
     {
-        if(!empty($ticket_no))
+        if(!empty($this->ticket_no))
         {
             $subject = 'Enquiry Ticket ['.$this->ticket_no.']';
         }
         else{
             $subject = 'Enquiry received';
         }
+		//dd($this->name);
         return $this->markdown('emails.enquiry_reply_from_admin')
         ->from('noreply@28svllp.com', 'Vaibhav')
         ->subject($subject)
         ->with([
-            'messages' => $this->messages
+            'messages' => $this->messages,
+			'name'=>$this->name,
+			'mobile'=>$this->mobile,
+			'email'=>$this->email
         ]);
 
     }

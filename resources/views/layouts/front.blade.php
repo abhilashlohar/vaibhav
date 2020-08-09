@@ -198,6 +198,12 @@
                           <li class="nav-item">
                             <a class="nav-link" href="{{route('enquiry.plus')}}">Plus</a>
                           </li>
+						  <li class="nav-item">
+                            <a class="nav-link" href="{{url('/brands') }}">Brands</a>
+                          </li>
+						   <li class="nav-item d-block d-lg-none">
+							<a class="nav-link" href="{{url('/v/contact-us') }}">Contact Us</a>
+						  </li>
                         </ul>
                      </div>
                   </nav>
@@ -256,10 +262,11 @@
                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                   <div class="footer-about--wrap">
                      <div class="footer-title--wrap">
-                        <h3>About the brand</h3>
+                        <h3>About Vaibhav</h3>
                      </div>
                      <div class="footer-about--text">
                         <p>Spread over a sprawling 15,000 square feet facility spanning 3 floors & spread over 2 locations, Vaibhav Stores is the largest one stop shop for salon furniture, beauty products & equipments in Bengaluru. Synonymous with authentic products, courteous & well informed sales professionals, & uncompromisable quality, Vaibhav Stores is the true hallmark of our company’s ambitions.</p>
+						<h6>A unit of</h6>
                         <a href="http://28southventures.com/" target="_blank"><img src="<?php echo url('/'); ?>/static/images/28sv-logo.png" alt="28 South Ventures LLP" width="190"></a>
                      </div>
                   </div>
@@ -287,6 +294,7 @@
                      </div>
                      <div class="footer-links--wrap">
                         <ul>
+							<li><a href="{{url('/v/brands') }}">Brands</a></li>
                            <li><a href="{{url('/v/about-us') }}">About</a></li>
                            <li><a href="{{url('/v/contact-us') }}">Contact Us</a></li>
                             @foreach ($headerCategories as $headerCategory)
@@ -297,6 +305,7 @@
                                 </li>
                             @endforeach
                            <li><a href="{{url('/v/terms-and-conditions') }}">Terms & Conditions</a></li>
+                           
                         </ul>
                      </div>
                   </div>
